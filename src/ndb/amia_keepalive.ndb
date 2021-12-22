@@ -1,0 +1,246 @@
+NDB V1.0
+0000003 0000001 0000064 0000023 0000049
+n00 aps_include
+n01 x0_i0_position
+N02 amia_keepalive
+s 03 vector
+sf f x
+sf f y
+sf f z
+f ffffffff ffffffff 000 f DISTANCE_TINY
+f ffffffff ffffffff 000 f DISTANCE_SHORT
+f ffffffff ffffffff 000 f DISTANCE_MEDIUM
+f ffffffff ffffffff 000 f DISTANCE_LARGE
+f ffffffff ffffffff 000 f DISTANCE_HUGE
+f ffffffff ffffffff 001 s LocationToString
+fp e2
+f ffffffff ffffffff 001 s VectorToString
+fp t0000
+f ffffffff ffffffff 002 v MoveToNewLocation
+fp e2
+fp o
+f ffffffff ffffffff 002 f GetChangeInX
+fp f
+fp f
+f ffffffff ffffffff 002 f GetChangeInY
+fp f
+fp f
+f ffffffff ffffffff 003 t0000 GetChangedPosition
+fp t0000
+fp f
+fp f
+f ffffffff ffffffff 002 f GetAngleBetweenLocations
+fp e2
+fp e2
+f ffffffff ffffffff 001 f GetOppositeDirection
+fp f
+f ffffffff ffffffff 001 f GetRightDirection
+fp f
+f ffffffff ffffffff 001 f GetHalfRightDirection
+fp f
+f ffffffff ffffffff 001 f GetFarRightDirection
+fp f
+f ffffffff ffffffff 002 f GetCustomRightDirection
+fp f
+fp f
+f ffffffff ffffffff 001 f GetLeftDirection
+fp f
+f ffffffff ffffffff 001 f GetHalfLeftDirection
+fp f
+f ffffffff ffffffff 001 f GetFarLeftDirection
+fp f
+f ffffffff ffffffff 002 f GetCustomLeftDirection
+fp f
+fp f
+f ffffffff ffffffff 002 v TurnToFaceObject
+fp o
+fp o
+f ffffffff ffffffff 001 e2 GetFlankingRightLocation
+fp o
+f ffffffff ffffffff 001 e2 GetFlankingLeftLocation
+fp o
+f ffffffff ffffffff 001 e2 GetOppositeLocation
+fp o
+f ffffffff ffffffff 001 e2 GetAheadLocation
+fp o
+f ffffffff ffffffff 001 e2 GetBehindLocation
+fp o
+f ffffffff ffffffff 001 e2 GetForwardFlankingRightLocation
+fp o
+f ffffffff ffffffff 001 e2 GetForwardFlankingLeftLocation
+fp o
+f ffffffff ffffffff 001 e2 GetAheadRightLocation
+fp o
+f ffffffff ffffffff 001 e2 GetAheadLeftLocation
+fp o
+f ffffffff ffffffff 001 e2 GetStepLeftLocation
+fp o
+f ffffffff ffffffff 001 e2 GetStepRightLocation
+fp o
+f ffffffff ffffffff 003 e2 GetRandomLocation
+fp o
+fp o
+fp f
+f ffffffff ffffffff 001 v SpeakLocation
+fp e2
+f ffffffff ffffffff 001 v PrintLocation
+fp e2
+f ffffffff ffffffff 001 f GetNormalizedDirection
+fp f
+f ffffffff ffffffff 004 e2 GenerateNewLocation
+fp o
+fp f
+fp f
+fp f
+f ffffffff ffffffff 004 e2 GenerateNewLocationFromLocation
+fp e2
+fp f
+fp f
+fp f
+f ffffffff ffffffff 001 e2 GetCenterPointOfArea
+fp o
+f ffffffff ffffffff 000 v SQLInit
+f 0000064a 00000658 001 v SQLExecDirect
+fp s
+f 00000658 0000067a 000 i SQLFetch
+f ffffffff ffffffff 000 i SQLFirstRow
+f ffffffff ffffffff 000 i SQLNextRow
+f ffffffff ffffffff 001 s SQLGetData
+fp i
+f ffffffff ffffffff 001 e2 StringToLocation
+fp s
+f ffffffff ffffffff 001 t0000 StringToVector
+fp s
+f 000001b6 000004e4 005 v SetPersistentString
+fp o
+fp s
+fp s
+fp i
+fp s
+f ffffffff ffffffff 005 v SetPersistentInt
+fp o
+fp s
+fp i
+fp i
+fp s
+f ffffffff ffffffff 005 v SetPersistentFloat
+fp o
+fp s
+fp f
+fp i
+fp s
+f ffffffff ffffffff 005 v SetPersistentLocation
+fp o
+fp s
+fp e2
+fp i
+fp s
+f ffffffff ffffffff 005 v SetPersistentVector
+fp o
+fp s
+fp t0000
+fp i
+fp s
+f ffffffff ffffffff 003 s GetPersistentString
+fp o
+fp s
+fp s
+f ffffffff ffffffff 003 i GetPersistentInt
+fp o
+fp s
+fp s
+f ffffffff ffffffff 003 f GetPersistentFloat
+fp o
+fp s
+fp s
+f ffffffff ffffffff 003 e2 GetPersistentLocation
+fp o
+fp s
+fp s
+f ffffffff ffffffff 003 t0000 GetPersistentVector
+fp o
+fp s
+fp s
+f ffffffff ffffffff 003 v DeletePersistentVariable
+fp o
+fp s
+fp s
+f 000004e4 0000064a 001 s SQLEncodeSpecialChars
+fp s
+f ffffffff ffffffff 001 s SQLDecodeSpecialChars
+fp s
+f 00000053 000001b6 000 v main
+f 0000000d 00000015 000 v #loader
+f 00000015 00000053 000 v #globals
+v 00000017 ffffffff 00000000 i SQL_ERROR
+v 0000002d ffffffff 00000004 i SQL_SUCCESS
+v 00000055 000001ae 00000000 o oModule
+v 0000006a 000001ae 00000004 i iHour
+v 0000007f 000001ae 00000008 i iMinute
+v 00000094 000001ae 0000000c i iSecond
+v 000000a9 000001ae 00000010 i iMS
+v 000000be 000001ae 00000014 s sTimeString
+v 000001b6 000004dc 00000000 s sTable
+v 000001b6 000004dc 00000004 i iExpiration
+v 000001b6 000004dc 00000008 s sValue
+v 000001b6 000004dc 0000000c s sVarName
+v 000001b6 000004dc 00000010 o oObject
+v 000001b8 000004d6 00000014 s sPlayer
+v 000001ba 000004d6 00000018 s sTag
+v 0000028d 000004d6 0000001c s sSQL
+v 000004e4 00000648 00000000 s #retval
+v 000004e4 00000642 00000004 s sString
+v 00000536 0000063c 00000008 i i
+v 00000538 0000063c 0000000c s sReturn
+v 0000054c 0000063c 00000010 s sChar
+v 0000064a 00000650 00000000 s sSQL
+v 00000658 00000678 00000000 i #retval
+l00 0000015 00000015 0000002b
+l00 0000016 0000002b 00000041
+l02 0000020 00000053 00000068
+l02 0000021 00000068 0000007d
+l02 0000022 0000007d 00000092
+l02 0000023 00000092 000000a7
+l02 0000024 000000a7 000000bc
+l02 0000026 000000bc 0000011b
+l02 0000029 0000011b 00000149
+l02 0000031 00000149 00000172
+l02 0000033 00000172 000001ae
+l02 0000034 000001b4 000001b6
+l00 0000249 000001b6 000001b8
+l00 0000250 000001b8 000001ba
+l00 0000252 000001ba 000001c7
+l00 0000254 000001cd 000001f0
+l00 0000255 000001f0 00000219
+l00 0000257 0000021f 00000221
+l00 0000259 00000221 00000234
+l00 0000260 00000234 0000024f
+l00 0000263 0000024f 0000026d
+l00 0000264 0000026d 0000028b
+l00 0000266 0000028b 00000319
+l00 0000268 00000319 00000327
+l00 0000270 00000327 00000339
+l00 0000273 0000033f 000003f7
+l00 0000276 000003f7 00000405
+l00 0000278 0000040b 0000040d
+l00 0000281 0000040d 000004c8
+l00 0000284 000004c8 000004d6
+l00 0000286 000004dc 000004e4
+l00 0000391 000004e4 00000506
+l00 0000392 0000050c 0000052e
+l00 0000394 00000534 00000536
+l00 0000395 00000536 0000054a
+l00 0000396 0000054a 0000054c
+l00 0000399 0000054c 00000560
+l00 0000401 0000057d 000005a6
+l00 0000402 000005a6 000005b5
+l00 0000403 000005bb 000005d8
+l00 0000404 000005de 000005e0
+l00 0000405 000005e0 00000600
+l00 0000399 00000600 00000614
+l00 0000407 0000061a 0000063c
+l00 0000408 00000642 0000064a
+l00 0000151 0000064a 00000650
+l00 0000152 00000650 00000658
+l00 0000157 00000658 00000678
+l00 0000158 00000678 0000067a

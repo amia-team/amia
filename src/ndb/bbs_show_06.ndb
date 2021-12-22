@@ -1,0 +1,41 @@
+NDB V1.0
+0000002 0000001 0000008 0000007 0000008
+n00 bbs_include
+N01 bbs_show_06
+s 03 vector
+sf f x
+sf f y
+sf f z
+f ffffffff ffffffff 000 v bbs_do_board_stats
+f ffffffff ffffffff 001 v bbs_initiate
+fp o
+f 00000041 00000178 001 i bbs_can_show
+fp i
+f ffffffff ffffffff 001 v bbs_change_page
+fp i
+f ffffffff ffffffff 001 v bbs_select_entry
+fp i
+f ffffffff ffffffff 006 v bbs_add_notice
+fp o
+fp s
+fp s
+fp s
+fp s
+fp s
+f 00000017 00000041 000 i StartingConditional
+f 0000000d 00000017 000 i #loader
+v 0000000f ffffffff 00000000 i #retval
+v 00000017 0000003f 00000000 i #retval
+v 00000041 00000176 00000000 i #retval
+v 00000041 00000170 00000004 i WhichEntry
+v 00000043 0000016a 00000008 o oBBS
+v 00000072 0000016a 0000000c i PageSize
+v 0000009b 0000016a 00000010 i nSpot
+l01 0000004 00000017 0000003f
+l01 0000005 0000003f 00000041
+l00 0000042 00000041 00000070
+l00 0000043 00000070 00000099
+l00 0000044 00000099 000000d7
+l00 0000045 000000d7 0000011e
+l00 0000046 0000014a 0000016a
+l00 0000047 00000170 00000178

@@ -1,0 +1,11 @@
+//::///////////////////////////////////////////////
+//:: Default On Attacked
+//:://////////////////////////////////////////////
+
+// 2008-07-29 rerouted to ds_ai2
+
+void main( ){
+
+    ExecuteScript( "ds_ai2_attacked", OBJECT_SELF );
+
+}

@@ -1,0 +1,12 @@
+//:://////////////////////////////////////////////////
+//  Default OnDisturbed event handler for NPCs.
+//:://////////////////////////////////////////////////
+
+// 2008-07-29 rerouted to ds_ai2
+
+void main()
+{
+
+    ExecuteScript( "ds_ai2_disturb", OBJECT_SELF );
+
+}

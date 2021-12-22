@@ -1,0 +1,71 @@
+NDB V1.0
+0000003 0000001 0000024 0000005 0000018
+n00 logger
+n01 inc_lootcorpse
+N02 ud_lootcorpse
+s 03 vector
+sf f x
+sf f y
+sf f z
+f ffffffff ffffffff 000 i INITIALIZE
+f ffffffff ffffffff 000 i HORROR_DOOR_OPEN
+f ffffffff ffffffff 000 i SPIRE_DOOR_GATEIN
+f ffffffff ffffffff 000 i SPIRE_DOOR_CREATED
+f ffffffff ffffffff 000 i GAUNTLET_SHOCKERDIED
+f ffffffff ffffffff 000 i CORPSE_DESTROY
+f ffffffff ffffffff 000 i AREA_PCENTER
+f ffffffff ffffffff 000 i AREA_PCEXIT
+f ffffffff ffffffff 000 i SHOCKER_DEATH
+f ffffffff ffffffff 002 v LogDebug
+fp s
+fp s
+f ffffffff ffffffff 002 v LogInfo
+fp s
+fp s
+f ffffffff ffffffff 002 v LogInfoDM
+fp s
+fp s
+f ffffffff ffffffff 002 v LogWarn
+fp s
+fp s
+f ffffffff ffffffff 002 v LogError
+fp s
+fp s
+f ffffffff ffffffff 000 s LOOTCORPSE_HOST_BODY_VAR
+f ffffffff ffffffff 000 s LOOTCORPSE_RESREF
+f ffffffff ffffffff 000 s LOOTCORPSE_DECAY
+f ffffffff ffffffff 000 i LOOTCORPSE_DECAY_DEFAULT
+f ffffffff ffffffff 002 i GetDefaultModuleInt
+fp s
+fp i
+f ffffffff ffffffff 001 v LootCheckInventory
+fp o
+f ffffffff ffffffff 001 v CreateLootableCorpse
+fp o
+f 0000006e 0000019f 001 v DestroyLootableCorpse
+fp o
+f 00000015 0000006e 000 v main
+f 0000000d 00000015 000 v #loader
+v 00000017 00000066 00000000 i nEvent
+v 00000032 00000060 00000004 i #switcheval
+v 0000006e 00000197 00000000 o oCorpse
+v 00000091 00000191 00000004 o oItem
+v 000000f5 00000191 00000008 o oHost
+l02 0000014 00000015 0000002a
+l02 0000015 0000002a 0000004e
+l02 0000016 0000004e 0000004e
+l02 0000017 0000004e 0000005a
+l02 0000018 0000005a 00000060
+l02 0000020 0000006c 0000006e
+l01 0000115 0000006e 0000007d
+l01 0000116 00000083 00000089
+l01 0000118 0000008f 000000ac
+l01 0000119 000000ac 000000bf
+l01 0000120 000000bf 000000d2
+l01 0000121 000000d2 000000ed
+l01 0000124 000000f3 0000011c
+l01 0000125 0000011c 0000012f
+l01 0000127 0000012f 0000013c
+l01 0000128 00000142 00000178
+l01 0000129 00000178 0000018b
+l01 0000131 00000197 0000019f

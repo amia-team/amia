@@ -1,0 +1,150 @@
+NDB V1.0
+0000005 0000001 0000055 0000004 0000012
+n00 nwnx
+n01 nwnx_sql
+n02 sql_api_players
+n03 inc_dc_api
+N04 zol_dc_par_1_act
+s 03 vector
+sf f x
+sf f y
+sf f z
+f ffffffff ffffffff 002 v NWNX_CallFunction
+fp s
+fp s
+f ffffffff ffffffff 003 v NWNX_PushArgumentInt
+fp s
+fp s
+fp i
+f ffffffff ffffffff 003 v NWNX_PushArgumentFloat
+fp s
+fp s
+fp f
+f ffffffff ffffffff 003 v NWNX_PushArgumentObject
+fp s
+fp s
+fp o
+f ffffffff ffffffff 003 v NWNX_PushArgumentString
+fp s
+fp s
+fp s
+f ffffffff ffffffff 003 v NWNX_PushArgumentEffect
+fp s
+fp s
+fp e0
+f ffffffff ffffffff 003 v NWNX_PushArgumentItemProperty
+fp s
+fp s
+fp e4
+f ffffffff ffffffff 002 i NWNX_GetReturnValueInt
+fp s
+fp s
+f ffffffff ffffffff 002 f NWNX_GetReturnValueFloat
+fp s
+fp s
+f ffffffff ffffffff 002 o NWNX_GetReturnValueObject
+fp s
+fp s
+f ffffffff ffffffff 002 s NWNX_GetReturnValueString
+fp s
+fp s
+f ffffffff ffffffff 002 e0 NWNX_GetReturnValueEffect
+fp s
+fp s
+f ffffffff ffffffff 002 e4 NWNX_GetReturnValueItemProperty
+fp s
+fp s
+f ffffffff ffffffff 003 s NWNX_INTERNAL_BuildString
+fp s
+fp s
+fp s
+f ffffffff ffffffff 000 s NWNX_SQL
+f ffffffff ffffffff 001 i NWNX_SQL_PrepareQuery
+fp s
+f ffffffff ffffffff 000 i NWNX_SQL_ExecutePreparedQuery
+f ffffffff ffffffff 001 i NWNX_SQL_ExecuteQuery
+fp s
+f ffffffff ffffffff 000 i NWNX_SQL_ReadyToReadNextRow
+f ffffffff ffffffff 000 v NWNX_SQL_ReadNextRow
+f ffffffff ffffffff 001 s NWNX_SQL_ReadDataInActiveRow
+fp i
+f ffffffff ffffffff 002 v NWNX_SQL_PreparedInt
+fp i
+fp i
+f ffffffff ffffffff 002 v NWNX_SQL_PreparedString
+fp i
+fp s
+f ffffffff ffffffff 002 v NWNX_SQL_PreparedFloat
+fp i
+fp f
+f ffffffff ffffffff 002 v NWNX_SQL_PreparedObjectId
+fp i
+fp o
+f ffffffff ffffffff 003 v NWNX_SQL_PreparedObjectFull
+fp i
+fp o
+fp i
+f ffffffff ffffffff 006 o NWNX_SQL_ReadFullObjectInActiveRow
+fp i
+fp o
+fp f
+fp f
+fp f
+fp i
+f ffffffff ffffffff 000 i NWNX_SQL_GetAffectedRows
+f ffffffff ffffffff 000 s NWNX_SQL_GetDatabaseType
+f ffffffff ffffffff 000 v NWNX_SQL_DestroyPreparedQuery
+f ffffffff ffffffff 000 s NWNX_SQL_GetLastError
+f ffffffff ffffffff 000 i NWNX_SQL_GetPreparedQueryParamCount
+f ffffffff ffffffff 000 i SQL_EXECUTION_FAILED
+f ffffffff ffffffff 000 s DREAMCOINS_TABLE
+f ffffffff ffffffff 000 s PLAYERS_TABLE
+f ffffffff ffffffff 001 s SQL_DCS_buildQueryToGetDreamcoins
+fp s
+f ffffffff ffffffff 001 s SQL_DCS_buildQueryToCreateAccount
+fp s
+f ffffffff ffffffff 001 s SQL_DCS_buildQueryToCheckIfAccountExists
+fp s
+f ffffffff ffffffff 002 s SQL_DCS_buildQueryToSetDreamcoins
+fp s
+fp s
+f ffffffff ffffffff 001 s SQL_Players_buildQueryToCreatePlayerAccount
+fp s
+f ffffffff ffffffff 001 i SQL_SetupPlayerAccount
+fp s
+f ffffffff ffffffff 001 s SQL_DCS_buildQueryToCreateDreamcoinAccount
+fp s
+f ffffffff ffffffff 000 s I_DM_DC_ROD
+f ffffffff ffffffff 000 s I_PC_DC_ROD
+f ffffffff ffffffff 000 s CONV_DM_DC_ROD
+f ffffffff ffffffff 000 s CONV_PC_DC_ROD
+f ffffffff ffffffff 000 s SCRIPTNAME_GIVE_ONE_DC
+f ffffffff ffffffff 000 s LVAR_LAST_ROD_TARGET
+f ffffffff ffffffff 000 s LVAR_PC_CDKEY
+f ffffffff ffffffff 001 i SetupDreamcoinAccount
+fp s
+f ffffffff ffffffff 001 i DreamcoinAccountExists
+fp s
+f ffffffff ffffffff 001 i GetDreamCoins
+fp s
+f ffffffff ffffffff 002 v SetDreamCoins
+fp s
+fp i
+f 00000015 000001ba 000 v main
+f 0000000d 00000015 000 v #loader
+v 00000017 000001b2 00000000 o dungeonMaster
+v 0000002c 000001b2 00000004 o dcRod
+v 00000057 000001b2 00000008 o player
+v 000000a9 000001b2 0000000c o partyMember
+l04 0000005 00000015 0000002a
+l04 0000006 0000002a 00000055
+l04 0000007 00000055 00000080
+l04 0000009 00000080 0000008f
+l04 0000012 00000095 000000a1
+l04 0000015 000000a7 000000ca
+l04 0000017 000000ca 000000e5
+l04 0000019 000000e5 0000011e
+l04 0000021 00000124 00000165
+l04 0000022 00000165 00000185
+l04 0000024 0000018b 000001ac
+l04 0000026 000001b8 000001ba

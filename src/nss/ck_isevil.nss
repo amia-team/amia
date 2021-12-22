@@ -1,0 +1,16 @@
+//::///////////////////////////////////////////////
+//:: FileName a13_checkforevil
+//:://////////////////////////////////////////////
+//:://////////////////////////////////////////////
+//:: Created By: Script Wizard
+//:: Created On: 8/11/2003 6:29:32 PM
+//:://////////////////////////////////////////////
+int StartingConditional()
+{
+
+    // Restrict based on the player's alignment
+    if(GetAlignmentGoodEvil(GetPCSpeaker()) != ALIGNMENT_EVIL)
+        return FALSE;
+
+    return TRUE;
+}

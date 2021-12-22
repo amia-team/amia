@@ -1,0 +1,18 @@
+//::///////////////////////////////////////////////
+//:: FileName ck_haskishout
+//:://////////////////////////////////////////////
+//:://////////////////////////////////////////////
+//:: Created By: Script Wizard
+//:: Created On: 12/02/2006 17:50:24
+//:://////////////////////////////////////////////
+#include "nw_i0_tool"
+
+int StartingConditional()
+{
+
+	// Make sure the PC speaker has these items in their inventory
+	if(!HasItem(GetPCSpeaker(), "ki_shout"))
+		return FALSE;
+
+	return TRUE;
+}

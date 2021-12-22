@@ -1,0 +1,16 @@
+//::///////////////////////////////////////////////
+//:: FileName amiascribe
+//:://////////////////////////////////////////////
+//:://////////////////////////////////////////////
+//:: Created By: Script Wizard
+//:: Created On: 15/01/2005 16:46:35
+//:://////////////////////////////////////////////
+void main()
+{
+    // Give the speaker the items
+    CreateItemOnObject("theamianrecord", GetPCSpeaker(), 1);
+
+
+    // Remove some gold from the player
+    TakeGoldFromCreature(1, GetPCSpeaker(), TRUE);
+}

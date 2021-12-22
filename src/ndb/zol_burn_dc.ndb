@@ -1,0 +1,264 @@
+NDB V1.0
+0000005 0000001 0000056 0000053 0000075
+n00 nwnx
+n01 nwnx_sql
+n02 sql_api_players
+n03 inc_dc_api
+N04 zol_burn_dc
+s 03 vector
+sf f x
+sf f y
+sf f z
+f 00000541 0000056e 002 v NWNX_CallFunction
+fp s
+fp s
+f 000007a0 000007db 003 v NWNX_PushArgumentInt
+fp s
+fp s
+fp i
+f ffffffff ffffffff 003 v NWNX_PushArgumentFloat
+fp s
+fp s
+fp f
+f ffffffff ffffffff 003 v NWNX_PushArgumentObject
+fp s
+fp s
+fp o
+f 000004a7 000004e2 003 v NWNX_PushArgumentString
+fp s
+fp s
+fp s
+f ffffffff ffffffff 003 v NWNX_PushArgumentEffect
+fp s
+fp s
+fp e0
+f ffffffff ffffffff 003 v NWNX_PushArgumentItemProperty
+fp s
+fp s
+fp e4
+f 0000056e 000005ba 002 i NWNX_GetReturnValueInt
+fp s
+fp s
+f ffffffff ffffffff 002 f NWNX_GetReturnValueFloat
+fp s
+fp s
+f ffffffff ffffffff 002 o NWNX_GetReturnValueObject
+fp s
+fp s
+f 000007db 00000827 002 s NWNX_GetReturnValueString
+fp s
+fp s
+f ffffffff ffffffff 002 e0 NWNX_GetReturnValueEffect
+fp s
+fp s
+f ffffffff ffffffff 002 e4 NWNX_GetReturnValueItemProperty
+fp s
+fp s
+f 000004e2 00000541 003 s NWNX_INTERNAL_BuildString
+fp s
+fp s
+fp s
+f ffffffff ffffffff 000 s NWNX_SQL
+f 00000407 000004a7 001 i NWNX_SQL_PrepareQuery
+fp s
+f 000005ba 0000063a 000 i NWNX_SQL_ExecutePreparedQuery
+f ffffffff ffffffff 001 i NWNX_SQL_ExecuteQuery
+fp s
+f 0000063a 000006b8 000 i NWNX_SQL_ReadyToReadNextRow
+f 000006b8 000006f9 000 v NWNX_SQL_ReadNextRow
+f 000006f9 000007a0 001 s NWNX_SQL_ReadDataInActiveRow
+fp i
+f ffffffff ffffffff 002 v NWNX_SQL_PreparedInt
+fp i
+fp i
+f ffffffff ffffffff 002 v NWNX_SQL_PreparedString
+fp i
+fp s
+f ffffffff ffffffff 002 v NWNX_SQL_PreparedFloat
+fp i
+fp f
+f ffffffff ffffffff 002 v NWNX_SQL_PreparedObjectId
+fp i
+fp o
+f ffffffff ffffffff 003 v NWNX_SQL_PreparedObjectFull
+fp i
+fp o
+fp i
+f ffffffff ffffffff 006 o NWNX_SQL_ReadFullObjectInActiveRow
+fp i
+fp o
+fp f
+fp f
+fp f
+fp i
+f ffffffff ffffffff 000 i NWNX_SQL_GetAffectedRows
+f ffffffff ffffffff 000 s NWNX_SQL_GetDatabaseType
+f ffffffff ffffffff 000 v NWNX_SQL_DestroyPreparedQuery
+f ffffffff ffffffff 000 s NWNX_SQL_GetLastError
+f ffffffff ffffffff 000 i NWNX_SQL_GetPreparedQueryParamCount
+f ffffffff ffffffff 000 i SQL_EXECUTION_FAILED
+f ffffffff ffffffff 000 s DREAMCOINS_TABLE
+f ffffffff ffffffff 000 s PLAYERS_TABLE
+f 0000035e 00000407 001 s SQL_DCS_buildQueryToGetDreamcoins
+fp s
+f ffffffff ffffffff 001 s SQL_DCS_buildQueryToCreateAccount
+fp s
+f ffffffff ffffffff 001 s SQL_DCS_buildQueryToCheckIfAccountExists
+fp s
+f 000008d2 0000097b 002 s SQL_DCS_buildQueryToSetDreamcoins
+fp s
+fp s
+f ffffffff ffffffff 001 s SQL_Players_buildQueryToCreatePlayerAccount
+fp s
+f ffffffff ffffffff 001 i SQL_SetupPlayerAccount
+fp s
+f ffffffff ffffffff 001 s SQL_DCS_buildQueryToCreateDreamcoinAccount
+fp s
+f ffffffff ffffffff 000 s I_DM_DC_ROD
+f ffffffff ffffffff 000 s I_PC_DC_ROD
+f ffffffff ffffffff 000 s CONV_DM_DC_ROD
+f ffffffff ffffffff 000 s CONV_PC_DC_ROD
+f ffffffff ffffffff 000 s SCRIPTNAME_GIVE_ONE_DC
+f ffffffff ffffffff 000 s LVAR_LAST_ROD_TARGET
+f ffffffff ffffffff 000 s LVAR_PC_CDKEY
+f ffffffff ffffffff 001 i SetupDreamcoinAccount
+fp s
+f ffffffff ffffffff 001 i DreamcoinAccountExists
+fp s
+f 0000028f 0000035e 001 i GetDreamCoins
+fp s
+f 00000873 000008d2 002 v SetDreamCoins
+fp s
+fp i
+f 00000827 00000873 001 v BurnOneDreamCoin
+fp s
+f 00000015 0000028f 000 v main
+f 0000000d 00000015 000 v #loader
+v 00000017 00000287 00000000 o player
+v 0000002c 00000287 00000004 s cdkey
+v 000000c0 00000287 00000008 i playerXp
+v 000000dd 00000287 0000000c i level
+v 000000fa 00000287 00000010 i gold
+v 0000011a 00000287 00000014 i goalLevel
+v 0000013a 00000287 00000018 i goalXp
+v 00000221 0000025e 0000001c i playerXpPlusHalfOfGoal
+v 0000028f 0000035c 00000000 i #retval
+v 0000028f 00000356 00000004 s cdkey
+v 00000291 00000350 00000008 i dreamcoins
+v 000002a7 00000350 0000000c i success
+v 0000035e 00000405 00000000 s #retval
+v 0000035e 000003ff 00000004 s cdkey
+v 00000360 000003f9 00000008 s queryForDreamcoins
+v 00000407 000004a5 00000000 i #retval
+v 00000407 0000049f 00000004 s query
+v 00000409 00000499 00000008 s sFunc
+v 000004a7 000004da 00000000 s value
+v 000004a7 000004da 00000004 s functionName
+v 000004a7 000004da 00000008 s pluginName
+v 000004e2 0000053f 00000000 s #retval
+v 000004e2 00000539 00000004 s operation
+v 000004e2 00000539 00000008 s functionName
+v 000004e2 00000539 0000000c s pluginName
+v 00000541 00000566 00000000 s functionName
+v 00000541 00000566 00000004 s pluginName
+v 0000056e 000005b8 00000000 i #retval
+v 0000056e 000005b2 00000004 s functionName
+v 0000056e 000005b2 00000008 s pluginName
+v 000005ba 00000638 00000000 i #retval
+v 000005bc 00000632 00000004 s sFunc
+v 0000063a 000006b6 00000000 i #retval
+v 0000063c 000006b0 00000004 s sFunc
+v 000006ba 000006f1 00000000 s sFunc
+v 000006f9 0000079e 00000000 s #retval
+v 000006f9 00000798 00000004 i column
+v 000006fb 00000792 00000008 s sFunc
+v 000007a0 000007d3 00000000 i value
+v 000007a0 000007d3 00000004 s functionName
+v 000007a0 000007d3 00000008 s pluginName
+v 000007db 00000825 00000000 s #retval
+v 000007db 0000081f 00000004 s functionName
+v 000007db 0000081f 00000008 s pluginName
+v 00000827 0000086b 00000000 s cdkey
+v 00000829 00000865 00000004 i currentDreamcoins
+v 00000873 000008ca 00000000 i amount
+v 00000873 000008ca 00000004 s cdkey
+v 00000875 000008c4 00000008 s amountAsAString
+v 000008d2 00000979 00000000 s #retval
+v 000008d2 00000973 00000004 s amount
+v 000008d2 00000973 00000008 s cdkey
+v 000008d4 0000096d 0000000c s setDreamCoinsQuery
+l04 0000008 00000015 0000002a
+l04 0000009 0000002a 0000004d
+l04 0000013 0000004d 00000065
+l04 0000015 0000006b 000000ac
+l04 0000016 000000ac 000000b8
+l04 0000019 000000be 000000db
+l04 0000020 000000db 000000f8
+l04 0000022 000000f8 00000118
+l04 0000023 00000118 00000138
+l04 0000024 00000138 00000172
+l04 0000026 00000172 00000184
+l04 0000028 0000018a 000001da
+l04 0000029 000001da 000001e6
+l04 0000032 000001ec 000001fc
+l04 0000034 00000202 00000217
+l04 0000036 0000021d 0000021f
+l04 0000038 0000021f 00000249
+l04 0000039 00000249 0000025e
+l04 0000043 00000264 00000279
+l04 0000045 00000279 00000287
+l04 0000046 0000028d 0000028f
+l03 0000057 0000028f 000002a5
+l03 0000060 000002a5 000002cd
+l03 0000061 000002cd 000002db
+l03 0000063 000002db 000002fb
+l03 0000065 00000301 00000307
+l03 0000066 00000307 00000328
+l03 0000069 0000032e 00000350
+l03 0000070 00000356 0000035e
+l02 0000029 0000035e 000003d7
+l02 0000030 000003d7 000003f9
+l02 0000031 000003ff 00000407
+l01 0000105 00000407 00000427
+l01 0000107 00000427 00000449
+l01 0000108 00000449 00000463
+l01 0000109 00000463 00000499
+l01 0000110 0000049f 000004a7
+l00 0000070 000004a7 000004da
+l00 0000071 000004da 000004e2
+l00 0000044 000004e2 00000539
+l00 0000045 00000539 00000541
+l00 0000050 00000541 00000566
+l00 0000051 00000566 0000056e
+l00 0000085 0000056e 000005b2
+l00 0000086 000005b2 000005ba
+l01 0000114 000005ba 000005e2
+l01 0000116 000005e2 000005fc
+l01 0000117 000005fc 00000632
+l01 0000118 00000638 0000063a
+l01 0000135 0000063a 00000660
+l01 0000137 00000660 0000067a
+l01 0000138 0000067a 000006b0
+l01 0000139 000006b6 000006b8
+l01 0000143 000006b8 000006d7
+l01 0000145 000006d7 000006f1
+l01 0000146 000006f7 000006f9
+l01 0000150 000006f9 00000720
+l01 0000152 00000720 00000742
+l01 0000153 00000742 0000075c
+l01 0000154 0000075c 00000792
+l01 0000155 00000798 000007a0
+l00 0000055 000007a0 000007d3
+l00 0000056 000007d3 000007db
+l00 0000100 000007db 0000081f
+l00 0000101 0000081f 00000827
+l04 0000051 00000827 00000847
+l04 0000053 00000847 00000865
+l04 0000054 0000086b 00000873
+l03 0000078 00000873 00000890
+l03 0000080 00000890 000008b6
+l03 0000081 000008b6 000008c4
+l03 0000082 000008ca 000008d2
+l02 0000048 000008d2 0000094b
+l02 0000049 0000094b 0000096d
+l02 0000050 00000973 0000097b

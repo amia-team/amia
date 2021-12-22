@@ -1,0 +1,219 @@
+NDB V1.0
+0000002 0000001 0000042 0000029 0000060
+n00 inc_td_sysdata
+N01 npc_save_action
+s 03 vector
+sf f x
+sf f y
+sf f z
+f ffffffff ffffffff 000 s BUFFER
+f 00000762 00000a84 003 s NWNX_DoSystemDataCall
+fp s
+fp s
+fp o
+f ffffffff ffffffff 000 i NWNX_GetSystemDataAlive
+f ffffffff ffffffff 001 i NWNX_GetCurrentSecond
+fp i
+f ffffffff ffffffff 000 i NWNX_GetRunTime
+f ffffffff ffffffff 004 i NWNX_ReadIntFromINI
+fp s
+fp s
+fp i
+fp s
+f ffffffff ffffffff 004 s NWNX_ReadStringFromINI
+fp s
+fp s
+fp s
+fp s
+f ffffffff ffffffff 004 f NWNX_ReadFloatFromINI
+fp s
+fp s
+fp f
+fp s
+f ffffffff ffffffff 004 i NWNX_ReadBooleanFromINI
+fp s
+fp s
+fp i
+fp s
+f ffffffff ffffffff 004 v NWNX_WriteIntToINI
+fp s
+fp s
+fp i
+fp s
+f ffffffff ffffffff 004 v NWNX_WriteStringToINI
+fp s
+fp s
+fp s
+fp s
+f ffffffff ffffffff 004 v NWNX_WriteFloatToINI
+fp s
+fp s
+fp f
+fp s
+f ffffffff ffffffff 004 v NWNX_WriteBooleanToINI
+fp s
+fp s
+fp i
+fp s
+f ffffffff ffffffff 002 s NWNX_RealLifeClock
+fp s
+fp i
+f ffffffff ffffffff 001 i NWNX_System
+fp s
+f ffffffff ffffffff 001 s NWNX_GetEnvironmentString
+fp s
+f ffffffff ffffffff 001 i NWNX_CharToInt
+fp s
+f ffffffff ffffffff 005 s NWNX_IntToChar
+fp i
+fp i
+fp i
+fp i
+fp i
+f ffffffff ffffffff 001 s NWNX_GetFirstFile
+fp s
+f ffffffff ffffffff 000 s NWNX_GetNextFile
+f ffffffff ffffffff 002 i NWNX_GetTimeStampFromFile
+fp i
+fp s
+f 00000709 00000762 001 i NWNX_DeleteFile
+fp s
+f ffffffff ffffffff 003 i NWNX_CopyFile
+fp s
+fp s
+fp i
+f ffffffff ffffffff 003 i NWNX_MoveFile
+fp s
+fp s
+fp i
+f ffffffff ffffffff 002 i NWNX_RenameFile
+fp s
+fp s
+f ffffffff ffffffff 002 s NWNX_StripFilePath
+fp s
+fp i
+f ffffffff ffffffff 003 i NWNX_WriteStringToTextFile
+fp s
+fp s
+fp i
+f ffffffff ffffffff 001 s NWNX_ReadStringFromTextFile
+fp s
+f ffffffff ffffffff 002 i NWNX_SetGoldPieceValue
+fp o
+fp i
+f ffffffff ffffffff 001 i NWNX_GetFileSize
+fp s
+f ffffffff ffffffff 001 s NWNX_GetLatestUsedFile
+fp s
+f ffffffff ffffffff 001 i NWNX_GetFileExists
+fp s
+f ffffffff ffffffff 001 v NWNX_TerminateProcess
+fp s
+f ffffffff ffffffff 000 i GetServerRunTime
+f ffffffff ffffffff 004 i ReadBooleanFromINI
+fp s
+fp s
+fp i
+fp s
+f ffffffff ffffffff 001 i GetCurrentSecond
+fp i
+f ffffffff ffffffff 000 s PATH
+f 00000297 0000052e 003 v ChangeValue
+fp o
+fp s
+fp s
+f 000005c7 00000709 001 s GetKey
+fp o
+f 0000052e 000005c7 001 v DeleteStuff
+fp o
+f 00000015 00000297 000 v main
+f 0000000d 00000015 000 v #loader
+v 00000017 0000028f 00000000 o oPC
+v 0000002d 0000028f 00000004 i nNode
+v 00000055 0000028f 00000008 o oItem
+v 00000297 00000526 00000000 s value
+v 00000297 00000526 00000004 s key
+v 00000297 00000526 00000008 o oItem
+v 000002b7 00000520 0000000c s sDesc
+v 000002e0 00000520 00000010 i nDescLen
+v 00000328 0000043d 00000014 i nLen
+v 00000345 0000043d 00000018 i nStart
+v 00000370 0000043d 0000001c i nEnd
+v 000003a4 0000043d 00000020 s sLeft
+v 000003cf 0000043d 00000024 s sRight
+v 0000044d 0000051a 00000014 s sNew
+v 00000465 0000051a 00000018 s last
+v 0000052e 000005bf 00000000 o oKeyItem
+v 00000530 000005b9 00000004 s sKey
+v 000005c7 00000707 00000000 s #retval
+v 000005c7 00000701 00000004 o oKeyItem
+v 000005c9 000006fb 00000008 s sDesc
+v 0000061e 000006d1 0000000c i nStart
+v 00000652 000006d1 00000010 i nEnd
+v 00000709 00000760 00000000 i #retval
+v 00000709 0000075a 00000004 s sFile
+v 00000762 00000a82 00000000 s #retval
+v 00000762 00000a7c 00000004 o oObject
+v 00000762 00000a7c 00000008 s sParameters
+v 00000762 00000a7c 0000000c s sRequest
+v 000009cb 00000a76 00000010 s sReturn
+l01 0000061 00000015 0000002b
+l01 0000062 0000002b 00000053
+l01 0000063 00000053 0000007d
+l01 0000065 0000007d 0000008d
+l01 0000066 00000093 000000b3
+l01 0000067 000000b3 000000e5
+l01 0000069 000000eb 000000ed
+l01 0000070 00000103 00000122
+l01 0000071 00000122 00000155
+l01 0000073 0000015b 0000015d
+l01 0000074 00000173 0000018e
+l01 0000075 0000018e 000001bd
+l01 0000077 000001c3 000001c5
+l01 0000078 000001db 000001f5
+l01 0000079 000001f5 00000227
+l01 0000081 0000022d 0000022f
+l01 0000082 00000245 00000253
+l01 0000083 00000253 00000289
+l01 0000085 00000295 00000297
+l01 0000005 00000297 000002b5
+l01 0000007 000002b5 000002de
+l01 0000008 000002de 000002fb
+l01 0000010 000002fb 00000320
+l01 0000012 00000326 00000343
+l01 0000013 00000343 0000036e
+l01 0000014 0000036e 000003a2
+l01 0000016 000003a2 000003cd
+l01 0000017 000003cd 00000404
+l01 0000018 00000404 0000043d
+l01 0000020 00000449 0000044b
+l01 0000022 0000044b 00000463
+l01 0000024 00000463 00000496
+l01 0000025 00000496 000004a5
+l01 0000026 000004ab 000004c8
+l01 0000029 000004ce 000004ff
+l01 0000031 000004ff 0000051a
+l01 0000033 00000526 0000052e
+l01 0000052 0000052e 0000054e
+l01 0000053 0000054e 00000579
+l01 0000054 00000579 00000591
+l01 0000055 00000591 000005a8
+l01 0000056 000005a8 000005b9
+l01 0000057 000005bf 000005c7
+l01 0000037 000005c7 000005f0
+l01 0000039 000005f0 00000616
+l01 0000041 0000061c 00000650
+l01 0000042 00000650 0000067a
+l01 0000043 0000067a 000006af
+l01 0000044 000006af 000006d1
+l01 0000047 000006dd 000006fb
+l01 0000048 00000701 00000709
+l00 0000235 00000709 0000075a
+l00 0000236 0000075a 00000762
+l00 0000367 00000762 00000771
+l00 0000368 00000777 0000078a
+l00 0000370 00000790 000009c9
+l00 0000372 000009c9 00000a05
+l00 0000374 00000a05 00000a31
+l00 0000376 00000a31 00000a76
+l00 0000378 00000a7c 00000a84

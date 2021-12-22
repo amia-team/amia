@@ -1,0 +1,26 @@
+NDB V1.0
+0000002 0000001 0000012 0000000 0000001
+n00 inc_nwnx_events
+N01 nwnx_ev_validate
+s 03 vector
+sf f x
+sf f y
+sf f z
+f ffffffff ffffffff 001 i EVENTS_GetData
+fp i
+f ffffffff ffffffff 000 i EVENTS_GetEvent
+f ffffffff ffffffff 001 e2 EVENTS_GetTargetLocation
+fp i
+f ffffffff ffffffff 001 s EVENTS_GetString
+fp i
+f ffffffff ffffffff 001 o EVENTS_GetTarget
+fp i
+f ffffffff ffffffff 001 v EVENTS_Bypass
+fp i
+f ffffffff ffffffff 000 o InstantGetItemActivator
+f ffffffff ffffffff 000 o InstantGetItemActivated
+f ffffffff ffffffff 000 o InstantGetItemActivatedTarget
+f ffffffff ffffffff 000 e2 InstantGetItemActivatedTargetLocation
+f 00000015 00000017 000 v main
+f 0000000d 00000015 000 v #loader
+l01 0000005 00000015 00000017

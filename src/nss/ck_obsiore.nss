@@ -1,0 +1,18 @@
+//::///////////////////////////////////////////////
+//:: FileName ck_obsiore
+//:://////////////////////////////////////////////
+//:://////////////////////////////////////////////
+//:: Created By: Script Wizard
+//:: Created On: 10/01/2005 01:38:52
+//:://////////////////////////////////////////////
+#include "nw_i0_tool"
+
+int StartingConditional()
+{
+
+	// Make sure the PC speaker has these items in their inventory
+	if(!HasItem(GetPCSpeaker(), "ObsidianOre"))
+		return FALSE;
+
+	return TRUE;
+}

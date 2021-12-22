@@ -1,0 +1,18 @@
+//::///////////////////////////////////////////////
+//:: FileName ck_hasetterform
+//:://////////////////////////////////////////////
+//:://////////////////////////////////////////////
+//:: Created By: Script Wizard
+//:: Created On: 17/03/2005 17:11:08
+//:://////////////////////////////////////////////
+#include "nw_i0_tool"
+
+int StartingConditional()
+{
+
+	// Make sure the PC speaker has these items in their inventory
+	if(!HasItem(GetPCSpeaker(), "ettercapform"))
+		return FALSE;
+
+	return TRUE;
+}

@@ -1,0 +1,16 @@
+//::///////////////////////////////////////////////
+//:: FileName ck_maxlevel
+//:://////////////////////////////////////////////
+//:://////////////////////////////////////////////
+//:: Created By: Script Wizard
+//:: Created On: 2015-01-27 11:44:14 PM
+//:://////////////////////////////////////////////
+int StartingConditional()
+{
+
+	// Make sure the player has the required skills
+	if(!GetHasSkill(SKILL_CONCENTRATION, GetPCSpeaker()))
+		return FALSE;
+
+	return TRUE;
+}

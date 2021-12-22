@@ -1,0 +1,828 @@
+NDB V1.0
+0000005 0000008 0000362 0000012 0000057
+n00 nwnx_funcs_effst
+n01 nwnx_funcs
+n02 nwnx
+n03 nwnx_admin
+N04 amia_reset
+s 03 vector
+sf f x
+sf f y
+sf f z
+s 05 gameeffect_s
+sf i Type
+sf s Creator
+sf i SpellID
+sf i NumInts
+sf s Ints
+s 06 localvar_s
+sf i iType
+sf s sName
+sf o obj
+sf i nPos
+sf s sLabel
+sf s sCommand
+s 07 itemproperty_s
+sf i Type
+sf i SubType
+sf i Chance
+sf i CostTable
+sf i CostTablevalue
+sf i Param1
+sf i Param1Value
+s 04 MemorizedSpellSlot
+sf i id
+sf i ready
+sf i meta
+sf i domain
+s 04 levelstats_s
+sf i iClass
+sf i iHP
+sf i iSkillPoints
+sf i iAbility
+s 06 quickslot_s
+sf i iType
+sf i iClass
+sf i iParam1
+sf i iMetaMagic
+sf s sS1
+sf s sS2
+s 02 immunity_override_s
+sf i Override1
+sf i Override_Death
+f 00000282 000002af 002 v NWNX_CallFunction
+fp s
+fp s
+f ffffffff ffffffff 003 v NWNX_PushArgumentInt
+fp s
+fp s
+fp i
+f ffffffff ffffffff 003 v NWNX_PushArgumentFloat
+fp s
+fp s
+fp f
+f ffffffff ffffffff 003 v NWNX_PushArgumentObject
+fp s
+fp s
+fp o
+f ffffffff ffffffff 003 v NWNX_PushArgumentString
+fp s
+fp s
+fp s
+f ffffffff ffffffff 003 v NWNX_PushArgumentEffect
+fp s
+fp s
+fp e0
+f ffffffff ffffffff 003 v NWNX_PushArgumentItemProperty
+fp s
+fp s
+fp e4
+f ffffffff ffffffff 002 i NWNX_GetReturnValueInt
+fp s
+fp s
+f ffffffff ffffffff 002 f NWNX_GetReturnValueFloat
+fp s
+fp s
+f ffffffff ffffffff 002 o NWNX_GetReturnValueObject
+fp s
+fp s
+f ffffffff ffffffff 002 s NWNX_GetReturnValueString
+fp s
+fp s
+f ffffffff ffffffff 002 e0 NWNX_GetReturnValueEffect
+fp s
+fp s
+f ffffffff ffffffff 002 e4 NWNX_GetReturnValueItemProperty
+fp s
+fp s
+f 000002af 0000030e 003 s NWNX_INTERNAL_BuildString
+fp s
+fp s
+fp s
+f ffffffff ffffffff 000 i LV_TYPE_INT
+f ffffffff ffffffff 000 i LV_TYPE_FLT
+f ffffffff ffffffff 000 i LV_TYPE_STR
+f ffffffff ffffffff 000 i LV_TYPE_OBJ
+f ffffffff ffffffff 000 i LV_TYPE_LOC
+f ffffffff ffffffff 000 i EVENT_CREATURE_HEARTBEAT
+f ffffffff ffffffff 000 i EVENT_CREATURE_PERCEPTION
+f ffffffff ffffffff 000 i EVENT_CREATURE_SPELLCASTAT
+f ffffffff ffffffff 000 i EVENT_CREATURE_ATTACKED
+f ffffffff ffffffff 000 i EVENT_CREATURE_DAMAGED
+f ffffffff ffffffff 000 i EVENT_CREATURE_DISTURBED
+f ffffffff ffffffff 000 i EVENT_CREATURE_ENDCOMBAT
+f ffffffff ffffffff 000 i EVENT_CREATURE_DIALOG
+f ffffffff ffffffff 000 i EVENT_CREATURE_SPAWN
+f ffffffff ffffffff 000 i EVENT_CREATURE_RESTED
+f ffffffff ffffffff 000 i EVENT_CREATURE_DEATH
+f ffffffff ffffffff 000 i EVENT_CREATURE_USERDEFINDED
+f ffffffff ffffffff 000 i EVENT_CREATURE_BLOCKED
+f ffffffff ffffffff 000 i EVENT_AREA_HEARTBEAT
+f ffffffff ffffffff 000 i EVENT_AREA_USERDEFINED
+f ffffffff ffffffff 000 i EVENT_AREA_ENTER
+f ffffffff ffffffff 000 i EVENT_AREA_EXIT
+f ffffffff ffffffff 000 i EVENT_PLACEABLE_CLOSED
+f ffffffff ffffffff 000 i EVENT_PLACEABLE_DAMAGED
+f ffffffff ffffffff 000 i EVENT_PLACEABLE_DEATH
+f ffffffff ffffffff 000 i EVENT_PLACEABLE_DISARM
+f ffffffff ffffffff 000 i EVENT_PLACEABLE_HEARTBEAT
+f ffffffff ffffffff 000 i EVENT_PLACEABLE_DISTURBED
+f ffffffff ffffffff 000 i EVENT_PLACEABLE_LOCK
+f ffffffff ffffffff 000 i EVENT_PLACEABLE_ATTACKED
+f ffffffff ffffffff 000 i EVENT_PLACEABLE_OPEN
+f ffffffff ffffffff 000 i EVENT_PLACEABLE_SPELLCASTAT
+f ffffffff ffffffff 000 i EVENT_PLACEABLE_TRAPTRIGGERED
+f ffffffff ffffffff 000 i EVENT_PLACEABLE_UNLOCK
+f ffffffff ffffffff 000 i EVENT_PLACEABLE_USED
+f ffffffff ffffffff 000 i EVENT_PLACEABLE_USERDEFINED
+f ffffffff ffffffff 000 i EVENT_PLACEABLE_DIALOG
+f ffffffff ffffffff 000 i EVENT_PLACEABLE_CLICK
+f ffffffff ffffffff 000 i EVENT_AOE_HEARTBEAT
+f ffffffff ffffffff 000 i EVENT_AOE_USERDEFINED
+f ffffffff ffffffff 000 i EVENT_AOE_ENTER
+f ffffffff ffffffff 000 i EVENT_AOE_EXIT
+f ffffffff ffffffff 000 i EVENT_DOOR_OPEN
+f ffffffff ffffffff 000 i EVENT_DOOR_CLOSED
+f ffffffff ffffffff 000 i EVENT_DOOR_DAMAGED
+f ffffffff ffffffff 000 i EVENT_DOOR_DEATH
+f ffffffff ffffffff 000 i EVENT_DOOR_DISARM
+f ffffffff ffffffff 000 i EVENT_DOOR_HEARTBEAT
+f ffffffff ffffffff 000 i EVENT_DOOR_LOCK
+f ffffffff ffffffff 000 i EVENT_DOOR_ATTACKED
+f ffffffff ffffffff 000 i EVENT_DOOR_SPELLCASTAT
+f ffffffff ffffffff 000 i EVENT_DOOR_TRAPTRIGGERED
+f ffffffff ffffffff 000 i EVENT_DOOR_UNLOCK
+f ffffffff ffffffff 000 i EVENT_DOOR_USERDEFINED
+f ffffffff ffffffff 000 i EVENT_DOOR_CLICK
+f ffffffff ffffffff 000 i EVENT_DOOR_DIALOG
+f ffffffff ffffffff 000 i EVENT_DOOR_FAILTOOPEN
+f ffffffff ffffffff 000 i EVENT_ENCOUNTER_ENTERED
+f ffffffff ffffffff 000 i EVENT_ENCOUNTER_EXIT
+f ffffffff ffffffff 000 i EVENT_ENCOUNTER_HEARTBEAT
+f ffffffff ffffffff 000 i EVENT_ENCOUNTER_EXHAUSTED
+f ffffffff ffffffff 000 i EVENT_ENCOUNTER_USERDEFINED
+f ffffffff ffffffff 000 i EVENT_MODULE_HEARTBEAT
+f ffffffff ffffffff 000 i EVENT_MODULE_USRDEFINED
+f ffffffff ffffffff 000 i EVENT_MODULE_MODLOAD
+f ffffffff ffffffff 000 i EVENT_MODULE_MODSTART
+f ffffffff ffffffff 000 i EVENT_MODULE_CLIENTENTR
+f ffffffff ffffffff 000 i EVENT_MODULE_CLIENTLEAV
+f ffffffff ffffffff 000 i EVENT_MODULE_ACTVTITEM
+f ffffffff ffffffff 000 i EVENT_MODULE_ACQUIRITEM
+f ffffffff ffffffff 000 i EVENT_MODULE_UNAQREITEM
+f ffffffff ffffffff 000 i EVENT_MODULE_PLRDEATH
+f ffffffff ffffffff 000 i EVENT_MODULE_PLRDYING
+f ffffffff ffffffff 000 i EVENT_MODULE_SPAWNBTNDN
+f ffffffff ffffffff 000 i EVENT_MODULE_PLRREST
+f ffffffff ffffffff 000 i EVENT_MODULE_PLRLVLUP
+f ffffffff ffffffff 000 i EVENT_MODULE_CUTSNABORT
+f ffffffff ffffffff 000 i EVENT_MODULE_PLREQITM
+f ffffffff ffffffff 000 i EVENT_MODULE_PLRUNEQITM
+f ffffffff ffffffff 000 i EVENT_MODULE_PLRCHAT
+f ffffffff ffffffff 000 i EVENT_STORE_OPENSTORE
+f ffffffff ffffffff 000 i EVENT_STORE_CLOSESTORE
+f ffffffff ffffffff 000 i EVENT_TRIGGER_HEARTBEAT
+f ffffffff ffffffff 000 i EVENT_TRIGGER_ENTER
+f ffffffff ffffffff 000 i EVENT_TRIGGER_EXIT
+f ffffffff ffffffff 000 i EVENT_TRIGGER_USERDEFINED
+f ffffffff ffffffff 000 i EVENT_TRIGGER_TRAPTRIGGERED
+f ffffffff ffffffff 000 i EVENT_TRIGGER_DISARM
+f ffffffff ffffffff 000 i EVENT_TRIGGER_CLICK
+f ffffffff ffffffff 000 i ITEM_VALUE_IDENTIFIED
+f ffffffff ffffffff 000 i ITEM_VALUE_UNIDENTIFIED
+f ffffffff ffffffff 000 i ITEM_VALUE_ADDITIONAL
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_INVALID
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_ITEM
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_SPELL
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_PARRY
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_FEAT
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_TALKTO
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_ATTACK
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_EMOTE
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_MODE
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_CREATECREATURE
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_CREATEITEM
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_CREATEENCOUNTER
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_CREATEWAYPOINT
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_CREATETRIGGER
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_CREATEPORTAL
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_CREATEPLACEABLE
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_MACRO
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_TOGGLEINVULNERABLE
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_FORCEREST
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_GOTO
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_HEAL
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_KILL
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_TAKECONTROL
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_TAKECONTROLFULLPOWERS
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_GIVEGOLD
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_TAKEGOLD
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_GIVEITEM
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_TAKEITEM
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_GIVEXP
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_TAKEXP
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_GIVELEVEL
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_TAKELEVEL
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_LIMBO
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_TOGGLEAI
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_POSSESSFAMILIAR
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_EXAMINE
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_BARTER
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_ASSOCIATECOMMAND
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_CANCELPOLYMORPH
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_SPELLLIKEABILITY
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_SHIFTALIGNMENTGOOD
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_SHIFTALIGNMENTEVIL
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_SHIFTALIGNMENTLAWFUL
+f ffffffff ffffffff 000 i QUICKBAR_TYPE_DM_SHIFTALIGNMENTCHAOTIC
+f ffffffff ffffffff 000 i TIMINGBAR_LABEL_FLAGTRAP
+f ffffffff ffffffff 000 i TIMINGBAR_LABEL_RECOVERTRAP
+f ffffffff ffffffff 000 i TIMINGBAR_LABEL_DISARMTRAP
+f ffffffff ffffffff 000 i TIMINGBAR_LABEL_EXAMINETRAP
+f ffffffff ffffffff 000 i TIMINGBAR_LABEL_SETTRAP
+f ffffffff ffffffff 000 i TIMINGBAR_LABEL_REST
+f ffffffff ffffffff 000 i TIMINGBAR_LABEL_UNLOCK
+f ffffffff ffffffff 000 i TIMINGBAR_LABEL_LOCK
+f ffffffff ffffffff 000 i TIMINGBAR_LABEL_NONE
+f ffffffff ffffffff 001 o NWNXFuncs_StringToObject
+fp s
+f ffffffff ffffffff 000 i NWNXFuncs_GetAreaCount
+f ffffffff ffffffff 001 o NWNXFuncs_GetAreaByPosition
+fp i
+f ffffffff ffffffff 000 o NWNXFuncs_GetFirstArea
+f ffffffff ffffffff 000 o NWNXFuncs_GetNextArea
+f ffffffff ffffffff 001 i NWNXFuncs_GetLocalVariableCount
+fp o
+f ffffffff ffffffff 002 t0002 NWNXFuncs_GetLocalVarByPosition
+fp o
+fp i
+f ffffffff ffffffff 001 t0002 NWNXFuncs_GetFirstLocalVariable
+fp o
+f ffffffff ffffffff 001 t0002 NWNXFuncs_GetNextLocalVariable
+fp t0002
+f ffffffff ffffffff 003 i NWNXFuncs_GetHasLocalVariable
+fp o
+fp s
+fp i
+f ffffffff ffffffff 002 v NWNXFuncs_SetLastEffectSpellID
+fp o
+fp i
+f ffffffff ffffffff 003 v NWNXFuncs_SetLastEffectCreator
+fp o
+fp o
+fp s
+f ffffffff ffffffff 001 v NWNXFuncs_DumpEffects
+fp o
+f ffffffff ffffffff 001 v NWNXFuncs_DumpLocals
+fp o
+f ffffffff ffffffff 002 v NWNXFuncs_SetGold
+fp o
+fp i
+f ffffffff ffffffff 004 v NWNXFuncs_SetAbilityScore
+fp o
+fp i
+fp i
+fp i
+f ffffffff ffffffff 004 v NWNXFuncs_ModAbilityScore
+fp o
+fp i
+fp i
+fp i
+f ffffffff ffffffff 003 v NWNXFuncs_AddFeat
+fp o
+fp i
+fp i
+f ffffffff ffffffff 002 v NWNXFuncs_SetXP
+fp o
+fp i
+f ffffffff ffffffff 002 v NWNXFuncs_SetRace
+fp o
+fp i
+f ffffffff ffffffff 003 v NWNXFuncs_SetBaseAC
+fp o
+fp i
+fp i
+f ffffffff ffffffff 002 i NWNXFuncs_GetBaseAC
+fp o
+fp i
+f ffffffff ffffffff 003 v NWNXFuncs_SetBonusAC
+fp o
+fp i
+fp i
+f ffffffff ffffffff 002 i NWNXFuncs_GetBonusAC
+fp o
+fp i
+f ffffffff ffffffff 003 v NWNXFuncs_SetPenaltyAC
+fp o
+fp i
+fp i
+f ffffffff ffffffff 002 i NWNXFuncs_GetPenaltyAC
+fp o
+fp i
+f ffffffff ffffffff 003 v NWNXFuncs_SetSavedSkillPoints
+fp o
+fp i
+fp i
+f ffffffff ffffffff 002 i NWNXFuncs_GetSavedSkillPoints
+fp o
+fp i
+f ffffffff ffffffff 003 v NWNXFuncs_SetArmorCheckPenalty
+fp o
+fp i
+fp i
+f ffffffff ffffffff 002 i NWNXFuncs_GetArmorCheckPenalty
+fp o
+fp i
+f ffffffff ffffffff 001 i NWNXFuncs_GetMovementRate
+fp o
+f ffffffff ffffffff 002 v NWNXFuncs_SetFamiliarType
+fp o
+fp i
+f ffffffff ffffffff 002 v NWNXFuncs_SetAnimalCompanion
+fp o
+fp i
+f ffffffff ffffffff 003 v NWNXFuncs_SetHitPointsByLevel
+fp o
+fp i
+fp i
+f ffffffff ffffffff 003 v NWNXFuncs_ModHitPointsByLevel
+fp o
+fp i
+fp i
+f ffffffff ffffffff 002 v NWNXFuncs_SetCurrentHitPoints
+fp o
+fp i
+f ffffffff ffffffff 002 v NWNXFuncs_SetMaxHitPoints
+fp o
+fp i
+f ffffffff ffffffff 003 v NWNXFuncs_SetSavingThrowBonus
+fp o
+fp i
+fp i
+f ffffffff ffffffff 003 v NWNXFuncs_ModSavingThrowBonus
+fp o
+fp i
+fp i
+f ffffffff ffffffff 003 v NWNXFuncs_SetSkill
+fp o
+fp i
+fp i
+f ffffffff ffffffff 003 v NWNXFuncs_ModSkill
+fp o
+fp i
+fp i
+f ffffffff ffffffff 004 v NWNXFuncs_SetSkillByLevel
+fp o
+fp i
+fp i
+fp i
+f ffffffff ffffffff 004 v NWNXFuncs_ModSkillByLevel
+fp o
+fp i
+fp i
+fp i
+f ffffffff ffffffff 002 v NWNXFuncs_SetCreatureSize
+fp o
+fp i
+f ffffffff ffffffff 001 i NWNXFuncs_GetEquippedWeight
+fp o
+f ffffffff ffffffff 003 v NWNXFuncs_ModSavedSkillPoints
+fp o
+fp i
+fp i
+f ffffffff ffffffff 003 i NWNXFuncs_RemoveFeat
+fp o
+fp i
+fp i
+f ffffffff ffffffff 002 i NWNXFuncs_GetFeatKnown
+fp o
+fp i
+f ffffffff ffffffff 002 s NWNXFuncs_GetAllKnownFeats
+fp o
+fp s
+f ffffffff ffffffff 002 v NWNXFuncs_RemoveAllFeats
+fp o
+fp i
+f ffffffff ffffffff 001 v NWNXFuncs_SetAllSkillsToZero
+fp o
+f ffffffff ffffffff 005 v NWNXFuncs_AddKnownSpell
+fp o
+fp i
+fp i
+fp i
+fp i
+f ffffffff ffffffff 004 v NWNXFuncs_RemoveKnownSpell
+fp o
+fp i
+fp i
+fp i
+f ffffffff ffffffff 004 i NWNXFuncs_GetKnowsSpell
+fp o
+fp i
+fp i
+fp i
+f ffffffff ffffffff 002 v NWNXFuncs_RemoveAllSpells
+fp o
+fp i
+f ffffffff ffffffff 002 v NWNXFuncs_SetBaseAttackBonusOverride
+fp o
+fp i
+f ffffffff ffffffff 002 v NWNXFuncs_ModBaseAttackBonusOverride
+fp o
+fp i
+f ffffffff ffffffff 001 i NWNXFuncs_GetBaseAttackBonusOverride
+fp o
+f ffffffff ffffffff 002 v NWNXFuncs_SetItemWeight
+fp o
+fp i
+f ffffffff ffffffff 004 v NWNXFuncs_SetItemValue
+fp o
+fp i
+fp i
+fp i
+f ffffffff ffffffff 002 i NWNXFuncs_GetItemValue
+fp o
+fp i
+f ffffffff ffffffff 002 v NWNXFuncs_SetItemCharges
+fp o
+fp i
+f ffffffff ffffffff 003 v NWNXFuncs_SetDomain
+fp o
+fp i
+fp i
+f ffffffff ffffffff 002 i NWNXFuncs_GetDomain
+fp o
+fp i
+f ffffffff ffffffff 002 v NWNXFuncs_SetWizardSpecialization
+fp o
+fp i
+f ffffffff ffffffff 001 i NWNXFuncs_GetWizardSpecialization
+fp o
+f ffffffff ffffffff 004 v NWNXFuncs_ReplaceKnownSpell
+fp o
+fp i
+fp i
+fp i
+f ffffffff ffffffff 003 i NWNXFuncs_GetRemainingSpellSlots
+fp o
+fp i
+fp i
+f ffffffff ffffffff 004 v NWNXFuncs_SetRemainingSpellSlots
+fp o
+fp i
+fp i
+fp i
+f ffffffff ffffffff 003 i NWNXFuncs_GetMaxSpellSlots
+fp o
+fp i
+fp i
+f ffffffff ffffffff 003 i NWNXFuncs_GetBonusSpellSlots
+fp o
+fp i
+fp i
+f ffffffff ffffffff 004 t0004 NWNXFuncs_GetMemorizedSpellSlot
+fp o
+fp i
+fp i
+fp i
+f ffffffff ffffffff 005 v NWNXFuncs_SetMemorizedSpellSlot
+fp o
+fp i
+fp i
+fp i
+fp t0004
+f ffffffff ffffffff 004 v NWNXFuncs_RestoreMemorizedSpells
+fp o
+fp i
+fp i
+fp i
+f ffffffff ffffffff 001 i NWNXFuncs_GetFeatCount
+fp o
+f ffffffff ffffffff 004 s NWNXFuncs_GetKnownSpells
+fp o
+fp i
+fp i
+fp s
+f ffffffff ffffffff 003 i NWNXFuncs_GetKnownSpellCount
+fp o
+fp i
+fp i
+f ffffffff ffffffff 002 v NWNXFuncs_SetConversation
+fp o
+fp s
+f ffffffff ffffffff 001 s NWNXFuncs_GetConversation
+fp o
+f ffffffff ffffffff 002 v NWNXFuncs_SetBodyBag
+fp o
+fp i
+f ffffffff ffffffff 001 i NWNXFuncs_GetBodyBag
+fp o
+f ffffffff ffffffff 002 s NWNXFuncs_GetFeatsGainedAtLevel
+fp o
+fp i
+f ffffffff ffffffff 002 s NWNXFuncs_GetSkillRanksGainedAtLevel
+fp o
+fp i
+f ffffffff ffffffff 003 s NWNXFuncs_GetSpellsGainedAtLevel
+fp o
+fp i
+fp i
+f ffffffff ffffffff 002 t0005 NWNXFuncs_GetStatsGainedAtLevel
+fp o
+fp i
+f ffffffff ffffffff 002 t0006 NWNXFuncs_GetQuickSlot
+fp o
+fp i
+f ffffffff ffffffff 004 v NWNXFuncs_SetQuickSlot
+fp o
+fp i
+fp t0006
+fp i
+f ffffffff ffffffff 001 v NWNXFuncs_UpdateQuickbarGUI
+fp o
+f ffffffff ffffffff 003 v NWNXFuncs_SetClassByPosition
+fp o
+fp i
+fp i
+f ffffffff ffffffff 002 v NWNXFuncs_SetGender
+fp o
+fp i
+f ffffffff ffffffff 003 v NWNXFuncs_SetWorldDateTime
+fp i
+fp i
+fp i
+f ffffffff ffffffff 000 i NWNXFuncs_GetWorldDate
+f ffffffff ffffffff 000 i NWNXFuncs_GetWorldTime
+f ffffffff ffffffff 001 i NWNXFuncs_GetFactionID
+fp o
+f ffffffff ffffffff 002 v NWNXFuncs_SetFactionID
+fp o
+fp i
+f ffffffff ffffffff 001 i NWNXFuncs_GetSoundSetID
+fp o
+f ffffffff ffffffff 002 v NWNXFuncs_SetSoundSetID
+fp o
+fp i
+f ffffffff ffffffff 002 i NWNXFuncs_GetSavingThrowBonus
+fp o
+fp i
+f ffffffff ffffffff 001 v NWNXFuncs_JumpCreatureToLimbo
+fp o
+f ffffffff ffffffff 003 v NWNXFuncs_SetClassLevel
+fp o
+fp i
+fp i
+f ffffffff ffffffff 002 i NWNXFuncs_GetDamageImmunity
+fp o
+fp i
+f ffffffff ffffffff 001 i NWNXFuncs_GetHighestEffectID
+fp o
+f ffffffff ffffffff 002 i NWNXFuncs_GetFirstEffectInternal
+fp o
+fp i
+f ffffffff ffffffff 001 i NWNXFuncs_GetNextEffectInternal
+fp o
+f ffffffff ffffffff 000 i NWNXFuncs_GetEffectRemainingDurationInternal
+f ffffffff ffffffff 000 s NWNXFuncs_GetEffectIntegersInternal
+f ffffffff ffffffff 001 i NWNXFuncs_GetEffectIntegerInternal
+fp i
+f ffffffff ffffffff 002 v NWNXFuncs_SetEffectIntegerInternal
+fp i
+fp i
+f ffffffff ffffffff 000 i NWNXFuncs_GetEffectIDInternal
+f ffffffff ffffffff 001 i NWNXFuncs_GetEffectTypeInternal
+fp i
+f ffffffff ffffffff 000 i NWNXFuncs_GetEffectSubTypeInternal
+f ffffffff ffffffff 000 s NWNXFuncs_GetEffectCreatorInternal
+f ffffffff ffffffff 000 i NWNXFuncs_GetEffectSpellIdInternal
+f ffffffff ffffffff 000 i NWNXFuncs_GetEffectDurationTypeInternal
+f ffffffff ffffffff 000 v NWNXFuncs_QueueRemoveEffectInternal
+f ffffffff ffffffff 001 v NWNXFuncs_RemoveQueuedEffectsInternal
+fp o
+f ffffffff ffffffff 001 s NWNXFuncs_GetEffectIntegers
+fp o
+f ffffffff ffffffff 002 i NWNXFuncs_GetEffectInteger
+fp o
+fp i
+f ffffffff ffffffff 003 v NWNXFuncs_SetEffectInteger
+fp o
+fp i
+fp i
+f ffffffff ffffffff 001 f NWNXFuncs_GetEffectRemainingDuration
+fp o
+f ffffffff ffffffff 001 i NWNXFuncs_GetEffectID
+fp o
+f ffffffff ffffffff 001 i NWNXFuncs_GetEffectRealType
+fp o
+f ffffffff ffffffff 003 v NWNXFuncs_ApplyVisualEffectForPC
+fp o
+fp i
+fp t0000
+f ffffffff ffffffff 002 v NWNXFuncs_SetCustomTrapGeometry
+fp s
+fp i
+f ffffffff ffffffff 001 v NWNXFuncs_RotateCustomTrapGeometry
+fp f
+f ffffffff ffffffff 001 s NWNXFuncs_GetTrapGeometry
+fp o
+f ffffffff ffffffff 001 i NWNXFuncs_GetSurfaceMaterial
+fp e2
+f ffffffff ffffffff 001 v NWNXFuncs_SetDebugLevel
+fp i
+f ffffffff ffffffff 003 v NWNXFuncs_StartTimingbar
+fp o
+fp i
+fp i
+f ffffffff ffffffff 001 v NWNXFuncs_StopTimingbar
+fp o
+f ffffffff ffffffff 002 v NWNXFuncs_SetAge
+fp o
+fp i
+f ffffffff ffffffff 002 v NWNXFuncs_SetTag
+fp o
+fp s
+f ffffffff ffffffff 002 s NWNXFuncs_GetEventScript
+fp o
+fp i
+f ffffffff ffffffff 003 v NWNXFuncs_SetEventScript
+fp o
+fp s
+fp i
+f ffffffff ffffffff 000 v NWNXFuncs_ClearPlayerTURDs
+f ffffffff ffffffff 003 v NWNXFuncs_SetClassByLevel
+fp o
+fp i
+fp i
+f ffffffff ffffffff 003 v NWNXFuncs_ReplaceClass
+fp o
+fp i
+fp i
+f ffffffff ffffffff 001 v NWNXFuncs_UpdateCharacterSheet
+fp o
+f ffffffff ffffffff 002 t0007 AddImmunityOverride
+fp t0007
+fp i
+f ffffffff ffffffff 002 v SetImmunityOverride
+fp o
+fp t0007
+f ffffffff ffffffff 001 v RemoveImmunityOverride
+fp o
+f ffffffff ffffffff 001 e0 NWNXFuncs_EffectCustomEffect
+fp t0001
+f ffffffff ffffffff 003 v NWNXFuncs_SetEffectCreatorByEffectID
+fp o
+fp i
+fp s
+f ffffffff ffffffff 003 v NWNXFuncs_SetEffectSpellIDByEffectID
+fp o
+fp i
+fp i
+f ffffffff ffffffff 000 s NWNX_Administration
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_ALL_KILLABLE
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_NON_PARTY_KILLABLE
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_REQUIRE_RESURRECTION
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_LOSE_STOLEN_ITEMS
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_LOSE_ITEMS
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_LOSE_EXP
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_LOSE_GOLD
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_LOSE_GOLD_NUM
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_LOSE_EXP_NUM
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_LOSE_ITEMS_NUM
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_PVP_SETTING
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_PAUSE_AND_PLAY
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_ONE_PARTY_ONLY
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_ENFORCE_LEGAL_CHARACTERS
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_ITEM_LEVEL_RESTRICTIONS
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_CDKEY_BANLIST_ALLOWLIST
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_DISALLOW_SHOUTING
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_SHOW_DM_JOIN_MESSAGE
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_BACKUP_SAVED_CHARACTERS
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_AUTO_FAIL_SAVE_ON_1
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_VALIDATE_SPELLS
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_EXAMINE_EFFECTS
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_EXAMINE_CHALLENGE_RATING
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_USE_MAX_HITPOINTS
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_RESTORE_SPELLS_USES
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_RESET_ENCOUNTER_SPAWN_POOL
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_OPTION_HIDE_HITPOINTS_GAINED
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_DEBUG_COMBAT
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_DEBUG_SAVING_THROW
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_DEBUG_MOVEMENT_SPEED
+f ffffffff ffffffff 000 i NWNX_ADMINISTRATION_DEBUG_HIT_DIE
+f ffffffff ffffffff 000 s NWNX_Administration_GetPlayerPassword
+f ffffffff ffffffff 001 v NWNX_Administration_SetPlayerPassword
+fp s
+f ffffffff ffffffff 000 v NWNX_Administration_ClearPlayerPassword
+f ffffffff ffffffff 000 s NWNX_Administration_GetDMPassword
+f ffffffff ffffffff 001 v NWNX_Administration_SetDMPassword
+fp s
+f 00000233 00000282 000 v NWNX_Administration_ShutdownServer
+f ffffffff ffffffff 002 v NWNX_Administration_DeletePlayerCharacter
+fp o
+fp i
+f ffffffff ffffffff 001 v NWNX_Administration_AddBannedIP
+fp s
+f ffffffff ffffffff 001 v NWNX_Administration_RemoveBannedIP
+fp s
+f ffffffff ffffffff 001 v NWNX_Administration_AddBannedCDKey
+fp s
+f ffffffff ffffffff 001 v NWNX_Administration_RemoveBannedCDKey
+fp s
+f ffffffff ffffffff 001 v NWNX_Administration_AddBannedPlayerName
+fp s
+f ffffffff ffffffff 001 v NWNX_Administration_RemoveBannedPlayerName
+fp s
+f ffffffff ffffffff 000 s NWNX_Administration_GetBannedList
+f ffffffff ffffffff 001 v NWNX_Administration_SetModuleName
+fp s
+f ffffffff ffffffff 001 v NWNX_Administration_SetServerName
+fp s
+f ffffffff ffffffff 000 s NWNX_Administration_GetServerName
+f ffffffff ffffffff 001 i NWNX_Administration_GetPlayOption
+fp i
+f ffffffff ffffffff 002 v NWNX_Administration_SetPlayOption
+fp i
+fp i
+f ffffffff ffffffff 002 i NWNX_Administration_DeleteTURD
+fp s
+fp s
+f ffffffff ffffffff 001 i NWNX_Administration_GetDebugValue
+fp i
+f ffffffff ffffffff 002 v NWNX_Administration_SetDebugValue
+fp i
+fp i
+f ffffffff ffffffff 000 v NWNX_Administration_ReloadRules
+f 0000019e 00000233 001 v RemovePolymorph
+fp o
+f 00000021 0000019e 000 v main
+f 0000000d 00000015 000 v #loader
+f 00000015 00000021 000 v #globals
+v 00000023 00000196 00000000 o oPCs
+v 00000038 00000196 00000004 o oModule
+v 0000004d 00000196 00000008 s sMessage
+v 0000019e 0000022b 00000000 o oPC
+v 000001a0 00000225 00000004 e0 eLoop
+v 00000235 0000027a 00000000 s sFunc
+v 00000282 000002a7 00000000 s functionName
+v 00000282 000002a7 00000004 s pluginName
+v 000002af 0000030c 00000000 s #retval
+v 000002af 00000306 00000004 s operation
+v 000002af 00000306 00000008 s functionName
+v 000002af 00000306 0000000c s pluginName
+l00 0000002 00000015 00000015
+l00 0000003 00000015 00000015
+l00 0000004 00000015 00000015
+l00 0000005 00000015 00000015
+l00 0000006 00000015 00000015
+l01 0000163 00000015 00000015
+l01 0000164 00000015 00000015
+l01 0000165 00000015 00000015
+l01 0000166 00000015 00000015
+l01 0000167 00000015 00000015
+l01 0000168 00000015 00000015
+l01 0000172 00000015 00000015
+l01 0000173 00000015 00000015
+l01 0000174 00000015 00000015
+l01 0000175 00000015 00000015
+l01 0000176 00000015 00000015
+l01 0000177 00000015 00000015
+l01 0000178 00000015 00000015
+l01 0000182 00000015 00000015
+l01 0000183 00000015 00000015
+l01 0000187 00000015 00000015
+l01 0000188 00000015 00000015
+l01 0000189 00000015 00000015
+l01 0000190 00000015 00000015
+l01 0000194 00000015 00000015
+l01 0000195 00000015 00000015
+l01 0000196 00000015 00000015
+l01 0000197 00000015 00000015
+l01 0000200 00000015 00000015
+l01 0000201 00000015 00000015
+l01 0000205 00000015 00000015
+l01 0000206 00000015 00000015
+l04 0000010 00000021 00000036
+l04 0000011 00000036 0000004b
+l04 0000012 0000004b 000000bc
+l04 0000015 000000bc 000000dd
+l04 0000017 000000dd 000000f0
+l04 0000019 000000f0 000000fd
+l04 0000020 000000fd 00000112
+l04 0000021 00000112 00000120
+l04 0000022 00000120 0000015a
+l04 0000024 0000015a 0000016d
+l04 0000026 00000173 00000196
+l04 0000027 0000019c 0000019e
+l04 0000031 0000019e 000001bb
+l04 0000033 000001bb 000001ce
+l04 0000035 000001ce 000001e3
+l04 0000037 000001e9 000001fe
+l04 0000040 00000204 0000021f
+l04 0000042 0000022b 00000233
+l03 0000201 00000233 00000255
+l03 0000203 00000255 0000027a
+l03 0000204 00000280 00000282
+l02 0000050 00000282 000002a7
+l02 0000051 000002a7 000002af
+l02 0000044 000002af 00000306
+l02 0000045 00000306 0000030e

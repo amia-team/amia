@@ -1,0 +1,232 @@
+NDB V1.0
+0000003 0000001 0000064 0000016 0000042
+n00 aps_include
+n01 x0_i0_position
+N02 messages_onconv
+s 03 vector
+sf f x
+sf f y
+sf f z
+f ffffffff ffffffff 000 f DISTANCE_TINY
+f ffffffff ffffffff 000 f DISTANCE_SHORT
+f ffffffff ffffffff 000 f DISTANCE_MEDIUM
+f ffffffff ffffffff 000 f DISTANCE_LARGE
+f ffffffff ffffffff 000 f DISTANCE_HUGE
+f ffffffff ffffffff 001 s LocationToString
+fp e2
+f ffffffff ffffffff 001 s VectorToString
+fp t0000
+f ffffffff ffffffff 002 v MoveToNewLocation
+fp e2
+fp o
+f ffffffff ffffffff 002 f GetChangeInX
+fp f
+fp f
+f ffffffff ffffffff 002 f GetChangeInY
+fp f
+fp f
+f ffffffff ffffffff 003 t0000 GetChangedPosition
+fp t0000
+fp f
+fp f
+f ffffffff ffffffff 002 f GetAngleBetweenLocations
+fp e2
+fp e2
+f ffffffff ffffffff 001 f GetOppositeDirection
+fp f
+f ffffffff ffffffff 001 f GetRightDirection
+fp f
+f ffffffff ffffffff 001 f GetHalfRightDirection
+fp f
+f ffffffff ffffffff 001 f GetFarRightDirection
+fp f
+f ffffffff ffffffff 002 f GetCustomRightDirection
+fp f
+fp f
+f ffffffff ffffffff 001 f GetLeftDirection
+fp f
+f ffffffff ffffffff 001 f GetHalfLeftDirection
+fp f
+f ffffffff ffffffff 001 f GetFarLeftDirection
+fp f
+f ffffffff ffffffff 002 f GetCustomLeftDirection
+fp f
+fp f
+f ffffffff ffffffff 002 v TurnToFaceObject
+fp o
+fp o
+f ffffffff ffffffff 001 e2 GetFlankingRightLocation
+fp o
+f ffffffff ffffffff 001 e2 GetFlankingLeftLocation
+fp o
+f ffffffff ffffffff 001 e2 GetOppositeLocation
+fp o
+f ffffffff ffffffff 001 e2 GetAheadLocation
+fp o
+f ffffffff ffffffff 001 e2 GetBehindLocation
+fp o
+f ffffffff ffffffff 001 e2 GetForwardFlankingRightLocation
+fp o
+f ffffffff ffffffff 001 e2 GetForwardFlankingLeftLocation
+fp o
+f ffffffff ffffffff 001 e2 GetAheadRightLocation
+fp o
+f ffffffff ffffffff 001 e2 GetAheadLeftLocation
+fp o
+f ffffffff ffffffff 001 e2 GetStepLeftLocation
+fp o
+f ffffffff ffffffff 001 e2 GetStepRightLocation
+fp o
+f ffffffff ffffffff 003 e2 GetRandomLocation
+fp o
+fp o
+fp f
+f ffffffff ffffffff 001 v SpeakLocation
+fp e2
+f ffffffff ffffffff 001 v PrintLocation
+fp e2
+f ffffffff ffffffff 001 f GetNormalizedDirection
+fp f
+f ffffffff ffffffff 004 e2 GenerateNewLocation
+fp o
+fp f
+fp f
+fp f
+f ffffffff ffffffff 004 e2 GenerateNewLocationFromLocation
+fp e2
+fp f
+fp f
+fp f
+f ffffffff ffffffff 001 e2 GetCenterPointOfArea
+fp o
+f ffffffff ffffffff 000 v SQLInit
+f 0000025b 00000269 001 v SQLExecDirect
+fp s
+f 00000269 0000028b 000 i SQLFetch
+f ffffffff ffffffff 000 i SQLFirstRow
+f ffffffff ffffffff 000 i SQLNextRow
+f 0000028b 000002b1 001 s SQLGetData
+fp i
+f ffffffff ffffffff 001 e2 StringToLocation
+fp s
+f ffffffff ffffffff 001 t0000 StringToVector
+fp s
+f ffffffff ffffffff 005 v SetPersistentString
+fp o
+fp s
+fp s
+fp i
+fp s
+f ffffffff ffffffff 005 v SetPersistentInt
+fp o
+fp s
+fp i
+fp i
+fp s
+f ffffffff ffffffff 005 v SetPersistentFloat
+fp o
+fp s
+fp f
+fp i
+fp s
+f ffffffff ffffffff 005 v SetPersistentLocation
+fp o
+fp s
+fp e2
+fp i
+fp s
+f ffffffff ffffffff 005 v SetPersistentVector
+fp o
+fp s
+fp t0000
+fp i
+fp s
+f ffffffff ffffffff 003 s GetPersistentString
+fp o
+fp s
+fp s
+f ffffffff ffffffff 003 i GetPersistentInt
+fp o
+fp s
+fp s
+f ffffffff ffffffff 003 f GetPersistentFloat
+fp o
+fp s
+fp s
+f ffffffff ffffffff 003 e2 GetPersistentLocation
+fp o
+fp s
+fp s
+f ffffffff ffffffff 003 t0000 GetPersistentVector
+fp o
+fp s
+fp s
+f ffffffff ffffffff 003 v DeletePersistentVariable
+fp o
+fp s
+fp s
+f ffffffff ffffffff 001 s SQLEncodeSpecialChars
+fp s
+f 000002b1 00000417 001 s SQLDecodeSpecialChars
+fp s
+f 00000053 0000025b 000 v main
+f 0000000d 00000015 000 v #loader
+f 00000015 00000053 000 v #globals
+v 00000017 ffffffff 00000000 i SQL_ERROR
+v 0000002d ffffffff 00000004 i SQL_SUCCESS
+v 00000055 00000253 00000000 i i
+v 00000057 00000253 00000004 i nResult
+v 00000059 00000253 00000008 i nCount
+v 0000007d 00000253 0000000c s sVariable
+v 0000007f 00000253 00000010 s sMessage
+v 0000025b 00000261 00000000 s sSQL
+v 00000269 00000289 00000000 i #retval
+v 0000028b 000002af 00000000 s #retval
+v 0000028b 000002a9 00000004 i iCol
+v 000002b1 00000415 00000000 s #retval
+v 000002b1 0000040f 00000004 s sString
+v 00000303 00000409 00000008 i i
+v 00000305 00000409 0000000c s sReturn
+v 00000319 00000409 00000010 s sChar
+l00 0000015 00000015 0000002b
+l00 0000016 0000002b 00000041
+l02 0000038 00000053 00000055
+l02 0000039 00000055 00000057
+l02 0000040 00000057 0000007b
+l02 0000041 0000007b 0000007d
+l02 0000042 0000007d 0000007f
+l02 0000044 0000007f 00000089
+l02 0000047 0000008f 000000ef
+l02 0000049 000000ef 00000107
+l02 0000051 00000107 00000123
+l02 0000053 00000123 00000131
+l02 0000055 00000137 0000014b
+l02 0000056 0000014b 0000016e
+l02 0000057 0000016e 00000191
+l02 0000061 0000019d 000001b9
+l02 0000062 000001b9 000001cf
+l02 0000067 000001d5 00000205
+l02 0000068 00000205 00000226
+l02 0000070 00000226 00000234
+l02 0000072 0000023a 0000024d
+l02 0000075 00000259 0000025b
+l00 0000151 0000025b 00000261
+l00 0000152 00000261 00000269
+l00 0000157 00000269 00000289
+l00 0000158 00000289 0000028b
+l00 0000175 0000028b 000002a9
+l00 0000176 000002a9 000002b1
+l00 0000412 000002b1 000002d3
+l00 0000413 000002d9 000002fb
+l00 0000415 00000301 00000303
+l00 0000416 00000303 00000317
+l00 0000417 00000317 00000319
+l00 0000420 00000319 0000032d
+l00 0000422 0000034a 00000373
+l00 0000423 00000373 00000382
+l00 0000424 00000388 000003a5
+l00 0000425 000003ab 000003ad
+l00 0000426 000003ad 000003cd
+l00 0000420 000003cd 000003e1
+l00 0000428 000003e7 00000409
+l00 0000429 0000040f 00000417

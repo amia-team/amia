@@ -1,0 +1,18 @@
+//::///////////////////////////////////////////////
+//:: FileName ck_hasass4
+//:://////////////////////////////////////////////
+//:://////////////////////////////////////////////
+//:: Created By: Script Wizard
+//:: Created On: 29/10/2005 16:12:04
+//:://////////////////////////////////////////////
+#include "nw_i0_tool"
+
+int StartingConditional()
+{
+
+	// Make sure the PC speaker has these items in their inventory
+	if(!HasItem(GetPCSpeaker(), "asnimpinv"))
+		return FALSE;
+
+	return TRUE;
+}

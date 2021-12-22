@@ -1,0 +1,18 @@
+//::///////////////////////////////////////////////
+//:: FileName ck_gland
+//:://////////////////////////////////////////////
+//:://////////////////////////////////////////////
+//:: Created By: Script Wizard
+//:: Created On: 5/21/2003 4:35:22 PM
+//:://////////////////////////////////////////////
+#include "nw_i0_tool"
+
+int StartingConditional()
+{
+
+	// Make sure the PC speaker has these items in their inventory
+	if(!HasItem(GetPCSpeaker(), "NW_IT_MSMLMISC07"))
+		return FALSE;
+
+	return TRUE;
+}

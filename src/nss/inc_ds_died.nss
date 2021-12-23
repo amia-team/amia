@@ -60,7 +60,7 @@ void ResolveNormalDeath( object oKiller, object oVictim );
 int ResolvePvpRespawn( object oVictim );
 
 //deals with a non-PvP respawn
-int ResolveNormalRespawn( object oVictim );
+void ResolveNormalRespawn( object oVictim );
 
 //PvP mode toggle in Rest Menu and PvP Tool
 void SetPvpMode( object oVictim );
@@ -352,23 +352,23 @@ void SetPvpMode( object oVictim ){
 
     if ( nNode == 1 ){
 
-        SendMessageToPC( oVictim, "<c þ >PvP Mode set to </c><cþþ >Subdue</c> <c þ >[default]</c>" );
+        SendMessageToPC( oVictim, "<c ï¿½ >PvP Mode set to </c><cï¿½ï¿½ >Subdue</c> <c ï¿½ >[default]</c>" );
         SetPvpStatus( oVictim, DIED_SUBDUAL_MODE );
     }
     else if ( nNode == 2 ){
 
-        SendMessageToPC( oVictim, "<c þ >PvP Mode set to </c><cþ¥ >Duel</c>" );
+        SendMessageToPC( oVictim, "<c ï¿½ >PvP Mode set to </c><cï¿½ï¿½ >Duel</c>" );
         SetPvpStatus( oVictim, DIED_DUEL_MODE );
     }
     else if ( nNode == 3 ){
 
 
-        SendMessageToPC( oVictim, "<c þ >PvP Mode set to </c><cþ  >Brawl</c>" );
+        SendMessageToPC( oVictim, "<c ï¿½ >PvP Mode set to </c><cï¿½  >Brawl</c>" );
         SetPvpStatus( oVictim, DIED_BRAWL_MODE );
     }
     else{
 
-        SendMessageToPC( oVictim, "<c þ >PvP Mode Disabled</c>" );
+        SendMessageToPC( oVictim, "<c ï¿½ >PvP Mode Disabled</c>" );
         SetPvpStatus( oVictim, 0 );
     }
 }

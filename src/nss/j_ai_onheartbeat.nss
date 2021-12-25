@@ -41,7 +41,7 @@
 ************************* [On Heartbeat] **************************************/
 
 // - This includes J_Inc_Constants
-#include "J_INC_HEARTBEAT"
+#include "j_inc_heartbeat"
 
 void main() {int a = 0; }  // 20050313 JEK creature heartbeat disabled entirely
                            // JP says engine likes at least one instruction in a script

@@ -4,7 +4,7 @@
 // Creation Date: 28 January 2008
 ////////////////////////////////////////////////
 
-#include "acp_S3_diffstyle"
+#include "acp_s3_diffstyle"
 
 //Sets Bear's Claw style
 

@@ -11,8 +11,8 @@
 //:: Created By: Preston Watamaniuk
 //:: Created On: May 9, 2001
 //:://////////////////////////////////////////////
-#include "X0_I0_SPELLS"
-
+#include "x0_i0_spells"
+#include "inc_td_shifter"
 void main()
 {
     // Hack for the Evil Glare spell.

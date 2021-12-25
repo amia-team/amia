@@ -11,6 +11,7 @@
 */
 
 #include "x0_i0_spells"
+#include "inc_td_shifter"
 
 void BlastDamage(object oCaster, object oRadius, int nCasterLvl);
 

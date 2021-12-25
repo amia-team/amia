@@ -13,7 +13,7 @@
 #include "x0_i0_spells"
 #include "x2_inc_toollib"
 #include "x2_I0_SPELLS"
-
+#include "inc_td_shifter"
 void QuellaCombust( object oCaster, object oTarget, int nCasterLevel, int nDC );
 void RunCombustImpact(object oTarget, object oCaster, int nLevel, int nMetaMagic);
 

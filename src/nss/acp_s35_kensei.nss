@@ -4,7 +4,7 @@
 // Creation Date: 09 March 2007
 ////////////////////////////////////////////////
 
-#include "acp_S3_diffstyle"
+#include "acp_s3_diffstyle"
 
 //Sets kensei style
 

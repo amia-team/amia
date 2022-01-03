@@ -11,7 +11,7 @@
 */
 
 #include "x0_i0_spells"
-
+#include "inc_td_shifter"
 void main()
 {
     //Gather spell details

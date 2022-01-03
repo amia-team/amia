@@ -13,6 +13,7 @@
 //:://////////////////////////////////////////////
 //:: Last Updated By:
 
+#include "inc_td_shifter"
 #include "X0_I0_SPELLS"
 #include "x2_inc_spellhook"
 void main()

@@ -36,6 +36,14 @@ void main(){
         return; // Do nothing, for now.
     }
 
+    object oPCKey = GetItemPossessedBy(enteringPlayer, "ds_pckey");
+    int nLycan = GetLocalInt(oPCKey, "lycanapproved");
+
+    if(nLycan == 1)
+    {
+      SetLocalInt(enteringPlayer,"Prereq_Lycan",1);
+    }
+
     //RDD SR and Immunity Calculations
     int nDDLevels = GetLevelByClass(CLASS_TYPE_DRAGON_DISCIPLE,enteringPlayer);
     int nSRIncrease = 0;

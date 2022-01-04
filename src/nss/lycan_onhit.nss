@@ -17,11 +17,16 @@ void main()
     object oTarget = GetSpellTargetObject();
     string sLycanType = GetLocalString(oLycan, "lycanType");
     int nLevel = GetLevelByPosition(1,oTarget) + GetLevelByPosition(2,oTarget) + GetLevelByPosition(3,oTarget);
-    //int nRandom = Random(100*nLevel) + 1;
-    int nRandom = 5;
+    int nRandom = Random(100*nLevel) + 1;
 
     if((GetHasFeat(1249,oTarget) == TRUE) || (GetHasFeat(1250,oTarget) == TRUE) || (GetHasFeat(1251,oTarget) == TRUE)
-    || (GetHasFeat(1252,oTarget) == TRUE) || (GetHasFeat(1253,oTarget) == TRUE) || (GetHasFeat(1254,oTarget) == TRUE))
+    || (GetHasFeat(1252,oTarget) == TRUE) || (GetHasFeat(1253,oTarget) == TRUE) || (GetHasFeat(1254,oTarget) == TRUE)
+    || (GetHasFeat(1276,oTarget) == TRUE))
+    {
+      return;
+    }
+
+    if(GetLevelByClass(CLASS_TYPE_PALADIN,oLycan) >= 1)
     {
       return;
     }
@@ -52,6 +57,10 @@ void main()
        {
          DelayCommand( 5.0, NWNX_Creature_AddFeat( oTarget, 1254));  // 1254 Wererat
        }
-       SendMessageToPC(oTarget, "*You start to feel ill, like something isn't right. Your body shivers and you start to feel sick.*");
+       else if(sLycanType == "chicken")
+       {
+         DelayCommand( 5.0, NWNX_Creature_AddFeat( oTarget, 1276));  // 1276 Werechicken
+       }
+       SendMessageToPC(oTarget, "*You start to feel ill, like something instead right. Your body shivers and you start to feel sick*");
     }
 }

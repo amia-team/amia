@@ -19,6 +19,10 @@ void main()
     int     nLevel = GetLevelByPosition(1,oPC) + GetLevelByPosition(2,oPC) + GetLevelByPosition(3,oPC);
     effect  ePoly;
     int     nPoly;
+    int     nSpell = GetSpellId();
+    int nAnimal;
+    int nAnimalSkin;
+    int nAnimalPo;
 
     if(GetHasFeat(1249,oPC)) // Wolf
     {
@@ -46,6 +50,11 @@ void main()
         {
            nPoly = 268;
         }
+
+
+      nAnimalSkin = 1486;
+      nAnimalPo = 319;
+
     }
     else if(GetHasFeat(1250,oPC))  // Bear
     {
@@ -73,6 +82,9 @@ void main()
         {
            nPoly = 274;
         }
+
+      nAnimalSkin = 1502;
+      nAnimalPo = 148;
     }
     else if(GetHasFeat(1251,oPC)) // Cat
     {
@@ -100,6 +112,9 @@ void main()
         {
            nPoly = 280;
         }
+
+      nAnimalSkin = 1507;
+      nAnimalPo = 560;
     }
     else if(GetHasFeat(1252,oPC)) // Boar
     {
@@ -127,6 +142,9 @@ void main()
         {
            nPoly = 286;
         }
+
+      nAnimalSkin = 1814;
+      nAnimalPo = 152;
     }
     else if(GetHasFeat(1253,oPC)) // Bat
     {
@@ -154,6 +172,9 @@ void main()
         {
            nPoly = 292;
         }
+
+      nAnimalSkin = 1087;
+      nAnimalPo = 145;
     }
     else if(GetHasFeat(1254,oPC))   // Rat
     {
@@ -181,32 +202,103 @@ void main()
         {
            nPoly = 298;
         }
+
+      nAnimalSkin = 1257;
+      nAnimalPo = 602;
+    }
+    else if(GetHasFeat(1276,oPC))   // Chicken
+    {
+        if((nLevel >= 25) && (nLevelLycan==5))
+        {
+           nPoly = 309;
+        }
+        else if((nLevel >= 20) && (nLevelLycan==4))
+        {
+           nPoly = 308;
+        }
+        else if((nLevel >= 15) && (nLevelLycan==3))
+        {
+           nPoly = 307;
+        }
+        else if((nLevel >= 10) && (nLevelLycan==2))
+        {
+           nPoly = 306;
+        }
+        else if(nLevel >= 5)
+        {
+           nPoly = 305;
+        }
+        else if(nLevel >= 1)
+        {
+           nPoly = 304;
+        }
+
+      nAnimalSkin = 31;
+      nAnimalPo = 168;
     }
 
 
+    int nStrBefore,nConBefore,nDexBefore,nStrAfter,nConAfter,nDexAfter;
+    nStrBefore = GetAbilityScore(OBJECT_SELF, ABILITY_STRENGTH, TRUE);
+    nConBefore = GetAbilityScore(OBJECT_SELF, ABILITY_CONSTITUTION, TRUE);
+    nDexBefore = GetAbilityScore(OBJECT_SELF, ABILITY_DEXTERITY, TRUE);
+    nStrAfter = StringToInt( Get2DAString( "polymorph", "STR", nPoly ) );
+    nConAfter = StringToInt( Get2DAString( "polymorph", "CON", nPoly ) );
+    nDexAfter = StringToInt( Get2DAString( "polymorph", "DEX", nPoly ) );
+    SendMessageToPC( OBJECT_SELF, "<c þ >STR: " + IntToString(nStrBefore) + " -> " + IntToString(nStrAfter));
+    SendMessageToPC( OBJECT_SELF, "<c þ >DEX: " + IntToString(nDexBefore) + " -> " + IntToString(nDexAfter));
+    SendMessageToPC( OBJECT_SELF, "<c þ >CON: " + IntToString(nConBefore) + " -> " + IntToString(nConAfter));
+    if ( nStrBefore > nStrAfter ) {
+        ePoly = EffectLinkEffects( EffectAbilityIncrease( ABILITY_STRENGTH, ( nStrBefore - nStrAfter ) ), ePoly);
+    }
+    if ( nConBefore > nConAfter ) {
+        ePoly = EffectLinkEffects( EffectAbilityIncrease( ABILITY_CONSTITUTION, ( nConBefore - nConAfter ) ), ePoly);
+    }
+    if ( nDexBefore > nDexAfter ) {
+        ePoly = EffectLinkEffects( EffectAbilityIncrease( ABILITY_DEXTERITY, ( nDexBefore - nDexAfter ) ), ePoly);
+    }
+
+
+    // Bonus AC
+    effect eACEffect = EffectACIncrease( nLevel/5, AC_SHIELD_ENCHANTMENT_BONUS );
+    eACEffect = EffectLinkEffects( EffectACIncrease( nLevel/6, AC_NATURAL_BONUS ), eACEffect );
+    eACEffect = EffectLinkEffects( EffectACIncrease( nLevel/6, AC_DEFLECTION_BONUS ), eACEffect );
+    eACEffect = EffectLinkEffects( EffectACIncrease( nLevel/6, AC_DODGE_BONUS ), eACEffect );
+    eACEffect = EffectLinkEffects( EffectACIncrease( nLevel/6, AC_ARMOUR_ENCHANTMENT_BONUS ), eACEffect );
+    //
+
     ePoly = EffectPolymorph( nPoly );
+    ePoly= EffectLinkEffects(eACEffect,ePoly);
     ePoly = ExtraordinaryEffect( ePoly );
     ClearAllActions(); // prevents an exploit
     ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectVisualEffect( iVis ), OBJECT_SELF);
     ApplyEffectToObject( DURATION_TYPE_PERMANENT, ePoly, OBJECT_SELF );
     SignalEvent( oTarget, EventSpellCastAt(OBJECT_SELF, GetSpellId( ), FALSE ) );
 
+    //
+
+
+    if(nSpell == 980) // Animal
+    {
+        SetCreatureAppearanceType(OBJECT_SELF, nAnimalSkin);
+        SetPortraitId(OBJECT_SELF, nAnimalPo);
+    }
 
     //--------------------------------------------------------------------------
     // Store the old objects so we can access them after the character has
     // changed into his new form
     //--------------------------------------------------------------------------
-    object oWeaponOld;   //= GetItemInSlot( INVENTORY_SLOT_RIGHTHAND,OBJECT_SELF );
+    object oWeaponOld   = GetItemInSlot( INVENTORY_SLOT_RIGHTHAND,OBJECT_SELF );
     object oArmor       = GetItemInSlot( INVENTORY_SLOT_CHEST,OBJECT_SELF );
     object oRing1       = GetItemInSlot( INVENTORY_SLOT_LEFTRING,OBJECT_SELF );
     object oRing2       = GetItemInSlot( INVENTORY_SLOT_RIGHTRING,OBJECT_SELF );
     object oBoots       = GetItemInSlot( INVENTORY_SLOT_BOOTS,OBJECT_SELF );
-    object oSheild;    //  = GetItemInSlot( INVENTORY_SLOT_LEFTHAND,OBJECT_SELF );
-    object oAmulet;    //  = GetItemInSlot( INVENTORY_SLOT_NECK,OBJECT_SELF );
-    object oCloak;     //  = GetItemInSlot( INVENTORY_SLOT_CLOAK,OBJECT_SELF );
-    object oHands;     //  = GetItemInSlot( INVENTORY_SLOT_ARMS,OBJECT_SELF );
-    object oBelt;      //  = GetItemInSlot( INVENTORY_SLOT_BELT,OBJECT_SELF );
-    object oHelm;      //  = GetItemInSlot( INVENTORY_SLOT_HEAD,OBJECT_SELF );
+    object oSheild      = GetItemInSlot( INVENTORY_SLOT_LEFTHAND,OBJECT_SELF );
+    object oAmulet      = GetItemInSlot( INVENTORY_SLOT_NECK,OBJECT_SELF );
+    object oCloak       = GetItemInSlot( INVENTORY_SLOT_CLOAK,OBJECT_SELF );
+    object oHands       = GetItemInSlot( INVENTORY_SLOT_ARMS,OBJECT_SELF );
+    object oBelt        = GetItemInSlot( INVENTORY_SLOT_BELT,OBJECT_SELF );
+    object oHelm        = GetItemInSlot( INVENTORY_SLOT_HEAD,OBJECT_SELF );
 
     //Drowning!
     int nCannotDrown = ds_check_uw_items( OBJECT_SELF );

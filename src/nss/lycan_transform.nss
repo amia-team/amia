@@ -24,6 +24,23 @@ void main()
     int nAnimalSkin;
     int nAnimalPo;
 
+
+    //--------------------------------------------------------------------------
+    // Store the old objects so we can access them after the character has
+    // changed into his new form
+    //--------------------------------------------------------------------------
+    object oWeaponOld   = GetItemInSlot( INVENTORY_SLOT_RIGHTHAND,OBJECT_SELF );
+    object oArmor       = GetItemInSlot( INVENTORY_SLOT_CHEST,OBJECT_SELF );
+    object oRing1       = GetItemInSlot( INVENTORY_SLOT_LEFTRING,OBJECT_SELF );
+    object oRing2       = GetItemInSlot( INVENTORY_SLOT_RIGHTRING,OBJECT_SELF );
+    object oBoots       = GetItemInSlot( INVENTORY_SLOT_BOOTS,OBJECT_SELF );
+    object oSheild      = GetItemInSlot( INVENTORY_SLOT_LEFTHAND,OBJECT_SELF );
+    object oAmulet      = GetItemInSlot( INVENTORY_SLOT_NECK,OBJECT_SELF );
+    object oCloak       = GetItemInSlot( INVENTORY_SLOT_CLOAK,OBJECT_SELF );
+    object oHands       = GetItemInSlot( INVENTORY_SLOT_ARMS,OBJECT_SELF );
+    object oBelt        = GetItemInSlot( INVENTORY_SLOT_BELT,OBJECT_SELF );
+    object oHelm        = GetItemInSlot( INVENTORY_SLOT_HEAD,OBJECT_SELF );
+
     if(GetHasFeat(1249,oPC)) // Wolf
     {
         if((nLevel >= 25) && (nLevelLycan==5))
@@ -283,22 +300,6 @@ void main()
         SetCreatureAppearanceType(OBJECT_SELF, nAnimalSkin);
         SetPortraitId(OBJECT_SELF, nAnimalPo);
     }
-
-    //--------------------------------------------------------------------------
-    // Store the old objects so we can access them after the character has
-    // changed into his new form
-    //--------------------------------------------------------------------------
-    object oWeaponOld   = GetItemInSlot( INVENTORY_SLOT_RIGHTHAND,OBJECT_SELF );
-    object oArmor       = GetItemInSlot( INVENTORY_SLOT_CHEST,OBJECT_SELF );
-    object oRing1       = GetItemInSlot( INVENTORY_SLOT_LEFTRING,OBJECT_SELF );
-    object oRing2       = GetItemInSlot( INVENTORY_SLOT_RIGHTRING,OBJECT_SELF );
-    object oBoots       = GetItemInSlot( INVENTORY_SLOT_BOOTS,OBJECT_SELF );
-    object oSheild      = GetItemInSlot( INVENTORY_SLOT_LEFTHAND,OBJECT_SELF );
-    object oAmulet      = GetItemInSlot( INVENTORY_SLOT_NECK,OBJECT_SELF );
-    object oCloak       = GetItemInSlot( INVENTORY_SLOT_CLOAK,OBJECT_SELF );
-    object oHands       = GetItemInSlot( INVENTORY_SLOT_ARMS,OBJECT_SELF );
-    object oBelt        = GetItemInSlot( INVENTORY_SLOT_BELT,OBJECT_SELF );
-    object oHelm        = GetItemInSlot( INVENTORY_SLOT_HEAD,OBJECT_SELF );
 
     //Drowning!
     int nCannotDrown = ds_check_uw_items( OBJECT_SELF );

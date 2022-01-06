@@ -17,9 +17,13 @@ void main()
             {
                 if(GetObjectType(monsterToSpawn) == OBJECT_TYPE_CREATURE)
                 {
+                    if(GetIsDM(monsterToSpawn) || GetIsPC(monsterToSpawn) || GetIsPlayerDM(monsterToSpawn))
+                    { 
+                        continue; 
+                    }
 
-                ChangeToStandardFaction(monsterToSpawn, STANDARD_FACTION_HOSTILE);
-                CopyObject(monsterToSpawn, itemTargetLocation);
+                    ChangeToStandardFaction(monsterToSpawn, STANDARD_FACTION_HOSTILE);
+                    CopyObject(monsterToSpawn, itemTargetLocation);
                 }
                 monsterToSpawn = GetNextObjectInArea(monsterArea);
             }

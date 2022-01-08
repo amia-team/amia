@@ -292,6 +292,23 @@ void main()
     ApplyEffectToObject( DURATION_TYPE_PERMANENT, ePoly, OBJECT_SELF );
     SignalEvent( oTarget, EventSpellCastAt(OBJECT_SELF, GetSpellId( ), FALSE ) );
 
+    // Remove Bard Song if its on
+    effect eLoop = GetFirstEffect(OBJECT_SELF);
+
+    while(GetIsEffectValid(eLoop))
+    {
+     if(GetEffectSpellId(eLoop) == 411)
+     {
+       RemoveEffect(OBJECT_SELF,eLoop);
+     }
+
+     eLoop = GetNextEffect(OBJECT_SELF);
+    }
+
+    //
+
+
+
     //
 
 

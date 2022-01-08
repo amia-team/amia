@@ -28,6 +28,12 @@ void main()
         return;
     }
 
+    if(GetIsPolymorphed(OBJECT_SELF))
+    {
+        FloatingTextStringOnCreature( "<cþ>- Bard Song is disable while polymorphed! -</c>", OBJECT_SELF, FALSE );
+        return;
+    }
+
     string sTag = GetTag(OBJECT_SELF);
 
     if (sTag == "x0_hen_dee" || sTag == "x2_hen_deekin")

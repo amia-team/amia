@@ -21,13 +21,19 @@ void main()
 
     object oWarlockWidget = GetItemPossessedBy( OBJECT_SELF, "warlock_main" );
     if ( GetIsObjectValid( oWarlockWidget ) ) {
-        FloatingTextStringOnCreature( "<cþ>- Bard Song is disabled for Warlocks! -</c>", OBJECT_SELF, FALSE );
+        FloatingTextStringOnCreature( "<cþ>- urse Song is disabled for Warlocks! -</c>", OBJECT_SELF, FALSE );
         return;
     }
 
     if (GetHasEffect(EFFECT_TYPE_SILENCE,OBJECT_SELF))
     {
         FloatingTextStrRefOnCreature(85764,OBJECT_SELF); // not useable when silenced
+        return;
+    }
+
+    if(GetIsPolymorphed(OBJECT_SELF))
+    {
+        FloatingTextStringOnCreature( "<cþ>-Curse Song is disable while polymorphed! -</c>", OBJECT_SELF, FALSE );
         return;
     }
 

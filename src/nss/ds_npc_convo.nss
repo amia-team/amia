@@ -3,10 +3,10 @@ void main(){
     object oArea=GetArea(OBJECT_SELF);
     int nDie=d10();
 
-    if(FindSubString(GetName(oArea),"Cordor: South")>-1){
+    if(FindSubString(GetName(oArea),"Kingdom of Cetha: Southport West")>-1){
         if(nDie == 1){SpeakString("Hallo! Would you care to fetch my undergarments for me?");}
         if(nDie == 2){SpeakString("I have hat! Yes. I do.");}
-        if(nDie == 3){SpeakString("Ah, Cordor. Splendid little hamlet, aye?");}
+        if(nDie == 3){SpeakString("Ah, Southport. Splendid little hamlet, aye?");}
         if(nDie == 4){SpeakString("The Reconstruction Project went well, aye!");}
         if(nDie == 5){SpeakString("'Ey! Er... Uh... Who are you?");}
         if(nDie == 6){SpeakString("I can smell the flowers! What fun!");}
@@ -21,7 +21,7 @@ void main(){
         if(nDie == 3){SpeakString("What are you looking at?");}
         if(nDie == 4){SpeakString("Hello! Such a long time!");}
         if(nDie == 5){SpeakString("Hmm... have you been drinking again?");}
-        if(nDie == 6){SpeakString("Welcome to Cordor!");}
+        if(nDie == 6){SpeakString("Welcome!");}
         if(nDie == 7){SpeakString("Greetings, stranger!");}
         if(nDie == 8){SpeakString("Waukeen's blessings!");}
         if(nDie == 9){SpeakString("Hey there!");}

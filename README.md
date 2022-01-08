@@ -14,7 +14,6 @@ There are some things that should be kept in mind for potential contributors:
 - Git. You will either need to install [Git Bash](https://git-scm.com/downloads), a program like [MobaXterm](https://mobaxterm.mobatek.net/), or a GUI based program like [Github Desktop](https://desktop.github.com/). Recommendations are that absolute beginners start with Github Desktop. MobaXterm doubles as both a graphical FTP/SSH/SFTP client and a shell.
 
 ## Workflow
-To begin working, you will need to clone  
 ### General Workflow
 The general workflow for the module is: 
 - **Pull** the latest version of the module first.

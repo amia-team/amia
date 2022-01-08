@@ -14,19 +14,22 @@ There are some things that should be kept in mind for potential contributors:
 - Git. You will either need to install [Git Bash](https://git-scm.com/downloads), a program like [MobaXterm](https://mobaxterm.mobatek.net/), or a GUI based program like [Github Desktop](https://desktop.github.com/). Recommendations are that absolute beginners start with Github Desktop. MobaXterm doubles as both a graphical FTP/SSH/SFTP client and a shell.
 
 ## Workflow
+To begin working, you will need to clone  
 ### General Workflow
 The general workflow for the module is: 
 - **Pull** the latest version of the module first.
-- Pack the module using Nasher. 
+- Pack the module using Nasher. There is a .bat file called `pack_mod_windows` that you can click in the directory as a shortcut.    
 - Copy the packed module file to your `modules` directory in `Documents\Neverwinter Nights\`.
 - Open the module in the toolset.
 - Make the desired changes.
 - Save.
 - Copy the module from your modules folder back to the repository.
-- Unpack the module using Nasher.
+- Unpack the module using Nasher. Like packing the module, there is a .bat file called `unpack_mod_windows` in the repo that can be used as a shortcut.
 - **Pull** the latest version again, to make sure there were no conflicts.
 - **Commit** your changes with an adeuqately descriptive message.
 - **Push** your changes.
+### Collaborating
+
 ### Script Editing
 - Editing and adding scripts is a simpler
 ## Other resources

@@ -88,10 +88,17 @@ void main(){
 
     if(nRandom2 == 10)
     {
-       effect eVFXSun = EffectVisualEffect(SPELL_SUNBURST);
        effect eSunDam = EffectDamage(DAMAGE_BONUS_2d12,DAMAGE_TYPE_POSITIVE);
-       ApplyEffectToObject(DURATION_TYPE_INSTANT, eSunDam,oDamager);
-       ApplyEffectAtLocation(DURATION_TYPE_INSTANT, eVFXSun,GetLocation(oDamager));
+       effect eExplode = EffectVisualEffect(VFX_IMP_SUNSTRIKE);
+       effect eVis = EffectVisualEffect(VFX_IMP_HEAD_HOLY);
+       effect eHitVis = EffectVisualEffect(VFX_IMP_DIVINE_STRIKE_FIRE);
+       effect eLOS = EffectVisualEffect(VFX_FNF_LOS_HOLY_30);
+       effect eLink = EffectLinkEffects(eExplode,eSunDam);
+       eLink = EffectLinkEffects(eVis,eLink);
+       eLink = EffectLinkEffects(eHitVis,eLink);
+
+       ApplyEffectToObject(DURATION_TYPE_INSTANT, eLink,oDamager);
+       ApplyEffectAtLocation(DURATION_TYPE_INSTANT, eLOS,GetLocation(oDamager));
     }
 
 }

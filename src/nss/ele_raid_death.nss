@@ -80,17 +80,17 @@ void Spawn(string sCreature, location lLocation)
 void RollLoot(location lLocation, object oCritter)
 {
   int nRan = Random(100) + 1;
-  int nRan2 = Random(400) + 1;
+  int nRan2 = Random(200) + 1;
   object oChest;
 
-  if(nRan <= 9)  // 9% of Epic Loot
+  if(nRan <= 10)  // 10% of Epic Loot
   {
      oChest = CreateObject(OBJECT_TYPE_PLACEABLE,"ele_loot",lLocation);
      AssignCommand(oCritter,SpeakString("*There is something gleaming in the remains*"));
      GenerateEpicLoot(oChest);
   }
 
-  if(nRan2 == 1) // .25% of Ioun
+  if(nRan2 == 1) // .5% of Ioun
   {
      if(!GetIsObjectValid(oChest))
      {

@@ -69,9 +69,8 @@ void main()
         }
 
 
-      nAnimalSkin = 1486;
+      nAnimalSkin = 1616;
       nAnimalPo = 319;
-      SetCreatureTailType(790,oPC);
     }
     else if(GetHasFeat(1250,oPC))  // Bear
     {
@@ -130,8 +129,8 @@ void main()
            nPoly = 280;
         }
 
-      nAnimalSkin = 1507;
-      nAnimalPo = 560;
+      nAnimalSkin = 1504;
+      nAnimalPo = 165;
     }
     else if(GetHasFeat(1252,oPC)) // Boar
     {
@@ -250,7 +249,7 @@ void main()
            nPoly = 304;
         }
 
-      nAnimalSkin = 31;
+      nAnimalSkin = 1580;
       nAnimalPo = 168;
     }
 

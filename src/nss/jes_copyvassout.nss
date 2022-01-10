@@ -28,7 +28,7 @@ void main()
     string sRobe2da = Get2DAString("parts_robe","HIDECHEST",iRobePart);
 
     if ((!CompareAC(oSource, oItem)) && (StringToInt(sRobe2da) == 1)) {
-        SendMessageToPC(oPC, "You may only copy your armor's appearance if you are wearing full plate or a robe appearance.");
+        SendMessageToPC(oPC, "You may only copy your armor's appearance if you are wearing full plate or a robe appearance that hides your chest piece.");
         return;
     }
 
@@ -183,11 +183,15 @@ void main()
     DestroyObject(oCurrent);
 
     // Torso
-    iSourceValue = GetItemAppearance(oSource, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_TORSO);
-    oCurrent = oNew;
-    oNew = CopyItemAndModify(oCurrent, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_TORSO, iSourceValue, TRUE);
-    DestroyObject(oCurrent);
-
+    if(StringToInt(sRobe2da) == 1) {
+        SendMessageToPC(oPC,"Robe piece that hides the chest detected. Chest part skipped.");
+        }
+    else{
+        iSourceValue = GetItemAppearance(oSource, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_TORSO);
+        oCurrent = oNew;
+        oNew = CopyItemAndModify(oCurrent, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_TORSO, iSourceValue, TRUE);
+        DestroyObject(oCurrent);
+        }
 
     // Equip
     DelayCommand(0.5f, AssignCommand(OBJECT_SELF, ActionEquipItem(oNew, INVENTORY_SLOT_CHEST)));

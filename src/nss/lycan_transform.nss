@@ -71,7 +71,7 @@ void main()
 
       nAnimalSkin = 1486;
       nAnimalPo = 319;
-
+      SetCreatureTailType(790,oPC);
     }
     else if(GetHasFeat(1250,oPC))  // Bear
     {

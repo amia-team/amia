@@ -18,5 +18,4 @@ void main()
     object oNPC = OBJECT_SELF;
     object oItem = GetItemInSlot(INVENTORY_SLOT_LEFTHAND, oNPC);
     RemakeShield(oNPC, oItem, PART_PREV);
-    SetDroppableFlag(oItem,FALSE);
 }

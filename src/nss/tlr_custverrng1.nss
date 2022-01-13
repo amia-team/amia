@@ -25,10 +25,9 @@ int StartingConditional()
         if (sDesc == "") { sDesc = GetDescription(oItem); }
 
     string sOut = "Cost: " + IntToString(iCost) + " gold.\n";
-    sOut += "\nThis item will be named: <cÄãÿ>'"+sName+"'</c>.\n";
-    sOut += "\nThe description will be: <cÄãÿ>'"+sDesc+"'</c>";
+    sOut += "This item will be named "+sName+" and the description will be: "+sDesc+".";
 
-    SetCustomToken(9888, sOut);
+    SetCustomToken(55004, sOut);
     //-- this is called to check if the pc has the money to buy
     SetLocalInt(OBJECT_SELF, "CURRENTPRICE", iCost);
 

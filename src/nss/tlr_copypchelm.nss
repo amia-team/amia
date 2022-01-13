@@ -24,35 +24,35 @@ void main()
     iSourceHelmValue = GetItemAppearance(oSourceHelm, ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_CLOTH1);
     oCurrentHelm = oHelm;
     oNewHelm = CopyItemAndModify(oCurrentHelm,ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_CLOTH1, iSourceHelmValue, TRUE);
-    DestroyObject(oHelm);
+    DestroyObject(oCurrentHelm);
 
     // Cloth 2
     iSourceHelmValue = GetItemAppearance(oSourceHelm, ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_CLOTH2);
-    oCurrentHelm = oNewHelm;
+    oCurrentHelm = oHelm;
     oNewHelm = CopyItemAndModify(oCurrentHelm,ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_CLOTH2, iSourceHelmValue, TRUE);
     DestroyObject(oCurrentHelm);
 
     // Leather 1
     iSourceHelmValue = GetItemAppearance(oSourceHelm, ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_LEATHER1);
-    oCurrentHelm = oNewHelm;
+    oCurrentHelm = oHelm;
     oNewHelm = CopyItemAndModify(oCurrentHelm,ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_LEATHER1, iSourceHelmValue, TRUE);
     DestroyObject(oCurrentHelm);
 
     // Leather 2
     iSourceHelmValue = GetItemAppearance(oSourceHelm, ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_LEATHER2);
-    oCurrentHelm = oNewHelm;
+    oCurrentHelm = oHelm;
     oNewHelm = CopyItemAndModify(oCurrentHelm,ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_LEATHER2, iSourceHelmValue, TRUE);
     DestroyObject(oCurrentHelm);
 
     // Metal 1
     iSourceHelmValue = GetItemAppearance(oSourceHelm, ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_METAL1);
-    oCurrentHelm = oNewHelm;
+    oCurrentHelm = oHelm;
     oNewHelm = CopyItemAndModify(oCurrentHelm,ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_METAL1, iSourceHelmValue, TRUE);
     DestroyObject(oCurrentHelm);
 
     // Metal 2
     iSourceHelmValue = GetItemAppearance(oSourceHelm, ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_METAL2);
-    oCurrentHelm = oNewHelm;
+    oCurrentHelm = oHelm;
     oNewHelm = CopyItemAndModify(oCurrentHelm,ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_METAL2, iSourceHelmValue, TRUE);
     DestroyObject(oCurrentHelm);
 
@@ -71,6 +71,5 @@ void main()
     if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_HEAD, oPC)))
     {
        DelayCommand(0.5f, AssignCommand(OBJECT_SELF, ActionEquipItem(oNewHelm, INVENTORY_SLOT_HEAD)));
-       SetDroppableFlag(oNewHelm,FALSE);
     }
 }

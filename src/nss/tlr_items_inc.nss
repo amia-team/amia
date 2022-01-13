@@ -258,7 +258,7 @@ int GetIsShieldInvalid(int nCurrApp, int nBaseType)
             return TRUE;
         else if(nCurrApp >= 24 && nCurrApp <= 30)
             return TRUE;
-		else if(nCurrApp >= 34 && nCurrApp <= 40)
+        else if(nCurrApp >= 34 && nCurrApp <= 40)
             return TRUE;
     }
 
@@ -274,10 +274,6 @@ int GetIsShieldInvalid(int nCurrApp, int nBaseType)
                 return TRUE;
         }
 
-//       (Sample below - Keep commented out)
-//        if( nCurrApp >= 1 && nCurrApp <= 5)
-//            return TRUE;
-
         if(nCurrApp >= 1 && nCurrApp <= 10)
             return TRUE;
         else if(nCurrApp >= 17 && nCurrApp <= 20)
@@ -288,9 +284,9 @@ int GetIsShieldInvalid(int nCurrApp, int nBaseType)
             return TRUE;
         else if(nCurrApp >= 44 && nCurrApp <= 50)
             return TRUE;
-		else if(nCurrApp >= 57 && nCurrApp <= 60)
+        else if(nCurrApp >= 57 && nCurrApp <= 60)
             return TRUE;
-		else if(nCurrApp >= 76 && nCurrApp <= 80)
+        else if(nCurrApp >= 76 && nCurrApp <= 80)
             return TRUE;
     }
 
@@ -331,13 +327,13 @@ int GetIsShieldInvalid(int nCurrApp, int nBaseType)
             return TRUE;
         else if(nCurrApp >= 55 && nCurrApp <= 60)
             return TRUE;
-		else if(nCurrApp >= 64 && nCurrApp <= 79)
+        else if(nCurrApp >= 64 && nCurrApp <= 79)
             return TRUE;
-		else if(nCurrApp >= 81 && nCurrApp <= 110)
+        else if(nCurrApp >= 81 && nCurrApp <= 110)
             return TRUE;
-		else if(nCurrApp >= 126 && nCurrApp <= 130)
+        else if(nCurrApp >= 126 && nCurrApp <= 130)
             return TRUE;
-		else if(nCurrApp >= 132 && nCurrApp <= 150)
+        else if(nCurrApp >= 132 && nCurrApp <= 150)
             return TRUE;
 
     }

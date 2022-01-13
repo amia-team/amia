@@ -57,12 +57,14 @@ void main(){
         object oAssociate3 = GetAssociate(0, oPC, 1); // Unknown
         object oAssociate4 = GetAssociate(2, oPC, 1); // Animal Companion
         object oAssociate5 = GetAssociate(5, oPC, 1); // Dominated
+        object oAssociate6 = GetAssociate(1, oPC, 1); // Henchman
         // CLEAR ACTIONS.
         AssignCommand(oAssociate1, ClearAllActions());
         AssignCommand(oAssociate2, ClearAllActions());
         AssignCommand(oAssociate3, ClearAllActions());
         AssignCommand(oAssociate4, ClearAllActions());
         AssignCommand(oAssociate5, ClearAllActions());
+        AssignCommand(oAssociate6, ClearAllActions());
         // JUMP TO MASTER.
         location masterLocation = GetLocation(oPC);
         AssignCommand(oAssociate1, ActionJumpToLocation(masterLocation));
@@ -70,6 +72,7 @@ void main(){
         AssignCommand(oAssociate3, ActionJumpToLocation(masterLocation));
         AssignCommand(oAssociate4, ActionJumpToLocation(masterLocation));
         AssignCommand(oAssociate5, ActionJumpToLocation(masterLocation));
+        AssignCommand(oAssociate6, ActionJumpToLocation(masterLocation));
     }
     else if (sMessage == "f_stuck") {
         SetPCChatMessage(""); // Clear chat message.

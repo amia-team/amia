@@ -19,6 +19,7 @@ object oPC;
 // Associate tool global variables.
 object oCreature; object oAssociate1; object oAssociate2;
 object oAssociate3; object oAssociate4; object oAssociate5;
+object oAssociate6;
 
 /* constants */
 const int cCleanDelay = 5;
@@ -75,12 +76,14 @@ void moveAllAssociates(location targetLocation) {
     clearActionsResetCreature(oAssociate3);
     clearActionsResetCreature(oAssociate4);
     clearActionsResetCreature(oAssociate5);
+    clearActionsResetCreature(oAssociate6);
     // Walk all associates to target location.
     walkToLocation(oAssociate1, targetLocation);
     walkToLocation(oAssociate2, targetLocation);
     walkToLocation(oAssociate3, targetLocation);
     walkToLocation(oAssociate4, targetLocation);
     walkToLocation(oAssociate5, targetLocation);
+    walkToLocation(oAssociate6, targetLocation);
 }
 
 // Get all associates, clear their actions, and attack the target.
@@ -91,12 +94,14 @@ void attackTarget(object oEnemy) {
     clearActionsResetCreature(oAssociate3);
     clearActionsResetCreature(oAssociate4);
     clearActionsResetCreature(oAssociate5);
+    clearActionsResetCreature(oAssociate6);
     // TELL ALL ASSOCIATES TO ATTACK THE TARGET.
     AssignCommand(oAssociate1, ActionAttack(oEnemy));
     AssignCommand(oAssociate2, ActionAttack(oEnemy));
     AssignCommand(oAssociate3, ActionAttack(oEnemy));
     AssignCommand(oAssociate4, ActionAttack(oEnemy));
     AssignCommand(oAssociate5, ActionAttack(oEnemy));
+    AssignCommand(oAssociate6, ActionAttack(oEnemy));
 }
 
 void main()
@@ -114,6 +119,8 @@ void main()
     oAssociate3 = GetAssociate(0, oPC, 1); // Unknown
     oAssociate4 = GetAssociate(2, oPC, 1); // Animal Companion
     oAssociate5 = GetAssociate(5, oPC, 1); // Dominated
+    oAssociate6 = GetAssociate(1, oPC, 1); // Henchman
+
 
     // If target is valid & hostile, command all associates to attack the target.
     if (GetIsObjectValid(oCreature) && GetIsReactionTypeHostile(oCreature, oPC) == TRUE) {

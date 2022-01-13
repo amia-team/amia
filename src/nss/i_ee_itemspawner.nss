@@ -29,6 +29,7 @@ void main()
     if(GetObjectType(oTarget) == OBJECT_TYPE_ITEM)
     {
       SetLocalObject(oWidget,"itemspawner",oTarget);
+      SendMessageToAllDMs(GetName(oPC)+" set an item spawner with"+GetName(oTarget)+".");
       SendMessageToPC(oPC,"*Item spawner set with"+GetName(oTarget)+"with cost of "+IntToString(nItemValue)+"gp.*");
       SetName(oWidget,"Item Spawner: " + GetName(oTarget));
       SetLocalInt(oWidget,"itemcost",nItemValue);

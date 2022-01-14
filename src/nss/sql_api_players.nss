@@ -25,6 +25,8 @@ string SQL_DCS_buildQueryToSetDreamcoins(string cdkey, string amount);
 string SQL_Players_buildQueryToGetIsBanned(string cdkey);
 string SQL_Players_buildQueryToGetIsDM(string cdkey);
 string SQL_Players_buildQueryToCreatePlayerAccount(string cdkey);
+string SQL_Players_buildQueryToBanPlayerAccount(string cdkey);
+string SQL_Players_buildQueryToUnbanPlayerAccount(string cdkey);
 int SQL_SetupPlayerAccount(string cdkey);
 
 string SQL_DCS_buildQueryToGetDreamcoins(string cdkey)
@@ -70,6 +72,18 @@ string SQL_Players_buildQueryToGetIsBanned(string cdkey)
 {
     string isAccountBannedQuery = "select exists(select 1 from " + BANS_TABLE + " where cd_key='" + cdkey + "');";
     return isAccountBannedQuery;
+}
+
+string SQL_Players_buildQueryToBanPlayerAccount(string cdkey)
+{
+    string banAccountQuery = "insert into " + BANS_TABLE + "(cd_key) values ('" + cdkey + "') on conflict do nothing;";
+    return banAccountQuery;
+}
+
+string SQL_Players_buildQueryToUnbanPlayerAccount(string cdkey)
+{
+    string removeBanQuery = "delete from " + BANS_TABLE + "where cd_key='" + cdkey + "';";
+    return removeBanQuery;
 }
 
 string SQL_Players_buildQueryToGetIsDM(string cdkey)

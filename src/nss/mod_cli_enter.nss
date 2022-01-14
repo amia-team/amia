@@ -4,6 +4,7 @@
 #include "sql_api_players"
 #include "class_effects"
 #include "inc_call_time"
+#include "inc_player_api"
 
 void CreateItemsOnPlayer(object enteringPlayer);
 void CheckPrereq(object oPC);
@@ -30,6 +31,11 @@ int FindPreviousLevel( string sVar )
 
 void main(){
     object enteringPlayer = GetEnteringObject();
+
+    if(GetIsPlayerBanned(GetPCPublicCDKey(enteringPlayer, TRUE)))
+    {
+      BootPC(enteringPlayer, "You have been banned. If you believe this was an error, please contact a DM over Discord.");
+    }
 
     if(GetIsDM(enteringPlayer))
     {
@@ -329,7 +335,6 @@ void DailyDC(object oPC)
 
 
 }
-
 
 void CheckWeeklyReset(object oPC)
 {

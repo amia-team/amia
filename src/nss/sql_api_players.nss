@@ -14,13 +14,16 @@ const int SQL_EXECUTION_FAILED = -1;
 // Define tables to constants here to avoid error prone string literals.
 const string DREAMCOINS_TABLE = "dreamcoin_records";
 const string PLAYERS_TABLE = "players";
-
+const string BANS_TABLE = "bans";
+const string DMS_TABLE = "dms";
 
 string SQL_DCS_buildQueryToGetDreamcoins(string cdkey);
 string SQL_DCS_buildQueryToCreateAccount(string cdkey);
 string SQL_DCS_buildQueryToCheckIfAccountExists(string cdkey);
 string SQL_DCS_buildQueryToSetDreamcoins(string cdkey, string amount);
 
+string SQL_Players_buildQueryToGetIsBanned(string cdkey);
+string SQL_Players_buildQueryToGetIsDM(string cdkey);
 string SQL_Players_buildQueryToCreatePlayerAccount(string cdkey);
 int SQL_SetupPlayerAccount(string cdkey);
 
@@ -49,8 +52,6 @@ string SQL_DCS_buildQueryToSetDreamcoins(string cdkey, string amount)
     return setDreamCoinsQuery;
 }
 
-
-
 int SQL_SetupPlayerAccount(string cdkey)
 {
     NWNX_SQL_PrepareQuery(SQL_Players_buildQueryToCreatePlayerAccount(cdkey));
@@ -65,5 +66,14 @@ string SQL_Players_buildQueryToCreatePlayerAccount(string cdkey)
     return addAccountQuery;
 }
 
+string SQL_Players_buildQueryToGetIsBanned(string cdkey)
+{
+    string isAccountBannedQuery = "select exists(select 1 from " + BANS_TABLE + " where cd_key='" + cdkey + "');";
+    return isAccountBannedQuery;
+}
 
-
+string SQL_Players_buildQueryToGetIsDM(string cdkey)
+{
+    string isAccountBannedQuery = "select exists(select 1 from " + DMS_TABLE + " where cd_key='" + cdkey + "');";
+    return isAccountBannedQuery;
+}

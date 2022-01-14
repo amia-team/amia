@@ -80,4 +80,3 @@ void SetDreamCoins(string cdkey, int amount)
     NWNX_SQL_PrepareQuery(SQL_DCS_buildQueryToSetDreamcoins(cdkey, amountAsAString));
     NWNX_SQL_ExecutePreparedQuery();
 }
-

@@ -17,6 +17,7 @@
 #include "nwnx_chat"
 #include "inc_dc_api"
 #include "area_load"
+#include "inc_player_api"
 //-------------------------------------------------------------------------------
 // prototypes
 //-------------------------------------------------------------------------------
@@ -72,6 +73,8 @@ void f_givedc(object oPC, object oObject, string sValue);
 void f_takedc(object oPC, object oObject, string sValue);
 void f_jsname( object oPC, object oObject, string sOption, string sValue );
 void f_jsbio( object oPC, object oObject, string sOption, string sValue );
+void f_ban(string sValue);
+void f_unban(string sValue);
 
 //utility stuff
 void CheckAppearance( object oPC, string sSearch, int nAppearance );
@@ -265,11 +268,16 @@ void main( ){
                 oObject = GetNearestCreature(CREATURE_TYPE_PLAYER_CHAR, PLAYER_CHAR_IS_PC, oPC);
                 DelayCommand(0.1, f_takedc(oPC, oObject, sValue));
             }
-            //else if (sCommand == "paydc" ) {
-            //    DelayCommand( 0.1, f_paydc( oPC, oObject, sOption, sValue ) );
-            //}
             else if(sCommand == "CreateArea"){
                 DelayCommand(0.1, recreate_area(sValue));
+            }
+            else if (sCommand == "ban")
+            {
+                DelayCommand(0.1, f_ban(sValue));
+            }
+            else if (sCommand == "unban")
+            {
+                DelayCommand(0.1, f_unban(sValue));
             }
         }
 
@@ -532,142 +540,6 @@ void f_selene( object oPC ) {
 
 void f_area( object oPC, string sOption, string sValue ) {
     recreate_area(sOption);
-/*
-    int bSearch = FALSE;
-    int bCont = TRUE;
-
-    if( sOption == "" ) {
-        SendMessageToPC( oPC, "<c?? > ~ Valid options are: ~ </c>" );
-        SendMessageToPC( oPC, "<c ??>list</c> - Shows a list of all active areas" );
-        SendMessageToPC( oPC, "<c ??>update</c> - Updates an Area" );
-        SendMessageToPC( oPC, "<c ??>find</c> - Finds an area usage search" );
-        SendMessageToPC( oPC, "<c ??>spawn</c> - Spawns and jumps to spawned area" );
-        SendMessageToPC( oPC, "<c ??>destroy</c> - Destroys the current area you are in (be careful!)" );
-        bCont = FALSE;
-    }
-
-    if( sOption == "spawn" ) {
-        // loc
-        object oArea;
-        int i;
-        int a;
-
-        int nAreas = StringToInt(RunLua("return #nwn.GetAreasByResRef('"+sValue+"')"));
-        if(nAreas > 0) {
-            SendMessageToPC( oPC, "This area already exists!" );
-            // Find the area in question.
-            oArea = AREAS_GetArea(a);
-            i = FALSE;
-            while(oArea != OBJECT_INVALID) {
-                if( GetResRef(oArea) == sValue ) {
-                    i = TRUE;
-                    break;
-                }
-                a += 1;
-            }
-            if( i == FALSE ) {
-                SendMessageToPC( oPC, "<c?? >Error! resref mismatch irregularity between existing area and entry.</c>" );
-            }
-
-        }
-        else {
-            oArea = AREAS_CreateArea(sValue);
-            SendMessageToPC( oPC, "<c ? >Area has been created.</c>" );
-        }
-
-        SetLocalInt(oArea, "NoDestroy", 1);
-        location lTarget;
-        object oThing;
-
-        if( GetIsObjectValid( oArea ) ){
-            oThing = GetFirstObjectInArea( oArea );
-        }
-
-        if( GetIsObjectValid( oThing ) ){
-            lTarget = GetLocation( oThing );
-        }
-        else{
-
-            lTarget = GetCenterInArea( oThing );
-        }
-
-        AssignCommand( oPC, ActionJumpToLocation( lTarget ) );
-
-
-        bCont = FALSE;
-    }
-
-    if( sOption == "update" ) {
-        f_UpdateArea( oPC );
-        bCont = FALSE;
-    }
-
-    if( sOption == "destroy" ) {
-
-        object oArea = GetArea( oPC );
-        object oAreaPC = GetFirstPC( );
-        int nRetry = FALSE;
-
-        while( GetIsObjectValid( oAreaPC ) ){
-
-            if( !GetIsObjectValid( GetArea( oAreaPC ) ) ){
-                nRetry= TRUE;
-            }
-            else if( GetArea( oAreaPC ) == oArea ){
-                AssignCommand( oAreaPC, ActionJumpToLocation( GetStartingLocation() ) );
-            }
-            if( !nRetry ) {
-                oAreaPC = GetNextPC( );
-            }
-            nRetry = FALSE;
-        }
-
-        DelayCommand( 1.0, fw_queueAreaDestroy( oArea ) );
-        SendMessageToPC( oPC, "<c?  >Area has been destroyed.</c>" );
-
-        bCont = FALSE;
-    }
-
-    if( bCont == TRUE ) {
-
-        if(sOption == "find") {
-            if(sValue != "") {
-                SendMessageToPC( oPC, "<c?? > ~ You case-insensitive searched for: " + sValue + " ~ </c>" );
-                bSearch = TRUE;
-            }
-        }
-        else {
-            SendMessageToPC( oPC, "<c?? > ~ Amia Area List ~ </c>" );
-        }
-
-        int a = 0;
-        int b = 0;
-        int bSearchShow = FALSE;
-        sValue = GetStringLowerCase( sValue );
-
-        object currAreaLoop = AREAS_GetArea(a);
-        while(currAreaLoop != OBJECT_INVALID)
-        {
-            if( bSearch == TRUE ) {
-                    if( ( FindSubString ( GetStringLowerCase( GetResRef( currAreaLoop ) ), sValue, 0 ) != -1 ) || ( FindSubString ( GetStringLowerCase( GetTag( currAreaLoop ) ), sValue, 0 ) != -1 ) || ( FindSubString ( GetStringLowerCase( GetName( currAreaLoop ) ), sValue, 0 ) != -1 ) ) {
-                        SendMessageToPC( oPC, "<c? ?>resref: " + GetResRef( currAreaLoop ) + "</c> | <c ??>tag: " + GetTag( currAreaLoop ) + "</c> | <c?? >name: " + GetName( currAreaLoop ) + "</c>" );
-                        b += 1;
-                    }
-            }
-            else {
-                SendMessageToPC( oPC, "<c? ?>resref: " + GetResRef( currAreaLoop ) + "</c> | <c ??>tag: " + GetTag( currAreaLoop ) + "</c> | <c?? >name: " + GetName( currAreaLoop ) + "</c>" );
-            }
-            a += 1;
-            currAreaLoop = AREAS_GetArea(a);
-        }
-        if( bSearch == TRUE ) {
-            SendMessageToPC( oPC, "<c?? > ~ Your search yielded: " + IntToString( b ) + " results. ~ </c>" );
-        }
-        else {
-            SendMessageToPC( oPC, "<c?? > ~ Total Areas Found: " + IntToString( a ) + ". ~ </c>" );
-        }
-    }*/
-
 }
 
 void f_playertools( object oPC, object oObject, string sOption, string sValue ){
@@ -676,7 +548,7 @@ void f_playertools( object oPC, object oObject, string sOption, string sValue ){
        if(!GetHasFeat( 1106, oPC ))
        {
             DelayCommand( 5.0, NWNX_Creature_AddFeat( oPC, 1106) );
-            SendMessageToPC(oPC, "<cËÐØ>~ Associate Tool Added ~</c>");
+            SendMessageToPC(oPC, "<cï¿½ï¿½ï¿½>~ Associate Tool Added ~</c>");
        }
     }
 
@@ -1364,6 +1236,18 @@ void f_takedc(object oPC, object oObject, string sValue){
     SetDreamCoins(cdKey, dreamcoinAmount);
 
     SendMessageToAllDMs(GetPCPlayerName(oObject) + " lost " + IntToString(dreamcoinTaken) + " DCs.");
+}
+
+void f_ban(string sValue)
+{
+    BanPlayer(sValue);
+    SendMessageToAllDMs(sValue + " has been banned.");
+}
+
+void f_unban(string sValue)
+{
+    UnbanPlayer(sValue);
+    SendMessageToAllDMs(sValue + " has been unbanned.");
 }
 
 /*void f_paydc(object oPC, object oObject, string cdKey, string sValue){
@@ -3447,8 +3331,8 @@ void f_jsname( object oPC, object oObject, string sOption, string sValue ){
 
     if ( sjsTag == "js_plcspawner" || sjsTag == "js_painteasel" || sjsTag == "js_effects" || sjsTag == "js_sch_embo" || sjsTag == "js_sch_emto" || sjsTag == "js_sch_pape" || sjsTag == "js_corpse" ){
 
-        SendMessageToPC( oPC, "Setting <c~Îë>"+GetName( oObject )+"</c>'s name to <c~Îë>"+sValue+"</c>." );
-        SetName( oObject, "<c~Îë>"+sValue+"</c>" );
+        SendMessageToPC( oPC, "Setting <c~ï¿½ï¿½>"+GetName( oObject )+"</c>'s name to <c~ï¿½ï¿½>"+sValue+"</c>." );
+        SetName( oObject, "<c~ï¿½ï¿½>"+sValue+"</c>" );
     }
 
     else {
@@ -3470,16 +3354,16 @@ void f_jsbio( object oPC, object oObject, string sOption, string sValue ){
         SendMessageToPC( oPC , "You can only use this command on allowed items. See the forum for all allowed items.");
     }
     else if ( sOption == "a" || sOption == "A" ){
-        SendMessageToPC( oPC, "Adding <c~Îë>"+sValue+"</c>to <c~Îë>"+GetName( oObject )+"</c>'s description." );
-        SetDescription( oObject, "<c~Îë>"+sCurrentjs+"</c>"+"<c~Îë>"+sValue+"</c>", TRUE );
+        SendMessageToPC( oPC, "Adding <c~ï¿½ï¿½>"+sValue+"</c>to <c~ï¿½ï¿½>"+GetName( oObject )+"</c>'s description." );
+        SetDescription( oObject, "<c~ï¿½ï¿½>"+sCurrentjs+"</c>"+"<c~ï¿½ï¿½>"+sValue+"</c>", TRUE );
     }
     else if ( sOption == "b" || sOption == "B" ){
-        SendMessageToPC( oPC, "Adding line break to <c~Îë>"+GetName( oObject )+"</c>'s description." );
-        SetDescription( oObject, "<c~Îë>"+sCurrentjs+"</c>"+"\n\n", TRUE );
+        SendMessageToPC( oPC, "Adding line break to <c~ï¿½ï¿½>"+GetName( oObject )+"</c>'s description." );
+        SetDescription( oObject, "<c~ï¿½ï¿½>"+sCurrentjs+"</c>"+"\n\n", TRUE );
     }
     else if ( sOption == "n" || sOption == "N" ) {
-        SendMessageToPC( oPC, "Setting <c~Îë>"+GetName( oObject )+"<c~Îë>'s description to <c~Îë>"+sValue+"</c>" );
-        SetDescription( oObject, "<c~Îë>"+sValue+"</c>", TRUE );
+        SendMessageToPC( oPC, "Setting <c~ï¿½ï¿½>"+GetName( oObject )+"<c~ï¿½ï¿½>'s description to <c~ï¿½ï¿½>"+sValue+"</c>" );
+        SetDescription( oObject, "<c~ï¿½ï¿½>"+sValue+"</c>", TRUE );
     }
     else {
         SendMessageToPC( oPC , "Invalid Command. Please use [A], [B], or [N] to change the bio.");

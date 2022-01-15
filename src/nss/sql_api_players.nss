@@ -82,7 +82,7 @@ string SQL_Players_buildQueryToBanPlayerAccount(string cdkey)
 
 string SQL_Players_buildQueryToUnbanPlayerAccount(string cdkey)
 {
-    string removeBanQuery = "delete from " + BANS_TABLE + "where cd_key='" + cdkey + "';";
+    string removeBanQuery = "delete from " + BANS_TABLE + " where cd_key='" + cdkey + "';";
     return removeBanQuery;
 }
 

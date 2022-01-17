@@ -3331,8 +3331,8 @@ void f_jsname( object oPC, object oObject, string sOption, string sValue ){
 
     if ( sjsTag == "js_plcspawner" || sjsTag == "js_painteasel" || sjsTag == "js_effects" || sjsTag == "js_sch_embo" || sjsTag == "js_sch_emto" || sjsTag == "js_sch_pape" || sjsTag == "js_corpse" ){
 
-        SendMessageToPC( oPC, "Setting <c~��>"+GetName( oObject )+"</c>'s name to <c~��>"+sValue+"</c>." );
-        SetName( oObject, "<c~��>"+sValue+"</c>" );
+        SendMessageToPC( oPC, "Setting "+GetName( oObject )+"'s name to "+sValue+"." );
+        SetName( oObject, sValue );
     }
 
     else {
@@ -3354,16 +3354,16 @@ void f_jsbio( object oPC, object oObject, string sOption, string sValue ){
         SendMessageToPC( oPC , "You can only use this command on allowed items. See the forum for all allowed items.");
     }
     else if ( sOption == "a" || sOption == "A" ){
-        SendMessageToPC( oPC, "Adding <c~��>"+sValue+"</c>to <c~��>"+GetName( oObject )+"</c>'s description." );
-        SetDescription( oObject, "<c~��>"+sCurrentjs+"</c>"+"<c~��>"+sValue+"</c>", TRUE );
+        SendMessageToPC( oPC, "Adding "+sValue+" to "+GetName( oObject )+"'s description." );
+        SetDescription( oObject, sCurrentjs + sValue, TRUE );
     }
     else if ( sOption == "b" || sOption == "B" ){
-        SendMessageToPC( oPC, "Adding line break to <c~��>"+GetName( oObject )+"</c>'s description." );
-        SetDescription( oObject, "<c~��>"+sCurrentjs+"</c>"+"\n\n", TRUE );
+        SendMessageToPC( oPC, "Adding line break to "+GetName( oObject )+"'s description." );
+        SetDescription( oObject, sCurrentjs + "\n\n", TRUE );
     }
     else if ( sOption == "n" || sOption == "N" ) {
-        SendMessageToPC( oPC, "Setting <c~��>"+GetName( oObject )+"<c~��>'s description to <c~��>"+sValue+"</c>" );
-        SetDescription( oObject, "<c~��>"+sValue+"</c>", TRUE );
+        SendMessageToPC( oPC, "Setting "+GetName( oObject )+"'s description to "+sValue );
+        SetDescription( oObject, sValue, TRUE );
     }
     else {
         SendMessageToPC( oPC , "Invalid Command. Please use [A], [B], or [N] to change the bio.");

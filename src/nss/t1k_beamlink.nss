@@ -34,9 +34,22 @@ void makeBeam(object otarget1, object otarget2, int iBeam=VFX_BEAM_LIGHTNING) {
     otarget2);
 }
 
-void main() {
+object GetObjectByTagAndArea(object oArea, string sTag) {
+    int iteration = 0;
+    object oRet = GetObjectByTag(sTag,iteration);
+    while ((oArea != GetArea(oRet)) && oRet != OBJECT_INVALID) {
+        iteration = iteration + 1;
+        oRet = GetObjectByTag(sTag,iteration);
+    }
+    return oRet;
+}
+
+void makeLinks() {
+
     int incr = 0;
-    object oFirst = GetObjectByTag(BEAM_LINK + IntToString(incr));
+    object oMyArea = GetArea(OBJECT_SELF);
+
+    object oFirst = GetObjectByTagAndArea(oMyArea,BEAM_LINK + IntToString(incr));
 
     int iActiveCheck = GetLocalInt(oFirst,BEAM_ACTIVE);
     if (iActiveCheck != FALSE) {
@@ -49,18 +62,23 @@ void main() {
 
     int iCircle = GetLocalInt(oFirst,BEAM_CIRCLE);
 
-    object oTarget = GetObjectByTag(BEAM_LINK + IntToString(incr+1));
+    object oTarget = GetObjectByTagAndArea(oMyArea,BEAM_LINK + IntToString(incr+1));
     while (oTarget != OBJECT_INVALID) {
-        makeBeam(oFirst, oTarget, iBeam);
+        DelayCommand(IntToFloat(incr+1),makeBeam(oFirst, oTarget, iBeam));
         incr = incr + 1;
-        oFirst = GetObjectByTag(BEAM_LINK + IntToString(incr));
-        oTarget = GetObjectByTag(BEAM_LINK + IntToString(incr+1));
+        oFirst = GetObjectByTagAndArea(oMyArea,BEAM_LINK + IntToString(incr));
+        oTarget = GetObjectByTagAndArea(oMyArea,BEAM_LINK + IntToString(incr+1));
     }
     if (iCircle != 0) {
         oTarget = oFirst;
-        oFirst = GetObjectByTag(BEAM_LINK + IntToString(0));
+        oFirst = GetObjectByTagAndArea(oMyArea,BEAM_LINK + IntToString(0));
         makeBeam(oFirst, oTarget, iBeam);
     }
 
     SetLocalInt(oFirst,BEAM_ACTIVE,TRUE);
+}
+
+void main()
+{
+    makeLinks();
 }

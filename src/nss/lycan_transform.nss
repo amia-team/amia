@@ -10,6 +10,9 @@
 #include "inc_td_shifter"
 #include "x0_i0_spells"
 
+//Merges oPC's old weapon according to the shifter rules
+void GearMerge( object oPC, object oOldWeapon, object oArmor, object oRing1, object oRing2, object oBoots, object oSheild, object oAmulet, object oCloak, object oHands, object oBelt, object oHelm, int nPolymorph );
+
 void main()
 {
     object oPC = OBJECT_SELF;
@@ -327,9 +330,112 @@ void main()
     SetLocalInt( OBJECT_SELF, "CannotDrown", nCannotDrown );
 
     //This is it
-    ShifterMerge( OBJECT_SELF, oWeaponOld, oArmor, oRing1, oRing2, oBoots, oSheild, oAmulet, oCloak, oHands, oBelt, oHelm, nPoly );
+    GearMerge( OBJECT_SELF, oWeaponOld, oArmor, oRing1, oRing2, oBoots, oSheild, oAmulet, oCloak, oHands, oBelt, oHelm, nPoly );
 
     SetLocalInt(OBJECT_SELF,"X2_GWILDSHP_LIMIT_" + IntToString( GetSpellId( ) ), 2147483646 );
 
     SetLocalInt( OBJECT_SELF, "LAST_POLY_EFFECT", GetSpellId( ) );
+}
+
+void GearMerge( object oPC, object oOldWeapon, object oArmor, object oRing1, object oRing2, object oBoots, object oSheild, object oAmulet, object oCloak, object oHands, object oBelt, object oHelm, int nPolymorph ){
+
+    object oWeaponNew   = GetItemInSlot( INVENTORY_SLOT_RIGHTHAND, oPC );
+    object oRClaw       = GetItemInSlot( INVENTORY_SLOT_CWEAPON_R, oPC );
+    object oLClaw       = GetItemInSlot( INVENTORY_SLOT_CWEAPON_L, oPC );
+    object oBite        = GetItemInSlot( INVENTORY_SLOT_CWEAPON_B, oPC );
+    object oArmorNew    = GetItemInSlot( INVENTORY_SLOT_CARMOUR, oPC );
+
+    if( oOldWeapon == oWeaponNew )
+        return;
+
+    RemoveItemPropertyByType( oWeaponNew, ITEM_PROPERTY_VISUALEFFECT );
+
+    if( GetIsObjectValid( oWeaponNew ) && GetIsObjectValid( oOldWeapon ) ){
+
+        SendMessageToPC( oPC, "<c þ >Merging "+GetName( oOldWeapon )+" with "+GetName( oWeaponNew )+"!" );
+        SetIdentified( oWeaponNew, TRUE );
+        MergeItemProperties( oPC, oOldWeapon, oWeaponNew );
+    }
+    else if( ( GetIsObjectValid( oRClaw ) || GetIsObjectValid( oBite ) || GetIsObjectValid( oLClaw ) ) && GetIsObjectValid( oOldWeapon ) ){
+
+        if( GetIsObjectValid( oRClaw ) ){
+            SendMessageToPC( oPC, "<c þ >Merging "+GetName( oOldWeapon )+" with right claw!" );
+            MergeItemProperties( oPC, oOldWeapon, oRClaw );
+        }
+        if( GetIsObjectValid( oBite ) ){
+            SendMessageToPC( oPC, "<c þ >Merging "+GetName( oOldWeapon )+" with bite!" );
+            MergeItemProperties( oPC, oOldWeapon, oBite );
+        }
+        if( GetIsObjectValid( oLClaw ) ){
+            SendMessageToPC( oPC, "<c þ >Merging "+GetName( oOldWeapon )+" with left claw!" );
+            MergeItemProperties( oPC, oOldWeapon, oLClaw );
+        }
+
+    }
+
+    if( StringToInt( Get2DAString( "polymorph", "MergeA", nPolymorph ) ) ){
+
+
+        if( GetIsObjectValid( oArmorNew ) ){
+
+            SetIdentified( oArmorNew, TRUE );
+
+            if( GetIsObjectValid( oArmor ) ){
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oArmor )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                MergeItemProperties( oPC, oArmor, oArmorNew );
+            }
+
+            if( GetIsObjectValid( oSheild ) ){
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oSheild )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                MergeItemProperties( oPC, oSheild, oArmorNew );
+            }
+
+            if( GetIsObjectValid( oHelm ) ){
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oHelm )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                MergeItemProperties( oPC, oHelm, oArmorNew );
+            }
+        }
+    }
+
+    if( StringToInt( Get2DAString( "polymorph", "MergeI", nPolymorph ) ) ){
+        if( GetIsObjectValid( oArmorNew ) ){
+
+            SetIdentified( oArmorNew, TRUE );
+
+            if( GetIsObjectValid( oRing1 ) ){
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oRing1 )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                MergeItemProperties( oPC, oRing1, oArmorNew );
+            }
+
+            if( GetIsObjectValid( oRing2 ) ){
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oRing2 )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                MergeItemProperties( oPC, oRing2, oArmorNew );
+            }
+
+            if( GetIsObjectValid( oAmulet ) ){
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oAmulet )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                MergeItemProperties( oPC, oAmulet, oArmorNew );
+            }
+
+            if( GetIsObjectValid( oCloak ) ){
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oCloak )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                MergeItemProperties( oPC, oCloak, oArmorNew );
+            }
+
+            if( GetIsObjectValid( oBoots ) ){
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oBoots )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                MergeItemProperties( oPC, oBoots, oArmorNew );
+            }
+
+            if( GetIsObjectValid( oBelt ) ){
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oBelt )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                MergeItemProperties( oPC, oBelt, oArmorNew );
+            }
+
+            if( GetIsObjectValid( oHands ) ){
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oHands )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                MergeItemProperties( oPC, oHands, oArmorNew );
+            }
+        }
+    }
 }

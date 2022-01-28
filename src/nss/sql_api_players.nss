@@ -88,6 +88,6 @@ string SQL_Players_buildQueryToUnbanPlayerAccount(string cdkey)
 
 string SQL_Players_buildQueryToGetIsDM(string cdkey)
 {
-    string isAccountBannedQuery = "select exists(select 1 from " + DMS_TABLE + " where cd_key='" + cdkey + "');";
-    return isAccountBannedQuery;
+    string isLoginDmQuery = "select exists(select 1 from " + DMS_TABLE + " where cd_key='" + cdkey + "');";
+    return isLoginDmQuery;
 }

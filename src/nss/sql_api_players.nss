@@ -5,7 +5,6 @@
       are also not responsible for building said queries, reducing points of failure
       and responsibilities for functions overall.
 */
-
 #include "nwnx_sql"
 
 //Define SQL Execution failure as a -1, consistent with C standards.

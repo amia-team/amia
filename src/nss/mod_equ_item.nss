@@ -621,7 +621,7 @@ void main( ){
     szItemScript = GetUserDefinedItemEventScriptName( oItem );
 
     // Run the designated Item Event script
-    if( szItemScript != "" ){
+    if( (szItemScript != "") && (GetResRef(oItem) != "shroudhelm")){
 
         ExecuteScript( szItemScript, oSource );
     }

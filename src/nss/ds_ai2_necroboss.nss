@@ -709,12 +709,12 @@ void LootDrop(object oArea, object oWayPoint1, object oWaypoint2)
     object oHorde = CreateObject(OBJECT_TYPE_PLACEABLE,"lichlootchest",GetLocation(oWayPoint1));
     CreateObject(OBJECT_TYPE_PLACEABLE,"lbossexit",GetLocation(oWaypoint2));
 
-    if(nRandom <= 5)      //  Divine Mythal
+    if(nRandom <= 10)      //  Divine Mythal
     {
        CreateItemOnObject("mythal7",oHorde);
     }
 
-    if(nRandom2 <= 15)        // Item drops
+    if(nRandom2 <= 20)        // Item drops
     {
       switch(nRandom3)
       {
@@ -726,7 +726,9 @@ void LootDrop(object oArea, object oWayPoint1, object oWaypoint2)
       }
     }
 
-    GenerateEpicLoot(oHorde);
+    DelayCommand(0.1,GenerateEpicLoot(oHorde));
+    DelayCommand(0.2,GenerateEpicLoot(oHorde));
+    DelayCommand(0.3,GenerateEpicLoot(oHorde));
 
 
 }

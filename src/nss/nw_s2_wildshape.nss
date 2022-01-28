@@ -34,6 +34,18 @@ void main()
     int nDuration   = nDruid;
     effect eSpeed = ExtraordinaryEffect(EffectMovementSpeedIncrease(20));
 
+    if(GetIsPolymorphed(OBJECT_SELF))
+    {
+      SendMessageToPC(OBJECT_SELF,"You must unpolymorph first!");
+      return;
+    }
+
+    if(GetLocalInt(OBJECT_SELF,"POLY_COOLDOWN") == 1)
+    {
+      SendMessageToPC(OBJECT_SELF,"Slow down! You are polymorphing too fast!");
+      return;
+    }
+
     int nElderAt = 12;
     if( nShifter > nDruid ){
 
@@ -194,5 +206,10 @@ void main()
         IPWildShapeCopyItemProperties(oBootsOld,oArmorNew);
         IPWildShapeCopyItemProperties(oBeltOld,oArmorNew);
     }
+
+
+    //Poly cool down
+    SetLocalInt( OBJECT_SELF, "POLY_COOLDOWN", 1 );
+    DelayCommand(6.0,DeleteLocalInt(OBJECT_SELF,"POLY_COOLDOWN"));
 
 }

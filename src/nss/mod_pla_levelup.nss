@@ -49,7 +49,10 @@ void main( ){
     //Check for presence of PCkey.
     if(oWidget == OBJECT_INVALID)
     {
+      int nOldXp = ( ( ( nHD * ( nHD - 1 ) ) / 2 ) * 1000 ) - 1;
+      SetXP( oPC, nPrevLevelXP );
       SendMessageToPC(oPC,"Your character cannot levelup without a PC key. Please use the statue in the entryway and try again.");
+      DelayCommand( 5.0, SetXP( oPC, nXP ) );
       return;
     }
 
@@ -62,7 +65,7 @@ void main( ){
         SendMessageToPC( oPC, "You can't level up RDD since you have another bloodline subrace!" );
         SendMessageToAllDMs( GetName( oPC ) + " tried to level up with RDD while having another bloodline subrace!" );
 
-        nPrevLevelXP    = ( ( ( nHD * ( nHD - 1 ) ) / 2 ) * 1000 ) - 1;
+        nPrevLevelXP = ( ( ( nHD * ( nHD - 1 ) ) / 2 ) * 1000 ) - 1;
 
         SetXP( oPC, nPrevLevelXP );
 

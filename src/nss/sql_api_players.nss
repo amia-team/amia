@@ -5,7 +5,6 @@
       are also not responsible for building said queries, reducing points of failure
       and responsibilities for functions overall.
 */
-
 #include "nwnx_sql"
 
 //Define SQL Execution failure as a -1, consistent with C standards.
@@ -88,6 +87,6 @@ string SQL_Players_buildQueryToUnbanPlayerAccount(string cdkey)
 
 string SQL_Players_buildQueryToGetIsDM(string cdkey)
 {
-    string isAccountBannedQuery = "select exists(select 1 from " + DMS_TABLE + " where cd_key='" + cdkey + "');";
-    return isAccountBannedQuery;
+    string isLoginDmQuery = "select exists(select 1 from " + DMS_TABLE + " where cd_key='" + cdkey + "');";
+    return isLoginDmQuery;
 }

@@ -45,6 +45,14 @@ void main( ){
     object oGrandfather = GetItemPossessedBy(oPC,"dd_grandfather");
     int nClassRDD = GetLevelByClass(CLASS_TYPE_DRAGON_DISCIPLE,oPC);
     string sSubrace = GetSubRace(oPC);
+
+    //Check for presence of PCkey.
+    if(oWidget == OBJECT_INVALID)
+    {
+      SendMessageToPC(oPC,"Your character cannot levelup without a PC key. Please use the statue in the entryway and try again.");
+      return;
+    }
+
     // Checking to make sure RDD and Outsider race cant be together
     if(((nClassRDD >= 1) && ((sSubrace == "Aasimar") || (sSubrace == "Feytouched") || (sSubrace == "Tiefling") ||
      (sSubrace == "Air Genasi") || (sSubrace == "Earth Genasi") || (sSubrace == "Fire Genasi") || (sSubrace == "Water Genasi"))))

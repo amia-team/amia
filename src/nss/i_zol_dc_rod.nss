@@ -14,6 +14,10 @@ void main()
 
     if(player != OBJECT_INVALID && !GetIsDM(player))
     {
+        if(GetItemPossessedBy(user, "ds_pckey") == OBJECT_INVALID)
+        {
+            FloatingTextStringOnCreature("PC Key not found. Click the statue in the entry way to obtain one.", user);
+        }
         if(!GetIsPC(player))
         {
             FloatingTextStringOnCreature("Target was not a player.", user);

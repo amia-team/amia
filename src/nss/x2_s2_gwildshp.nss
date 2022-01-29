@@ -485,7 +485,7 @@ void main(){
     SetLocalInt( OBJECT_SELF, "LAST_POLY_ID", nPoly );
     //Poly cool down
     SetLocalInt( OBJECT_SELF, "POLY_COOLDOWN", 1 );
-    DelayCommand(6.0,DeleteLocalInt(OBJECT_SELF,"POLY_COOLDOWN"));
+    DelayCommand(12.0,DeleteLocalInt(OBJECT_SELF,"POLY_COOLDOWN"));
 }
 
 void RemoveShapeEffects(object oPC, int nPoly)

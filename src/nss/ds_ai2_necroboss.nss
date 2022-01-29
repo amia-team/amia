@@ -726,10 +726,9 @@ void LootDrop(object oArea, object oWayPoint1, object oWaypoint2)
       }
     }
 
-    DelayCommand(0.1,GenerateEpicLoot(oHorde));
-    DelayCommand(0.2,GenerateEpicLoot(oHorde));
-    DelayCommand(0.3,GenerateEpicLoot(oHorde));
-
+    GenerateEpicLoot(oHorde);
+    GenerateEpicLoot(oHorde);
+    GenerateEpicLoot(oHorde);
 
 }
 

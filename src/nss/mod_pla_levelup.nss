@@ -50,7 +50,7 @@ void main( ){
     if(oWidget == OBJECT_INVALID)
     {
       int nOldXp = ( ( ( nHD * ( nHD - 1 ) ) / 2 ) * 1000 ) - 1;
-      SetXP( oPC, nPrevLevelXP );
+      SetXP( oPC, nOldXp );
       SendMessageToPC(oPC,"Your character cannot levelup without a PC key. Please use the statue in the entryway and try again.");
       DelayCommand( 5.0, SetXP( oPC, nXP ) );
       return;

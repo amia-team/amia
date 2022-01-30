@@ -44,6 +44,13 @@ void main()
     object oBelt        = GetItemInSlot( INVENTORY_SLOT_BELT,OBJECT_SELF );
     object oHelm        = GetItemInSlot( INVENTORY_SLOT_HEAD,OBJECT_SELF );
 
+
+    if(GetLocalInt(OBJECT_SELF,"POLY_COOLDOWN") == 1)
+    {
+      SendMessageToPC(OBJECT_SELF,"Slow down! You are polymorphing too fast!");
+      return;
+    }
+
     if(GetHasFeat(1249,oPC)) // Wolf
     {
         if((nLevel >= 25) && (nLevelLycan==5))
@@ -335,6 +342,10 @@ void main()
     SetLocalInt(OBJECT_SELF,"X2_GWILDSHP_LIMIT_" + IntToString( GetSpellId( ) ), 2147483646 );
 
     SetLocalInt( OBJECT_SELF, "LAST_POLY_EFFECT", GetSpellId( ) );
+    //Poly cool down
+    SetLocalInt( OBJECT_SELF, "POLY_COOLDOWN", 1 );
+    DelayCommand(18.0,DeleteLocalInt(OBJECT_SELF,"POLY_COOLDOWN"));
+
 }
 
 void GearMerge( object oPC, object oOldWeapon, object oArmor, object oRing1, object oRing2, object oBoots, object oSheild, object oAmulet, object oCloak, object oHands, object oBelt, object oHelm, int nPolymorph ){

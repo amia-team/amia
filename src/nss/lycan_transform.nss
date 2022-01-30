@@ -344,7 +344,8 @@ void main()
     SetLocalInt( OBJECT_SELF, "LAST_POLY_EFFECT", GetSpellId( ) );
     //Poly cool down
     SetLocalInt( OBJECT_SELF, "POLY_COOLDOWN", 1 );
-    DelayCommand(18.0,DeleteLocalInt(OBJECT_SELF,"POLY_COOLDOWN"));
+    DelayCommand(30.0,DeleteLocalInt(OBJECT_SELF,"POLY_COOLDOWN"));
+    DelayCommand(30.0,SendMessageToPC(OBJECT_SELF,"You may now shift to another form!"));
 
 }
 

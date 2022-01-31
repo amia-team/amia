@@ -42,17 +42,19 @@ void HealTarget(object oTarget, int nDice, int nBonus, int nMm, int nHealVFX=VFX
 
     if (GetIsUndead(oTarget)) {
         SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, GetSpellId()));
-        if (WillSave(oTarget, GetSpellSaveDC(), SAVING_THROW_TYPE_POSITIVE) > 0) {
-            nHP = nHP / 2;
-        }
-        if (TouchAttackMelee(oTarget) > 0) {
-            float fDelay = fDelay = GetRandomDelay();
-            //Set the damage effect
-            effect eDmg = EffectDamage(nHP, DAMAGE_TYPE_POSITIVE);
-            effect eVis = EffectVisualEffect (nAtkVFX);
-            //Apply the VFX impact and damage effect
-            DelayCommand(fDelay, ApplyEffectToObject(DURATION_TYPE_INSTANT, eDmg, oTarget));
-            DelayCommand(fDelay, ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget));
+        if (ResistSpell(OBJECT_SELF, oTarget) < 1) {
+            if (WillSave(oTarget, GetSpellSaveDC(), SAVING_THROW_TYPE_POSITIVE) > 0) {
+                nHP = nHP / 2;
+            }
+            if (TouchAttackMelee(oTarget) > 0) {
+                //Set the damage effect
+                float fDelay = fDelay = GetRandomDelay();
+                effect eDmg = EffectDamage(nHP, DAMAGE_TYPE_POSITIVE);
+                effect eVis = EffectVisualEffect (nAtkVFX);
+                //Apply the VFX impact and damage effect
+                DelayCommand(fDelay, ApplyEffectToObject(DURATION_TYPE_INSTANT, eDmg, oTarget));
+                DelayCommand(fDelay, ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget));
+            }
         }
     } else {
         effect eCure = EffectHeal (nHP);

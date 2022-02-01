@@ -64,6 +64,8 @@ void main( ){
 
     NWNX_Events_SubscribeEvent("NWNX_ON_COMBAT_MODE_ON", "sub_comb_on");
     NWNX_Events_SubscribeEvent("NWNX_ON_COMBAT_MODE_OFF", "sub_comb_off");
+    NWNX_Events_SubscribeEvent("NWNX_ON_UNPOLYMORPH_AFTER", "poly_sizer");
+    NWNX_Events_SubscribeEvent("NWNX_ON_POLYMORPH_BEFORE", "poly_sizesaver");
 
     // Variables
     object oModule = GetModule( );

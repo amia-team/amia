@@ -11,5 +11,6 @@ void main()
       SendMessageToPC(oPC,"<cò­ÿ>You may use HIPS again in 6 seconds.</c>");
       SetLocalInt(oPC,"HIPSCooldown",1);
       DelayCommand(6.0,DeleteLocalInt(oPC,"HIPSCooldown"));
+      DelayCommand(6.0,SendMessageToPC(oPC,"<cò­ÿ>You can HIPS again!</c>"));
     }
 }

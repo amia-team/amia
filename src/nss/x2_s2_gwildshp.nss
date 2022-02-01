@@ -467,6 +467,7 @@ void main(){
 
     ePoly = ExtraordinaryEffect( ePoly );
     ClearAllActions(); // prevents an exploit
+    SetLocalInt( OBJECT_SELF, "LAST_POLY_ID", nPoly );
     ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectVisualEffect( iVis ), OBJECT_SELF);
     ApplyEffectToObject( DURATION_TYPE_PERMANENT, ePoly, OBJECT_SELF );
     SignalEvent( oTarget, EventSpellCastAt(OBJECT_SELF, GetSpellId( ), FALSE ) );
@@ -482,10 +483,10 @@ void main(){
     SetLocalInt(OBJECT_SELF,"X2_GWILDSHP_LIMIT_" + IntToString( GetSpellId( ) ), 2147483646 );
 
     SetLocalInt( OBJECT_SELF, "LAST_POLY_EFFECT", GetSpellId( ) );
-    SetLocalInt( OBJECT_SELF, "LAST_POLY_ID", nPoly );
     //Poly cool down
     SetLocalInt( OBJECT_SELF, "POLY_COOLDOWN", 1 );
-    DelayCommand(18.0,DeleteLocalInt(OBJECT_SELF,"POLY_COOLDOWN"));
+    DelayCommand(30.0,DeleteLocalInt(OBJECT_SELF,"POLY_COOLDOWN"));
+    DelayCommand(30.0,SendMessageToPC(OBJECT_SELF,"You may now shift to another form!"));
 }
 
 void RemoveShapeEffects(object oPC, int nPoly)

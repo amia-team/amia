@@ -7,7 +7,11 @@ void main( ){
 
     object oPC = OBJECT_SELF;
     int ShifterID = GetLocalInt( OBJECT_SELF, "LAST_POLY_ID");
+    float fPolySizePre   = GetObjectVisualTransform(oPC, OBJECT_VISUAL_TRANSFORM_SCALE);
+    object oPCKey        = GetItemPossessedBy(oPC, "ds_pckey");
+
     SaveSpellState( oPC );
+    SetLocalFloat(oPCKey, "presize", fPolySizePre);
 
 }
 
@@ -45,11 +49,5 @@ void SaveSpellState( object oPC ){
         else if( nClass == CLASS_TYPE_INVALID )
             return;
     }
-
-    object oPC           = OBJECT_SELF;
-    float fPolySizePre   = GetObjectVisualTransform(oPC, OBJECT_VISUAL_TRANSFORM_SCALE);
-    object oPCKey        = GetItemPossessedBy(oPC, "ds_pckey");
-
-    SetLocalFloat(oPCKey, "presize", fPolySizePre);
 }
 

@@ -6,7 +6,7 @@ void main()
     object oPC = OBJECT_SELF;
     int nCooldown = GetLocalInt(oPC,"HIPSCooldown");
 
-    if((nCooldown==0) && (GetLevelByClass(CLASS_TYPE_SHADOWDANCER,OBJECT_SELF) >= 1))
+    if((nCooldown==0) && (GetHasFeat(FEAT_HIDE_IN_PLAIN_SIGHT,OBJECT_SELF)==TRUE))
     {
       FloatingTextStringOnCreature("<cò­ÿ>You may use HIPS again in 6 seconds.</c>",oPC,FALSE);
       SetLocalInt(oPC,"HIPSCooldown",1);

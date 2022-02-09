@@ -79,6 +79,8 @@ void sum_BG_SummonFiend( object oPC, location lTarget );
 
 //Shadow Dancer's Summon Shadow ability
 void sum_SD_Shadow( object oPC, location lTarget );
+// Function to apply SD summon buffs
+void sd_sum_skinchange(object oPC, float fDuration);
 void sd_sum_buff(object oPC, effect eLink, float fDuration);
 effect sd_calc_buffs(int nShadowRank, object oPC);
 
@@ -1172,8 +1174,12 @@ void sum_SD_Shadow( object oPC, location lTarget )
 
     ApplyEffectAtLocation( DURATION_TYPE_TEMPORARY, eShadowSummon, lTarget, fDuration );
 
+    // Set a custom clone appearance and shadow effect of user.
+    DelayCommand( 2.5, sd_sum_skinchange( oPC, fDuration) );
+
+
     // Handle reskins/optional visuals.
-    DelayCommand( 2.5, HandleSummonVisuals( oPC, 1 ) );
+    DelayCommand( 3.0, HandleSummonVisuals( oPC, 1 ) );
 
     // Call function to buff summon
     DelayCommand(4.0, sd_sum_buff(oPC, eLink, fDuration));
@@ -1183,6 +1189,69 @@ void sum_SD_Shadow( object oPC, location lTarget )
 
     SetModuleOverrideSpellScriptFinished();
 }
+
+// Function to apply SD summon buffs
+void sd_sum_skinchange(object oPC, float fDuration)
+{
+    object oAssociate = GetAssociate(ASSOCIATE_TYPE_SUMMONED, oPC);
+    int nAppearance = GetAppearanceType(oPC);
+    int nTail = GetCreatureTailType(oPC);
+    int nWings = GetCreatureWingType(oPC);
+    int nRFoot = GetCreatureBodyPart(CREATURE_PART_RIGHT_FOOT,oPC);
+    int nLFoot = GetCreatureBodyPart(CREATURE_PART_LEFT_FOOT,oPC);
+    int nRShin = GetCreatureBodyPart(CREATURE_PART_RIGHT_SHIN,oPC);
+    int nLShin = GetCreatureBodyPart(CREATURE_PART_LEFT_SHIN,oPC);
+    int nRThigh = GetCreatureBodyPart(CREATURE_PART_RIGHT_THIGH,oPC);
+    int nLThigh = GetCreatureBodyPart(CREATURE_PART_LEFT_THIGH,oPC);
+    int nPelvis = GetCreatureBodyPart(CREATURE_PART_PELVIS,oPC);
+    int nTorso = GetCreatureBodyPart(CREATURE_PART_TORSO,oPC);
+    int nBelt = GetCreatureBodyPart(CREATURE_PART_BELT,oPC);
+    int nNeck = GetCreatureBodyPart(CREATURE_PART_NECK,oPC);
+    int nRFore = GetCreatureBodyPart(CREATURE_PART_RIGHT_FOREARM,oPC);
+    int nLFore = GetCreatureBodyPart(CREATURE_PART_LEFT_FOREARM,oPC);
+    int nRBicep = GetCreatureBodyPart(CREATURE_PART_RIGHT_BICEP,oPC);
+    int nLBicep = GetCreatureBodyPart(CREATURE_PART_LEFT_BICEP,oPC);
+    int nRShoulder = GetCreatureBodyPart(CREATURE_PART_RIGHT_SHOULDER,oPC);
+    int nLShoulder = GetCreatureBodyPart(CREATURE_PART_LEFT_SHOULDER,oPC);
+    int nRHand = GetCreatureBodyPart(CREATURE_PART_RIGHT_HAND,oPC);
+    int nLHand = GetCreatureBodyPart(CREATURE_PART_LEFT_HAND,oPC);
+    int nHead = GetCreatureBodyPart(CREATURE_PART_HEAD,oPC);
+    effect eVis = EffectVisualEffect(VFX_DUR_PROT_SHADOW_ARMOR);
+
+
+    if (oAssociate == OBJECT_INVALID)
+    {
+        SendMessageToPC(oPC, "No summon found!");
+        return;
+    }
+    else
+    {
+      SetCreatureAppearanceType(oAssociate,nAppearance);
+      SetCreatureWingType(nWings,oAssociate);
+      SetCreatureTailType(nTail,oAssociate);
+      SetCreatureBodyPart(CREATURE_PART_RIGHT_FOOT,nRFoot,oAssociate);
+      SetCreatureBodyPart(CREATURE_PART_LEFT_FOOT,nLFoot,oAssociate);
+      SetCreatureBodyPart(CREATURE_PART_RIGHT_SHIN,nRShin,oAssociate);
+      SetCreatureBodyPart(CREATURE_PART_LEFT_SHIN,nLShin,oAssociate);
+      SetCreatureBodyPart(CREATURE_PART_RIGHT_THIGH,nRThigh,oAssociate);
+      SetCreatureBodyPart(CREATURE_PART_LEFT_THIGH,nLThigh,oAssociate);
+      SetCreatureBodyPart(CREATURE_PART_PELVIS,nPelvis,oAssociate);
+      SetCreatureBodyPart(CREATURE_PART_TORSO,nTorso,oAssociate);
+      SetCreatureBodyPart(CREATURE_PART_BELT,nBelt,oAssociate);
+      SetCreatureBodyPart(CREATURE_PART_NECK,nNeck,oAssociate);
+      SetCreatureBodyPart(CREATURE_PART_RIGHT_FOREARM,nRFore,oAssociate);
+      SetCreatureBodyPart(CREATURE_PART_LEFT_FOREARM,nLFore,oAssociate);
+      SetCreatureBodyPart(CREATURE_PART_RIGHT_BICEP,nRBicep,oAssociate);
+      SetCreatureBodyPart(CREATURE_PART_LEFT_BICEP,nLBicep,oAssociate);
+      SetCreatureBodyPart(CREATURE_PART_RIGHT_SHOULDER,nRShoulder,oAssociate);
+      SetCreatureBodyPart(CREATURE_PART_LEFT_SHOULDER,nLShoulder,oAssociate);
+      SetCreatureBodyPart(CREATURE_PART_RIGHT_HAND,nRHand,oAssociate);
+      SetCreatureBodyPart(CREATURE_PART_LEFT_HAND,nLHand,oAssociate);
+      SetCreatureBodyPart(CREATURE_PART_HEAD,nHead,oAssociate);
+      ApplyEffectToObject(DURATION_TYPE_TEMPORARY,eVis,oAssociate, fDuration);
+    }
+}
+
 
 // Function to set SD summon buffs based on SD level
 effect sd_calc_buffs(int nShadowRank, object oPC)

@@ -17,7 +17,7 @@ void main()
     object oTarget = GetSpellTargetObject();
     string sLycanType = GetLocalString(oLycan, "lycanType");
     int nLevel = GetLevelByPosition(1,oTarget) + GetLevelByPosition(2,oTarget) + GetLevelByPosition(3,oTarget);
-    int nRandom = Random(100*nLevel) + 1;
+    int nRandom = Random(50*nLevel) + 1;
 
     if((GetHasFeat(1249,oTarget) == TRUE) || (GetHasFeat(1250,oTarget) == TRUE) || (GetHasFeat(1251,oTarget) == TRUE)
     || (GetHasFeat(1252,oTarget) == TRUE) || (GetHasFeat(1253,oTarget) == TRUE) || (GetHasFeat(1254,oTarget) == TRUE)

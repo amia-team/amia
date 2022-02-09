@@ -142,8 +142,8 @@ string ds_gossipsA( int nCategory, int nNumber ){
             case 10: return "A grubby urchin nicked my coinpurse!"; break;
             case 11: return "Any word on when Ostland will start exporting their exotic fruit?"; break;
             case 12: return "I had a nice cushy job stamping paperwork half the day in the Commonwealth Center. Then the Amnish came."; break;
-            case 13: return "I'm fresh off the boat from the mainland, and I must say, I expected there to be a lot more seagulls in Cordor."; break;
-            case 14: return "Who has fresher fish at market, Cordor or Wharftown?"; break;
+            case 13: return "I'm fresh off the boat from the mainland, and I must say, I expected there to be a lot more seagulls in Southport."; break;
+            case 14: return "Who has fresher fish at market, Southport or Moonpier?"; break;
             case 15: return "Look at some of these adventurers, walking around wearing their coin on their sleeves. They're the new noble caste."; break;
             case 16: return "How can we hope to protect ourselves against evil magicians who employ blood ma-"; break;
         }
@@ -156,12 +156,12 @@ string ds_gossipsA( int nCategory, int nNumber ){
             case 2: return "If we keep shipping overland, we're just arming the orcish hordes. We need smaller, faster seaworthy vessels!"; break;
             case 3: return "Locksmiths: never go adventuring without one."; break;
             case 4: return "Pinky's Pawns moved to the seedy side of town. Suits the grubby little half-pint."; break;
-            case 5: return "There are a lot more elves in Cordor these days than there used to be."; break;
+            case 5: return "There are a lot more elves in Southport these days than there used to be."; break;
             case 6: return "I used to be an adventurer, but then I-"; break;
             case 7: return "All of my holdings in Helmsport were ruined when the natives attacked! It's only a matter of time before the debt collectors come for me...'"; break;
             case 8: return "What's a word that rhymes with Forrstakkr?"; break;
             case 9: return "I hope the Lathandran healers can get rid of this rash. It burns like the hells!"; break;
-            case 10: return "Great, Guldorand seceded. Now I have to actually negotiate with those dimwits for a good bulk rate on lumber like in the old days."; break;
+            case 10: return "Ridgewood is part of Cetha. Now I don't have to negotiate with those dimwits for a good bulk rate on lumber."; break;
             case 11: return "Before you criticize someone, you should walk a mile in their shoes."; break;
             case 12: return "...and so the tiefling tells me he's ready to settle down and start a family while the aasimar's just out to have a little fun, no strings attached. My mind was blown!"; break;
             case 13: return "Another long night at The Gentlemen's Club?"; break;
@@ -178,10 +178,10 @@ string ds_gossipsA( int nCategory, int nNumber ){
             case 2: return "For the sake of our farmlands, speak no ill of Talos."; break;
             case 3: return "How can I become a Roadwarden?"; break;
             case 4: return "That middlin' child of yours in trouble with Oleg again?"; break;
-            case 5: return "Everything in Wharftown tastes like fish."; break;
+            case 5: return "Everything in Moonpier tastes like fish."; break;
             case 6: return "No matter whether you think you can or think you can't, you're right."; break;
             case 7: return "Dad's sending me on a two year apprenticeship in Barak Runedar before I take over the jeweler's store."; break;
-            case 8: return "Cordor used to be called the City of Tolerance back in the Duke's day. Now it's the City of Water."; break;
+            case 8: return "Southport used to be called the City of Tolerance back in the Duke's day."; break;
             case 9: return "Did you find any treasure at the rainbow's terminus?"; break;
             case 10: return "Galverson's a traitor! First the whole drow debacle and then trying to depose the Commonwealth?"; break;
             case 11: return "Amia has fallen prey to so many wars. The Horde, the Dark Flight, the Arcanum..."; break;
@@ -197,10 +197,10 @@ string ds_gossipsA( int nCategory, int nNumber ){
         switch ( nNumber ){
 
             case 1: return "Justicar Marinsbane was a great spiritual leader. He will be missed."; break;
-            case 2: return "Adventurers, you'll not find goods any better than the ones you can find in Cordor!"; break;
+            case 2: return "Adventurers, you'll not find goods any better than the ones you can find in Southport!"; break;
             case 3: return "What's going on with the price of zinc? It was booming for a while there."; break;
             case 4: return "If you aren't wearing Arwen, you aren't Amian."; break;
-            case 5: return "What's the one place in Cordor where you can get clean and dirty at the same time?"; break;
+            case 5: return "What's the one place in Southport where you can get clean and dirty at the same time?"; break;
             case 6: return "I'll never go back to the Gentleman's Club! I was hustled!"; break;
             case 7: return "Forrstakkr's a lucrative marketplace if you can earn the trust of the locals. The fur trade is especially profitable."; break;
             case 8: return "She told them that naughty children wind up in the Manor, a bleak and lonely castle in a frozen wasteland."; break;
@@ -208,7 +208,7 @@ string ds_gossipsA( int nCategory, int nNumber ){
             case 10: return "Where there's a will, I want to be in it!"; break;
             case 11: return "I miss the clockworks from the old days. It costs far less to maintain a clockwork than to pay living wages for a grousing Westie layabout who does half the job in twice the time."; break;
             case 12: return "Rogues do it from behind!"; break;
-            case 13: return "The Seven Stars Academy is a conspiracy, taking all of the magically talented youth from Cordor and brainwashing them. They'll come back to us as nothing more than pious overseers!"; break;
+            case 13: return "The Seven Stars Academy is a conspiracy, taking all of the magically talented youth from Southport and brainwashing them. They'll come back to us as nothing more than pious overseers!"; break;
             case 14: return "You've been restless lately. What's wrong?"; break;
             case 15: return "If not for the Amian Recorder, I wouldn't have a clue about what's going down!"; break;
             case 16: return "Crime doesn't pay."; break;
@@ -232,12 +232,12 @@ string ds_commentsA( int nCategory, int nNumber ){
             case 7: return "I know, I was at the wedding! The Temple of the Triad in Kohlingen is a beautiful place for a ceremony."; break;
             case 8: return "There's hope for them after all!"; break;
             case 9: return "Every day's a festival in the Dale!"; break;
-            case 10: return "Probably a West Cordor brat. I hear the criminals there exploit children all the time."; break;
+            case 10: return "Probably a West Southport brat. I hear the criminals there exploit children all the time."; break;
             case 11: return "Soon, I hope!"; break;
             case 12: return "A pox on Amn!"; break;
             case 13: return "Long story, outlander."; break;
             case 14: return "You ever smelled a fish market? Nothing fresh about it!"; break;
-            case 15: return "Makes 'em easier marks for a West Cordor thug."; break;
+            case 15: return "Makes 'em easier marks for a West Southport thug."; break;
             case 16: return "-shhh! Don't even say it aloud! Let that taboo be forgot to all tongues, 'lest its promise of power corrupt even more."; break;
         }
     }
@@ -317,9 +317,9 @@ string ds_gossipsB( int nCategory, int nNumber ){
         switch ( nNumber ){
 
             case  1: return "I was walkin' out of towns and me swears with me own eyes, 'es goblins out there!"; break;
-            case  2: return "I saw some stranger headed toward Cordor's Graveyard, but I swear, he had a tail!"; break;
-            case  3: return "I 'eard that some bad Orcs were gonna choose a leader to come bust up Cordor."; break;
-            case  4: return "I heard that Wharftown has an extensive line of melee weapons."; break;
+            case  2: return "I saw some stranger headed toward Southport's Graveyard, but I swear, he had a tail!"; break;
+            case  3: return "I 'eard that some bad Orcs were gonna choose a leader to come bust up Southport."; break;
+            case  4: return "I heard that Moonpier has an extensive line of melee weapons."; break;
             case  5: return "Those darned druids can sure come up with some great cloaks."; break;
             case  6: return "I was warned to be wary of wild animals in the wilderness, for some may actually be shifters."; break;
             case  7: return "Haulfest and Nurse Hatchett? You'd have to be blind not to notice!"; break;
@@ -350,7 +350,7 @@ string ds_gossipsB( int nCategory, int nNumber ){
             case  6: return "So after the judge had talked with the pixie, he turned to the wizard "; break;
             case  7: return "and said 'Just because you're polymorphed doesn't make it legal!'"; break;
             case  8: return "She can get moonweed from the old witch in the forest. It worked for me an the parents never even knew!"; break;
-            case  9: return "I'm telling you, that gypsy is the best kisser in Cordor!"; break;
+            case  9: return "I'm telling you, that gypsy was the best kisser in Southport!"; break;
             case 10: return "Well if I don't, I'll have to deal with her and I make it a point never to 'deal' with her again..."; break;
             case 11: return "I even fancied a piece on the side with a doxy, but figured I'd stand high."; break;
             case 12: return "I dunnot care rather ya wanna beat each other or bed one another says I, but ye make darned sure ye be doin' it yer own time an not on me coin!!!"; break;
@@ -372,7 +372,7 @@ string ds_gossipsB( int nCategory, int nNumber ){
             case  2: return "The harvest was poor this year, it aint going to be enough to feed all hungry mouths. Many will be starving, unless something is done."; break;
             case  3: return "The roads are very unsafe to ambushes, so I hear."; break;
             case  4: return "Only way I'd work for him again is if Igor paid me to dig his grave!"; break;
-            case  5: return "That's not the only thing in Wharftown that smells like rotten fish... you should try the ale."; break;
+            case  5: return "That's not the only thing in Moonpier that smells like rotten fish... you should try the ale."; break;
             case  6: return "If you get to it and you can't do it, well there you jolly well are, aren't you."; break;
             case  7: return "Never ask a barber if he thinks you need a haircut."; break;
             case  8: return "City of tolerance my foot! The next time I see one of those vampiric drow necromancers I'll take out my old cudgel and slay it myself!"; break;
@@ -395,7 +395,7 @@ string ds_gossipsB( int nCategory, int nNumber ){
         switch ( nNumber ){
 
             case  1: return "Did you hear about the child that was using rotten fruit as sling ammunition?"; break;
-            case  2: return "How DARE they sell better items everywhere else than here in Cordor!"; break;
+            case  2: return "How DARE they sell better items everywhere else than here in Southport!"; break;
             case  3: return "My friend says that there's an imp in Wyrmhold which sells some items, but he's very unfair in his prices."; break;
             case  4: return "Can you believe she actually wore white to the wedding?"; break;
             case  5: return "Last tenday, her and all of her sisters spent the entire day at the bathouse!"; break;

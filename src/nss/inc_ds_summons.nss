@@ -1143,6 +1143,7 @@ void sum_SD_Shadow( object oPC, location lTarget )
 
         szShadowCreature+="4";
         eLink = sd_calc_buffs(nShadowRank, oPC);
+        fDuration = fDuration*2.0;
     }
     // 13th HD Shadow
     else if ( nShadowRank < 7 )

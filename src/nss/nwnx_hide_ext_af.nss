@@ -17,7 +17,7 @@ void main()
 
       if(nSDLevels >= 19)
       {
-        nDam = DAMAGE_BONUS_2d10;
+        nDam = DAMAGE_BONUS_2d12;
       }
       else if(nSDLevels >= 16)
       {
@@ -41,7 +41,7 @@ void main()
            effect eVis = EffectVisualEffect(VFX_DUR_GLOW_LIGHT_BLUE);
            effect eLink = EffectLinkEffects(eVis,eDam);
            eLink = TagEffect(eLink,"EmbracingShadows");
-           ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eDam, oPC,12.0);
+           ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oPC,12.0);
            SetLocalInt(oPC,"EmbracingShadows",1);
            DelayCommand(6.0,DeleteLocalInt(oPC,"EmbracingShadows"));
          }

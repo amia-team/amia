@@ -35,15 +35,15 @@ void main()
       if(nSDLevels >= 10)
       {
 
-         if(GetLocalInt(oPC,"EmbracingShadows")==0)
+         if(GetLocalInt(oPC,"EmbracingCold")==0)
          {
            effect eDam = EffectDamageIncrease(nDam,DAMAGE_TYPE_COLD);
            effect eVis = EffectVisualEffect(VFX_DUR_AURA_BLUE_LIGHT);
            effect eLink = EffectLinkEffects(eVis,eDam);
-           eLink = TagEffect(eLink,"EmbracingShadows");
+           eLink = TagEffect(eLink,"EmbracingCold");
            ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oPC,12.0);
-           SetLocalInt(oPC,"EmbracingShadows",1);
-           DelayCommand(6.0,DeleteLocalInt(oPC,"EmbracingShadows"));
+           SetLocalInt(oPC,"EmbracingCold",1);
+           DelayCommand(12.0,DeleteLocalInt(oPC,"EmbracingCold"));
          }
 
       }

@@ -38,7 +38,7 @@ void main()
          if(GetLocalInt(oPC,"EmbracingShadows")==0)
          {
            effect eDam = EffectDamageIncrease(nDam,DAMAGE_TYPE_COLD);
-           effect eVis = EffectVisualEffect(VFX_DUR_GLOW_LIGHT_BLUE);
+           effect eVis = EffectVisualEffect(VFX_DUR_AURA_BLUE_LIGHT);
            effect eLink = EffectLinkEffects(eVis,eDam);
            eLink = TagEffect(eLink,"EmbracingShadows");
            ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oPC,12.0);

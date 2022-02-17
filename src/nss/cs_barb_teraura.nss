@@ -24,23 +24,12 @@ void main( ){
     object oPC          = GetAreaOfEffectCreator( );
     int nPC_Level       = GetHitDice( oPC );
     int nBarbLevel      = GetLevelByClass(CLASS_TYPE_BARBARIAN,oPC);
-    int nDC             = nBarbLevel/2 + GetAbilityModifier(ABILITY_CONSTITUTION,oPC)+GetSkillRank( SKILL_INTIMIDATE, oPC, TRUE )/3;
+    int nDC = 8 + ( GetSkillRank(SKILL_INTIMIDATE,oPC,TRUE)/2 ) + ( GetLevelByClass(CLASS_TYPE_BARBARIAN,oPC)/2 );
     float fDuration     = RoundsToSeconds( nPC_Level / 2 );     // No limits needed, must be epic to use this anyway.
 
     object oVictim      = GetEnteringObject( );
     int nVictim_Level   = GetHitDice( oVictim );
 
-
-    // Gives DC bonuses if feats are invested
-    if(GetHasFeat(FEAT_SKILL_FOCUS_INTIMIDATE, oPC)==TRUE)
-    {
-       nDC = nDC + 1;
-    }
-
-    if(GetHasFeat(FEAT_EPIC_SKILL_FOCUS_INTIMIDATE, oPC)==TRUE)
-    {
-       nDC = nDC + 3;
-    }
 
 
     // Bug out if the victim isn't a creature OR it's not a foe of the Barbarian.

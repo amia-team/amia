@@ -62,10 +62,13 @@ void main()
     }
     else
     {
+        int nRounds = 10;
+        if (GetMetaMagicFeat() == METAMAGIC_EXTEND) {
+            nRounds = nRounds * 2;
+        }
       ApplyEffectAtLocation(DURATION_TYPE_INSTANT, eVis, lTarget);
       //Create an instance of the AOE Object using the Apply Effect function
-      ApplyEffectAtLocation(DURATION_TYPE_TEMPORARY, eAOE, lTarget, RoundsToSeconds(10));
+      ApplyEffectAtLocation(DURATION_TYPE_TEMPORARY, eAOE, lTarget, RoundsToSeconds(nRounds));
     }
 }
-
 

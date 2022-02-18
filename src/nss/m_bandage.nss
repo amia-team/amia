@@ -15,7 +15,7 @@ void main()
     int nCoolDown = GetLocalInt(oTarget, "mediccd");
     int nCombatMedicLevels = GetLevelByClass(49, oPC);
     int nWisdomMod = GetAbilityModifier(ABILITY_WISDOM,oPC);
-    float fTime = IntToFloat(nCombatMedicLevels*2*6);
+    float fTime = IntToFloat(nCombatMedicLevels*2*6)+1.0;
     float fTime2 = IntToFloat(nCombatMedicLevels*2*6*5);
     float fCoolDown = 20.0;
 

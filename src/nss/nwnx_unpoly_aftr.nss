@@ -12,6 +12,11 @@ void main( ){
     DelayCommand( 0.5, RestoreSpellState( oPC ) );
     SetObjectVisualTransform(oPC, OBJECT_VISUAL_TRANSFORM_SCALE, fResize);
 
+    //Poly cool down
+    SetLocalInt( OBJECT_SELF, "POLY_COOLDOWN", 1 );
+    DelayCommand(30.0,DeleteLocalInt(OBJECT_SELF,"POLY_COOLDOWN"));
+    DelayCommand(30.0,SendMessageToPC(OBJECT_SELF,"You may now shift to another form!"));
+
 }
 
 

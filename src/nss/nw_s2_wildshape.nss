@@ -40,11 +40,6 @@ void main()
       return;
     }
 
-    if(GetLocalInt(OBJECT_SELF,"POLY_COOLDOWN") == 1)
-    {
-      SendMessageToPC(OBJECT_SELF,"Slow down! You are polymorphing too fast!");
-      return;
-    }
 
     int nElderAt = 12;
     if( nShifter > nDruid ){
@@ -207,10 +202,5 @@ void main()
         IPWildShapeCopyItemProperties(oBeltOld,oArmorNew);
     }
 
-
-    //Poly cool down
-    SetLocalInt( OBJECT_SELF, "POLY_COOLDOWN", 1 );
-    DelayCommand(30.0,DeleteLocalInt(OBJECT_SELF,"POLY_COOLDOWN"));
-    DelayCommand(30.0,SendMessageToPC(OBJECT_SELF,"You may now shift to another form!"));
 
 }

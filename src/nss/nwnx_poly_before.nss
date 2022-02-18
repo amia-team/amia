@@ -13,6 +13,12 @@ void main( ){
     SaveSpellState( oPC );
     SetLocalFloat(oPCKey, "presize", fPolySizePre);
 
+    if(GetLocalInt(OBJECT_SELF,"POLY_COOLDOWN") == 1)
+    {
+      SendMessageToPC(OBJECT_SELF,"Slow down! You are polymorphing too fast!");
+      return;
+    }
+
 }
 
 void SaveSpellState( object oPC ){

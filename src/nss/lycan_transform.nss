@@ -27,6 +27,16 @@ void main()
     int nAnimalSkin;
     int nAnimalPo;
 
+    if(GetLocalInt(OBJECT_SELF,"POLY_COOLDOWN") == 1)
+    {
+      SendMessageToPC(OBJECT_SELF,"Slow down! You are polymorphing too fast!");
+      return;
+    }
+    if(GetLocalInt(OBJECT_SELF,"POLY_BLOCK") == 1)
+    {
+      SendMessageToPC(OBJECT_SELF,"You must unpolymorph through the radial menu first!");
+      return;
+    }
 
     //--------------------------------------------------------------------------
     // Store the old objects so we can access them after the character has

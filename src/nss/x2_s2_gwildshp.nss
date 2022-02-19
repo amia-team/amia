@@ -55,6 +55,16 @@ void main(){
 
     int nPolyLevel = 0;
 
+    if(GetLocalInt(OBJECT_SELF,"POLY_COOLDOWN") == 1)
+    {
+      SendMessageToPC(OBJECT_SELF,"Slow down! You are polymorphing too fast!");
+      return;
+    }
+    if(GetLocalInt(OBJECT_SELF,"POLY_BLOCK") == 1)
+    {
+      SendMessageToPC(OBJECT_SELF,"You must unpolymorph through the radial menu first!");
+      return;
+    }
 
     // Nerf so they dont retain spells from previous shapes
     RemoveShapeEffects(OBJECT_SELF,GetLocalInt( OBJECT_SELF, "LAST_POLY_ID"));

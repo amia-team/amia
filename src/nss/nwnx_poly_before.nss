@@ -13,8 +13,6 @@ void main( ){
     SaveSpellState( oPC );
     SetLocalFloat(oPCKey, "presize", fPolySizePre);
 
-    //Poly block
-    SetLocalInt( OBJECT_SELF, "POLY_BLOCK", 1 );
 
 }
 

@@ -29,12 +29,7 @@ void main()
 
     if(GetLocalInt(OBJECT_SELF,"POLY_COOLDOWN") == 1)
     {
-      SendMessageToPC(OBJECT_SELF,"Slow down! You are polymorphing too fast!");
-      return;
-    }
-    if(GetLocalInt(OBJECT_SELF,"POLY_BLOCK") == 1)
-    {
-      SendMessageToPC(OBJECT_SELF,"You must unpolymorph through the radial menu first!");
+      SendMessageToPC(OBJECT_SELF,"You must wait for the cool down to expire to shift again!");
       return;
     }
 

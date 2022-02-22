@@ -12,21 +12,29 @@ void main()
    object oWidget = GetItemActivated();
    location lTargeted = GetItemActivatedTargetLocation();
    string sPLC = GetLocalString(oWidget,"plc");
-   object oPLC = GetLocalObject(oWidget, "spawnedplc");
+   int sActivePLC = GetLocalInt(oWidget,"active");
+   location lPLC = GetLocalLocation(oWidget, "spawnedplclocation");
 
-   if(GetIsObjectValid(oPLC))
+
+   if(sActivePLC == 1)
    {
-     FloatingTextStringOnCreature("*Removing PLC*",oPC);
-     DestroyObject(oPLC);
-     DeleteLocalObject(oWidget,"spawnedplc");
+      object oPLC = GetNearestObjectToLocation(OBJECT_TYPE_PLACEABLE, lPLC);
+      string sPLCRes = GetResRef(oPLC);
+     if(sPLCRes == sPLC)
+     {
+      DestroyObject(oPLC);
+     }
+      FloatingTextStringOnCreature("*Removing PLC*",oPC);
+      DeleteLocalInt(oWidget,"active");
    }
    else
    {
      FloatingTextStringOnCreature("*Spawning PLC*",oPC);
-     oPLC = CreateObject(OBJECT_TYPE_PLACEABLE,sPLC,lTargeted,FALSE);
-     SetName(oPLC,GetName(oWidget));
-     SetDescription(oPLC,GetDescription(oWidget));
-     SetLocalObject(oWidget,"spawnedplc",oPLC);
+     object oPlacedPLC = CreateObject(OBJECT_TYPE_PLACEABLE,sPLC,lTargeted,FALSE);
+     SetName(oPlacedPLC,GetName(oWidget));
+     SetDescription(oPlacedPLC,GetDescription(oWidget));
+     SetLocalInt(oWidget,"active",1);
+     SetLocalLocation(oWidget, "spawnedplclocation",lTargeted);
    }
 
 

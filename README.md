@@ -35,5 +35,5 @@ Keep in mind that unless there were recent changes you need reflected in your wo
 ### Script Editing
 - Editing and adding scripts is a simpler process. You can just add `.nss` files to the `src/nss` directory. Do not upload .ncs files or any other file type directly through this window. All other file types (areas, monsters, items, etc.) must be uploaded using the process above.
 ## Other resources
-You can read up on Nasher's documentation [here](https://github.com/squattingmonk/nasher).
-You can find NWNX's Documentation [here](https://nwnxee.github.io/unified/).
+- You can read up on Nasher's documentation [here](https://github.com/squattingmonk/nasher).
+- You can find NWNX's Documentation [here](https://nwnxee.github.io/unified/).

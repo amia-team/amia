@@ -60,6 +60,8 @@ int AllowedToCastEpicSpell( int nSpell, object oPC );
 //Get the highest level casterclass
 int GetCasterClass( object oPC );
 
+const int WARLOCK = 57;
+
 //-------------------------------------------------------------------------------
 // main
 //-------------------------------------------------------------------------------

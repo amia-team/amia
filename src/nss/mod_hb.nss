@@ -39,7 +39,6 @@ void main( ){
 
     RunServerCommand();
 
-
     int nCount = GetLocalInt( OBJECT_SELF, "ds_dm_cnt" );
 
     if ( nCount < 150 ){

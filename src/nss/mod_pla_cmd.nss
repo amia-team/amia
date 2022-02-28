@@ -641,7 +641,7 @@ void f_SetReloadtime( object oPC, string sValue ){
         return;
     }
 
-    SendMessageToPC( oPC, "Server will reset att runtime: "+IntToString( nTime + nModTime ) );
+    SendMessageToPC( oPC, "Server will reset at runtime: "+IntToString( nTime + nModTime ) );
 
     SetLocalInt( oModule, "AutoReload", nTime + nModTime );
 }

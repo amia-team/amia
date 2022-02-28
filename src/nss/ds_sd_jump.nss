@@ -13,7 +13,7 @@ void main( ) {
     object oPC = OBJECT_SELF;
     object oArea = GetArea( oPC );
     object oTarget=GetSpellTargetObject();
-    int nDuration = 264 - (GetLevelByClass(CLASS_TYPE_SHADOWDANCER,oPC)*12);
+    int nDuration = 300 - (GetLevelByClass(CLASS_TYPE_SHADOWDANCER,oPC)*12);
     float fDuration = IntToFloat(nDuration);
 
     location lTarget = GetSpellTargetLocation();

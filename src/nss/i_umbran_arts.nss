@@ -52,8 +52,6 @@ void ActivateItem()
     int iSDLevel        = GetLevelByClass( CLASS_TYPE_SHADOWDANCER, oPC );
 
 
-    SendMessageToPC(oPC,"These widgets are now disabled. Please turn them into a DM.");
-    /*
     // Identify widget and direct to appropriate code
     if( sItemName == "umbran_arts_1" && DecrementShadowEvade( oPC, 1 ) == 1  && iSDLevel >= 6 ){
         CastingAnim( oPC);
@@ -88,7 +86,6 @@ void ActivateItem()
     else if ( sItemName == "" ){
                 AssignCommand( oPC, EmptyFunction( oTarget ) );
     }
-    */
 }
 
 void main( ){

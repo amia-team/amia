@@ -45,12 +45,12 @@ void main()
 
    if(nLevelBlood >= 5)
    {
-     eStr = EffectAbilityIncrease(ABILITY_STRENGTH,3);
-     eDex = EffectAbilityIncrease(ABILITY_DEXTERITY,3);
-     eCon = EffectAbilityIncrease(ABILITY_CONSTITUTION,3);
-     eInt = EffectAbilityIncrease(ABILITY_INTELLIGENCE,3);
-     eCha = EffectAbilityIncrease(ABILITY_CHARISMA,3);
-     eWis = EffectAbilityIncrease(ABILITY_WISDOM,3);
+     eStr = EffectAbilityIncrease(ABILITY_STRENGTH,4);
+     eDex = EffectAbilityIncrease(ABILITY_DEXTERITY,4);
+     eCon = EffectAbilityIncrease(ABILITY_CONSTITUTION,4);
+     eInt = EffectAbilityIncrease(ABILITY_INTELLIGENCE,4);
+     eCha = EffectAbilityIncrease(ABILITY_CHARISMA,4);
+     eWis = EffectAbilityIncrease(ABILITY_WISDOM,4);
      eLife = EffectRegenerate(3,6.0);
      eLuck = EffectSavingThrowIncrease(SAVING_THROW_ALL,4);
    }

@@ -87,26 +87,54 @@ int validateHead( object oPC, int newHead ) {
 }
         //Gnome male
         else if( iGender == GENDER_MALE && iBaseRace == 2 ) {
-                if( newHead == 27 ) return FALSE;
-                if( newHead == 112 ) return FALSE;
-                if( newHead == 113 ) return FALSE;
-                if( newHead == 114 ) return FALSE;
-                if( newHead == 115 ) return FALSE;
-                if( newHead == 116 ) return FALSE;
-                if( newHead == 117 ) return FALSE;
-                if( newHead == 118 ) return FALSE;
-                if( newHead == 119 ) return FALSE;
-                if( newHead == 120 ) return FALSE;
+                if( newHead == 33 ) return FALSE;
+                if( newHead == 34 ) return FALSE;
+                if( newHead == 37 ) return FALSE;
+                if( newHead == 72 ) return FALSE;
+                if( newHead == 87 ) return FALSE;
+                if( newHead == 88 ) return FALSE;
+                if( newHead == 89 ) return FALSE;
+                if( newHead == 90 ) return FALSE;
+                if( newHead == 91 ) return FALSE;
+                if( newHead == 92 ) return FALSE;
+                if( newHead == 93 ) return FALSE;
+                if( newHead == 94 ) return FALSE;
+                if( newHead == 95 ) return FALSE;
+                if( newHead == 97 ) return FALSE;
+                if( newHead == 99 ) return FALSE;
+                if( newHead == 100 ) return FALSE;
+                if( newHead == 104 ) return FALSE;
                 if( newHead == 130 ) return FALSE;
                 if( newHead == 155 ) return FALSE;
+                if( newHead == 168 ) return FALSE;
                 if( newHead == 179 ) return FALSE;
                 if( newHead == 180 ) return FALSE;
+                if( newHead == 181 ) return FALSE;
+                if( newHead == 189 ) return FALSE;
+                if( newHead == 190 ) return FALSE;
+                if( newHead == 191 ) return FALSE;
+                if( newHead == 192 ) return FALSE;
+                if( newHead == 193 ) return FALSE;
 }
         //Halfling male
         else if( iGender == GENDER_MALE && iBaseRace == 3 ) {
                 if( newHead == 33 ) return FALSE;
                 if( newHead == 34 ) return FALSE;
                 if( newHead == 37 ) return FALSE;
+                if( newHead == 72 ) return FALSE;
+                if( newHead == 87 ) return FALSE;
+                if( newHead == 88 ) return FALSE;
+                if( newHead == 89 ) return FALSE;
+                if( newHead == 90 ) return FALSE;
+                if( newHead == 91 ) return FALSE;
+                if( newHead == 92 ) return FALSE;
+                if( newHead == 93 ) return FALSE;
+                if( newHead == 94 ) return FALSE;
+                if( newHead == 95 ) return FALSE;
+                if( newHead == 97 ) return FALSE;
+                if( newHead == 99 ) return FALSE;
+                if( newHead == 100 ) return FALSE;
+                if( newHead == 104 ) return FALSE;
                 if( newHead == 130 ) return FALSE;
                 if( newHead == 155 ) return FALSE;
                 if( newHead == 168 ) return FALSE;
@@ -270,11 +298,24 @@ int validateHead( object oPC, int newHead ) {
 }
         //Gnome female
         else if( iGender == GENDER_FEMALE && iBaseRace == 2 ) {
-                if( newHead == 17 ) return FALSE;
+                if( newHead == 25 ) return FALSE;
+                if( newHead == 26 ) return FALSE;
+                if( newHead == 27 ) return FALSE;
+                if( newHead == 28 ) return FALSE;
+                if( newHead == 29 ) return FALSE;
+                if( newHead == 32 ) return FALSE;
+                if( newHead == 34 ) return FALSE;
+                if( newHead == 54 ) return FALSE;
+                if( newHead == 60 ) return FALSE;
+                if( newHead == 61 ) return FALSE;
+                if( newHead == 62 ) return FALSE;
+                if( newHead == 63 ) return FALSE;
                 if( newHead == 155 ) return FALSE;
                 if( newHead == 158 ) return FALSE;
-                if( newHead == 161 ) return FALSE;
+                if( newHead == 160 ) return FALSE;
+                if( newHead == 168 ) return FALSE;
                 if( newHead == 179 ) return FALSE;
+                if( newHead == 194 ) return FALSE;
 }
         //Halfling female
         else if( iGender == GENDER_FEMALE && iBaseRace == 3 ) {
@@ -375,14 +416,17 @@ int emptyHead( object oPC, int newHead ) {
 }
         //Gnome male
         else if( iGender == GENDER_MALE && iBaseRace == 2 ) {
-                if( ( newHead > 41 ) && ( newHead < 112 ) ) return FALSE;
-                if( ( newHead > 120 ) && ( newHead < 123 ) ) return FALSE;
-                if( ( newHead > 123 ) && ( newHead < 130 ) ) return FALSE;
+                if( newHead == 111) return FALSE;
+                if( ( newHead > 103 ) && ( newHead < 112 ) ) return FALSE;
+                if( ( newHead > 112 ) && ( newHead < 130 ) ) return FALSE;
                 if( newHead == 131 ) return FALSE;
-                if( ( newHead > 132 ) && ( newHead < 155 ) ) return FALSE;
-                if( ( newHead > 155 ) && ( newHead < 179 ) ) return FALSE;
-                if( ( newHead > 180 ) && ( newHead < 194 ) ) return FALSE;
-                if( newHead > 199 ) return FALSE;
+                if( ( newHead > 132 ) && ( newHead < 145 ) ) return FALSE;
+                if( ( newHead > 146 ) && ( newHead < 155 ) ) return FALSE;
+                if( newHead == 156 ) return FALSE;
+                if( newHead == 157 ) return FALSE;
+                if( ( newHead > 168 ) && ( newHead < 179 ) ) return FALSE;
+                if( ( newHead > 180 ) && ( newHead < 189 ) ) return FALSE;
+                if( newHead > 194 ) return FALSE;
 }
         //Halfling male
         else if( iGender == GENDER_MALE && iBaseRace == 3 ) {
@@ -450,14 +494,15 @@ int emptyHead( object oPC, int newHead ) {
 }
         //Gnome female
         else if( iGender == GENDER_FEMALE && iBaseRace == 2 ) {
-                if( ( newHead > 21 ) && ( newHead < 139 ) ) return FALSE;
+                if( ( newHead > 63 ) && ( newHead < 139 ) ) return FALSE;
                 if( ( newHead > 139 ) && ( newHead < 155 ) ) return FALSE;
                 if( newHead == 156 ) return FALSE;
                 if( newHead == 157 ) return FALSE;
                 if( newHead == 159 ) return FALSE;
-                if( newHead == 160 ) return FALSE;
-                if( ( newHead > 161 ) && ( newHead < 179 ) ) return FALSE;
-                if( newHead > 179 ) return FALSE;
+                if( ( newHead > 160 ) && ( newHead < 168 ) ) return FALSE;
+                if( ( newHead > 168 ) && ( newHead < 179 ) ) return FALSE;
+                if( ( newHead > 179 ) && ( newHead < 193 ) ) return FALSE;
+                if( newHead > 193 ) return FALSE;
 }
         //Halfling female
         else if( iGender == GENDER_FEMALE && iBaseRace == 3 ) {

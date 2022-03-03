@@ -12,7 +12,7 @@ void main()
     // Check for PC monsterous races
     if(((nRacialType == 38) ||  (nRacialType == 39) ||  (nRacialType == 43)  ||
     (nRacialType == 44)  ||  (nRacialType == 45)  ||  (nRacialType == 30)  ||
-    (nRacialType == 42)) && (GetAlignmentGoodEvil(oPC) == ALIGNMENT_GOOD))
+    (nRacialType == 42) || (nRacialType == 55) || (nRacialType == 56)) && (GetAlignmentGoodEvil(oPC) == ALIGNMENT_GOOD))
     {
        AdjustAlignment(oPC,ALIGNMENT_EVIL,31,FALSE);
     }

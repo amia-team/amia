@@ -285,6 +285,11 @@ int validateHead( object oPC, int newHead ) {
                 if( newHead == 29 ) return FALSE;
                 if( newHead == 32 ) return FALSE;
                 if( newHead == 34 ) return FALSE;
+                if( newHead == 54 ) return FALSE;
+                if( newHead == 60 ) return FALSE;
+                if( newHead == 61 ) return FALSE;
+                if( newHead == 62 ) return FALSE;
+                if( newHead == 63 ) return FALSE;
                 if( newHead == 155 ) return FALSE;
                 if( newHead == 158 ) return FALSE;
                 if( newHead == 160 ) return FALSE;
@@ -381,8 +386,7 @@ int emptyHead( object oPC, int newHead ) {
 }
         //Halfling male
         else if( iGender == GENDER_MALE && iBaseRace == 3 ) {
-                if( ( newHead > 40 ) && ( newHead < 42 ) ) return FALSE;
-                if( ( newHead > 46 ) && ( newHead < 101 ) ) return FALSE;
+                if( newHead == 111) return FALSE;
                 if( ( newHead > 103 ) && ( newHead < 112 ) ) return FALSE;
                 if( ( newHead > 112 ) && ( newHead < 130 ) ) return FALSE;
                 if( newHead == 131 ) return FALSE;
@@ -457,7 +461,7 @@ int emptyHead( object oPC, int newHead ) {
 }
         //Halfling female
         else if( iGender == GENDER_FEMALE && iBaseRace == 3 ) {
-                if( ( newHead > 37 ) && ( newHead < 139 ) ) return FALSE;
+                if( ( newHead > 63 ) && ( newHead < 139 ) ) return FALSE;
                 if( ( newHead > 139 ) && ( newHead < 155 ) ) return FALSE;
                 if( newHead == 156 ) return FALSE;
                 if( newHead == 157 ) return FALSE;

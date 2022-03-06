@@ -125,13 +125,17 @@ void main(){
     //transport to the boat
             ds_transport_party( oPC, "rt_docks1" );
     }
-        else if ( sConvoNPCTag == "c_redwood" ){
+    else if ( sConvoNPCTag == "c_redwood" ){
     //transport to Redwood
             ds_transport_party( oPC, "tarksea_rw" );
     }
-    else if ( sConvoNPCTag == "cc_flint2" ){
+    else if ( sConvoNPCTag == "c_redwood" ){
+    //transport to Redwood
+            ds_transport_party( oPC, "tarksea_rw" );
+    }
+    else if ( sConvoNPCTag == "eternalhorizonshadyboat" ){       //
     //transport to Barak Runedar from Chalkcliff
-            ds_transport_party( oPC, "cc_flint_br" );
+            ds_transport_party( oPC, "port_to_eternalhorizon" );
     }
     else if ( sConvoNPCTag == "winyatemple" ){
 

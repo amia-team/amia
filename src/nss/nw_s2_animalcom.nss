@@ -150,6 +150,7 @@ void EpicBuff( object oPC )
         SetCreatureAppearanceType(oAnimalCompanion,576); // Wyvern
         SetCreatureTailType(490,oAnimalCompanion);
         SetPortraitId(oAnimalCompanion,1040);
+        SetObjectVisualTransform(oAnimalCompanion,OBJECT_VISUAL_TRANSFORM_SCALE,0.7f,OBJECT_VISUAL_TRANSFORM_LERP_NONE);
         nStr = 6; nCon = 6; nDex = 6; nHP = 200;
         eBonus1 = EffectSkillIncrease(SKILL_DISCIPLINE,40);
         break;
@@ -157,7 +158,7 @@ void EpicBuff( object oPC )
         SetDescription(oAnimalCompanion,"Displacer Beasts are evil creatures that most don't live long enough to tell about. It would take a terrifyingly skilled and special individual to claim one as their companion.");
         SetCreatureAppearanceType(oAnimalCompanion,925);  // Displacer Beast   SPELLABILITY_HOWL_FEAR
         SetPortraitId(oAnimalCompanion,1052);
-        SetObjectVisualTransform(oAnimalCompanion,OBJECT_VISUAL_TRANSFORM_SCALE,0.9,OBJECT_VISUAL_TRANSFORM_LERP_NONE);
+        SetObjectVisualTransform(oAnimalCompanion,OBJECT_VISUAL_TRANSFORM_SCALE,0.8f,OBJECT_VISUAL_TRANSFORM_LERP_NONE);
         nStr = 6; nCon = 6; nDex = 6; nHP = 200;
         eBonus1 = EffectConcealment(50);
         eBonus2 = EffectUltravision();

@@ -25,6 +25,9 @@
 
     MODIFIED 10 APRIl 2013
     + Changed so it properly refreshes duration on use
+	
+	MODIFIED 9 MARCH 2022
+	+ Changed to no longer include divine champion in level calculation
     */
 //:://////////////////////////////////////////////
 //:: Created By: Brent
@@ -46,7 +49,7 @@ void main()
         object oTarget              = GetSpellTargetObject();
         object oMyWeapon            =  GetItemInSlot(INVENTORY_SLOT_RIGHTHAND,oTarget);
          object oMySecondWeapon     =  GetItemInSlot(INVENTORY_SLOT_LEFTHAND,oTarget);
-        int nLevel = GetLevelByClass(CLASS_TYPE_PALADIN)+GetLevelByClass(CLASS_TYPE_CLERIC)+GetLevelByClass(CLASS_TYPE_BLACKGUARD)+GetLevelByClass(CLASS_TYPE_DIVINE_CHAMPION);
+        int nLevel = GetLevelByClass(CLASS_TYPE_PALADIN)+GetLevelByClass(CLASS_TYPE_CLERIC)+GetLevelByClass(CLASS_TYPE_BLACKGUARD);
 
         effect eVis = EffectVisualEffect(VFX_IMP_SUPER_HEROISM);
         effect eDur = EffectVisualEffect(VFX_DUR_CESSATE_POSITIVE);

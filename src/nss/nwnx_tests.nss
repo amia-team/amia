@@ -19,4 +19,3 @@ void NWNX_Tests_Report(string sPlugin, string sTestName, int bSuccess)
 }
 
 /// @} // End of tests
-

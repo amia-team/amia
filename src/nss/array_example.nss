@@ -4,12 +4,12 @@
 // nwnx_data also includes inc_array, so don't double dip.
 #include "nwnx_data"
 
-void Log(string msg)
+void Log(string msg) 
 {
     WriteTimestampedLogEntry(msg);
 }
 
-void TestArrayOnModule()
+void TestArrayOnModule() 
 {
 
     string array = "test";
@@ -50,11 +50,11 @@ void TestArrayOnModule()
     Array_Clear(array);
     // Load up the array with 100 entries
     int i;
-
+	
     struct NWNX_Time_HighResTimestamp b;
     b = NWNX_Time_GetHighResTimeStamp();
     Log("Start Time: " + IntToString(b.seconds) + "." + IntToString(b.microseconds));
-    for (i=0; i<1000; i++)
+    for (i=0; i<1000; i++) 
     {
         Array_PushBack_Str(array, IntToString(d100()) + " xxx " + IntToString(i));
     }
@@ -63,7 +63,7 @@ void TestArrayOnModule()
     Array_Shuffle(array);
     b = NWNX_Time_GetHighResTimeStamp();
     Log("Shuffled 1000: " + IntToString(b.seconds) + "." + IntToString(b.microseconds));
-    for (i=5; i<995; i++)
+    for (i=5; i<995; i++) 
     {
         // Delete the third entry a bunch of times
         Array_Erase(array, 3);
@@ -74,7 +74,7 @@ void TestArrayOnModule()
 
 }
 
-void TestArrayOnChicken()
+void TestArrayOnChicken() 
 {
     string array="chicken";
     // Let's create an array "on" our favorite creature: the deadly nw_chicken
@@ -95,7 +95,7 @@ void TestArrayOnChicken()
 
 }
 
-void TestNWNXArray()
+void TestNWNXArray() 
 {
     Log("");
     Log("Start NWNX_Data test.");
@@ -130,7 +130,7 @@ void TestNWNXArray()
 
 // Uncomment and assign to some event click.
 /* */
-void main()
+void main() 
 {
     Log("Start");
 

@@ -32,6 +32,8 @@
 //:://////////////////////////////////////////////
 #include "x0_i0_spells"
 #include "x2_inc_itemprop"
+
+string FALL_WIDGET = "dg_fall";
 void main()
 {
 
@@ -53,6 +55,13 @@ void main()
         itemproperty ipGlow=ItemPropertyVisualEffect(ITEM_VISUAL_SONIC);
 
         int nCharismaBonus = GetAbilityModifier(ABILITY_CHARISMA);
+        //FALL HACK! Mwhahahaha
+        if ( (GetLocalInt( oTarget, "Fallen" ) == 1) ||
+            (GetItemPossessedBy(oTarget,FALL_WIDGET) != OBJECT_INVALID) ){
+            FloatingTextStringOnCreature( "The plea to your deity is not heard...", oTarget, FALSE );
+            return;
+        }
+
 
         if (nCharismaBonus>0)
         {
@@ -62,10 +71,6 @@ void main()
 
             effect eLink = EffectLinkEffects(eDamage1, eDur);
 
-            //FALL HACK! Mwhahahaha
-            if ( GetLocalInt( oTarget, "Fallen" ) == 1 ){
-                FloatingTextStringOnCreature( "The plea to your deity is not heard...", oTarget, FALSE );
-            }
 
             eLink = SupernaturalEffect(eLink);
 
@@ -86,6 +91,5 @@ void main()
         DecrementRemainingFeatUses(OBJECT_SELF, FEAT_TURN_UNDEAD);
     }
 }
-
 
 

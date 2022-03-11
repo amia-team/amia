@@ -20,6 +20,7 @@
 //:://////////////////////////////////////////////
 #include "x0_i0_spells"
 
+string FALL_WIDGET = "dg_fall";
 void main()
 {
 
@@ -33,6 +34,13 @@ void main()
         //Declare major variables
         object oTarget = GetSpellTargetObject();
         int nLevel = GetLevelByClass(CLASS_TYPE_PALADIN)+GetLevelByClass(CLASS_TYPE_CLERIC)+GetLevelByClass(CLASS_TYPE_BLACKGUARD)+GetLevelByClass(CLASS_TYPE_DIVINE_CHAMPION);
+
+        //FALL HACK! Mwhahahaha
+        if ( (GetLocalInt( oTarget, "Fallen" ) == 1) ||
+            (GetItemPossessedBy(oTarget,FALL_WIDGET) != OBJECT_INVALID) ){
+            FloatingTextStringOnCreature( "The plea to your deity is not heard...", oTarget, FALSE );
+            return;
+        }
 
         effect eVis = EffectVisualEffect(VFX_IMP_SUPER_HEROISM);
         effect eGlow = EffectVisualEffect(VFX_DUR_GLOW_WHITE);
@@ -48,12 +56,6 @@ void main()
         //Fire cast spell at event for the specified target
         SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, 474, FALSE));
 
-        //FALL HACK! Mwhahahaha
-        if ( GetLocalInt( oTarget, "Fallen" ) == 1 ){
-                FloatingTextStringOnCreature( "The plea to your deity is not heard...", oTarget, FALSE );
-                return;
-        }
-
         eLink = SupernaturalEffect(eLink);
         ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oTarget, RoundsToSeconds(nCharismaBonus));
         ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
@@ -62,6 +64,5 @@ void main()
 
     }
 }
-
 
 

@@ -17,5 +17,10 @@ void main()
             ClearAllActions();
         }
     }
+    // Full Fall check, commented out:
+    //if (!FallenCastCheck(oPC)) {
+    //    FloatingTextStringOnCreature( "The plea to your deity is not heard...", oPC, FALSE );
+    //    ClearAllActions();
+    //}
 
 }

@@ -30,10 +30,18 @@ void coolDown(object oTarget); // Built in cool down
 
 #include "nw_i0_spells"
 
+string FALL_WIDGET = "dg_fall";
 void main()
 {
     //Declare major variables
     object oTarget = OBJECT_SELF;
+    //FALL HACK! Mwhahahaha
+    if ( (GetLocalInt( oTarget, "Fallen" ) == 1) ||
+        (GetItemPossessedBy(oTarget,FALL_WIDGET) != OBJECT_INVALID) ){
+        FloatingTextStringOnCreature( "The plea to your deity is not heard...", oTarget, FALSE );
+        return;
+    }
+
     int nMod = GetAbilityModifier(ABILITY_CHARISMA, OBJECT_SELF);
     if(nMod < 0)
     {

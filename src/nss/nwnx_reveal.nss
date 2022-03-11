@@ -29,10 +29,10 @@ void NWNX_Reveal_SetRevealToParty(object oHiding, int bReveal, int iDetectionMet
 void NWNX_Reveal_RevealTo(object oHiding, object oObserver, int iDetectionMethod = NWNX_REVEAL_HEARD)
 {
     string sFunc = "RevealTo";
-
-    NWNX_PushArgumentInt(NWNX_Reveal, sFunc, iDetectionMethod);
-    NWNX_PushArgumentObject(NWNX_Reveal, sFunc, oObserver);
-    NWNX_PushArgumentObject(NWNX_Reveal, sFunc, oHiding);
+    
+    NWNX_PushArgumentInt(iDetectionMethod);
+    NWNX_PushArgumentObject(oObserver);
+    NWNX_PushArgumentObject(oHiding);
 
     NWNX_CallFunction(NWNX_Reveal, sFunc);
 }
@@ -40,10 +40,10 @@ void NWNX_Reveal_RevealTo(object oHiding, object oObserver, int iDetectionMethod
 void NWNX_Reveal_SetRevealToParty(object oHiding, int bReveal, int iDetectionMethod = NWNX_REVEAL_HEARD)
 {
     string sFunc = "SetRevealToParty";
-
-    NWNX_PushArgumentInt(NWNX_Reveal, sFunc, iDetectionMethod);
-    NWNX_PushArgumentInt(NWNX_Reveal, sFunc, bReveal);
-    NWNX_PushArgumentObject(NWNX_Reveal, sFunc, oHiding);
+    
+    NWNX_PushArgumentInt(iDetectionMethod);
+    NWNX_PushArgumentInt(bReveal);
+    NWNX_PushArgumentObject(oHiding);
 
     NWNX_CallFunction(NWNX_Reveal, sFunc);
 }

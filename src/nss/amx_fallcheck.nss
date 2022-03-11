@@ -52,7 +52,7 @@ int IsSpecificFallen(object oPC) {
 }
 int IsDivineCast() {
     int iClass = GetLastSpellCastClass();
-    if (iClass == CLASS_TYPE_CLERIC
+    if (iClass == CLASS_TYPE_BLACKGUARD || iClass == CLASS_TYPE_CLERIC
     || iClass == CLASS_TYPE_DRUID || iClass == CLASS_TYPE_PALADIN
     || iClass == CLASS_TYPE_RANGER || iClass == CLASS_TYPE_DIVINE_CHAMPION) {
         return TRUE;

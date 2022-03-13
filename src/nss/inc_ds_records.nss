@@ -221,9 +221,6 @@ object GetNthArea( int n, object oAreaList=OBJECT_INVALID );
 // functions
 //-------------------------------------------------------------------------------
 
-//void main(){}
-
-
 object CacheCache( string sStorage ){
 
     object oModule  = GetModule();
@@ -1977,7 +1974,7 @@ void RunServerCommand(){
     //commands are imported once a minute
     SetLocalInt( OBJECT_SELF, "ds_cmnd_cnt", 0 );
 
-   // Messenger();
+    Messenger();
 
     AutoSave();
 }

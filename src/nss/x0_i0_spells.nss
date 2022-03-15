@@ -720,7 +720,9 @@ void DoMissileStorm(int nD6Dice, int nCap, int nSpell, int nMIRV = VFX_IMP_MIRV,
         oTarget = GetNextObjectInShape(SHAPE_SPHERE, RADIUS_SIZE_GARGANTUAN, lTarget, TRUE, OBJECT_TYPE_CREATURE);
      }
 
-     if (nEnemies == 0) return; // * Exit if no enemies to hit
+     if (nEnemies == 0) {
+        return; // * Exit if no enemies to hit
+     }
      int nExtraMissiles = nMissiles / nEnemies;
 
      // April 2003
@@ -1939,5 +1941,4 @@ void spellsDispelAoE(object oTargetAoE, object oCaster, int nCasterLevel)
     }
 
 }
-
 

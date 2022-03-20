@@ -14,7 +14,8 @@ void main()
     if (IsDivineCast()) {
         if (IsSpecificFallen(oPC)) {
             FloatingTextStringOnCreature( "The plea to your deity is not heard...", oPC, FALSE );
-            ClearAllActions();
+            ActionWait(0.5f);
+			ClearAllActions();
         }
     }
     // Full Fall check, commented out:

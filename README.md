@@ -37,3 +37,4 @@ Keep in mind that unless there were recent changes you need reflected in your wo
 ## Other resources
 - You can read up on Nasher's documentation [here](https://github.com/squattingmonk/nasher).
 - You can find NWNX's Documentation [here](https://nwnxee.github.io/unified/).
+## Build artifacts

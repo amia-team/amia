@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building..'
                  script {
-                    sh "docker run --rm -t -v \$(pwd):/nasher urothis/nwnee-community-images:nasher-8193.34 pack --clean --verbose"
+                    sh "docker run --rm -t -v \$(pwd):/nasher urothis/nwnee-community-images:nasher-8193.34 pack --clean --verbose --default"
                 }
             }
         }
@@ -20,6 +20,7 @@ pipeline {
     }
     post {
         always {
+            cleanWs()
             discordSend description: "Amia module build", footer: "Build results for the Amia module", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discord.com/api/webhooks/957814431704842270/2A6zZ4x7fsWULXnfrLLyRvgqexcnAvreXr6fbym8IoHdAHGpEoQgXjLn1XKry75uN_Zg"
         }
         success {

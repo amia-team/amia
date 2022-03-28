@@ -20,7 +20,7 @@ pipeline {
     }
     post {
         always {
-            discordSend description: "Amia module build", footer: "Footer Text", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discord.com/api/webhooks/957694023575928893/IMYITwBo8EEsJDrvgHlBlkOX0TogzYDpyZrXv-aX90koavyRDoAkmSUURbxdCEeU0gzx"
+            discordSend description: "Amia module build", footer: "Build results for the Amia module", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discord.com/api/webhooks/957814431704842270/2A6zZ4x7fsWULXnfrLLyRvgqexcnAvreXr6fbym8IoHdAHGpEoQgXjLn1XKry75uN_Zg"
         }
         success {
             echo 'Build success'

@@ -89,6 +89,30 @@ void main( ){
             nCasterLevel = 15;
             fDuration /= 2.0;
         }
+        if ( sTag == "js_venomgland" ){
+            // Venom Gland
+            nFlameWepDamage = 4;
+            nCasterLevel = 9;
+            fDuration /= 2.0;
+        }
+        if ( sTag == "js_hqvenomgland" ){
+            // HQ Venom Gland
+            nFlameWepDamage = 4;
+            nCasterLevel = 10;
+            fDuration /= 2.0;
+        }
+        if ( sTag == "js_lvenomgland" ){
+            // Legendary Venom Gland
+            nFlameWepDamage = 4;
+            nCasterLevel = 15;
+            fDuration /= 2.0;
+        }
+        if ( sTag == "js_wyverngland" ){
+            // Wyvern Venom Gland
+            nFlameWepDamage = 4;
+            nCasterLevel = 20;
+            fDuration /= 2.0;
+        }
 
     }
 

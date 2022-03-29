@@ -411,6 +411,11 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
       AddHenchman(oPC,oHenchmen);
 
    }
+   else if(sItemResRef == "js_arca_spiderl") // Spawns Spider Egg Sacks
+   {
+     object oEgg = CreateObject(OBJECT_TYPE_PLACEABLE,"js_hun_eggsack",lTarget);
+     SetLocalString(oEgg,"owner",GetName(oPC));
+   }
 
 
 

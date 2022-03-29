@@ -71,8 +71,10 @@ void DS_CHECK_SET( object oPC, object oJobJournal, object oTargeted)
   int nFarmland = GetLocalInt(oPC,"onfarmland");
   int nUD = GetLocalInt(oPC,"underdark");
   int nOnSite = GetLocalInt(oPC,"onsite");
+  int nPCLevel = GetLevelByPosition(1,oPC) + GetLevelByPosition(2,oPC) + GetLevelByPosition(3,oPC);
   string sPrimaryJob = GetLocalString(oJobJournal,"primaryjob");
   string sSecondaryJob = GetLocalString(oJobJournal,"secondaryjob");
+
 
   // Clearing everything to be safe
   DS_CLEAR_CHECK(oPC);
@@ -103,6 +105,10 @@ void DS_CHECK_SET( object oPC, object oJobJournal, object oTargeted)
   if(((sPrimaryJob == "Hunter") || (sSecondaryJob == "Hunter")))
   {
     SetLocalInt(oPC,"ds_check_5",1);
+    if(nPCLevel >= 5)
+    {
+      SetLocalInt(oPC,"ds_check_18",1);
+    }
   }
 
   // Check to see if they are a rancher or not
@@ -360,6 +366,7 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
      case 78: break; // Merchant script - LEAVE BLANK
      case 79: break; // Merchant script - LEAVE BLANK
      case 80: sResource = "js_hunt_tra2"; break; // Hunter's Meat Trap
+     case 81: break; // Hunter script - LEAVE BLANK
    }
 
    // Farming/Planting
@@ -468,6 +475,11 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
      AssignCommand(oPC,ActionPlayAnimation(ANIMATION_LOOPING_GET_LOW,1.0,1.0));
      SendMessageToPC(oPC,"*You lay down a trap it will take: " +FloatToString(GetLocalFloat(oResource,"traprate"),0,1)+ " seconds to catch something*");
      SetLocalInt(oPC,"traps",nTraps+1);
+   }
+
+   if(nNode == 81)
+   {
+      AssignCommand(oPC,ActionStartConversation(oPC,"c_hunter_bgh",TRUE,FALSE));
    }
 
 

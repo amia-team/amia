@@ -84,10 +84,30 @@ void main()
     int nDuration       = 3 + nCasterLevel/2;
     //added secondary duration for effect vs. PC
     int nDurationPC     = 5;
+    int nSpellDC = GetSpellSaveDC();
+
+
+    //Item fired stuff
+    object oCastFromItem = GetSpellCastItem();
+    string sTag;
+
+    if ( GetIsObjectValid( oCastFromItem ) )
+    {
+        sTag = GetTag( oCastFromItem );
+
+        if ( sTag == "js_dryaddom" )
+        {
+            nCasterLevel = 26;
+            nDuration = 3 + nCasterLevel/2;
+            nSpellDC = 38;
+            }
+    }
+    //
 
     nDuration           = GetScaledDuration(nDuration, oTarget);
 
     int nRacial         = GetRacialType(oTarget);
+
 
     //Fire cast spell at event for the specified target
     SignalEvent(oTarget, EventSpellCastAt(oCaster, SPELL_DOMINATE_MONSTER, FALSE));
@@ -99,7 +119,7 @@ void main()
           if (!MyResistSpell(oCaster, oTarget)) {
 
                //Make a Will Save
-               if (!MySavingThrow(SAVING_THROW_WILL, oTarget, GetSpellSaveDC(), SAVING_THROW_TYPE_MIND_SPELLS)) {
+               if (!MySavingThrow(SAVING_THROW_WILL, oTarget, nSpellDC, SAVING_THROW_TYPE_MIND_SPELLS)) {
 
                     //Check for epic spell focus
                     if (GetHasFeat (FEAT_EPIC_SPELL_FOCUS_ENCHANTMENT, oCaster)){

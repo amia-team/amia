@@ -66,7 +66,7 @@ void spawnJobSystemItems(object oCritter)
 
    if(sBone != "")
    {
-      if(Random(10) <= 7)
+      if(Random(10) <= 5)
       {
          object bTemp = CreateItemOnObject(sBone,oCritter);
          SetDroppableFlag(bTemp,TRUE);
@@ -75,7 +75,7 @@ void spawnJobSystemItems(object oCritter)
 
    if(sHide != "")
    {
-      if(Random(10) <= 7)
+      if(Random(10) <= 5)
       {
          object hTemp = CreateItemOnObject(sHide,oCritter);
          SetDroppableFlag(hTemp,TRUE);
@@ -84,7 +84,7 @@ void spawnJobSystemItems(object oCritter)
 
    if(sFur != "")
    {
-      if(Random(10) <= 7)
+      if(Random(10) <= 5)
       {
          object fTemp = CreateItemOnObject(sFur,oCritter);
          SetDroppableFlag(fTemp,TRUE);
@@ -93,7 +93,7 @@ void spawnJobSystemItems(object oCritter)
 
    if(sMeat != "")
    {
-      if(Random(10) <= 7)
+      if(Random(10) <= 5)
       {
          object mTemp = CreateItemOnObject(sMeat,oCritter);
          SetDroppableFlag(mTemp,TRUE);
@@ -102,7 +102,7 @@ void spawnJobSystemItems(object oCritter)
 
    if(sVenom != "")
    {
-      if(Random(10) <= 7)
+      if(Random(10) <= 5)
       {
          object vTemp = CreateItemOnObject(sVenom,oCritter);
          SetDroppableFlag(vTemp,TRUE);

@@ -1,6 +1,7 @@
 // Hunter Dialogue that launches on conversation complete - If selection was to hunt.
 // - Edited: Maverick00053 - 3/24/22
 
+#include "inc_call_time"
 
 // Spawn the prey in the hunting zone
 void spawnPrey(int nInstance, int nRandomCount, int nRandom, string sArea);
@@ -16,33 +17,36 @@ void main()
    int nPCLevel = GetLevelByPosition(1,oPC) + GetLevelByPosition(2,oPC) + GetLevelByPosition(3,oPC);
    int nRandom;
    int nPreviousTime = GetLocalInt(oWidget,"PreviousStartTime");
-   int nCurrentTime;
+   int nCurrentTime = ReturnTime(3);
    string sArea;
    object oJobJournal = GetItemPossessedBy(oPC, "js_jobjournal");
    string sPrimaryJob = GetLocalString(oJobJournal,"primaryjob");
    string sSecondaryJob = GetLocalString(oJobJournal,"secondaryjob");
 
    //Timer Cooldown
-   /*
-     if((nCurrentTime - nPreviousTime) < 600)
-     {
-       SendMessageToPC(oPC,"You must wait for your ten minute cool down to finish before hunting again!");
-       return;
-     }
-   */
-   // SetLocalInt(oWidget,"PreviousStartTime",CURRENTTIME); <-- Set this in the exit script
+   if(((nCurrentTime - nPreviousTime) > 10) && ((sPrimaryJob == "Hunter") || sSecondaryJob == "Hunter")) // SET TO 600
+   {
+     SendMessageToPC(oPC,"You must wait for your ten minute cool down to finish before hunting again!");
+     return;
+   }
+   else if(((nCurrentTime - nPreviousTime) > 60))// SET TO 3600
+   {
+     SendMessageToPC(oPC,"You must wait for your one hour cool down to finish before hunting again!");
+     return;
+   }
+
 
    // Guide Checks
    if(GetTag(OBJECT_SELF) == "hunter_guide")
    {
-   if(GetGold(oPC) < 3000)
+   if(GetGold(oPC) < 10000)
    {
      AssignCommand(OBJECT_SELF,ActionSpeakString("Sorry. You need more gold."));
      return;
    }
    else
    {
-     TakeGoldFromCreature(3000,oPC,TRUE);
+     TakeGoldFromCreature(10000,oPC,TRUE);
    }
    }
 
@@ -152,7 +156,7 @@ void main()
    if((GetLocalInt(oWidget,"IsOccupied") == 1) && (GetTag(OBJECT_SELF) == "hunter_guide"))
    {
      AssignCommand(OBJECT_SELF,ActionSpeakString("Seems the area we headed to was already occupied by another hunter. Here is your money back. We can try somewhere else right away if you wish."));
-     GiveGoldToCreature(oPC,3000);
+     GiveGoldToCreature(oPC,10000);
      return;
    }
    else if(GetLocalInt(oWidget,"IsOccupied") == 1)

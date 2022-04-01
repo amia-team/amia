@@ -74,7 +74,7 @@ void main( ){
     // Variables
     object oModule = GetModule( );
     float resetTime = IntToFloat(GetLocalInt(oModule, "AutoReload"));
-    DelayCommand(300.0f, ExecuteScript("amia_reset"));
+   //  DelayCommand(300.0f, ExecuteScript("amia_reset"));
 
     if( GetLocalInt( oModule, "server_initialize" ) != 1 ) {
         //start database

@@ -34,7 +34,7 @@
 //void main (){}
 
 //Colours is always nice, cheers up.
-const string REST_SYSTEM_COLOUR_TAG          = "<c þþ>";
+const string REST_SYSTEM_COLOUR_TAG          = "<c ï¿½ï¿½>";
 
 //The amount of hours you have to wait before next rest
 const int    REST_BLOCK                      = 15;
@@ -411,12 +411,12 @@ void RestAmbush( object oPC ){
 //-----------------------------------------------------------------------------
 void ShowResetTime( object oPC){
 
-    int nRunTime = GetRunTime();
-    int nReload  = GetAutoReload() + nRunTime;
+    // int nRunTime = GetRunTime();
+    // int nReload  = GetAutoReload() + nRunTime;
 
-    int resetTime = ((nReload - nRunTime) - (GetRunTime() - GetStartTime())) / 60;
+    // int resetTime = ((nReload - nRunTime) - (GetRunTime() - GetStartTime())) / 60;
 
-    SendMessageToPC( oPC, REST_SYSTEM_COLOUR_TAG+"Estimated reset time: " + IntToString(resetTime) + " minutes." );
+    // SendMessageToPC( oPC, REST_SYSTEM_COLOUR_TAG+"Estimated reset time: " + IntToString(resetTime) + " minutes." );
 }
 
 //-----------------------------------------------------------------------------

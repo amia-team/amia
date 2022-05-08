@@ -26,8 +26,8 @@ void main()
     int nBGD_rank   = GetLevelByClass( CLASS_TYPE_BLACKGUARD, oPC );
 
     // Candy.
-    // Disabled due to unintended fire-effect VFX. -The1Kobra
-	//ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectVisualEffect( VFX_IMP_PULSE_NEGATIVE ), oPC );
+    // Not the cause of the unexpected wall of fire VFX. -The1Kobra
+	ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectVisualEffect( VFX_IMP_PULSE_NEGATIVE ), oPC );
 
     // Aura of Despair spell.
     ApplyEffectToObject( DURATION_TYPE_PERMANENT, ExtraordinaryEffect( EffectAreaOfEffect( 47, "bg_des_en", "****", "bg_des_ex" ) ), oPC );

@@ -239,6 +239,7 @@ void Gnollify() {
     DelayCommand( 3.3, SetCreatureBodyPart( CREATURE_PART_RIGHT_SHIN, BP_SHIN_GNOLL ) );
     DelayCommand( 3.4, SetCreatureBodyPart( CREATURE_PART_RIGHT_FOOT, BP_FEET_GNOLL ) );
     DelayCommand( 3.6, SetCreatureBodyPart( CREATURE_PART_HEAD, BP_HEAD_GNOLL ) );
+    DelayCommand( 3.8, SetCreatureTailType(BP_TAIL_GNOLL));
     DelayCommand( 4.0, SetColor( OBJECT_SELF, COLOR_CHANNEL_SKIN, 3 ) );
     //DelayCommand( 4.1, SetColor( OBJECT_SELF, COLOR_CHANNEL_TATTOO_1, 16 ) );
     //DelayCommand( 4.2, SetColor( OBJECT_SELF, COLOR_CHANNEL_TATTOO_2, 16 ) );

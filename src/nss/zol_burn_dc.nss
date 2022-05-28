@@ -1,5 +1,4 @@
 #include "inc_dc_api"
-#include "inc_ds_records"
 
 void BurnOneDreamCoin(string cdkey);
 void GiveDcXp(int level, object player);
@@ -9,13 +8,6 @@ void main()
     object player = GetPCSpeaker();
     string cdkey = GetPCPublicCDKey(player);
 
-    // If a player burns a DC before getting their PCKey, it can block them
-    // from entering the game and bug the character. This check stops that.
-    object oKey = GetPCKEY( player );
-    if ( !GetIsObjectValid( oKey ) ) {
-        SendMessageToPC(player, "You must enter the game and get a valid PCKey before burning Dream Coins.");
-        return;
-    }
 
     // Naturally, we don't want players running into the negatives on Dream Coins...
     if(GetDreamCoins(cdkey) < 1)

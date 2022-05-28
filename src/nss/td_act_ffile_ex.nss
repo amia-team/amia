@@ -1,38 +1,31 @@
-/*
-#include "td_act_ffile_af"
-#include "td_act_ffile_uaf"
-#include "td_act_ffile_gvs"
-#include "td_act_ffile_gas"
-#include "td_act_ffile_gaf"
-#include "td_act_ffile_gvf"
-#include "td_act_ffile_rnf"
-*/
+// Empty for .net
+
 // Placeholder functions for now.
-int FPlusGetVaultSize(string cdkey) {
-    // Function done in C#
-    return 0;
-}
-int FPlusGetArchiveSize(string cdkey) {
-    // Function done in C#
-    return 0;
-}
-string FPlusGetVaultFile(string cdkey, int index) {
-    // Function done in C#
+void SetFPlusKeyValueTable(string sname) {}
+string GetFPlusIndexValue(int iindex) {
     return "";
 }
-string FPlusGetArchiveFile(string cdkey, int index) {
-    // Function done in C#
+string RunFPlus(string srun) {
     return "";
 }
 
-int FPlusArchiveFile(string cdkey, int index) {
-    // Function done in C#
-    return 0;
+void FPlusArchiveFile(string cdkey, string fname) {
+
 }
-int FPlusUnArchiveFile(string cdkey, int index) {
-    // Function done in C#
-    return 0;
+void FPlusUnArchiveFile(string cdkey, string fname) {
+
 }
-string FPlusRenameFile(string cdkey, int index, string newname) {
+void FPlusRenameFile() {
+}
+
+void FPlusListArchive(string sname, string sindex) {
+}
+void FPlusListVault(string sname, string sindex) {
+}
+
+string FPlusCreateToken(string sname) {
     return "";
+}
+int FPlusOnCurrentCharacter(string sname, string cdkey) {
+    return 0;
 }

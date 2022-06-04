@@ -18,6 +18,7 @@
 
 void main()
 {
+    string DARKNESS_PROHIBITED = "NO_DARKNESS";
 
 /*
   Spellcast Hook Code
@@ -32,12 +33,16 @@ void main()
     // If code within the PreSpellCastHook (i.e. UMD) reports FALSE, do not run this spell
         return;
     }
+    object oPC=OBJECT_SELF;
 
+    if (GetLocalInt(GetArea(oPC),DARKNESS_PROHIBITED) == TRUE) {
+        SendMessageToPC(oPC,"The Darkness Spell Fizzles!");
+        return;
+    }
 // End of Spell Cast Hook
 
 
     //Declare major variables including Area of Effect Object
-    object oPC=OBJECT_SELF;
 
     effect eAOE = EffectAreaOfEffect(AOE_PER_DARKNESS);
     location lTarget = GetSpellTargetLocation();

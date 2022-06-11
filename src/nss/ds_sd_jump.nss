@@ -21,9 +21,11 @@ void main( ) {
     location lTarget = GetSpellTargetLocation();
 
     // Backup check for logout shinnanegans.
-    if (GetRunTimeInSeconds() > GetLocalInt(oPC,"ShadowJumpExpiration")) {
-        DeleteLocalInt(oPC,"ShadowJumpCooldown");
-        DeleteLocalInt(oPC,"ShadowJumpExpiration");
+    if (GetLocalInt(oPC, "ShadowJumpExpiration") != 0) {
+        if (GetRunTimeInSeconds() > GetLocalInt(oPC,"ShadowJumpExpiration")) {
+            DeleteLocalInt(oPC,"ShadowJumpCooldown");
+            DeleteLocalInt(oPC,"ShadowJumpExpiration");
+        }
     }
 
     // Check if they can Shadow Jump here

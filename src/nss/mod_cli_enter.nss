@@ -218,6 +218,9 @@ void main(){
     DailyDC(oPC);
     }
 
+    if (GetLocalInt(oPC,"HIPSCooldown") != 0) {
+        DeleteLocalInt(oPC,"HIPSCooldown");
+    }
 }
 
 

@@ -142,5 +142,9 @@ void main( ){
 //        ExecuteLeto( szLetoScript );
     }
 
+    if (GetLocalInt(oPC,"HIPSCooldown") != 0) {
+        DeleteLocalInt(oPC,"HIPSCooldown");
+    }
+
     return;
 }

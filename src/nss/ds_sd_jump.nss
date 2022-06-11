@@ -7,6 +7,7 @@
 // 6/11/2022  The1Kobra        Update to handle cooldown logout bug.
 //
 
+#include "amia_include"
 
 void main( ) {
 
@@ -20,7 +21,7 @@ void main( ) {
     location lTarget = GetSpellTargetLocation();
 
     // Backup check for logout shinnanegans.
-    if (GetTimeSecond() > GetLocalInt(oPC,"ShadowJumpExpiration")) {
+    if (GetRunTimeInSeconds() > GetLocalInt(oPC,"ShadowJumpExpiration")) {
         DeleteLocalInt(oPC,"ShadowJumpCooldown");
         DeleteLocalInt(oPC,"ShadowJumpExpiration");
     }
@@ -41,7 +42,7 @@ void main( ) {
     AssignCommand( oPC, ActionJumpToLocation( lTarget ) );
     DelayCommand( 0.8, AssignCommand( oPC, ClearAllActions( ) ) );
     SetLocalInt(oPC,"ShadowJumpCooldown",1);
-    SetLocalInt(oPC,"ShadowJumpExpiration",GetTimeSecond()+nDuration);
+    SetLocalInt(oPC,"ShadowJumpExpiration",GetRunTimeInSeconds()+nDuration);
     DelayCommand(fDuration, DeleteLocalInt(oPC,"ShadowJumpCooldown"));
     FloatingTextStringOnCreature( "Shadow Jump Cooldown: " + FloatToString(fDuration,3,0), oPC, FALSE );
     } else {

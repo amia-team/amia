@@ -49,7 +49,6 @@ void main(){
     {
       SetLocalInt(enteringPlayer,"Prereq_Lycan",1);
     }
-    SendMessageToPC(enteringPlayer,"DebugMsg1");
     //RDD SR and Immunity Calculations
     int nDDLevels = GetLevelByClass(CLASS_TYPE_DRAGON_DISCIPLE,enteringPlayer);
     int nSRIncrease = 0;
@@ -79,7 +78,6 @@ void main(){
     {
       nImmunityIncrease = 50;
     }
-    SendMessageToPC(enteringPlayer,"DebugMsg2");
 
     // Immunity Type
     if( GetHasFeat( 965, enteringPlayer ) == 1 )
@@ -110,7 +108,6 @@ void main(){
     {//Electric
       nImmunityType = DAMAGE_TYPE_ELECTRICAL;
     }
-    SendMessageToPC(enteringPlayer,"DebugMsg3");
 
     effect eImmunityIncrease = EffectDamageImmunityIncrease(nImmunityType,nImmunityIncrease);
     effect eSR = EffectSpellResistanceIncrease(nSRIncrease);
@@ -125,7 +122,6 @@ void main(){
     //RDD SR and Immunity Calculations end
 
 
-    SendMessageToPC(enteringPlayer,"DebugMsg4");
 
     //Death Tracker script.
     int index, iLev, iCurLev;
@@ -172,7 +168,6 @@ void main(){
     }
   }
   //End of Death Tracker script.
-    SendMessageToPC(enteringPlayer,"DebugMsg5");
 
     //Negative AB for Heritage feat for Drow/Svir
     effect eNegativeAB = EffectAttackDecrease(1,ATTACK_BONUS_MISC);
@@ -211,9 +206,12 @@ void main(){
 
     //Check DwD and AA prereq
     CheckPrereq( oPC );
+    SendMessageToPC(enteringPlayer,"DebugMsg6.1");
 
     ExecuteScript("race_effects", enteringPlayer);
+    SendMessageToPC(enteringPlayer,"DebugMsg6.2");
     ExecuteScript("subrace_effects", enteringPlayer);
+    SendMessageToPC(enteringPlayer,"DebugMsg6.3");
     ExecuteScript("char_templates", enteringPlayer);
 
     SendMessageToPC(enteringPlayer,"DebugMsg7");

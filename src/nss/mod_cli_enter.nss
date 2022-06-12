@@ -201,20 +201,13 @@ void main(){
 
         DelayCommand(1.0f, CreateItemsOnPlayer(enteringPlayer));
     }
-    SendMessageToPC(enteringPlayer,"DebugMsg6");
-
 
     //Check DwD and AA prereq
     CheckPrereq( oPC );
-    SendMessageToPC(enteringPlayer,"DebugMsg6.1");
 
-    ExecuteScript("race_effects", enteringPlayer);
-    SendMessageToPC(enteringPlayer,"DebugMsg6.2");
+    ExecuteScript("race_effects", enteringPlayer); //
     ExecuteScript("subrace_effects", enteringPlayer);
-    SendMessageToPC(enteringPlayer,"DebugMsg6.3");
     ExecuteScript("char_templates", enteringPlayer);
-
-    SendMessageToPC(enteringPlayer,"DebugMsg7");
 
     // Daily DC check and weekly DC reset
     if(!GetIsDM(oPC))

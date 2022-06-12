@@ -201,14 +201,6 @@ void main(){
 
         DelayCommand(1.0f, CreateItemsOnPlayer(enteringPlayer));
     }
-
-    //Check DwD and AA prereq
-    CheckPrereq( oPC );
-
-    ExecuteScript("race_effects", enteringPlayer); //
-    ExecuteScript("subrace_effects", enteringPlayer);
-    ExecuteScript("char_templates", enteringPlayer);
-
     // Daily DC check and weekly DC reset
     if(!GetIsDM(oPC))
     {
@@ -219,6 +211,14 @@ void main(){
     if (GetLocalInt(oPC,"HIPSCooldown") != 0) {
         DeleteLocalInt(oPC,"HIPSCooldown");
     }
+
+    //Check DwD and AA prereq
+    CheckPrereq( oPC );
+
+    ExecuteScript("race_effects", enteringPlayer); //
+    ExecuteScript("subrace_effects", enteringPlayer);
+    ExecuteScript("char_templates", enteringPlayer);
+
 }
 
 

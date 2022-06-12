@@ -2,6 +2,19 @@ pipeline {
     agent any
 
     stages {
+        stage('Setup params') {
+            script{
+                properties([
+                    parameters([
+                        text(
+                            defaultValue: false,
+                            description: 'Determines whether this is a live deployment or not.',
+                            name: 'LIVE'
+                        )
+                    ])
+                ])
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building..'
@@ -10,13 +23,31 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
+        stage('Deploy Test') {
+            when {
+                expression {
+                    return params.LIVE == false
+                }
+            }
             steps {
                 echo 'Deploying....'
                 sh 'sudo cp Amia.mod /home/amia/amia_server/test_server/modules;'
                 sh 'chmod +x deploy-test.sh'
                 sh './deploy-test.sh'
-                discordSend description: "Copy Amia Module", footer: "Pushed latest module to Test Server", result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discord.com/api/webhooks/957814431704842270/2A6zZ4x7fsWULXnfrLLyRvgqexcnAvreXr6fbym8IoHdAHGpEoQgXjLn1XKry75uN_Zg"
+                discordSend description: "Copy Amia Module to Test", footer: "Pushed latest module to Test Server", result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discord.com/api/webhooks/957814431704842270/2A6zZ4x7fsWULXnfrLLyRvgqexcnAvreXr6fbym8IoHdAHGpEoQgXjLn1XKry75uN_Zg"
+            }
+        }
+        stage('Deploy Live') {
+            when {
+                expression {
+                    return params.LIVE == true
+                }
+            }
+            steps {
+                sh 'sudo cp Amia.mod /home/amia/amia_server/server/modules;'
+                sh 'chmod +x deploy-live.sh'
+                sh './deploy-live.sh'
+                discordSend description: "Deploy Amia Module to Live", footer: "Deployed latest module to Live Server", result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discord.com/api/webhooks/957814431704842270/2A6zZ4x7fsWULXnfrLLyRvgqexcnAvreXr6fbym8IoHdAHGpEoQgXjLn1XKry75uN_Zg"
             }
         }
     }

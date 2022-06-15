@@ -1216,7 +1216,7 @@ void TailorConverter(object oPC, object oBench, int nNode)
       case 47: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_whitedrag"; sIngredient2 = "none"; sType = "js_bui_whitedhid"; sMaterial = "plc"; nCost = 5000; break;
       case 48: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_game"; sIngredient2 = "js_hun_hide"; sType = "js_bui_boarplat"; sMaterial = "plc"; nCost = 5000; break;
       case 49: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_fur"; sIngredient2 = "none"; sType = "js_bui_blackbrug"; sMaterial = "plc"; nCost = 5000; break;
-      case 50: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_lfur"; sIngredient2 = "js_hun_lsbone"; sType = "js_bui_stuffgriz"; sMaterial = "plc"; nCost = 10000; break;
+      case 50: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_lfur"; sIngredient2 = "js_hun_lbone"; sType = "js_bui_stuffgriz"; sMaterial = "plc"; nCost = 10000; break;
       case 51: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_game"; sIngredient2 = "js_hun_hide"; sType = "js_bui_basilisk"; sMaterial = "plc"; nCost = 5000; break;
 
 
@@ -1889,6 +1889,11 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
         else if(sType == "js_bui_bonecage")
         {
           SetName(oCraftedItem,"<c~Îë>Bone Catcher</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+	       else if(sType == "js_tai_carp")
+        {
+          SetName(oCraftedItem,"<c~Îë>Carpet</c> ");
           SetLocalString(oCraftedItem,"plc",sType);
         }
         else

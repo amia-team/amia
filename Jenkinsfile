@@ -1,6 +1,7 @@
 pipeline {
     agent any
 
+    def checkoutStr = "Build completed for: $env.GIT_AUTHOR_NAME\n$env.GIT_COMMIT"
     stages {
         stage('Build') {
             steps {
@@ -40,7 +41,7 @@ pipeline {
     }
     post {
         always {
-            discordSend description: "Build complete for: $GIT_COMMITTER_NAME\nCommit summary:$CHANGE_TITLE\n$GIT_COMMIT_MSG", footer: "Build results for the Amia module", link: env.BUILD_URL, result: currentBuild.currentResult, title: "Module Deployment Results (click to see more)", webhookURL: "https://discord.com/api/webhooks/957814431704842270/2A6zZ4x7fsWULXnfrLLyRvgqexcnAvreXr6fbym8IoHdAHGpEoQgXjLn1XKry75uN_Zg"
+            discordSend description: checkoutStr, footer: "Build results for the Amia module", link: env.BUILD_URL, result: currentBuild.currentResult, title: "Module Deployment Results (click to see more)", webhookURL: "https://discord.com/api/webhooks/957814431704842270/2A6zZ4x7fsWULXnfrLLyRvgqexcnAvreXr6fbym8IoHdAHGpEoQgXjLn1XKry75uN_Zg"
         }
         success {
             echo 'Build success'

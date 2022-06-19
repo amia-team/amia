@@ -4,15 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [2.1.0] - 2022-06-19
 
 ### Added
-- Updated tailor convo and converter script with new tags for the above.
--  Plot Updates to Ultrinnan.
+- Updated tailor convo and converter script with new tags for the above
+- Plot Updates to Ultrinnan
 
 - area changes:
 	- Winya Ravana 
-		1. new racial gate with npcs to accomedate
+		1. new racial gate with npcs to accomodate
 		2. new npc (son of amilith) and connected him to AA shop
 	- Winya Ravana: Sky Forest
 		1. added/decorated 2 watchtowers (tree houses) at plot agreed locations
@@ -36,9 +36,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	
 ### Fixed
 - Fixed logic on hunter cooldown (swapped greater than)
-- Messed around with cave hunter area to maybe fix visibility issue.
+- Messed around with cave hunter area to maybe fix visibility issue
 - changed name of deity ring from Gwearon windstrom to gwaeron windstrom
-- changed description on magical ingots and henmp and wood to contact dm to excange
+- changed description on magical ingots and hemp and wood to contact dm to excange
 
 ## [2.0.0] - 2022-06-16
  

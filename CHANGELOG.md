@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Updated tailor convo and converter script with new tags for the above.
+-  Plot Updates to Ultrinnan.
 ### Changed
 - Removed old/obsolete PLCs (furs, old carpet, and old stuffed bat)
 - Fur 1 > Hanging Fur

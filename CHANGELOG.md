@@ -13,7 +13,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fur 1 > Hanging Fur
 - Fur 2 > Vellum Map
 - Fur 3 > Satchel (plc container)
-- Updated tailor convo and converter script with new tags for the above.
 ### Fixed
 - Fixed logic on hunter cooldown (swapped greater than)
 - Messed around with cave hunter area to maybe fix visibility issue.

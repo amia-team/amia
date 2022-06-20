@@ -14,6 +14,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed a woopsie transition error in Winya Ravana: Sky Forest 
 
 
+## [2.1.1] - 2022-06-20
+
+### Fixed
+- Hunter cooldown logic reverted, cleaned up. Requires more testing
+- "Hunting in a cave" area further tweaked to try and solve for invisible Grick
+
+
 ## [2.1.0] - 2022-06-19
 
 ### Added

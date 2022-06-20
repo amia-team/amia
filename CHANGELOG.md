@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
-- Fixed a woopsie transition error in Winya Ravana: Sky Forest 
+- Added dune ramp so you can reach outside the "u"/reach resource node in Hunting Prey in the Desert...
 
 
 ## [2.1.1] - 2022-06-20
@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Hunter cooldown logic reverted, cleaned up. Requires more testing
 - "Hunting in a cave" area further tweaked to try and solve for invisible Grick
+- Fixed a woopsie transition error in Winya Ravana: Sky Forest 
 
 
 ## [2.1.0] - 2022-06-19

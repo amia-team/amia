@@ -2,6 +2,7 @@
 // - Edited: Maverick00053 - 3/24/22
 
 #include "inc_call_time"
+#include "amia_include"
 
 // Spawn the prey in the hunting zone
 void spawnPrey(int nInstance, int nRandomCount, int nRandom, string sArea);
@@ -17,7 +18,7 @@ void main()
    int nPCLevel = GetLevelByPosition(1,oPC) + GetLevelByPosition(2,oPC) + GetLevelByPosition(3,oPC);
    int nRandom;
    int nPreviousTime = GetLocalInt(oWidget,"PreviousStartTime");
-   int nCurrentTime = ReturnTime(3);
+   int nCurrentTime = GetRunTimeInSeconds();
    int nCooldownTime = (nCurrentTime - nPreviousTime);
    string sArea;
    object oJobJournal = GetItemPossessedBy(oPC, "js_jobjournal");

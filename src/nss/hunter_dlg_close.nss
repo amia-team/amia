@@ -28,14 +28,12 @@ void main()
    //Timer Cooldown
    if((nCooldownTime < 600) && (sPrimaryJob == "Hunter" || sSecondaryJob == "Hunter")) // SET TO 600
    {
-     SendMessageToPC(oPC,"Hunter DEBUG - Cooldown Counter: " + IntToString(nCooldownTime)+ ", Previous Hunt: " + IntToString(nPreviousTime)+ ", Current Time: " + IntToString(nCurrentTime));
-     SendMessageToPC(oPC,"You must wait for your ten minute cool down to finish before hunting again!");
+     SendMessageToPC(oPC,"You must wait " + IntToString(10-(nCooldownTime/60)) + " minutes before hunting again!");
      return;
    }
-   else if((nCooldownTime < 3600) && (sPrimaryJob != "Hunter" || sSecondaryJob != "Hunter"))// SET TO 3600
+   else if((nCooldownTime < 3600) && (sPrimaryJob != "Hunter" && sSecondaryJob != "Hunter"))// SET TO 3600
    {
-     SendMessageToPC(oPC,"Non-Hunter DEBUG - Cooldown Counter: " + IntToString(nCooldownTime)+ ", Previous Hunt: " + IntToString(nPreviousTime)+ ", Current Time: " + IntToString(nCurrentTime));
-     SendMessageToPC(oPC,"You must wait for your one hour cool down to finish before hunting again!");
+     SendMessageToPC(oPC,"You must wait " + IntToString(60-(nCooldownTime/60)) + " minutes before hunting again!");
      return;
    }
    else

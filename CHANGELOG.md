@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
+
+## [2.1.2] - 2022-06-21
+
+### Fixed
 - Added dune ramp so you can reach outside the "u"/reach resource node in Hunting Prey in the Desert...
 - added 2 exit points and blocked of a unofficial exit at Hunting Prey in the Snow Mountains... "boss" area to prevent players getting stuck
 - Hunter cooldown fixed: 10 minutes for Hunter Primary/Secondary, 60 minutes for untrained

@@ -9,8 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Changed all the BGH loot/drops (hides/furs/glands/bones etc) to have a value similare to other job items
 
 ### Fixed
+- fixed at the "boss" area in Hunting Prey in the Woods...  enlarged exit point, and added a birchtree+rope coil to make exit visible
 
 ## [2.1.2] - 2022-06-21
 

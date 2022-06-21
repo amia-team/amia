@@ -36,10 +36,6 @@ void main()
      SendMessageToPC(oPC,"You must wait " + IntToString(60-(nCooldownTime/60)) + " minutes before hunting again!");
      return;
    }
-   else
-   {
-     SendMessageToPC(oPC, "Success DEBUG: Go get 'em, tiger!");
-   }
 
    // Guide Checks
    if(GetTag(OBJECT_SELF) == "hunter_guide")

@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [2.1.2] - 2022-06-21
 
+### Added
+- Plot Updates to Ultrinnan
+
 ### Fixed
 - Added dune ramp so you can reach outside the "u"/reach resource node in Hunting Prey in the Desert...
 - added 2 exit points and blocked of a unofficial exit at Hunting Prey in the Snow Mountains... "boss" area to prevent players getting stuck

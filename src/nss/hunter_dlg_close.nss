@@ -17,7 +17,7 @@ void main()
    int nPCLevel = GetLevelByPosition(1,oPC) + GetLevelByPosition(2,oPC) + GetLevelByPosition(3,oPC);
    int nRandom;
    int nPreviousTime = GetLocalInt(oWidget,"PreviousStartTime");
-   int nCurrentTime = ReturnTime(2);
+   int nCurrentTime = ReturnTime(3);
    int nCooldownTime = (nCurrentTime - nPreviousTime);
    string sArea;
    object oJobJournal = GetItemPossessedBy(oPC, "js_jobjournal");
@@ -25,19 +25,22 @@ void main()
    string sSecondaryJob = GetLocalString(oJobJournal,"secondaryjob");
 
    //Timer Cooldown
-   if((nCooldownTime < 10) && (sPrimaryJob == "Hunter" || sSecondaryJob == "Hunter")) // SET TO 600
+   if((nCooldownTime < 600) && (sPrimaryJob == "Hunter" || sSecondaryJob == "Hunter")) // SET TO 600
    {
-     SendMessageToPC(oPC,IntToString(nCooldownTime)+ ", " + IntToString(nPreviousTime)+ ", " + IntToString(nCurrentTime));
+     SendMessageToPC(oPC,"Hunter DEBUG - Cooldown Counter: " + IntToString(nCooldownTime)+ ", Previous Hunt: " + IntToString(nPreviousTime)+ ", Current Time: " + IntToString(nCurrentTime));
      SendMessageToPC(oPC,"You must wait for your ten minute cool down to finish before hunting again!");
      return;
    }
-   else if((nCooldownTime < 60))// SET TO 3600
+   else if((nCooldownTime < 3600) && (sPrimaryJob != "Hunter" || sSecondaryJob != "Hunter"))// SET TO 3600
    {
-     SendMessageToPC(oPC,IntToString(nCooldownTime)+ ", " + IntToString(nPreviousTime)+ ", " + IntToString(nCurrentTime));
+     SendMessageToPC(oPC,"Non-Hunter DEBUG - Cooldown Counter: " + IntToString(nCooldownTime)+ ", Previous Hunt: " + IntToString(nPreviousTime)+ ", Current Time: " + IntToString(nCurrentTime));
      SendMessageToPC(oPC,"You must wait for your one hour cool down to finish before hunting again!");
      return;
    }
-
+   else
+   {
+     SendMessageToPC(oPC, "Success DEBUG: Go get 'em, tiger!");
+   }
 
    // Guide Checks
    if(GetTag(OBJECT_SELF) == "hunter_guide")

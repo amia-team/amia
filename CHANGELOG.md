@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [unreleased] - 
  
 ### Added
+- 39 Artist PLCs
 
 ### Changed
 - Changed all the BGH loot/drops (hides/furs/glands/bones etc) to have a value similare to other job items
+- Satchel description to include small disclaimer
 
 ### Fixed
 - fixed at the "boss" area in Hunting Prey in the Woods...  enlarged exit point, and added a birchtree+rope coil to make exit visible

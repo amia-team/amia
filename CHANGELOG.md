@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - fixed at the "boss" area in Hunting Prey in the Woods...  enlarged exit point, and added a birchtree+rope coil to make exit visible
+- Made Victoria at the Kingdom of Cetha: Southport West, Interior stop taking of her robes
 
 ## [2.1.2] - 2022-06-21
 

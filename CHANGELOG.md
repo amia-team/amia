@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - 39 Artist PLCs
 - Added a few QoL for devs
+- added Gruffy bane of the job journals for easy job journal removal
+- added fr_take_item conversation
 
 ### Changed
 - Changed all the BGH loot/drops (hides/furs/glands/bones etc) to have a value similare to other job items

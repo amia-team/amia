@@ -45,19 +45,23 @@ int DruidCheck(object oPC) {
 int DeityCheck(object oPC, int nClass = CLASS_TYPE_INVALID) {
     string sGod  = GetDeity( oPC );
     if ( sGod == "" ) {
+        SendMessageToPC(oPC, "You have no deity which you can draw divine power from.");
         return FALSE;
     }
     object oIdol = FindIdol(oPC, sGod);
     if ( oIdol == OBJECT_INVALID ){
+        SendMessageToPC(oPC, sGod + " has no domain on Amia...");
         return FALSE;
     }
     //check alignment vs god
     if (!MatchAlignment( oPC, oIdol )) {
+        SendMessageToPC(oPC, "Your alignment and your patron's are out of sync...");
         return FALSE;
     }
 
     if (nClass == CLASS_TYPE_CLERIC) {
         //check domains vs god
+        SendMessageToPC(oPC, "Your clerical domains do not align with your patron's...");
         if (MatchDomain( oPC, oIdol ) == -1) {
             return FALSE;
         }
@@ -66,6 +70,7 @@ int DeityCheck(object oPC, int nClass = CLASS_TYPE_INVALID) {
         }
     }
     if (nClass == CLASS_TYPE_DRUID) {
+        SendMessageToPC(oPC, "Your patron does not support druidism...");
         if (!DruidCheck(oPC)) {
             return FALSE;
         }

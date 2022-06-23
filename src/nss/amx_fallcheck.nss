@@ -42,11 +42,12 @@ int DeityCheck(object oPC, int nClass = CLASS_TYPE_INVALID) {
             return FALSE;
         }
     }
-    if (nClass == CLASS_TYPE_DRUID) {
-        if (!IsValidDruidGod(oIdol)) {
-            return FALSE;
-        }
-    }
+    // Disabled for now, this method only checks if the deity has the PLANT or ANIMAL domains, which does not cover all druid deities.
+	//if (nClass == CLASS_TYPE_DRUID) {
+    //    if (!IsValidDruidGod(oIdol)) {
+    //        return FALSE;
+    //    }
+    //}
 
     return TRUE;
 }

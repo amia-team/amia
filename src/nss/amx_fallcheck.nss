@@ -61,17 +61,18 @@ int DeityCheck(object oPC, int nClass = CLASS_TYPE_INVALID) {
 
     if (nClass == CLASS_TYPE_CLERIC) {
         //check domains vs god
-        SendMessageToPC(oPC, "Your clerical domains do not align with your patron's...");
         if (MatchDomain( oPC, oIdol ) == -1) {
+            SendMessageToPC(oPC, "Your clerical domains do not align with your patron's...");
             return FALSE;
         }
         if (MatchDomain( oPC, oIdol, 1 ) == -1) {
+            SendMessageToPC(oPC, "Your clerical domains do not align with your patron's...");
             return FALSE;
         }
     }
     if (nClass == CLASS_TYPE_DRUID) {
-        SendMessageToPC(oPC, "Your patron does not support druidism...");
         if (!DruidCheck(oPC)) {
+            SendMessageToPC(oPC, "Your patron does not support druidism...");
             return FALSE;
         }
     }

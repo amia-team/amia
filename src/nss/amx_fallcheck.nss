@@ -18,6 +18,29 @@ int ALIGN_BORDER_HIGH = 70;
 int ALIGN_BORDER_LOW = 30;
 string FALL_WIDGET = "dg_fall";
 
+int DruidCheck(object oPC) {
+    string sGod  = GetDeity( oPC );
+    if ( sGod == "" ) {
+        return FALSE;
+    }
+    if (IsValidDruidGod(FindIdol(oPC, sGod))) {
+        return TRUE;
+    }
+    if (sGod == "Silvanus" || sGod == "Mielikki" || sGod == "Eldath"
+    || sGod == "Chauntea" || sGod == "Gwaeron Windstrom" || sGod == "Lurue"
+    || sGod == "Nobanion" || sGod == "Shiallia" || sGod == "Ubtao"
+    || sGod == "Ulutiu" || sGod == "Auril" || sGod == "Malar" || sGod == "Talos"
+    || sGod == "Talona" || sGod == "Umberlee" || sGod == "Aerdrie Faenya"
+    || sGod == "Angharradh" || sGod == "Deep Sashelas" || sGod == "Fenmarel Mestarine"
+    || sGod == "Rillifane Rallathil" || sGod == "Solonor Thelandira" || sGod == "Oberon"
+    || sGod == "Anhur" || sGod == "Isis" || sGod == "Osiris" || sGod == "Sebek"
+    || sGod == "Set" || sGod == "Thard Harr" || sGod == "Baervan Wildwanderer"
+    || sGod == "Segojan Earthcaller" || sGod == "Sheela Peryroyl") {
+        return TRUE;
+    }
+    return FALSE;
+}
+
 // Check if the caster has a valid deity. Return FALSE if they don't, return TRUE if they do
 int DeityCheck(object oPC, int nClass = CLASS_TYPE_INVALID) {
     string sGod  = GetDeity( oPC );
@@ -42,12 +65,11 @@ int DeityCheck(object oPC, int nClass = CLASS_TYPE_INVALID) {
             return FALSE;
         }
     }
-    // Disabled for now, this method only checks if the deity has the PLANT or ANIMAL domains, which does not cover all druid deities.
-	//if (nClass == CLASS_TYPE_DRUID) {
-    //    if (!IsValidDruidGod(oIdol)) {
-    //        return FALSE;
-    //    }
-    //}
+    if (nClass == CLASS_TYPE_DRUID) {
+        if (!DruidCheck(oPC)) {
+            return FALSE;
+        }
+    }
 
     return TRUE;
 }

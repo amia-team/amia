@@ -112,17 +112,17 @@ int FallenCastCheck(object oPC) {
     int iClass = GetLastSpellCastClass();
 
     if (iClass == CLASS_TYPE_BLACKGUARD) {
-        if (GetAlignmentGoodEvil(oPC) > ALIGN_BORDER_LOW) {
+        if (GetAlignmentGoodEvil(oPC) == ALIGNMENT_EVIL) {
             SendMessageToPC(oPC, "Your soul is not dark enough to draw blackguard powers.");
             return FALSE;
         }
     }
     if (iClass == CLASS_TYPE_PALADIN) {
-        if (GetAlignmentGoodEvil(oPC) < ALIGN_BORDER_HIGH) {
+        if (GetAlignmentGoodEvil(oPC) == ALIGNMENT_GOOD) {
             SendMessageToPC(oPC, "Your soul is not light enough to cast paladin spells.");
             return FALSE;
         }
-        if (GetAlignmentLawChaos(oPC) < ALIGN_BORDER_HIGH) {
+        if (GetAlignmentLawChaos(oPC) == ALIGNMENT_LAWFUL) {
             SendMessageToPC(oPC, "Your soul has too much chaos to cast paladin spells.");
             return FALSE;
         }

@@ -7,8 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [unreleased] - 
  
 ### Added
+- area changes:
+	- Winya Ravana: Crystal Lake
+		1. added/decorated 2 watchtowers (tree houses) at plot agreed locations (part of the 4 watchtower/3gaurd stations update for area)
+		2. added gaurds to said watchtowers
 - 39 Artist PLCs
-- Added a few QoL for devs
+- Added a QoL for devs
 - added Gruffy bane of the job journals for easy job journal removal
 - added fr_take_item conversation
 

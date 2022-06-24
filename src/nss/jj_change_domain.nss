@@ -21,6 +21,16 @@ void main()
 
     SendMessageToPC(oPC, sIdolDbg );
 
+    // T1K: Added check to see if the cleric's domains match their patron's.
+    // If they don't, reset the changed variables so the PC can swap domains
+    // again. It should help refrain from breaking the system in case of conversions
+    if ((MatchDomain(oPC,oIdol) == -1) || (MatchDomain( oPC, oIdol, 1 ) == -1)) {
+        SetPCKEYValue(oPC, "jj_changed_domain_1", FALSE);
+        SetPCKEYValue(oPC, "jj_changed_domain_2", FALSE);
+        int nCheck3      = GetPCKEYValue(oPC, "jj_changed_domain_1");
+        int nCheck4      = GetPCKEYValue(oPC, "jj_changed_domain_2");
+    }
+
     int nAction      = GetLocalInt(oPC, "ds_node");
     DeleteLocalInt(oPC, "ds_node");
     switch(nAction)

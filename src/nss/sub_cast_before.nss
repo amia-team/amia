@@ -13,6 +13,7 @@ void main()
     //}
 
     // Partial Fall check: ONLY checks if they have a widget
+    /*
     if (IsDivineCast()) {
         if (IsSpecificFallen(oPC)) {
             FloatingTextStringOnCreature( "The plea to your deity is not heard...", oPC, FALSE );
@@ -21,17 +22,18 @@ void main()
             effect eFail = EffectSpellFailure();
             ApplyEffectToObject(DURATION_TYPE_TEMPORARY,eFail,oPC,0.5f);
             SetModuleOverrideSpellScriptFinished();
-			return;
+			         return;
         }
     }
+    */
     // Full Fall check:
-    //if (!FallenCastCheck(oPC)) {
-    //    FloatingTextStringOnCreature( "The plea to your deity is not heard...", oPC, FALSE );
-    //    ClearAllActions();
-    //    effect eFail = EffectSpellFailure();
-    //    ApplyEffectToObject(DURATION_TYPE_TEMPORARY,eFail,oPC,0.5f);
-    //    SetModuleOverrideSpellScriptFinished();
-	//		return;
-    //}
+    if (!FallenCastCheck(oPC)) {
+        FloatingTextStringOnCreature( "The plea to your deity is not heard...", oPC, FALSE );
+        ClearAllActions();
+        effect eFail = EffectSpellFailure();
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY,eFail,oPC,0.5f);
+        SetModuleOverrideSpellScriptFinished();
+        return;
+    }
 
 }

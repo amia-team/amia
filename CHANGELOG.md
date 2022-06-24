@@ -61,9 +61,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		1. added/decorated 2 watchtowers (tree houses) at plot agreed locations
 		2. added gaurds to said watchtowers
 	- Winya Ravana: Burrows and Caverns
-		1. created and added iounstone (crystal dragon)
+		1. created and added iounblaze (crystal dragon)
 		2. created and added diamon guard golem
-		3. added hoard of iounstone
+		3. added hoard of iounblaze
 		
 ### Changed
 - Removed old/obsolete PLCs (furs, old carpet, and old stuffed bat)

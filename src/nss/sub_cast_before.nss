@@ -1,5 +1,6 @@
 #include "nwnx_creature"
 #include "amx_fallcheck"
+#include "x2_inc_switches"
 
 const int WARLOCK = 57;
 void main()
@@ -25,6 +26,7 @@ void main()
         ClearAllActions();
         effect eFail = EffectSpellFailure();
         ApplyEffectToObject(DURATION_TYPE_TEMPORARY,eFail,oPC,0.5f);
+        SetModuleOverrideSpellScriptFinished();
     }
 
 }

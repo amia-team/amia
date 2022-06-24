@@ -27,6 +27,7 @@ void main()
         effect eFail = EffectSpellFailure();
         ApplyEffectToObject(DURATION_TYPE_TEMPORARY,eFail,oPC,0.5f);
         SetModuleOverrideSpellScriptFinished();
+		return;
     }
 
 }

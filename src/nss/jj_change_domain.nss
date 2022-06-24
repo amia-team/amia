@@ -39,7 +39,7 @@ void main()
             SetCustomToken( 8005, GetDomainName( GetLocalInt(oIdol, "dom_4")));
             SetCustomToken( 8006, GetDomainName( GetLocalInt(oIdol, "dom_5")));
             SetCustomToken( 8007, GetDomainName( GetLocalInt(oIdol, "dom_6")));
-            ActionStartConversation(oPC,"",TRUE,FALSE);
+            ActionStartConversation(oPC,"jj_domainchanger",TRUE,FALSE);
         break;
         //changing first domain
         case 1: ChangeDomain(oPC, 1, GetLocalInt(oIdol, "dom_1"));

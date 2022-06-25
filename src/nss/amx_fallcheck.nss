@@ -26,7 +26,8 @@ int DruidCheck(object oPC) {
     if (IsValidDruidGod(FindIdol(oPC, sGod))) {
         return TRUE;
     }
-    if (sGod == "Silvanus" || sGod == "Mielikki" || sGod == "Eldath"
+    // Full druid deity list
+    /*if (sGod == "Silvanus" || sGod == "Mielikki" || sGod == "Eldath"
     || sGod == "Chauntea" || sGod == "Gwaeron Windstrom" || sGod == "Lurue"
     || sGod == "Nobanion" || sGod == "Shiallia" || sGod == "Ubtao"
     || sGod == "Ulutiu" || sGod == "Auril" || sGod == "Malar" || sGod == "Talos"
@@ -37,7 +38,13 @@ int DruidCheck(object oPC) {
     || sGod == "Set" || sGod == "Thard Harr" || sGod == "Baervan Wildwanderer"
     || sGod == "Segojan Earthcaller" || sGod == "Sheela Peryroyl"
     || sGod == "Istishia" || sGod == "Kossuth" || sGod == "Akadi" || sGod == "Grumbar"
-    || sGod == "Titania" || sGod == "Queen of Air and Darkness" || sGod == "Oberon") {
+    || sGod == "Titania" || sGod == "Queen of Air and Darkness" || sGod == "Oberon") {*/
+    // Specific exception check for nature deities that do not have animal/plant domains
+    if (sGod == "Auril" || sGod == "Talos" || sGod == "Talona" || sGod == "Umberlee"
+    || sGod == "Deep Sashelas"
+    || sGod == "Anhur"
+    || sGod == "Istishia" || sGod == "Kossuth" || sGod == "Grumbar"
+    || sGod == "Queen of Air and Darkness") {
         return TRUE;
     }
     return FALSE;

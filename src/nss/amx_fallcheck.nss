@@ -142,6 +142,10 @@ int FallenCastCheck(object oPC) {
     if( GetIsObjectValid( GetSpellCastItem( ))) {
        return TRUE;
     }
+    // If the target has no PCKey (AKA is an NPC), don't block
+    if (GetPCKEY(oPC) == OBJECT_INVALID) {
+        return TRUE;
+    }
     // DMs aren't blocked
     if (GetIsDM(oPC)) {
         return TRUE;

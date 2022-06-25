@@ -9,8 +9,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - area changes:
 	- Winya Ravana: Crystal Lake
-		1. added/decorated 2 watchtowers (tree houses) at plot agreed locations (part of the 4 watchtower/3gaurd stations update for area)
+		1. added/decorated 3 watchtowers (2 tree houses 1 stone) at plot agreed locations (part of the guard tower update for area)
 		2. added gaurds to said watchtowers
+	- Winya Ravana: Guard house (currently named winya_gaurd)
+		1. Created area, will contain the armetora/guard building of winya, aswell as minor secontary buiuldings like interior guard tower
+		2. created base for interior guard tower (under unfinished for now)
 - 39 Artist PLCs
 - Added a QoL for devs
 - added Gruffy bane of the job journals for easy job journal removal

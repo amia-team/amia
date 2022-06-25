@@ -208,6 +208,12 @@ void main(){
     DailyDC(oPC);
     }
 
+    if(!GetIsDM(oDM))
+    {
+    CheckWeeklyReset(oDM);
+    DailyDC(oDM);
+    }
+
     if (GetLocalInt(oPC,"HIPSCooldown") != 0) {
         DeleteLocalInt(oPC,"HIPSCooldown");
     }
@@ -303,7 +309,7 @@ void DailyDC(object oPC)
        SetCampaignInt(pcCdKey,"WeeklyDCCount",nWeeklyCnt+1);
 
        int playerDreamCoins = GetDreamCoins(pcCdKey);
-       SetDreamCoins(pcCdKey, playerDreamCoins)+ 1;
+       SetDreamCoins(pcCdKey, playerDreamCoins+ 1);
 
       }
       else
@@ -370,13 +376,13 @@ void DailyDC(object oDM)
    }
    else // They have logged in before
    {
-       if((nLastDCDay < nCurrentDay))
+       if((nLastDCDay == 1))
        {
          SetCampaignInt(pcCdKey,"nLastDCDay",nCurrentDay);
          if(nWeeklyCnt < 10)
          {
-           SendMessageToPC(oDM,"You have recieved a daily log-in DC!");
-           SendMessageToPC(oDM,"Automated DCs earned so far this week: " + IntToString(nWeeklyCnt+1));
+           SendMessageToDM(oDM,"You have recieved second daily dc today");
+           SendMessageToDM(oDM,"Automated DCs earned so far this week: " + IntToString(nWeeklyCnt+1));
            SetCampaignInt(pcCdKey,"WeeklyDCCount",nWeeklyCnt+1);
 
            int playerDreamCoins = GetDreamCoins(pcCdKey);
@@ -385,7 +391,7 @@ void DailyDC(object oDM)
          }
          else
          {
-          SendMessageToPC(oDM,"You have hit your weekly cap of automated DCs!");
+          SendMessageToDM(oDM,"You have hit your weekly cap of automated DCs!");
          }
         }
 

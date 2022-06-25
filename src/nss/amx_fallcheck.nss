@@ -18,6 +18,13 @@ int ALIGN_BORDER_HIGH = 70;
 int ALIGN_BORDER_LOW = 30;
 string FALL_WIDGET = "dg_fall";
 
+int PaladinExceptionCheck(object oPC, string sGod) {
+    if (sGod == "Sune" || sGod == "Corellon Larethian") {
+        return TRUE;
+    }
+    return FALSE;
+}
+
 int DruidCheck(object oPC) {
     string sGod  = GetDeity( oPC );
     if ( sGod == "" ) {
@@ -39,7 +46,7 @@ int DruidCheck(object oPC) {
     || sGod == "Segojan Earthcaller" || sGod == "Sheela Peryroyl"
     || sGod == "Istishia" || sGod == "Kossuth" || sGod == "Akadi" || sGod == "Grumbar"
     || sGod == "Titania" || sGod == "Queen of Air and Darkness" || sGod == "Oberon"
-	|| sGod == "Garyx") {*/
+    || sGod == "Garyx") {*/
     // Specific exception check for nature deities that do not have animal/plant domains
     if (sGod == "Auril" || sGod == "Talos" || sGod == "Talona" || sGod == "Umberlee"
     || sGod == "Deep Sashelas"
@@ -64,6 +71,13 @@ int DeityCheck(object oPC, int nClass = CLASS_TYPE_INVALID) {
         SendMessageToPC(oPC, sGod + " has no domain on Amia...");
         return FALSE;
     }
+    // Paladin exception check:
+    if (nClass == CLASS_TYPE_PALADIN) {
+        if (PaladinExceptionCheck(oPC, sGod)) {
+            return TRUE;
+        }
+    }
+
     //check alignment vs god
     if (!MatchAlignment( oPC, oIdol )) {
         SendMessageToPC(oPC, "Your alignment and your patron's are out of sync...");

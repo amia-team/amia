@@ -36,7 +36,8 @@ int DruidCheck(object oPC) {
     || sGod == "Anhur" || sGod == "Isis" || sGod == "Osiris" || sGod == "Sebek"
     || sGod == "Set" || sGod == "Thard Harr" || sGod == "Baervan Wildwanderer"
     || sGod == "Segojan Earthcaller" || sGod == "Sheela Peryroyl"
-    || sGod == "Istishia" || sGod == "Kossuth" || sGod == "Akadi" || sGod == "Grumbar") {
+    || sGod == "Istishia" || sGod == "Kossuth" || sGod == "Akadi" || sGod == "Grumbar"
+    || sGod == "Titania" || sGod == "Queen of Air and Darkness" || sGod == "Oberon") {
         return TRUE;
     }
     return FALSE;

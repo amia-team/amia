@@ -53,7 +53,8 @@ int DruidCheck(object oPC) {
     || sGod == "Anhur"
     || sGod == "Istishia" || sGod == "Kossuth" || sGod == "Grumbar"
     || sGod == "Queen of Air and Darkness"
-    || sGod == "Garyx") {
+    || sGod == "Garyx"
+    || sGod == "Ghaunadaur") {
         return TRUE;
     }
     return FALSE;
@@ -132,6 +133,10 @@ int FallenCastCheck(object oPC) {
     // Don't bother checking if it came from an item
     if( GetIsObjectValid( GetSpellCastItem( ))) {
        return TRUE;
+    }
+    // DMs aren't blocked
+    if (GetIsDM(oPC)) {
+        return TRUE;
     }
 
     int iClass = GetLastSpellCastClass();

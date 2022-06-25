@@ -278,14 +278,16 @@ void CheckPrereq(object oPC)
    }
 }
 
-void DailyDC(object oCreature)
+void DailyDC(object oPC)
 {
 
-   string pcCdKey = GetPCPublicCDKey(oCreature);
+   string pcCdKey = GetPCPublicCDKey(oPC);
    int nWeeklyCnt = GetCampaignInt(pcCdKey,"WeeklyDCCount");
    int nCurrentDay = ReturnCurrentDay();
    int nLastDCDay = GetCampaignInt(pcCdKey,"nLastDCDay");
    object oModule = GetModule();
+
+   object oPCKey = GetItemPossessedBy(oPC, "ds_pckey");
 
    // If its their first time coming onto the server, set value
    if((nLastDCDay == 0))
@@ -296,8 +298,8 @@ void DailyDC(object oCreature)
         }
       if(nWeeklyCnt < 10)
       {
-       ApplyEffectToObject(DURATION_TYPE_INSTANT, EffectVisualEffect(VFX_DUR_CESSATE_POSITIVE), oCreature);
-       SendMessageToPC(oCreature,"You have recieved a daily log-in DC!");
+       ApplyEffectToObject(DURATION_TYPE_INSTANT, EffectVisualEffect(VFX_DUR_CESSATE_POSITIVE), oPC);
+       SendMessageToPC(oPC,"You have recieved a daily log-in DC!");
        SetCampaignInt(pcCdKey,"WeeklyDCCount",nWeeklyCnt+1);
 
        int playerDreamCoins = GetDreamCoins(pcCdKey);
@@ -306,7 +308,7 @@ void DailyDC(object oCreature)
       }
       else
       {
-       SendMessageToPC(oCreature,"You have hit your weekly cap of automated DCs!");
+       SendMessageToPC(oPC,"You have hit your weekly cap of automated DCs!");
       }
    }
    else // They have logged in before
@@ -316,8 +318,8 @@ void DailyDC(object oCreature)
          SetCampaignInt(pcCdKey,"nLastDCDay",nCurrentDay);
          if(nWeeklyCnt < 10)
          {
-           SendMessageToPC(oCreature,"You have recieved a daily log-in DC!");
-           SendMessageToPC(oCreature,"Automated DCs earned so far this week: " + IntToString(nWeeklyCnt+1));
+           SendMessageToPC(oPC,"You have recieved a daily log-in DC!");
+           SendMessageToPC(oPC,"Automated DCs earned so far this week: " + IntToString(nWeeklyCnt+1));
            SetCampaignInt(pcCdKey,"WeeklyDCCount",nWeeklyCnt+1);
 
            int playerDreamCoins = GetDreamCoins(pcCdKey);
@@ -326,7 +328,7 @@ void DailyDC(object oCreature)
          }
          else
          {
-          SendMessageToPC(oCreature,"You have hit your weekly cap of automated DCs!");
+          SendMessageToPC(oPC,"You have hit your weekly cap of automated DCs!");
          }
         }
 

@@ -5,6 +5,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased] - 
+
+### Added
+
+### Changed
+
+### Fixed
+
+
+
+## [2.2.0] - 2022-06-25
  
 ### Added
 - area changes:

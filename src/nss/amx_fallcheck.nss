@@ -17,6 +17,7 @@
 int ALIGN_BORDER_HIGH = 70;
 int ALIGN_BORDER_LOW = 30;
 string FALL_WIDGET = "dg_fall";
+string FAVORED_WIDGET = "ds_favor";
 
 int PaladinExceptionCheck(object oPC, string sGod) {
     if (sGod == "Sune" || sGod == "Corellon Larethian") {
@@ -53,8 +54,8 @@ int DruidCheck(object oPC) {
     || sGod == "Anhur"
     || sGod == "Istishia" || sGod == "Kossuth" || sGod == "Grumbar"
     || sGod == "Queen of Air and Darkness"
-    || sGod == "Garyx"
-    || sGod == "Ghaunadaur") {
+    //|| sGod == "Ghaunadaur"
+    || sGod == "Garyx") {
         return TRUE;
     }
     return FALSE;
@@ -116,6 +117,13 @@ int IsSpecificFallen(object oPC) {
     }
     return FALSE;
 }
+// Check if the caster has a favored widget
+int IsSpecificFavored(object oPC) {
+    if (GetItemPossessedBy(oPC,FAVORED_WIDGET) != OBJECT_INVALID) {
+        return TRUE;
+    }
+    return FALSE;
+}
 
 // Return TRUE if the caster is a divine class
 int IsDivineCast() {
@@ -136,6 +144,9 @@ int FallenCastCheck(object oPC) {
     }
     // DMs aren't blocked
     if (GetIsDM(oPC)) {
+        return TRUE;
+    }
+    if (IsSpecificFavored(oPC)) {
         return TRUE;
     }
 

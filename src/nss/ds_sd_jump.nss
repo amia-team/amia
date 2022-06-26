@@ -4,8 +4,10 @@
 // Date       Name             Description
 // ---------- ---------------- ---------------------------------------------
 // 10/10/2011 PaladinOfSune    Initial release.
+// 6/11/2022  The1Kobra        Update to handle cooldown logout bug.
 //
 
+#include "amia_include"
 
 void main( ) {
 
@@ -17,6 +19,14 @@ void main( ) {
     float fDuration = IntToFloat(nDuration);
 
     location lTarget = GetSpellTargetLocation();
+
+    // Backup check for logout shinnanegans.
+    if (GetLocalInt(oPC, "ShadowJumpExpiration") != 0) {
+        if (GetRunTimeInSeconds() > GetLocalInt(oPC,"ShadowJumpExpiration")) {
+            DeleteLocalInt(oPC,"ShadowJumpCooldown");
+            DeleteLocalInt(oPC,"ShadowJumpExpiration");
+        }
+    }
 
     // Check if they can Shadow Jump here
     if( GetLocalInt( oArea, "CS_NO_SHADOWJUMP" ) == 1 ) {
@@ -34,11 +44,10 @@ void main( ) {
     AssignCommand( oPC, ActionJumpToLocation( lTarget ) );
     DelayCommand( 0.8, AssignCommand( oPC, ClearAllActions( ) ) );
     SetLocalInt(oPC,"ShadowJumpCooldown",1);
+    SetLocalInt(oPC,"ShadowJumpExpiration",GetRunTimeInSeconds()+nDuration);
     DelayCommand(fDuration, DeleteLocalInt(oPC,"ShadowJumpCooldown"));
     FloatingTextStringOnCreature( "Shadow Jump Cooldown: " + FloatToString(fDuration,3,0), oPC, FALSE );
-    }
-    else
-    {
+    } else {
      FloatingTextStringOnCreature( "- You are unable to use Shadow Jump while on cool down! -", oPC, FALSE );
     }
 

@@ -360,7 +360,7 @@ void ArchitectConverter(object oPC, object oBench, int nNode)
       case 44: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_walldeer2"; sMaterial = "plc"; nCost = 5000; break;
       case 45: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_walldeer3"; sMaterial = "plc"; nCost = 5000; break;
       case 46: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "js_tree_irow"; sType = "js_bui_drum1"; sMaterial = "plc"; nCost = 5000; break;
-      case 47: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_lhide"; sIngredient2 = "js_tree_shaw"; sType = "js_bui_drum2"; sMaterial = "plc"; nCost = 10000; break;
+      case 47: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_lhide"; sIngredient2 = "js_tree_shaw"; sType = "js_bui_drum1"; sMaterial = "plc"; nCost = 10000; break;
       case 48: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hippogrif"; sIngredient2 = "js_hun_lbone"; sType = "js_bui_barbhorn"; sMaterial = "plc"; nCost = 10000; break;
       case 49: sProduct = "js_plcspawner"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_fflag"; sMaterial = "plc"; nCost = 5000; break;
       case 50: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_treant"; sIngredient2 = "js_tree_shaw"; sType = "js_bui_totem"; sMaterial = "plc"; nCost = 10000; break;
@@ -1195,11 +1195,11 @@ void TailorConverter(object oPC, object oBench, int nNode)
       case 26: sProduct = "js_tai_belt"; sIngredient1 = "js_lea_leat"; sIngredient2 = "none"; sType = "belt"; sMaterial = "leather"; nCost = 2000; break;
       case 27: sProduct = "ds_j_masked"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "none"; sType = "cloak"; sMaterial = "wool"; nCost = 2000; break;
       case 28: sProduct = "ds_j_hooded"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "none"; sType = "cloak"; sMaterial = "wool"; nCost = 2000; break;
-      case 29: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_fur"; sIngredient2 = "none"; sType = "js_tai_hangfur"; sMaterial = "plc"; nCost = 5000; break;
-      case 30: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "none"; sType = "js_tai_velmap"; sMaterial = "plc"; nCost = 5000; break;
-      case 31: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "none"; sType = "js_tai_satchel"; sMaterial = "plc"; nCost = 5000; break;
+      case 29: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_fur"; sIngredient2 = "none"; sType = "js_bui_fur1"; sMaterial = "plc"; nCost = 5000; break;
+      case 30: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_fur"; sIngredient2 = "none"; sType = "js_bui_fur2"; sMaterial = "plc"; nCost = 5000; break;
+      case 31: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqfur"; sIngredient2 = "none"; sType = "js_bui_fur3"; sMaterial = "plc"; nCost = 5000; break;
       case 32: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqfur"; sIngredient2 = "js_tree_phaw"; sType = "js_bui_bfurrack"; sMaterial = "plc"; nCost = 5000; break;
-      case 33: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "js_tree_phaw"; sType = "js_bui_stfbat"; sMaterial = "plc"; nCost = 5000; break;
+      case 33: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "js_tree_phaw"; sType = "js_bui_stuffbat"; sMaterial = "plc"; nCost = 5000; break;
       case 34: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_lfur"; sIngredient2 = "none"; sType = "js_bui_tigerfur"; sMaterial = "plc"; nCost = 10000; break;
       case 35: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_hun_sbone"; sType = "js_bui_tent1"; sMaterial = "plc"; nCost = 5000; break;
       case 36: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_hun_sbone"; sType = "js_bui_tent2"; sMaterial = "plc"; nCost = 5000; break;
@@ -1216,7 +1216,7 @@ void TailorConverter(object oPC, object oBench, int nNode)
       case 47: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_whitedrag"; sIngredient2 = "none"; sType = "js_bui_whitedhid"; sMaterial = "plc"; nCost = 5000; break;
       case 48: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_game"; sIngredient2 = "js_hun_hide"; sType = "js_bui_boarplat"; sMaterial = "plc"; nCost = 5000; break;
       case 49: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_fur"; sIngredient2 = "none"; sType = "js_bui_blackbrug"; sMaterial = "plc"; nCost = 5000; break;
-      case 50: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_lfur"; sIngredient2 = "js_hun_lbone"; sType = "js_bui_stuffgriz"; sMaterial = "plc"; nCost = 10000; break;
+      case 50: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_lfur"; sIngredient2 = "js_hun_lsbone"; sType = "js_bui_stuffgriz"; sMaterial = "plc"; nCost = 10000; break;
       case 51: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_game"; sIngredient2 = "js_hun_hide"; sType = "js_bui_basilisk"; sMaterial = "plc"; nCost = 5000; break;
 
 
@@ -1699,205 +1699,6 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
         else if(sType == "js_art_pain")
         {
           SetName(oCraftedItem,"<c~Îë>Painting</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_tai_hangfur")
-        {
-          SetName(oCraftedItem,"<c~Îë>Hanging Fur</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_tai_velmap")
-        {
-          SetName(oCraftedItem,"<c~Îë>Vellum Map</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_tai_satchel")
-        {
-          SetName(oCraftedItem,"<c~Îë>Satchel</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_bfurrack")
-        {
-          SetName(oCraftedItem,"<c~Îë>Bear Fur on a Rack</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_stfbat")
-        {
-          SetName(oCraftedItem,"<c~Îë>Stuffed Bat</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_tigerfur")
-        {
-          SetName(oCraftedItem,"<c~Îë>Tiger Fur, Ground</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_tent1")
-        {
-          SetName(oCraftedItem,"<c~Îë>Tent 1, Dark</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_tent2")
-        {
-          SetName(oCraftedItem,"<c~Îë>Tent 2, Dark</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_tent3")
-        {
-          SetName(oCraftedItem,"<c~Îë>Massive Tent, Dark</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_teepee1")
-        {
-          SetName(oCraftedItem,"<c~Îë>Teepee 1</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_teepee2")
-        {
-          SetName(oCraftedItem,"<c~Îë>Teepee 2</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_marketsta")
-        {
-          SetName(oCraftedItem,"<c~Îë>Massive Market Stall</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_skins")
-        {
-          SetName(oCraftedItem,"<c~Îë>Skins</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_bbrug")
-        {
-          SetName(oCraftedItem,"<c~Îë>Brown Bear Rug</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_sparrot")
-        {
-          SetName(oCraftedItem,"<c~Îë>Stuffed Parrot</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_marketcan")
-        {
-          SetName(oCraftedItem,"<c~Îë>Massive Market Canvas</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_wyvernhid")
-        {
-          SetName(oCraftedItem,"<c~Îë>Wyvern Hide, Ground</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_whitedhid")
-        {
-          SetName(oCraftedItem,"<c~Îë>White Dragon Hide, Hung</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_boarplat")
-        {
-          SetName(oCraftedItem,"<c~Îë>Boar Platter</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_blackbrug")
-        {
-          SetName(oCraftedItem,"<c~Îë>Black Bear Rug</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_stuffgriz")
-        {
-          SetName(oCraftedItem,"<c~Îë>Stuffed Grizzly</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_basilisk")
-        {
-          SetName(oCraftedItem,"<c~Îë>Basilisk on a Stick</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_trophy1")
-        {
-          SetName(oCraftedItem,"<c~Îë>Deer Trophy 1</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_trophy2")
-        {
-          SetName(oCraftedItem,"<c~Îë>Bison Trophy</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_trophy3")
-        {
-          SetName(oCraftedItem,"<c~Îë>Fish Trophy</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_trophy4")
-        {
-          SetName(oCraftedItem,"<c~Îë>Boar Trophy</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_wallbear")
-        {
-          SetName(oCraftedItem,"<c~Îë>Bear Trophy</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_wallcat")
-        {
-          SetName(oCraftedItem,"<c~Îë>Cat Trophy</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_walldeer1")
-        {
-          SetName(oCraftedItem,"<c~Îë>Deer Trophy 2</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_walldeer2")
-        {
-          SetName(oCraftedItem,"<c~Îë>Deer Trophy 3</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_walldeer3")
-        {
-          SetName(oCraftedItem,"<c~Îë>Deer Trophy 4</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_drum1")
-        {
-          SetName(oCraftedItem,"<c~Îë>Drum</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_drum2")
-        {
-          SetName(oCraftedItem,"<c~Îë>Massive Drum</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_barbhorn")
-        {
-          SetName(oCraftedItem,"<c~Îë>Massive Hide and Bone Bound Horn</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_fflag")
-        {
-          SetName(oCraftedItem,"<c~Îë>Flag</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_totem")
-        {
-          SetName(oCraftedItem,"<c~Îë>Massive Tribal Totem</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_dreamcat")
-        {
-          SetName(oCraftedItem,"<c~Îë>Dream Catcher</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else if(sType == "js_bui_bonecage")
-        {
-          SetName(oCraftedItem,"<c~Îë>Bone Cage</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-           else if(sType == "js_tai_carp")
-        {
-          SetName(oCraftedItem,"<c~Îë>Carpet</c> ");
-          SetLocalString(oCraftedItem,"plc",sType);
-        }
-        else
-        {
           SetLocalString(oCraftedItem,"plc",sType);
         }
 

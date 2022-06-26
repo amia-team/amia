@@ -374,7 +374,7 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
       }
       else
       {
-       FloatingTextStringOnCreature("*Only works on melee weapons*",oPC);
+       FloatingTextStringOnCreature("*Only works on mele weapons*",oPC);
       }
    }
    else if(sItemResRef == "js_bindingrope")  //

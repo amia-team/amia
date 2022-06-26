@@ -147,7 +147,7 @@ void EpicBuff( object oPC )
 
         case 0:
         SetDescription(oAnimalCompanion,"Wyverns are vicious and deadly predators. Only an exceptional Druid or Ranger would be able to befriend one.");
-        SetCreatureAppearanceType(oAnimalCompanion,834); // Wyvern
+        SetCreatureAppearanceType(oAnimalCompanion,576); // Wyvern
         SetCreatureTailType(490,oAnimalCompanion);
         SetPortraitId(oAnimalCompanion,1040);
         SetObjectVisualTransform(oAnimalCompanion,OBJECT_VISUAL_TRANSFORM_SCALE,0.7f,OBJECT_VISUAL_TRANSFORM_LERP_NONE);
@@ -156,8 +156,7 @@ void EpicBuff( object oPC )
         break;
         case 1:
         SetDescription(oAnimalCompanion,"Displacer Beasts are evil creatures that most don't live long enough to tell about. It would take a terrifyingly skilled and special individual to claim one as their companion.");
-        SetCreatureAppearanceType(oAnimalCompanion,835);  // Displacer Beast   SPELLABILITY_HOWL_FEAR
-        SetCreatureTailType(595,oAnimalCompanion);
+        SetCreatureAppearanceType(oAnimalCompanion,925);  // Displacer Beast   SPELLABILITY_HOWL_FEAR
         SetPortraitId(oAnimalCompanion,1052);
         SetObjectVisualTransform(oAnimalCompanion,OBJECT_VISUAL_TRANSFORM_SCALE,0.8f,OBJECT_VISUAL_TRANSFORM_LERP_NONE);
         nStr = 6; nCon = 6; nDex = 6; nHP = 200;

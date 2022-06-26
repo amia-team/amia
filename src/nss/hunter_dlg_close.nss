@@ -2,7 +2,6 @@
 // - Edited: Maverick00053 - 3/24/22
 
 #include "inc_call_time"
-#include "amia_include"
 
 // Spawn the prey in the hunting zone
 void spawnPrey(int nInstance, int nRandomCount, int nRandom, string sArea);
@@ -18,24 +17,24 @@ void main()
    int nPCLevel = GetLevelByPosition(1,oPC) + GetLevelByPosition(2,oPC) + GetLevelByPosition(3,oPC);
    int nRandom;
    int nPreviousTime = GetLocalInt(oWidget,"PreviousStartTime");
-   int nCurrentTime = GetRunTimeInSeconds();
-   int nCooldownTime = (nCurrentTime - nPreviousTime);
+   int nCurrentTime = ReturnTime(3);
    string sArea;
    object oJobJournal = GetItemPossessedBy(oPC, "js_jobjournal");
    string sPrimaryJob = GetLocalString(oJobJournal,"primaryjob");
    string sSecondaryJob = GetLocalString(oJobJournal,"secondaryjob");
 
    //Timer Cooldown
-   if((nCooldownTime < 600) && (sPrimaryJob == "Hunter" || sSecondaryJob == "Hunter")) // SET TO 600
+   if(((nCurrentTime - nPreviousTime) > 10) && ((sPrimaryJob == "Hunter") || sSecondaryJob == "Hunter")) // SET TO 600
    {
-     SendMessageToPC(oPC,"You must wait " + IntToString(10-(nCooldownTime/60)) + " minutes before hunting again!");
+     SendMessageToPC(oPC,"You must wait for your ten minute cool down to finish before hunting again!");
      return;
    }
-   else if((nCooldownTime < 3600) && (sPrimaryJob != "Hunter" && sSecondaryJob != "Hunter"))// SET TO 3600
+   else if(((nCurrentTime - nPreviousTime) > 60))// SET TO 3600
    {
-     SendMessageToPC(oPC,"You must wait " + IntToString(60-(nCooldownTime/60)) + " minutes before hunting again!");
+     SendMessageToPC(oPC,"You must wait for your one hour cool down to finish before hunting again!");
      return;
    }
+
 
    // Guide Checks
    if(GetTag(OBJECT_SELF) == "hunter_guide")

@@ -1,6 +1,5 @@
 
 #include "inc_call_time"
-#include "amia_include"
 
 void giveXP(object oPC);
 
@@ -14,7 +13,7 @@ void main()
    object oWaypoint = GetWaypointByTag(sWaypoint);
 
    DeleteLocalInt(oWaypoint,"IsOccupied");
-   SetLocalInt(oWidget,"PreviousStartTime",GetRunTimeInSeconds());
+   SetLocalInt(oWidget,"PreviousStartTime",ReturnTime(3));
    DelayCommand( 1.0, AssignCommand( oPC, ClearAllActions() ) );
    DelayCommand( 1.1, AssignCommand( oPC, JumpToLocation(lJump) ) );
    DelayCommand( 1.5, giveXP(oPC));

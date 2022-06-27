@@ -7,8 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [unreleased] - 
 
 ### Added
+- area additions:
+	- Winya Ravana
+		1. Build amphitheater 
+		
+- 44 Artist PLCs
 
 ### Changed
+- area changes:
+	- Winya Ravana
+		1. remodeling/moving parts of winya to accomedate proggress
+		
+- 1 tailor plc change
 
 ### Fixed
 

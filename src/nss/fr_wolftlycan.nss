@@ -10,6 +10,7 @@ void main( ){
     object oPC                      = GetPCSpeaker( );
 
     DelayCommand( 5.0, NWNX_Creature_AddFeat( oPC, 1249) );
+
     {
     object oTarget;
 
@@ -34,5 +35,5 @@ void main( ){
 
         // Update the character.
         ExportSingleCharacter( oPC );
-        BootPC( oPC, "Flight added." );
+        DelayCommand( 10.0, BootPC( oPC, "Flight added." ));
     }

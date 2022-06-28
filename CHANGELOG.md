@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - area additions:
 	- Winya Ravana
 		1. Build amphitheater 
+		3. start of guard house made
 		2. continuation of winya's advancment and designe changes
 	- Winya Ravana: Guard house
 		1. Guard tower area finished and connected

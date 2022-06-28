@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////
-//This script it to add the wolf lycan feat to the player and set variables from a conversation//
+//This script it to add the bat lycan feat to the player and set variables from a conversation//
 //                                                                                             //
 //created by Frozen-ass                                                                        //
 //date: 28-06-2022                                                                             //
@@ -17,7 +17,7 @@ void main( )
     object oTarget                  = GetObjectByTag("ds_pckey");
 
         {
-    DelayCommand( 5.0, NWNX_Creature_AddFeat( oPC, 1249) );
+    DelayCommand( 5.0, NWNX_Creature_AddFeat( oPC, 1253) );
     SetLocalInt(oTarget, "lycanapproved", 1);
     SetLocalInt(oPC, "Prereq_Lycan", 1);
                 {
@@ -28,11 +28,11 @@ void main( )
            string szCharacterName  = GetName( oPC );
 
               // Notify the Player.
-              SendMessageToPC( oPC, "You will be booted for wolf lycan to be added to your feat list." );
+              SendMessageToPC( oPC, "You will be booted for bat lycan to be added to your feat list." );
 
               // Update the character.
               ExportSingleCharacter( oPC );
-              DelayCommand( 10.0, BootPC( oPC, "Werewolf infection added" ));
+              DelayCommand( 10.0, BootPC( oPC, "Werebat infection added" ));
                 }
         }
 }

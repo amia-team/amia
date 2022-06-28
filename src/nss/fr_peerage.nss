@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////
-//This script it to add the wolf lycan feat to the player and set variables from a conversation//
+//This script it to add the peerage feat to the player                                         //
 //                                                                                             //
 //created by Frozen-ass                                                                        //
 //date: 28-06-2022                                                                             //
@@ -17,9 +17,7 @@ void main( )
     object oTarget                  = GetObjectByTag("ds_pckey");
 
         {
-    DelayCommand( 5.0, NWNX_Creature_AddFeat( oPC, 1249) );
-    SetLocalInt(oTarget, "lycanapproved", 1);
-    SetLocalInt(oPC, "Prereq_Lycan", 1);
+    DelayCommand( 5.0, NWNX_Creature_AddFeat( oPC, 1255) );
                 {
 
               // Track and Report modification entry for Security purposes.
@@ -28,11 +26,11 @@ void main( )
            string szCharacterName  = GetName( oPC );
 
               // Notify the Player.
-              SendMessageToPC( oPC, "You will be booted for wolf lycan to be added to your feat list." );
+              SendMessageToPC( oPC, "You will be booted for chicken lycan to be added to your feat list." );
 
               // Update the character.
               ExportSingleCharacter( oPC );
-              DelayCommand( 10.0, BootPC( oPC, "Werewolf infection added" ));
+              DelayCommand( 10.0, BootPC( oPC, "Werechicken infection added, we weep for humanity" ));
                 }
         }
 }

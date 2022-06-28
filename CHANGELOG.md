@@ -22,6 +22,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Amia forrest: oakmist vale
 		1. added apple tree at agreed location
 Created new wiya guard key (red key)
+- added npc to palette to add all lycan and peerage feats (for future test server deployment)
+- added 8 scripts for adding peerage and lycan feats (and set correct variable for the latter)
 
 - 44 Artist PLCs
 

@@ -10,7 +10,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - area additions:
 	- Winya Ravana
 		1. Build amphitheater 
-		
+		2. continuation of winya's advancment and designe changes
+	- Winya Ravana: Guard house
+		1. Guard tower area finished and connected
+	- Winya Ravana: crystal lake
+		1. added/decorated last tree house guard 
+		2. Finished stone guard tower and connected to interior
+	- Amia forrest
+		1. added 3 benches and 6 "sit" options at agreed location
+	- Amia forrest: oakmist vale
+		1. added apple tree at agreed location
+Created new wiya guard key (red key)
+
 - 44 Artist PLCs
 
 ### Changed

@@ -19,14 +19,18 @@ string FPlusGetArchiveFile(object oPC, int index) {
     SetScriptParam(CARG_1, cdkey);
     SetScriptParam(CARG_2, IntToString(index));
     ExecuteScript("td_act_ffile_gaf");
-    return GetLocalString(oPC,CRET_STRING);
+    string retval = GetLocalString(oPC,CRET_STRING);
+    DeleteLocalString(oPC,CRET_STRING);
+    return retval;
 }
 string FPlusGetVaultFile(object oPC, int index) {
     string cdkey = GetPCPublicCDKey(oPC);
     SetScriptParam(CARG_1, cdkey);
     SetScriptParam(CARG_2, IntToString(index));
     ExecuteScript("td_act_ffile_gvf");
-    return GetLocalString(oPC,CRET_STRING);
+    string retval = GetLocalString(oPC,CRET_STRING);
+    DeleteLocalString(oPC,CRET_STRING);
+    return retval;
 }
 // Get File at index:
 string GetFPlusIndexValue(object oPC, int iindex, int isVault) {
@@ -42,13 +46,17 @@ string GetFPlusIndexValue(object oPC, int iindex, int isVault) {
 int FPlusGetArchiveSize(object oPC) {
     SetScriptParam(CARG_1, GetPCPublicCDKey(oPC));
     ExecuteScript("td_act_ffile_gas");
-    return GetLocalInt(oPC, CRET_INT);
+    int retval = GetLocalInt(oPC, CRET_INT);
+    DeleteLocalInt(oPC,CRET_INT);
+    return retval;
 }
 // Get Vault Size
 int FPlusGetVaultSize(object oPC) {
     SetScriptParam(CARG_1, GetPCPublicCDKey(oPC));
     ExecuteScript("td_act_ffile_gvs");
-    return GetLocalInt(oPC, CRET_INT);
+    int retval = GetLocalInt(oPC, CRET_INT);
+    DeleteLocalInt(oPC,CRET_INT);
+    return retval;
 }
 
 // Archive File
@@ -60,14 +68,18 @@ int FPlusArchiveFile(object oPC, string cdkey, string fname) {
     SetScriptParam(CARG_2, fname);
     SetScriptParam(CARG_3, bic);
     ExecuteScript("td_act_ffile_af");
-    return GetLocalInt(oPC, CRET_INT);
+    int retval = GetLocalInt(oPC, CRET_INT);
+    DeleteLocalInt(oPC,CRET_INT);
+    return retval;
 }
 // Un Archive File
 int FPlusUnArchiveFile(object oPC, string cdkey, string fname) {
     SetScriptParam(CARG_1, cdkey);
     SetScriptParam(CARG_2, fname);
     ExecuteScript("td_act_ffile_uaf");
-    return GetLocalInt(oPC, CRET_INT);
+    int retval = GetLocalInt(oPC, CRET_INT);
+    DeleteLocalInt(oPC,CRET_INT);
+    return retval;
 }
 // Rename File
 int FPlusRenameFile(object oPC, int index, string sNew) {
@@ -76,7 +88,9 @@ int FPlusRenameFile(object oPC, int index, string sNew) {
     SetScriptParam(CARG_2, IntToString(index));
     SetScriptParam(CARG_3, sNew);
     ExecuteScript("td_act_ffile_rnf");
-    return GetLocalInt(oPC, CRET_INT);
+    int retval = GetLocalInt(oPC, CRET_INT);
+    DeleteLocalInt(oPC,CRET_INT);
+    return retval;
 }
 /*
 // Get Archive Files

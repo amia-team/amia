@@ -73,11 +73,11 @@ void Archive(object oPC){
     string file = GetFPlusIndexValue(oPC, GetLocalInt(oPC,"list_current")+INDEX_SHIFT, TRUE);
 
     //if(GetStringLowerCase(file)==RunLua("return nwn.GetBic('"+ObjectToString(oPC)+"'):lower()..'.bic'")){
-    /*
-    if(GetStringLowerCase(file)==GetFPlusIndexValue(oPC, GetLocalInt(oPC,"list_current")+INDEX_SHIFT, TRUE)){
+
+    if(GetStringLowerCase(file)==GetStringLowerCase(ObjectToString(oPC))+".bic"){
         SendMessageToPC(oPC,"Can't archive the character you're currently playing!");
         return;
-    } */
+    }
 
     //int ok = StringToInt(RunLua("return file.Archive([=["+file+"]=],[=["+GetPCPlayerName(oPC)+"]=])"));
     //int ok = StringToInt(RunFPlus("return file.Archive([=["+file+"]=],[=["+GetPCPlayerName(oPC)+"]=])"));
@@ -212,14 +212,16 @@ void main()
     }
     else if(nTree==6){
         if(nNode==1){
+            /*
             string sNew = GetLocalString( oPC, "last_chat" );
             int sOk = Rename(oPC, sNew, FALSE);
-            if(sOk) {
+            if(!sOk) {
                 SendMessageToPC(oPC,"unable to rename file");
             } else {
                 SendMessageToPC(oPC,"File was renamed.");
             }
-            SetLocalInt( oPC, "ds_tree",0);
+            SetLocalInt( oPC, "ds_tree",0);*/
+            SendMessageToPC(oPC,"Renaming Feature Disabled");
             return;
         }
         SetLocalInt( oPC, "ds_tree",0);

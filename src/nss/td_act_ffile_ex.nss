@@ -55,6 +55,7 @@ int FPlusGetVaultSize(object oPC) {
 int FPlusArchiveFile(object oPC, string cdkey, string fname) {
     ExecuteScript("td_act_ffile_gpb");
     string bic = GetLocalString(oPC,CRET_STRING);
+    SendMessageToPC(oPC, "ffile_ex DEBUG bic: " + bic);
     SetScriptParam(CARG_1, cdkey);
     SetScriptParam(CARG_2, fname);
     SetScriptParam(CARG_3, bic);

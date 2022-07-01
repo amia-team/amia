@@ -25,7 +25,7 @@ void CreateList(object oPC, int isVault){
 
         if(nPage+n <= nLen){
             //SetCustomToken(10102+n,GetLuaIndexValue(nPage+n));
-            SetCustomToken(10102+n,GetFPlusIndexValue(oPC, nPage+n-1, isVault));
+            SetCustomToken(10102+n,GetFPlusIndexValue(oPC, nPage+n, isVault));
             SetLocalInt(oPC,"ds_check_"+IntToString(n+1),TRUE);
         }
         else{

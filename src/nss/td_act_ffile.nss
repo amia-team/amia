@@ -1,6 +1,9 @@
 /*#include "nwnx_lua"*/
 #include "td_act_ffile_ex"
 //void main (){}
+// LUA was 1 indexed while C# is 0 indexed. Adjustment required
+int INDEX_SHIFT = -1;
+
 void CreateList(object oPC, int isVault){
 
     int n;
@@ -25,7 +28,7 @@ void CreateList(object oPC, int isVault){
 
         if(nPage+n <= nLen){
             //SetCustomToken(10102+n,GetLuaIndexValue(nPage+n));
-            SetCustomToken(10102+n,GetFPlusIndexValue(oPC, nPage+n, isVault));
+            SetCustomToken(10102+n,GetFPlusIndexValue(oPC, nPage+n+INDEX_SHIFT, isVault));
             SetLocalInt(oPC,"ds_check_"+IntToString(n+1),TRUE);
         }
         else{
@@ -59,7 +62,7 @@ void CreateFileSummary(int nIndex, object oPC, int isVault){
     SetLocalInt(oPC,"list_current",nReal);
     //SetCustomToken(10112,RunLua("return file.CreateToken([=["+GetLuaIndexValue(nReal)+"]=]);"));
     //SetCustomToken(10112,RunFPlus("return file.CreateToken([=["+GetFPlusIndexValue(nReal)+"]=]);"));
-    SetCustomToken(10112,GetFPlusIndexValue(oPC, nReal, isVault));
+    SetCustomToken(10112,GetFPlusIndexValue(oPC, nReal+INDEX_SHIFT, isVault));
 }
 
 void Archive(object oPC){
@@ -67,13 +70,14 @@ void Archive(object oPC){
     //SetLuaKeyValueTable(GetPCPlayerName(oPC));
     //SetFPlusKeyValueTable(GetPCPlayerName(oPC));
     //string file = GetLuaIndexValue(GetLocalInt(oPC,"list_current"));
-    string file = GetFPlusIndexValue(oPC, GetLocalInt(oPC,"list_current"), TRUE);
+    string file = GetFPlusIndexValue(oPC, GetLocalInt(oPC,"list_current")+INDEX_SHIFT, TRUE);
 
     //if(GetStringLowerCase(file)==RunLua("return nwn.GetBic('"+ObjectToString(oPC)+"'):lower()..'.bic'")){
-    //if(GetStringLowerCase(file)==RunFPlus("return nwn.GetBic('"+ObjectToString(oPC)+"'):lower()..'.bic'")){
-    //    SendMessageToPC(oPC,"Can't archive the character you're currently playing!");
-    //    return;
-    //}
+    /*
+    if(GetStringLowerCase(file)==GetFPlusIndexValue(oPC, GetLocalInt(oPC,"list_current")+INDEX_SHIFT, TRUE)){
+        SendMessageToPC(oPC,"Can't archive the character you're currently playing!");
+        return;
+    } */
 
     //int ok = StringToInt(RunLua("return file.Archive([=["+file+"]=],[=["+GetPCPlayerName(oPC)+"]=])"));
     //int ok = StringToInt(RunFPlus("return file.Archive([=["+file+"]=],[=["+GetPCPlayerName(oPC)+"]=])"));
@@ -91,7 +95,7 @@ void Unarchive(object oPC){
     //SetLuaKeyValueTable(GetPCPlayerName(oPC));
     //SetFPlusKeyValueTable(GetPCPlayerName(oPC));
     //string file = GetLuaIndexValue(GetLocalInt(oPC,"list_current"));
-    string file = GetFPlusIndexValue(oPC, GetLocalInt(oPC,"list_current"), FALSE);
+    string file = GetFPlusIndexValue(oPC, GetLocalInt(oPC,"list_current")+INDEX_SHIFT, FALSE);
 
     //int ok = StringToInt(RunLua("return file.UnArchive([=["+file+"]=],[=["+GetPCPlayerName(oPC)+"]=])"));
     //int ok = StringToInt(RunFPlus("return file.UnArchive([=["+file+"]=],[=["+GetPCPlayerName(oPC)+"]=])"));
@@ -109,7 +113,7 @@ string GetSelected(object oPC, int isVault){
     //SetLuaKeyValueTable(GetPCPlayerName(oPC));
     //SetFPlusKeyValueTable(GetPCPlayerName(oPC));
     //return GetLuaIndexValue(GetLocalInt(oPC,"list_current"));
-    return GetFPlusIndexValue(oPC,GetLocalInt(oPC,"list_current"),isVault);
+    return GetFPlusIndexValue(oPC,GetLocalInt(oPC,"list_current")+INDEX_SHIFT,isVault);
 }
 
 int Rename(object oPC, string sNew, int isVault){

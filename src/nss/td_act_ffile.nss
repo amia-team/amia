@@ -75,10 +75,11 @@ void Archive(object oPC){
     //if(GetStringLowerCase(file)==RunLua("return nwn.GetBic('"+ObjectToString(oPC)+"'):lower()..'.bic'")){
 
     //SendMessageToPC(oPC,"DEBUG: self-file check: " + GetStringLowerCase(ObjectToString(oPC)) + ", File Selected: " + GetStringLowerCase(file));
-    if(GetStringLowerCase(file)==GetStringLowerCase(ObjectToString(oPC))){
+    // ObjectToString(oPC) gets a memory address, so it's not workable. Need to find another solution
+    /*if(GetStringLowerCase(file)==GetStringLowerCase(ObjectToString(oPC))){
         SendMessageToPC(oPC,"Can't archive the character you're currently playing!");
         return;
-    }
+    } */
 
     //int ok = StringToInt(RunLua("return file.Archive([=["+file+"]=],[=["+GetPCPlayerName(oPC)+"]=])"));
     //int ok = StringToInt(RunFPlus("return file.Archive([=["+file+"]=],[=["+GetPCPlayerName(oPC)+"]=])"));

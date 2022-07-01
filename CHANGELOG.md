@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [unreleased] - 
 
 ### Added
+
+### Changed
+
+### Fixed
+
+
+## [2.2.1] - 2022-07-01
+
+### Added
 - area additions:
 	- Winya Ravana
 		1. Build amphitheater 
@@ -17,6 +26,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Winya Ravana: crystal lake
 		1. added/decorated last tree house guard 
 		2. Finished stone guard tower and connected to interior
+	- Winya Ravana: Libary
+		1. plot update (added recoverd relic books, and shrine)
 	- Amia forrest
 		1. added 3 benches and 6 "sit" options at agreed location
 	- Amia forrest: oakmist vale
@@ -24,21 +35,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Kingdom of Cetha: The Wave and Serpent ((ON TEST SERVER))
 		1. added 2 npcs, 1 that eats job logs, 1 that can give all lycan and peerage feats
 		
-- Created new wiya guard key (red key)
+- various winya plot related things
 - added npc to palette to add all lycan and peerage feats (for future test server deployment)
 - added 8 scripts for adding peerage and lycan feats (and set correct variable for the latter)
-
 - 44 Artist PLCs
+- Start of new archiving system (not implemented yet)
+
 
 ### Changed
 - area changes:
 	- Winya Ravana
 		1. remodeling/moving parts of winya to accomedate proggress
-		
+
 - 1 tailor plc change
 
 ### Fixed
-
+- fixes to the deity falling system
+- fixes to allowed and disallowed deity's for 
+- jewler in bendir caves has its head back 
+- Lycan shapes now merge unwerwaterbreathing gear properly
 
 
 ## [2.2.0] - 2022-06-25

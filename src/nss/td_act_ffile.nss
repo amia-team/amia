@@ -121,7 +121,7 @@ int Rename(object oPC, string sNew, int isVault){
     string sFile = GetSelected(oPC, isVault);
     //return RunLua("return file.Rename([=["+GetPCPlayerName(oPC)+"]=],[=["+sFile+"]=], [=["+sNew+"]=]);");
     //return RunFPlus("return file.Rename([=["+GetPCPlayerName(oPC)+"]=],[=["+sFile+"]=], [=["+sNew+"]=]);");
-    return FPlusRenameFile(oPC, sFile, sNew);
+    return FPlusRenameFile(oPC, GetLocalInt(oPC,"list_current")+INDEX_SHIFT, sNew);
 }
 
 void main()
@@ -213,7 +213,7 @@ void main()
     }
     else if(nTree==6){
         if(nNode==1){
-            /*
+
             string sNew = GetLocalString( oPC, "last_chat" );
             int sOk = Rename(oPC, sNew, FALSE);
             if(!sOk) {
@@ -221,8 +221,8 @@ void main()
             } else {
                 SendMessageToPC(oPC,"File was renamed.");
             }
-            SetLocalInt( oPC, "ds_tree",0);*/
-            SendMessageToPC(oPC,"Renaming Feature Disabled");
+            SetLocalInt( oPC, "ds_tree",0);
+            //SendMessageToPC(oPC,"Renaming Feature Disabled");
             return;
         }
         SetLocalInt( oPC, "ds_tree",0);

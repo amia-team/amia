@@ -66,9 +66,11 @@ int FPlusUnArchiveFile(object oPC, string cdkey, string fname) {
     return GetLocalInt(oPC, CRET_INT);
 }
 // Rename File
-int FPlusRenameFile(object oPC, string sFile, string sNew) {
-    SetScriptParam(CARG_1, sFile);
-    SetScriptParam(CARG_2, sNew);
+int FPlusRenameFile(object oPC, int index, string sNew) {
+    string cdkey = GetPCPublicCDKey(oPC);
+    SetScriptParam(CARG_1, cdkey);
+    SetScriptParam(CARG_2, IntToString(index));
+    SetScriptParam(CARG_3, sNew);
     ExecuteScript("td_act_ffile_rnf");
     return GetLocalInt(oPC, CRET_INT);
 }

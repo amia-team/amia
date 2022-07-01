@@ -61,12 +61,12 @@ int FPlusGetVaultSize(object oPC) {
 
 // Archive File
 int FPlusArchiveFile(object oPC, string cdkey, string fname) {
-    ExecuteScript("td_act_ffile_gpb");
-    string bic = GetLocalString(oPC,CRET_STRING);
-    SendMessageToPC(oPC, "ffile_ex DEBUG bic: " + bic);
+    //ExecuteScript("td_act_ffile_gpb");
+    //string bic = GetLocalString(oPC,CRET_STRING);
+    //SendMessageToPC(oPC, "ffile_ex DEBUG bic: " + bic);
     SetScriptParam(CARG_1, cdkey);
     SetScriptParam(CARG_2, fname);
-    SetScriptParam(CARG_3, bic);
+    //SetScriptParam(CARG_3, bic);
     ExecuteScript("td_act_ffile_af");
     int retval = GetLocalInt(oPC, CRET_INT);
     DeleteLocalInt(oPC,CRET_INT);

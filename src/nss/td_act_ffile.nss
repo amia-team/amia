@@ -74,6 +74,7 @@ void Archive(object oPC){
 
     //if(GetStringLowerCase(file)==RunLua("return nwn.GetBic('"+ObjectToString(oPC)+"'):lower()..'.bic'")){
 
+    SendMessageToPC(oPC,"DEBUG: self-file check: " + GetStringLowerCase(ObjectToString(oPC)) + ", File Selected: " + GetStringLowerCase(file));
     if(GetStringLowerCase(file)==GetStringLowerCase(ObjectToString(oPC))){
         SendMessageToPC(oPC,"Can't archive the character you're currently playing!");
         return;

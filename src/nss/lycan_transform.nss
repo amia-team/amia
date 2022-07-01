@@ -49,6 +49,8 @@ void main()
     object oBelt        = GetItemInSlot( INVENTORY_SLOT_BELT,OBJECT_SELF );
     object oHelm        = GetItemInSlot( INVENTORY_SLOT_HEAD,OBJECT_SELF );
 
+    //Drowning!
+    int nCannotDrown = ds_check_uw_items( OBJECT_SELF );
 
 
     if(GetHasFeat(1249,oPC)) // Wolf
@@ -326,9 +328,6 @@ void main()
         SetCreatureAppearanceType(OBJECT_SELF, nAnimalSkin);
         SetPortraitId(OBJECT_SELF, nAnimalPo);
     }
-
-    //Drowning!
-    int nCannotDrown = ds_check_uw_items( OBJECT_SELF );
 
     //--------------------------------------------------------------------------
     // This code handles the merging of item properties

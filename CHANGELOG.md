@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [unreleased] - 
 
 ### Added
+- Area additions
+	- Kingdom of Cetha: The Wave and Serpent ((ON TEST SERVER))
+		1. added bloodsworn feat giving statue
 
 ### Changed
 - Changed Risen lord in assosiated .2da to correctly have 34 base str

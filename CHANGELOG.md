@@ -7,14 +7,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [unreleased] - 
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [2.2.1] - 2022-07-08
+
+### Added
+- Archive system! type /s f_file and follow the conversation
 - Area additions
 	- Kingdom of Cetha: The Wave and Serpent ((ON TEST SERVER))
 		1. added bloodsworn feat giving statue
-
+	- Winya Ravana
+		1. remodeling/moving parts of winya to accomedate proggress
+	- Crystal River: Bridge
+		1. removal of old marks of beastman (blood/skulls)
+		2. scouts added
+		
 ### Changed
 - Changed Risen lord in assosiated .2da to correctly have 24 base str
-
-### Fixed
 
 
 ## [2.2.1] - 2022-07-01

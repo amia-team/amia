@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-## [2.2.1] - 2022-07-08
+## [2.2.2] - 2022-07-08
 
 ### Added
 - Archive system! type /s f_file and follow the conversation

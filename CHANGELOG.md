@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- updated the amia_parts.hak with new version adding many new toys
+- updated the amia_top.hak with new version adding many new toys
 
 ### Fixed
 

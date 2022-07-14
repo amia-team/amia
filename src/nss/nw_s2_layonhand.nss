@@ -14,9 +14,15 @@
 //:://////////////////////////////////////////////
 
 #include "NW_I0_SPELLS"
+#include "amx_fallcheck"
 void main()
 {
 
+    if ( (IsSpecificFallen(OBJECT_SELF)) ||
+         (!DeityCheck(OBJECT_SELF)) ){
+        FloatingTextStringOnCreature( "The plea to your deity is not heard...", OBJECT_SELF, FALSE );
+        return;
+    }
     object oTarget = GetSpellTargetObject();
 
     int nChr = GetAbilityModifier(ABILITY_CHARISMA);

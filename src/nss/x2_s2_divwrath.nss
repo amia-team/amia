@@ -29,15 +29,15 @@
 void coolDown(object oTarget); // Built in cool down
 
 #include "nw_i0_spells"
+#include "amx_fallcheck"
 
-string FALL_WIDGET = "dg_fall";
 void main()
 {
     //Declare major variables
     object oTarget = OBJECT_SELF;
-    //FALL HACK! Mwhahahaha
-    if ( (GetLocalInt( oTarget, "Fallen" ) == 1) ||
-        (GetItemPossessedBy(oTarget,FALL_WIDGET) != OBJECT_INVALID) ){
+
+    if ( (IsSpecificFallen(oTarget)) ||
+         (!DeityCheck(oTarget)) ){
         FloatingTextStringOnCreature( "The plea to your deity is not heard...", oTarget, FALSE );
         return;
     }

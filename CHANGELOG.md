@@ -9,10 +9,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+
+### Fixed
+
+
+## [2.2.3] - 2022-07-15
+
+### Added
+- New widget "the name changer" (will lay a temporary name over your real one. 1 name per widget curently)
+- script for the name changer
+- hak update to amia_parts, amia_top
+	- colored bags
+	- lots of new plcs
+
+### Changed
 - updated the amia_parts.hak with new version adding many new toys
 - updated the amia_top.hak with new version adding many new toys
 
 ### Fixed
+- more fine tuning for the fallen systen, now hooked into layonhands/divinewrath
+- archivie system hooked into the server db to work (already live)
 
 ## [2.2.2] - 2022-07-08
 

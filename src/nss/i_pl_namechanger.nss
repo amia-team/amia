@@ -11,10 +11,18 @@ void main()
   object oPC = GetItemActivator();
   object oWidget = GetItemActivated();
   string sWidgetSetName = GetLocalString(oWidget, "newName");
+  int nWidgetNameSet = GetLocalInt(oWidget,"widgetSet");
+
 
   if(sWidgetSetName == "")
   {
     sWidgetSetName = "Mysterious Individual";
+  }
+
+  if(nWidgetNameSet == 0)
+  {
+    SetLocalInt(oWidget,"widgetSet",1);
+    SetName(oWidget,"Temporary Name Changer: " + sWidgetSetName);
   }
 
   if(NWNX_Rename_GetPCNameOverride(oPC) == sWidgetSetName)

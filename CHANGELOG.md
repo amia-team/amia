@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
+	~ Khem: Sand Minotaur Cliffs
+		1. Moved ruby vein to be reachable
+	~ Cape Slakh: North
+		1. fixed the spawns not spawning
+	~ Cape Slakh: South
+		1. fixed the spawns not spawning
 
 
 ## [2.2.3] - 2022-07-15

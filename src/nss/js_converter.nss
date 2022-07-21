@@ -436,22 +436,162 @@ void ArtistConverter(object oPC, object oBench, int nNode)
     string sIngredient2;
     string sType = "none";
     string sMaterial = "none";
+    int nActionNode = GetLocalInt( oPC, "ds_actionnode");
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
     int nStack = 0;
     int nProductStackSize = 1;
 
-    switch(nNode)
+    if(nActionNode == 1)//Candles and Lanterns
     {
+        switch(nNode)
+        {
 
-      case 1: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_herb_rosl"; sType = "js_art_scca"; sMaterial = "plc"; nCost = 1000; break;
-      case 2: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_alch_coil"; sType = "js_art_exca"; sMaterial = "plc"; nCost = 1000; break;
-      case 3: sProduct = "js_art_cand"; sIngredient1 = "js_art_tall"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 1000; break;
-      case 4: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_herb_firw"; sType = "js_art_skca"; sMaterial = "plc"; nCost = 1000; break;
-      case 5: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_dusw"; sIngredient2 = "js_farm_papy"; sType = "js_art_pain"; sMaterial = "plc"; nCost = 2000; break;
+          case 1: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_herb_rosl"; sType = "js_art_scca"; sMaterial = "plc"; nCost = 1000; break;
+          case 2: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_alch_coil"; sType = "js_art_exca"; sMaterial = "plc"; nCost = 1000; break;
+          case 3: sProduct = "js_art_cand"; sIngredient1 = "js_art_tall"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 1000; break;
+          case 4: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_hun_sbone"; sType = "js_art_skca"; sMaterial = "plc"; nCost = 1000; break;
+          case 5: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_art_colred"; sType = "js_art_candred1"; sMaterial = "plc"; nCost = 1000; break;
+          case 6: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_scntcandle"; sIngredient2 = "js_art_colred"; sType = "js_art_candred2"; sMaterial = "plc"; nCost = 1000; break;
+          case 7: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_exoticcandle"; sIngredient2 = "js_art_colred"; sType = "js_art_candred3"; sMaterial = "plc"; nCost = 1000; break;
+          case 8: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_art_colyel"; sType = "js_art_candyel1"; sMaterial = "plc"; nCost = 1000; break;
+          case 9: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_scntcandle"; sIngredient2 = "js_art_colyel"; sType = "js_art_candyel2"; sMaterial = "plc"; nCost = 1000; break;
+          case 10: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_exoticcandle"; sIngredient2 = "js_art_colyel"; sType = "js_art_candyel3"; sMaterial = "plc"; nCost = 1000; break;
+          case 11: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_art_colprp"; sType = "js_art_candprp1"; sMaterial = "plc"; nCost = 1000; break;
+          case 12: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_scntcandle"; sIngredient2 = "js_art_colprp"; sType = "js_art_candprp2"; sMaterial = "plc"; nCost = 1000; break;
+          case 13: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_exoticcandle"; sIngredient2 = "js_art_colprp"; sType = "js_art_candprp3"; sMaterial = "plc"; nCost = 1000; break;
+          case 14: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_irow"; sIngredient2 = "js_bla_irin"; sType = "js_art_torch1"; sMaterial = "plc"; nCost = 5000; break;
+          case 15: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_stin"; sIngredient2 = "js_tree_phaw"; sType = "js_art_brazier1"; sMaterial = "plc"; nCost = 5000; break;
+          case 16: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_stin"; sIngredient2 = "js_jew_crys"; sType = "js_art_lantern1"; sMaterial = "plc"; nCost = 5000; break;
+          case 17: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_jew_crys"; sType = "js_art_lantern2"; sMaterial = "plc"; nCost = 5000; break;
 
+        }
     }
+    if(nActionNode == 2)//Statues, Sculptures, Designs
+    {
+        switch(nNode)
+        {
+
+          case 1: sProduct = "js_plcspawner"; sIngredient1 = "js_art_colred"; sIngredient2 = "none"; sType = "js_art_runecirc1"; sMaterial = "plc"; nCost = 15000; break;
+          case 2: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "none"; sType = "js_art_obelisk1"; sMaterial = "plc"; nCost = 15000; break;
+          case 3: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "jobsystemweapon"; sType = "js_art_pdsword1"; sMaterial = "plc"; nCost = 15000; break;
+          case 4: sProduct = "js_plcspawner"; sIngredient1 = "js_jew_sapp"; sIngredient2 = "js_arca_ecore"; sType = "js_art_sclblult1"; sMaterial = "plc"; nCost = 20000; break;
+          case 5: sProduct = "js_plcspawner"; sIngredient1 = "js_jew_emer"; sIngredient2 = "js_jew_ruby"; sType = "js_art_flrmos1"; sMaterial = "plc"; nCost = 20000; break;
+          case 6: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "none"; sType = "js_art_stggoyl1"; sMaterial = "plc"; nCost = 15000; break;
+          case 7: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_marb"; sIngredient2 = "js_jew_ruby"; sType = "js_art_stmage1"; sMaterial = "plc"; nCost = 15000; break;
+          case 8: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "js_bla_goin"; sType = "js_art_stshld1"; sMaterial = "plc"; nCost = 15000; break;
+          case 9: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "js_bla_goin"; sType = "js_art_stshld2"; sMaterial = "plc"; nCost = 15000; break;
+          case 10: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_marb"; sIngredient2 = "none"; sType = "js_art_stfem1"; sMaterial = "plc"; nCost = 15000; break;
+          case 11: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "js_alch_elef"; sType = "js_art_stflame1"; sMaterial = "plc"; nCost = 15000; break;
+          case 12: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "none"; sType = "js_art_sarcoph1"; sMaterial = "plc"; nCost = 20000; break;
+          case 13: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_marb"; sIngredient2 = "js_rock_gran"; sType = "js_art_stbust1"; sMaterial = "plc"; nCost = 20000; break;
+          case 14: sProduct = "js_plcspawner"; sIngredient1 = "js_art_colred"; sIngredient2 = "none"; sType = "js_art_flrpnta1"; sMaterial = "plc"; nCost = 10000; break;
+          case 15: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_hun_mbone"; sType = "js_art_skulpol1"; sMaterial = "plc"; nCost = 10000; break;
+          case 16: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_dusw"; sIngredient2 = "js_hun_lbone"; sType = "js_art_skulpos1"; sMaterial = "plc"; nCost = 10000; break;
+          case 17: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_hun_mbone"; sType = "js_art_skelhng1"; sMaterial = "plc"; nCost = 10000; break;
+          case 18: sProduct = "js_plcspawner"; sIngredient1 = "js_art_colred"; sIngredient2 = "none"; sType = "js_art_flrskl1"; sMaterial = "plc"; nCost = 10000; break;
+          case 19: sProduct = "js_plcspawner"; sIngredient1 = "js_jew_emer"; sIngredient2 = "js_bla_goin"; sType = "js_art_stpyrmd1"; sMaterial = "plc"; nCost = 20000; break;
+
+        }
+    }
+    if(nActionNode == 3)//Decorations
+    {
+        switch(nNode)
+        {
+
+          case 1: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_sand"; sIngredient2 = "none"; sType = "js_art_jars1"; sMaterial = "plc"; nCost = 10000; break;
+          case 2: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_sand"; sIngredient2 = "none"; sType = "js_art_potclay1"; sMaterial = "plc"; nCost = 10000; break;
+          case 3: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_pot"; sIngredient2 = "js_art_colyel"; sType = "js_art_potclay2"; sMaterial = "plc"; nCost = 10000; break;
+          case 4: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_sand"; sIngredient2 = "js_art_colblu"; sType = "js_art_potclay3"; sMaterial = "plc"; nCost = 10000; break;
+          case 5: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_sand"; sIngredient2 = "none"; sType = "js_art_urn1"; sMaterial = "plc"; nCost = 10000; break;
+          case 6: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_dusw"; sIngredient2 = "js_bla_stin"; sType = "js_art_shldrack"; sMaterial = "plc"; nCost = 10000; break;
+          case 7: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_irow"; sIngredient2 = "js_farm_cott"; sType = "js_art_hangdec1"; sMaterial = "plc"; nCost = 5000; break;
+          case 8: sProduct = "js_plcspawner"; sIngredient1 = "js_jew_crys"; sIngredient2 = "js_bui_shpl"; sType = "js_art_cryball1"; sMaterial = "plc"; nCost = 10000; break;
+          case 9: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_irow"; sIngredient2 = "js_bla_stin"; sType = "js_art_globe1"; sMaterial = "plc"; nCost = 5000; break;
+          case 10: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_marb"; sIngredient2 = "js_jew_crys"; sType = "js_art_divpool1"; sMaterial = "plc"; nCost = 10000; break;
+          case 11: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_table"; sIngredient2 = "js_bui_shpl"; sType = "js_art_table1"; sMaterial = "plc"; nCost = 10000; break;
+          case 12: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_shpl"; sIngredient2 = "js_tail_rsil"; sType = "js_art_wndchim1"; sMaterial = "plc"; nCost = 5000; break;
+          case 13: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_stin"; sIngredient2 = "none"; sType = "js_art_anchor1"; sMaterial = "plc"; nCost =5000; break;
+          case 14: sProduct = "js_plcspawner"; sIngredient1 = "js_tai_bosi"; sIngredient2 = "js_bui_irpl"; sType = "js_art_lilship1"; sMaterial = "plc"; nCost = 5000; break;
+          case 15: sProduct = "js_plcspawner"; sIngredient1 = "js_tai_boco"; sIngredient2 = "js_bui_irpl"; sType = "js_art_lilship2"; sMaterial = "plc"; nCost = 5000; break;
+          case 16: sProduct = "js_plcspawner"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "js_bui_irpl"; sType = "js_art_lilship3"; sMaterial = "plc"; nCost = 5000; break;
+          case 17: sProduct = "js_plcspawner"; sIngredient1 = "js_tai_bosi"; sIngredient2 = "js_bui_irpl"; sType = "js_art_lilship4"; sMaterial = "plc"; nCost = 5000; break;
+
+        }
+    }
+    if(nActionNode == 4)//Rugs
+    {
+        switch(nNode)
+        {
+
+          case 1: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colred"; sType = "js_art_rugred1"; sMaterial = "plc"; nCost = 5000; break;
+          case 2: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colorn"; sType = "js_art_rugorg1"; sMaterial = "plc"; nCost = 5000; break;
+          case 3: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colyel"; sType = "js_art_rugyel1"; sMaterial = "plc"; nCost = 5000; break;
+          case 4: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colgrn"; sType = "js_art_ruggrn1"; sMaterial = "plc"; nCost = 5000; break;
+          case 5: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colblu"; sType = "js_art_rugblu1"; sMaterial = "plc"; nCost = 5000; break;
+          case 6: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colprp"; sType = "js_art_rugprp1"; sMaterial = "plc"; nCost = 5000; break;
+          case 7: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colblk"; sType = "js_art_rugblk1"; sMaterial = "plc"; nCost = 5000; break;
+          case 8: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colwht"; sType = "js_art_rugwht1"; sMaterial = "plc"; nCost = 5000; break;
+          case 9: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_tai_bosi"; sType = "js_art_rugbase1"; sMaterial = "plc"; nCost = 5000; break;
+          case 10: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpetfancy"; sIngredient2 = "js_art_colred"; sType = "js_art_rugred2"; sMaterial = "plc"; nCost = 7000; break;
+          case 11: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpetfancy"; sIngredient2 = "js_art_colorn"; sType = "js_art_rugorg2"; sMaterial = "plc"; nCost = 10000; break;
+          case 12: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpetfancy"; sIngredient2 = "js_art_colgrn"; sType = "js_art_ruggrn2"; sMaterial = "plc"; nCost = 10000; break;
+          case 13: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpetfancy"; sIngredient2 = "js_art_colgrn"; sType = "js_art_ruggrn3"; sMaterial = "plc"; nCost = 10000; break;
+          case 14: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpetfancy"; sIngredient2 = "js_art_colred"; sType = "js_art_rugred3"; sMaterial = "plc"; nCost = 10000; break;
+
+        }
+    }
+    if(nActionNode == 5)//Hangings
+    {
+        switch(nNode)
+        {
+
+          case 1: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgbane1"; sMaterial = "plc"; nCost = 5000; break;
+          case 2: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgcyrc1"; sMaterial = "plc"; nCost = 5000; break;
+          case 3: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgeili1"; sMaterial = "plc"; nCost = 5000; break;
+          case 4: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgstag1"; sMaterial = "plc"; nCost = 5000; break;
+          case 5: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgstag2"; sMaterial = "plc"; nCost = 5000; break;
+          case 6: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flghelm1"; sMaterial = "plc"; nCost = 5000; break;
+          case 7: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgilm1"; sMaterial = "plc"; nCost = 5000; break;
+          case 8: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flglath1"; sMaterial = "plc"; nCost = 5000; break;
+          case 9: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flglolt1"; sMaterial = "plc"; nCost = 5000; break;
+          case 10: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgmask1"; sMaterial = "plc"; nCost = 5000; break;
+          case 11: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgrav1"; sMaterial = "plc"; nCost = 5000; break;
+          case 12: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgrav2"; sMaterial = "plc"; nCost = 5000; break;
+          case 13: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgsune1"; sMaterial = "plc"; nCost = 5000; break;
+          case 14: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgtemp1"; sMaterial = "plc"; nCost = 5000; break;
+          case 15: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgtorm1"; sMaterial = "plc"; nCost = 5000; break;
+          case 16: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgwauk1"; sMaterial = "plc"; nCost = 5000; break;
+
+        }
+    }
+    if(nActionNode == 6)//Paintings
+    {
+        switch(nNode)
+        {
+
+          case 1: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_dusw"; sIngredient2 = "js_farm_papy"; sType = "js_art_pain"; sMaterial = "plc"; nCost = 2000; break;
+
+        }
+    }
+    if(nActionNode == 7)//Paints/Dyes
+    {
+        switch(nNode)
+        {
+
+          case 1: sProduct = "js_art_colblk"; sIngredient1 = "js_bla_carb"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 500; break;
+          case 2: sProduct = "js_art_colblu"; sIngredient1 = "js_farm_grap"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 500; break;
+          case 3: sProduct = "js_art_colgrn"; sIngredient1 = "js_farm_grap"; sIngredient2 = "js_farm_carr"; sType = "none"; sMaterial = "none"; nCost = 500; break;
+          case 4: sProduct = "js_art_colorn"; sIngredient1 = "js_farm_carr"; sIngredient2 = "js_farm_cher"; sType = "none"; sMaterial = "none"; nCost = 500; break;
+          case 5: sProduct = "js_art_colprp"; sIngredient1 = "js_farm_grap"; sIngredient2 = "js_farm_cher"; sType = "none"; sMaterial = "none"; nCost = 500; break;
+          case 6: sProduct = "js_art_colred"; sIngredient1 = "js_farm_cher"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 500; break;
+          case 7: sProduct = "js_art_colwht"; sIngredient1 = "js_alch_elea"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 500; break;
+          case 8: sProduct = "js_art_colyel"; sIngredient1 = "js_farm_carr"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 500; break;
+
+        }
+    }
+
 
     CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,nCost,nStack,nProductStackSize);
 
@@ -1218,6 +1358,9 @@ void TailorConverter(object oPC, object oBench, int nNode)
       case 49: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_fur"; sIngredient2 = "none"; sType = "js_bui_blackbrug"; sMaterial = "plc"; nCost = 5000; break;
       case 50: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_lfur"; sIngredient2 = "js_hun_lbone"; sType = "js_bui_stuffgriz"; sMaterial = "plc"; nCost = 10000; break;
       case 51: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_game"; sIngredient2 = "js_hun_hide"; sType = "js_bui_basilisk"; sMaterial = "plc"; nCost = 5000; break;
+      case 52: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtent"; sIngredient2 = "js_art_colblu"; sType = "js_bui_tent4"; sMaterial = "plc"; nCost = 10000; break;
+      case 53: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtent"; sIngredient2 = "js_art_colred"; sType = "js_bui_tent5"; sMaterial = "plc"; nCost = 10000; break;
+      case 54: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtentrdwht"; sIngredient2 = "js_art_colblk"; sType = "js_bui_tent6"; sMaterial = "plc"; nCost = 10000; break;
 
 
     }
@@ -1555,7 +1698,8 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
       }
       else if(sMaterial == "plc")// For PLC items we set the resref on the PLC spawner and set the name
       {
-
+        //Temporarily commented out for testing. This will be removed - Lord-Jyssev
+        /*
         if(sType == "js_art_scca")
         {
           SetName(oCraftedItem,"<c~Îë>Scented Candle</c> ");
@@ -1743,7 +1887,22 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
         }
         else if(sType == "js_bui_tent3")
         {
-          SetName(oCraftedItem,"<c~Îë>Massive Tent, Dark</c> ");
+          SetName(oCraftedItem,"<c~Îë>Big Tent, Dark</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_bui_tent4")
+        {
+          SetName(oCraftedItem,"<c~Îë>Big Tent, Blue and White</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_bui_tent5")
+        {
+          SetName(oCraftedItem,"<c~Îë>Big Tent, Red and White</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_bui_tent6")
+        {
+          SetName(oCraftedItem,"<c~Îë>Big Tent, Red and Black</c> ");
           SetLocalString(oCraftedItem,"plc",sType);
         }
         else if(sType == "js_bui_teepee1")
@@ -1891,15 +2050,296 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
           SetName(oCraftedItem,"<c~Îë>Bone Cage</c> ");
           SetLocalString(oCraftedItem,"plc",sType);
         }
-           else if(sType == "js_tai_carp")
+        else if(sType == "js_tai_carp")
         {
           SetName(oCraftedItem,"<c~Îë>Carpet</c> ");
           SetLocalString(oCraftedItem,"plc",sType);
         }
-        else
+        else if(sType == "js_art_rugbase1")
         {
+          SetName(oCraftedItem,"<c~Îë>Rug, Fancy Base</c> ");
           SetLocalString(oCraftedItem,"plc",sType);
         }
+        else if(sType == "js_art_candred1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Red Candle</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_candred2")
+        {
+          SetName(oCraftedItem,"<c~Îë>Red Scented Candle</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_candred3")
+        {
+          SetName(oCraftedItem,"<c~Îë>Red Exotic Candle</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_candyel1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Yellow Candle</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_candyel2")
+        {
+          SetName(oCraftedItem,"<c~Îë>Yellow Scented Candle</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_candyel3")
+        {
+          SetName(oCraftedItem,"<c~Îë>Yellow Exotic Candle</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_candprp1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Purple Candle</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_candprp2")
+        {
+          SetName(oCraftedItem,"<c~Îë>Purple Scented Candle</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_candprp3")
+        {
+          SetName(oCraftedItem,"<c~Îë>Purple Exotic Candle</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_js_art_torch1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Torch, Bracket</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_brazier1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Brazier</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_lantern1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Hanging Lantern</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_lantern2")
+        {
+          SetName(oCraftedItem,"<c~Îë>Lamp Post</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_runecirc1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Rune Circle</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_obelisk1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Obelisk</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_pdsword1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Pedestal Sword</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_sclblult1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Blue Light Sculpture</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_flrmos1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Floor Mosaic</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_stggoyl1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Statue, Gargoyle</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_stmage1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Statue, Mage</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_stshld1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Statue with Shield, Whole</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_stshld2")
+        {
+          SetName(oCraftedItem,"<c~Îë>Statue with Shield, Defaced</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_stfem1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Statue, Female</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_stflame1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Statue, Flaming</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_sarcoph1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Sarcophagus</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_stbust1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Marble Bust</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_flrpnta1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Deviant Art: Pentagram</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_skulpol1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Deviant Art: Skull Poll</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_skulpos1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Deviant Art: Skull Post</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_skelhng1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Deviant Art: Hanging Skeleton</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_flrskl1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Deviant Art: Floor Skull</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_jars1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Jars</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_potclay1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Plain Pot</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_potclay2")
+        {
+          SetName(oCraftedItem,"<c~Îë>Decorated Pot</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_potclay3")
+        {
+          SetName(oCraftedItem,"<c~Îë>Blue Pot</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_urn1")
+        {
+          SetName(oCraftedItem,"<c~Îë>Urn</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "js_art_shldrack")
+        {
+          SetName(oCraftedItem,"<c~Îë>Shield Rack</c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "")
+        {
+          SetName(oCraftedItem,"<c~Îë></c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "")
+        {
+          SetName(oCraftedItem,"<c~Îë></c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "")
+        {
+          SetName(oCraftedItem,"<c~Îë></c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "")
+        {
+          SetName(oCraftedItem,"<c~Îë></c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "")
+        {
+          SetName(oCraftedItem,"<c~Îë></c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "")
+        {
+          SetName(oCraftedItem,"<c~Îë></c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "")
+        {
+          SetName(oCraftedItem,"<c~Îë></c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "")
+        {
+          SetName(oCraftedItem,"<c~Îë></c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "")
+        {
+          SetName(oCraftedItem,"<c~Îë></c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "")
+        {
+          SetName(oCraftedItem,"<c~Îë></c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "")
+        {
+          SetName(oCraftedItem,"<c~Îë></c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "")
+        {
+          SetName(oCraftedItem,"<c~Îë></c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "")
+        {
+          SetName(oCraftedItem,"<c~Îë></c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "")
+        {
+          SetName(oCraftedItem,"<c~Îë></c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "")
+        {
+          SetName(oCraftedItem,"<c~Îë></c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "")
+        {
+          SetName(oCraftedItem,"<c~Îë></c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }
+        else if(sType == "")
+        {
+          SetName(oCraftedItem,"<c~Îë></c> ");
+          SetLocalString(oCraftedItem,"plc",sType);
+        }*/
+        //else
+        //{
+          SendMessageToPC(oPC, "Debug: sType=" + sType);
+          object oBasePLC = GetObjectByTag(sType);
+          SendMessageToPC(oPC, "Debug: oBasePLC=" + ObjectToString(oBasePLC));
+          string sNewName = GetName(oBasePLC);
+          SendMessageToPC(oPC, "Debug: sNewName=" + sNewName);
+          SetName(oCraftedItem, sNewName);
+          SetLocalString(oCraftedItem,"plc",sType);
+        //}
 
       }
 
@@ -2093,6 +2533,96 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
            nWeaponMaterial = GetLocalInt(oItemInChest, "material");
            sWeaponResRef = GetResRef(oItemInChest);
            nWeaponMaterialPresent = 1;
+        }
+      }
+      //
+
+      // PLC Spawners as Ingredients using "plc" string variables
+
+      // Scented Candle
+      if(sIngredient1 == "jobplc_scntcandle")
+      {
+        if((GetLocalString(oItemInChest, "plc") == "js_art_scca"))
+        {
+           nIngredient1Found == 1;
+           oIngredient1 = oItemInChest;
+        }
+      }
+      //
+
+      // Exotic Candle
+      if(sIngredient1 == "jobplc_exoticcandle")
+      {
+        if((GetLocalString(oItemInChest, "plc") == "js_art_exca"))
+        {
+           nIngredient1Found == 1;
+           oIngredient1 = oItemInChest;
+        }
+      }
+      //
+
+      // Table
+      if(sIngredient1 == "jobplc_table")
+      {
+        if((GetLocalString(oItemInChest, "plc") == "js_bui_tabl"))
+        {
+           nIngredient1Found == 1;
+           oIngredient1 = oItemInChest;
+        }
+      }
+      //
+
+      // Pot
+      if(sIngredient1 == "jobplc_pot")
+      {
+        if((GetLocalString(oItemInChest, "plc") == "js_art_potclay1"))
+        {
+           nIngredient1Found == 1;
+           oIngredient1 = oItemInChest;
+        }
+      }
+      //
+
+      // Big Tent, Dark
+      if(sIngredient1 == "jobplc_bigtent")
+      {
+        if((GetLocalString(oItemInChest, "plc") == "js_bui_tent3"))
+        {
+           nIngredient1Found == 1;
+           oIngredient1 = oItemInChest;
+        }
+      }
+      //
+
+      // Big Tent, Red and White
+      if(sIngredient1 == "jobplc_bigtentrdwht")
+      {
+        if((GetLocalString(oItemInChest, "plc") == "js_bui_tent5"))
+        {
+           nIngredient1Found == 1;
+           oIngredient1 = oItemInChest;
+        }
+      }
+      //
+
+      // Carpet
+      if(sIngredient1 == "jobplc_carpet")
+      {
+        if((GetLocalString(oItemInChest, "plc") == "js_tai_carp"))
+        {
+           nIngredient1Found == 1;
+           oIngredient1 = oItemInChest;
+        }
+      }
+      //
+
+      // Rug, Fancy Base
+      if(sIngredient1 == "jobplc_carpetfancy")
+      {
+        if((GetLocalString(oItemInChest, "plc") == "js_art_rugbase1"))
+        {
+           nIngredient1Found == 1;
+           oIngredient1 = oItemInChest;
         }
       }
       //

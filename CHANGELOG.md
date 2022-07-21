@@ -7,8 +7,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [unreleased] - 
 
 ### Added
+- Artist Colors to dye bags and use in recipes
+- Artist placeables (the rest of them)
+- Additional Tailor craftable tent appearances (Blue/White, Red/White, Black/Red)
+- All the new Artist recipes
+- Dedicated Job System placeable and testing area
+- A few new Ridgewood historical-themed items
 
 ### Changed
+- Job System converter script to base naming off of placed placeables
+- Job System converter script to be able to use crafted placeables in recipes
+- Artist conversation
+- Tailor conversation
+- Job System effects script to enable bag dyeing
+- Changed hunter "Hanging Skin" placeable appearance to hopefully be easier to use/place
+- Changed Job System PLC spawners to be a 1x1 small inventory icon size instead of 2x2
+- Ridgewood "living world" updates
+	- Changes and construction around main Ridgewood area
+	- Ambassador's office opened
+	- Trade hall opened
 
 ### Fixed
 	~ Khem: Sand Minotaur Cliffs

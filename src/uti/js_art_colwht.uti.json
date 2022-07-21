@@ -2,11 +2,11 @@
   "__data_type": "UTI ",
   "AddCost": {
     "type": "dword",
-    "value": 0
+    "value": 500
   },
   "BaseItem": {
     "type": "int",
-    "value": 104
+    "value": 120
   },
   "Charges": {
     "type": "byte",
@@ -18,7 +18,7 @@
   },
   "Cost": {
     "type": "dword",
-    "value": 0
+    "value": 500
   },
   "Cursed": {
     "type": "byte",
@@ -26,12 +26,14 @@
   },
   "DescIdentified": {
     "type": "cexolocstring",
-    "value": {}
+    "value": {
+      "0": "A pigment mixed by a skilled artist. This can be used in job system recipes to dye or paint certain items or used on empty inventory bags and boxes to recolor them.\n\n((Job System Item))"
+    }
   },
   "Description": {
     "type": "cexolocstring",
     "value": {
-      "0": "This whitening agent can bleach or tint to a lighter hue other colors or items."
+      "0": ""
     }
   },
   "Identified": {
@@ -46,15 +48,7 @@
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 98
-  },
-  "ModelPart2": {
-    "type": "byte",
-    "value": 64
-  },
-  "ModelPart3": {
-    "type": "byte",
-    "value": 24
+    "value": 108
   },
   "PaletteID": {
     "type": "byte",
@@ -102,7 +96,7 @@
   },
   "StackSize": {
     "type": "word",
-    "value": 100
+    "value": 1
   },
   "Stolen": {
     "type": "byte",
@@ -110,10 +104,30 @@
   },
   "Tag": {
     "type": "cexostring",
-    "value": "js_art_colwht"
+    "value": "js_effects"
   },
   "TemplateResRef": {
     "type": "resref",
     "value": "js_art_colwht"
+  },
+  "VarTable": {
+    "type": "list",
+    "value": [
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "ColorModifier"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 24
+        }
+      }
+    ]
   }
 }

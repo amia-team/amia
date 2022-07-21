@@ -416,6 +416,69 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
      object oEgg = CreateObject(OBJECT_TYPE_PLACEABLE,"js_hun_eggsack",lTarget);
      SetLocalString(oEgg,"owner",GetName(oPC));
    }
+   else if(sItemResRef == "js_art_colblk" || sItemResRef == "js_art_colblu" || sItemResRef == "js_art_colgrn" || sItemResRef == "js_art_colorn" || sItemResRef == "js_art_colprp" || sItemResRef == "js_art_colred" || sItemResRef == "js_art_colwht" || sItemResRef == "js_art_colyel") //Artist Bag Dyes
+   {
+     int nBaseItem = GetBaseItemType(oTarget);
+     int nAppearance = GetItemAppearance(oTarget, ITEM_APPR_TYPE_SIMPLE_MODEL, 0);
+     int nColorModifier = GetLocalInt(oWidget, "ColorModifier");
+
+     SendMessageToPC(oPC,"Debug: beginning, nAppearance=" + IntToString(nAppearance));
+
+     if(nBaseItem == BASE_ITEM_LARGEBOX)
+     {
+        switch (nAppearance)
+        {
+            case 1: nAppearance=(1 + nColorModifier); break;
+            case 2: nAppearance=(2 + nColorModifier); break;
+            case 3: nAppearance=(3 + nColorModifier); break;
+            case 4: nAppearance=(1 + nColorModifier); break;
+            case 5: nAppearance=(2 + nColorModifier); break;
+            case 6: nAppearance=(3 + nColorModifier); break;
+            case 7: nAppearance=(1 + nColorModifier); break;
+            case 8: nAppearance=(2 + nColorModifier); break;
+            case 9: nAppearance=(3 + nColorModifier); break;
+            case 10: nAppearance=(1 + nColorModifier); break;
+            case 11: nAppearance=(2 + nColorModifier); break;
+            case 12: nAppearance=(3 + nColorModifier); break;
+            case 13: nAppearance=(1 + nColorModifier); break;
+            case 14: nAppearance=(2 + nColorModifier); break;
+            case 15: nAppearance=(3 + nColorModifier); break;
+            case 16: nAppearance=(1 + nColorModifier); break;
+            case 17: nAppearance=(2 + nColorModifier); break;
+            case 18: nAppearance=(3 + nColorModifier); break;
+            case 19: nAppearance=(1 + nColorModifier); break;
+            case 20: nAppearance=(2 + nColorModifier); break;
+            case 21: nAppearance=(3 + nColorModifier); break;
+            case 22: nAppearance=(1 + nColorModifier); break;
+            case 23: nAppearance=(2 + nColorModifier); break;
+            case 24: nAppearance=(3 + nColorModifier); break;
+            case 25: nAppearance=(1 + nColorModifier); break;
+            case 26: nAppearance=(2 + nColorModifier); break;
+            case 27: nAppearance=(3 + nColorModifier); break;
+            case 28: nAppearance=(1 + nColorModifier); break;
+            case 29: nAppearance=(2 + nColorModifier); break;
+            case 30: nAppearance=(3 + nColorModifier); break;
+        }
+        object oNewItem = CopyItemAndModifyFixed( oTarget, ITEM_APPR_TYPE_SIMPLE_MODEL, 0, nAppearance, TRUE );
+        SendMessageToPC(oPC,"Debug: correct item found! nAppearance=" + IntToString(nAppearance));
+
+        if (GetIsObjectValid(oNewItem)){
+            SendMessageToPC(oPC,"Debug: object was valid, nAppearance=" + IntToString(nAppearance));
+            SetLocalObject(oPC, "ds_target", oNewItem);
+            DestroyObject(oTarget);
+        }
+        else
+        {
+            SendMessageToPC(oPC,"Empty your container before dyeing.");
+            CreateItemOnObject(sItemResRef,oPC);
+        }
+     }
+     else
+     {
+        SendMessageToPC(oPC,"This pigment can only be used to dye inventory containers.");
+        CreateItemOnObject(sItemResRef,oPC);
+     }
+   }
 
 
 

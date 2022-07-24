@@ -22,9 +22,12 @@ void main( ){
     DelayCommand(24.0,SendMessageToPC(OBJECT_SELF,"You may now shift to another form!"));
     }
 
+    /*   Removed the Nerf for the time being to counteract nerf from poly delay in place now - Maverick 7/24/22
+
     // Nerf so they dont retain spells from previous shapes
     RemoveShapeEffects(oPC,GetLocalInt(oPC, "LAST_POLY_ID"));
 
+    */
 
 }
 

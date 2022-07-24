@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - All the new Artist recipes
 - Dedicated Job System placeable and testing area
 - A few new Ridgewood historical-themed items
+- pipeline and QoL for dev side for quicker and easier deployment
+- plot updates to OI
 
 ### Changed
 - Job System converter script to base naming off of placed placeables
@@ -22,19 +24,28 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Job System effects script to enable bag dyeing
 - Changed hunter "Hanging Skin" placeable appearance to hopefully be easier to use/place
 - Changed Job System PLC spawners to be a 1x1 small inventory icon size instead of 2x2
-- Ridgewood "living world" updates
-	- Changes and construction around main Ridgewood area
-	- Ambassador's office opened
-	- Trade hall opened
+- Area changes:
+ 	~ Ridgewood (interior and exterior) "living world" updates
+		1 Changes and construction around main Ridgewood area
+		2 Ambassador's office opened
+		3 Trade hall opened
+	~ midnight rose
+		1. interior update
+- shifter "buff" nerf reversed cause shifter delay is considerd nerf enough
+
 
 ### Fixed
+- Area changes
 	~ Khem: Sand Minotaur Cliffs
 		1. Moved ruby vein to be reachable
 	~ Cape Slakh: North
 		1. fixed the spawns not spawning
 	~ Cape Slakh: South
 		1. fixed the spawns not spawning
-		.
+	~ Lobsul various	
+		1. Fixes
+- pipeline fixes
+
 
 
 ## [2.2.3] - 2022-07-15

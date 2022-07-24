@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Job System effects script to enable bag dyeing
 - Changed hunter "Hanging Skin" placeable appearance to hopefully be easier to use/place
 - Changed Job System PLC spawners to be a 1x1 small inventory icon size instead of 2x2
+- shifter "buff" nerf reversed cause shifter delay is considerd nerf enough
 - Area changes:
  	~ Ridgewood (interior and exterior) "living world" updates
 		1 Changes and construction around main Ridgewood area
@@ -31,6 +32,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		3 Trade hall opened
 	~ midnight rose
 		1. interior update
+	~ Amia Forest: Northwest
+		1. added 4 wolfs who moved from somewhere ells
+	~ Ruathym: Caraigh, Scath Crann
+		1. removed 4 wolfs who moved to somewhere ells
 - shifter "buff" nerf reversed cause shifter delay is considerd nerf enough
 
 

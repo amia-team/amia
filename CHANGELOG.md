@@ -44,8 +44,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		1. added 4 wolfs who moved from somewhere ells
 	- Ruathym: Caraigh, Scath Crann
 		1. removed 4 wolfs who moved to somewhere ells
-- shifter "buff" nerf reversed cause shifter delay is considerd nerf enough
-
 
 ### Fixed
 - Area changes

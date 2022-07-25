@@ -34,28 +34,28 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Changed Job System PLC spawners to be a 1x1 small inventory icon size instead of 2x2
 - shifter "buff" nerf reversed cause shifter delay is considerd nerf enough
 - Area changes:
- 	~ Ridgewood (interior and exterior) "living world" updates
+ 	- Ridgewood (interior and exterior) "living world" updates
 		1 Changes and construction around main Ridgewood area
 		2 Ambassador's office opened
 		3 Trade hall opened
-	~ midnight rose
+	- midnight rose
 		1. interior update
-	~ Amia Forest: Northwest
+	- Amia Forest: Northwest
 		1. added 4 wolfs who moved from somewhere ells
-	~ Ruathym: Caraigh, Scath Crann
+	- Ruathym: Caraigh, Scath Crann
 		1. removed 4 wolfs who moved to somewhere ells
 - shifter "buff" nerf reversed cause shifter delay is considerd nerf enough
 
 
 ### Fixed
 - Area changes
-	~ Khem: Sand Minotaur Cliffs
+	- Khem: Sand Minotaur Cliffs
 		1. Moved ruby vein to be reachable
-	~ Cape Slakh: North
+	- Cape Slakh: North
 		1. fixed the spawns not spawning
-	~ Cape Slakh: South
+	- Cape Slakh: South
 		1. fixed the spawns not spawning
-	~ Lobsul various	
+	- Lobsul various	
 		1. Fixes
 - pipeline fixes
 

@@ -9,8 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Endir's Point plot updates
 
 ### Fixed
+- Ridgewood Merchant inventory fix
 
 ## [2.2.4] - 2022-07-25
 

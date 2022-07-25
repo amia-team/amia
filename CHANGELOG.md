@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [unreleased] - 
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [2.2.4] - 2022-07-25
+
+### Added
 - Artist Colors to dye bags and use in recipes
 - Artist placeables (the rest of them)
 - Additional Tailor craftable tent appearances (Blue/White, Red/White, Black/Red)

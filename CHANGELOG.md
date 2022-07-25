@@ -13,6 +13,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Ridgewood Merchant inventory fix
+- Artist's Black is now craftable
+- Rug, Green PLC spawner should be named correctly
+- Tailor crafting dialogue fix
+- Artist dialogue updates to add "Cancel" buttons
+- Updated raven banners with more descriptive names
 
 ## [2.2.4] - 2022-07-25
 

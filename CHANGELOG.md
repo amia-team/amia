@@ -18,6 +18,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Tailor crafting dialogue fix
 - Artist dialogue updates to add "Cancel" buttons
 - Updated raven banners with more descriptive names
+- removed outlaw_pvillage from development folder server side
+
+- Area fixes
+	- Demonreach: Blightwood (and) , East
+		1. fixed crashing issue
+	- Welcome to amia
+		1. realigned starting point
 
 ## [2.2.4] - 2022-07-25
 

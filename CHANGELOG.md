@@ -23,6 +23,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Area fixes
 	- Demonreach: Blightwood (and) , East
 		1. fixed crashing issue
+	- Quagmire: Mercenary Camp
+		1. fixed crashing issue
 	- Welcome to amia
 		1. realigned starting point
 

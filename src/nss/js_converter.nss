@@ -3,6 +3,10 @@
 
   - Maverick00053
 
+  Edits:
+  072722 Lord-Jyssev: new sPlaceableName naming method for placeables and ability to use PLC Spawners in recipes by sType Variable
+
+
 */
 
 #include "x2_inc_switches"
@@ -73,11 +77,11 @@ void TailorConverter(object oPC, object oBench, int nNode);
 
 
 //Launches the function to add properties to armor/weapons
-void CraftProperties(object oPC, object oCraftedItem, string sType, string sMaterial);
+void CraftProperties(object oPC, object oCraftedItem, string sType, string sMaterial, string sPlaceableName);
 
 
 //Launches the function to take the ingredients and produce the product
-void CraftProduct(object oPC, object oBench, string sProduct, string sType, string sMaterial, string sIngredient1, string sIngredient2, int nCost, int nStack, int nProductStackSize);
+void CraftProduct(object oPC, object oBench, string sProduct, string sType, string sMaterial, string sIngredient1, string sIngredient2, string sPlaceableName, int nCost, int nStack, int nProductStackSize);
 
 //Sets the material local variables
 void SetMaterialType(object oCraftedItem, string sWeaponResRef, int nArmorMaterialPresent, int nArmorMaterial, int nWeaponMaterialPresent, int nWeaponMaterial);
@@ -257,6 +261,7 @@ void ArtificerConverter(object oPC, object oBench, int nNode)
     string sIngredient2;
     string sType = "none";
     string sMaterial = "none";
+    string sPlaceableName;
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -291,7 +296,7 @@ void ArtificerConverter(object oPC, object oBench, int nNode)
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
 
 }
 
@@ -305,6 +310,7 @@ void ArchitectConverter(object oPC, object oBench, int nNode)
     string sIngredient2;
     string sType = "none";
     string sMaterial = "none";
+    string sPlaceableName = "Job System Placeable";
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -317,59 +323,59 @@ void ArchitectConverter(object oPC, object oBench, int nNode)
       case 1: sProduct = "js_bui_bric"; sIngredient1 = "js_rock_gran"; sIngredient2 = "none"; nCost = 100; break;
       case 2: sProduct = "js_bui_mort"; sIngredient1 = "js_rock_gran"; sIngredient2 = "js_bui_quic"; nCost = 100; break;
       case 3: sProduct = "js_bui_quic"; sIngredient1 = "js_rock_sand"; sIngredient2 = "none"; nCost = 100; break;
-      case 4: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_phpl"; sIngredient2 = "js_bui_dupl"; sType = "js_bui_tabl"; sMaterial = "plc"; nCost = 2000; break;
-      case 5: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_zupl"; sIngredient2 = "js_bla_stin"; sType = "js_bui_drta"; sMaterial = "plc"; nCost = 2000; break;
-      case 6: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_phpl"; sIngredient2 = "js_tai_boco"; sType = "js_bui_couc"; sMaterial = "plc"; nCost = 2000; break;
-      case 7: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_zupl"; sIngredient2 = "js_bla_siin"; sType = "js_bui_dral"; sMaterial = "plc"; nCost = 2000; break;
-      case 8: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_phpl"; sIngredient2 = "js_farm_cott"; sType = "js_bui_comb"; sMaterial = "plc"; nCost = 2000; break;
-      case 9: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_tai_bowo"; sType = "js_bui_bed"; sMaterial = "plc"; nCost = 2000; break;
-      case 10: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_bla_irin"; sType = "js_bui_trsi"; sMaterial = "plc"; nCost = 2000; break;
-      case 11: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_phpl"; sIngredient2 = "none"; sType = "js_bui_chai"; sMaterial = "plc"; nCost = 2000; break;
-      case 12: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_bla_goin"; sType = "js_bui_thro"; sMaterial = "plc"; nCost = 2000; break;
-      case 13: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "none"; sType = "js_bui_stoo"; sMaterial = "plc"; nCost = 2000; break;
-      case 14: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_bla_siin"; sType = "js_bui_mirr"; sMaterial = "plc"; nCost = 2000; break;
-      case 15: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_irpl"; sIngredient2 = "none"; sType = "js_bui_benc"; sMaterial = "plc"; nCost = 2000; break;
-      case 16: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_zupl"; sIngredient2 = "js_bla_irin"; sType = "js_bui_drch"; sMaterial = "plc"; nCost = 2000; break;
+      case 4: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_phpl"; sIngredient2 = "js_bui_dupl"; sType = "js_bui_tabl"; sPlaceableName = "Table"; sMaterial = "plc"; nCost = 2000; break;
+      case 5: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_zupl"; sIngredient2 = "js_bla_stin"; sType = "js_bui_drta"; sPlaceableName = "Drow Table"; sMaterial = "plc"; nCost = 2000; break;
+      case 6: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_phpl"; sIngredient2 = "js_tai_boco"; sType = "js_bui_couc"; sPlaceableName = "Couch"; sMaterial = "plc"; nCost = 2000; break;
+      case 7: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_zupl"; sIngredient2 = "js_bla_siin"; sType = "js_bui_dral"; sPlaceableName = "Drow Altar"; sMaterial = "plc"; nCost = 2000; break;
+      case 8: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_phpl"; sIngredient2 = "js_farm_cott"; sType = "js_bui_comb"; sPlaceableName = "Combat Dummy"; sMaterial = "plc"; nCost = 2000; break;
+      case 9: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_tai_bowo"; sType = "js_bui_bed"; sPlaceableName = "Bed"; sMaterial = "plc"; nCost = 2000; break;
+      case 10: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_bla_irin"; sType = "js_bui_trsi"; sPlaceableName = "Transportable Sign"; sMaterial = "plc"; nCost = 2000; break;
+      case 11: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_phpl"; sIngredient2 = "none"; sType = "js_bui_chai"; sPlaceableName = "Chair"; sMaterial = "plc"; nCost = 2000; break;
+      case 12: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_bla_goin"; sType = "js_bui_thro"; sPlaceableName = "Throne"; sMaterial = "plc"; nCost = 2000; break;
+      case 13: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "none"; sType = "js_bui_stoo"; sPlaceableName = "Stool"; sMaterial = "plc"; nCost = 2000; break;
+      case 14: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_bla_siin"; sType = "js_bui_mirr"; sPlaceableName = "Mirror"; sMaterial = "plc"; nCost = 2000; break;
+      case 15: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_irpl"; sIngredient2 = "none"; sType = "js_bui_benc"; sPlaceableName = "Bench"; sMaterial = "plc"; nCost = 2000; break;
+      case 16: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_zupl"; sIngredient2 = "js_bla_irin"; sType = "js_bui_drch"; sPlaceableName = "Drow Bench"; sMaterial = "plc"; nCost = 2000; break;
       case 17: sProduct = "js_bui_shpl"; sIngredient1 = "js_tree_shaw"; sIngredient2 = "none"; nCost = 100; break;
       case 18: sProduct = "js_bui_zupl"; sIngredient1 = "js_tree_zurw"; sIngredient2 = "none"; nCost = 100; break;
       case 19: sProduct = "js_bui_phpl"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "none"; nCost = 100; break;
       case 20: sProduct = "js_bui_irpl"; sIngredient1 = "js_tree_irow"; sIngredient2 = "none"; nCost = 100; break;
       case 21: sProduct = "js_bui_dupl"; sIngredient1 = "js_tree_dusw"; sIngredient2 = "none"; nCost = 100; break;
-      case 22: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_shpl"; sIngredient2 = "js_bla_siin"; sType = "js_conv_alc"; sMaterial = "plc"; nCost = 5000; break;
-      case 23: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_shpl"; sIngredient2 = "js_jew_crys"; sType = "js_conv_arc"; sMaterial = "plc"; nCost = 5000; break;
-      case 24: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_phpl"; sIngredient2 = "js_bla_miin"; sType = "js_conv_arh"; sMaterial = "plc"; nCost = 5000; break;
-      case 25: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_miin"; sIngredient2 = "js_jew_crys"; sType = "js_conv_art"; sMaterial = "plc"; nCost = 5000; break;
-      case 26: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_adin"; sIngredient2 = "js_herb_firw"; sType = "js_conv_smi"; sMaterial = "plc"; nCost = 5000; break;
-      case 27: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_miin"; sIngredient2 = "js_herb_firw"; sType = "js_conv_bre"; sMaterial = "plc"; nCost = 5000; break;
-      case 28: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_irpl"; sIngredient2 = "js_bla_miin"; sType = "js_conv_bui"; sMaterial = "plc"; nCost = 5000; break;
-      case 29: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_bla_miin"; sType = "js_conv_che"; sMaterial = "plc"; nCost = 5000; break;
-      case 30: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_plin"; sIngredient2 = "js_bui_phpl"; sType = "js_conv_jew"; sMaterial = "plc"; nCost = 5000; break;
+      case 22: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_shpl"; sIngredient2 = "js_bla_siin"; sType = "js_conv_alc"; sPlaceableName = "Alchemist Station"; sMaterial = "plc"; nCost = 5000; break;
+      case 23: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_shpl"; sIngredient2 = "js_jew_crys"; sType = "js_conv_arc"; sPlaceableName = "Artificer Station"; sMaterial = "plc"; nCost = 5000; break;
+      case 24: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_phpl"; sIngredient2 = "js_bla_miin"; sType = "js_conv_arh"; sPlaceableName = "Ranged Craftsman Station"; sMaterial = "plc"; nCost = 5000; break;
+      case 25: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_miin"; sIngredient2 = "js_jew_crys"; sType = "js_conv_art"; sPlaceableName = "Artist Station"; sMaterial = "plc"; nCost = 5000; break;
+      case 26: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_adin"; sIngredient2 = "js_herb_firw"; sType = "js_conv_smi"; sPlaceableName = "Smith Station"; sMaterial = "plc"; nCost = 5000; break;
+      case 27: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_miin"; sIngredient2 = "js_herb_firw"; sType = "js_conv_bre"; sPlaceableName = "Brewer Station"; sMaterial = "plc"; nCost = 5000; break;
+      case 28: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_irpl"; sIngredient2 = "js_bla_miin"; sType = "js_conv_bui"; sPlaceableName = "Architect Station"; sMaterial = "plc"; nCost = 5000; break;
+      case 29: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_bla_miin"; sType = "js_conv_che"; sPlaceableName = "Chef Station"; sMaterial = "plc"; nCost = 5000; break;
+      case 30: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_plin"; sIngredient2 = "js_bui_phpl"; sType = "js_conv_jew"; sPlaceableName = "Jeweler Station"; sMaterial = "plc"; nCost = 5000; break;
       case 31: break;
-      case 32: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_miin"; sIngredient2 = "js_bui_shpl"; sType = "js_conv_sch"; sMaterial = "plc"; nCost = 5000; break;
-      case 33: sProduct = "js_plcspawner"; sIngredient1 = "js_tai_boco"; sIngredient2 = "js_bla_miin"; sType = "js_conv_tai"; sMaterial = "plc"; nCost = 5000; break;
-      case 34: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_stin"; sIngredient2 = "js_bui_shpl"; sType = "js_conv_sco"; sMaterial = "plc"; nCost = 5000; break;
-      case 35: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_hun_sbone"; sType = "js_bui_trophy1"; sMaterial = "plc"; nCost = 5000; break;
-      case 36: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_trophy2"; sMaterial = "plc"; nCost = 5000; break;
-      case 37: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_bas"; sIngredient2 = "none"; sType = "js_bui_trophy3"; sMaterial = "plc"; nCost = 5000; break;
-      case 38: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_sal"; sIngredient2 = "none"; sType = "js_bui_trophy3"; sMaterial = "plc"; nCost = 5000; break;
-      case 39: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_tro"; sIngredient2 = "none"; sType = "js_bui_trophy3"; sMaterial = "plc"; nCost = 5000; break;
-      case 40: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "js_hun_sbone"; sType = "js_bui_trophy4"; sMaterial = "plc"; nCost = 5000; break;
-      case 41: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "js_hun_lbone"; sType = "js_bui_wallbear"; sMaterial = "plc"; nCost = 7000; break;
-      case 42: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_lhide"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_wallcat"; sMaterial = "plc"; nCost = 10000; break;
-      case 43: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_walldeer1"; sMaterial = "plc"; nCost = 5000; break;
-      case 44: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_walldeer2"; sMaterial = "plc"; nCost = 5000; break;
-      case 45: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_walldeer3"; sMaterial = "plc"; nCost = 5000; break;
-      case 46: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "js_tree_irow"; sType = "js_bui_drum1"; sMaterial = "plc"; nCost = 5000; break;
-      case 47: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_lhide"; sIngredient2 = "js_tree_shaw"; sType = "js_bui_drum2"; sMaterial = "plc"; nCost = 10000; break;
-      case 48: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hippogrif"; sIngredient2 = "js_hun_lbone"; sType = "js_bui_barbhorn"; sMaterial = "plc"; nCost = 10000; break;
-      case 49: sProduct = "js_plcspawner"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_fflag"; sMaterial = "plc"; nCost = 5000; break;
-      case 50: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_treant"; sIngredient2 = "js_tree_shaw"; sType = "js_bui_totem"; sMaterial = "plc"; nCost = 10000; break;
-      case 51: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_sbone"; sIngredient2 = "js_tai_boco"; sType = "js_bui_dreamcat"; sMaterial = "plc"; nCost = 5000; break;
-      case 52: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_sbone"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_bonecage"; sMaterial = "plc"; nCost = 5000; break;
+      case 32: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_miin"; sIngredient2 = "js_bui_shpl"; sType = "js_conv_sch"; sPlaceableName = "Scholar Station"; sMaterial = "plc"; nCost = 5000; break;
+      case 33: sProduct = "js_plcspawner"; sIngredient1 = "js_tai_boco"; sIngredient2 = "js_bla_miin"; sType = "js_conv_tai"; sPlaceableName = "Tailor Station"; sMaterial = "plc"; nCost = 5000; break;
+      case 34: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_stin"; sIngredient2 = "js_bui_shpl"; sType = "js_conv_sco"; sPlaceableName = "Scoundrel Station"; sMaterial = "plc"; nCost = 5000; break;
+      case 35: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_hun_sbone"; sType = "js_bui_trophy1"; sPlaceableName = "Deer Trophy 1"; sMaterial = "plc"; nCost = 5000; break;
+      case 36: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_trophy2"; sPlaceableName = "Bison Trophy"; sMaterial = "plc"; nCost = 5000; break;
+      case 37: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_bas"; sIngredient2 = "none"; sType = "js_bui_trophy3"; sPlaceableName = "Fish Trophy"; sMaterial = "plc"; nCost = 5000; break;
+      case 38: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_sal"; sIngredient2 = "none"; sType = "js_bui_trophy3"; sPlaceableName = "Fish Trophy"; sMaterial = "plc"; nCost = 5000; break;
+      case 39: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_tro"; sIngredient2 = "none"; sType = "js_bui_trophy3"; sPlaceableName = "Fish Trophy"; sMaterial = "plc"; nCost = 5000; break;
+      case 40: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "js_hun_sbone"; sType = "js_bui_trophy4"; sPlaceableName = "Boar Trophy"; sMaterial = "plc"; nCost = 5000; break;
+      case 41: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "js_hun_lbone"; sType = "js_bui_wallbear"; sPlaceableName = "Bear Trophy"; sMaterial = "plc"; nCost = 7000; break;
+      case 42: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_lhide"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_wallcat"; sPlaceableName = "Cat Trophy"; sMaterial = "plc"; nCost = 10000; break;
+      case 43: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_walldeer1"; sPlaceableName = "Deer Trophy 2"; sMaterial = "plc"; nCost = 5000; break;
+      case 44: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_walldeer2"; sPlaceableName = "Deer Trophy 3"; sMaterial = "plc"; nCost = 5000; break;
+      case 45: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_walldeer3"; sPlaceableName = "Deer Trophy 4"; sMaterial = "plc"; nCost = 5000; break;
+      case 46: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "js_tree_irow"; sType = "js_bui_drum1"; sPlaceableName = "Drum"; sMaterial = "plc"; nCost = 5000; break;
+      case 47: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_lhide"; sIngredient2 = "js_tree_shaw"; sType = "js_bui_drum2"; sPlaceableName = "Massive Drum"; sMaterial = "plc"; nCost = 10000; break;
+      case 48: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hippogrif"; sIngredient2 = "js_hun_lbone"; sType = "js_bui_barbhorn"; sPlaceableName = "Massive Leather and Bone Bound Horn"; sMaterial = "plc"; nCost = 10000; break;
+      case 49: sProduct = "js_plcspawner"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_fflag"; sPlaceableName = "Feather Flag"; sMaterial = "plc"; nCost = 5000; break;
+      case 50: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_treant"; sIngredient2 = "js_tree_shaw"; sType = "js_bui_totem"; sPlaceableName = "Massive Tribal Totem"; sMaterial = "plc"; nCost = 10000; break;
+      case 51: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_sbone"; sIngredient2 = "js_tai_boco"; sType = "js_bui_dreamcat"; sPlaceableName = "Dream Catcher"; sMaterial = "plc"; nCost = 5000; break;
+      case 52: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_sbone"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_bonecage"; sPlaceableName = "Bone Cage"; sMaterial = "plc"; nCost = 5000; break;
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
 
 
 }
@@ -384,6 +390,7 @@ void AlchemistConverter(object oPC, object oBench, int nNode)
     string sIngredient2;
     string sType = "none";
     string sMaterial = "none";
+    string sPlaceableName;
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -421,7 +428,7 @@ void AlchemistConverter(object oPC, object oBench, int nNode)
 
      }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
 
 
 }
@@ -436,6 +443,7 @@ void ArtistConverter(object oPC, object oBench, int nNode)
     string sIngredient2;
     string sType = "none";
     string sMaterial = "none";
+    string sPlaceableName = "Job System Placeable";
     int nActionNode = GetLocalInt( oPC, "ds_actionnode");
     int nIngredient1Found;
     int nIngredient2Found;
@@ -448,23 +456,23 @@ void ArtistConverter(object oPC, object oBench, int nNode)
         switch(nNode)
         {
 
-          case 1: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_herb_rosl"; sType = "js_art_scca"; sMaterial = "plc"; nCost = 1000; break;
-          case 2: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_alch_coil"; sType = "js_art_exca"; sMaterial = "plc"; nCost = 1000; break;
+          case 1: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_herb_rosl"; sType = "js_art_scca"; sPlaceableName = "Scented Candle"; sMaterial = "plc"; nCost = 1000; break;
+          case 2: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_alch_coil"; sType = "js_art_exca"; sPlaceableName = "Exotic Candle"; sMaterial = "plc"; nCost = 1000; break;
           case 3: sProduct = "js_art_cand"; sIngredient1 = "js_art_tall"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 1000; break;
-          case 4: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_hun_sbone"; sType = "js_art_skca"; sMaterial = "plc"; nCost = 1000; break;
-          case 5: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_art_colred"; sType = "js_art_candred1"; sMaterial = "plc"; nCost = 1000; break;
-          case 6: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_scntcandle"; sIngredient2 = "js_art_colred"; sType = "js_art_candred2"; sMaterial = "plc"; nCost = 1000; break;
-          case 7: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_exoticcandle"; sIngredient2 = "js_art_colred"; sType = "js_art_candred3"; sMaterial = "plc"; nCost = 1000; break;
-          case 8: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_art_colyel"; sType = "js_art_candyel1"; sMaterial = "plc"; nCost = 1000; break;
-          case 9: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_scntcandle"; sIngredient2 = "js_art_colyel"; sType = "js_art_candyel2"; sMaterial = "plc"; nCost = 1000; break;
-          case 10: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_exoticcandle"; sIngredient2 = "js_art_colyel"; sType = "js_art_candyel3"; sMaterial = "plc"; nCost = 1000; break;
-          case 11: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_art_colprp"; sType = "js_art_candprp1"; sMaterial = "plc"; nCost = 1000; break;
-          case 12: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_scntcandle"; sIngredient2 = "js_art_colprp"; sType = "js_art_candprp2"; sMaterial = "plc"; nCost = 1000; break;
-          case 13: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_exoticcandle"; sIngredient2 = "js_art_colprp"; sType = "js_art_candprp3"; sMaterial = "plc"; nCost = 1000; break;
-          case 14: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_irow"; sIngredient2 = "js_bla_irin"; sType = "js_art_torch1"; sMaterial = "plc"; nCost = 5000; break;
-          case 15: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_stin"; sIngredient2 = "js_tree_phaw"; sType = "js_art_brazier1"; sMaterial = "plc"; nCost = 5000; break;
-          case 16: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_stin"; sIngredient2 = "js_jew_crys"; sType = "js_art_lantern1"; sMaterial = "plc"; nCost = 5000; break;
-          case 17: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_jew_crys"; sType = "js_art_lantern2"; sMaterial = "plc"; nCost = 5000; break;
+          case 4: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_hun_sbone"; sType = "js_art_skca"; sPlaceableName = "Skull Candle"; sMaterial = "plc"; nCost = 1000; break;
+          case 5: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_art_colred"; sType = "js_art_candred1"; sPlaceableName = "Red Candle"; sMaterial = "plc"; nCost = 1000; break;
+          case 6: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_scntcandle"; sIngredient2 = "js_art_colred"; sType = "js_art_candred2"; sPlaceableName = "Red Scented Candle"; sMaterial = "plc"; nCost = 1000; break;
+          case 7: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_exoticcandle"; sIngredient2 = "js_art_colred"; sType = "js_art_candred3"; sPlaceableName = "Red Exotic Candle"; sMaterial = "plc"; nCost = 1000; break;
+          case 8: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_art_colyel"; sType = "js_art_candyel1"; sPlaceableName = "Yellow Candle"; sMaterial = "plc"; nCost = 1000; break;
+          case 9: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_scntcandle"; sIngredient2 = "js_art_colyel"; sType = "js_art_candyel2"; sPlaceableName = "Yellow Scented Candle"; sMaterial = "plc"; nCost = 1000; break;
+          case 10: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_exoticcandle"; sIngredient2 = "js_art_colyel"; sType = "js_art_candyel3"; sPlaceableName = "Yellow Exotic Candle"; sMaterial = "plc"; nCost = 1000; break;
+          case 11: sProduct = "js_plcspawner"; sIngredient1 = "js_art_cand"; sIngredient2 = "js_art_colprp"; sType = "js_art_candprp1"; sPlaceableName = "Purple Candle"; sMaterial = "plc"; nCost = 1000; break;
+          case 12: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_scntcandle"; sIngredient2 = "js_art_colprp"; sType = "js_art_candprp2"; sPlaceableName = "Purple Scented Candle"; sMaterial = "plc"; nCost = 1000; break;
+          case 13: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_exoticcandle"; sIngredient2 = "js_art_colprp"; sType = "js_art_candprp3"; sPlaceableName = "Purple Exotic Candle"; sMaterial = "plc"; nCost = 1000; break;
+          case 14: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_irow"; sIngredient2 = "js_bla_irin"; sType = "js_art_torch1"; sPlaceableName = "Torch Bracket"; sMaterial = "plc"; nCost = 5000; break;
+          case 15: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_stin"; sIngredient2 = "js_tree_phaw"; sType = "js_art_brazier1"; sPlaceableName = "Brazier"; sMaterial = "plc"; nCost = 5000; break;
+          case 16: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_stin"; sIngredient2 = "js_jew_crys"; sType = "js_art_lantern1"; sPlaceableName = "Hanging Lantern"; sMaterial = "plc"; nCost = 5000; break;
+          case 17: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_jew_crys"; sType = "js_art_lantern2"; sPlaceableName = "Lamp Post"; sMaterial = "plc"; nCost = 5000; break;
 
         }
     }
@@ -473,25 +481,25 @@ void ArtistConverter(object oPC, object oBench, int nNode)
         switch(nNode)
         {
 
-          case 1: sProduct = "js_plcspawner"; sIngredient1 = "js_art_colred"; sIngredient2 = "none"; sType = "js_art_runecirc1"; sMaterial = "plc"; nCost = 15000; break;
-          case 2: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "none"; sType = "js_art_obelisk1"; sMaterial = "plc"; nCost = 15000; break;
-          case 3: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "jobsystemweapon"; sType = "js_art_pdsword1"; sMaterial = "plc"; nCost = 15000; break;
-          case 4: sProduct = "js_plcspawner"; sIngredient1 = "js_jew_sapp"; sIngredient2 = "js_arca_ecore"; sType = "js_art_sclblult1"; sMaterial = "plc"; nCost = 20000; break;
-          case 5: sProduct = "js_plcspawner"; sIngredient1 = "js_jew_emer"; sIngredient2 = "js_jew_ruby"; sType = "js_art_flrmos1"; sMaterial = "plc"; nCost = 20000; break;
-          case 6: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "none"; sType = "js_art_stggoyl1"; sMaterial = "plc"; nCost = 15000; break;
-          case 7: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_marb"; sIngredient2 = "js_jew_ruby"; sType = "js_art_stmage1"; sMaterial = "plc"; nCost = 15000; break;
-          case 8: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "js_bla_goin"; sType = "js_art_stshld1"; sMaterial = "plc"; nCost = 15000; break;
-          case 9: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "js_bla_goin"; sType = "js_art_stshld2"; sMaterial = "plc"; nCost = 15000; break;
-          case 10: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_marb"; sIngredient2 = "none"; sType = "js_art_stfem1"; sMaterial = "plc"; nCost = 15000; break;
-          case 11: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "js_alch_elef"; sType = "js_art_stflame1"; sMaterial = "plc"; nCost = 15000; break;
-          case 12: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "none"; sType = "js_art_sarcoph1"; sMaterial = "plc"; nCost = 20000; break;
-          case 13: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_marb"; sIngredient2 = "js_rock_gran"; sType = "js_art_stbust1"; sMaterial = "plc"; nCost = 20000; break;
-          case 14: sProduct = "js_plcspawner"; sIngredient1 = "js_art_colred"; sIngredient2 = "none"; sType = "js_art_flrpnta1"; sMaterial = "plc"; nCost = 10000; break;
-          case 15: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_hun_mbone"; sType = "js_art_skulpol1"; sMaterial = "plc"; nCost = 10000; break;
-          case 16: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_dusw"; sIngredient2 = "js_hun_lbone"; sType = "js_art_skulpos1"; sMaterial = "plc"; nCost = 10000; break;
-          case 17: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_hun_mbone"; sType = "js_art_skelhng1"; sMaterial = "plc"; nCost = 10000; break;
-          case 18: sProduct = "js_plcspawner"; sIngredient1 = "js_art_colred"; sIngredient2 = "none"; sType = "js_art_flrskl1"; sMaterial = "plc"; nCost = 10000; break;
-          case 19: sProduct = "js_plcspawner"; sIngredient1 = "js_jew_emer"; sIngredient2 = "js_bla_goin"; sType = "js_art_stpyrmd1"; sMaterial = "plc"; nCost = 20000; break;
+          case 1: sProduct = "js_plcspawner"; sIngredient1 = "js_art_colred"; sIngredient2 = "none"; sType = "js_art_runecirc1"; sPlaceableName = "Rune Circle"; sMaterial = "plc"; nCost = 15000; break;
+          case 2: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "none"; sType = "js_art_obelisk1"; sPlaceableName = "Obelisk"; sMaterial = "plc"; nCost = 15000; break;
+          case 3: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "jobsystemweapon"; sType = "js_art_pdsword1"; sPlaceableName = "Pedestal Sword"; sMaterial = "plc"; nCost = 15000; break;
+          case 4: sProduct = "js_plcspawner"; sIngredient1 = "js_jew_sapp"; sIngredient2 = "js_arca_ecore"; sType = "js_art_sclblult1"; sPlaceableName = "Blue Light Sculpture"; sMaterial = "plc"; nCost = 20000; break;
+          case 5: sProduct = "js_plcspawner"; sIngredient1 = "js_jew_emer"; sIngredient2 = "js_jew_ruby"; sType = "js_art_flrmos1"; sPlaceableName = "Floor Mosaic"; sMaterial = "plc"; nCost = 20000; break;
+          case 6: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "none"; sType = "js_art_stggoyl1"; sPlaceableName = "Statue, Gargoyle"; sMaterial = "plc"; nCost = 15000; break;
+          case 7: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_marb"; sIngredient2 = "js_jew_ruby"; sType = "js_art_stmage1"; sPlaceableName = "Statue, Mage"; sMaterial = "plc"; nCost = 15000; break;
+          case 8: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "js_bla_goin"; sType = "js_art_stshld1"; sPlaceableName = "Statue with Shield, Whole"; sMaterial = "plc"; nCost = 15000; break;
+          case 9: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "js_bla_goin"; sType = "js_art_stshld2"; sPlaceableName = "Statue with Shield, Defaced"; sMaterial = "plc"; nCost = 15000; break;
+          case 10: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_marb"; sIngredient2 = "none"; sType = "js_art_stfem1"; sPlaceableName = "Statue, Female"; sMaterial = "plc"; nCost = 15000; break;
+          case 11: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "js_alch_elef"; sType = "js_art_stflame1"; sPlaceableName = "Statue, Flaming"; sMaterial = "plc"; nCost = 15000; break;
+          case 12: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_gran"; sIngredient2 = "none"; sType = "js_art_sarcoph1"; sPlaceableName = "Sarcophagus"; sMaterial = "plc"; nCost = 20000; break;
+          case 13: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_marb"; sIngredient2 = "js_rock_gran"; sType = "js_art_stbust1"; sPlaceableName = "Marble Bust"; sMaterial = "plc"; nCost = 20000; break;
+          case 14: sProduct = "js_plcspawner"; sIngredient1 = "js_art_colred"; sIngredient2 = "none"; sType = "js_art_flrpnta1"; sPlaceableName = "Deviant Art: Pentagram"; sMaterial = "plc"; nCost = 10000; break;
+          case 15: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_hun_mbone"; sType = "js_art_skulpol1"; sPlaceableName = "Deviant Art: Skull Pole"; sMaterial = "plc"; nCost = 10000; break;
+          case 16: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_dusw"; sIngredient2 = "js_hun_lbone"; sType = "js_art_skulpos1"; sPlaceableName = "Deviant Art: Skull Post"; sMaterial = "plc"; nCost = 10000; break;
+          case 17: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_hun_mbone"; sType = "js_art_skelhng1"; sPlaceableName = "Deviant Art: Hanging Skeleton"; sMaterial = "plc"; nCost = 10000; break;
+          case 18: sProduct = "js_plcspawner"; sIngredient1 = "js_art_colred"; sIngredient2 = "none"; sType = "js_art_flrskl1"; sPlaceableName = "Deviant Art: Floor Skull"; sMaterial = "plc"; nCost = 10000; break;
+          case 19: sProduct = "js_plcspawner"; sIngredient1 = "js_jew_emer"; sIngredient2 = "js_bla_goin"; sType = "js_art_stpyrmd1"; sPlaceableName = "Pyramid Sculpture"; sMaterial = "plc"; nCost = 20000; break;
 
         }
     }
@@ -500,23 +508,23 @@ void ArtistConverter(object oPC, object oBench, int nNode)
         switch(nNode)
         {
 
-          case 1: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_sand"; sIngredient2 = "none"; sType = "js_art_jars1"; sMaterial = "plc"; nCost = 10000; break;
-          case 2: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_sand"; sIngredient2 = "none"; sType = "js_art_potclay1"; sMaterial = "plc"; nCost = 10000; break;
-          case 3: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_pot"; sIngredient2 = "js_art_colyel"; sType = "js_art_potclay2"; sMaterial = "plc"; nCost = 10000; break;
-          case 4: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_sand"; sIngredient2 = "js_art_colblu"; sType = "js_art_potclay3"; sMaterial = "plc"; nCost = 10000; break;
-          case 5: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_sand"; sIngredient2 = "none"; sType = "js_art_urn1"; sMaterial = "plc"; nCost = 10000; break;
-          case 6: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_dusw"; sIngredient2 = "js_bla_stin"; sType = "js_art_shldrack"; sMaterial = "plc"; nCost = 10000; break;
-          case 7: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_irow"; sIngredient2 = "js_farm_cott"; sType = "js_art_hangdec1"; sMaterial = "plc"; nCost = 5000; break;
-          case 8: sProduct = "js_plcspawner"; sIngredient1 = "js_jew_crys"; sIngredient2 = "js_bui_shpl"; sType = "js_art_cryball1"; sMaterial = "plc"; nCost = 10000; break;
-          case 9: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_irow"; sIngredient2 = "js_bla_stin"; sType = "js_art_globe1"; sMaterial = "plc"; nCost = 5000; break;
-          case 10: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_marb"; sIngredient2 = "js_jew_crys"; sType = "js_art_divpool1"; sMaterial = "plc"; nCost = 10000; break;
-          case 11: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_table"; sIngredient2 = "js_bui_shpl"; sType = "js_art_table1"; sMaterial = "plc"; nCost = 10000; break;
-          case 12: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_shpl"; sIngredient2 = "js_tail_rsil"; sType = "js_art_wndchim1"; sMaterial = "plc"; nCost = 5000; break;
-          case 13: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_stin"; sIngredient2 = "none"; sType = "js_art_anchor1"; sMaterial = "plc"; nCost =5000; break;
-          case 14: sProduct = "js_plcspawner"; sIngredient1 = "js_tai_bosi"; sIngredient2 = "js_bui_irpl"; sType = "js_art_lilship1"; sMaterial = "plc"; nCost = 5000; break;
-          case 15: sProduct = "js_plcspawner"; sIngredient1 = "js_tai_boco"; sIngredient2 = "js_bui_irpl"; sType = "js_art_lilship2"; sMaterial = "plc"; nCost = 5000; break;
-          case 16: sProduct = "js_plcspawner"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "js_bui_irpl"; sType = "js_art_lilship3"; sMaterial = "plc"; nCost = 5000; break;
-          case 17: sProduct = "js_plcspawner"; sIngredient1 = "js_tai_bosi"; sIngredient2 = "js_bui_irpl"; sType = "js_art_lilship4"; sMaterial = "plc"; nCost = 5000; break;
+          case 1: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_sand"; sIngredient2 = "none"; sType = "js_art_jars1"; sPlaceableName = "Jars"; sMaterial = "plc"; nCost = 10000; break;
+          case 2: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_sand"; sIngredient2 = "none"; sType = "js_art_potclay1"; sPlaceableName = "Plain Pot"; sMaterial = "plc"; nCost = 10000; break;
+          case 3: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_pot"; sIngredient2 = "js_art_colyel"; sType = "js_art_potclay2"; sPlaceableName = "Decorated Pot"; sMaterial = "plc"; nCost = 10000; break;
+          case 4: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_sand"; sIngredient2 = "js_art_colblu"; sType = "js_art_potclay3"; sPlaceableName = "Blue Pot"; sMaterial = "plc"; nCost = 10000; break;
+          case 5: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_sand"; sIngredient2 = "none"; sType = "js_art_urn1"; sPlaceableName = "Urn"; sMaterial = "plc"; nCost = 10000; break;
+          case 6: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_dusw"; sIngredient2 = "js_bla_stin"; sType = "js_art_shldrack"; sPlaceableName = "Shield Rack"; sMaterial = "plc"; nCost = 10000; break;
+          case 7: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_irow"; sIngredient2 = "js_farm_cott"; sType = "js_art_hangdec1"; sPlaceableName = "Decorative Hanging"; sMaterial = "plc"; nCost = 5000; break;
+          case 8: sProduct = "js_plcspawner"; sIngredient1 = "js_jew_crys"; sIngredient2 = "js_bui_shpl"; sType = "js_art_cryball1"; sPlaceableName = "Crystal Ball"; sMaterial = "plc"; nCost = 10000; break;
+          case 9: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_irow"; sIngredient2 = "js_bla_stin"; sType = "js_art_globe1"; sPlaceableName = "Globe"; sMaterial = "plc"; nCost = 5000; break;
+          case 10: sProduct = "js_plcspawner"; sIngredient1 = "js_rock_marb"; sIngredient2 = "js_jew_crys"; sType = "js_art_divpool1"; sPlaceableName = "Divining Pool"; sMaterial = "plc"; nCost = 10000; break;
+          case 11: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_table"; sIngredient2 = "js_bui_shpl"; sType = "js_art_table1"; sPlaceableName = "Table, Fancy"; sMaterial = "plc"; nCost = 10000; break;
+          case 12: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_shpl"; sIngredient2 = "js_tail_rsil"; sType = "js_art_wndchim1"; sPlaceableName = "Wind Chimes"; sMaterial = "plc"; nCost = 5000; break;
+          case 13: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_stin"; sIngredient2 = "none"; sType = "js_art_anchor1"; sPlaceableName = "Anchor"; sMaterial = "plc"; nCost =5000; break;
+          case 14: sProduct = "js_plcspawner"; sIngredient1 = "js_tai_bosi"; sIngredient2 = "js_bui_irpl"; sType = "js_art_lilship1"; sPlaceableName = "Model Ship: Galley"; sMaterial = "plc"; nCost = 5000; break;
+          case 15: sProduct = "js_plcspawner"; sIngredient1 = "js_tai_boco"; sIngredient2 = "js_bui_irpl"; sType = "js_art_lilship2"; sPlaceableName = "Model Ship: Sailboat"; sMaterial = "plc"; nCost = 5000; break;
+          case 16: sProduct = "js_plcspawner"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "js_bui_irpl"; sType = "js_art_lilship3"; sPlaceableName = "Model Ship: Scooner"; sMaterial = "plc"; nCost = 5000; break;
+          case 17: sProduct = "js_plcspawner"; sIngredient1 = "js_tai_bosi"; sIngredient2 = "js_bui_irpl"; sType = "js_art_lilship4"; sPlaceableName = "Model Ship: Galley, Hanging"; sMaterial = "plc"; nCost = 5000; break;
 
         }
     }
@@ -525,20 +533,20 @@ void ArtistConverter(object oPC, object oBench, int nNode)
         switch(nNode)
         {
 
-          case 1: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colred"; sType = "js_art_rugred1"; sMaterial = "plc"; nCost = 5000; break;
-          case 2: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colorn"; sType = "js_art_rugorg1"; sMaterial = "plc"; nCost = 5000; break;
-          case 3: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colyel"; sType = "js_art_rugyel1"; sMaterial = "plc"; nCost = 5000; break;
-          case 4: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colgrn"; sType = "js_art_ruggrn1"; sMaterial = "plc"; nCost = 5000; break;
-          case 5: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colblu"; sType = "js_art_rugblu1"; sMaterial = "plc"; nCost = 5000; break;
-          case 6: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colprp"; sType = "js_art_rugprp1"; sMaterial = "plc"; nCost = 5000; break;
-          case 7: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colblk"; sType = "js_art_rugblk1"; sMaterial = "plc"; nCost = 5000; break;
-          case 8: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colwht"; sType = "js_art_rugwht1"; sMaterial = "plc"; nCost = 5000; break;
-          case 9: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_tai_bosi"; sType = "js_art_rugbase1"; sMaterial = "plc"; nCost = 5000; break;
-          case 10: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpetfancy"; sIngredient2 = "js_art_colred"; sType = "js_art_rugred2"; sMaterial = "plc"; nCost = 7000; break;
-          case 11: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpetfancy"; sIngredient2 = "js_art_colorn"; sType = "js_art_rugorg2"; sMaterial = "plc"; nCost = 10000; break;
-          case 12: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpetfancy"; sIngredient2 = "js_art_colgrn"; sType = "js_art_ruggrn2"; sMaterial = "plc"; nCost = 10000; break;
-          case 13: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpetfancy"; sIngredient2 = "js_art_colgrn"; sType = "js_art_ruggrn3"; sMaterial = "plc"; nCost = 10000; break;
-          case 14: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpetfancy"; sIngredient2 = "js_art_colred"; sType = "js_art_rugred3"; sMaterial = "plc"; nCost = 10000; break;
+          case 1: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colred"; sType = "js_art_rugred1"; sPlaceableName = "Rug, Red"; sMaterial = "plc"; nCost = 5000; break;
+          case 2: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colorn"; sType = "js_art_rugorg1"; sPlaceableName = "Rug, Orange"; sMaterial = "plc"; nCost = 5000; break;
+          case 3: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colyel"; sType = "js_art_rugyel1"; sPlaceableName = "Rug, Yellow"; sMaterial = "plc"; nCost = 5000; break;
+          case 4: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colgrn"; sType = "js_art_ruggrn1"; sPlaceableName = "Rug, Green"; sMaterial = "plc"; nCost = 5000; break;
+          case 5: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colblu"; sType = "js_art_rugblu1"; sPlaceableName = "Rug, Blue"; sMaterial = "plc"; nCost = 5000; break;
+          case 6: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colprp"; sType = "js_art_rugprp1"; sPlaceableName = "Rug, Purple"; sMaterial = "plc"; nCost = 5000; break;
+          case 7: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colblk"; sType = "js_art_rugblk1"; sPlaceableName = "Rug, Black"; sMaterial = "plc"; nCost = 5000; break;
+          case 8: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_art_colwht"; sType = "js_art_rugwht1"; sPlaceableName = "Rug, White"; sMaterial = "plc"; nCost = 5000; break;
+          case 9: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpet"; sIngredient2 = "js_tai_bosi"; sType = "js_art_rugbase1"; sPlaceableName = "Rug, Fancy Base"; sMaterial = "plc"; nCost = 5000; break;
+          case 10: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpetfancy"; sIngredient2 = "js_art_colred"; sType = "js_art_rugred2"; sPlaceableName = "Rug, Round"; sMaterial = "plc"; nCost = 7000; break;
+          case 11: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpetfancy"; sIngredient2 = "js_art_colorn"; sType = "js_art_rugorg2"; sPlaceableName = "Rug, Large Orange"; sMaterial = "plc"; nCost = 10000; break;
+          case 12: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpetfancy"; sIngredient2 = "js_art_colgrn"; sType = "js_art_ruggrn2"; sPlaceableName = "Rug, Large Green 1"; sMaterial = "plc"; nCost = 10000; break;
+          case 13: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpetfancy"; sIngredient2 = "js_art_colgrn"; sType = "js_art_ruggrn3"; sPlaceableName = "Rug, Large Green 2"; sMaterial = "plc"; nCost = 10000; break;
+          case 14: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_carpetfancy"; sIngredient2 = "js_art_colred"; sType = "js_art_rugred3"; sPlaceableName = "Rug, Large Red"; sMaterial = "plc"; nCost = 10000; break;
 
         }
     }
@@ -547,22 +555,22 @@ void ArtistConverter(object oPC, object oBench, int nNode)
         switch(nNode)
         {
 
-          case 1: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgbane1"; sMaterial = "plc"; nCost = 5000; break;
-          case 2: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgcyrc1"; sMaterial = "plc"; nCost = 5000; break;
-          case 3: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgeili1"; sMaterial = "plc"; nCost = 5000; break;
-          case 4: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgstag1"; sMaterial = "plc"; nCost = 5000; break;
-          case 5: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgstag2"; sMaterial = "plc"; nCost = 5000; break;
-          case 6: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flghelm1"; sMaterial = "plc"; nCost = 5000; break;
-          case 7: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgilm1"; sMaterial = "plc"; nCost = 5000; break;
-          case 8: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flglath1"; sMaterial = "plc"; nCost = 5000; break;
-          case 9: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flglolt1"; sMaterial = "plc"; nCost = 5000; break;
-          case 10: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgmask1"; sMaterial = "plc"; nCost = 5000; break;
-          case 11: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgrav1"; sMaterial = "plc"; nCost = 5000; break;
-          case 12: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgrav2"; sMaterial = "plc"; nCost = 5000; break;
-          case 13: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgsune1"; sMaterial = "plc"; nCost = 5000; break;
-          case 14: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgtemp1"; sMaterial = "plc"; nCost = 5000; break;
-          case 15: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgtorm1"; sMaterial = "plc"; nCost = 5000; break;
-          case 16: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgwauk1"; sMaterial = "plc"; nCost = 5000; break;
+          case 1: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgbane1"; sPlaceableName = "Pennant of Bane"; sMaterial = "plc"; nCost = 5000; break;
+          case 2: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgcyrc1"; sPlaceableName = "Pennant of Cyric"; sMaterial = "plc"; nCost = 5000; break;
+          case 3: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgeili1"; sPlaceableName = "Pennant of Eilistraee"; sMaterial = "plc"; nCost = 5000; break;
+          case 4: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgstag1"; sPlaceableName = "Pennant of Green Stag 1"; sMaterial = "plc"; nCost = 5000; break;
+          case 5: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgstag2"; sPlaceableName = "Pennant of Green Stag 2"; sMaterial = "plc"; nCost = 5000; break;
+          case 6: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flghelm1"; sPlaceableName = "Pennant of Helm"; sMaterial = "plc"; nCost = 5000; break;
+          case 7: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgilm1"; sPlaceableName = "Pennant of Ilmater"; sMaterial = "plc"; nCost = 5000; break;
+          case 8: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flglath1"; sPlaceableName = "Pennant of Lathander"; sMaterial = "plc"; nCost = 5000; break;
+          case 9: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flglolt1"; sPlaceableName = "Pennant of Lolth"; sMaterial = "plc"; nCost = 5000; break;
+          case 10: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgmask1"; sPlaceableName = "Pennant of Mask"; sMaterial = "plc"; nCost = 5000; break;
+          case 11: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgrav1"; sPlaceableName = "Pennant of Raven and Shield"; sMaterial = "plc"; nCost = 5000; break;
+          case 12: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgrav2"; sPlaceableName = "Pennant of Raven and SWord"; sMaterial = "plc"; nCost = 5000; break;
+          case 13: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgsune1"; sPlaceableName = "Pennant of Sune"; sMaterial = "plc"; nCost = 5000; break;
+          case 14: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgtemp1"; sPlaceableName = "Pennant of Tempus"; sMaterial = "plc"; nCost = 5000; break;
+          case 15: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgtorm1"; sPlaceableName = "Pennant of Torm"; sMaterial = "plc"; nCost = 5000; break;
+          case 16: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgwauk1"; sPlaceableName = "Pennant of Waukeen"; sMaterial = "plc"; nCost = 5000; break;
 
         }
     }
@@ -571,7 +579,7 @@ void ArtistConverter(object oPC, object oBench, int nNode)
         switch(nNode)
         {
 
-          case 1: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_dusw"; sIngredient2 = "js_farm_papy"; sType = "js_art_pain"; sMaterial = "plc"; nCost = 2000; break;
+          case 1: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_dusw"; sIngredient2 = "js_farm_papy"; sType = "js_art_pain"; sPlaceableName = "Painting"; sMaterial = "plc"; nCost = 2000; break;
 
         }
     }
@@ -593,7 +601,7 @@ void ArtistConverter(object oPC, object oBench, int nNode)
     }
 
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
 
 
 }
@@ -608,6 +616,7 @@ void BrewerConverter(object oPC, object oBench, int nNode)
     string sIngredient2;
     string sType = "none";
     string sMaterial = "none";
+    string sPlaceableName;
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -634,7 +643,7 @@ void BrewerConverter(object oPC, object oBench, int nNode)
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
 
 
 }
@@ -648,6 +657,7 @@ void ChefConverter(object oPC, object oBench, int nNode)
     string sIngredient2;
     string sType = "none";
     string sMaterial = "none";
+    string sPlaceableName;
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -702,7 +712,7 @@ void ChefConverter(object oPC, object oBench, int nNode)
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
 
 
 
@@ -717,6 +727,7 @@ void JewelerConverter(object oPC, object oBench, int nNode)
     string sIngredient2;
     string sType = "none";
     string sMaterial = "none";
+    string sPlaceableName;
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -743,7 +754,7 @@ void JewelerConverter(object oPC, object oBench, int nNode)
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
 
 
 
@@ -758,6 +769,7 @@ void RangedCraftsmanConverter(object oPC, object oBench, int nNode)
     string sIngredient2;
     string sType = "none";
     string sMaterial = "none";
+    string sPlaceableName;
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -805,7 +817,7 @@ void RangedCraftsmanConverter(object oPC, object oBench, int nNode)
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
 
 
 }
@@ -819,6 +831,7 @@ void ScoundrelConverter(object oPC, object oBench, int nNode)
     string sIngredient2;
     string sType = "none";
     string sMaterial = "none";
+    string sPlaceableName;
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -839,7 +852,7 @@ void ScoundrelConverter(object oPC, object oBench, int nNode)
       case 10: sProduct = "js_arca_spiderl"; sIngredient1 = "js_hun_cspider"; sIngredient2 = "js_alch_slee"; nCost = 2000; break;
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
 
 
 
@@ -854,6 +867,7 @@ void ScholarConverter(object oPC, object oBench, int nNode)
     string sIngredient2;
     string sType = "none";
     string sMaterial = "none";
+    string sPlaceableName;
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -872,7 +886,7 @@ void ScholarConverter(object oPC, object oBench, int nNode)
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
 
 
 
@@ -887,6 +901,7 @@ void SmithConverter(object oPC, object oBench, int nNode)
     string sIngredient2;
     string sType = "none";
     string sMaterial = "none";
+    string sPlaceableName;
     int nActionNode = GetLocalInt( oPC, "ds_actionnode");
     int nIngredient1Found;
     int nIngredient2Found;
@@ -1285,7 +1300,7 @@ void SmithConverter(object oPC, object oBench, int nNode)
       }
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
 
 }
 
@@ -1298,6 +1313,7 @@ void TailorConverter(object oPC, object oBench, int nNode)
     string sIngredient2;
     string sType = "none";
     string sMaterial = "none";
+    string sPlaceableName = "Job System Placeable";
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -1321,11 +1337,11 @@ void TailorConverter(object oPC, object oBench, int nNode)
       case 12: sProduct = "js_tai_arcl"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "none"; nCost = 2000; sType = "armor"; sMaterial = "wool"; break;
       case 13: sProduct = "js_tai_arpa"; sIngredient1 = "js_lea_leat"; sIngredient2 = "js_tai_boco"; nCost = 2000; sType = "armor"; sMaterial = "leather"; break;
       case 14: sProduct = "js_tai_arst"; sIngredient1 = "js_lea_leat"; sIngredient2 = "js_tai_boco"; nCost = 2000; sType = "armor"; sMaterial = "leather"; break;
-      case 15: sProduct = "js_plcspawner"; sIngredient1 = "js_ran_wool"; sIngredient2 = "none"; sType = "js_tai_carp"; sMaterial = "plc"; nCost = 5000; break;
+      case 15: sProduct = "js_plcspawner"; sIngredient1 = "js_ran_wool"; sIngredient2 = "none"; sType = "js_tai_carp"; sPlaceableName = "Carpet"; sMaterial = "plc"; nCost = 5000; break;
       case 16: sProduct = "js_tai_bosi"; sIngredient1 = "js_tail_rsil"; sIngredient2 = "none"; nCost = 1000; break;
       case 17: sProduct = "js_tai_bowo"; sIngredient1 = "js_ran_wool"; sIngredient2 = "none"; nCost = 1000; break;
       case 18: sProduct = "js_tai_boco"; sIngredient1 = "js_farm_cott"; sIngredient2 = "none"; nCost = 1000; break;
-      case 19: sProduct = "js_plcspawner"; sIngredient1 = "js_ran_rowo"; sIngredient2 = "none"; sType = "js_tai_carp"; sMaterial = "plc"; nCost = 5000; break;
+      case 19: sProduct = "js_plcspawner"; sIngredient1 = "js_ran_rowo"; sIngredient2 = "none"; sType = "js_tai_carp"; sPlaceableName = "Carpet"; sMaterial = "plc"; nCost = 5000; break;
       case 20: sProduct = "js_tai_brwo"; sIngredient1 = "js_ran_rowo"; sIngredient2 = "none"; nCost = 1000; break;
       case 21: sProduct = "js_tai_cloa"; sIngredient1 = "js_tai_brwo"; sIngredient2 = "none"; sType = "cloak"; sMaterial = "rothewool"; nCost = 2000; break;
       case 22: sProduct = "js_tai_cloa"; sIngredient1 = "js_tai_boco"; sIngredient2 = "none"; sType = "cloak"; sMaterial = "cotton"; nCost = 2000; break;
@@ -1335,44 +1351,44 @@ void TailorConverter(object oPC, object oBench, int nNode)
       case 26: sProduct = "js_tai_belt"; sIngredient1 = "js_lea_leat"; sIngredient2 = "none"; sType = "belt"; sMaterial = "leather"; nCost = 2000; break;
       case 27: sProduct = "ds_j_masked"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "none"; sType = "cloak"; sMaterial = "wool"; nCost = 2000; break;
       case 28: sProduct = "ds_j_hooded"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "none"; sType = "cloak"; sMaterial = "wool"; nCost = 2000; break;
-      case 29: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_fur"; sIngredient2 = "none"; sType = "js_tai_hangfur"; sMaterial = "plc"; nCost = 5000; break;
-      case 30: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "none"; sType = "js_tai_velmap"; sMaterial = "plc"; nCost = 5000; break;
-      case 31: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "none"; sType = "js_tai_satchel"; sMaterial = "plc"; nCost = 5000; break;
-      case 32: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqfur"; sIngredient2 = "js_tree_phaw"; sType = "js_bui_bfurrack"; sMaterial = "plc"; nCost = 5000; break;
-      case 33: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "js_tree_phaw"; sType = "js_bui_stfbat"; sMaterial = "plc"; nCost = 5000; break;
-      case 34: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_lfur"; sIngredient2 = "none"; sType = "js_bui_tigerfur"; sMaterial = "plc"; nCost = 10000; break;
-      case 35: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_hun_sbone"; sType = "js_bui_tent1"; sMaterial = "plc"; nCost = 5000; break;
-      case 36: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_hun_sbone"; sType = "js_bui_tent2"; sMaterial = "plc"; nCost = 5000; break;
-      case 37: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_lhide"; sIngredient2 = "js_hun_lbone"; sType = "js_bui_tent3"; sMaterial = "plc"; nCost = 10000; break;
-      case 38: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_teepee1"; sMaterial = "plc"; nCost = 5000; break;
-      case 39: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_teepee2"; sMaterial = "plc"; nCost = 5000; break;
-      case 40: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_shaw"; sIngredient2 = "js_hun_gryphon"; sType = "js_bui_marketsta"; sMaterial = "plc"; nCost = 10000; break;
-      case 41: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "none"; sType = "js_bui_skins"; sMaterial = "plc"; nCost = 5000; break;
-      case 42: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_fur"; sIngredient2 = "none"; sType = "js_bui_skins"; sMaterial = "plc"; nCost = 5000; break;
-      case 43: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "none"; sType = "js_bui_bbrug"; sMaterial = "plc"; nCost = 5000; break;
-      case 44: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_hun_sbone"; sType = "js_bui_sparrot"; sMaterial = "plc"; nCost = 5000; break;
-      case 45: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_csnake"; sIngredient2 = "js_hun_lhide"; sType = "js_bui_marketcan"; sMaterial = "plc"; nCost = 10000; break;
-      case 46: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_wyvernhid"; sIngredient2 = "none"; sType = "js_bui_wyvernhid"; sMaterial = "plc"; nCost = 5000; break;
-      case 47: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_whitedrag"; sIngredient2 = "none"; sType = "js_bui_whitedhid"; sMaterial = "plc"; nCost = 5000; break;
-      case 48: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_game"; sIngredient2 = "js_hun_hide"; sType = "js_bui_boarplat"; sMaterial = "plc"; nCost = 5000; break;
-      case 49: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_fur"; sIngredient2 = "none"; sType = "js_bui_blackbrug"; sMaterial = "plc"; nCost = 5000; break;
-      case 50: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_lfur"; sIngredient2 = "js_hun_lbone"; sType = "js_bui_stuffgriz"; sMaterial = "plc"; nCost = 10000; break;
-      case 51: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_game"; sIngredient2 = "js_hun_hide"; sType = "js_bui_basilisk"; sMaterial = "plc"; nCost = 5000; break;
-      case 52: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtent"; sIngredient2 = "js_art_colblu"; sType = "js_bui_tent4"; sMaterial = "plc"; nCost = 10000; break;
-      case 53: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtent"; sIngredient2 = "js_art_colred"; sType = "js_bui_tent5"; sMaterial = "plc"; nCost = 10000; break;
-      case 54: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtentrdwht"; sIngredient2 = "js_art_colblk"; sType = "js_bui_tent6"; sMaterial = "plc"; nCost = 10000; break;
+      case 29: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_fur"; sIngredient2 = "none"; sType = "js_tai_hangfur"; sPlaceableName = "Hanging Furs"; sMaterial = "plc"; nCost = 5000; break;
+      case 30: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "none"; sType = "js_tai_velmap"; sPlaceableName = "Vellum Map"; sMaterial = "plc"; nCost = 5000; break;
+      case 31: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "none"; sType = "js_tai_satchel"; sPlaceableName = "Satchel"; sMaterial = "plc"; nCost = 5000; break;
+      case 32: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqfur"; sIngredient2 = "js_tree_phaw"; sType = "js_bui_bfurrack"; sPlaceableName = "Bear Fur on Rack"; sMaterial = "plc"; nCost = 5000; break;
+      case 33: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "js_tree_phaw"; sType = "js_bui_stfbat"; sPlaceableName = "Stuffed Bat"; sMaterial = "plc"; nCost = 5000; break;
+      case 34: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_lfur"; sIngredient2 = "none"; sType = "js_bui_tigerfur"; sPlaceableName = "Tiger Fur, Ground"; sMaterial = "plc"; nCost = 10000; break;
+      case 35: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_hun_sbone"; sType = "js_bui_tent1"; sPlaceableName = "Tent 1, Dark"; sMaterial = "plc"; nCost = 5000; break;
+      case 36: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_hun_sbone"; sType = "js_bui_tent2"; sPlaceableName = "Tent 2, Dark"; sMaterial = "plc"; nCost = 5000; break;
+      case 37: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_lhide"; sIngredient2 = "js_hun_lbone"; sType = "js_bui_tent3"; sPlaceableName = "Big Tent, Dark"; sMaterial = "plc"; nCost = 10000; break;
+      case 38: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_teepee1"; sPlaceableName = "Teepee 1"; sMaterial = "plc"; nCost = 5000; break;
+      case 39: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_teepee2"; sPlaceableName = "Teepee 2"; sMaterial = "plc"; nCost = 5000; break;
+      case 40: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_shaw"; sIngredient2 = "js_hun_gryphon"; sType = "js_bui_marketsta"; sPlaceableName = "Massive Market Stall"; sMaterial = "plc"; nCost = 10000; break;
+      case 41: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "none"; sType = "js_bui_skins"; sPlaceableName = "Skins Ground"; sMaterial = "plc"; nCost = 5000; break;
+      case 42: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_fur"; sIngredient2 = "none"; sType = "js_bui_skins"; sPlaceableName = "Skins, Ground"; sMaterial = "plc"; nCost = 5000; break;
+      case 43: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hqhide"; sIngredient2 = "none"; sType = "js_bui_bbrug"; sPlaceableName = "Brown Bear Rug"; sMaterial = "plc"; nCost = 5000; break;
+      case 44: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_hun_sbone"; sType = "js_bui_sparrot"; sPlaceableName = "Stuffed Parrot"; sMaterial = "plc"; nCost = 5000; break;
+      case 45: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_csnake"; sIngredient2 = "js_hun_lhide"; sType = "js_bui_marketcan"; sPlaceableName = "Massive Market Canopy"; sMaterial = "plc"; nCost = 10000; break;
+      case 46: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_wyvernhid"; sIngredient2 = "none"; sType = "js_bui_wyvernhid"; sPlaceableName = "Wyvern Hide, Ground"; sMaterial = "plc"; nCost = 5000; break;
+      case 47: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_whitedrag"; sIngredient2 = "none"; sType = "js_bui_whitedhid"; sPlaceableName = "White Dragon Hide, Hung"; sMaterial = "plc"; nCost = 5000; break;
+      case 48: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_game"; sIngredient2 = "js_hun_hide"; sType = "js_bui_boarplat"; sPlaceableName = "Boar Platter"; sMaterial = "plc"; nCost = 5000; break;
+      case 49: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_fur"; sIngredient2 = "none"; sType = "js_bui_blackbrug"; sPlaceableName = "Black Bear Rug"; sMaterial = "plc"; nCost = 5000; break;
+      case 50: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_lfur"; sIngredient2 = "js_hun_lbone"; sType = "js_bui_stuffgriz"; sPlaceableName = "Stuffed Grizzly Bear"; sMaterial = "plc"; nCost = 10000; break;
+      case 51: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_game"; sIngredient2 = "js_hun_hide"; sType = "js_bui_basilisk"; sPlaceableName = "Basilisk on a Stick"; sMaterial = "plc"; nCost = 5000; break;
+      case 52: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtent"; sIngredient2 = "js_art_colblu"; sType = "js_bui_tent4"; sPlaceableName = "Big Blue and White Tent"; sMaterial = "plc"; nCost = 10000; break;
+      case 53: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtent"; sIngredient2 = "js_art_colred"; sType = "js_bui_tent5"; sPlaceableName = "Big Red and White Tent"; sMaterial = "plc"; nCost = 10000; break;
+      case 54: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtentrdwht"; sIngredient2 = "js_art_colblk"; sType = "js_bui_tent6"; sPlaceableName = "Big Red and Black Tent"; sMaterial = "plc"; nCost = 10000; break;
 
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
 
 
 
 }
 
 
-void CraftProperties(object oPC, object oCraftedItem, string sType, string sMaterial)
+void CraftProperties(object oPC, object oCraftedItem, string sType, string sMaterial, string sPlaceableName)
 {
       itemproperty iMaterial;
       itemproperty iProperty1;
@@ -2332,12 +2348,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
         }*/
         //else
         //{
-          SendMessageToPC(oPC, "Debug: sType=" + sType);
-          object oBasePLC = GetObjectByTag(sType);
-          SendMessageToPC(oPC, "Debug: oBasePLC=" + ObjectToString(oBasePLC));
-          string sNewName = GetName(oBasePLC);
-          SendMessageToPC(oPC, "Debug: sNewName=" + sNewName);
-          SetName(oCraftedItem, sNewName);
+          SetName(oCraftedItem, "<c~Îë>"+sPlaceableName+"</c> ");
           SetLocalString(oCraftedItem,"plc",sType);
         //}
 
@@ -2351,7 +2362,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
 }
 
 
-void CraftProduct(object oPC, object oBench, string sProduct, string sType, string sMaterial, string sIngredient1, string sIngredient2, int nCost, int nStack, int nProductStackSize)
+void CraftProduct(object oPC, object oBench, string sProduct, string sType, string sMaterial, string sIngredient1, string sIngredient2, string sPlaceableName, int nCost, int nStack, int nProductStackSize)
 {
 
     object oItemInChest = GetFirstItemInInventory(oBench);
@@ -2870,7 +2881,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
       // If there is a type and material set then set the properties for the item. This is mostly used for weapons/armor.
       if(GetIsObjectValid(oCraftedItem) && (sType != "none") && (sMaterial != "none"))
       {
-        CraftProperties(oPC,oCraftedItem,sType,sMaterial);
+        CraftProperties(oPC,oCraftedItem,sType,sMaterial,sPlaceableName);
       }
 
     }

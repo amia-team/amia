@@ -19,6 +19,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Artist dialogue updates to add "Cancel" buttons
 - Updated raven banners with more descriptive names
 - removed outlaw_pvillage from development folder server side
+- Naming for Job System PLC spawners has been fixed. **Please report any typos!**
+- PLC Spawner description updated to be agnostic
+- Tweaks to Job System testing room
 
 - Area fixes
 	- Demonreach: Blightwood (and) , East

@@ -7,11 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased] - 
 
 ### Added
-- Added all the resource nodes to the JS testing room
 
 ### Changed
 - Added code to refund an Underwater Enchantment if used on the wrong target
 - Made nearly all the job items into 1x1 size and added descriptions to everything
+- Added all the resource nodes to the JS testing room
+- Added many of the redone JS items to merchants for ease of testing
+- Added a warp between the Dev area and the Job System testing room
 
 ### Fixed
 

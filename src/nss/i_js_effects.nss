@@ -350,19 +350,21 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
      {
        if((GetBaseItemType(oTarget) == BASE_ITEM_RING) || (GetBaseItemType(oTarget) == BASE_ITEM_CLOAK) || (GetBaseItemType(oTarget) == BASE_ITEM_HELMET) || (GetBaseItemType(oTarget) == BASE_ITEM_AMULET))
        {
-         FloatingTextStringOnCreature("*You have successful enchanted this item for underwater breathing*",oPC);
+         FloatingTextStringOnCreature("*You have successfully enchanted this item for underwater breathing*",oPC);
          SetTag(oTarget,"ds_underwater");
          string sDescription = GetDescription(oTarget);
-         SetDescription(oTarget,sDescription + "  <c~Îë>-Underwater Enabled-</c>");
+         SetDescription(oTarget,sDescription + "\n\n<c~Îë>-Underwater Enabled-</c>");
        }
        else
        {
-         FloatingTextStringOnCreature("*The enchantment fails to hold on this type of item*",oPC);
+         FloatingTextStringOnCreature("*The enchantment does not work on this type of item*",oPC);
+         CreateItemOnObject(sItemResRef,oPC);
        }
      }
      else
      {
-       FloatingTextStringOnCreature("*The enchantment splashes uselessly against the target*",oPC);
+       FloatingTextStringOnCreature("*The enchantment only works on rings, cloaks, helmets, and amulets*",oPC);
+       CreateItemOnObject(sItemResRef,oPC);
      }
 
    }
@@ -416,7 +418,7 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
      object oEgg = CreateObject(OBJECT_TYPE_PLACEABLE,"js_hun_eggsack",lTarget);
      SetLocalString(oEgg,"owner",GetName(oPC));
    }
-   else if(sItemResRef == "js_art_colblk" || sItemResRef == "js_art_colblu" || sItemResRef == "js_art_colgrn" || sItemResRef == "js_art_colorn" || sItemResRef == "js_art_colprp" || sItemResRef == "js_art_colred" || sItemResRef == "js_art_colwht" || sItemResRef == "js_art_colyel") //Artist Bag Dyes
+   else if(GetSubString(sItemResRef, 0, 10) == "js_art_col") //Artist Bag Dyes
    {
      int nBaseItem = GetBaseItemType(oTarget);
      int nAppearance = GetItemAppearance(oTarget, ITEM_APPR_TYPE_SIMPLE_MODEL, 0);

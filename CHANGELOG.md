@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+
+### Fixed
+
+## [2.2.5] - 2022-07-28 
+
+### Added
+
+### Changed
 - Endir's Point plot updates
 - Naming for Job System PLC spawners has been fixed. **Please report any typos!**
 - Changed "/s f_jsname" & "/s f_jsbio" to allow any Job System item to be customized
@@ -26,7 +34,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updated Ridgewood quest item to be destroyable
 - Moved Duskwood node in Kingdom of Cetha: Howling Pass
 - Moved Mithril node in Kingdom of Kohlingen: North Pass
-
 
 - Area fixes
 	- Demonreach: Blightwood (and) , East

@@ -4,23 +4,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased] - 
+## [Unreleased] - 
 
 ### Added
+- Added all the resource nodes to the JS testing room
 
 ### Changed
+- Added code to refund an Underwater Enchantment if used on the wrong target
+- Made nearly all the job items into 1x1 size and added descriptions to everything
 
 ### Fixed
 
-## [2.2.5] - 2022-07-28 
+
+## [2.2.5] - 2022-07-28
 
 ### Added
+- Added "/s f_jsname" & "/s f_jsbio" details to every job log going forward
 
 ### Changed
 - Endir's Point plot updates
 - Naming for Job System PLC spawners has been fixed. **Please report any typos!**
 - Changed "/s f_jsname" & "/s f_jsbio" to allow any Job System item to be customized
-- Added "/s f_jsname" & "/s f_jsbio" details to every job log going forward
 
 ### Fixed
 - Ridgewood Merchant inventory fix
@@ -34,7 +38,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updated Ridgewood quest item to be destroyable
 - Moved Duskwood node in Kingdom of Cetha: Howling Pass
 - Moved Mithril node in Kingdom of Kohlingen: North Pass
-
 - Area fixes
 	- Demonreach: Blightwood (and) , East
 		1. fixed crashing issue

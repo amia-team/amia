@@ -10,18 +10,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Endir's Point plot updates
+- Naming for Job System PLC spawners has been fixed. **Please report any typos!**
+- Changed "/s f_jsname" & "/s f_jsbio" to allow any Job System item to be customized
+- Added "/s f_jsname" & "/s f_jsbio" details to every job log going forward
 
 ### Fixed
 - Ridgewood Merchant inventory fix
 - Artist's Black is now craftable
-- Rug, Green PLC spawner should be named correctly
 - Tailor crafting dialogue fix
 - Artist dialogue updates to add "Cancel" buttons
 - Updated raven banners with more descriptive names
 - removed outlaw_pvillage from development folder server side
-- Naming for Job System PLC spawners has been fixed. **Please report any typos!**
 - PLC Spawner description updated to be agnostic
 - Tweaks to Job System testing room
+- Updated Ridgewood quest item to be destroyable
+- Moved Duskwood node in Kingdom of Cetha: Howling Pass
+- Moved Mithril node in Kingdom of Kohlingen: North Pass
+
 
 - Area fixes
 	- Demonreach: Blightwood (and) , East

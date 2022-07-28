@@ -3,6 +3,9 @@
 
   - Maverick00053
 
+
+  2022/07/27 - Lord Jyssev: Added details about shout renaming/rebio commands to the description
+
 */
 
 #include "x2_inc_switches"
@@ -22,6 +25,7 @@ void main()
     object oDoor;
     int nNode           = GetLocalInt( oPC, "ds_node" );
     string sAction      = GetLocalString( oPC, "ds_action");
+
 
 
     // Checks to see if the script has run once, if it did not it runs though the convo file
@@ -72,6 +76,11 @@ void AssignJob(object oPC, object oNPC, int nNode)
     string sJob = GetLocalString(oNPC,"job");
     string sPrimaryJob;
     string sSecondaryJob;
+    string sNameDetails = "To rename a Job System item: drop the item, stand next to it, type /s f_jsname [name]";
+    string sBioDetails1 = "To make a new bio, do the same thing then type /s f_jsbio N [bio]";
+    string sBioDetails2 = "/s f_jsbio N makes a new bio";
+    string sBioDetails3 = "/s f_jsbio A adds to the end";
+    string sBioDetails4 = "/s f_jsbio B puts a line break in it";
 
     // First we search if they already have a journal
     while(GetIsObjectValid(oInventoryItem))
@@ -110,7 +119,7 @@ void AssignJob(object oPC, object oNPC, int nNode)
       {
 
          SetLocalString(oJobJournal,"primaryjob",sJob);
-         SetDescription(oJobJournal,"Primary Job: "+sJob+" / Secondary Job: "+sSecondaryJob);
+         SetDescription(oJobJournal,"Primary Job: "+sJob+" / Secondary Job: "+sSecondaryJob+"\n \n"+sNameDetails+"\n"+sBioDetails1+"\n \n"+sBioDetails2+"\n"+sBioDetails3+"\n"+sBioDetails4);
       }
       else
       {
@@ -125,7 +134,7 @@ void AssignJob(object oPC, object oNPC, int nNode)
       if(sSecondaryJob == "") // If no secondary is set already then set it
       {
          SetLocalString(oJobJournal,"secondaryjob",sJob);
-         SetDescription(oJobJournal,"Primary Job: "+sPrimaryJob+" / Secondary Job: "+sJob);
+         SetDescription(oJobJournal,"Primary Job: "+sPrimaryJob+" / Secondary Job: "+sJob+"\n \n"+sNameDetails+"\n"+sBioDetails1+"\n \n"+sBioDetails2+"\n"+sBioDetails3+"\n"+sBioDetails4);
       }
       else
       {

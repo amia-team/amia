@@ -3329,7 +3329,7 @@ void f_jsname( object oPC, object oObject, string sOption, string sValue ){
     object oObject  = GetNearestObject( OBJECT_TYPE_ITEM, oPC );
     string sjsTag =  GetTag(oObject);
 
-    if ( sjsTag == "js_plcspawner" || sjsTag == "js_painteasel" || sjsTag == "js_effects" || sjsTag == "js_sch_embo" || sjsTag == "js_sch_emto" || sjsTag == "js_sch_pape" || sjsTag == "js_corpse" ){
+    if ( GetSubString(sjsTag, 0, 3) == "js_" ){
 
         SendMessageToPC( oPC, "Setting "+GetName( oObject )+"'s name to "+sValue+"." );
         SetName( oObject, sValue );
@@ -3350,7 +3350,7 @@ void f_jsbio( object oPC, object oObject, string sOption, string sValue ){
     if ( sOption == "?" || sOption == "help" || sOption == "Help" ) {
         SendMessageToPC( oPC , "If you have a permitted item, use this command to set the bio after you drop it on the ground. This will change the item's description. [N] will create a new description. [A] will append additional text to the description. [Break] will insert a double line-break. See the forum for a list of all permitted items.");
     }
-    if ( sjsTag != "ee_itemspawncust" && sjsTag != "js_plcspawner" && sjsTag != "js_painteasel" && sjsTag != "js_effects" && sjsTag != "js_sch_embo" && sjsTag != "js_sch_emto" && sjsTag != "js_sch_pape" && sjsTag != "js_corpse" ){
+    if ( GetSubString(sjsTag, 0, 3) != "js_" ){
         SendMessageToPC( oPC , "You can only use this command on allowed items. See the forum for all allowed items.");
     }
     else if ( sOption == "a" || sOption == "A" ){

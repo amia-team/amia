@@ -45,6 +45,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		1. fixed crashing issue
 	- Welcome to amia
 		1. realigned starting point
+	- Obsidian Isle 
+		1. Great Hall remodel
+
 
 ## [2.2.4] - 2022-07-25
 

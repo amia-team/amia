@@ -344,11 +344,11 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
      }
 
    }
-   else if(sItemResRef == "js_alch_underw") // Turns amulet,ring,cloak,helmet into underwater gear
+   else if(sItemResRef == "js_alch_underw") // Turns any equipment except weapons into underwater gear
    {
      if((GetObjectType(oTarget) == OBJECT_TYPE_ITEM))
      {
-       if((GetBaseItemType(oTarget) == BASE_ITEM_RING) || (GetBaseItemType(oTarget) == BASE_ITEM_CLOAK) || (GetBaseItemType(oTarget) == BASE_ITEM_HELMET) || (GetBaseItemType(oTarget) == BASE_ITEM_AMULET))
+       if((GetBaseItemType(oTarget) == BASE_ITEM_RING) || (GetBaseItemType(oTarget) == BASE_ITEM_CLOAK) || (GetBaseItemType(oTarget) == BASE_ITEM_HELMET) || (GetBaseItemType(oTarget) == BASE_ITEM_AMULET) || (GetBaseItemType(oTarget) == BASE_ITEM_ARMOR) || (GetBaseItemType(oTarget) == BASE_ITEM_BELT) || (GetBaseItemType(oTarget) == BASE_ITEM_BOOTS) || (GetBaseItemType(oTarget) == BASE_ITEM_BRACER) || (GetBaseItemType(oTarget) == BASE_ITEM_GLOVES) || (GetBaseItemType(oTarget) == BASE_ITEM_SMALLSHIELD) || (GetBaseItemType(oTarget) == BASE_ITEM_TOWERSHIELD) || (GetBaseItemType(oTarget) == BASE_ITEM_LARGESHIELD))
        {
          FloatingTextStringOnCreature("*You have successfully enchanted this item for underwater breathing*",oPC);
          SetTag(oTarget,"ds_underwater");
@@ -363,7 +363,7 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
      }
      else
      {
-       FloatingTextStringOnCreature("*The enchantment only works on rings, cloaks, helmets, and amulets*",oPC);
+       FloatingTextStringOnCreature("*The enchantment only works on items*",oPC);
        CreateItemOnObject(sItemResRef,oPC);
      }
 
@@ -424,8 +424,6 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
      int nAppearance = GetItemAppearance(oTarget, ITEM_APPR_TYPE_SIMPLE_MODEL, 0);
      int nColorModifier = GetLocalInt(oWidget, "ColorModifier");
 
-     SendMessageToPC(oPC,"Debug: beginning, nAppearance=" + IntToString(nAppearance));
-
      if(nBaseItem == BASE_ITEM_LARGEBOX)
      {
         switch (nAppearance)
@@ -462,10 +460,8 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
             case 30: nAppearance=(3 + nColorModifier); break;
         }
         object oNewItem = CopyItemAndModifyFixed( oTarget, ITEM_APPR_TYPE_SIMPLE_MODEL, 0, nAppearance, TRUE );
-        SendMessageToPC(oPC,"Debug: correct item found! nAppearance=" + IntToString(nAppearance));
 
         if (GetIsObjectValid(oNewItem)){
-            SendMessageToPC(oPC,"Debug: object was valid, nAppearance=" + IntToString(nAppearance));
             SetLocalObject(oPC, "ds_target", oNewItem);
             DestroyObject(oTarget);
         }

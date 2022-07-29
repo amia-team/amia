@@ -13,6 +13,7 @@
     + Changed the visual candy - Glim
     MODIFIED 10 APRIl 2013
     + Changed so it properly refreshes duration on use
+    07/25/2022 Opustus: removed undocumented stacking with DC levels
 */
 //:://////////////////////////////////////////////
 //:: Created By: Brent
@@ -33,7 +34,7 @@ void main()
    {
         //Declare major variables
         object oTarget = GetSpellTargetObject();
-        int nLevel = GetLevelByClass(CLASS_TYPE_PALADIN)+GetLevelByClass(CLASS_TYPE_CLERIC)+GetLevelByClass(CLASS_TYPE_BLACKGUARD)+GetLevelByClass(CLASS_TYPE_DIVINE_CHAMPION);
+        int nLevel = GetLevelByClass(CLASS_TYPE_PALADIN)+GetLevelByClass(CLASS_TYPE_CLERIC)+GetLevelByClass(CLASS_TYPE_BLACKGUARD);
 
         //FALL HACK! Mwhahahaha
         if ( (GetLocalInt( oTarget, "Fallen" ) == 1) ||
@@ -57,6 +58,7 @@ void main()
         SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, 474, FALSE));
 
         eLink = SupernaturalEffect(eLink);
+        eGlow = SupernaturalEffect(eGlow);
         ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oTarget, RoundsToSeconds(nCharismaBonus));
         ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
         ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eGlow, oTarget, RoundsToSeconds(nCharismaBonus));
@@ -64,5 +66,4 @@ void main()
 
     }
 }
-
 

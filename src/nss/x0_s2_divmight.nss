@@ -25,6 +25,7 @@
 
     MODIFIED 10 APRIl 2013
     + Changed so it properly refreshes duration on use
+    07/25/2022 Opustus: removed undocumented stacking with DC levels
     */
 //:://////////////////////////////////////////////
 //:: Created By: Brent
@@ -48,7 +49,7 @@ void main()
         object oTarget              = GetSpellTargetObject();
         object oMyWeapon            =  GetItemInSlot(INVENTORY_SLOT_RIGHTHAND,oTarget);
          object oMySecondWeapon     =  GetItemInSlot(INVENTORY_SLOT_LEFTHAND,oTarget);
-        int nLevel = GetLevelByClass(CLASS_TYPE_PALADIN)+GetLevelByClass(CLASS_TYPE_CLERIC)+GetLevelByClass(CLASS_TYPE_BLACKGUARD)+GetLevelByClass(CLASS_TYPE_DIVINE_CHAMPION);
+        int nLevel = GetLevelByClass(CLASS_TYPE_PALADIN)+GetLevelByClass(CLASS_TYPE_CLERIC)+GetLevelByClass(CLASS_TYPE_BLACKGUARD);
 
         effect eVis = EffectVisualEffect(VFX_IMP_SUPER_HEROISM);
         effect eDur = EffectVisualEffect(VFX_DUR_CESSATE_POSITIVE);
@@ -91,5 +92,3 @@ void main()
         DecrementRemainingFeatUses(OBJECT_SELF, FEAT_TURN_UNDEAD);
     }
 }
-
-

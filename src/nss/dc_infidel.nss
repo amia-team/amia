@@ -6,7 +6,7 @@
 // ---------- ---------------- ---------------------------------------------
 // 04/06/2011 PoS              Initial Release.
 // 07/22/2012 PoS              Restructured to apply fewer properties on a weapon.
-//
+// 07/25/2022 Opustus          Item property to damage increase to circumvent exploits.
 
 #include "x0_i0_spells"
 #include "x2_inc_itemprop"
@@ -46,21 +46,13 @@ string GetAlignment( int nAlignGoodEvil, int nAlignLawChaos )
 
 void main()
 {
-    //Declare major variables
+    // Declare major variables
     object oPC              = GetSpellTargetObject();
     int nLevel              = GetLevelByClass( CLASS_TYPE_DIVINE_CHAMPION );
     int nCharismaBonus      = GetAbilityModifier( ABILITY_CHARISMA );
     int nAlignGoodEvil      = GetAlignmentGoodEvil( oPC );
     int nAlignLawChaos      = GetAlignmentLawChaos( oPC );
     string sAlignment       = GetAlignment( nAlignGoodEvil, nAlignLawChaos );
-
-    // If a weapon isn't found, use their gloves.
-    object oMyWeapon        = GetItemInSlot( INVENTORY_SLOT_RIGHTHAND, oPC );
-    object oMySecondWeapon  = GetItemInSlot( INVENTORY_SLOT_LEFTHAND, oPC );
-
-    if( oMyWeapon == OBJECT_INVALID ) {
-        oMyWeapon = GetItemInSlot( INVENTORY_SLOT_ARMS, oPC );
-    }
 
     // Prevent stacking
     if( GetHasFeatEffect( 1177 ) == TRUE )
@@ -81,7 +73,7 @@ void main()
     effect eVis;
     effect eDur;
 
-    // Alignment-dependant visuals
+    // Alignment-dependent visuals
     if( GetAlignmentGoodEvil( oPC ) == ALIGNMENT_EVIL ) {
         eVis = EffectVisualEffect( VFX_IMP_PULSE_NEGATIVE );
     }
@@ -96,129 +88,98 @@ void main()
         eDur = EffectVisualEffect( VFX_DUR_PROTECTION_GOOD_MAJOR );
     }
 
-    // Apply Link and VFX effects to the target
+    eDur = SupernaturalEffect(eDur);
+
+    // Apply VFX effects to the target
     ApplyEffectToObject( DURATION_TYPE_INSTANT, eVis, oPC );
     ApplyEffectToObject( DURATION_TYPE_TEMPORARY, eDur, oPC, RoundsToSeconds( nCharismaBonus ) );
 
-    int nDamage     = IPGetDamageBonusConstantFromNumber( nLevel );
-    int nDamageType = IP_CONST_DAMAGETYPE_DIVINE;
 
-    // This horrible long piece of code assigns damage to the DC's weapon depending on their alignment.
+    // Making variables for the damage v. alignments effect
+    int nDamage     = IPGetDamageBonusConstantFromNumber( nLevel );
+    effect eDamageIncrease = EffectDamageIncrease(nDamage,DAMAGE_TYPE_DIVINE);
+
+    effect eVersusGood = VersusAlignmentEffect(eDamageIncrease, ALIGNMENT_ALL, ALIGNMENT_GOOD);
+    eVersusGood = SupernaturalEffect(eVersusGood);
+    effect eVersusEvil = VersusAlignmentEffect(eDamageIncrease, ALIGNMENT_ALL, ALIGNMENT_EVIL);
+    eVersusEvil = SupernaturalEffect(eVersusEvil);
+    effect eVersusNeutral = VersusAlignmentEffect(eDamageIncrease, ALIGNMENT_NEUTRAL, ALIGNMENT_ALL);
+    eVersusNeutral = SupernaturalEffect(eVersusNeutral);
+    effect eVersusLawful = VersusAlignmentEffect(eDamageIncrease, ALIGNMENT_LAWFUL, ALIGNMENT_ALL);
+    eVersusLawful = SupernaturalEffect(eVersusLawful);
+    effect eVersusChaotic = VersusAlignmentEffect(eDamageIncrease, ALIGNMENT_CHAOTIC, ALIGNMENT_ALL);
+    eVersusChaotic = SupernaturalEffect(eVersusChaotic);
+
+    effect eVersusLN = VersusAlignmentEffect(eDamageIncrease, ALIGNMENT_LAWFUL, ALIGNMENT_NEUTRAL);
+    eVersusLN = SupernaturalEffect(eVersusLN);
+    effect eVersusTN = VersusAlignmentEffect(eDamageIncrease, ALIGNMENT_NEUTRAL, ALIGNMENT_NEUTRAL);
+    eVersusTN = SupernaturalEffect(eVersusTN);
+    effect eVersusCN = VersusAlignmentEffect(eDamageIncrease, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);
+    eVersusCN = SupernaturalEffect(eVersusCN);
+
+
+    // These conditionals apply the damage effect vs. all non-DC's alignments
     if( sAlignment == "Lawful Good" )
     {
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_NEUTRAL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_EVIL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_CHAOTIC, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        if( GetIsObjectValid( oMySecondWeapon ) )
-        {
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_NEUTRAL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_EVIL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_CHAOTIC, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        }
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusEvil, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusNeutral, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusChaotic, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusLN, oPC, RoundsToSeconds(nCharismaBonus));
     }
     else if( sAlignment == "Neutral Good" )
     {
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_LAWFUL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_EVIL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_CHAOTIC, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsSAlign( IP_CONST_ALIGNMENT_TN, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        if( GetIsObjectValid( oMySecondWeapon ) )
-        {
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_LAWFUL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_EVIL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_CHAOTIC, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsSAlign( IP_CONST_ALIGNMENT_TN, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        }
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusEvil, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusLawful, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusChaotic, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusTN, oPC, RoundsToSeconds(nCharismaBonus));
     }
     else if( sAlignment == "Chaotic Good" )
     {
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_NEUTRAL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_EVIL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_LAWFUL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        if( GetIsObjectValid( oMySecondWeapon ) )
-        {
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_NEUTRAL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_EVIL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_LAWFUL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        }
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusEvil, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusNeutral, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusLawful, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusCN, oPC, RoundsToSeconds(nCharismaBonus));
     }
     else if( sAlignment == "Lawful Neutral" )
     {
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_GOOD, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_EVIL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_CHAOTIC, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsSAlign( IP_CONST_ALIGNMENT_TN, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        if( GetIsObjectValid( oMySecondWeapon ) )
-        {
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_GOOD, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_EVIL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_CHAOTIC, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsSAlign( IP_CONST_ALIGNMENT_TN, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        }
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusEvil, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusGood, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusChaotic, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusTN, oPC, RoundsToSeconds(nCharismaBonus));
     }
     else if( sAlignment == "Neutral Neutral" )
     {
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_GOOD, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_EVIL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_CHAOTIC, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_LAWFUL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        if( GetIsObjectValid( oMySecondWeapon ) )
-        {
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_GOOD, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_EVIL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_CHAOTIC, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_LAWFUL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        }
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusEvil, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusGood, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusLawful, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusCN, oPC, RoundsToSeconds(nCharismaBonus));
     }
     else if( sAlignment == "Chaotic Neutral" )
     {
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_GOOD, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_EVIL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_LAWFUL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsSAlign( IP_CONST_ALIGNMENT_TN, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        if( GetIsObjectValid( oMySecondWeapon ) ) {
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_GOOD, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_EVIL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_LAWFUL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsSAlign( IP_CONST_ALIGNMENT_TN, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        }
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusEvil, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusGood, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusLawful, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusTN, oPC, RoundsToSeconds(nCharismaBonus));
     }
     else if( sAlignment == "Lawful Evil" )
     {
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_NEUTRAL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_GOOD, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_CHAOTIC, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        if( GetIsObjectValid( oMySecondWeapon ) )
-        {
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_NEUTRAL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_GOOD, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_LAWFUL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        }
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusNeutral, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusGood, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusChaotic, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusLN, oPC, RoundsToSeconds(nCharismaBonus));
     }
     else if( sAlignment == "Neutral Evil" )
     {
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_LAWFUL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_GOOD, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_CHAOTIC, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsSAlign( IP_CONST_ALIGNMENT_TN, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        if( GetIsObjectValid( oMySecondWeapon ) )
-        {
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_LAWFUL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_GOOD, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_CHAOTIC, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsSAlign( IP_CONST_ALIGNMENT_TN, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        }
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusLawful, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusGood, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusChaotic, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusTN, oPC, RoundsToSeconds(nCharismaBonus));
     }
     else if( sAlignment == "Chaotic Evil" )
     {
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_LAWFUL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_GOOD, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        IPSafeAddItemProperty( oMyWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_NEUTRAL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        if( GetIsObjectValid( oMySecondWeapon ) )
-        {
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_LAWFUL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_GOOD, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-            IPSafeAddItemProperty( oMySecondWeapon, ItemPropertyDamageBonusVsAlign( IP_CONST_ALIGNMENTGROUP_NEUTRAL, nDamageType, nDamage ), RoundsToSeconds( nCharismaBonus ) );
-        }
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusEvil, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusGood, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusNeutral, oPC, RoundsToSeconds(nCharismaBonus));
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVersusCN, oPC, RoundsToSeconds(nCharismaBonus));
     }
 }

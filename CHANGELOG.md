@@ -14,8 +14,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added all the resource nodes to the JS testing room
 - Added many of the redone JS items to merchants for ease of testing
 - Added a warp between the Dev area and the Job System testing room
+- Added a cooldown message in seconds to the job journal spawned resources and every base resource
+
 
 ### Fixed
+- Fixed Bendir Dale's Hinn Inn sign
+- Fixes to various Job System QoL items
 
 
 ## [2.2.5] - 2022-07-28

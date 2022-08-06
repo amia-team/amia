@@ -5,9 +5,13 @@
 
 */
 
+// - Edited: Lord-Jyssev - 8/5/22 Include cooldown counter for resource nodes
+
 #include "x2_inc_switches"
 #include "inc_ds_records"
 #include "x0_i0_campaign"
+#include "inc_call_time"
+#include "amia_include"
 
 
 const int RESOURCE_XP    = 100;
@@ -25,6 +29,10 @@ void main()
     int nBlocker = GetLocalInt(oResourceNode, "blocker");
     int nRank;
     int nRand;
+    int nPreviousTime = GetLocalInt(oResourceNode,"PreviousHarvestTime");
+    int nCurrentTime = GetRunTimeInSeconds();
+    int nCooldownTime = (nCurrentTime - nPreviousTime);
+    float fRefresh;
     string sResource = GetLocalString(oResourceNode, "resource");
     string sResource2 = GetLocalString(oResourceNode, "resource2");
     string sResource3 = GetLocalString(oResourceNode, "resource3");
@@ -32,10 +40,23 @@ void main()
     string sPrimaryJob;
     string sSecondaryJob;
 
+    if(GetLocalFloat(oResourceNode,"refreshrate") > 0.0)
+    {
+      fRefresh = GetLocalFloat(oResourceNode,"refreshrate");
+    }
+    else if(GetLocalFloat(oResourceNode,"traprate") > 0.0)
+    {
+      fRefresh = GetLocalFloat(oResourceNode,"traprate");
+    }
+    else if(GetLocalFloat(oResourceNode,"growrate") > 0.0)
+    {
+      fRefresh = GetLocalFloat(oResourceNode,"growrate");
+    }
+
     // A simple check to see if the blocker for harvesting is up or not on the resource node
     if(nBlocker == 1)
     {
-      SendMessageToPC(oPC,"*Cannot harvest this resource till timer is up*");
+      SendMessageToPC(oPC,"*Cannot harvest this resource for " + IntToString(FloatToInt(fRefresh)-nCooldownTime) + " seconds*");
       return;
     }
 
@@ -170,6 +191,8 @@ void RefreshingNode(object oPC, string sResource, object oResourceNode, int nRan
 
    SetLocalInt(oResourceNode,"blocker",1);
    DelayCommand(fRefresh,DeleteLocalInt(oResourceNode,"blocker"));
+   SetLocalInt(oResourceNode,"PreviousHarvestTime",GetRunTimeInSeconds());
+   DelayCommand(fRefresh,DeleteLocalInt(oResourceNode,"PreviousHarvestTime"));
 
 }
 

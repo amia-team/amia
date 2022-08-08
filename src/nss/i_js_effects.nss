@@ -8,7 +8,7 @@
 
     Changes:
 
-    8/7/2022 Lord Jyssev - Moved scripts for Artificer storage items and tailor Backpack, Quiver, and Scabbards into js_effects
+    8/8/2022 Lord Jyssev - Moved scripts for Artificer storage items and made them moduler. Also moved Tailor backpack, quiver, and scabbards into js_effects
 
 */
 
@@ -23,8 +23,8 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
 void CreateZombie(object oPC, object oWidget, location lTarget);
 void CreateGolem(object oPC, object oWidget, location lTarget);
 void CreateDemon(object oPC, object oWidget, location lTarget);
-void StoreItem(object oPC, object oWidget, object oTarget, int nCapacity, int nItemCount, string sContainerType);
-void RetrieveItem(object oPC, object oWidget);
+void StoreItem(object oPC, object oWidget, object oTarget, int nCapacity, string sContainerType);
+void RetrieveItem(object oPC, object oWidget, int nItemCount, int nBatch);
 
 // On Attacked for Soldier Combat Dummy
 void CombatDummy(object oPC, object oDummy);
@@ -517,82 +517,97 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
          SetCreatureWingType( nBackpack, oPC );
      }
    }
-   /*
-   else if(sItemResRef == "js_arca_gmpo") //Artificer gem bag
-     {
-         string sResRef = GetDescription( oWidget, FALSE, FALSE );
-         string sTarget = GetResRef( oTarget );
-         int nCharges   = StringToInt( GetSubString( GetDescription( oWidget ), 16, 6 ) );
-         string sName   = GetName( oTarget );
-
-         if ( GetStringLeft( sResRef, 9 ) != "nw_it_gem" ){
-
-             SetDescription( oWidget, sTarget, FALSE );
-
-             sResRef = sTarget;
-
-             string sPouch = "";
-
-             if ( sName == "Ruby" )
-             {
-                 sPouch = "Pouch filled with Rubies";
-             }
-             else if ( sName == "Topaz" )
-             {
-                 sPouch = "Pouch filled with Topazes";
-             }
-             else
-             {
-                 sPouch = "Pouch filled with "+sName+"s";
-             }
-
-             SendMessageToPC( oPC, CLR_ORANGE+"Dedicating your gem pouch to "+sName+"." );
-
-             SetName( oPouch, CLR_ORANGE+sPouch+CLR_END );
-      }*/
-   else if(sItemResRef == "js_arca_mytu")
+   /*else if(sItemResRef == "js_arca_gmpo")//Artificer Gem Pouch
    {
       string sResRef = GetDescription( oWidget, FALSE, FALSE );
       string sTarget = GetResRef( oTarget );
-      int nCapacity = 50;
+      string sContainerType = "Pouch";
+      int nCapacity = 1000;
       int nItemCount = GetLocalInt(oWidget, "ItemCount");
+      int nBatch = 10;
 
-      if ( ( sTarget == "mythal1" || sTarget == "mythal2" || sTarget == "mythal3" || sTarget == "mythal4" || sTarget == "mythal5" || sTarget == "mythal6" || sTarget == "mythal7" )
-          && GetObjectType( oTarget ) == OBJECT_TYPE_ITEM )
+      if ( ( GetStringLeft( sTarget, 9 ) == "nw_it_gem" && GetObjectType( oTarget ) == OBJECT_TYPE_ITEM )
       {
-         StoreItem(oPC, oWidget, oTarget, nCapacity, nItemCount, "Tube");
+         StoreItem(oPC, oWidget, oTarget, nCapacity, sContainerType);
       }
       else if ( GetHasInventory( oTarget ) && GetObjectType( oTarget ) == OBJECT_TYPE_ITEM ) //Get items from a targeted container
       {
           if ( nItemCount == 0 )
           {
-              SendMessageToPC( oPC, /*CLR_RED+*/"You need to dedicate this tube to a mythal type before you can use it on a container." );
+              SendMessageToPC( oPC, "<cþ  >You need to dedicate this "+ GetStringLowerCase(sContainerType) +" to an item type before you can use it on a container.</c>" );
               return;
           }
 
           object oInContainer = GetFirstItemInInventory( oTarget );
+          string sStoredItem = GetLocalString(oWidget, "StoredItem");
 
-          while ( GetIsObjectValid( oInContainer ) == TRUE )
+          while (GetIsObjectValid( oInContainer ) == TRUE)
           {
-              sTarget = GetResRef( oInContainer );
+              sTarget = GetResRef(oInContainer);
 
-              if ( sTarget == "mythal1" || sTarget == "mythal2" || sTarget == "mythal3" || sTarget == "mythal4" || sTarget == "mythal5" || sTarget == "mythal6" || sTarget == "mythal7" )
+              if (sTarget == sStoredItem)
               {
-                  StoreItem(oPC, oWidget, oTarget, nCapacity, nItemCount, "Tube");
+                  StoreItem(oPC, oWidget, oInContainer, nCapacity, sContainerType);
               }
 
               oInContainer = GetNextItemInInventory( oTarget );
           }
       }
-
       else if ( oTarget == oPC )
       {
-          RetrieveItem(oPC, oWidget);
+          RetrieveItem(oPC, oWidget, nItemCount, nBatch);
       }
       else
       {
           //invalid target
-          SendMessageToPC( oPC, /*CLR_RED+*/"This is not a valid target for this container. You can use it on yourself, mythals, or storage containers." );
+          SendMessageToPC( oPC, "<cþ  >This is not a valid target for this container. You can use it on yourself, mythals, or storage containers.</c>" );
+      }
+   } */
+   else if(sItemResRef == "js_arca_mytu")//Artificer Mythal Tube
+   {
+      string sResRef = GetDescription( oWidget, FALSE, FALSE );
+      string sTarget = GetResRef( oTarget );
+      string sContainerType = "Tube";
+      int nCapacity = 50;
+      int nItemCount = GetLocalInt(oWidget, "ItemCount");
+      int nBatch = 1;
+
+      if ( ( sTarget == "mythal1" || sTarget == "mythal2" || sTarget == "mythal3" || sTarget == "mythal4" || sTarget == "mythal5" || sTarget == "mythal6" || sTarget == "mythal7" )
+          && GetObjectType( oTarget ) == OBJECT_TYPE_ITEM )
+      {
+         StoreItem(oPC, oWidget, oTarget, nCapacity, sContainerType);
+      }
+      else if ( GetHasInventory( oTarget ) && GetObjectType( oTarget ) == OBJECT_TYPE_ITEM ) //Get items from a targeted container
+      {
+          if ( nItemCount == 0 )
+          {
+              SendMessageToPC( oPC, "<cþ  >You need to dedicate this "+ GetStringLowerCase(sContainerType) +" to an item type before you can use it on a container.</c>" );
+              return;
+          }
+
+          object oInContainer = GetFirstItemInInventory( oTarget );
+          string sStoredItem = GetLocalString(oWidget, "StoredItem");
+
+          while (GetIsObjectValid( oInContainer ) == TRUE)
+          {
+              sTarget = GetResRef(oInContainer);
+
+              if (sTarget == sStoredItem)
+              {
+                  StoreItem(oPC, oWidget, oInContainer, nCapacity, sContainerType);
+              }
+
+              oInContainer = GetNextItemInInventory( oTarget );
+          }
+      }
+      else if ( oTarget == oPC )
+      {
+          RetrieveItem(oPC, oWidget, nItemCount, nBatch);
+      }
+      else
+      {
+          //invalid target
+          SendMessageToPC( oPC, "<cþ  >This is not a valid target for this container. You can use it on yourself, mythals, or storage containers.</c>" );
       }
    }
 
@@ -893,45 +908,76 @@ void CreateDemon(object oPC, object oWidget, location lTarget)
 
 }
 
-void StoreItem(object oPC, object oWidget, object oTarget, int nCapacity, int nItemCount, string sContainerType)
+void StoreItem(object oPC, object oWidget, object oTarget, int nCapacity, string sContainerType)
 {
-   string sDescription = GetDescription( oWidget, TRUE );
-   string sTarget = GetResRef( oTarget );
-   string sName   = GetName( oTarget, TRUE );
+   string sDescription = GetDescription(oWidget, TRUE);
+   string sTarget = GetResRef(oTarget);
+   string sName   = GetName(oTarget, TRUE);
+   int nItemCount = GetLocalInt(oWidget, "ItemCount");
 
-   if ( GetLocalInt(oWidget, "ItemCount") == 0 )
+   if(GetLocalInt(oWidget, "ItemCount") == 0)
    {
-      string sBox = sName+" "+sContainerType;
+      string sBox = "<c~Îë>"+ sName +" "+ sContainerType +"</c>";
 
-      SendMessageToPC( oPC, "Dedicating your "+ GetStringLowerCase(sContainerType) +" to "+sName+"." );
-      SetName( oWidget, sBox );
+      SendMessageToPC(oPC, "Dedicating your "+ GetStringLowerCase(sContainerType) +" to "+sName+".");
+      SetName(oWidget, sBox);
       SetLocalString(oWidget, "StoredItem", sTarget);
    }
-
-   if ( sTarget != GetLocalString(oWidget, "StoredItem") )
+   else if(sTarget != GetLocalString(oWidget, "StoredItem"))
    {
-      SendMessageToPC( oPC, "You cannot store "+sName+" in this bag." );
+      SendMessageToPC(oPC, "<cþ  >You cannot store "+sName+" in this "+ GetStringLowerCase(sContainerType) +".</c>");
       return;
    }
+   SendMessageToPC(oPC, "Debug: Local Int ItemCount="+ IntToString(GetLocalInt(oWidget, "ItemCount"))); ///
+   SendMessageToPC(oPC, "Debug: sTarget="+ sTarget +" nItemCount="+ IntToString(nItemCount));      ///
 
-   int nNewItemCount = nItemCount + GetNumStackedItems( oTarget );
+   int nNewItemCount = nItemCount + GetNumStackedItems(oTarget);
 
-   if ( nNewItemCount > nCapacity )
+   SendMessageToPC(oPC, "Debug: nItemCount="+ IntToString(nItemCount) +" nNewItemCount ="+ IntToString(nNewItemCount));   ///
+
+   if (nNewItemCount > nCapacity)
    {
-      SendMessageToPC( oPC, "You cannot store more than " + IntToString(nCapacity) + " " + sName +" in this "+ GetStringLowerCase(sContainerType) +"." );
+      SendMessageToPC( oPC, "<cþ  >You cannot store more than " + IntToString(nCapacity) + " items in this "+ GetStringLowerCase(sContainerType) +".</c>" );
       return;
    }
 
    SendMessageToPC( oPC, "Storing "+sName );
 
-   SetDescription( oWidget, "Number of stored items: "+IntToString(nNewItemCount));
+   SetDescription( oWidget, "Number of stored items: "+IntToString(nNewItemCount) +"\n\n"+sDescription);
    SetLocalInt(oWidget, "ItemCount", nNewItemCount);
+
+   SendMessageToPC(oPC, "Debug: Local Int ItemCount="+ IntToString(GetLocalInt(oWidget, "ItemCount")));  ///
 
    DestroyObject( oTarget, 1.0 );
 }
 
-void RetrieveItem(object oPC, object oWidget)
+void RetrieveItem(object oPC, object oWidget, int nItemCount, int nBatch)
 {
    string sStoredResRef = GetLocalString(oWidget, "StoredItem");
-   CreateItemOnObject(sStoredResRef, oPC);
+   string sDescription = GetDescription(oWidget, TRUE);
+   int nNewItemCount;
+
+   if(nItemCount > 1)
+   {
+      nNewItemCount = nItemCount - 1;
+   }
+   else if (nItemCount == 1)
+   {
+      string sNameReset = GetName(oWidget, TRUE);
+
+      SetName(oWidget, sNameReset);
+      DeleteLocalString(oWidget, "StoredItem");
+      DeleteLocalInt(oWidget, "ItemCount");
+      SetDescription(oWidget, sDescription);
+   }
+   else
+   {
+      SendMessageToPC(oPC, "<cþ  >This storage item is empty.</c>");
+      return;
+   }
+
+   SetLocalInt(oWidget, "ItemCount", nNewItemCount);
+   SetDescription( oWidget, "Number of stored items: "+IntToString(nNewItemCount) +"\n\n"+sDescription);
+
+   CreateItemOnObject(sStoredResRef, oPC, nBatch);
 }

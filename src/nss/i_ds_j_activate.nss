@@ -1406,11 +1406,28 @@ void ds_j_Spawner( object oPC, object oItem, object oTarget, location lTarget ){
             SetLocalObject( oPC, "ds_j_plc", oPLC );
         }
     }
+    else if ( sName != " Portable Shop" ){
+
+        oPLC = GetLocalObject( oPC, "ds_j_plc" );
+
+        if ( GetIsObjectValid( oPLC ) ){
+
+            DestroyObject( oPLC );
+
+            DeleteLocalObject( oPC, "ds_j_plc" );
+        }
+        else{
+
+            oPLC = CreateObject( OBJECT_TYPE_PLACEABLE, sResRef, lTarget );
+
+            SetLocalObject( oPC, "ds_j_plc", oPLC );
+        }
+    }
     else if ( GetObjectType( oTarget ) == OBJECT_TYPE_PLACEABLE ){
 
         SetDescription( oItem, GetResRef( oTarget ), FALSE );
 
-        SetName( oItem, "Job System: "+GetName( oTarget ) );
+        SetName( oItem, GetName( oTarget ) );
     }
 }
 

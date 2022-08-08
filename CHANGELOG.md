@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Added Discord webhook for guarded areas, PvP involving players and their associates only
 - Added DM area for Pinkham
+- Added new item for portable shops, named it " Portable Shop" - smaller and lighter than Job System Converter item
 
 ### Changed
 - Added code to refund an Underwater Enchantment if used on the wrong target
@@ -28,6 +29,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed ban-block from Frontier's Rest banner in Travel Agency, since it leads outside the gates now
 - Created new 1x1 versions of Tailor backpack, quiver, and scabbards and Artificer storage items
 - Created a modular storage/retrieval script for Artificer storage items and included it into js_effects for consistency
+- Changed the names of some of the Underdark quests so they have spaces and punctuation
+- Edited ds_j_activate to acknowledge the new " Portable Shop" item
 
 
 ### Fixed

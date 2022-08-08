@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased] - 
 
 ### Added
+- Added Discord webhook for guarded areas, PvP involving players and their associates only
+- Added DM area for Pinkham
 
 ### Changed
 - Added code to refund an Underwater Enchantment if used on the wrong target
@@ -15,11 +17,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added many of the redone JS items to merchants for ease of testing
 - Added a warp between the Dev area and the Job System testing room
 - Added a cooldown message in seconds to the job journal spawned resources and every base resource
+- Added drow to ban list in Cetha areas
+- Drow mechanically blocked by racial gates in Cetha areas
+- Created new key to bypass racial gate in Cetha
+- Moved Cart to The Dale outside the gates in Frontier's Rest
+- Removed portal to L'Obsul from W&S Portal Room
+- Detached portal to W&S from L'Obsul
+- Added some lights to the Travel Agency for starting locations
+- Added Obsidian Isle banner to Travel Agency
+- Removed ban-block from Frontier's Rest banner in Travel Agency, since it leads outside the gates now
 
 
 ### Fixed
 - Fixed Bendir Dale's Hinn Inn sign
 - Fixes to various Job System QoL items
+- Fixes to UD quests: Handur's Shield, Pucor's Pick
+- Test Server has a version of Frontier's Rest without racial gates
 
 
 ## [2.2.5] - 2022-07-28

@@ -26,6 +26,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added some lights to the Travel Agency for starting locations
 - Added Obsidian Isle banner to Travel Agency
 - Removed ban-block from Frontier's Rest banner in Travel Agency, since it leads outside the gates now
+- Created new 1x1 versions of Tailor backpack, quiver, and scabbards and Artificer storage items
+- Created a modular storage/retrieval script for Artificer storage items and included it into js_effects for consistency
 
 
 ### Fixed

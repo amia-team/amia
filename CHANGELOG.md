@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added Discord webhook for guarded areas, PvP involving players and their associates only
 - Added DM area for Pinkham
 - Added new item for portable shops, named it " Portable Shop" - smaller and lighter than Job System Converter item
+- Added a job item refresher that converts old job items to new size/appearances
 
 ### Changed
 - Added code to refund an Underwater Enchantment if used on the wrong target

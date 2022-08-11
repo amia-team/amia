@@ -38,6 +38,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixes to various Job System QoL items
 - Fixes to UD quests: Handur's Shield, Pucor's Pick
 - Test Server has a version of Frontier's Rest without racial gates
+- A Chef recipe has been fixed in the conversation
+- Added Game Meat to the conversation to spawn hunter traps so that it's clear you have a chance of either fur/hide/meat
 
 
 ## [2.2.5] - 2022-07-28

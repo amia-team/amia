@@ -525,7 +525,7 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
       int nItemCount = GetLocalInt(oWidget, "ItemCount");
       int nBatch = 20;
 
-      if ( ( GetStringLeft( sTarget, 12 ) == "NW_IT_MEDKIT" ) && GetObjectType( oTarget ) == OBJECT_TYPE_ITEM  )
+      if ( ( GetSubString(sItemResRef, 0, 12) == "NW_IT_MEDKIT" ) && GetObjectType( oTarget ) == OBJECT_TYPE_ITEM  )
       {
          StoreItem(oPC, oWidget, oTarget, nCapacity, sContainerType);
       }
@@ -552,13 +552,9 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
               oInContainer = GetNextItemInInventory( oTarget );
           }
       }
-      else if ( oTarget == OBJECT_SELF )
-      {
-          RetrieveItem(oPC, oWidget, nItemCount, nBatch);
-      }
       else if ( oTarget == oPC )
       {
-          SendMessageToPC( oPC, "((Healing Script would go here))" );
+          RetrieveItem(oPC, oWidget, nItemCount, nBatch);
       }
       else
       {
@@ -1122,12 +1118,8 @@ void StoreItem(object oPC, object oWidget, object oTarget, int nCapacity, string
       SendMessageToPC(oPC, "<cþ  >You cannot store "+sName+" in this "+ GetStringLowerCase(sContainerType) +".</c>");
       return;
    }
-   SendMessageToPC(oPC, "Debug: Local Int ItemCount="+ IntToString(GetLocalInt(oWidget, "ItemCount"))); ///
-   SendMessageToPC(oPC, "Debug: sTarget="+ sTarget +" nItemCount="+ IntToString(nItemCount));      ///
 
    int nNewItemCount = nItemCount + GetNumStackedItems(oTarget);
-
-   SendMessageToPC(oPC, "Debug: nItemCount="+ IntToString(nItemCount) +" nNewItemCount ="+ IntToString(nNewItemCount));   ///
 
    if (nNewItemCount > nCapacity)
    {
@@ -1139,8 +1131,6 @@ void StoreItem(object oPC, object oWidget, object oTarget, int nCapacity, string
 
    SetDescription( oWidget, "Number of stored items: "+IntToString(nNewItemCount) +"\n\n"+sDescription);
    SetLocalInt(oWidget, "ItemCount", nNewItemCount);
-
-   SendMessageToPC(oPC, "Debug: Local Int ItemCount="+ IntToString(GetLocalInt(oWidget, "ItemCount")));  ///
 
    DestroyObject( oTarget, 1.0 );
 }

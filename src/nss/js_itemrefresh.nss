@@ -7,25 +7,32 @@
 
 */
 
-#include "x2_inc_switches"
-#include "inc_ds_records"
-#include "x0_i0_campaign"
-#include "inc_td_itemprop"
+//#include "x2_inc_switches"
+//#include "inc_ds_records"
+//#include "x0_i0_campaign"
+//#include "inc_td_itemprop"
 
 
 void main()
 {
     object oInContainer = GetFirstItemInInventory( OBJECT_SELF );
     object oPC          = GetLastClosedBy();
+    object oRefreshedItem;
     string sItemResRef;
-
-    SetLockKeyRequired(OBJECT_SELF, TRUE);
+    string sName;
+    string sMaterial;
+    string sType;
+    string sWeaponResRef;
+    int nWeaponMaterial;
+    int nArmorMaterial;
+    int nStackSize;
+    int nRefreshedItem;
 
     while (GetIsObjectValid( oInContainer ) == TRUE)
     {
         sItemResRef     = GetResRef(oInContainer);
 
-        // Disallow job items that allow properties/mythal crafting
+        // Disallow equipable job items that allow properties/mythal crafting
         if(GetSubString(sItemResRef, 0, 3) == "js_" &&
                        ( sItemResRef != "js_arch_adbt"
                       || sItemResRef != "js_arch_irbt"
@@ -52,16 +59,15 @@ void main()
                       || sItemResRef != "js_bla_grea"
                       || sItemResRef != "js_bla_brac" ))
         {
-            //Grab all the necessary details, including Name, Description, and variables
-            string sName              = GetName(oInContainer);
-            //string sDescription       = GetDescription(oInContainer);
-            string sMaterial          = GetLocalString(oInContainer, "material");
-            string sType              = GetLocalString(oInContainer, "plc");
-            string sWeaponResRef      = GetLocalString(oInContainer, "weapon");
-            int nWeaponMaterial       = GetLocalInt(oInContainer, "material");
-            int nArmorMaterial        = GetLocalInt(oInContainer, "armormaterial");
-            int nStackSize            = GetNumStackedItems(oInContainer);
-            int nRefreshedItem        = GetLocalInt(oInContainer, "RefreshedItem");
+            //Grab all the necessary details, including name and associated variables
+            sName              = GetName(oInContainer);
+            sMaterial          = GetLocalString(oInContainer, "material");
+            sType              = GetLocalString(oInContainer, "plc");
+            sWeaponResRef      = GetLocalString(oInContainer, "weapon");
+            nWeaponMaterial    = GetLocalInt(oInContainer, "material");
+            nArmorMaterial     = GetLocalInt(oInContainer, "armormaterial");
+            nStackSize         = GetNumStackedItems(oInContainer);
+            nRefreshedItem     = GetLocalInt(oInContainer, "RefreshedItem");
 
             SendMessageToPC(oPC, "sName = "+sName);                                    ///
             SendMessageToPC(oPC, "sMaterial = "+sMaterial);                            ///
@@ -71,20 +77,21 @@ void main()
             SendMessageToPC(oPC, "nArmorMaterial = "+IntToString(nArmorMaterial));     ///
             SendMessageToPC(oPC, "nRefreshedItem = "+IntToString(nRefreshedItem));     ///
 
-            //Delete the item and recreate
-            DestroyObject( oInContainer, 0.1 );
-            object oRefreshedItem = CreateItemOnObject(sItemResRef, OBJECT_SELF, nStackSize);
+            //Recreate the item
+            oRefreshedItem = CreateItemOnObject(sItemResRef, OBJECT_SELF, nStackSize);
 
             SetName(oRefreshedItem, sName);
-            //SetDescription(oRefreshedItem, sDescription);
 
             //Check if variables aren't null and set them on the new item
             if(sMaterial != "")         { SetLocalString(oRefreshedItem, "material", sMaterial); }
-            if(sMaterial != "")      { SetLocalString(oRefreshedItem, "plc", sType); }
+            if(sType != "")             { SetLocalString(oRefreshedItem, "plc", sType); }
             if(sWeaponResRef != "")     { SetLocalString(oRefreshedItem, "weapon", sWeaponResRef); }
             if(nWeaponMaterial != 0)    { SetLocalInt(oRefreshedItem, "material", nWeaponMaterial); }
             if(nArmorMaterial != 0)     { SetLocalInt(oRefreshedItem, "armormaterial", nArmorMaterial); }
             if(nRefreshedItem != 0)     { SetLocalInt(oRefreshedItem, "RefreshedItem", 1); }
+
+            //Delete the old item
+            DestroyObject( oInContainer, 0.1 );
         }
 
         if(GetLocalInt(GetNextItemInInventory( OBJECT_SELF ), "RefreshedItem") != 1)
@@ -97,5 +104,4 @@ void main()
         }
     }
 
-    SetLockKeyRequired(OBJECT_SELF, FALSE);
 }

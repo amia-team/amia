@@ -525,7 +525,7 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
       int nItemCount = GetLocalInt(oWidget, "ItemCount");
       int nBatch = 20;
 
-      if ( ( GetSubString(sItemResRef, 0, 12) == "NW_IT_MEDKIT" ) && GetObjectType( oTarget ) == OBJECT_TYPE_ITEM  )
+      if ( ( GetSubString(sTarget, 0, 12) == "nw_it_medkit" ) && GetObjectType( oTarget ) == OBJECT_TYPE_ITEM  )
       {
          StoreItem(oPC, oWidget, oTarget, nCapacity, sContainerType);
       }

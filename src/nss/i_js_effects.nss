@@ -758,7 +758,7 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
    else if(sItemResRef == "js_arca_wdca")//Artificer Wand Case
    {
       string sTarget = GetResRef( oTarget );
-      string sContainerType = "Tube";
+      string sContainerType = "Case";
       int nCapacity = 50;
       int nItemCount = GetLocalInt(oWidget, "ItemCount");
       int nBatch = 1;
@@ -797,7 +797,7 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
       else
       {
           //invalid target
-          SendMessageToPC( oPC, "<cþ  >This is not a valid target for this container. You can use it on yourself, wands, or storage containers.</c>" );
+          SendMessageToPC( oPC, "<cþ  >This is not a valid target for this container. You can use it on yourself, bone wands, or storage containers.</c>" );
       }
    }
 

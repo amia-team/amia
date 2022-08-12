@@ -10,7 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added Discord webhook for guarded areas, PvP involving players and their associates only
 - Added DM area for Pinkham
 - Added new item for portable shops, named it " Portable Shop" - smaller and lighter than Job System Converter item
-- Added a job item refresher that converts old job items to new size/appearances
+- Added plot monsters for BagOfFelt
+- Added a Job Item Refresher to the Character Maintenance area that converts old job items to new size/appearance/description
 
 ### Changed
 - Added code to refund an Underwater Enchantment if used on the wrong target
@@ -32,6 +33,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Created a modular storage/retrieval script for Artificer storage items and included it into js_effects for consistency
 - Changed the names of some of the Underdark quests so they have spaces and punctuation
 - Edited ds_j_activate to acknowledge the new " Portable Shop" item
+- Plot updates to Kohlingen: Construction Site
 
 
 ### Fixed

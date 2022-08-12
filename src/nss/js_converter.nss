@@ -271,12 +271,12 @@ void ArtificerConverter(object oPC, object oBench, int nNode)
     switch(nNode)
     {
 
-      case 1: sProduct = "ds_j_mythalbox"; sIngredient1 = "js_bla_miin"; sIngredient2 = "js_jew_crys"; nCost = 5000; break;
-      case 2: sProduct = "ds_j_bandagebag"; sIngredient1 = "js_bui_shpl"; sIngredient2 = "js_bla_miin"; nCost = 5000; break;
-      case 3: sProduct = "ds_j_wandcase"; sIngredient1 = "js_bla_siin"; sIngredient2 = "js_bui_shpl"; nCost = 5000; break;
+      case 1: sProduct = "js_arca_mytu"; sIngredient1 = "js_bla_miin"; sIngredient2 = "js_jew_crys"; nCost = 5000; break;
+      case 2: sProduct = "js_arca_bdbg"; sIngredient1 = "js_bui_shpl"; sIngredient2 = "js_bla_miin"; nCost = 5000; break;
+      case 3: sProduct = "js_arca_wdca"; sIngredient1 = "js_bla_siin"; sIngredient2 = "js_bui_shpl"; nCost = 5000; break;
       case 4: sProduct = "x2_it_cfm_bscrl"; sIngredient1 = "js_sch_pape"; sIngredient2 = "js_alch_pure"; nCost = 2000; break;
       case 5: sProduct = "x2_it_cfm_wand"; sIngredient1 = "js_gem_sivo"; sIngredient2 = "js_alch_coil"; nCost = 2000; break;
-      case 6: sProduct = "ds_j_scrollbox"; sIngredient1 = "js_lea_leat"; sIngredient2 = "js_bla_siin"; nCost = 5000; break;
+      case 6: sProduct = "js_arca_scbx"; sIngredient1 = "js_lea_leat"; sIngredient2 = "js_bla_siin"; nCost = 5000; break;
       case 7: sProduct = "js_arca_trca"; sIngredient1 = "js_bui_shpl"; sIngredient2 = "js_tai_bowo"; nCost = 5000; break;
       case 8: sProduct = "js_arca_ncry"; sIngredient1 = "js_jew_crys"; sIngredient2 = "none"; nCost = 2000; nStack = 1; break;
       case 9: sProduct = "js_arca_egc"; sIngredient1 = "js_bla_arfp"; sIngredient2 = "js_scho_anc"; nCost = 2000; break;
@@ -292,7 +292,7 @@ void ArtificerConverter(object oPC, object oBench, int nNode)
       case 19: sProduct = "js_arca_gol_g"; sIngredient1 = "js_arca_gol"; sIngredient2 = "jobsystemweapon"; nCost = 2000; break;
       case 20: sProduct = "js_arca_gol_c"; sIngredient1 = "js_arca_gol_g"; sIngredient2 = "js_arca_ecore"; nCost = 2000; nStack = 1; break;
       case 21: sProduct = "js_arca_gol_h"; sIngredient1 = "js_arca_gol_c"; sIngredient2 = "js_alch_elea"; nCost = 5000; nStack = 1; break;
-      case 22: sProduct = "ds_j_gempouch"; sIngredient1 = "js_bla_miin"; sIngredient2 = "js_lea_leat"; nCost = 5000; break;
+      case 22: sProduct = "js_arca_gmpo"; sIngredient1 = "js_bla_miin"; sIngredient2 = "js_lea_leat"; nCost = 5000; break;
 
     }
 
@@ -1326,11 +1326,11 @@ void TailorConverter(object oPC, object oBench, int nNode)
       case 1: sProduct = "js_lea_leat"; sIngredient1 = "js_hun_hide"; sIngredient2 = "none"; nCost = 200; break;
       case 2: sProduct = "js_tai_arle"; sIngredient1 = "js_lea_leat"; sIngredient2 = "js_tai_boco"; sType = "armor"; sMaterial = "leather"; nCost = 2000; break;
       case 3: sProduct = "js_tai_arha"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_tai_boco"; sType = "armor"; sMaterial = "hide"; nCost = 2000; break;
-      case 4: sProduct = "ds_j_backpack"; sIngredient1 = "js_lea_leat"; sIngredient2 = "js_bla_irin"; nCost = 2000; break;
-      case 5: sProduct = "ds_j_quiver"; sIngredient1 = "js_lea_leat"; sIngredient2 = "js_bui_phpl"; nCost = 2000; break;
-      case 6: sProduct = "ds_j_scabbard"; sIngredient1 = "js_lea_leat"; sIngredient2 = "js_bla_siin"; nCost = 2000; break;
-      case 7: sProduct = "ds_j_scabbard_a"; sIngredient1 = "js_lea_leat"; sIngredient2 = "js_bla_siin"; nCost = 2000; break;
-      case 8: sProduct = "ds_j_scabbard_b"; sIngredient1 = "js_lea_leat"; sIngredient2 = "js_bla_siin"; nCost = 2000; break;
+      case 4: sProduct = "js_tai_bpack1"; sIngredient1 = "js_lea_leat"; sIngredient2 = "js_bla_irin"; nCost = 2000; break;
+      case 5: sProduct = "js_tai_quiver1"; sIngredient1 = "js_lea_leat"; sIngredient2 = "js_bui_phpl"; nCost = 2000; break;
+      case 6: sProduct = "js_tai_scbrd1"; sIngredient1 = "js_lea_leat"; sIngredient2 = "js_bla_siin"; nCost = 2000; break;
+      case 7: sProduct = "js_tai_scbrd2"; sIngredient1 = "js_lea_leat"; sIngredient2 = "js_bla_siin"; nCost = 2000; break;
+      case 8: sProduct = "js_tai_scbrd3"; sIngredient1 = "js_lea_leat"; sIngredient2 = "js_bla_siin"; nCost = 2000; break;
       case 9: sProduct = "js_tai_arcl"; sIngredient1 = "js_tai_brwo"; sIngredient2 = "none"; nCost = 2000; sType = "armor"; sMaterial = "rothewool"; break;
       case 10: sProduct = "js_tai_arcl"; sIngredient1 = "js_tai_boco"; sIngredient2 = "none"; nCost = 2000; sType = "armor"; sMaterial = "cotton"; break;
       case 11: sProduct = "js_tai_arcl"; sIngredient1 = "js_tai_bosi"; sIngredient2 = "none"; nCost = 2000; sType = "armor"; sMaterial = "silk"; break;

@@ -86,7 +86,6 @@ void main()
         if(GetLocalInt(GetNextItemInInventory( OBJECT_SELF ), "RefreshedItem") != 1)
         {
             oInContainer = GetNextItemInInventory( OBJECT_SELF );
-            SendMessageToPC(oPC, "Next Item");                                    ///
         }
         else
         {

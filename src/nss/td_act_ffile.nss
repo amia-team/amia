@@ -132,6 +132,12 @@ void main()
     int nTree   = GetLocalInt( oPC, "ds_tree");
     int nListLen = 0;
 
+	int nDisabled = TRUE;
+    if (nDisabled) {
+        SendMessageToPC(oPC,"Functionality Temporarily Disabled");
+        return;
+    }
+
     if(nTree<=0){
         // Conversation Node Display Vault
         if(nNode == 1){

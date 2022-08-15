@@ -53,6 +53,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - A Chef recipe has been fixed in the conversation
 - Added Game Meat to the conversation to spawn hunter traps so that it's clear you have a chance of either fur/hide/meat
 - Removed an old version of L'Obsul that was creating issues with area transitions
+- Corrected the inventory descriptions for armor to correctly show Amia's changes to maximum Dex modifier
+- Multiclass penalty removed
 
 
 ## [2.2.5] - 2022-07-28

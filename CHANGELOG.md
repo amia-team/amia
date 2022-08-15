@@ -4,7 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased] - 
+## [Unreleased] -
+
+### Added
+
+### Changed
+
+### Fixed
+
+
+## [2.2.6] - 2022-08-14
 
 ### Added
 - Added Discord webhook for guarded areas, PvP involving players and their associates only
@@ -43,6 +52,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Test Server has a version of Frontier's Rest without racial gates
 - A Chef recipe has been fixed in the conversation
 - Added Game Meat to the conversation to spawn hunter traps so that it's clear you have a chance of either fur/hide/meat
+- Removed an old version of L'Obsul that was creating issues with area transitions
 
 
 ## [2.2.5] - 2022-07-28

@@ -132,8 +132,8 @@ void main()
     int nTree   = GetLocalInt( oPC, "ds_tree");
     int nListLen = 0;
 
-	int nDisabled = TRUE;
-    if (nDisabled) {
+	int nDisabled = FALSE;
+    if (nDisabled == TRUE) {
         SendMessageToPC(oPC,"Functionality Temporarily Disabled");
         return;
     }

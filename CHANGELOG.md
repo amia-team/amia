@@ -9,8 +9,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Warlock's Word of Changing AB increase nerfed from +1 AB / 2 Warlock levels up to +10 AB max -> +1 AB / 4 Warlock levels up to +5 AB max. The reason is that the spell is intended to emulate a full BAB class and now it does that better. Also, there were some balance worries, as the AB bonus was hefty.
 
 ### Fixed
+[spoiler="A bunch of warlock fixes"]
+Spells:
+- Dark Foresight: Duration was incorrectly 1 round, fixed to scale for rounds per CL.
+- Caustic Mire: Targeting fixed only to target enemies/neutrals. Was giving too much fire vulnerability, fixed to 10%. Damage calculation fixed to 1d6 + cha mod up to 10.
+- Writhing Shadows: Wasn't capped for +10 cha mod damage, capped properly now.
+- Tenacious Plague: Wasn't capped for +10 cha mod damage, capped properly now. The damage die fixed from 1d12 to 2d6.
+- Chilling Tentacles: The paralyze effect wasn't working. Now it rolls the tentacles for 1d4 per round per target, respects NWN grapple rules (size matters!), and paralyzes for 1 round on a successful grapple against fortitude. The cold damage die fixed from 1d12 to 2d6.
+- Curse of Mire and Walk Unseen were flipped in code; they are working now, although casting Walk Unseen on a target other than yourself still makes yourself invisible, not the target. Dunno if this is intended. Probably not? Seems silly, right?
+
+Essences:
+- Capped Frightful essence fear effect from 10 to 2 rounds.
+- Binding, bewitching, and utterdark in-game descriptions updated, as they were incorrect.
+[/spoiler]
+- Divine Champion: DC levels were stacking for purposes of Divine Might and Divine Shield incorrectly; they no longer stack. Purge Infidel was a weapon property, which allowed for shifters and lycans to exploit it; this was reimplemented as a damage increase effect and the exploit is no longer possible.
+- Base armors: In-game base armor descriptions now match Amia's edits to Max Dex AC.
 
 
 ## [2.2.6] - 2022-08-14

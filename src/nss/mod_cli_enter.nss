@@ -30,6 +30,10 @@ int FindPreviousLevel( string sVar )
 }
 
 void main(){
+    int SAVE_LOCATION = FALSE;
+    int SAVE_LOCATION_SAFE_ONLY = FALSE;
+    string LOGOUT_LOCATION = "LOGOUT_LOCATION";
+
     object enteringPlayer = GetEnteringObject();
 
     if(GetIsPlayerBanned(GetPCPublicCDKey(enteringPlayer, TRUE)))
@@ -214,6 +218,15 @@ void main(){
 
     //Check DwD and AA prereq
     CheckPrereq( oPC );
+
+    if (SAVE_LOCATION == TRUE) {
+        //object oPCKey = GetPCKEY(oPC);
+        location logloc = GetLocalLocation(oPCKey, LOGOUT_LOCATION);
+        if (GetAreaFromLocation(logloc) != OBJECT_INVALID) {
+            DeleteLocalInt(oPC,LOGOUT_LOCATION);
+            AssignCommand(oPC,JumpToLocation(logloc));
+        }
+    }
 
     ExecuteScript("race_effects", enteringPlayer); //
     ExecuteScript("subrace_effects", enteringPlayer);

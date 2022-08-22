@@ -168,14 +168,14 @@ void CheckKeyStatus( object oPC ){
 
     /*
     options:
-        2 player has a(n unset) key, a journal, and 2000 XP: old player
-        2 player has a(n unset) key, a journal, and not 2000 XP: old player
-        3 player has a(n unset) key, no journal, and 2000 XP: error
-        3 player has a(n unset) key, no journal, and not 2000 XP: messed up rebuild
-        4 player has no key, a journal, and 2000 XP: old player
-        4 player has no key, a journal, and not 2000 XP: old player
-        1 player has no key, no journal, and 2000 XP: new player
-        3 player has no key, no journal, and not 2000 XP: messed up rebuild
+        2 player has a(n unset) key, a journal, and 4000 XP: old player
+        2 player has a(n unset) key, a journal, and not 4000 XP: old player
+        3 player has a(n unset) key, no journal, and 4000 XP: error
+        3 player has a(n unset) key, no journal, and not 4000 XP: messed up rebuild
+        4 player has no key, a journal, and 4000 XP: old player
+        4 player has no key, a journal, and not 4000 XP: old player
+        1 player has no key, no journal, and 4000 XP: new player
+        3 player has no key, no journal, and not 4000 XP: messed up rebuild
     */
 
     if ( GetIsObjectValid( oKey ) ){
@@ -191,13 +191,13 @@ void CheckKeyStatus( object oPC ){
 
                 //error
                 SetLocalInt( oPC, "ds_check_3", 1 );
-                SendMessageToAllDMs( "Access denied, "+GetName( oPC )+" has a key, no journal, and 2000 XP: messed up rebuild?" );
+                SendMessageToAllDMs( "Access denied, "+GetName( oPC )+" has a key, no journal, and 4000 XP: messed up rebuild?" );
             }
             else{
 
                 //error
                 SetLocalInt( oPC, "ds_check_3", 1 );
-                SendMessageToAllDMs( "Access denied, "+GetName( oPC )+" has a key, no journal, and not 2000 XP: messed up rebuild?" );
+                SendMessageToAllDMs( "Access denied, "+GetName( oPC )+" has a key, no journal, and not 4000 XP: messed up rebuild?" );
             }
         }
     }
@@ -219,7 +219,7 @@ void CheckKeyStatus( object oPC ){
 
                 //error
                 SetLocalInt( oPC, "ds_check_3", 1 );
-                SendMessageToAllDMs( "Access denied, "+GetName( oPC )+" has no key, no journal, and not 2000 XP: messed up rebuild?" );
+                SendMessageToAllDMs( "Access denied, "+GetName( oPC )+" has no key, no journal, and not 4000 XP: messed up rebuild?" );
             }
         }
     }

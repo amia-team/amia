@@ -3,6 +3,7 @@ Editted: Maverick00053 April 15 2019
 Custom Horse Widget for Rider class
 
 Edit: August 15th 2019 - Did a bug fix.
+~~
 */
 #include "x2_inc_switches"
 #include "inc_ds_records"

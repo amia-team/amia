@@ -187,11 +187,31 @@ void DS_CHECK_SET( object oPC, object oJobJournal, object oTargeted)
       SetLocalInt(oPC,"ds_check_16",1);
       SetLocalInt(oPC,"ds_check_17",1);
       SetLocalInt(oPC,"ds_check_11",1); // Price checking
+
+      if((GetResRef(oTargeted) == "js_chest_kit"))
+      {
+       SetLocalInt(oPC,"ds_check_18",1);
+      }
+
+      if((GetResRef(oTargeted) == "js_mini_merchest"))
+      {
+       SetLocalInt(oPC,"ds_check_19",1);
+      }
   }
   else if(sSecondaryJob == "Merchant")
   {
       SetLocalInt(oPC,"ds_check_16",1);
       SetLocalInt(oPC,"ds_check_11",1); // Price checking
+
+      if((GetResRef(oTargeted) == "js_chest_kit"))
+      {
+       SetLocalInt(oPC,"ds_check_18",1);
+      }
+
+      if((GetResRef(oTargeted) == "js_mini_merchest"))
+      {
+       SetLocalInt(oPC,"ds_check_19",1);
+      }
   }
 
   // Smith writing script - Lets them set the weapon/armor names
@@ -367,6 +387,8 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
      case 79: break; // Merchant script - LEAVE BLANK
      case 80: sResource = "js_hunt_tra2"; break; // Hunter's Meat Trap
      case 81: break; // Hunter script - LEAVE BLANK
+     case 82: break; // Merchant Chest Creation Script
+     case 83: break; // Merchant Chest Transfer Resource Script
    }
 
    // Farming/Planting
@@ -816,10 +838,92 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
       SendMessageToPC(oPC,"Only one chest is allowed out at a time");
     }
   }
+
+  if(nNode == 82) // Create Chest
+  {
+     if((GetResRef(oTargeted) == "js_chest_kit") && (GetGold(oPC) >= 10000))
+     {
+        CreateItemOnObject("js_mini_merchest",oPC);
+        SendMessageToPC(oPC,"Merchant Chest created!");
+     }
+     else if((GetResRef(oTargeted) == "js_chest_kit"))
+     {
+        SendMessageToPC(oPC,"Not enough gold! You require 10k!");
+     }
+     else
+     {
+        SendMessageToPC(oPC,"You must target a Merchant Chest Kit to complete it!");
+     }
+  }
+
+  if(nNode == 83) // Transfer Resources
+  {
+     if((GetResRef(oTargeted) == "js_mini_merchest"))
+     {
+       int nChestNumber = 1;
+       int nStoredAmount;
+       int nTransferAmount = StringToInt(GetLocalString(oPC,"setcustomtoken"));
+       int nMiniChestAmount = GetLocalInt(oTargeted,"storageboxcount");
+       string sStoredItem;
+       string sMiniChestStoredItem = GetLocalString(oTargeted,"storagebox");
+
+       if(nTransferAmount == 0)
+       {
+           SendMessageToPC(oPC, "Please enter a valid amount!");
+           DS_CLEAR_ALL(oPC);
+           return;
+       }
+
+       if(sMiniChestStoredItem == "")
+       {
+           SendMessageToPC(oPC, "You must set the Mini Chest to a resource type first!");
+           DS_CLEAR_ALL(oPC);
+           return;
+       }
+
+       while(nChestNumber < 31)
+       {
+         sStoredItem = GetLocalString(oJobJournal,"storagebox"+IntToString(nChestNumber));
+         nStoredAmount = GetLocalInt(oJobJournal,"storagebox"+IntToString(nChestNumber)+"amount");
+
+         if(nTransferAmount > nStoredAmount)
+         {
+           SendMessageToPC(oPC, "You cannot transfer more resources than are in your chest!");
+           DS_CLEAR_ALL(oPC);
+           return;
+         }
+
+         if(sStoredItem == sMiniChestStoredItem)
+         {
+           SetLocalInt(oJobJournal,"storagebox"+IntToString(nChestNumber)+"amount",nStoredAmount-nTransferAmount);
+           SetLocalInt(oTargeted,"storageboxcount",nMiniChestAmount+nTransferAmount);
+           SetDescription(oTargeted,"Item Count Stored: " + IntToString(nMiniChestAmount+nTransferAmount));
+           nChestNumber = 31;
+         }
+         nChestNumber++;
+       }
+
+       if(nChestNumber == 31)
+       {
+        SendMessageToPC(oPC,"Matching resources could not be found to transfer!");
+       }
+       else if(nChestNumber == 32)
+       {
+        SendMessageToPC(oPC,"Transfer complete!");
+       }
+
+     }
+     else
+     {
+        SendMessageToPC(oPC,"You need to target a mini merchant chest!");
+     }
+
+  }
   //
 
 
-   DS_CLEAR_ALL(oPC);
+  DS_CLEAR_ALL(oPC);
+
 
 }
 
@@ -845,6 +949,8 @@ void DS_CLEAR_ALL(object oPC)
    DeleteLocalInt(oPC,"ds_check_15");
    DeleteLocalInt(oPC,"ds_check_16");
    DeleteLocalInt(oPC,"ds_check_17");
+   DeleteLocalInt(oPC,"ds_check_18");
+   DeleteLocalInt(oPC,"ds_check_19");
 
 }
 
@@ -868,5 +974,7 @@ void DS_CLEAR_CHECK(object oPC)
    DeleteLocalInt(oPC,"ds_check_15");
    DeleteLocalInt(oPC,"ds_check_16");
    DeleteLocalInt(oPC,"ds_check_17");
+   DeleteLocalInt(oPC,"ds_check_18");
+   DeleteLocalInt(oPC,"ds_check_19");
 
 }

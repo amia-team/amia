@@ -28,8 +28,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Fix attempt against crashes
-[spoiler="A bunch of warlock fixes"]
-Spells:
+-[spoiler="A bunch of warlock fixes"]
+	-Spells:
 - Dark Foresight: Duration was incorrectly 1 round, fixed to scale for rounds per CL.
 - Caustic Mire: Targeting fixed only to target enemies/neutrals. Was giving too much fire vulnerability, fixed to 10%. Damage calculation fixed to 1d6 + cha mod up to 10.
 - Writhing Shadows: Wasn't capped for +10 cha mod damage, capped properly now.
@@ -40,7 +40,7 @@ Spells:
 Essences:
 - Capped Frightful essence fear effect from 10 to 2 rounds.
 - Binding, bewitching, and utterdark in-game descriptions updated, as they were incorrect.
-[/spoiler]
+-[/spoiler]-
 - Divine Champion: DC levels were stacking for purposes of Divine Might and Divine Shield incorrectly; they no longer stack. Purge Infidel was a weapon property, which allowed for shifters and lycans to exploit it; this was reimplemented as a damage increase effect and the exploit is no longer possible.
 - Base armors: In-game base armor descriptions now match Amia's edits to Max Dex AC.
 

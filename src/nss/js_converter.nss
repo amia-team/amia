@@ -424,6 +424,8 @@ void AlchemistConverter(object oPC, object oBench, int nNode)
       case 22: sProduct = "js_dryaddom"; sIngredient1 = "js_hun_dryad"; sIngredient2 = "js_alch_pure"; nCost = 3000; nProductStackSize = 10; break;
       case 23: sProduct = "js_grickcompound"; sIngredient1 = "js_hun_grick"; sIngredient2 = "js_alch_pure"; nCost = 3000;  nStack = 1; nProductStackSize = 10; break;
       case 24: sProduct = "js_hydracompound"; sIngredient1 = "js_hun_hydra"; sIngredient2 = "js_alch_pure"; nCost = 3000; break;
+      case 25: sProduct = "js_herb_sils"; sIngredient1 = "js_tree_shaw"; sIngredient2 = "js_chest_kit"; nCost = 5000; break;
+
 
 
      }

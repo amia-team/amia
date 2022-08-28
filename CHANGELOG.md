@@ -9,6 +9,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+
+### Fixed
+Cavelery custom bc summon fixed to no longer summon a hive queen instead of set mount
+
+## [2.2.8] - 2022-08-27
+
+### Added
+areas	
+	Winya Ravana: Temple of Corellon
+	Winya Ravana: Guard house
+New "red key" for winya's guard
+Variuos plot/upgrade additions to winya in general
+
+### Changed
 - Warlock's Word of Changing AB increase nerfed from +1 AB / 2 Warlock levels up to +10 AB max -> +1 AB / 4 Warlock levels up to +5 AB max. The reason is that the spell is intended to emulate a full BAB class and now it does that better. Also, there were some balance worries, as the AB bonus was hefty.
 - variuos winya updates, with the guard house being opend (though empty for now)
 
@@ -30,7 +44,7 @@ Essences:
 - Base armors: In-game base armor descriptions now match Amia's edits to Max Dex AC.
 
 
-## [2.2.6] - 2022-08-14
+## [
 
 ### Added
 - Added Discord webhook for guarded areas, PvP involving players and their associates only

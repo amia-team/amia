@@ -30,9 +30,9 @@ void main()
    && (horse != 45) && (horse != 47) && (horse != 48) && (horse != 55) && (horse != 58) && (horse != 60)
    && (horse != 61) && (horse != 68) && (horse != 308) && (horse != 309) && (horse != 67))
    {
-      if(horse == GetLocalInt(oWidget,"custom1"))
+      if(horse == GetLocalInt(oMountWidget,"custom1"))
       {
-        nAppearance = GetLocalInt(oWidget,"custom1BC");
+        nAppearance = GetLocalInt(oMountWidget,"custom1BC");
       }
       else if(horse == GetLocalInt(oWidget,"custom2"))
       {

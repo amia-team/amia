@@ -34,41 +34,41 @@ void main()
       {
         nAppearance = GetLocalInt(oMountWidget,"custom1BC");
       }
-      else if(horse == GetLocalInt(oWidget,"custom2"))
+      else if(horse == GetLocalInt(oMountWidget,"custom2"))
       {
-        nAppearance =  GetLocalInt(oWidget,"custom2BC");
+        nAppearance =  GetLocalInt(oMountWidget,"custom2BC");
       }
-      else if(horse == GetLocalInt(oWidget,"custom3"))
+      else if(horse == GetLocalInt(oMountWidget,"custom3"))
       {
-        nAppearance =  GetLocalInt(oWidget,"custom3BC");
+        nAppearance =  GetLocalInt(oMountWidget,"custom3BC");
       }
-      else if(horse == GetLocalInt(oWidget,"custom4"))
+      else if(horse == GetLocalInt(oMountWidget,"custom4"))
       {
-        nAppearance =  GetLocalInt(oWidget,"custom4BC");
+        nAppearance =  GetLocalInt(oMountWidget,"custom4BC");
       }
-      else if(horse == GetLocalInt(oWidget,"custom5"))
+      else if(horse == GetLocalInt(oMountWidget,"custom5"))
       {
-        nAppearance =  GetLocalInt(oWidget,"custom5BC");
+        nAppearance =  GetLocalInt(oMountWidget,"custom5BC");
       }
-      else if(horse == GetLocalInt(oWidget,"custom6"))
+      else if(horse == GetLocalInt(oMountWidget,"custom6"))
       {
-        nAppearance =  GetLocalInt(oWidget,"custom6BC");
+        nAppearance =  GetLocalInt(oMountWidget,"custom6BC");
       }
-      else if(horse == GetLocalInt(oWidget,"custom7"))
+      else if(horse == GetLocalInt(oMountWidget,"custom7"))
       {
-        nAppearance =  GetLocalInt(oWidget,"custom7BC");
+        nAppearance =  GetLocalInt(oMountWidget,"custom7BC");
       }
-      else if(horse == GetLocalInt(oWidget,"custom8"))
+      else if(horse == GetLocalInt(oMountWidget,"custom8"))
       {
-        nAppearance =  GetLocalInt(oWidget,"custom8BC");
+        nAppearance =  GetLocalInt(oMountWidget,"custom8BC");
       }
-      else if(horse == GetLocalInt(oWidget,"custom9"))
+      else if(horse == GetLocalInt(oMountWidget,"custom9"))
       {
-        nAppearance =  GetLocalInt(oWidget,"custom9BC");
+        nAppearance =  GetLocalInt(oMountWidget,"custom9BC");
       }
-      else if(horse == GetLocalInt(oWidget,"custom10"))
+      else if(horse == GetLocalInt(oMountWidget,"custom10"))
       {
-        nAppearance =  GetLocalInt(oWidget,"custom10BC");
+        nAppearance =  GetLocalInt(oMountWidget,"custom10BC");
       }
 
    }

@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - variuos winya updates, with the guard house being opend (though empty for now)
 
 ### Fixed
+- Fix attempt against crashes
 [spoiler="A bunch of warlock fixes"]
 Spells:
 - Dark Foresight: Duration was incorrectly 1 round, fixed to scale for rounds per CL.

@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - area
 	~ Underdark: L'Obsul
 		1. added quest to gain recall stone (3 npcs)
+	~ Skull Peaks: Glinulan's Hold, Caverns
+		1. added bash script to trap door
 
 ### Changed
 - Aesthetic holdables size changes (smallified for the hobbitses):

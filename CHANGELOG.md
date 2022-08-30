@@ -21,10 +21,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Path of Pain: Base self-damage changed to start at 5 from 20.
 - set new recall stone unatunned to accompeny new locations of gaining it. NOTE you need to attune it to a pylon now before it will work (instead of default wave portal room)
+- Renamed Underdark: L'Obsul, lower,  storehouse to Underdark: L'Obsul storehouse
+- removed Underdark: L'Obsul lower (old area)
 
 ### Fixed
 - Cavelery custom bc summon fixed to no longer summon a hive queen instead of set mount
 - Kingdome of cetha: trade hall , gave Furth back his head
+- Underdark: L'Obsul storehouse, fixed transition to go to proper/new location
+- Underdark: L'Obsul Hall of negotiations, fixed transition to go to proper/new location
 
 ## [2.2.8] - 2022-08-27
 

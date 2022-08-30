@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased] -
 
 ### Added
+- area
+	~ Underdark: L'Obsul
+		1. added quest to gain recall stone (3 npcs)
 
 ### Changed
 - Aesthetic holdables size changes (smallified for the hobbitses):
@@ -17,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [*]Custom Items (Pipe / Telescope): medium -> small[/list]
 
 - Path of Pain: Base self-damage changed to start at 5 from 20.
+- set new recall stone unatunned to accompeny new locations of gaining it. NOTE you need to attune it to a pylon now before it will work (instead of default wave portal room)
 
 ### Fixed
 - Cavelery custom bc summon fixed to no longer summon a hive queen instead of set mount

@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Aesthetic holdables size changes (smallified for the hobbitses):
+[list]Trumpet: medium -> small
+[*]Tools, pole (Shovel): medium -> small
+[*]Makeshift (Chair): medium -> small
+[*]Flower Vase (4 varities): medium -> small
+[*]Custom Items (Pipe / Telescope): medium -> small[/list]
+
+- Path of Pain: Base self-damage changed to start at 5 from 20.
 
 ### Fixed
 - Cavelery custom bc summon fixed to no longer summon a hive queen instead of set mount

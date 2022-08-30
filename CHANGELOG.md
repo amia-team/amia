@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Cavelery custom bc summon fixed to no longer summon a hive queen instead of set mount
+- Kingdome of cetha: trade hall , gave Furth back his head
 
 ## [2.2.8] - 2022-08-27
 

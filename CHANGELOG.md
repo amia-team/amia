@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		1. added quest to gain recall stone (3 npcs)
 	~ Skull Peaks: Glinulan's Hold, Caverns
 		1. added bash script to trap door
+- Added a job log reset NPC to the maintenance room that will reset one of your jobs once per month
 
 ### Changed
 - Aesthetic holdables size changes (smallified for the hobbitses):
@@ -31,6 +32,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Kingdome of cetha: trade hall , gave Furth back his head
 - Underdark: L'Obsul storehouse, fixed transition to go to proper/new location
 - Underdark: L'Obsul Hall of negotiations, fixed transition to go to proper/new location
+- Kingdom of Cetha: Skull Peaks, Indoors made chef trainer not undress
 
 ## [2.2.8] - 2022-08-27
 

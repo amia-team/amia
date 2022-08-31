@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Kingdome of cetha: trade hall , gave Furth back his head
 - Underdark: L'Obsul storehouse, fixed transition to go to proper/new location
 - Underdark: L'Obsul Hall of negotiations, fixed transition to go to proper/new location
+- Kingdom of Cetha: Skull Peaks, Indoors made chef trainer not undress
 
 ## [2.2.8] - 2022-08-27
 

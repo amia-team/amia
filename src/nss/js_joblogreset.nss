@@ -43,11 +43,6 @@ void main()
 
     string sAction                  = GetLocalString( oPC, "ds_action");
 
-    SendMessageToPC(oPC, "nCurrentTime="+IntToString(nCurrentTime));                               ///
-    SendMessageToPC(oPC, "nJobResetCooldown="+IntToString(nJobResetCooldown));                     ///
-    SendMessageToPC(oPC, "nCooldownTime="+IntToString(nCooldownTime));                             ///
-    SendMessageToPC(oPC, "nTimer="+IntToString(nTimer));                                           ///
-
     //Set custom token for the dialogue to tell how long of a cooldown remains
     if(nTimer <= 2629800 && nTimer > 86400)
     {
@@ -167,7 +162,7 @@ void ResetJob( object oPC, object oNPC, object oWidget, object oJobJournal, int 
       SetDescription( oJobJournal, "Primary Job:  / Secondary Job: "+sSecondaryJob+"\n \n"+sNameDetails+"\n"+sBioDetails1+"\n \n"+sBioDetails2+"\n"+sBioDetails3+"\n"+sBioDetails4);
       SetLocalInt(oWidget,"JobResetCooldown",GetRunTimeInSeconds());
       AssignCommand(oNPC, ActionSpeakString("Your primary job has been reset!", 0));
-      SendMessageToPC(oPC, "nJobResetCooldown="+IntToString(GetLocalInt(oWidget,"JobResetCooldown")));                     ///
+
     }
     else if(nNode == 2)    // Secondary job
     {
@@ -176,7 +171,7 @@ void ResetJob( object oPC, object oNPC, object oWidget, object oJobJournal, int 
       SetDescription(oJobJournal,"Primary Job: "+sPrimaryJob+" / Secondary Job: \n \n"+sNameDetails+"\n"+sBioDetails1+"\n \n"+sBioDetails2+"\n"+sBioDetails3+"\n"+sBioDetails4);
       SetLocalInt(oWidget,"JobResetCooldown",GetRunTimeInSeconds());
       AssignCommand(oNPC, ActionSpeakString("Your secondary job has been reset!", 0));
-      SendMessageToPC(oPC, "nJobResetCooldown="+IntToString(GetLocalInt(oWidget,"JobResetCooldown")));                     ///
+
     }
     else if(nNode == 3)    // Both jobs (note, this is not hooked up to a dialogue)
     {

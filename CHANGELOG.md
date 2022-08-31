@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		1. added quest to gain recall stone (3 npcs)
 	~ Skull Peaks: Glinulan's Hold, Caverns
 		1. added bash script to trap door
+- Added a job log reset NPC to the maintenance room that will reset one of your jobs once per month
 
 ### Changed
 - Aesthetic holdables size changes (smallified for the hobbitses):

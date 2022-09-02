@@ -18,11 +18,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - area
 	~ Underdark: L'Obsul
 		1. added quest to gain recall stone (3 npcs)
-	~ Skull Peaks: Glinulan's Hold, Caverns
-		1. added bash script to trap door
+	~ The Dale
+		1. towers/balistas
+		2. varius plot updates
+		3. recall pylon construction site
+	~ Underdark: Bloodspear Keep
+		Variuos plot updates to exterior and interior
 - Added a job log reset NPC to the maintenance room that will reset one of your jobs once per month
 - Created several base areas for Obsidian Isle wilderness
 - Added racial gates to Obsidian Isle
+- Underdark recall stone quest (start at recall pylon in lobsul)
 
 ### Changed
 - Aesthetic holdables size changes (smallified for the hobbitses):
@@ -38,6 +43,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - removed Underdark: L'Obsul lower (old area)
 - Added links to Obsidian Isle Workshop, Smithy, and Inn
 - Construction sites for beacon towers to Whiteshore, Cystana, and Blue Lagoon
+- Skull Peaks: Glinulan's Hold, Caverns,  added bash script to trap door
 
 - Grand QoL change for unlimited usage on widgets (many "new" widget with no major mechanical benefit will now be set to unlimited usage instead of 4/day) one's changed so far)
 	- Alter self 

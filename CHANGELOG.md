@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	~ Skull Peaks: Glinulan's Hold, Caverns
 		1. added bash script to trap door
 - Added a job log reset NPC to the maintenance room that will reset one of your jobs once per month
+- Created several base areas for Obsidian Isle wilderness
+- Added racial gates to Obsidian Isle
 
 ### Changed
 - Aesthetic holdables size changes (smallified for the hobbitses):
@@ -26,6 +28,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - set new recall stone unatunned to accompeny new locations of gaining it. NOTE you need to attune it to a pylon now before it will work (instead of default wave portal room)
 - Renamed Underdark: L'Obsul, lower,  storehouse to Underdark: L'Obsul storehouse
 - removed Underdark: L'Obsul lower (old area)
+- Added links to Obsidian Isle Workshop, Smithy, and Inn
+- Construction sites for beacon towers to Whiteshore, Cystana, and Blue Lagoon
 
 ### Fixed
 - Cavelery custom bc summon fixed to no longer summon a hive queen instead of set mount

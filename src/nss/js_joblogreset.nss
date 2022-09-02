@@ -139,6 +139,11 @@ void DS_CHECK_SET( object oPC, object oJobJournal, string sPrimaryJob, string sS
         SetLocalInt(oPC,"ds_check_4",1);
     }
 
+    if(sSecondaryJob != "" && sPrimaryJob != "")
+    {
+        SetLocalInt(oPC,"ds_check_5",1);
+    }
+
 }
 
 void LaunchConvo( object oNPC, object oPC )
@@ -173,7 +178,7 @@ void ResetJob( object oPC, object oNPC, object oWidget, object oJobJournal, int 
       AssignCommand(oNPC, ActionSpeakString("Your secondary job has been reset!", 0));
 
     }
-    else if(nNode == 3)    // Both jobs (note, this is not hooked up to a dialogue)
+    else if(nNode == 3)    // Both jobs
     {
 
       DeleteLocalString( oJobJournal, "primaryjob");

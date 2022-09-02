@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased] -
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [2.2.9] - 2022-09-02] 
+
+### Added
 - area
 	~ Underdark: L'Obsul
 		1. added quest to gain recall stone (3 npcs)
@@ -18,11 +26,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Aesthetic holdables size changes (smallified for the hobbitses):
-[list]Trumpet: medium -> small
-[*]Tools, pole (Shovel): medium -> small
-[*]Makeshift (Chair): medium -> small
-[*]Flower Vase (4 varities): medium -> small
-[*]Custom Items (Pipe / Telescope): medium -> small[/list]
+	- Trumpet: medium -> small
+	- Tools, pole (Shovel): medium -> small
+	- Makeshift (Chair): medium -> small
+	- Flower Vase (4 varities): medium -> small
+	- Custom Items (Pipe / Telescope): medium -> small
 
 - Path of Pain: Base self-damage changed to start at 5 from 20.
 - set new recall stone unatunned to accompeny new locations of gaining it. NOTE you need to attune it to a pylon now before it will work (instead of default wave portal room)
@@ -30,6 +38,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - removed Underdark: L'Obsul lower (old area)
 - Added links to Obsidian Isle Workshop, Smithy, and Inn
 - Construction sites for beacon towers to Whiteshore, Cystana, and Blue Lagoon
+
+- Grand QoL change for unlimited usage on widgets (many "new" widget with no major mechanical benefit will now be set to unlimited usage instead of 4/day) one's changed so far)
+	- Alter self 
+	- skin changer
+	- bottled companion
+	- old (weak) shifter / druid shape widgets (in line with the newer unlimited of newer ones)
+	- all of the camper's paradise series
 
 ### Fixed
 - Cavelery custom bc summon fixed to no longer summon a hive queen instead of set mount

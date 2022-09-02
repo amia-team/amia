@@ -36,7 +36,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Makeshift (Chair): medium -> small
 	- Flower Vase (4 varities): medium -> small
 	- Custom Items (Pipe / Telescope): medium -> small
-
 - Path of Pain: Base self-damage changed to start at 5 from 20.
 - set new recall stone unatunned to accompeny new locations of gaining it. NOTE you need to attune it to a pylon now before it will work (instead of default wave portal room)
 - Renamed Underdark: L'Obsul, lower,  storehouse to Underdark: L'Obsul storehouse
@@ -44,7 +43,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added links to Obsidian Isle Workshop, Smithy, and Inn
 - Construction sites for beacon towers to Whiteshore, Cystana, and Blue Lagoon
 - Skull Peaks: Glinulan's Hold, Caverns,  added bash script to trap door
-
 - Grand QoL change for unlimited usage on widgets (many "new" widget with no major mechanical benefit will now be set to unlimited usage instead of 4/day) one's changed so far)
 	- Alter self 
 	- skin changer

@@ -113,8 +113,8 @@ void main(){
                     SetLocalInt( oItem, "ds_set", 2 );
                 }
 
-                //chame cast spell to Self Only 4 times a day.
-                itemproperty iNew = ItemPropertyCastSpell( 335, IP_CONST_CASTSPELL_NUMUSES_4_USES_PER_DAY );
+                //chame cast spell to Self unlimited times a day.
+                itemproperty iNew = ItemPropertyCastSpell( 335, IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE );
                 IPSafeAddItemProperty( oItem, iNew, 0.0f, X2_IP_ADDPROP_POLICY_REPLACE_EXISTING, TRUE, TRUE );
 
                 SetName( oItem, "Bottled Companion" );

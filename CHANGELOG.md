@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased] -
 
 ### Added
+- Magic staff 2h (same aesthetic options as the 1h version)
 
 ### Changed
 

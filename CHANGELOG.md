@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Created several base areas for Obsidian Isle wilderness
 - Added racial gates to Obsidian Isle
 - Underdark recall stone quest (start at recall pylon in lobsul)
+- Magic staff 2h (same aesthetic options as the 1h version)
 
 ### Changed
 - Aesthetic holdables size changes (smallified for the hobbitses):
@@ -36,7 +37,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Makeshift (Chair): medium -> small
 	- Flower Vase (4 varities): medium -> small
 	- Custom Items (Pipe / Telescope): medium -> small
-- Magic staff 2h (same aesthetic options as the 1h version)
 - Path of Pain: Base self-damage changed to start at 5 from 20.
 - set new recall stone unatunned to accompeny new locations of gaining it. NOTE you need to attune it to a pylon now before it will work (instead of default wave portal room)
 - Renamed Underdark: L'Obsul, lower,  storehouse to Underdark: L'Obsul storehouse

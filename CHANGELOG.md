@@ -7,10 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased] -
 
 ### Added
+- Beacon tower construction in Kohlingen
 
 ### Changed
 
 ### Fixed
+- Malformed creature sizes adjusted
 
 ## [2.2.9] - 2022-09-02] 
 

@@ -474,7 +474,7 @@ void ArtistConverter(object oPC, object oBench, int nNode)
           case 14: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_irow"; sIngredient2 = "js_bla_irin"; sType = "js_art_torch1"; sPlaceableName = "Torch Bracket"; sMaterial = "plc"; nCost = 5000; break;
           case 15: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_stin"; sIngredient2 = "js_tree_phaw"; sType = "js_art_brazier1"; sPlaceableName = "Brazier"; sMaterial = "plc"; nCost = 5000; break;
           case 16: sProduct = "js_plcspawner"; sIngredient1 = "js_bla_stin"; sIngredient2 = "js_jew_crys"; sType = "js_art_lantern1"; sPlaceableName = "Hanging Lantern"; sMaterial = "plc"; nCost = 5000; break;
-          case 17: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_jew_crys"; sType = "js_art_lantern2"; sPlaceableName = "Lamp Post"; sMaterial = "plc"; nCost = 5000; break;
+          case 17: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_phpl"; sIngredient2 = "js_jew_crys"; sType = "js_art_lantern2"; sPlaceableName = "Lamp Post"; sMaterial = "plc"; nCost = 5000; break;
 
         }
     }
@@ -568,7 +568,7 @@ void ArtistConverter(object oPC, object oBench, int nNode)
           case 9: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flglolt1"; sPlaceableName = "Pennant of Lolth"; sMaterial = "plc"; nCost = 5000; break;
           case 10: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgmask1"; sPlaceableName = "Pennant of Mask"; sMaterial = "plc"; nCost = 5000; break;
           case 11: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgrav1"; sPlaceableName = "Pennant of Raven and Shield"; sMaterial = "plc"; nCost = 5000; break;
-          case 12: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgrav2"; sPlaceableName = "Pennant of Raven and SWord"; sMaterial = "plc"; nCost = 5000; break;
+          case 12: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgrav2"; sPlaceableName = "Pennant of Raven and Sword"; sMaterial = "plc"; nCost = 5000; break;
           case 13: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgsune1"; sPlaceableName = "Pennant of Sune"; sMaterial = "plc"; nCost = 5000; break;
           case 14: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgtemp1"; sPlaceableName = "Pennant of Tempus"; sMaterial = "plc"; nCost = 5000; break;
           case 15: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_tai_bosi"; sType = "js_art_flgtorm1"; sPlaceableName = "Pennant of Torm"; sMaterial = "plc"; nCost = 5000; break;

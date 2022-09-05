@@ -10,9 +10,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Beacon tower construction in Kohlingen
 
 ### Changed
+- QoL to adjust rotation for spawned PLCs
 
 ### Fixed
 - Malformed creature sizes adjusted
+- Artist Brazier now unusable
+- Artist Lamp Post now uses the correct recipe
 
 ## [2.2.9] - 2022-09-02] 
 

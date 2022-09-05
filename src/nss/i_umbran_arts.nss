@@ -52,7 +52,15 @@ void ActivateItem()
     int iSDLevel        = GetLevelByClass( CLASS_TYPE_SHADOWDANCER, oPC );
 
 
-    SendMessageToPC(oPC,"These widgets are now disabled. Please turn them into a DM.");
+    // activation of just shadow affinity, others remain deactivated
+    {
+    if( sItemName == "umbran_arts_5" && iSDLevel >= 6 ){
+        AssignCommand( oPC, ShadowAffinity( oPC ) );
+    }
+    else SendMessageToPC(oPC,"These widgets are now disabled. Please turn them into a DM.");
+    }
+
+    //SendMessageToPC(oPC,"These widgets are now disabled. Please turn them into a DM.");
     /*
     // Identify widget and direct to appropriate code
     if( sItemName == "umbran_arts_1" && DecrementShadowEvade( oPC, 1 ) == 1  && iSDLevel >= 6 ){

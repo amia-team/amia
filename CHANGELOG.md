@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - QoL to adjust rotation for spawned PLCs
+- reactivated Umbran Arts: Shadow Affinity (and only this one)
+- Kingdom of cetha: wave and serpent, changed door to guild/merchant area to not auto close
+
 
 ### Fixed
 - Malformed creature sizes adjusted

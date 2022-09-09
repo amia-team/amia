@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
+- Moonpier, given head back to <c Í >Ferdinando the Eccentric</c>
 
 ## [2.2.10] - 2022-09-09
 

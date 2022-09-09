@@ -7,13 +7,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased] -
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [2.2.10] - 2022-09-09
+
+### Added
 - Beacon tower construction in Kohlingen
+- Plot updates to OI
+- Plot updates to the dale
+- Plot updates orc keep
 
 ### Changed
 - QoL to adjust rotation for spawned PLCs
 - reactivated Umbran Arts: Shadow Affinity (and only this one)
 - Kingdom of cetha: wave and serpent, changed door to guild/merchant area to not auto close
-
 
 ### Fixed
 - Malformed creature sizes adjusted

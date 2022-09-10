@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Moonpier, given head back to <c Í >Ferdinando the Eccentric</c>
+- Underdark lobsul, Zenati, removed default behavioral script in hopes he stops hiding
 
 ## [2.2.10] - 2022-09-09
 

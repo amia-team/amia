@@ -7,7 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased] -
 
 ### Added
+- Areas
+	-Plane of Shadow: Shadowscape, Academy
+		- added <c Í >Instructor Glelia</c> for new UA: shadow affinity quest
+	- Plane of Shadow: Whispermere
+		- added quest trigger for new UA: shadow affinity quest
+	- Plane of Shadow: Whispermere, Shadow Citadel
+		- added quest trigger for new UA: shadow affinity quest
+	- Kingdom of Kohlingen: Construction Site
+		- Plot updates(carfull it has strong spawns now)
+		- variuos areas around it have waring signs now
 - Operator Oleig has found an appreciation for Tyrannosaurus Hides
+- Shadowdancer quest "UA: shadow affinity quest" For learning the Shadow affinity ability (widget)
 
 ### Changed
 - OI Area updates

@@ -1,8 +1,9 @@
 /*
   June 24 2019 - Maverick00053
   Path of Enlightenment PRC
-
 */
+// 2022/09/11 Opustus   Capped Pain damage accumulation with level scaling
+
 void Mists(object oPC, int nClassLevel, int nActivated, object oWidget);// Feat 1226
 void Elemental(object oPC, int nClassLevel, int nActivated, object oWidget);// Feat 1227
 void Life(object oPC, int nClassLevel, int nActivated, object oWidget);// Feat 1228
@@ -581,6 +582,8 @@ void Pain(object oPC, int nClassLevel, int nActivated, object oWidget)
      eLink = EffectLinkEffects(eDamageResB,eLink);
      eLink = EffectLinkEffects(eHaste,eLink);
 
+     SetLocalInt(oPC, "monkprcpain_cap", 25);
+
    }
    else if(nClassLevel == 4)
    {
@@ -595,6 +598,8 @@ void Pain(object oPC, int nClassLevel, int nActivated, object oWidget)
      eLink = EffectLinkEffects(eDamageResP,eLink);
      eLink = EffectLinkEffects(eDamageResS,eLink);
      eLink = EffectLinkEffects(eDamageResB,eLink);
+
+     SetLocalInt(oPC, "monkprcpain_cap", 25);
    }
    else if(nClassLevel == 3)
    {
@@ -609,6 +614,8 @@ void Pain(object oPC, int nClassLevel, int nActivated, object oWidget)
      eLink = EffectLinkEffects(eDamageResP,eLink);
      eLink = EffectLinkEffects(eDamageResS,eLink);
      eLink = EffectLinkEffects(eDamageResB,eLink);
+
+     SetLocalInt(oPC, "monkprcpain_cap", 20);
    }
    else if(nClassLevel == 2)
    {
@@ -623,6 +630,8 @@ void Pain(object oPC, int nClassLevel, int nActivated, object oWidget)
      eLink = EffectLinkEffects(eDamageResP,eLink);
      eLink = EffectLinkEffects(eDamageResS,eLink);
      eLink = EffectLinkEffects(eDamageResB,eLink);
+
+     SetLocalInt(oPC, "monkprcpain_cap", 15);
    }
    else if(nClassLevel == 1)
    {
@@ -637,6 +646,8 @@ void Pain(object oPC, int nClassLevel, int nActivated, object oWidget)
      eLink = EffectLinkEffects(eDamageResP,eLink);
      eLink = EffectLinkEffects(eDamageResS,eLink);
      eLink = EffectLinkEffects(eDamageResB,eLink);
+
+     SetLocalInt(oPC, "monkprcpain_cap", 10);
    }
      eLink = EffectLinkEffects(eVisual, eLink);
      eLink = ExtraordinaryEffect(eLink);

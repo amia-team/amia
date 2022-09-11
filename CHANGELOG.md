@@ -9,14 +9,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Areas
 	-Plane of Shadow: Shadowscape, Academy
-		- added <c Í >Instructor Glelia</c> for new UA: shadow affinity quest
+		- added Instructor Glelia for new UA: shadow affinity quest
 	- Plane of Shadow: Whispermere
 		- added quest trigger for new UA: shadow affinity quest
 	- Plane of Shadow: Whispermere, Shadow Citadel
 		- added quest trigger for new UA: shadow affinity quest
 	- Kingdom of Kohlingen: Construction Site
-		- Plot updates(carfull it has strong spawns now)
-		- variuos areas around it have waring signs now
+		- Plot updates(careful, it has strong spawns now)
+		- Various areas around it have warning signs now
 - Operator Oleig has found an appreciation for Tyrannosaurus Hides
 - Shadowdancer quest "UA: shadow affinity quest" For learning the Shadow affinity ability (widget)
 
@@ -29,6 +29,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Pain lv 3 = cap 20 dmg/round
 	- Pain lv 4 = cap 25 dmg/round
 	- Pain lv 5 = cap 25 dmg/round
+- The Job Item Refresher will now accept old versions of Mythal Tubes, Bandage Bags, Gem Pouches, Trap Cases, Wand Cases, Scroll Holders, Backpacks, Scabbards, and Quivers
+- Added icons for Backpacks, Scabbards, and Quiver to the hak
 
 ### Fixed
 - Moonpier, given head back to <c Í >Ferdinando the Eccentric</c>

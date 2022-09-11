@@ -22,10 +22,94 @@ void main()
 
     while (GetIsObjectValid( oInContainer ) == TRUE)
     {
-        sItemResRef     = GetResRef(oInContainer);
+        sItemResRef            = GetResRef(oInContainer);
 
-        // Disallow equipable items that allow properties/mythal crafting and non-job items
-        if(     GetSubString(sItemResRef, 0, 3) != "js_"
+
+        //Replace old Artificer storage items and grab the amounts/item types stored
+        if( sItemResRef == "ds_j_mythalbox" ||
+            sItemResRef == "ds_j_wandcase" ||
+            sItemResRef == "ds_j_scrollbox" ||
+            sItemResRef == "ds_j_gempouch" ||
+            sItemResRef == "ds_j_bandagebox" ||
+           (sItemResRef == "js_arca_trca" && GetBaseItemType(oInContainer) == BASE_ITEM_MISCMEDIUM))
+        {
+            sName               = GetName(oInContainer);
+            string sReplaceItem;
+            string sStoredItem  = GetDescription( oInContainer, FALSE, FALSE );
+            int nStoredCount;
+
+            if(sItemResRef == "ds_j_mythalbox") //Mythal Tube
+            {
+                sReplaceItem = "js_arca_mytu";
+                nStoredCount = StringToInt( GetSubString( GetDescription( oInContainer ), 19, 6 ) );
+            }
+            if(sItemResRef == "ds_j_wandcase") //Wand Case
+            {
+                sReplaceItem = "js_arca_wdca";
+                nStoredCount = StringToInt( GetSubString( GetDescription( oInContainer ), 16, 6 ) );
+            }
+            if(sItemResRef == "ds_j_scrollbox") //Scroll Box
+            {
+                sReplaceItem = "js_arca_scbx";
+                nStoredCount = StringToInt( GetSubString( GetDescription( oInContainer ), 18, 6 ) );
+            }
+            if(sItemResRef == "ds_j_gempouch") //Gem Pouch
+            {
+                sReplaceItem = "js_arca_gmpo";
+                nStoredCount = StringToInt( GetSubString( GetDescription( oInContainer ), 16, 6 ) );
+            }
+            if(sItemResRef == "ds_j_bandagebox") //Bandage Bag
+            {
+                sReplaceItem = "js_arca_bdbg";
+                nStoredCount = StringToInt( GetSubString( GetDescription( oInContainer ), 20, 6 ) );
+            }
+            if(sItemResRef == "js_arca_trca") //Trap Case
+            {
+                sReplaceItem = "js_arca_trca";
+                nStoredCount = StringToInt( GetSubString( GetDescription( oInContainer ), 16, 6 ) );
+            }
+
+            //Replace the old item with the new job system version
+            oRefreshedItem = CreateItemOnObject(sReplaceItem, OBJECT_SELF, 1);
+
+            string sDescription = GetDescription(oRefreshedItem);
+
+            SetName(oRefreshedItem, "<c~Îë>"+sName+"</c>");
+            SetDescription( oRefreshedItem, "Number of stored items: "+IntToString(nStoredCount) +"\n\n"+sDescription);
+
+            //Set variables for item counts and refreshed item
+            SetLocalString(oRefreshedItem, "StoredItem", sStoredItem);
+            SetLocalInt(oRefreshedItem, "ItemCount", nStoredCount);
+            if(nRefreshedItem != 0)     { SetLocalInt(oRefreshedItem, "RefreshedItem", 1); }
+
+            //Delete the old item
+            DestroyObject( oInContainer, 0.1 );
+        }
+        //Replacement for old tailor Backpack, Scabbard, and Quiver
+        else if( sItemResRef == "ds_j_scabbard" ||
+                 sItemResRef == "ds_j_scabbard_a" ||
+                 sItemResRef == "ds_j_scabbard_b" ||
+                 sItemResRef == "ds_j_backpack" ||
+                 sItemResRef == "ds_j_backpack_1" ||
+                 sItemResRef == "ds_j_quiver" )
+        {
+            string sReplaceItem;
+
+            if      ( sItemResRef == "ds_j_scabbard") { sReplaceItem = "js_tai_scbrd1"; }
+            else if ( sItemResRef == "ds_j_scabbard_a") { sReplaceItem = "js_tai_scbrd2"; }
+            else if ( sItemResRef == "ds_j_scabbard_b") { sReplaceItem = "js_tai_scbrd3"; }
+            else if ( sItemResRef == "ds_j_backpack") { sReplaceItem = "js_tai_bpack1"; }
+            else if ( sItemResRef == "ds_j_backpack_1") { sReplaceItem = "js_tai_bpack1"; }
+            else if ( sItemResRef == "ds_j_quiver") { sReplaceItem = "js_tai_quiver1"; }
+
+            oRefreshedItem = CreateItemOnObject(sReplaceItem, OBJECT_SELF, 1);
+            if(nRefreshedItem != 0)     { SetLocalInt(oRefreshedItem, "RefreshedItem", 1); }
+
+            //Delete the old item
+            DestroyObject( oInContainer, 0.1 );
+        }
+        // Disallow equipable items that allow properties/mythal crafting, new storage items, and non-job items
+        else if(     GetSubString(sItemResRef, 0, 3) != "js_"
              || sItemResRef == "js_arch_adbt"
              || sItemResRef == "js_arch_irbt"
              || sItemResRef == "js_arch_sibt"

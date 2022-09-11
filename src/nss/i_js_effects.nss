@@ -430,7 +430,7 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
    {
      int nBaseItem = GetBaseItemType(oTarget);
      int nAppearance = GetItemAppearance(oTarget, ITEM_APPR_TYPE_SIMPLE_MODEL, 0);
-     int nColorModifier = GetLocalInt(oWidget, "ColorModifier");
+     int nColorModifier = GetLocalInt(oWidget, "ColorModifier"); //This variable is set on the base item of the dye and modifies the base bag item icon to correspond to the colored bag appearance
 
      if(nBaseItem == BASE_ITEM_LARGEBOX)
      {

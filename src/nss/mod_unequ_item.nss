@@ -13,6 +13,7 @@
 // 2019/04/21   Maverick00053 Added in 2hander buff support
 // 2019/06/17   Maverick00053 Added in Cav bow check and Two Weapon Fighter Check
 // 2019/10/10   Maverick00053 Added in the rest of the custom class stuff
+// 2022/09/11   Oputsus     Fixed TWF buff stacking
 
 //-------------------------------------------------------------------------------
 // includes
@@ -172,17 +173,11 @@ void main( ){
     || oItemType == BASE_ITEM_SICKLE || oItemType == BASE_ITEM_TORCH|| oItemType == BASE_ITEM_TRIDENT|| oItemType == BASE_ITEM_WARHAMMER||
     oItemType == BASE_ITEM_WHIP ))
     {
-
        while(GetIsEffectValid(eLoop))
          {
-          eLoopSpellID = GetEffectSpellId(eLoop);
-
-            if ((GetEffectTag(eLoop) == "twfbuff"))
-            {
-                 RemoveEffect(oPC, eLoop);
-            }
-
-                eLoop=GetNextEffect(oPC);
+            if (GetEffectTag(eLoop) == "twfbuff")
+            RemoveEffect(oPC, eLoop);
+            eLoop=GetNextEffect(oPC);
          }
 
     }

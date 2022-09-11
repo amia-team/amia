@@ -11,6 +11,7 @@
 // 2012/02/24   Selmak      Supports Shadowdancers with polymorph
 // 2019/04/21   Maverick00053 Added in 2hander buff support
 // 2019/06/17   Maverick00053 Added in Cav bow check and Two Weapon Fighter Check
+// 2022/09/11   Opustus     Fixed TWF AB bonus from +4 to +2 as intended
 
 //-------------------------------------------------------------------------------
 // includes
@@ -260,7 +261,7 @@ void main( ){
          (oOffItemType == BASE_ITEM_KAMA || oOffItemType == BASE_ITEM_SICKLE || oOffItemType == BASE_ITEM_WHIP
          || oOffItemType == BASE_ITEM_SHORTSWORD || oOffItemType == BASE_ITEM_LIGHTMACE || oOffItemType == BASE_ITEM_LIGHTHAMMER))
          {
-           eAB = EffectAttackIncrease(2,ATTACK_BONUS_MISC);
+           eAB = EffectAttackIncrease(1,ATTACK_BONUS_MISC);
            eLink = EffectLinkEffects(eAC,eAB);
          }
          else
@@ -302,7 +303,7 @@ void main( ){
          || oOffItemType == BASE_ITEM_KATANA || oOffItemType == BASE_ITEM_MORNINGSTAR || oOffItemType == BASE_ITEM_RAPIER
          || oOffItemType == BASE_ITEM_SCIMITAR || oOffItemType == BASE_ITEM_TRIDENT || oOffItemType == BASE_ITEM_WARHAMMER || oOffItemType == BASE_ITEM_LIGHTFLAIL))
          {
-           eAB = EffectAttackIncrease(2,ATTACK_BONUS_MISC);
+           eAB = EffectAttackIncrease(1,ATTACK_BONUS_MISC);
            eLink = EffectLinkEffects(eAC,eAB);
          }
          else

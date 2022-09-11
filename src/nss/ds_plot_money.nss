@@ -131,7 +131,8 @@ int GetPlotItemPrice( object oPC, object oItem ){
         sTag == "cs_bunded_flmstf" ||
         sTag == "AngelsFolly" ||
         sTag == "HighOrcGauntlets" ||
-        sTag == "DaedalussRage" ){
+        sTag == "DaedalussRage" ||
+        sTag == "qst_trex" ){
 
         if ( GetPlotFlag( oItem ) == TRUE ){
 

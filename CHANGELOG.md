@@ -24,11 +24,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - OI Area updates
 - OI Monster
 - Path of Pain: The Path's self damage is too punitive and early levels are too punitive. To address this, the roundly incrementing self-damage now caps as follows:
-	Pain lv 1 = cap 10 dmg/round
-	Pain lv 2 = cap 15 dmg/round
-	Pain lv 3 = cap 20 dmg/round
-	Pain lv 4 = cap 25 dmg/round
-	Pain lv 5 = cap 25 dmg/round
+	- Pain lv 1 = cap 10 dmg/round
+	- Pain lv 2 = cap 15 dmg/round
+	- Pain lv 3 = cap 20 dmg/round
+	- Pain lv 4 = cap 25 dmg/round
+	- Pain lv 5 = cap 25 dmg/round
 
 ### Fixed
 - Moonpier, given head back to <c Í >Ferdinando the Eccentric</c>

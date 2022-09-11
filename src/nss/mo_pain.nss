@@ -1,8 +1,8 @@
 /*
   June 26 2019 - Maverick00053
   Path of Enlightenment PRC, Pain Path
-
 */
+// 2022/09/11 Opustus   Capped damage accumulation with level scaling
 
 void main()
 {
@@ -10,6 +10,7 @@ void main()
    object oWidget = GetItemPossessedBy(oPC, "ds_pckey");
    int nActivated = GetLocalInt(oWidget, "monkprc");
    int nDamage = GetLocalInt(oPC, "monkprcpain");
+   int nCap = GetLocalInt(oPC, "monkprcpain_cap");
    effect eDamage = EffectDamage(nDamage,DAMAGE_TYPE_DIVINE);
    effect eLoop = GetFirstEffect(oPC);
    int    eLoopSpellID;
@@ -41,6 +42,11 @@ void main()
      SetLocalInt(oPC,"monkprcpain",nDamage+5);
 
      DelayCommand(6.0,ExecuteScript("mo_pain", oPC));
+
+     if (nDamage == nCap)
+     {
+      SetLocalInt(oPC,"monkprcpain",nCap);
+     }
    }
    else
    {

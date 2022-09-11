@@ -7,12 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased] -
 
 ### Added
+- Operator Oleig has found an appreciation for Tyrannosaurus Hides
 
 ### Changed
+- OI Area updates
+- OI Monster
 
 ### Fixed
 - Moonpier, given head back to <c Í >Ferdinando the Eccentric</c>
 - Underdark lobsul, Zenati, removed default behavioral script in hopes he stops hiding
+- Fixed the transition in Alambar Sea: Fortress Khuft
+- Alchemist Elemental Resistance potions had incorrect descriptions
+
 
 ## [2.2.10] - 2022-09-09
 

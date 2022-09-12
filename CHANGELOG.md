@@ -31,6 +31,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Pain lv 5 = cap 25 dmg/round
 - The Job Item Refresher will now accept old versions of Mythal Tubes, Bandage Bags, Gem Pouches, Trap Cases, Wand Cases, Scroll Holders, Backpacks, Scabbards, and Quivers
 - Added icons for Backpacks, Scabbards, and Quiver to the hak
+- Updated base items for Backpacks, Scabbards, and Quiver
+- Plot updates to Cetha Festival Grounds
+- Plot updates to Cetha West Gate
 
 ### Fixed
 - Moonpier, given head back to <c Í >Ferdinando the Eccentric</c>
@@ -38,6 +41,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed the transition in Alambar Sea: Fortress Khuft
 - Alchemist Elemental Resistance potions had incorrect descriptions
 - Two Weapon Fighter: The AB bonus stacking blocked as intended. The AB bonus from same-sized weapons to emulate smaller weapons fixed from +4 AB to +2 AB as intended.
+- Updated the JS Base resources script to allow non-spawned rancher animals and farmer crops
+- Fixed the unharvestable chickens in Shrine of Eilistraee
 
 
 ## [2.2.10] - 2022-09-09

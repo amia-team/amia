@@ -3,9 +3,11 @@
 
   - Maverick00053
 
+  - Edited: Lord-Jyssev - 8/5/22 Include cooldown counter for resource nodes
+            Lord-Jyssev - 9/12/22 Included logic to allow single-use crops/animals to be placed in-world
+
 */
 
-// - Edited: Lord-Jyssev - 8/5/22 Include cooldown counter for resource nodes
 
 #include "x2_inc_switches"
 #include "inc_ds_records"
@@ -129,6 +131,10 @@ void main()
 
       RefreshingNode(oPC,sResource,oResourceNode,nRank);
 
+    }
+    else if((sJob == "Farmer") || (sJob == "Rancher") || (sJob == "HunterTrap") && nBlocker == 0)  //Checks to see if the resource has a Blocker pre-populated. If not, it is a Refreshing Node
+    {
+      RefreshingNode(oPC,sResource,oResourceNode,nRank);
     }
     else if((sJob == "Farmer") || (sJob == "Rancher") || (sJob == "HunterTrap"))
     {

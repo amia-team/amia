@@ -41,6 +41,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed the transition in Alambar Sea: Fortress Khuft
 - Alchemist Elemental Resistance potions had incorrect descriptions
 - Two Weapon Fighter: The AB bonus stacking blocked as intended. The AB bonus from same-sized weapons to emulate smaller weapons fixed from +4 AB to +2 AB as intended.
+- Indomitable: No longer removed by the restoration line spells.
 - Updated the JS Base resources script to allow non-spawned rancher animals and farmer crops
 - Fixed the unharvestable chickens in Shrine of Eilistraee
 

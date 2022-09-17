@@ -132,10 +132,10 @@ void main()
       RefreshingNode(oPC,sResource,oResourceNode,nRank);
 
     }
-    else if((sJob == "Farmer") || (sJob == "Rancher") || (sJob == "HunterTrap") && nBlocker == 0)  //Checks to see if the resource has a Blocker pre-populated. If not, it is a Refreshing Node
-    {
-      RefreshingNode(oPC,sResource,oResourceNode,nRank);
-    }
+//    else if((sJob == "Farmer") || (sJob == "Rancher") || (sJob == "HunterTrap") && nBlocker == 0)  //Checks to see if the resource has a Blocker pre-populated. If not, it is a Refreshing Node
+//    {
+//      RefreshingNode(oPC,sResource,oResourceNode,nRank);
+//    }
     else if((sJob == "Farmer") || (sJob == "Rancher") || (sJob == "HunterTrap"))
     {
       SingleUseNode(oPC,sResource,oResourceNode,nRank);

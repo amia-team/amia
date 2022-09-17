@@ -12,6 +12,7 @@
 // 2019/04/21   Maverick00053 Added in 2hander buff support
 // 2019/06/17   Maverick00053 Added in Cav bow check and Two Weapon Fighter Check
 // 2022/09/11   Opustus     Fixed TWF AB bonus from +4 to +2 as intended
+// 2022/09/15   Opustus     Fixed Indomitable removed by (Lesser) Restoration
 
 //-------------------------------------------------------------------------------
 // includes
@@ -194,7 +195,7 @@ void main( ){
 
 
 
-    // Crossbow PRC Check Bonuses
+    // Arbalest Check Bonuses
    if(((GetBaseItemType(oItem)== BASE_ITEM_HEAVYCROSSBOW) || (GetBaseItemType(oItem)== BASE_ITEM_LIGHTCROSSBOW)) && (nClassCross >= 1))
    {
 
@@ -224,7 +225,7 @@ void main( ){
     }
 
 
-   // Monk PRC check - If something is in either hand then remove the feat buff
+   // Monk Path of Enlightment - If something is in either hand then remove the feat buff
       if((GetIsObjectValid(oPrimaryHand) || GetIsObjectValid(oOffHand)) && GetHasFeat(1225,oPC))
    {
 
@@ -335,7 +336,7 @@ void main( ){
     //
 
 
-    //Cav bow additions - do not let them equip a bow unless they have the mounted archery feat and it is a shortbow.
+    // Cavalry bow additions - do not let them equip a bow unless they have the mounted archery feat and it is a shortbow.
     if((mounted == 1) && ((oItemType == BASE_ITEM_LONGBOW) || (oItemType == BASE_ITEM_SLING) || (oItemType == BASE_ITEM_THROWINGAXE) || (oItemType == BASE_ITEM_DART) || (oItemType == BASE_ITEM_LIGHTCROSSBOW) || (oItemType == BASE_ITEM_SHURIKEN) || (oItemType == BASE_ITEM_HEAVYCROSSBOW)))
     {
        SendMessageToPC( oPC, "You cannot use that weapon while mounted!");
@@ -384,13 +385,17 @@ void main( ){
 
         twoHanderBonus = EffectLinkEffects(eDamage, eAB);
 
+        // Indomitable, check for feat 1246
         if(GetHasFeat(1246, oPC) && isWearingHeavyArmor)
         {
             effect acIncrease = EffectACIncrease(4, AC_SHIELD_ENCHANTMENT_BONUS);
             effect reflexDecrease = EffectSavingThrowDecrease(SAVING_THROW_REFLEX, 3);
 
             twoHanderBonus = EffectLinkEffects(twoHanderBonus, acIncrease);
-            twoHanderBonus = EffectLinkEffects(twoHanderBonus, reflexDecrease);
+
+            reflexDecrease = SupernaturalEffect(reflexDecrease);
+            reflexDecrease = TagEffect(reflexDecrease, "twohanderbuff");
+            ApplyEffectToObject(DURATION_TYPE_PERMANENT, reflexDecrease, oPC);
         }
 
         twoHanderBonus = SupernaturalEffect(twoHanderBonus);
@@ -410,14 +415,16 @@ void main( ){
        }
        twoHanderBonus = EffectLinkEffects(eDamage, eAB);
 
-
         if(GetHasFeat(1246, oPC) && isWearingHeavyArmor)
         {
             effect acIncrease = EffectACIncrease(4, AC_SHIELD_ENCHANTMENT_BONUS);
             effect reflexDecrease = EffectSavingThrowDecrease(SAVING_THROW_REFLEX, 3);
 
             twoHanderBonus = EffectLinkEffects(twoHanderBonus, acIncrease);
-            twoHanderBonus = EffectLinkEffects(twoHanderBonus, reflexDecrease);
+
+            reflexDecrease = SupernaturalEffect(reflexDecrease);
+            reflexDecrease = TagEffect(reflexDecrease, "twohanderbuff");
+            ApplyEffectToObject(DURATION_TYPE_PERMANENT, reflexDecrease, oPC);
         }
 
        twoHanderBonus = SupernaturalEffect(twoHanderBonus);
@@ -443,7 +450,10 @@ void main( ){
             effect reflexDecrease = EffectSavingThrowDecrease(SAVING_THROW_REFLEX, 3);
 
             twoHanderBonus = EffectLinkEffects(twoHanderBonus, acIncrease);
-            twoHanderBonus = EffectLinkEffects(twoHanderBonus, reflexDecrease);
+
+            reflexDecrease = SupernaturalEffect(reflexDecrease);
+            reflexDecrease = TagEffect(reflexDecrease, "twohanderbuff");
+            ApplyEffectToObject(DURATION_TYPE_PERMANENT, reflexDecrease, oPC);
         }
        twoHanderBonus = SupernaturalEffect(twoHanderBonus);
        twoHanderBonus = TagEffect(twoHanderBonus,"twohanderbuff");
@@ -467,7 +477,10 @@ void main( ){
             effect reflexDecrease = EffectSavingThrowDecrease(SAVING_THROW_REFLEX, 3);
 
             twoHanderBonus = EffectLinkEffects(twoHanderBonus, acIncrease);
-            twoHanderBonus = EffectLinkEffects(twoHanderBonus, reflexDecrease);
+
+            reflexDecrease = SupernaturalEffect(reflexDecrease);
+            reflexDecrease = TagEffect(reflexDecrease, "twohanderbuff");
+            ApplyEffectToObject(DURATION_TYPE_PERMANENT, reflexDecrease, oPC);
         }
        twoHanderBonus = SupernaturalEffect(twoHanderBonus);
        twoHanderBonus = TagEffect(twoHanderBonus,"twohanderbuff");
@@ -502,7 +515,10 @@ void main( ){
             effect reflexDecrease = EffectSavingThrowDecrease(SAVING_THROW_REFLEX, 3);
 
             twoHanderBonus = EffectLinkEffects(twoHanderBonus, acIncrease);
-            twoHanderBonus = EffectLinkEffects(twoHanderBonus, reflexDecrease);
+
+            reflexDecrease = SupernaturalEffect(reflexDecrease);
+            reflexDecrease = TagEffect(reflexDecrease, "twohanderbuff");
+            ApplyEffectToObject(DURATION_TYPE_PERMANENT, reflexDecrease, oPC);
         }
         twoHanderBonus = SupernaturalEffect(twoHanderBonus);
         twoHanderBonus = TagEffect(twoHanderBonus,"twohanderbuff");
@@ -528,7 +544,10 @@ void main( ){
             effect reflexDecrease = EffectSavingThrowDecrease(SAVING_THROW_REFLEX, 3);
 
             twoHanderBonus = EffectLinkEffects(twoHanderBonus, acIncrease);
-            twoHanderBonus = EffectLinkEffects(twoHanderBonus, reflexDecrease);
+
+            reflexDecrease = SupernaturalEffect(reflexDecrease);
+            reflexDecrease = TagEffect(reflexDecrease, "twohanderbuff");
+            ApplyEffectToObject(DURATION_TYPE_PERMANENT, reflexDecrease, oPC);
         }
 
        twoHanderBonus = TagEffect(twoHanderBonus,"twohanderbuff");
@@ -551,7 +570,10 @@ void main( ){
             effect reflexDecrease = EffectSavingThrowDecrease(SAVING_THROW_REFLEX, 3);
 
             twoHanderBonus = EffectLinkEffects(twoHanderBonus, acIncrease);
-            twoHanderBonus = EffectLinkEffects(twoHanderBonus, reflexDecrease);
+
+            reflexDecrease = SupernaturalEffect(reflexDecrease);
+            reflexDecrease = TagEffect(reflexDecrease, "twohanderbuff");
+            ApplyEffectToObject(DURATION_TYPE_PERMANENT, reflexDecrease, oPC);
         }
         twoHanderBonus = SupernaturalEffect(twoHanderBonus);
        twoHanderBonus = TagEffect(twoHanderBonus,"twohanderbuff");
@@ -575,7 +597,10 @@ void main( ){
             effect reflexDecrease = EffectSavingThrowDecrease(SAVING_THROW_REFLEX, 3);
 
             twoHanderBonus = EffectLinkEffects(twoHanderBonus, acIncrease);
-            twoHanderBonus = EffectLinkEffects(twoHanderBonus, reflexDecrease);
+
+            reflexDecrease = SupernaturalEffect(reflexDecrease);
+            reflexDecrease = TagEffect(reflexDecrease, "twohanderbuff");
+            ApplyEffectToObject(DURATION_TYPE_PERMANENT, reflexDecrease, oPC);
         }
        twoHanderBonus = SupernaturalEffect(twoHanderBonus);
        twoHanderBonus = TagEffect(twoHanderBonus,"twohanderbuff");

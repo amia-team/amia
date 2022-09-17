@@ -4,17 +4,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased] -
+## [Unreleased]
 
 ### Added
 
 ### Changed
 
-
 ### Fixed
+- Big Game Hunter: Large Wasps now have vermin immunities
+- Big Game Hunter: Umber Hulks no longer sound like wolves, have chaos gaze
 
 
-## [2.3.0] - 2022-09-016
+
+## [2.2.11] - 2022-09-16
 
 ### Added
 - Areas
@@ -27,23 +29,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Kingdom of Kohlingen: Construction Site
 		- Plot updates(careful, it has strong spawns now)
 		- Various areas around it have warning signs now
-	- Winya ravana
-		- Added candles to cannel 
-	- Kingdom of Cetha: Southport, West Coast
-		- Stables added
-	- Kingdom of Cetha: East Coast, Festival Grounds
-		- Grounds a lot more festive now
-	- Kingdom of Kohlingen: Construction Site
-		- Plot updates
 - Operator Oleig has found an appreciation for Tyrannosaurus Hides
 - Shadowdancer quest "UA: shadow affinity quest" For learning the Shadow affinity ability (widget)
-- OI Plot updates to area
-- OI plot updates to monsters
-- QoL DM's
-	- 2 extra linkers
-	- 4 extra army pens + dagger
 
 ### Changed
+- OI Area updates
+- OI Monster
 - Path of Pain: The Path's self damage is too punitive and early levels are too punitive. To address this, the roundly incrementing self-damage now caps as follows:
 	- Pain lv 1 = cap 10 dmg/round
 	- Pain lv 2 = cap 15 dmg/round
@@ -53,6 +44,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - The Job Item Refresher will now accept old versions of Mythal Tubes, Bandage Bags, Gem Pouches, Trap Cases, Wand Cases, Scroll Holders, Backpacks, Scabbards, and Quivers
 - Added icons for Backpacks, Scabbards, and Quiver to the hak
 - Updated base items for Backpacks, Scabbards, and Quiver
+- Plot updates to Cetha Festival Grounds
+- Plot updates to Cetha West Gate
 
 ### Fixed
 - Moonpier, given head back to <c Í >Ferdinando the Eccentric</c>
@@ -60,10 +53,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed the transition in Alambar Sea: Fortress Khuft
 - Alchemist Elemental Resistance potions had incorrect descriptions
 - Two Weapon Fighter: The AB bonus stacking blocked as intended. The AB bonus from same-sized weapons to emulate smaller weapons fixed from +4 AB to +2 AB as intended.
-- Indomitable: No longer removed by the restoration line spells.
 - Updated the JS Base resources script to allow non-spawned rancher animals and farmer crops
 - Fixed the unharvestable chickens in Shrine of Eilistraee
-- Malformed fix to be correct size
 
 
 ## [2.2.10] - 2022-09-09

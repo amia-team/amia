@@ -16,9 +16,11 @@ void main() {
     object oPC = GetNearestCreature(CREATURE_TYPE_PLAYER_CHAR, PLAYER_CHAR_IS_PC);
     object oBankChest = OBJECT_SELF;
 
-    if(!GetIsPolymorphed(oPC)) {
-        ExportSingleCharacter(oPC);
+    if(GetIsPolymorphed(oPC)) {
+        SendMessageToPC(oPC,"ERROR: Cannot Save while polymorphed, please un-polymorph and try again");
+        return;
     }
+    ExportSingleCharacter(oPC);
     StoreCampaignDBObject(oPC,"bankstorage",oBankChest);
     SendMessageToPC(oPC,"Storage Chest Contents Saved");
 

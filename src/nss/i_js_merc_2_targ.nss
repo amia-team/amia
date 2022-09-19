@@ -17,7 +17,7 @@ void main()
     int nStoredItemCount = GetLocalInt(oChest,"storageboxcount");
     int nChestOut = GetLocalInt(oPC,"minimercchestout");
 
-    // If they target an object we a seperate check
+    // If they target an object we do a seperate check
     if(GetIsObjectValid(oTarget))
     {
       if((GetSubString(GetResRef(oTarget),0,3) == "js_"))
@@ -40,6 +40,32 @@ void main()
           DestroyObject(oTarget);
           SendMessageToPC(oPC,"Item Stored");
         }
+        else if(GetResRef(oTarget) == "js_mini_merchest")   // Transfer mini chest to mini chest
+        {
+          string sStoredItemTarget = GetLocalString(oTarget,"storagebox");
+          int nStoredItemCountTarget = GetLocalInt(oTarget,"storageboxcount");
+
+          if(sStoredItem == sStoredItemTarget)
+          {
+           SendMessageToPC(oPC,"Items transferred");
+           SetLocalInt(oChest,"storageboxcount",0);
+           SetDescription(oChest,"Item Count Stored: " + IntToString(0));
+           SetLocalInt(oTarget,"storageboxcount",nStoredItemCountTarget+nStoredItemCount);
+           SetDescription(oTarget,"Item Count Stored: " + IntToString(nStoredItemCountTarget+nStoredItemCount));
+
+          }
+          else
+          {
+           SendMessageToPC(oPC,"Items stored do not match");
+          }
+
+        }
+        /*
+        else if(GetResRef(oTarget) == "js_jobjournal")  // Transfer from mini chest to job journal
+        {
+
+        }
+        */
       }
       else
       {
@@ -54,6 +80,7 @@ void main()
          SetLocalObject(oPLC,"oChest",oChest);
          SetLocalInt(oPC,"minimercchestout",1);
          SetLocalString(oPLC,"owner",GetName(oPC));
+         SetDroppableFlag(oChest, FALSE);
          if(GetLocalString(oChest,"storagebox") != "")
          {
            SetName(oPLC,"<c~Îë>"+GetLocalString(oChest,"storageboxname")+" Miniature Storage Box"+"</c>");

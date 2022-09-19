@@ -27,6 +27,14 @@ void main()
     int nCount = 1;
     string sAction      = GetLocalString( oPC, "ds_action");
 
+    // Check to see if prior chest was closed properly.
+    /*string sBankUse = "BANK_MID_USE";
+    object oPCKey = GetPCKEY(oPC);
+    if (GetLocalInt(oPCKey,sBankUse) == TRUE) {
+      AssignCommand(oNPC, ActionSpeakString("My apologies, there was a security issue with your storage. Please come back later. (//Please contact a DM if you see this message)"));
+      return;
+    } */
+
     // Runs a loop to make sure the proper door is locked before the NPC will continue
     oDoor = GetNearestObjectByTag("BankDoor");
     nDoorGroup = GetLocalInt(oDoor, "group");

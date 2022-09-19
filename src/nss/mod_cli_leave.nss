@@ -28,8 +28,8 @@
 
 void main( ){
 
-    int SAVE_LOCATION = FALSE;
-    int SAVE_LOCATION_SAFE_ONLY = FALSE;
+    int SAVE_LOCATION = TRUE;
+    int SAVE_LOCATION_SAFE_ONLY = TRUE;
     string LOGOUT_LOCATION = "LOGOUT_LOCATION";
 
 

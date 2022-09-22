@@ -844,6 +844,8 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
      if((GetResRef(oTargeted) == "js_chest_kit") && (GetGold(oPC) >= 10000))
      {
         CreateItemOnObject("js_mini_merchest",oPC);
+		TakeGoldFromCreature(10000, oPC, TRUE);
+		DestroyObject(GetItemPossessedBy(oPC, "js_chest_kit"));
         SendMessageToPC(oPC,"Merchant Chest created!");
      }
      else if((GetResRef(oTargeted) == "js_chest_kit"))

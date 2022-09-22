@@ -125,7 +125,7 @@ void main(){
         int iNoCasting = GetLocalInt(oArea, "NoCasting");
         if (iNoCasting == FALSE) {
             int hasspawns = FALSE;
-            string spawnset = GetLocalString(GetArea(oPC), "day_spawn1");
+            string spawnset = GetLocalString(GetArea(oPC), "spawns_vary");
             if (spawnset != "") {
                 hasspawns = TRUE;
             }

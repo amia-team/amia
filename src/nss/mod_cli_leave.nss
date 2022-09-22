@@ -28,11 +28,6 @@
 
 void main( ){
 
-    int SAVE_LOCATION = TRUE;
-    int SAVE_LOCATION_SAFE_ONLY = TRUE;
-    string LOGOUT_LOCATION = "LOGOUT_LOCATION";
-
-
     // Variables
     object oModule          = GetModule( );
     object oPC              = GetExitingObject( );
@@ -149,21 +144,6 @@ void main( ){
 
     if (GetLocalInt(oPC,"HIPSCooldown") != 0) {
         DeleteLocalInt(oPC,"HIPSCooldown");
-    }
-
-    if (SAVE_LOCATION == TRUE) {
-        object oPCKey = GetPCKEY(oPC);
-
-        location logloc = GetLocation(oPC);
-        int hasspawns = FALSE;
-        string spawnset = GetLocalString(GetArea(oPC), "day_spawn1");
-        if (spawnset != "") {
-            hasspawns = TRUE;
-        }
-        if (SAVE_LOCATION_SAFE_ONLY == TRUE && hasspawns == TRUE) {
-            return;
-        }
-        SetLocalLocation(oPCKey, LOGOUT_LOCATION, logloc);
     }
 
     return;

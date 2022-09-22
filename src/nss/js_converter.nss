@@ -372,7 +372,7 @@ void ArchitectConverter(object oPC, object oBench, int nNode)
       case 50: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_treant"; sIngredient2 = "js_tree_shaw"; sType = "js_bui_totem"; sPlaceableName = "Massive Tribal Totem"; sMaterial = "plc"; nCost = 10000; break;
       case 51: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_sbone"; sIngredient2 = "js_tai_boco"; sType = "js_bui_dreamcat"; sPlaceableName = "Dream Catcher"; sMaterial = "plc"; nCost = 5000; break;
       case 52: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_sbone"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_bonecage"; sPlaceableName = "Bone Cage"; sMaterial = "plc"; nCost = 5000; break;
-      case 53: sProduct = "js_herb_sils"; sIngredient1 = "js_tree_shaw"; sIngredient2 = "js_chest_kit"; nCost = 5000; break;
+      case 53: sProduct = "js_chest_kit"; sIngredient1 = "js_tree_shaw"; sIngredient2 = "js_herb_sils"; nCost = 5000; break;
 
     }
 

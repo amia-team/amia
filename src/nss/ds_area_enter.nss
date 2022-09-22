@@ -54,6 +54,10 @@ void glm_addflavorVFX( object oPC, object oArea );
 //-------------------------------------------------------------------------------
 void main(){
 
+    int SAVE_LOCATION = TRUE;
+    int SAVE_LOCATION_SAFE_ONLY = TRUE;
+    string LOGOUT_LOCATION = "LOGOUT_LOCATION";
+
     //some vars and a break when the entering object is not a pc (a spawn, for example)
     object oArea            = OBJECT_SELF;
     object oPC              = GetEnteringObject( );
@@ -113,6 +117,26 @@ void main(){
         int nTime = GetRunTime();
         SetLocalInt(oArea, "ttl", nTime);
     }    */
+
+    if (SAVE_LOCATION == TRUE) {
+        object oPCKey = GetPCKEY(oPC);
+
+        location logloc = GetLocation(oPC);
+        int iNoCasting = GetLocalInt(oArea, "NoCasting");
+        if (iNoCasting == FALSE) {
+            int hasspawns = FALSE;
+            string spawnset = GetLocalString(GetArea(oPC), "day_spawn1");
+            if (spawnset != "") {
+                hasspawns = TRUE;
+            }
+            if (SAVE_LOCATION_SAFE_ONLY == TRUE && hasspawns == TRUE) {
+                hasspawns = TRUE;
+            } else {
+                SetLocalLocation(oPCKey, LOGOUT_LOCATION, logloc);
+            }
+        }
+    }
+
 }
 
 //-------------------------------------------------------------------------------
@@ -288,4 +312,3 @@ void glm_addflavorVFX( object oPC, object oArea )
     }
 
 }
-

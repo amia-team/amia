@@ -39,7 +39,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- Stables added
 	- Kingdom of Cetha: East Coast, Festival Grounds
 		- Grounds a lot more festive now
-	- Operator Oleig has found an appreciation for Tyrannosaurus Hides
+- Operator Oleig has found an appreciation for Tyrannosaurus Hides
 - Shadowdancer quest "UA: shadow affinity quest" For learning the Shadow affinity ability (widget)
 - OI Plot updates to area
 - OI plot updates to monsters

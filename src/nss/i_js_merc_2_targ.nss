@@ -31,15 +31,14 @@ void main()
           SetLocalString(oChest,"storagebox",GetResRef(oTarget));
           SetLocalString(oChest,"storageboxname",GetName(oTarget));
           SetLocalInt(oChest,"storageboxcount",nStackSize);
-          SetDescription(oChest,"Item Count Stored: " + IntToString(nStoredItemCount+nStackSize)););
+          SetDescription(oChest,"Item Count Stored: " + IntToString(nStoredItemCount+nStackSize));
           DestroyObject(oTarget);
           SendMessageToPC(oPC,"Chest Set");
         }
         else if(GetResRef(oTarget) == sStoredItem)
         {
-          SetLocalInt(oChest,"storageboxcount",nStoredItemCount+1);
-          SetDescription(oChest,"Item Count Stored: " + IntToString(nStoredItemCount+nStackSize));
           SetLocalInt(oChest,"storageboxcount",nStoredItemCount+nStackSize);
+          SetDescription(oChest,"Item Count Stored: " + IntToString(nStoredItemCount+nStackSize));
           DestroyObject(oTarget);
           SendMessageToPC(oPC,"Item Stored");
         }

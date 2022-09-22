@@ -190,7 +190,7 @@ void DS_CHECK_SET( object oPC, object oJobJournal, object oTargeted)
 
       if((GetResRef(oTargeted) == "js_chest_kit"))
       {
-       SetLocalInt(oPC,"ds_check_18",1);
+       SetLocalInt(oPC,"ds_check_20",1);
       }
 
       if((GetResRef(oTargeted) == "js_mini_merchest"))
@@ -205,7 +205,7 @@ void DS_CHECK_SET( object oPC, object oJobJournal, object oTargeted)
 
       if((GetResRef(oTargeted) == "js_chest_kit"))
       {
-       SetLocalInt(oPC,"ds_check_18",1);
+       SetLocalInt(oPC,"ds_check_20",1);
       }
 
       if((GetResRef(oTargeted) == "js_mini_merchest"))

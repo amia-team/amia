@@ -14,6 +14,6 @@ void main()
         return;
     }
     DeleteLocalLocation(oPCKey,LOGOUT_LOCATION);
-    ActionJumpToLocation(rLoc);
-
+    AssignCommand( oPC, JumpToObject( GetAreaFromLocation(rLoc) ) );
+    AssignCommand( oPC, ActionJumpToLocation(rLoc) );
 }

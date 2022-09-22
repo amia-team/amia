@@ -102,25 +102,25 @@ void MerchantBox( object oBox, object oPC, int nNode)
     {
       nAmountRemoved = SpawnBoxAmount( oChestWidget, oBox, oPC, sStoredItem, 25);
       SendMessageToPC(oPC, "You have removed "+IntToString(nAmountRemoved)+" resources from your chest!");
-	  SetDescription(oChestWidget,"Item Count Stored: " + IntToString(nAmount-nAmountRemoved));
+      SetDescription(oChestWidget,"Item Count Stored: " + IntToString(nAmount-nAmountRemoved));
     }
     else if(nNode == 2)  // Retrieve 100
     {
       nAmountRemoved = SpawnBoxAmount( oChestWidget, oBox, oPC, sStoredItem, 100);
       SendMessageToPC(oPC, "You have removed "+IntToString(nAmountRemoved)+" resources from your chest!");
-	  SetDescription(oChestWidget,"Item Count Stored: " + IntToString(nAmount-nAmountRemoved));
+      SetDescription(oChestWidget,"Item Count Stored: " + IntToString(nAmount-nAmountRemoved));
     }
     else if(nNode == 3)// Retrieve 250
     {
       nAmountRemoved = SpawnBoxAmount( oChestWidget, oBox, oPC, sStoredItem, 250);
       SendMessageToPC(oPC, "You have removed "+IntToString(nAmountRemoved)+" resources from your chest!");
-	  SetDescription(oChestWidget,"Item Count Stored: " + IntToString(nAmount-nAmountRemoved));
+      SetDescription(oChestWidget,"Item Count Stored: " + IntToString(nAmount-nAmountRemoved));
     }
     else if(nNode == 4)// Retrieve all
     {
       nAmountRemoved = SpawnBoxAmount( oChestWidget, oBox, oPC, sStoredItem, nAmount);
       SendMessageToPC(oPC, "You have removed "+IntToString(nAmountRemoved)+" resources from your chest!");
-	  SetDescription(oChestWidget,"Item Count Stored: " + IntToString(nAmount-nAmountRemoved));
+      SetDescription(oChestWidget,"Item Count Stored: " + IntToString(nAmount-nAmountRemoved));
     }
     else if(nNode == 5)// Store items
     {
@@ -138,9 +138,9 @@ void MerchantBox( object oBox, object oPC, int nNode)
             SetLocalString(oChestWidget,"storagebox",GetResRef(oBoxItem));
             SetLocalString(oChestWidget,"storageboxname",GetName(oBoxItem));
             SetLocalInt(oChestWidget,"storageboxcount",nStackSize);
-            SetName(oChestWidget,"<c~Îë>"+"Storage Chest: " + GetName(oTarget) + "</c>");
-            SetName(oBox,"<c~Îë>"+"Storage Chest: " + GetName(oTarget) + "</c>");
-			SetDescription(oChestWidget,"Item Count Stored: " + IntToString(nAmount+nStackSize));
+            SetName(oChestWidget,"<c~Îë>"+"Storage Chest: " + GetName(oBoxItem) + "</c>");
+            SetName(oBox,"<c~Îë>"+"Storage Chest: " + GetName(oBoxItem) + "</c>");
+            SetDescription(oChestWidget,"Item Count Stored: " + IntToString(nAmount+nStackSize));
             nAmount += nStackSize;
             sStoredItem = GetResRef(oBoxItem);
             nChestSet = 1;
@@ -150,7 +150,7 @@ void MerchantBox( object oBox, object oPC, int nNode)
           {
             SetLocalInt(oChestWidget,"storageboxcount",nAmount+nStackSize);
             nAmount += nStackSize;
-			SetDescription(oChestWidget,"Item Count Stored: " + IntToString(nAmount+nStackSize));
+            SetDescription(oChestWidget,"Item Count Stored: " + IntToString(nAmount+nStackSize));
             DestroyObject(oBoxItem);
           }
           oBoxItem = GetNextItemInInventory(oBox);
@@ -167,7 +167,7 @@ void MerchantBox( object oBox, object oPC, int nNode)
           if(GetResRef(oBoxItem) == sStoredItem)
           {
             SetLocalInt(oChestWidget,"storageboxcount",nAmount+nStackSize);
-			SetDescription(oChestWidget,"Item Count Stored: " + IntToString(nAmount+nStackSize));
+            SetDescription(oChestWidget,"Item Count Stored: " + IntToString(nAmount+nStackSize));
             nAmount += nStackSize;
             DestroyObject(oBoxItem);
           }
@@ -199,8 +199,8 @@ void MerchantBox( object oBox, object oPC, int nNode)
          SendMessageToPC(oPC, "You have removed "+IntToString(nAmount)+" resources and deleted your chest!");
          DeleteLocalInt(oChestWidget,"storageboxcount");
          DeleteLocalString(oChestWidget,"storagebox");
-         SetName(oChestWidget,"<c~Îë>"+"Storage Chest: " + GetName(oTarget) + "</c>");
-		 SetDescription(oChestWidget,"Empty Box");
+         SetName(oChestWidget,"<c~??>" + "Empty Miniature Storage Chest" + "</c>");
+         SetDescription(oChestWidget,"Empty Box");
          DeleteLocalInt(oPC,"minimercchestout");
          DestroyObject(oBox);
        }

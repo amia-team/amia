@@ -122,15 +122,19 @@ void main(){
         object oPCKey = GetPCKEY(oPC);
 
         location logloc = GetLocation(oPC);
-        int hasspawns = FALSE;
-        string spawnset = GetLocalString(GetArea(oPC), "day_spawn1");
-        if (spawnset != "") {
-            hasspawns = TRUE;
+        int iNoCasting = GetLocalInt(oArea, "NoCasting");
+        if (iNoCasting == FALSE) {
+            int hasspawns = FALSE;
+            string spawnset = GetLocalString(GetArea(oPC), "day_spawn1");
+            if (spawnset != "") {
+                hasspawns = TRUE;
+            }
+            if (SAVE_LOCATION_SAFE_ONLY == TRUE && hasspawns == TRUE) {
+                hasspawns = TRUE;
+            } else {
+                SetLocalLocation(oPCKey, LOGOUT_LOCATION, logloc);
+            }
         }
-        if (SAVE_LOCATION_SAFE_ONLY == TRUE && hasspawns == TRUE) {
-            return;
-        }
-        SetLocalLocation(oPCKey, LOGOUT_LOCATION, logloc);
     }
 
 }

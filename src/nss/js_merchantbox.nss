@@ -100,17 +100,17 @@ void MerchantBox( object oBox, object oPC, int nNode)
 
     if(nNode == 1)   // Retrieve 50
     {
-      nAmountRemoved = SpawnBoxAmount( oJobJournal, oBox, oPC, nChestNumber, sStoredItem, 50);
+      nAmountRemoved = SpawnBoxAmount( oJobJournal, oBox, oPC, nChestNumber, sStoredItem, 25);
       SendMessageToPC(oPC, "You have removed "+IntToString(nAmountRemoved)+" resources from your chest!");
     }
     else if(nNode == 2)  // Retrieve 500
     {
-      nAmountRemoved = SpawnBoxAmount( oJobJournal, oBox, oPC, nChestNumber, sStoredItem, 500);
+      nAmountRemoved = SpawnBoxAmount( oJobJournal, oBox, oPC, nChestNumber, sStoredItem, 100);
       SendMessageToPC(oPC, "You have removed "+IntToString(nAmountRemoved)+" resources from your chest!");
     }
     else if(nNode == 3)// Retrieve 1000
     {
-      nAmountRemoved = SpawnBoxAmount( oJobJournal, oBox, oPC, nChestNumber, sStoredItem, 1000);
+      nAmountRemoved = SpawnBoxAmount( oJobJournal, oBox, oPC, nChestNumber, sStoredItem, 250);
       SendMessageToPC(oPC, "You have removed "+IntToString(nAmountRemoved)+" resources from your chest!");
     }
     else if(nNode == 4)// Retrieve all

@@ -22,21 +22,24 @@ void main()
     {
       if((GetSubString(GetResRef(oTarget),0,3) == "js_"))
       {
+	  
+	  int nStackSize = GetItemStackSize(oTarget);
+	  
         if(sStoredItem == "")
         {
           SetName(oChest,"<c~Îë>"+"Storage Chest: " + GetName(oTarget) + "</c>");
           SetLocalString(oChest,"storagebox",GetResRef(oTarget));
           SetLocalString(oChest,"storageboxname",GetName(oTarget));
-          SetLocalInt(oChest,"storageboxcount",1);
-          SetDescription(oChest,"Item Count Stored: 1");
+          SetLocalInt(oChest,"storageboxcount",nStackSize);
+          SetDescription(oChest,"Item Count Stored: " + IntToString(nStoredItemCount+nStackSize)););
           DestroyObject(oTarget);
           SendMessageToPC(oPC,"Chest Set");
         }
         else if(GetResRef(oTarget) == sStoredItem)
         {
           SetLocalInt(oChest,"storageboxcount",nStoredItemCount+1);
-          SetDescription(oChest,"Item Count Stored: " + IntToString(nStoredItemCount+1));
-          SetLocalInt(oChest,"storageboxcount",nStoredItemCount+1);
+          SetDescription(oChest,"Item Count Stored: " + IntToString(nStoredItemCount+nStackSize));
+          SetLocalInt(oChest,"storageboxcount",nStoredItemCount+nStackSize);
           DestroyObject(oTarget);
           SendMessageToPC(oPC,"Item Stored");
         }

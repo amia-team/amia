@@ -199,7 +199,7 @@ void MerchantBox( object oBox, object oPC, int nNode)
          SendMessageToPC(oPC, "You have removed "+IntToString(nAmount)+" resources and deleted your chest!");
          DeleteLocalInt(oChestWidget,"storageboxcount");
          DeleteLocalString(oChestWidget,"storagebox");
-         SetName(oChestWidget,"<c~??>" + "Empty Miniature Storage Chest" + "</c>");
+         SetName(oChestWidget,"<c~Îë>" + "Empty Miniature Storage Chest" + "</c>");
          SetDescription(oChestWidget,"Empty Box");
          DeleteLocalInt(oPC,"minimercchestout");
          DestroyObject(oBox);

@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Big Game Hunter: Large Wasps now have vermin immunities
 - Big Game Hunter: Umber Hulks no longer sound like wolves, have chaos gaze
 - variuos exploit fixes
+- fix to hak for (re)adding phenotype "old" (9) 
 
 
 ## [2.2.11] - 2022-09-16

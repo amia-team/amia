@@ -7,8 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+	
+### Changed
+
+### Fixed
+
+## [2.2.12] - 2022-09-23]
+
+### Added
 - Mini storage chest now live!
-	- The chest is made with "Storage Box kit" +10k gold by merchants (use job log on a kit)
+	- The chest is made with "Storage Box kit" + 10k gold by merchants (use job log on a kit)
 	- Storage Box kit is made with "Shadowtop wood" + "silverbark sap" by arcitects (in station)
 	
 ### Changed
@@ -17,7 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Big Game Hunter: Large Wasps now have vermin immunities
 - Big Game Hunter: Umber Hulks no longer sound like wolves, have chaos gaze
-
+- variuos exploit fixes
 
 
 ## [2.2.11] - 2022-09-16

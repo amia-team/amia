@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-## [2.2.11] - 2022-09-23]
+## [2.2.12] - 2022-09-23]
 
 ### Added
 - Mini storage chest now live!

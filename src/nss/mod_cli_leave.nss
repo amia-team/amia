@@ -31,8 +31,8 @@ void main( ){
     int SAVE_LOCATION = TRUE;
     int SAVE_LOCATION_SAFE_ONLY = TRUE;
     string LOGOUT_LOCATION = "LOGOUT_LOCATION";
-    string RETURN_NO_SET = "NoCasting";
-    string RETURN_SPAWN_CHECK = "day_spawn1";
+    string RETURN_NO_SET = "RETURN_NO_SET";
+    //string RETURN_SPAWN_CHECK = "day_spawn1";
 
     // Variables
     object oModule          = GetModule( );
@@ -158,7 +158,10 @@ void main( ){
         int iNoCasting = GetLocalInt(oArea, RETURN_NO_SET);
         if (iNoCasting == FALSE) {
             int hasspawns = FALSE;
-            string spawnset = GetLocalString(GetArea(oPC), RETURN_SPAWN_CHECK);
+            string spawnset = GetLocalString(GetArea(oPC), "day_spawn1");
+            if (spawnset == "") {
+                spawnset = GetLocalString(GetArea(oPC), "night_spawn1");
+            }
             if (spawnset != "") {
                 hasspawns = TRUE;
             }

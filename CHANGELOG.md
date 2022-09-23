@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-## [2.2.12] - 2022-09-23]
+## [2.3.1] - 2022-09-23]
 
 ### Added
 - Mini storage chest now live!
@@ -29,7 +29,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - fix to hak for (re)adding phenotype "old" (9) 
 
 
-## [2.2.11] - 2022-09-16
+## [2.3.0] - 2022-09-16
 
 ### Added
 - Areas

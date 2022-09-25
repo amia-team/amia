@@ -42,7 +42,7 @@ void main()
         SetLocalInt(oPC, "PiercingShotToggled",1);
         ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink, oPC);
 		
-		NWNX_Creature_SetMovementRate(oPC, 0.01);
+		NWNX_Creature_SetMovementRate(oPC, 0.1);
       }
       else
       {
@@ -63,7 +63,7 @@ void main()
 
         DeleteLocalInt(oPC,"PiercingShotToggled");
         SendMessageToPC(oPC,"Piercing Shot Deactivated!");
-		NWNX_Creature_SetMovementRate(oPC, 1);
+		NWNX_Creature_SetMovementRate(oPC, NWNX_CREATURE_MOVEMENT_RATE_PC);
 
       }
 

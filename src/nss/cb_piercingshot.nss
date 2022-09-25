@@ -31,8 +31,6 @@ void main()
     effect eDam1 = EffectDamageIncrease(nDam,DAMAGE_TYPE_DIVINE);
     effect eLink = EffectLinkEffects(eAB, eDam1);
     eLink = ExtraordinaryEffect(eLink);
-	
-	int iSlow = SetMovementRate(oPC, 0.01);
 
      // Check to make sure the weapon is a crossbow (light or heavy)
    if((GetBaseItemType(oItem)== BASE_ITEM_HEAVYCROSSBOW) ||(GetBaseItemType(oItem)== BASE_ITEM_LIGHTCROSSBOW))
@@ -43,6 +41,8 @@ void main()
         SendMessageToPC(oPC,"Piercing Shot Activated!");
         SetLocalInt(oPC, "PiercingShotToggled",1);
         ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink, oPC);
+		
+		int iSlow = SetMovementRate(oPC, 0.01);
       }
       else
       {

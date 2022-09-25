@@ -5,6 +5,8 @@
 
 */
 
+#include "nwnx_creature"
+
 void main()
 {
     object oPC = OBJECT_SELF;
@@ -27,10 +29,10 @@ void main()
     effect eLoop                    = GetFirstEffect(oPC);
     effect eAB = EffectAttackIncrease(nAB);
     effect eDam1 = EffectDamageIncrease(nDam,DAMAGE_TYPE_DIVINE);
-    effect eFreeze = EffectMovementSpeedDecrease(99);
     effect eLink = EffectLinkEffects(eAB, eDam1);
-    eLink = EffectLinkEffects(eFreeze, eLink);
     eLink = ExtraordinaryEffect(eLink);
+	
+	int iSlow = SetMovementRate(oPC, 0.01);
 
      // Check to make sure the weapon is a crossbow (light or heavy)
    if((GetBaseItemType(oItem)== BASE_ITEM_HEAVYCROSSBOW) ||(GetBaseItemType(oItem)== BASE_ITEM_LIGHTCROSSBOW))
@@ -61,6 +63,7 @@ void main()
 
         DeleteLocalInt(oPC,"PiercingShotToggled");
         SendMessageToPC(oPC,"Piercing Shot Deactivated!");
+		iSlow = SetMovementRate(oPC, 1);
 
       }
 

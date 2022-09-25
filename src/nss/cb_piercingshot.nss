@@ -6,6 +6,12 @@
 */ 
 
 #include "nwnx_creature"
+#include "nwnx_util"
+    
+if(NWNX_Util_GetEnvironmentVariable("SERVER_MODE") == "live") {
+    return;
+    }
+
 
 void main()
 {

@@ -3,7 +3,7 @@
 
    Piercing Shot Feat for Crossbow PRC
 
-*/
+*/ 
 
 #include "nwnx_creature"
 
@@ -42,7 +42,7 @@ void main()
         SetLocalInt(oPC, "PiercingShotToggled",1);
         ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink, oPC);
 		
-		int iSlow = NWNX_Creature_SetMovementRate(oPC, 0.01);
+		NWNX_Creature_SetMovementRate(oPC, 0.01);
       }
       else
       {
@@ -63,7 +63,7 @@ void main()
 
         DeleteLocalInt(oPC,"PiercingShotToggled");
         SendMessageToPC(oPC,"Piercing Shot Deactivated!");
-		iSlow = NWNX_Creature_SetMovementRate(oPC, 1);
+		NWNX_Creature_SetMovementRate(oPC, 1);
 
       }
 

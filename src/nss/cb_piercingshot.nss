@@ -7,14 +7,15 @@
 
 #include "nwnx_creature"
 #include "nwnx_util"
-    
-if(NWNX_Util_GetEnvironmentVariable("SERVER_MODE") == "live") {
-    return;
-    }
 
 
 void main()
 {
+
+	if(NWNX_Util_GetEnvironmentVariable("SERVER_MODE") == "live") {
+		return;
+		}
+
     object oPC = OBJECT_SELF;
     object oTarget = GetSpellTargetObject();
     object oItem = GetItemInSlot(4,oPC);

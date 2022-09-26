@@ -68,7 +68,7 @@ void main()
    else
    {
 
-     SendMessageToPC(oPC,"Hands must be completely empty to enter the Enlightened State and continue to be to remain in it!");
+     SendMessageToPC(oPC,"Hands must be completely empty to enter the Enlightened State and to remain in it!");
 
    }
 

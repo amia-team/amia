@@ -29,7 +29,6 @@ void main()
       nDam = nDam + 10;
     }
 
-	int iSlow = NWNX_Creature_SetMovementRateFactor(oPC, 0.01);
 	int nAB = nClassLevel/2;
 	int    	eLoopSpellID;
 	effect 	eLoop = GetFirstEffect(oPC);
@@ -48,7 +47,7 @@ void main()
         SetLocalInt(oPC, "PiercingShotToggled",1);
         ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink, oPC);
 		
-		iSlow;
+		int NWNX_Creature_SetMovementRateFactor(oPC, 0.01);
       }
       else
       {
@@ -66,7 +65,7 @@ void main()
                 eLoop=GetNextEffect(oPC);
          }
 
-		int iSlow = NWNX_Creature_SetMovementRateFactor(oPC, 1);
+		int NWNX_Creature_SetMovementRateFactor(oPC, 1);
         DeleteLocalInt(oPC,"PiercingShotToggled");
         SendMessageToPC(oPC,"Piercing Shot Deactivated!");
 		

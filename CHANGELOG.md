@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
+- Warlock no longer counts for PM prereq. However, you can still be a Warlock and PM if you meet the 3 level prereq with some other arcane class.
 
 ## [2.3.1] - 2022-09-23]
 

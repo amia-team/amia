@@ -68,7 +68,12 @@ void main( ){
   SetCampaignString( "Amia", GetPCPlayerName( oPC ) + GetName( oPC ) + "Levels", sLevels );
   //End Death Tracker script.
 
-    // Remove Monk VFX otherwises it bugs
+    ExportSingleCharacter( oPC );
+
+    //resets logged in status for mod_cli_enter
+    SetLocalInt(oPC, "LoggedIn", FALSE);
+
+        // Remove Monk VFX otherwises it bugs
     if(nMonkPRC == 1)
     {
        while(GetIsEffectValid(eLoop))
@@ -83,11 +88,6 @@ void main( ){
         }
        DeleteLocalInt(oPC,"monkprc");
     }
-
-    ExportSingleCharacter( oPC );
-
-    //resets logged in status for mod_cli_enter
-    SetLocalInt(oPC, "LoggedIn", FALSE);
 
     /*object oAreaTwo = GetLocalObject(oPC, "last_area");
     //fw_instanceLeave(oAreaTwo);

@@ -244,7 +244,7 @@ void main( ){
          }
 
 
-     DeleteLocalInt(oPCKEY,"monkprc");
+     DeleteLocalInt(oPC,"monkprc");
 
     }
 

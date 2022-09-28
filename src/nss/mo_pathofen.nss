@@ -4,13 +4,13 @@
 */
 // 2022/09/11 Opustus   Capped Pain damage accumulation with level scaling
 
-void Mists(object oPC, int nClassLevel, int nActivated, object oWidget);// Feat 1226
-void Elemental(object oPC, int nClassLevel, int nActivated, object oWidget);// Feat 1227
-void Life(object oPC, int nClassLevel, int nActivated, object oWidget);// Feat 1228
-void Ironskin(object oPC, int nClassLevel, int nActivated, object oWidget);// Feat 1229
-void Antimagic(object oPC, int nClassLevel, int nActivated, object oWidget);// Feat 1230
-void Pain(object oPC, int nClassLevel, int nActivated, object oWidget);// Feat 1231
-void Zen(object oPC, int nClassLevel, int nActivated, object oWidget);// Feat 1241
+void Mists(object oPC, int nClassLevel, int nActivated);// Feat 1226
+void Elemental(object oPC, int nClassLevel, int nActivated);// Feat 1227
+void Life(object oPC, int nClassLevel, int nActivated);// Feat 1228
+void Ironskin(object oPC, int nClassLevel, int nActivated);// Feat 1229
+void Antimagic(object oPC, int nClassLevel, int nActivated);// Feat 1230
+void Pain(object oPC, int nClassLevel, int nActivated);// Feat 1231
+void Zen(object oPC, int nClassLevel, int nActivated);// Feat 1241
 
 void main()
 {
@@ -18,7 +18,6 @@ void main()
    object oPC = OBJECT_SELF;
    object oOffHand = GetItemInSlot(INVENTORY_SLOT_LEFTHAND,oPC);
    object oPrimaryHand = GetItemInSlot(INVENTORY_SLOT_RIGHTHAND,oPC);
-   object oWidget = GetItemPossessedBy(oPC, "ds_pckey");
 
    int nMist = GetHasFeat(1226,oPC);
    int nElemental = GetHasFeat(1227,oPC);
@@ -28,7 +27,7 @@ void main()
    int nPain = GetHasFeat(1231,oPC);
    int nZen = GetHasFeat(1241,oPC);
    int nClassLevel = GetLevelByClass(50, oPC);
-   int nActivated = GetLocalInt(oWidget, "monkprc");
+   int nActivated = GetLocalInt(oPC, "monkprc");
 
    // Check to make sure hands are empty
    if(!GetIsObjectValid(oPrimaryHand) && !GetIsObjectValid(oOffHand))
@@ -37,31 +36,31 @@ void main()
     // Depending on their feat it dictates what happens
     if(nMist == TRUE)
     {
-      Mists(oPC,nClassLevel,nActivated,oWidget);
+      Mists(oPC,nClassLevel,nActivated);
     }
     else if(nElemental == TRUE)
     {
-      Elemental(oPC,nClassLevel,nActivated,oWidget);
+      Elemental(oPC,nClassLevel,nActivated);
     }
     else if(nLife == TRUE)
     {
-      Life(oPC,nClassLevel,nActivated,oWidget);
+      Life(oPC,nClassLevel,nActivated);
     }
     else if(nIronSkint == TRUE)
     {
-      Ironskin(oPC,nClassLevel,nActivated,oWidget);
+      Ironskin(oPC,nClassLevel,nActivated);
     }
     else if(nAntiMagic == TRUE)
     {
-      Antimagic(oPC,nClassLevel,nActivated,oWidget);
+      Antimagic(oPC,nClassLevel,nActivated);
     }
     else if(nPain == TRUE)
     {
-      Pain(oPC,nClassLevel,nActivated,oWidget);
+      Pain(oPC,nClassLevel,nActivated);
     }
     else if(nZen == TRUE)
     {
-      Zen(oPC,nClassLevel,nActivated,oWidget);
+      Zen(oPC,nClassLevel,nActivated);
     }
 
    }
@@ -77,7 +76,7 @@ void main()
 
 }
 
-void Mists(object oPC, int nClassLevel, int nActivated, object oWidget)               // done
+void Mists(object oPC, int nClassLevel, int nActivated)               // done
 {
    effect eAbBonus =  EffectAttackIncrease(2, ATTACK_BONUS_MISC);
    effect eConceal;
@@ -140,7 +139,7 @@ void Mists(object oPC, int nClassLevel, int nActivated, object oWidget)         
      eLink = EffectLinkEffects(eVisual, eLink);
      eLink = ExtraordinaryEffect(eLink);
      ApplyEffectToObject(DURATION_TYPE_PERMANENT,eLink, oPC);
-     SetLocalInt(oWidget,"monkprc",1);
+     SetLocalInt(oPC,"monkprc",1);
 
   }
   else //Feat is already active so deactivate it
@@ -160,14 +159,14 @@ void Mists(object oPC, int nClassLevel, int nActivated, object oWidget)         
          }
 
 
-     DeleteLocalInt(oWidget,"monkprc");
+     DeleteLocalInt(oPC,"monkprc");
 
    }
 
 
 }
 
-void Elemental(object oPC, int nClassLevel, int nActivated, object oWidget)   // Done
+void Elemental(object oPC, int nClassLevel, int nActivated)   // Done
 {
    effect eAbBonus =  EffectAttackIncrease(2, ATTACK_BONUS_MISC);
    effect eEleRes;
@@ -237,7 +236,7 @@ void Elemental(object oPC, int nClassLevel, int nActivated, object oWidget)   //
      eLink = EffectLinkEffects(eVisual, eLink);
      eLink = ExtraordinaryEffect(eLink);
      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink, oPC);
-     SetLocalInt(oWidget,"monkprc",1);
+     SetLocalInt(oPC,"monkprc",1);
 
   }
   else //Feat is already active so deactivate it
@@ -257,14 +256,14 @@ void Elemental(object oPC, int nClassLevel, int nActivated, object oWidget)   //
          }
 
 
-     DeleteLocalInt(oWidget,"monkprc");
+     DeleteLocalInt(oPC,"monkprc");
 
    }
 
 
 }
 
-void Life(object oPC, int nClassLevel, int nActivated, object oWidget)  // Done
+void Life(object oPC, int nClassLevel, int nActivated)  // Done
 {
    effect eAbBonus =  EffectAttackIncrease(2, ATTACK_BONUS_MISC);
    effect eImmunity;
@@ -311,7 +310,7 @@ void Life(object oPC, int nClassLevel, int nActivated, object oWidget)  // Done
      eLink = EffectLinkEffects(eVisual, eLink);
      eLink = ExtraordinaryEffect(eLink);
      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink, oPC);
-     SetLocalInt(oWidget,"monkprc",1);
+     SetLocalInt(oPC,"monkprc",1);
 
    }
    else //Feat is already active so deactivate it
@@ -331,7 +330,7 @@ void Life(object oPC, int nClassLevel, int nActivated, object oWidget)  // Done
          }
 
 
-     DeleteLocalInt(oWidget,"monkprc");
+     DeleteLocalInt(oPC,"monkprc");
 
    }
 
@@ -339,7 +338,7 @@ void Life(object oPC, int nClassLevel, int nActivated, object oWidget)  // Done
 
 }
 
-void Ironskin(object oPC, int nClassLevel, int nActivated, object oWidget)// Done
+void Ironskin(object oPC, int nClassLevel, int nActivated)// Done
 {
    int nMonkLevel = GetLevelByClass(CLASS_TYPE_MONK,oPC);
    effect eAbBonus =  EffectAttackIncrease(2, ATTACK_BONUS_MISC);
@@ -409,7 +408,7 @@ void Ironskin(object oPC, int nClassLevel, int nActivated, object oWidget)// Don
      eLink = EffectLinkEffects(eVisual, eLink);
      eLink = ExtraordinaryEffect(eLink);
      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink, oPC);
-     SetLocalInt(oWidget,"monkprc",1);
+     SetLocalInt(oPC,"monkprc",1);
 
    }
    else //Feat is already active so deactivate it
@@ -429,7 +428,7 @@ void Ironskin(object oPC, int nClassLevel, int nActivated, object oWidget)// Don
          }
 
 
-     DeleteLocalInt(oWidget,"monkprc");
+     DeleteLocalInt(oPC,"monkprc");
 
    }
 
@@ -437,7 +436,7 @@ void Ironskin(object oPC, int nClassLevel, int nActivated, object oWidget)// Don
 
 }
 
-void Antimagic(object oPC, int nClassLevel, int nActivated, object oWidget)            // Done
+void Antimagic(object oPC, int nClassLevel, int nActivated)            // Done
 {
    effect eAbBonus =  EffectAttackIncrease(2, ATTACK_BONUS_MISC);
    effect eSpellRes;
@@ -522,7 +521,7 @@ void Antimagic(object oPC, int nClassLevel, int nActivated, object oWidget)     
      eLink = EffectLinkEffects(eVisual, eLink);
      eLink = ExtraordinaryEffect(eLink);
      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink, oPC);
-     SetLocalInt(oWidget,"monkprc",1);
+     SetLocalInt(oPC,"monkprc",1);
 
    }
    else //Feat is already active so deactivate it
@@ -542,13 +541,13 @@ void Antimagic(object oPC, int nClassLevel, int nActivated, object oWidget)     
          }
 
 
-     DeleteLocalInt(oWidget,"monkprc");
+     DeleteLocalInt(oPC,"monkprc");
 
    }
 }
 
 
-void Pain(object oPC, int nClassLevel, int nActivated, object oWidget)
+void Pain(object oPC, int nClassLevel, int nActivated)
 {
    effect eAbBonus;
    effect eHaste = EffectHaste();
@@ -653,7 +652,7 @@ void Pain(object oPC, int nClassLevel, int nActivated, object oWidget)
      eLink = ExtraordinaryEffect(eLink);
      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink, oPC);
      SetLocalInt(oPC,"monkprcpain",5);
-     SetLocalInt(oWidget,"monkprc",1);
+     SetLocalInt(oPC,"monkprc",1);
      ExecuteScript("mo_pain", oPC);
 
 
@@ -675,7 +674,7 @@ void Pain(object oPC, int nClassLevel, int nActivated, object oWidget)
          }
 
 
-     DeleteLocalInt(oWidget,"monkprc");
+     DeleteLocalInt(oPC,"monkprc");
 
    }
 
@@ -683,7 +682,7 @@ void Pain(object oPC, int nClassLevel, int nActivated, object oWidget)
 
 }
 
-void Zen(object oPC, int nClassLevel, int nActivated, object oWidget)   // Done
+void Zen(object oPC, int nClassLevel, int nActivated)   // Done
 {
 
    effect eAbBonus;
@@ -757,7 +756,7 @@ void Zen(object oPC, int nClassLevel, int nActivated, object oWidget)   // Done
      eLink = EffectLinkEffects(eVisual, eLink);
      eLink = ExtraordinaryEffect(eLink);
      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink, oPC);
-     SetLocalInt(oWidget,"monkprc",1);
+     SetLocalInt(oPC,"monkprc",1);
 
 
    }
@@ -778,7 +777,7 @@ void Zen(object oPC, int nClassLevel, int nActivated, object oWidget)   // Done
          }
 
 
-     DeleteLocalInt(oWidget,"monkprc");
+     DeleteLocalInt(oPC,"monkprc");
 
    }
 

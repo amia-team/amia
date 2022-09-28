@@ -44,7 +44,7 @@ void main( ){
     string sCDKEY           = GetLocalString( oPC, "ds_cdkey" );
     string sPCKEY           = GetLocalString( oPC, "pckey" );
     int nDamage             = GetMaxHitPoints( oPC ) - GetCurrentHitPoints( oPC );
-    int nMonkPRC            = GetLocalInt(oWidget, "monkprc");
+    int nMonkPRC            = GetLocalInt(oPC, "monkprc");
     int eLoopSpellID;
     effect eLoop            = GetFirstEffect(oPC);
 
@@ -81,7 +81,7 @@ void main( ){
             }
                 eLoop=GetNextEffect(oPC);
         }
-       DeleteLocalInt(oWidget,"monkprc");
+       DeleteLocalInt(oPC,"monkprc");
     }
 
     ExportSingleCharacter( oPC );

@@ -7,8 +7,7 @@
 void main()
 {
    object oPC = OBJECT_SELF;
-   object oWidget = GetItemPossessedBy(oPC, "ds_pckey");
-   int nActivated = GetLocalInt(oWidget, "monkprc");
+   int nActivated = GetLocalInt(oPC, "monkprc");
    int nDamage = GetLocalInt(oPC, "monkprcpain");
    int nCap = GetLocalInt(oPC, "monkprcpain_cap");
    effect eDamage = EffectDamage(nDamage,DAMAGE_TYPE_DIVINE);
@@ -32,7 +31,7 @@ void main()
          }
 
 
-     DeleteLocalInt(oWidget,"monkprc");
+     DeleteLocalInt(oPC,"monkprc");
 
      return;
    }
@@ -51,7 +50,7 @@ void main()
    else
    {
     DeleteLocalInt(oPC, "monkprcpain");
-    DeleteLocalInt(oWidget,"monkprc");
+    DeleteLocalInt(oPC,"monkprc");
     return;
    }
 

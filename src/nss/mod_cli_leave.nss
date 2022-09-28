@@ -144,7 +144,7 @@ void main( ){
        {
           eLoopSpellID = GetEffectSpellId(eLoop);
 
-            if ((eLoopSpellID == 948) && (GetEffectType(eLoop)==EFFECT_TYPE_ATTACK_INCREASE) || (GetEffectType(eLoop)==EFFECT_TYPE_VISUALEFFECT))
+            if ((GetEffectType(eLoop)==EFFECT_TYPE_ATTACK_INCREASE) && (eLoopSpellID == 948))
             {
                  RemoveEffect(oPC, eLoop);
             }

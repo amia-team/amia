@@ -366,7 +366,7 @@ void CheckWeeklyReset(object oPC)
 
 }
 
-void RemoveMonkPathEffects(object oPC)
+void()
 {
   object oPC    = GetEnteringObject();
   int eLoopSpellID;

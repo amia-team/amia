@@ -365,24 +365,3 @@ void CheckWeeklyReset(object oPC)
    }
 
 }
-
-void()
-{
-  object oPC    = GetEnteringObject();
-  int eLoopSpellID;
-  effect eLoop  = GetFirstEffect(oPC);
-  if(GetIsPC(oPC))
-    {
-       while(GetIsEffectValid(eLoop))
-       {
-          eLoopSpellID = GetEffectSpellId(eLoop);
-
-            if ((eLoopSpellID == 948) || (GetEffectType(eLoop)==EFFECT_TYPE_ATTACK_INCREASE) || (GetEffectType(eLoop)==EFFECT_TYPE_VISUALEFFECT))
-            {
-                 RemoveEffect(oPC, eLoop);
-            }
-                eLoop=GetNextEffect(oPC);
-        }
-       DeleteLocalInt(oPC,"monkprc");
-    }
-}

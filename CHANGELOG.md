@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Eternal Horizon got a few golems.
+- A few new PLC curtains.
 - 2 new haks: amia_tile_patch3, amia_tile_patch4
 	- Gives 24 Bioware tilesets a glow-up that requires no overrides:
 		- Barrows Interior

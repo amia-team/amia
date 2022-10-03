@@ -60,6 +60,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- WoRm Scorched Earth
 	
 ### Changed
+- Haks amia_tile_patch1 and amia_tile_patch2 updated for the above tileset update.
 
 ### Fixed
 - Warlock no longer counts for PM prereq. However, you can still be a Warlock and PM if you meet the 3 level prereq with some other arcane class.

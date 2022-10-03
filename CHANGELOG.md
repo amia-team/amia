@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Fixed
+
+
+
+## [2.3.1] - 2022-09-23]
+
+### Added
 - Eternal Horizon got a few golems.
 - A few new PLC curtains.
 - 2 new haks: amia_tile_patch3, amia_tile_patch4
@@ -32,6 +42,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- Rural, Summer
 		- Rural, Winter
 		- Sea Caves
+		- Sewers
 		- Steamworks
 		- Tropical
 	- Adds 24 new tilesets:

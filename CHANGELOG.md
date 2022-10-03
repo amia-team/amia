@@ -7,6 +7,57 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Eternal Horizon got a few golems.
+- 2 new haks: amia_tile_patch3, amia_tile_patch4
+	- Gives 24 Bioware tilesets a glow-up that requires no overrides:
+		- Barrows Interior
+		- Beholder Caves
+		- Castle Exterior
+		- Castle Interior
+		- Castle Interior 2
+		- City Exterior
+		- City Interior
+		- City Interior 2
+		- Crypts
+		- Desert
+		- Drow Interior
+		- Dungeon
+		- Forest
+		- Fort Interior
+		- Frozen Wastes
+		- Illithid Interior
+		- Mines and Caverns
+		- Ruins
+		- Rural, Summer
+		- Rural, Winter
+		- Sea Caves
+		- Steamworks
+		- Tropical
+	- Adds 24 new tilesets:
+		- Marble Elven Interiors
+		- Sen's UD: Icy Caverns
+		- Abyss
+		- CTP Babylon
+		- CTP Black Desert
+		- CTP Brick Interior
+		- CTP Cave Ruins
+		- CTP Elven City
+		- CTP Elven Interior
+		- CTP Gothic Interior
+		- Daggerdale Swamp
+		- Earthen Tunnels
+		- GH Castle Interiors
+		- Jacoby's Jungle
+		- Mines and Caverns Ice
+		- UD 1 Main
+		- Terria, PHoD Desert
+		- Terria, PHoD Hell
+		- Terria, PHoD Verdant
+		- Terria, SEN Original
+		- Winter CRF - Pasilli
+		- WoRm Cypress Bayou
+		- WoRm Fantasy Interiors
+		- WoRm Scorched Earth
 	
 ### Changed
 

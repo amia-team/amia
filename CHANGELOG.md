@@ -71,7 +71,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- WoRm Cypress Bayou
 		- WoRm Fantasy Interiors
 		- WoRm Scorched Earth
-	
+- added new vfx (cat ears/sideburns for more races), .mld and .tga files to amia_top and Amia_parts.
+	- 86 new list additions for visualeffects.2da
+		
 ### Changed
 - Haks amia_tile_patch1 and amia_tile_patch2 updated for the above tileset update.
 

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+-Updated Kohlingen City names to remove the second "Kohlingen" (Greengarden, Old City Outskirts, etc.)
 
 ### Fixed
 

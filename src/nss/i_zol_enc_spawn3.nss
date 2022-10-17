@@ -5,10 +5,17 @@ void main()
     int modEvent = GetUserDefinedItemEventNumber();
     int scriptResult = X2_EXECUTE_SCRIPT_END;
 
+    int iFaction = STANDARD_FACTION_HOSTILE;
+    string ARMY_PEN_FACTION = "ARMY_PEN_FACTION";
+
     switch(modEvent)
     {
         case X2_ITEM_EVENT_ACTIVATE:
             object monsterArea = GetObjectByTag("army_pen_3");
+            int iTempFaction = GetLocalInt(monsterArea, ARMY_PEN_FACTION);
+            if (iTempFaction != 0) {
+                iFaction = iTempFaction;
+            }
             object monsterToSpawn = GetFirstObjectInArea(monsterArea);
 
             location itemTargetLocation = GetItemActivatedTargetLocation();
@@ -22,7 +29,7 @@ void main()
                         continue;
                     }
 
-                    ChangeToStandardFaction(monsterToSpawn, STANDARD_FACTION_HOSTILE);
+                    ChangeToStandardFaction(monsterToSpawn, iFaction);
                     CopyObject(monsterToSpawn, itemTargetLocation);
                 }
                 monsterToSpawn = GetNextObjectInArea(monsterArea);

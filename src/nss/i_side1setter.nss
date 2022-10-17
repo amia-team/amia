@@ -9,5 +9,17 @@ void main()
         object oSide2 = GetObjectByTag(SIDE_2_OBJECT_REF);
         AdjustReputation(oPC, oSide1, 100);
         AdjustReputation(oPC, oSide2, -100);
+
+        object oPartyMember = GetFirstFactionMember(oPC);
+        AdjustReputation(oPartyMember, oSide1, 100);
+        AdjustReputation(oPartyMember, oSide2, -100);
+
+        oPartyMember = GetNextFactionMember(oPC);
+        while (oPartyMember != OBJECT_INVALID) {
+            AdjustReputation(oPartyMember, oSide1, 100);
+            AdjustReputation(oPartyMember, oSide2, -100);
+
+            oPartyMember = GetNextFactionMember(oPC);
+        }
     }
 }

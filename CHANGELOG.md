@@ -7,12 +7,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
-=HAK= -Added 34 Robes to the hak
-=HAK= -Skin Appearances: 6 sharks, 34 birds, 4 gnomish ships, 8 wizards, 3 witches
-=HAK= -PLCs: 16 statues, 4 gnomish ships, 7 cultist corpses, 101 NWN2 building PLCs
-=HAK= -Added 2 heads from Mahtan
-=HAK= -Added new vfx (cat ears/sideburns for more races), .mld and .tga files to amia_top and Amia_parts.
-=HAK= -86 new list additions for visualeffects.2da
 
 ### Changed
 -Updated Kohlingen City names to remove the second "Kohlingen" (Greengarden, Old City Outskirts, etc.)
@@ -20,8 +14,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 
 
+## [2.3.3] - 2022-10-18]
 
-## [2.3.1] - 2022-09-23]
+### Added
+=HAK= -Added 34 Robes to the hak
+=HAK= -Skin Appearances: 6 sharks, 34 birds, 4 gnomish ships, 8 wizards, 3 witches
+=HAK= -PLCs: 16 statues, 4 gnomish ships, 7 cultist corpses, 101 NWN2 building PLCs
+=HAK= -Added 2 heads from Mahtan
+=HAK= -Added new vfx (cat ears/sideburns for more races), .mld and .tga files to amia_top and Amia_parts.
+=HAK= -86 new list additions for visualeffects.2da
+
+## [2.3.2] - 2022-09-23]
 
 ### Added
 - Eternal Horizon got a few golems.

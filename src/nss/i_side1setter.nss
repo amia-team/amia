@@ -1,5 +1,9 @@
 void main()
 {
+    if (!GetIsDM(GetItemActivator())) {
+        return;
+    }
+
     string SIDE_1_OBJECT_REF = "sidesetter_side1";
     string SIDE_2_OBJECT_REF = "sidesetter_side2";
     object oPC = GetItemActivatedTarget();
@@ -13,11 +17,13 @@ void main()
         object oPartyMember = GetFirstFactionMember(oPC);
         AdjustReputation(oPartyMember, oSide1, 100);
         AdjustReputation(oPartyMember, oSide2, -100);
+        SendMessageToPC(oPartyMember, "Faction siding set to side 1.");
 
         oPartyMember = GetNextFactionMember(oPC);
         while (oPartyMember != OBJECT_INVALID) {
             AdjustReputation(oPartyMember, oSide1, 100);
             AdjustReputation(oPartyMember, oSide2, -100);
+            SendMessageToPC(oPartyMember, "Faction siding set to side 1.");
 
             oPartyMember = GetNextFactionMember(oPC);
         }

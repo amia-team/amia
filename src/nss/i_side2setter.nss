@@ -15,14 +15,14 @@ void main()
         AdjustReputation(oPC, oSide2, 100);
 
         object oPartyMember = GetFirstFactionMember(oPC);
-        AdjustReputation(oPartyMember, oSide1, 100);
-        AdjustReputation(oPartyMember, oSide2, -100);
+        AdjustReputation(oPartyMember, oSide1, -100);
+        AdjustReputation(oPartyMember, oSide2, 100);
         SendMessageToPC(oPartyMember, "Faction siding set to side 2.");
 
         oPartyMember = GetNextFactionMember(oPC);
         while (oPartyMember != OBJECT_INVALID) {
-            AdjustReputation(oPartyMember, oSide1, 100);
-            AdjustReputation(oPartyMember, oSide2, -100);
+            AdjustReputation(oPartyMember, oSide1, -100);
+            AdjustReputation(oPartyMember, oSide2, 100);
             SendMessageToPC(oPartyMember, "Faction siding set to side 2.");
 
             oPartyMember = GetNextFactionMember(oPC);

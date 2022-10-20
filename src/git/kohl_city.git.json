@@ -39709,7 +39709,7 @@
         },
         "ScriptDialogue": {
           "type": "resref",
-          "value": "ds_speak"
+          "value": "jes_miniquest"
         },
         "ScriptDisturbed": {
           "type": "resref",
@@ -39991,7 +39991,7 @@
               "__struct_id": 0,
               "Name": {
                 "type": "cexostring",
-                "value": "ds_speak"
+                "value": "questitem"
               },
               "Type": {
                 "type": "dword",
@@ -39999,7 +39999,67 @@
               },
               "Value": {
                 "type": "cexostring",
-                "value": "Mind yourself. We have a rat infestation."
+                "value": "rat_tail_quest"
+              }
+            },
+            {
+              "__struct_id": 0,
+              "Name": {
+                "type": "cexostring",
+                "value": "questfail"
+              },
+              "Type": {
+                "type": "dword",
+                "value": 3
+              },
+              "Value": {
+                "type": "cexostring",
+                "value": "These rats are a nuisance. Help us cull the infestation, would you? You can bring some tails back as proof if you like. *indicates a barrel with rat tails in it already* I'll pay you for each one you bring."
+              }
+            },
+            {
+              "__struct_id": 0,
+              "Name": {
+                "type": "cexostring",
+                "value": "questdone"
+              },
+              "Type": {
+                "type": "dword",
+                "value": 3
+              },
+              "Value": {
+                "type": "cexostring",
+                "value": "Urgh... Putrid. Thank you for your help, though. We appreciate it."
+              }
+            },
+            {
+              "__struct_id": 0,
+              "Name": {
+                "type": "cexostring",
+                "value": "goldReward"
+              },
+              "Type": {
+                "type": "dword",
+                "value": 1
+              },
+              "Value": {
+                "type": "int",
+                "value": 10
+              }
+            },
+            {
+              "__struct_id": 0,
+              "Name": {
+                "type": "cexostring",
+                "value": "xpReward"
+              },
+              "Type": {
+                "type": "dword",
+                "value": 1
+              },
+              "Value": {
+                "type": "int",
+                "value": 10
               }
             }
           ]
@@ -74628,21 +74688,6 @@
         "__struct_id": 0,
         "Name": {
           "type": "cexostring",
-          "value": "day_spawn1"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 3
-        },
-        "Value": {
-          "type": "cexostring",
-          "value": "cs_pirates_rat1"
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
           "value": "spawns_vary"
         },
         "Type": {
@@ -74652,6 +74697,36 @@
         "Value": {
           "type": "int",
           "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "day_spawn2"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 3
+        },
+        "Value": {
+          "type": "cexostring",
+          "value": "cs_ud_rat1"
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "day_spawn1"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 3
+        },
+        "Value": {
+          "type": "cexostring",
+          "value": "kohl_rat"
         }
       }
     ]

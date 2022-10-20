@@ -3,7 +3,7 @@
 void main()
 {
     object questGiver = OBJECT_SELF;
-    object player     = GetLastSpeaker();
+    object player     = GetPCSpeaker();
     string questIn    = GetLocalString(questGiver, "questitem");
     object pcItem     = GetFirstItemInInventory(player);
     int goldReward    = GetLocalInt(questGiver, "questgold");

@@ -7,12 +7,30 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+-Script for customizable generic bulk-item turn-in quests (testing)
+-9 different monsters for Kohlingen spawns
 
 ### Changed
--Updated Kohlingen City names to remove the second "Kohlingen" (Greengarden, Old City Outskirts, etc.)
+-Fort Cystana, Central re-made with Medieval City tileset
+-Construction closer to finished in Greengarden, Greengarden Outskirts, Trade Way, Fort Cystana North/South
+-Spawns added to Old City Grounds, Radiant Keep, and Manor Grounds, per BagOfFelt
+-Construction indicators throughout all Kingdom of Kohlingen areas
+-Carts added to Trade Way, Crystal River Falls, Salandran Temple, Greengarden
 
 ### Fixed
 
+## [2.3.5] - 2022-10-21]
+
+### Added
+=HAK= -Added 1 new wing appearance
+
+### Changed
+=HAK= -Changed the Heavy Flail animations to match Greatsword (hopefully that looks better)
+
+## [2.3.4] - 2022-10-19]
+
+### Changed
+-Updated Kohlingen City names to remove the second "Kohlingen" (Greengarden, Old City Outskirts, etc.)
 
 ## [2.3.3] - 2022-10-18]
 

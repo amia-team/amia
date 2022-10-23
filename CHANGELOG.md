@@ -7,15 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
--Script for customizable generic bulk-item turn-in quests (testing)
+-Script for customizable repeatable bulk-item turn-in quests (testing, C#)
 -9 different monsters for Kohlingen spawns
 
 ### Changed
 -Fort Cystana, Central re-made with Medieval City tileset
 -Construction closer to finished in Greengarden, Greengarden Outskirts, Trade Way, Fort Cystana North/South
 -Spawns added to Old City Grounds, Radiant Keep, and Manor Grounds, per BagOfFelt
+-Beacons added to Fort Cystana and Greengarden
 -Construction indicators throughout all Kingdom of Kohlingen areas
 -Carts added to Trade Way, Crystal River Falls, Salandran Temple, Greengarden
+-Moved Manor Grounds weavery NPCs to Greengarden
+-Changed Mayfields Brewery map pin to Boarshead Brewery
 
 ### Fixed
 

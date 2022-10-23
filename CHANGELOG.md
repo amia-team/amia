@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+
+### Changed
+-Loading screens for Cystana areas
+-Removed a weird bit of non-grass from Greengarden
+-Fixed missing racial gate
+
+### Fixed
+
+
+## [2.3.6] - 2022-10-23]
+
 -Script for customizable repeatable bulk-item turn-in quests (testing, C#)
 -9 different monsters for Kohlingen spawns
 
@@ -19,8 +30,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 -Carts added to Trade Way, Crystal River Falls, Salandran Temple, Greengarden
 -Moved Manor Grounds weavery NPCs to Greengarden
 -Changed Mayfields Brewery map pin to Boarshead Brewery
-
-### Fixed
 
 ## [2.3.5] - 2022-10-21]
 

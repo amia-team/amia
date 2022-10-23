@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 -Loading screens for Cystana areas
 -Removed a weird bit of non-grass from Greengarden
 -Fixed missing racial gate
+-Adjusted some chairs
 
 ### Fixed
 

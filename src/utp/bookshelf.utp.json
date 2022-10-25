@@ -6,7 +6,7 @@
   },
   "Appearance": {
     "type": "dword",
-    "value": 1237
+    "value": 1
   },
   "AutoRemoveKey": {
     "type": "byte",
@@ -22,7 +22,7 @@
   },
   "Comment": {
     "type": "cexostring",
-    "value": ""
+    "value": "Bookshelf script (spawns in books or a mage scroll)."
   },
   "Conversation": {
     "type": "resref",
@@ -30,15 +30,18 @@
   },
   "CurrentHP": {
     "type": "short",
-    "value": 10
+    "value": 15
   },
   "Description": {
+    "id": 14575,
     "type": "cexolocstring",
-    "value": {}
+    "value": {
+      "0": "A dizzying array of written works, each catalogued according to some fashion you cannot fathom. A number of them appear to be written in foreign tongues altogether."
+    }
   },
   "DisarmDC": {
     "type": "byte",
-    "value": 0
+    "value": 15
   },
   "Faction": {
     "type": "dword",
@@ -46,7 +49,7 @@
   },
   "Fort": {
     "type": "byte",
-    "value": 5
+    "value": 16
   },
   "Hardness": {
     "type": "byte",
@@ -58,11 +61,31 @@
   },
   "HP": {
     "type": "short",
-    "value": 10
+    "value": 15
   },
   "Interruptable": {
     "type": "byte",
-    "value": 1
+    "value": 0
+  },
+  "ItemList": {
+    "type": "list",
+    "value": [
+      {
+        "__struct_id": 0,
+        "InventoryRes": {
+          "type": "resref",
+          "value": "cultofhornedrat1"
+        },
+        "Repos_PosX": {
+          "type": "word",
+          "value": 0
+        },
+        "Repos_Posy": {
+          "type": "word",
+          "value": 0
+        }
+      }
+    ]
   },
   "KeyName": {
     "type": "cexostring",
@@ -74,16 +97,17 @@
   },
   "Lockable": {
     "type": "byte",
-    "value": 1
+    "value": 0
   },
   "Locked": {
     "type": "byte",
     "value": 0
   },
   "LocName": {
+    "id": 14576,
     "type": "cexolocstring",
     "value": {
-      "0": "Shelf 2 Filled"
+      "0": "Bookshelf"
     }
   },
   "OnClick": {
@@ -148,11 +172,11 @@
   },
   "OpenLockDC": {
     "type": "byte",
-    "value": 0
+    "value": 18
   },
   "PaletteID": {
     "type": "byte",
-    "value": 10
+    "value": 22
   },
   "Plot": {
     "type": "byte",
@@ -160,7 +184,7 @@
   },
   "PortraitId": {
     "type": "word",
-    "value": 0
+    "value": 359
   },
   "Ref": {
     "type": "byte",
@@ -172,11 +196,11 @@
   },
   "Tag": {
     "type": "cexostring",
-    "value": "Shelf2Filled"
+    "value": "Bookshelf"
   },
   "TemplateResRef": {
     "type": "resref",
-    "value": "shelf2filled"
+    "value": "bookshelf"
   },
   "TrapDetectable": {
     "type": "byte",

@@ -9,19 +9,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
--Put in a missing sign
--Made Elfing compatible with Arcane Archer like other half-elves
--Belorfin's shop allows warlocks now
+- Put in a missing sign
+- Made Elfing compatible with Arcane Archer like other half-elves
+- Belorfin's shop allows warlocks now
+- changed lim of plc group cloner script to 30
+- changed plc group cloner to 1x1 item and updated description to reflect changes
+- Various dev area changes for Qol and testing
 
 ### Fixed
--Loading screens for Cystana areas
--Job System spawnables incorrectly set in various places
+- Loading screens for Cystana areas
+- Job System spawnables incorrectly set in various places
 
 
 ## [2.3.6] - 2022-10-23]
 
--Script for customizable repeatable bulk-item turn-in quests (testing, C#)
--9 different monsters for Kohlingen spawns
+- Script for customizable repeatable bulk-item turn-in quests (testing, C#)
+- 9 different monsters for Kohlingen spawns
 
 ### Changed
 -Fort Cystana, Central re-made with Medieval City tileset

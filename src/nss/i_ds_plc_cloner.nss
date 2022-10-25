@@ -13,6 +13,7 @@
 // 02 July 2011 - Selmak added support for cloned job system alchemy lab in
 //                RestorePLC function
 // 2014 03 30   - Terrah; y u no rotate, pls stp. Added Z.
+// 2022 oct 25  - Frozen; removed relics, set limit to 30 plcs stored (was 99)
 
 //-------------------------------------------------------------------------------
 // includes
@@ -57,15 +58,6 @@ void main(){
 
     switch (nEvent){
 
-        case X2_ITEM_EVENT_INSTANT:
-
-            oPC = OBJECT_SELF;
-            if( GetIsDM( oPC ) || GetPCPlayerName( oPC ) == "Terra_777" ){
-                SendMessageToPC( oPC, "HELLO SIR DM!\nTHIS WIDGET HAS CHAT COMMANDS WHICH CAN BE USED WHEN CONFIGURING THIS ITEM!\n\nvfx ## - Sets a visual effect to be applied to the plcs.\nsingle ## - causes the widget to only save one plc and allows ## copies to be spawned by the widget 0=off!\n\nSpeak the command and use the widget on yourself!");
-            }
-
-        break;
-
         case X2_ITEM_EVENT_ACTIVATE:
 
             // item activate variables
@@ -89,7 +81,7 @@ void main(){
                 SendMessageToPC( oPC, "Applied rotation: " + FloatToString( fOffset ) );
                 SetLocalFloat( oItem, "offsetrotation", fOffset );
             }
-            else if ( oTarget == oPC && ( GetIsDM( oPC ) || GetPCPlayerName( oPC ) == "Terra_777" ) ){
+            else if ( oTarget == oPC && ( GetIsDM( oPC ) ) ){
 
                 if( GetStringLeft( sLast, 3 ) == "vfx" ){
 
@@ -150,7 +142,7 @@ void main(){
 void SetWidget( object oPC, object oItem, location lTarget ){
 
     int i;
-    int nFlag = 100;
+    int nFlag = 31;
 
     if( GetLocalInt( oItem, "plcs_allowed" ) > 0 )
         nFlag = 2;
@@ -244,7 +236,7 @@ void SpawnGroup( object oPC, object oItem, location lTarget ){
         SendMessageToPC( oPC, "Did you know: using the PLC spawner on yourself will apply your last said message (degrees) to the rotation of your PLC group." );
 
     int i;
-    int nFlag = 100;
+    int nFlag = 31;
 
     for ( i=1; i<nFlag; ++i ){
 

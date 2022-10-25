@@ -1,4 +1,4 @@
-// Conversation conditional to check if PC has wizard or sorcerer levels.
+// Conversation conditional to check if PC has wizard, sorcerer, or warlock levels.
 //
 // Revision History
 // Date       Name             Description
@@ -20,6 +20,8 @@ int StartingConditional()
     if((iPassed == 0) && (GetLevelByClass(CLASS_TYPE_SORCERER, oPC) >= 4))
         iPassed = 1;
     if((iPassed == 0) && (GetLevelByClass(CLASS_TYPE_WIZARD, oPC) >= 4))
+        iPassed = 1;
+    if((iPassed == 0) && (GetLevelByClass(57, oPC) >= 4))
         iPassed = 1;
     if(iPassed == 0)
         return FALSE;

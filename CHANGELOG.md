@@ -9,9 +9,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+-Put in a missing sign
+-Made Elfing compatible with Arcane Archer like other half-elves
+-Belorfin's shop allows warlocks now
 
 ### Fixed
 -Loading screens for Cystana areas
+-Job System spawnables incorrectly set in various places
 
 
 ## [2.3.6] - 2022-10-23]

@@ -9,13 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
--Loading screens for Cystana areas
--Removed a weird bit of non-grass from Greengarden
--Fixed missing racial gate
--Adjusted some chairs
--Tweaked Cystana gates
 
 ### Fixed
+-Loading screens for Cystana areas
 
 
 ## [2.3.6] - 2022-10-23]

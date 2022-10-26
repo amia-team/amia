@@ -40,11 +40,13 @@ int CustomSummonAppearance( object oPC , int iType, object oItem);
 //"negred" ((Humans Only))
 //sColor is automaticly turned to lowercase
 int GetEyeVFX( object oTarget, string sColor );
-
+//void main (){}
 //Private function
 void SetSkinBits(object oTarget, string sAppearancePrefix, object oItem);
 //Private function
 void SetColorBits(object oTarget, string sAppearancePrefix, object oItem);
+//Scale
+void SetScale(object oTarget, string sAppearancePrefix, object oItem);
 
 //-----------------------------------------------------------------------------
 // functions
@@ -74,6 +76,9 @@ void SaveADVAppearanceToItem( object oAppearanceToSave, object oItem, string sAp
         SetLocalInt( oItem, sAppearancePrefix+"_c_tat1", GetColor( oAppearanceToSave, COLOR_CHANNEL_TATTOO_1 ) );
         SetLocalInt( oItem, sAppearancePrefix+"_c_tat2", GetColor( oAppearanceToSave, COLOR_CHANNEL_TATTOO_2 ) );
 
+        //Visual Transform (Scale)
+        SetLocalFloat( oItem, sAppearancePrefix+"_scale", GetObjectVisualTransform( oAppearanceToSave, 10 ) );
+
         //Wings
         SetLocalInt( oItem, sAppearancePrefix+"_wing", GetCreatureWingType( oAppearanceToSave ) );
         SetLocalInt( oItem, sAppearancePrefix+"_tail", GetCreatureTailType( oAppearanceToSave ) );
@@ -101,6 +106,7 @@ void SetADVAppearanceFromItem( object oTarget, object oItem, string sAppearanceP
     DelayCommand(1.0,SetCreatureWingType( GetLocalInt(oItem, sAppearancePrefix+"_wing" ), oTarget ));
     DelayCommand(2.0,SetSkinBits( oTarget,sAppearancePrefix,oItem ));
     DelayCommand(3.0,SetColorBits( oTarget, sAppearancePrefix,oItem));
+    DelayCommand(3.0,SetScale(oTarget, sAppearancePrefix, oItem));
     DelayCommand(3.0,SendMessageToPC( GetItemPossessor(oItem), "Done loading appearance"));
 
     if( GetLocalInt(oItem, "summon_vfx" ) != 0 ) {
@@ -134,6 +140,7 @@ void SaveBasicAppearance( object oAppearanceToSave, string sAppearancePrefix, ob
 
 }
 //-----------------------------------------------------------------------------
+
 void SetBasicAppearance( object oTarget, string sAppearancePrefix, object oItem, int iIgnoreName = 0)
 {
     SendMessageToPC( GetItemPossessor(oItem), "Loading appearance to "+GetName(oTarget));
@@ -145,6 +152,12 @@ void SetBasicAppearance( object oTarget, string sAppearancePrefix, object oItem,
 
         DelayCommand( 2.0, SetCreatureTailType( GetLocalInt( oItem, sAppearancePrefix+"_t" ), oTarget ) );
     DelayCommand(3.0,SendMessageToPC( GetItemPossessor(oItem), "Done loading appearance"));
+}
+//-----------------------------------------------------------------------------
+void SetScale(object oTarget, string sAppearancePrefix, object oItem)
+{
+    float fScale = GetLocalFloat(oItem, sAppearancePrefix+"_scale");
+    if (fScale > 0.0) SetObjectVisualTransform(oTarget, 10, fScale);
 }
 //-----------------------------------------------------------------------------
 void SetSkinBits(object oTarget, string sAppearancePrefix, object oItem)

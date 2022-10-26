@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - changed lim of plc group cloner script to 30
 - changed plc group cloner to 1x1 item and updated description to reflect changes
 - Various dev area changes for Qol and testing
+- Added scale storing to Summon Changers, Bottled Companions, and Skin Changers
 
 ### Fixed
 - Loading screens for Cystana areas

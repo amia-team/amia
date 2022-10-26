@@ -105,8 +105,8 @@ void SetADVAppearanceFromItem( object oTarget, object oItem, string sAppearanceP
     DelayCommand(1.0,SetCreatureTailType( GetLocalInt(oItem, sAppearancePrefix+"_tail" ) , oTarget ));
     DelayCommand(1.0,SetCreatureWingType( GetLocalInt(oItem, sAppearancePrefix+"_wing" ), oTarget ));
     DelayCommand(2.0,SetSkinBits( oTarget,sAppearancePrefix,oItem ));
+    DelayCommand(2.1,SetScale(oTarget, sAppearancePrefix, oItem));
     DelayCommand(3.0,SetColorBits( oTarget, sAppearancePrefix,oItem));
-    DelayCommand(3.0,SetScale(oTarget, sAppearancePrefix, oItem));
     DelayCommand(3.0,SendMessageToPC( GetItemPossessor(oItem), "Done loading appearance"));
 
     if( GetLocalInt(oItem, "summon_vfx" ) != 0 ) {

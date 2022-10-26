@@ -34,8 +34,8 @@ void change_summon( object oPC, object oTarget, object oItem );
 //-------------------------------------------------------------------------------
 //main
 //-------------------------------------------------------------------------------
-void main(){
 
+void main(){
     //event variables
     int nEvent  = GetUserDefinedItemEventNumber();
     int nResult = X2_EXECUTE_SCRIPT_END;

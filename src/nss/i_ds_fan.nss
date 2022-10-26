@@ -91,6 +91,7 @@ void main(){
                     SetLocalInt( oItem, "ds_tail", GetCreatureTailType( oTarget ) );
                     SetLocalInt( oItem, "ds_race", nRace );
                     SetLocalInt( oItem, "ds_sex", GetGender( oTarget ) );
+                    SetLocalFloat( oItem, "ds_scale", GetObjectVisualTransform( oTarget, 10) );
                     SetLocalString( oItem, "ds_name", GetName( oTarget ) );
                     SetLocalString( oItem, "ds_portr", GetPortraitResRef( oTarget ) );
                     SetLocalString( oItem, "td_bio", GetDescription( oTarget ) );
@@ -180,9 +181,11 @@ void main(){
                 }
 
                 //----------------------------
+                float scaleSet = GetLocalFloat(oItem, "ds_scale");
 
                 SetLocalInt( oNPC, "ds_type", 1 );
                 SetName( oNPC, sName );
+                SetObjectVisualTransform(oNPC, 10, scaleSet);
                 SetLocalObject( oNPC, "ds_master", oPC );
                 DelayCommand( 1.0, DressNPC( oPC, oNPC ) );
                 DelayCommand( 3.0, SetCreatureWingType( nWings, oNPC ) );

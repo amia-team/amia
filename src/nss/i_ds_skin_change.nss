@@ -30,6 +30,7 @@ Date         Name        Reason
 //prototypes
 //-------------------------------------------------------------------------------
 void change_skin( object oPC, object oItem );
+void change_scale( object oPC, float fScale);
 
 //-------------------------------------------------------------------------------
 //main
@@ -101,6 +102,7 @@ void change_skin( object oPC, object oItem ){
         SetLocalInt( oItem, "cr_pheno", GetPhenoType( oTarget ) );
         SetLocalInt( oItem, "cr_tail", GetCreatureTailType( oTarget ) );
         SetLocalInt( oItem, "cr_wings", GetCreatureWingType( oTarget ) );
+        SetLocalFloat( oItem, "cr_scale", GetObjectVisualTransform(oTarget, 10) );
         SetLocalInt( oItem, "initialised", 1 );
 
         //set item name
@@ -122,6 +124,7 @@ void change_skin( object oPC, object oItem ){
         SetLocalInt( oItem, "pc_pheno", GetPhenoType( oPC ) );
         SetLocalInt( oItem, "pc_tail", GetCreatureTailType( oPC ) );
         SetLocalInt( oItem, "pc_wings", GetCreatureWingType( oPC ) );
+        SetLocalFloat( oItem, "pc_scale", GetObjectVisualTransform(oPC, 10) );
         SetLocalInt( oItem, "initialised", 2 );
 
         //save character
@@ -148,6 +151,7 @@ void change_skin( object oPC, object oItem ){
         int nPheno              = -1;
         int nTail               = -1;
         int nWing               = -1;
+        float fScale            = 1.0;
         string sPortrait        = "";
         string sSFX1            = GetLocalString( oItem, "pc_sfx1" );
         string sSFX2            = GetLocalString( oItem, "pc_sfx2" );
@@ -161,6 +165,7 @@ void change_skin( object oPC, object oItem ){
             nPheno      = GetLocalInt( oItem, "pc_pheno" );
             nTail       = GetLocalInt( oItem, "pc_tail" );
             nWing       = GetLocalInt( oItem, "pc_wings" );
+            fScale      = GetLocalFloat( oItem, "pc_scale");
             SetLocalInt( oItem, "switch", 0 );
         }
         else {
@@ -171,6 +176,7 @@ void change_skin( object oPC, object oItem ){
             nPheno      = GetLocalInt( oItem, "cr_pheno" );
             nTail       = GetLocalInt( oItem, "cr_tail" );
             nWing       = GetLocalInt( oItem, "cr_wings" );
+            fScale      = GetLocalFloat(oItem, "cr_scale");
             SetLocalInt( oItem, "switch", 1 );
         }
 
@@ -239,8 +245,13 @@ void change_skin( object oPC, object oItem ){
         DelayCommand( fDelay, SetPhenoType( nPheno, oPC ) );
         DelayCommand( fDelay, SetCreatureTailType( nTail, oPC ) );
         DelayCommand( fDelay, SetCreatureWingType( nWing, oPC ) );
+        DelayCommand( fDelay, change_scale( oPC, fScale) );
         if( fDelay < 0.5 )
             DelayCommand( fDelay+1.0, ApplyEffectToObject( DURATION_TYPE_TEMPORARY, EffectPolymorph( POLYMORPH_TYPE_NULL_HUMAN ), oPC, 0.5 ) );
 
     }
+}
+
+void change_scale(object oPC, float fScale){
+    SetObjectVisualTransform( oPC, 10, fScale);
 }

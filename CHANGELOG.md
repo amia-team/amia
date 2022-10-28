@@ -7,15 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Four new player portraits
 
 ### Changed
 - Put in a missing sign
 - Made Elfing compatible with Arcane Archer like other half-elves
 - Belorfin's shop allows warlocks now
-- changed lim of plc group cloner script to 30
-- changed plc group cloner to 1x1 item and updated description to reflect changes
+- Changed limit of plc group cloner script to 30
+- Changed plc group cloner to 1x1 item and updated description to reflect changes
 - Various dev area changes for Qol and testing
 - Added scale storing to Summon Changers, Bottled Companions, and Skin Changers
+- Moved and renamed Nof in The Dale
+- Made Sir James Tanner's name green to indicate quest NPC status
 
 ### Fixed
 - Loading screens for Cystana areas
@@ -24,18 +27,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [2.3.6] - 2022-10-23]
 
-- Script for customizable repeatable bulk-item turn-in quests (testing, C#)
+- Script for customizable repeatable bulk-item turn-in quests
 - 9 different monsters for Kohlingen spawns
 
 ### Changed
--Fort Cystana, Central re-made with Medieval City tileset
--Construction closer to finished in Greengarden, Greengarden Outskirts, Trade Way, Fort Cystana North/South
--Spawns added to Old City Grounds, Radiant Keep, and Manor Grounds, per BagOfFelt
--Beacons added to Fort Cystana and Greengarden
--Construction indicators throughout all Kingdom of Kohlingen areas
--Carts added to Trade Way, Crystal River Falls, Salandran Temple, Greengarden
--Moved Manor Grounds weavery NPCs to Greengarden
--Changed Mayfields Brewery map pin to Boarshead Brewery
+- Fort Cystana, Central re-made with Medieval City tileset
+- Construction closer to finished in Greengarden, Greengarden Outskirts, Trade Way, Fort Cystana North/South
+- Spawns added to Old City Grounds, Radiant Keep, and Manor Grounds, per BagOfFelt
+- Beacons added to Fort Cystana and Greengarden
+- Construction indicators throughout all Kingdom of Kohlingen areas
+- Carts added to Trade Way, Crystal River Falls, Salandran Temple, Greengarden
+- Moved Manor Grounds weavery NPCs to Greengarden
+- Changed Mayfields Brewery map pin to Boarshead Brewery
 
 ## [2.3.5] - 2022-10-21]
 
@@ -48,17 +51,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [2.3.4] - 2022-10-19]
 
 ### Changed
--Updated Kohlingen City names to remove the second "Kohlingen" (Greengarden, Old City Outskirts, etc.)
+- Updated Kohlingen City names to remove the second "Kohlingen" (Greengarden, Old City Outskirts, etc.)
 
 ## [2.3.3] - 2022-10-18]
 
 ### Added
-=HAK= -Added 34 Robes to the hak
-=HAK= -Skin Appearances: 6 sharks, 34 birds, 4 gnomish ships, 8 wizards, 3 witches
-=HAK= -PLCs: 16 statues, 4 gnomish ships, 7 cultist corpses, 101 NWN2 building PLCs
-=HAK= -Added 2 heads from Mahtan
-=HAK= -Added new vfx (cat ears/sideburns for more races), .mld and .tga files to amia_top and Amia_parts.
-=HAK= -86 new list additions for visualeffects.2da
+=HAK= - Added 34 Robes to the hak
+=HAK= - Skin Appearances: 6 sharks, 34 birds, 4 gnomish ships, 8 wizards, 3 witches
+=HAK= - PLCs: 16 statues, 4 gnomish ships, 7 cultist corpses, 101 NWN2 building PLCs
+=HAK= - Added 2 heads from Mahtan
+=HAK= - Added new vfx (cat ears/sideburns for more races), .mld and .tga files to amia_top and Amia_parts.
+=HAK= - 86 new list additions for visualeffects.2da
 
 ## [2.3.2] - 2022-09-23]
 

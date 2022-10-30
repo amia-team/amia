@@ -1,7 +1,7 @@
 void main( ){
 
      object Ocreature = OBJECT_SELF;
-     float fDur = 9999.0f;
+     float fDur = 99999.0f;
 
         if ( GetIsObjectValid( Ocreature ) ) {
 

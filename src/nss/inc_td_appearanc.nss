@@ -157,6 +157,7 @@ void SetBasicAppearance( object oTarget, string sAppearancePrefix, object oItem,
 void SetScale(object oTarget, string sAppearancePrefix, object oItem)
 {
     float fScale = GetLocalFloat(oItem, sAppearancePrefix+"_scale");
+    if (fScale == 0.0) SetObjectVisualTransform(oTarget, 10, 1.0);
     if (fScale > 0.0) SetObjectVisualTransform(oTarget, 10, fScale);
 }
 //-----------------------------------------------------------------------------

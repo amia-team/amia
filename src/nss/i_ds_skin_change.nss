@@ -253,5 +253,10 @@ void change_skin( object oPC, object oItem ){
 }
 
 void change_scale(object oPC, float fScale){
-    SetObjectVisualTransform( oPC, 10, fScale);
+    if (fScale == 0.0) {
+        SetObjectVisualTransform( oPC, 10, 1.0);
+    }
+    if (fScale > 0.0) {
+        SetObjectVisualTransform( oPC, 10, fScale);
+    }
 }

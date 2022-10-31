@@ -185,7 +185,12 @@ void main(){
 
                 SetLocalInt( oNPC, "ds_type", 1 );
                 SetName( oNPC, sName );
-                SetObjectVisualTransform(oNPC, 10, scaleSet);
+                if (scaleSet == 0.0) {
+                    SetObjectVisualTransform(oNPC, 10, 1.0);
+                }
+                if (scaleSet > 0.0) {
+                    SetObjectVisualTransform(oNPC, 10, scaleSet);
+                }
                 SetLocalObject( oNPC, "ds_master", oPC );
                 DelayCommand( 1.0, DressNPC( oPC, oNPC ) );
                 DelayCommand( 3.0, SetCreatureWingType( nWings, oNPC ) );

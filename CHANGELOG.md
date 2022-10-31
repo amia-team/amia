@@ -7,7 +7,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+
+### Changed
+- Parry unlocked: This change has been undocumented for a good while (sorry about that). Parry now ripostes up to your attacks per round. However, Parry can only deflect attacks equal to your attacks per round up to 3 attacks per round. If you run tests contradicting this functionality, let us know! This is our best guess as to how it works, because the tweak is from an outside source, and it's poorly documented and understood by even its creator.
+### Fixed
+
+## [2.3.7] - 2022-10-30]
+
+### Added
 - Four new player portraits
+- Updated cat empathy to inclide new cat skins (other empathy's will follow later)
+- Added Script spawn_sit_ground for npcs to "sit"on spawn on the floor rather then a stool
+- Added variuos plc's to palette for making some old broken things work (and some general dev QoL)
+- area additions
+	- Amia forest
+		- 2 treant tree's 
+	- Winya Ravana	
+		- further decoration, including more trees and multiple benches
+		- moved guard "junk" to inside
+		- start of beacon "tree" its growing!
+		- very basic stables added 
 
 ### Changed
 - Put in a missing sign

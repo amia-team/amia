@@ -57,20 +57,26 @@ void ActivateItem( )
         {
             // Check for felines only.
             if( GetAppearanceType( oVictim ) >= 93 && GetAppearanceType( oVictim ) <= 98 ||
-				GetAppearanceType( oVictim ) >= 202 && GetAppearanceType( oVictim ) <= 203 ||
-				GetAppearanceType( oVictim ) == 888 ||
+                GetAppearanceType( oVictim ) >= 202 && GetAppearanceType( oVictim ) <= 203 ||
+                GetAppearanceType( oVictim ) == 888 ||
                 GetAppearanceType( oVictim ) >= 966 && GetAppearanceType( oVictim ) <= 968 ||
-				GetAppearanceType( oVictim ) == 1016 ||
-			    GetAppearanceType( oVictim ) >= 1152 && GetAppearanceType( oVictim ) <= 1155 ||
-				GetAppearanceType( oVictim ) >= 1235 && GetAppearanceType( oVictim ) <= 1255 ||
-				GetAppearanceType( oVictim ) >= 1504 && GetAppearanceType( oVictim ) <= 1507 ||
+                GetAppearanceType( oVictim ) == 1016 ||
+                GetAppearanceType( oVictim ) >= 1152 && GetAppearanceType( oVictim ) <= 1155 ||
+                GetAppearanceType( oVictim ) >= 1235 && GetAppearanceType( oVictim ) <= 1255 ||
+                GetAppearanceType( oVictim ) >= 1504 && GetAppearanceType( oVictim ) <= 1507 ||
+                GetAppearanceType( oVictim ) == 1672 ||
+                GetAppearanceType( oVictim ) == 1812 ||
+                GetAppearanceType( oVictim ) >= 1839 && GetAppearanceType( oVictim ) <= 1842 ||
                 GetCreatureTailType( oVictim ) >= 366 && GetCreatureTailType( oVictim ) <= 373 ||
-				GetCreatureTailType( oVictim ) == 549 ||
-				GetCreatureTailType( oVictim ) >= 632 && GetCreatureTailType( oVictim ) <= 634 ||
-				GetCreatureTailType( oVictim ) == 676 ||
-				GetCreatureTailType( oVictim ) >= 802 && GetCreatureTailType( oVictim ) <= 805 ||
-				GetCreatureTailType( oVictim ) >= 889 && GetCreatureTailType( oVictim ) <= 909 ||
-				GetCreatureTailType( oVictim ) >= 1333 && GetCreatureTailType( oVictim ) <= 1338 )
+                GetCreatureTailType( oVictim ) == 549 ||
+                GetCreatureTailType( oVictim ) >= 632 && GetCreatureTailType( oVictim ) <= 634 ||
+                GetCreatureTailType( oVictim ) == 676 ||
+                GetCreatureTailType( oVictim ) >= 802 && GetCreatureTailType( oVictim ) <= 805 ||
+                GetCreatureTailType( oVictim ) >= 889 && GetCreatureTailType( oVictim ) <= 909 ||
+                GetCreatureTailType( oVictim ) >= 1333 && GetCreatureTailType( oVictim ) <= 1338 ||
+                GetCreatureTailType( oVictim ) == 1499 ||
+                GetCreatureTailType( oVictim ) == 1591 ||
+                GetCreatureTailType( oVictim ) >= 1628 && GetCreatureTailType( oVictim ) <= 1631 )
             {
                 // Only works on non-evil felines.
                 if( GetAlignmentGoodEvil( oVictim ) != ALIGNMENT_EVIL )

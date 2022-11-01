@@ -14,26 +14,11 @@ void main(){
         case X2_ITEM_EVENT_ACTIVATE:
 
 
-            object oPC       = GetItemActivator();{
+            object oPC = GetItemActivator();
+           	int nNewGender = !GetGender(oPC);
 
-                int oGender   = GetGender( oPC );
-
-                if(  oGender = 0 )
-                    {
-                    NWNX_Creature_SetGender ( oPC, 0  );
-                    AssignCommand( oPC, SpeakString( "<c Û >Changed gender to male.</c>" ) );
-                    }
-
-                else if( oGender = 1 )
-                    {
-                    NWNX_Creature_SetGender ( oPC, 1  );
-                    AssignCommand( oPC, SpeakString( "<c Û >Changed gender to female.</c>" ) );
-                    }
-                else if( oGender >= 2 )
-                    {
-                    AssignCommand( oPC, SpeakString( "<cò  >You are neither male or female, contact a dm</c>" ) );
-                    }
-                }
+				            NWNX_Creature_SetGender(oPC, nNewGender);
+				            string genderString = nNewGender == 0 ? "male" : "female";
+				            AssignCommand( oPC, SpeakString( "<c Û >Changed gender to" + genderString + "</c>" ) );
          }
     }
-

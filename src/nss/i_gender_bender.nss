@@ -20,14 +20,14 @@ void main(){
 
                 if(  oGender = 0 )
                     {
-                    NWNX_Creature_SetGender ( oPC, 1  );
-                    AssignCommand( oPC, SpeakString( "<c Û >Changed gender to female.</c>" ) );
+                    NWNX_Creature_SetGender ( oPC, 0  );
+                    AssignCommand( oPC, SpeakString( "<c Û >Changed gender to male.</c>" ) );
                     }
 
                 else if( oGender = 1 )
                     {
-                    NWNX_Creature_SetGender ( oPC, 0  );
-                    AssignCommand( oPC, SpeakString( "<c Û >Changed gender to male.</c>" ) );
+                    NWNX_Creature_SetGender ( oPC, 1  );
+                    AssignCommand( oPC, SpeakString( "<c Û >Changed gender to female.</c>" ) );
                     }
                 else if( oGender >= 2 )
                     {

@@ -7,9 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
-
+- Gender Changer, script + widget for changing your gender
+- Unlimited uses SELF Changer, QoL widget for dms to change existing widgets x/day power self, to unlimited/day power self
+- PLC palette additions:
+	- Couch: Highside - White (fancy sofa/couch)
+	- Chair, Medival 1 (fancy medival chair)
+	- Bookshelf 4 (large scroll/book case thing)
+	
 ### Changed
 - Parry unlocked: This change has been undocumented for a good while (sorry about that). Parry now ripostes up to your attacks per round. However, Parry can only deflect attacks equal to your attacks per round up to 3 attacks per round. If you run tests contradicting this functionality, let us know! This is our best guess as to how it works, because the tweak is from an outside source, and it's poorly documented and understood by even its creator.
+
 ### Fixed
 
 ## [2.3.7] - 2022-10-30]

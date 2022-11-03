@@ -111,6 +111,7 @@ void main(){
                     SetLocalString( oItem, "ds_portr", GetPortraitResRef( oTarget ) );
                     SetLocalString( oItem, "td_bio", GetDescription( oTarget ) );
                     SetLocalInt( oItem, "ds_tail", GetCreatureTailType( oTarget ) );
+                    SetLocalFloat( oItem, "ds_scale", GetObjectVisualTransform( oTarget, 10) );
                     SetLocalInt( oItem, "ds_set", 2 );
                 }
 

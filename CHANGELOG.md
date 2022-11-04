@@ -9,8 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 	
 ### Changed
+- area changes:
+	- Ruathym: Fortress Wiltun, Keep
+		- Removed lord wiltun
 
 ### Fixed
+- Small cosmatic change to gender changer message (added a space in feedback)
 
 ## [2.3.8] - 2022-11-04]
 

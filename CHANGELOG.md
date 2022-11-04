@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+	
+### Changed
+
+### Fixed
+
+## [2.3.8] - 2022-11-04]
+
+### Added
 - Gender Changer, script + widget for changing your gender
 - Unlimited uses SELF Changer, QoL widget for dms to change existing widgets x/day power self, to unlimited/day power self
 - PLC palette additions:
@@ -18,6 +26,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Parry unlocked: This change has been undocumented for a good while (sorry about that). Parry now ripostes up to your attacks per round. However, Parry can only deflect attacks equal to your attacks per round up to 3 attacks per round. If you run tests contradicting this functionality, let us know! This is our best guess as to how it works, because the tweak is from an outside source, and it's poorly documented and understood by even its creator.
 
 ### Fixed
+- Bottled companion static skin scaling should now also work
+- 20 DD now correctly gets +1 AC and +2 CHA
+- Lycan now gets weapon prof creature
 
 ## [2.3.7] - 2022-10-30]
 

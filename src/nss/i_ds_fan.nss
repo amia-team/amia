@@ -211,6 +211,7 @@ void main(){
                 nSex           = GetLocalInt( oItem, "ds_sex" );
                 sSex           = "m_";
                 sBio           = GetLocalString( oItem , "td_bio" );
+				float scaleSet = GetLocalFloat(oItem, "ds_scale");
 
                 if ( nSex == 1 ){
 
@@ -222,6 +223,12 @@ void main(){
                 oNPC        = CreateObject( OBJECT_TYPE_CREATURE, sResRef, GetLocation( oPC ), FALSE, sTag );
 
                 SetName( oNPC, sName );
+				if (scaleSet == 0.0) {
+                    SetObjectVisualTransform(oNPC, 10, 1.0);
+                }
+                if (scaleSet > 0.0) {
+                    SetObjectVisualTransform(oNPC, 10, scaleSet);
+                }
                 SetLocalObject( oNPC, "ds_master", oPC );
                 SetLocalInt( oNPC, "ds_type", 2 );
                 DelayCommand( 1.0, SetCreatureAppearanceType( oNPC, nAppearance ) );

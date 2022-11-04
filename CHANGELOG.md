@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Bottled companion static skin scaling should now also work
 - 20 DD now correctly gets +1 AC and +2 CHA
+- Lycan now gets weapon prof creature
 
 ## [2.3.7] - 2022-10-30]
 

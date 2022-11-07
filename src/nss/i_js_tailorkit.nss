@@ -104,8 +104,7 @@ if (GetBaseItemType( oTarget ) == BASE_ITEM_ARMOR){
 // if used on any thing but an armor will state it needs to be an armor
 else {
     SendMessageToPC(oPC, "This can only be used on an Armor");
-	return;
-    }
+	}
   }
 }
 

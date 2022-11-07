@@ -62,7 +62,7 @@ int iSet     = GetLocalInt( oItem, "tailor_set" );
 if ( oTarget == oItem ){
     DeleteLocalString( oItem, "armor_app" );
     SetLocalInt( oItem, "tailor_set", 1 );
-    SetName( oItem, "<c~Îë>Tailor Kit: </c><c÷  >Unset</c>");
+    SetName( oItem, "");
     SendMessageToPC(oPC, "Tailor kit flushed");
     return;
    }

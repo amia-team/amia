@@ -57,9 +57,7 @@ void main(){
 void tailor_look ( object oPC, object oItem, object oTarget ) {
 
 int iSet     = GetLocalInt( oItem, "tailor_set" );
-int iIsarmor = GetBaseItemType( oTarget );
-	SendMessageToPC(oPC, "iIsarmor =" + IntToString(iIsarmor));
-	
+
 // If widget is used on itself, flushes the set appearance
 if ( oTarget == oItem ){
     DeleteLocalString( oItem, "armor_app" );
@@ -70,7 +68,7 @@ if ( oTarget == oItem ){
    }
 
 // fires off the appearance copy settings if item is an armor
-if ( iIsarmor == 16 ){
+if (GetBaseItemType( oTarget ) == BASE_ITEM_ARMOR){
 	// if widget oItem is not set with an appearance
     if ( iSet <= 1 ){
 
@@ -104,7 +102,7 @@ if ( iIsarmor == 16 ){
                 }
             }
 // if used on any thing but an armor will state it needs to be an armor
-else if (iIsarmor != 16) {
+else {
     SendMessageToPC(oPC, "This can only be used on an Armor");
 	return;
     }

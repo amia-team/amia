@@ -101,11 +101,11 @@ if (GetBaseItemType( oTarget ) == BASE_ITEM_ARMOR){
                 SendMessageToPC(oPC, "Item Apearance applied to "+GetName ( oTarget ));
                 }
             }
+		}
 // if used on any thing but an armor will state it needs to be an armor
 else {
     SendMessageToPC(oPC, "This can only be used on an Armor");
 	}
-  }
 }
 
 // This controlls base ac value comparison check (stolen from the tlr scripts)

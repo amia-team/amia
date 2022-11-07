@@ -59,6 +59,7 @@ void tailor_look ( object oPC, object oItem, object oTarget ) {
 int iSet     = GetLocalInt( oItem, "tailor_set" );
 int iIsarmor = GetBaseItemType( oTarget );
 
+// If widget is used on itself, flushes the set appearance
 if ( oTarget == oItem ){
     DeleteLocalString( oItem, "armor_app" );
     SetLocalInt( oItem, "tailor_set", 1 );
@@ -67,7 +68,9 @@ if ( oTarget == oItem ){
     return;
    }
 
+// fires off the appearance copy settings if item is an armor
 if ( iIsarmor == 16 ){
+	// if widget oItem is not set with an appearance
     if ( iSet <= 1 ){
 
         SetLocalInt( oItem, "armor_ac", GetItemAppearance( oTarget, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_TORSO) );
@@ -77,15 +80,19 @@ if ( iIsarmor == 16 ){
         SendMessageToPC(oPC, "Item Apearance copied to tailor kit");
         return;
         }
-
+		
+	// if widget oItem is set with an appearance
     if ( iSet == 2 ){
 
         int nAc    = GetLocalInt( oItem, "armor_ac" );
-
+		
+		// Informs the player if they use on a item with a difirent base ac type then the copied type
         if (!CompareAC( nAc, oTarget )) {
             SendMessageToPC(oPC, "You may only apply the appearance on an armor with the same base AC values.");
             return;
         }
+		
+		// Loads the item apearance to the item, creates a copy and destroys original armor, this is needed to display change without reloading game 
         else {
             string sArmorapp    = GetLocalString ( oItem, "armor_app" );
 
@@ -95,13 +102,15 @@ if ( iIsarmor == 16 ){
                 SendMessageToPC(oPC, "Item Apearance applied to "+GetName ( oTarget ));
                 }
             }
-if (oTarget != 16) {
+// if used on any thing but an armor will state it needs to be an armor
+if (iIsarmor != 16) {
     SendMessageToPC(oPC, "This can only be used on an Armor");
 	return;
     }
   }
 }
 
+// This controlls base ac value comparison check (stolen from the tlr scripts)
 int CompareAC(int sFirst, object oSecond) {
 object oItem     = GetItemActivated();
 

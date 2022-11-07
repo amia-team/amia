@@ -83,19 +83,21 @@ if ( iIsarmor == 16 ){
         int nAc    = GetLocalInt( oItem, "armor_ac" );
 
         if (!CompareAC( nAc, oTarget )) {
-            SendMessageToPC(oPC, "You may only copy the appearance of items with the same base AC values.");
+            SendMessageToPC(oPC, "You may only apply the appearance on an armor with the same base AC values.");
             return;
         }
         else {
             string sArmorapp    = GetLocalString ( oItem, "armor_app" );
 
                 NWNX_Item_RestoreItemAppearance( oTarget, sArmorapp );
+                CopyItem (oTarget, oPC, TRUE);
+                DestroyObject (oTarget, 0.0f);
                 SendMessageToPC(oPC, "Item Apearance applied to "+GetName ( oTarget ));
                 }
             }
 else {
     SendMessageToPC(oPC, "This can only be used on an Armor");
-    return;
+
     }
   }
 }

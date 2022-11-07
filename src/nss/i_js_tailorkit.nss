@@ -95,9 +95,9 @@ if ( iIsarmor == 16 ){
                 SendMessageToPC(oPC, "Item Apearance applied to "+GetName ( oTarget ));
                 }
             }
-else {
+if (oTarget != 16) {
     SendMessageToPC(oPC, "This can only be used on an Armor");
-
+	return;
     }
   }
 }

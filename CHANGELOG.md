@@ -8,11 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Tailor Kit (script+widget) added, this kit allows storing an armor appearance on it, and deploying it on another armor (so no more need for endles bags of the same armor) craftable by tailors (bolt of silk, steel ingot)
-	
+- Item icon for tailor kit (misc small 3)	
 ### Changed
 - area changes:
 	- Ruathym: Fortress Wiltun, Keep
 		- Removed lord wiltun
+	- Underdark: Bloodspear Keep
+		- Added racial lock to main gate, specified settings, per primary leader
 
 ### Fixed
 - Small cosmetic change to gender changer message (added a space in feedback)

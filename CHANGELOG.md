@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- Removed lord wiltun
 
 ### Fixed
-- Small cosmatic change to gender changer message (added a space in feedback)
+- Small cosmetic change to gender changer message (added a space in feedback)
 
 ## [2.3.8] - 2022-11-04]
 

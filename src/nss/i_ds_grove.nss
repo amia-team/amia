@@ -153,7 +153,7 @@ location grove_exitpoint( object oPC ){
     location lExitPoint = GetLocation( oExitPoint );
 
     float fAngle        = IntToFloat( Random( 360 ) );
-    float fDistance     = IntToFloat( Random( 6 ) + 7 );
+    float fDistance     = IntToFloat( Random( 0 ) + 5 );
     float fFacing       = GetFacing( oPC );
 
     return GenerateNewLocationFromLocation( lExitPoint, fDistance, fAngle, fFacing );

@@ -8,14 +8,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Tailor Kit (script+widget) added, this kit allows storing an armor appearance on it, and deploying it on another armor (so no more need for endles bags of the same armor) craftable by tailors (bolt of silk, steel ingot)
-- Item icon for tailor kit (misc small 3)	
+- Item icon for tailor kit (misc small 3)
+- Alchemy workbench added to Starlight conclave per player request
+	
 ### Changed
 - area changes:
 	- Ruathym: Fortress Wiltun, Keep
 		- Removed lord wiltun
 	- Underdark: Bloodspear Keep
 		- Added racial lock to main gate, specified settings, per primary leader
-
+	- [location redacted]
+		- Replaced a static tree to plc tree for better movement options / removing bug that was trapping of players
+		- Realigned entry and various mechanical parts to accommodate  the change
+		
 ### Fixed
 - Small cosmetic change to gender changer message (added a space in feedback)
 - Script of Elvoriel, will now cause her default to size 1 instead of 0 when changing shape

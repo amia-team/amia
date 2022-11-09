@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Small cosmetic change to gender changer message (added a space in feedback)
+- Script of Elvoriel, will now cause her default to size 1 instead of 0 when changing shape
 
 ## [2.3.8] - 2022-11-04]
 

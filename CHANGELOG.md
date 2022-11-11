@@ -24,8 +24,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Starlight Conclave: Halls
 		- Alchemy Workbench (player request)
 		- Hallow triggers (plot update, per Jes)
-	- Kingdom of Kohlingen: Greengarden, Feylake West, Fort Cystana, Fort Cystana City Hall
-		- Everguard NPCs added or bios updated
+	- Kingdom of Kohlingen: All Greengarden Areas & City Hall
+		- Everguard NPC bios updated
+		- Plot updates - Silver Dragons & some NPCs moved/removed
 	- Silent Bay: Shrine of Eilistraee, Mushroom Cave
 		- Goblin living space updated
 	- Ruathym: Fortress Wiltun, Keep

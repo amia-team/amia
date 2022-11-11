@@ -7,9 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+	
+### Changed
+		
+### Fixed
+
+## [Unreleased]
+
+### Added
 - Tailor Kit (script+widget) added, this kit allows storing an armor appearance on it, and deploying it on another armor (so no more need for endles bags of the same armor) craftable by tailors (bolt of silk, steel ingot)
 - Item icon for tailor kit (misc small 3)
-	
+- Alchemy workbench added to Starlight conclave per player request
+- plc, palette, added giant chalkboard (custom -> Trades & Academic & farm -> Academic, Chalkboard)	
 ### Changed
 - Area Changes:
 	- Starlight Conclave: Halls
@@ -23,6 +32,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- Removed lord wiltun
 	- Underdark: Bloodspear Keep
 		- Added racial lock to main gate, specified settings, per primary leader
+	- Belenoth, halls
+		- Added desired description to giant book in libary
 	- [location redacted]
 		- Replaced a static tree to plc tree for better movement options / removing bug that was trapping of players
 		- Realigned entry and various mechanical parts to accommodate the change

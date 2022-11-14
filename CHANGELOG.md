@@ -7,11 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- New Boarshead Tavern interior in Kohlingen
 	
 ### Changed
 - Added NPC clergy to Fort Cystana for Red Knight, Siamorphe, Mystra, Bahamut
 - Gave existing clergy NPCs names in Fort Cystana
 - Removed spawns, fumes, blood, and gas from Construction Site
+- Completed Boarshead construction in Kohlingen: Greengarden
 		
 ### Fixed
 

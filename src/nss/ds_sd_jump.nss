@@ -5,6 +5,7 @@
 // ---------- ---------------- ---------------------------------------------
 // 10/10/2011 PaladinOfSune    Initial release.
 // 6/11/2022  The1Kobra        Update to handle cooldown logout bug.
+// 11/14/2022 Frozen			Changed cd to 12 sec
 //
 
 #include "amia_include"
@@ -15,7 +16,7 @@ void main( ) {
     object oPC = OBJECT_SELF;
     object oArea = GetArea( oPC );
     object oTarget=GetSpellTargetObject();
-    int nDuration = 264 - (GetLevelByClass(CLASS_TYPE_SHADOWDANCER,oPC)*12);
+    int nDuration = 12 ;
     float fDuration = IntToFloat(nDuration);
 
     location lTarget = GetSpellTargetLocation();

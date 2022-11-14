@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 	
 ### Changed
+- Added NPC clergy to Fort Cystana for Red Knight, Siamorphe, Mystra, Bahamut
+- Gave existing clergy NPCs names in Fort Cystana
+- Removed spawns, fumes, blood, and gas from Construction Site
 		
 ### Fixed
 

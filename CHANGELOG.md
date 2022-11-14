@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Gave existing clergy NPCs names in Fort Cystana
 - Removed spawns, fumes, blood, and gas from Construction Site
 - Completed Boarshead construction in Kohlingen: Greengarden
+- Shadow jump cooldown is now 12 sec flat, in line with flight
 		
 ### Fixed
 

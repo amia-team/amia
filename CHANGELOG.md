@@ -12,7 +12,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Added NPC clergy to Fort Cystana for Red Knight, Siamorphe, Mystra, Bahamut
 - Gave existing clergy NPCs names in Fort Cystana
-- Removed spawns, fumes, blood, and gas from Construction Site
+- Added Gregory lying in state
+- Added some guards and rangers to patrol areas per Bag's plot
+- Removed spawns, fumes, blood, and gas from Construction Site, added VFX
 - Completed Boarshead construction in Kohlingen: Greengarden
 - Shadow jump cooldown is now 12 sec flat, in line with flight
 		

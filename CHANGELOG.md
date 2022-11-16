@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - New Boarshead Tavern interior in Kohlingen
+- New tent PLC to palette
+- New food and drink items on the palette for Boarshead store
 	
 ### Changed
 - Added NPC clergy to Fort Cystana for Red Knight, Siamorphe, Mystra, Bahamut
@@ -16,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added some guards and rangers to patrol areas per Bag's plot
 - Removed spawns, fumes, blood, and gas from Construction Site, added VFX
 - Completed Boarshead construction in Kohlingen: Greengarden
+- Added/moved some Greengarden militia around Greengarden areas
 - Shadow jump cooldown is now 12 sec flat, in line with flight
 		
 ### Fixed

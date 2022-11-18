@@ -7,8 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- New areas for Obsidian Island encompassing the southeastern side of the island
+- New OI Spawns
+- 2 new OI quests
+- Script for creating dungeon lever doors
+- Script for spawning randomized PLCs
 	
 ### Changed
+- Obsidian Isle: Port has had a big facelift
+- Obsidian Isle: Great Hall has been reconfigured for flow and security
 	
 ### Fixed
 

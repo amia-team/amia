@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+	
+### Changed
+	
+### Fixed
+
+## [2.4.0] - 2022-11-18]
+
+### Added
 - New Boarshead Tavern interior in Kohlingen
 - New tent PLC to palette
 - New food and drink items on the palette for Boarshead store
@@ -22,6 +30,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Shadow jump cooldown is now 12 sec flat, in line with flight
 		
 ### Fixed
+- greengarden bug fix (server side)
 
 ## [2.3.9] - 2022-11-11]
 

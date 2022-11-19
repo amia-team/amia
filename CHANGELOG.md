@@ -7,6 +7,73 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- New areas for Obsidian Island encompassing the southeastern side of the island
+- New OI Spawns
+- 2 new OI quests
+- Script for creating dungeon lever doors
+- Script for spawning randomized PLCs
+	
+### Changed
+- Obsidian Isle: Port has had a big facelift
+- Obsidian Isle: Great Hall has been reconfigured for flow and security
+	
+### Fixed
+
+## [2.4.0] - 2022-11-18]
+
+### Added
+- New Boarshead Tavern interior in Kohlingen
+- New tent PLC to palette
+- New food and drink items on the palette for Boarshead store
+	
+### Changed
+- Added NPC clergy to Fort Cystana for Red Knight, Siamorphe, Mystra, Bahamut
+- Gave existing clergy NPCs names in Fort Cystana
+- Added Gregory lying in state
+- Added some guards and rangers to patrol areas per Bag's plot
+- Removed spawns, fumes, blood, and gas from Construction Site, added VFX
+- Completed Boarshead construction in Kohlingen: Greengarden
+- Added/moved some Greengarden militia around Greengarden areas
+- Shadow jump cooldown is now 12 sec flat, in line with flight
+		
+### Fixed
+- greengarden bug fix (server side)
+
+## [2.3.9] - 2022-11-11]
+
+### Added
+- Tailor Kit (script+widget) added, this kit allows storing an armor appearance on it, and deploying it on another armor (so no more need for endles bags of the same armor) craftable by tailors (bolt of silk, steel ingot)
+- Item icon for tailor kit (misc small 3)
+- Alchemy workbench added to Starlight conclave per player request
+- plc, palette, added giant chalkboard (custom -> Trades & Academic & farm -> Academic, Chalkboard)
+	
+### Changed
+- Area Changes:
+	- Starlight Conclave: Halls
+		- Alchemy Workbench (player request)
+		- Hallow triggers (plot update, per Jes)
+	- Kingdom of Kohlingen: All Greengarden Areas & City Hall
+		- Everguard NPC bios updated
+		- Plot updates - Silver Dragons & some NPCs moved/removed
+	- Silent Bay: Shrine of Eilistraee, Mushroom Cave
+		- Goblin living space updated
+	- Ruathym: Fortress Wiltun, Keep
+		- Removed lord wiltun
+	- Underdark: Bloodspear Keep
+		- Added racial lock to main gate, specified settings, per primary leader
+	- Belenoth, halls
+		- Added desired description to giant book in libary
+	- [location redacted]
+		- Replaced a static tree to plc tree for better movement options / removing bug that was trapping of players
+		- Realigned entry and various mechanical parts to accommodate the change
+		
+### Fixed
+- Small cosmetic change to gender changer message (added a space in feedback)
+- Script of Elvoriel, will now cause her default to size 1 instead of 0 when changing shape
+
+## [2.3.8] - 2022-11-04]
+
+### Added
 - Gender Changer, script + widget for changing your gender
 - Unlimited uses SELF Changer, QoL widget for dms to change existing widgets x/day power self, to unlimited/day power self
 - PLC palette additions:
@@ -18,6 +85,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Parry unlocked: This change has been undocumented for a good while (sorry about that). Parry now ripostes up to your attacks per round. However, Parry can only deflect attacks equal to your attacks per round up to 3 attacks per round. If you run tests contradicting this functionality, let us know! This is our best guess as to how it works, because the tweak is from an outside source, and it's poorly documented and understood by even its creator.
 
 ### Fixed
+- Bottled companion static skin scaling should now also work
+- 20 DD now correctly gets +1 AC and +2 CHA
+- Lycan now gets weapon prof creature
 
 ## [2.3.7] - 2022-10-30]
 

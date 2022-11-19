@@ -2,6 +2,8 @@
 // Circle of Balance     Druid Grove System (MagnumMan         )
 // Copyright (C) 2004 by James E. King, III (jking@prospeed.net)
 //                       Valdor Dormanigon  (Archdruid         )
+//                                                             )
+// 2022-11-09 - Added scale to default to fix bug (by frozen   )
 ////////////////////////////////////////////////////////////////
 //
 // Elvoriel likes to change shapes sometimes.
@@ -37,4 +39,5 @@ void main()
     ApplyEffectToObject(DURATION_TYPE_INSTANT  , eSFX      , oElvoriel,  3.0f);
     ApplyEffectToObject(DURATION_TYPE_TEMPORARY, ePolymorph, oElvoriel, 60.0f);
     SetLocalInt(oElvoriel, "elvoriel_poly", lastshape);
+    SetObjectVisualTransform( oElvoriel, 10, 1.0);
 }

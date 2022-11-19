@@ -19,6 +19,7 @@ void main(){
 
 				            NWNX_Creature_SetGender(oPC, nNewGender);
 				            string genderString = nNewGender == 0 ? "male" : "female";
-				            AssignCommand( oPC, SpeakString( "<c Û >Changed gender to" + genderString + "</c>" ) );
+				            AssignCommand( oPC, SpeakString( "<c Û >Changed gender to " + genderString + "</c>" ) );
          }
     }
+

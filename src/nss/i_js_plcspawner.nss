@@ -32,7 +32,7 @@ void main()
      FloatingTextStringOnCreature("*Spawning PLC*",oPC);
      object oPlacedPLC = CreateObject(OBJECT_TYPE_PLACEABLE,sPLC,lTargeted,FALSE);
      float fRotation = GetFacing(oPlacedPLC) + GetLocalFloat(oPlacedPLC, "SpawnRotation");
-     SetFacing(fRotation);
+     AssignCommand(oPlacedPLC, SetFacing(fRotation));
      SetName(oPlacedPLC,GetName(oWidget));
      SetDescription(oPlacedPLC,GetDescription(oWidget));
      SetLocalInt(oWidget,"active",1);

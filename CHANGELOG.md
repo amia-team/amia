@@ -12,10 +12,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 2 new OI quests
 - Script for creating dungeon lever doors
 - Script for spawning randomized PLCs
+- New Kohlingen Courtroom area
+- New database token
 	
 ### Changed
 - Obsidian Isle: Port has had a big facelift
 - Obsidian Isle: Great Hall has been reconfigured for flow and security
+- Banners and statues in Fort Cystana for Courtroom
+- Tweaked prices of Boarshead drinks
 	
 ### Fixed
 

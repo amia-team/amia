@@ -110,10 +110,10 @@ const string DS_J_LASTJOB           = "ds_j_lj";
 const string DS_J_FAILURE           = "Bah. You failed to process this resource.";
 
 //needs to go to a colour lib
-const string CLR_ORANGE             = "<cþ¥ >";
-const string CLR_RED                = "<cþ  >";
-const string CLR_GRAY               = "<cŒŒŒ>";
-const string CLR_BLUE               = "<c  þ>";
+const string CLR_ORANGE             = "<cï¿½ï¿½ >";
+const string CLR_RED                = "<cï¿½  >";
+const string CLR_GRAY               = "<cï¿½ï¿½ï¿½>";
+const string CLR_BLUE               = "<c  ï¿½>";
 const string CLR_END                = "</c>";
 
 struct Multioptions {
@@ -343,7 +343,6 @@ void ds_j_InitialiseSystems( object oModule ){
     //-------------------------------------------
     object oTemplates = GetObjectByTag( DS_J_TEMPLATES );
 
-    WriteTimestampedLogEntry( "caching oTemplates = "+GetName( oTemplates ) );
 
     SetLocalObject( oModule, DS_J_TEMPLATES, oTemplates );
 
@@ -355,7 +354,6 @@ void ds_j_InitialiseSystems( object oModule ){
 
         oTemplate = GetNextItemInInventory( oTemplates );
 
-        WriteTimestampedLogEntry( "caching oTemplate = "+GetName( oTemplate ) );
     }
 
     //-------------------------------------------
@@ -368,7 +366,6 @@ void ds_j_InitialiseSystems( object oModule ){
     float fDelay;
     int i;
 
-    WriteTimestampedLogEntry( "Caching on "+GetName( oTempCache ) );
 
     while( GetIsObjectValid( oAreaMarker ) ){
 
@@ -387,7 +384,6 @@ void ds_j_InitialiseSystems( object oModule ){
 
             SetLocalObject( oTempCache, GetResRef( oArea ), oArea );
 
-            WriteTimestampedLogEntry( "Caching "+GetName( oArea ) );
 
             ++i;
             oAreaMarker = GetObjectByTag( "is_area", i );
@@ -433,8 +429,6 @@ void ds_j_InitialiseSystems( object oModule ){
 
             //store number of areas within this group
             SetLocalInt( oStorage, sPrevKey, i );
-            WriteTimestampedLogEntry( "Caching CR group key:  "+sPrevKey );
-            WriteTimestampedLogEntry( "Caching CR group areas:  "+IntToString( i ) );
 
             i=0;
         }
@@ -459,7 +453,6 @@ void ds_j_InitialiseSystems( object oModule ){
             //resref
             SetLocalObject( oStorage, sKey+"_"+IntToString(i), oArea );
 
-            WriteTimestampedLogEntry( "Caching "+GetName( oArea )+" on "+sKey+"_"+IntToString(i) );
         }
         else{
 
@@ -471,8 +464,6 @@ void ds_j_InitialiseSystems( object oModule ){
 
     //store number of areas within last group
     SetLocalInt( oStorage, sKey, i );
-    WriteTimestampedLogEntry( "Caching CR group key:  "+sKey );
-    WriteTimestampedLogEntry( "Caching CR group areas:  "+IntToString( i ) );
 
 
     //-------------------------------------------

@@ -156,16 +156,6 @@ int tha_reputation( object oPC, int nModifier );
 //gets (nValue=0) and sets (nValue>0) quest status and sets journal
 int ds_quest( object oPC, string sQuest, int nValue=0 );
 
-//This function should only be used in the module heartbeat script!
-//It runs the first available execution in the server_commands table
-void RunServerCommand();
-
-//used in RunServerCommand();
-object GetPCByAccount( string sAccount );
-
-//used in RunServerCommand();
-void Messenger();
-
 // Sets player hit points on log in and manages WP jumping
 void ResolveLoginStatus( object oPC, object oPCKEY, object oModule );
 
@@ -1575,18 +1565,18 @@ string GetStartWaypoint( object oPC, int nOverrideWithFaction=FALSE ){
     if ( nCustomSlot > 0 && nOverrideWithFaction == TRUE ){
 
         //testing
-        //SendMessageToPC( oPC, "<c¥  >Test 1a: nCustomSlot="+IntToString(nCustomSlot)+"</c>" );
+        //SendMessageToPC( oPC, "<cï¿½  >Test 1a: nCustomSlot="+IntToString(nCustomSlot)+"</c>" );
 
         //translate slot into bindpoint
         sWP     = "b_"+IntToString( GetPCKEYValue( oPC, "bp_"+IntToString( nCustomSlot ) ) );
 
         //testing
-        SendMessageToPC( oPC, "<c¥  >Test 1b: sWP="+sWP+"</c>" );
+        SendMessageToPC( oPC, "<cï¿½  >Test 1b: sWP="+sWP+"</c>" );
 
         if ( GetIsObjectValid( GetLocalObject( oStorage, sWP ) ) ){
 
             //testing
-            //SendMessageToPC( oPC, "<c¥  >Test 1c: Custom WP is valid</c>" );
+            //SendMessageToPC( oPC, "<cï¿½  >Test 1c: Custom WP is valid</c>" );
 
             //custom home area is on this server
             return sWP;
@@ -1596,12 +1586,12 @@ string GetStartWaypoint( object oPC, int nOverrideWithFaction=FALSE ){
     if ( nFaction > 0 && nOverrideWithFaction == TRUE ){
 
         //testing
-        //SendMessageToPC( oPC, "<c¥  >Test 2a: nFaction="+IntToString(nFaction)+"</c>" );
+        //SendMessageToPC( oPC, "<cï¿½  >Test 2a: nFaction="+IntToString(nFaction)+"</c>" );
 
         if ( GetIsObjectValid( GetLocalObject( oStorage, "b_"+IntToString( nFaction ) ) ) ){
 
             //testing
-            //SendMessageToPC( oPC, "<c¥  >Test 2b: Faction WP is valid</c>" );
+            //SendMessageToPC( oPC, "<cï¿½  >Test 2b: Faction WP is valid</c>" );
 
             //faction area is on this server
             return "b_"+IntToString( nFaction );
@@ -1956,89 +1946,7 @@ int ds_quest( object oPC, string sQuest, int nValue=0 ){
     return( nQuest );
 }
 
-//This function should only be used in the module heartbeat script!
-//It runs the first available execution in the server_commands table
-void RunServerCommand(){
 
-
-    int nCount = GetLocalInt( OBJECT_SELF, "ds_cmnd_cnt" );
-
-    if ( nCount < 10 ){
-
-        ++nCount;
-
-        SetLocalInt( OBJECT_SELF, "ds_cmnd_cnt", nCount );
-        return;
-    }
-
-    //commands are imported once a minute
-    SetLocalInt( OBJECT_SELF, "ds_cmnd_cnt", 0 );
-
-    Messenger();
-
-    AutoSave();
-}
-
-object GetPCByAccount( string sAccount ){
-
-    object oPC = GetFirstPC();
-
-    while ( GetIsObjectValid( oPC ) == TRUE ){
-
-        if ( GetPCPlayerName( oPC ) == sAccount ){
-
-            return oPC;
-        }
-
-        oPC = GetNextPC();
-    }
-
-    return OBJECT_INVALID;
-}
-
-void Messenger(){
-
-    //clear all stale messages
-    string sQuery = "UPDATE messenger SET message_read=2 WHERE message_read=0 AND TIMESTAMPDIFF( MINUTE, insert_at, NOW() ) > 60";
-
-    //execute cleanup
-    SQLExecDirect( sQuery );
-
-    string sModule = IntToString( GetLocalInt( GetModule(), "Module" ) );
-
-    sQuery = "SELECT message_to, count( id ) as messages FROM messenger WHERE message_read=0 GROUP BY message_to";
-
-    //execute retrieval
-    SQLExecDirect( sQuery );
-
-    //loop through commands
-    while( SQLFetch( ) == SQL_SUCCESS ){
-
-        //decoding shouldn't be needed
-        string sTo          = SQLDecodeSpecialChars( SQLGetData( 1 ) );
-        string sMessages    = SQLDecodeSpecialChars( SQLGetData( 2 ) );
-
-        if ( sTo == sModule ){
-
-            DelayCommand( 1.0, InformDMs( sModule ) );
-        }
-        else{
-
-            object oPC          = GetPCByAccount( sTo );
-
-            if ( GetIsPC( oPC ) ){
-
-                //set message counter for post box
-                SetLocalInt( oPC, "ds_ms_cnt", StringToInt( sMessages ) );
-
-                //warn player
-                FloatingTextStringOnCreature( "<cþ þ>You got "+sMessages+" unread message(s)!</c>", oPC, FALSE );
-                FloatingTextStringOnCreature( "<c þþ>Use the Rest menu to check them.</c>", oPC, FALSE );
-                AssignCommand( oPC, PlaySound( "gui_dm_alert" ) );
-            }
-        }
-    }
-}
 
 // Sets player hit points after log in/out.
 void ResolveLoginStatus( object oPC, object oPCKEY, object oModule ){
@@ -2107,16 +2015,16 @@ int ResolveTransport( object oPC, object oArea ){
     if ( sLastSession != sSession && sTarget == "" && GetTag( oArea ) != "amia_entry" && GetPCKEYValue( oPC, "dead_in" ) != GetLocalInt( oModule, "Module" ) ) {
 
         //testing
-        //SendMessageToPC( oPC, "<c¥  >Test: sTarget="+sTarget+"</c>" );
-        //SendMessageToPC( oPC, "<c¥  >Test: This session="+sSession+"</c>" );
-        //SendMessageToPC( oPC, "<c¥  >Test: Last session="+sLastSession+"</c>" );
-        //SendMessageToPC( oPC, "<c¥  >Test: Jump back to entry.</c>" );
+        //SendMessageToPC( oPC, "<cï¿½  >Test: sTarget="+sTarget+"</c>" );
+        //SendMessageToPC( oPC, "<cï¿½  >Test: This session="+sSession+"</c>" );
+        //SendMessageToPC( oPC, "<cï¿½  >Test: Last session="+sLastSession+"</c>" );
+        //SendMessageToPC( oPC, "<cï¿½  >Test: Jump back to entry.</c>" );
 
         if ( !GetIsDM( oPC ) ){
 
             ApplyEffectToObject( DURATION_TYPE_TEMPORARY, eFreeze, oPC, fDelay );
 
-            FloatingTextStringOnCreature( "<cþ þ>Wait a moment, you'll be ported back to the Entry.</c>", oPC, FALSE );
+            FloatingTextStringOnCreature( "<cï¿½ ï¿½>Wait a moment, you'll be ported back to the Entry.</c>", oPC, FALSE );
 
             //Logged out of other server, put back to entry
 
@@ -2130,10 +2038,10 @@ int ResolveTransport( object oPC, object oArea ){
     else if ( sLastSession != sSession && sTarget != "" ){
 
         //testing
-        //SendMessageToPC( oPC, "<c¥  >Test: sTarget="+sTarget+"</c>" );
-        //SendMessageToPC( oPC, "<c¥  >Test: This session="+sSession+"</c>" );
-        //SendMessageToPC( oPC, "<c¥  >Test: Last session="+sLastSession+"</c>" );
-        //SendMessageToPC( oPC, "<c¥  >Test: Move to destination.</c>" );
+        //SendMessageToPC( oPC, "<cï¿½  >Test: sTarget="+sTarget+"</c>" );
+        //SendMessageToPC( oPC, "<cï¿½  >Test: This session="+sSession+"</c>" );
+        //SendMessageToPC( oPC, "<cï¿½  >Test: Last session="+sLastSession+"</c>" );
+        //SendMessageToPC( oPC, "<cï¿½  >Test: Move to destination.</c>" );
 
         //enters from other module within 10 mins
         //to portal destination
@@ -2141,7 +2049,7 @@ int ResolveTransport( object oPC, object oArea ){
 
         if ( GetIsObjectValid( oWP ) ){
 
-            FloatingTextStringOnCreature( "<cþ þ>Wait a moment, you'll be ported to your destination.</c>", oPC, FALSE );
+            FloatingTextStringOnCreature( "<cï¿½ ï¿½>Wait a moment, you'll be ported to your destination.</c>", oPC, FALSE );
 
             ApplyEffectToObject( DURATION_TYPE_TEMPORARY, eFreeze, oPC, fDelay );
 
@@ -2207,7 +2115,7 @@ void InformDMs( string sModule ){
 
         if ( sMessage != "" ){
 
-            SendMessageToAllDMs( "Message from other server!\nPC: <cþþ >"+sPC+"</c>\nAccount: <cþþ >"+sAccount+"</c>\nMessage: <cþþ >"+sMessage+"</c>\nArea: <cþþ >"+sArea+"</c>" );
+            SendMessageToAllDMs( "Message from other server!\nPC: <cï¿½ï¿½ >"+sPC+"</c>\nAccount: <cï¿½ï¿½ >"+sAccount+"</c>\nMessage: <cï¿½ï¿½ >"+sMessage+"</c>\nArea: <cï¿½ï¿½ >"+sArea+"</c>" );
         }
    }
 }
@@ -2307,7 +2215,7 @@ object GetInsigniaB( object oPC ){
 
     if ( GetIsObjectValid( oInsignia ) && GetTag( oInsignia ) == "HouseInsignia" ){
 
-        //SendMessageToPC( oPC, "<c¥  >Test: Detected cached "+GetName( oInsignia )+"</c>" );
+        //SendMessageToPC( oPC, "<cï¿½  >Test: Detected cached "+GetName( oInsignia )+"</c>" );
 
         return oInsignia;
     }
@@ -2324,7 +2232,7 @@ object GetInsigniaB( object oPC ){
         SetLocalInt( oPC, "NoInsignia", 1 );
     }
 
-    //SendMessageToPC( oPC, "<c¥  >Test: Cached "+GetName( oInsignia )+"</c>" );
+    //SendMessageToPC( oPC, "<cï¿½  >Test: Cached "+GetName( oInsignia )+"</c>" );
 
     return oInsignia;
 }
@@ -2410,7 +2318,7 @@ void ImportRule( int nCategory, object oRules=OBJECT_INVALID ){
         sHeading = DecodeSpecialChars( SQLGetData( 1 ) );
         sContent = DecodeSpecialChars( SQLGetData( 2 ) );
 
-        sRules += "<cþþ >"+sHeading+"</c>\n"+sContent+"\n\n";
+        sRules += "<cï¿½ï¿½ >"+sHeading+"</c>\n"+sContent+"\n\n";
     }
 
     if ( sRules == "" ){

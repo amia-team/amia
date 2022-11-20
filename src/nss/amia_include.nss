@@ -178,10 +178,6 @@ void SaveBootPlayer( object oPC, string sRef );
 // Shuts down the Amia Server.
 void KillServer( );
 
-/*  Exports all characters ands calls into the Amia NWNX2 plug-in
-    to kill the server process after 4 hours.                     */
-void AutoSave( );
-
 //remove all effects placed on oPC by nSpell
 int RemoveEffectsBySpell( object oPC, int nSpell );
 
@@ -1234,57 +1230,6 @@ void KillServer( ){
     }
 
     return;
-}
-
-// Exports all characters ands calls into the Amia NWNX2 plug-in
-// to kill the server process after 4 hours.
-void AutoSave( ){
-
-    // Variables
-    object oModule          = GetModule( );
-    int nNow;
-    int nRunTime           = GetRunTime() - GetStartTime();
-    int nClosingTime;
-    int nClosing            = GetLocalInt( oModule, "ds_closing" );
-    int nLastSave           = GetLocalInt( oModule, "ds_saved" );
-    int nAutoSaveInterval   = GetLocalInt( oModule, "AutoSave" );
-    int nAutoReloadInterval = GetLocalInt( oModule, "AutoReload" );
-
-    //we block saving once the shutdown routines are running
-    if ( nClosing == 1 ){
-
-        return;
-    }
-
-    //extra warnings at 2 and 1 minutes before reset
-    if ( nRunTime >= ( nAutoReloadInterval-120 ) ){
-
-        SendMessageToAllPCs( "Amia will reset in about 2 minutes." );
-    }
-
-    if ( nRunTime >= ( nAutoReloadInterval-60 ) ){
-
-        SendMessageToAllPCs( "Amia will reset in about 1 minute." );
-    }
-
-    //reboot
-    if ( nRunTime >= nAutoReloadInterval ){
-        WriteTimestampedLogEntry(IntToString(nRunTime) + " was greater >= " + IntToString(nAutoReloadInterval));
-        SaveBootPlayers( );
-        return;
-    }
-
-    //auto save
-    nClosingTime    = ( ( nAutoReloadInterval - nRunTime ) / 60 ) + 1;
-
-    if ( ( nRunTime - nLastSave ) >= nAutoSaveInterval ){
-
-        SendMessageToAllPCs( "Amia will reset in "+IntToString( nClosingTime )+ " minutes" );
-
-        AR_ExportPlayers( );
-        SetLocalInt( oModule, "ds_saved", nRunTime );
-        return;
-    }
 }
 
 int RemoveEffectsBySpell( object oPC, int nSpell ){

@@ -37,8 +37,6 @@ void main( ){
         GetTimeMillisecond()
     );
 
-    RunServerCommand();
-
     int nCount = GetLocalInt( OBJECT_SELF, "ds_dm_cnt" );
 
     if ( nCount < 150 ){
@@ -58,10 +56,6 @@ void main( ){
 
         string sModule = IntToString( GetLocalInt( OBJECT_SELF, "Module" ) );
     }
-
-
-
-
 }
 
 int CountDMs(){

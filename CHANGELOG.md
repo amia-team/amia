@@ -23,6 +23,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	
 ### Fixed
 
+## [2.4.1] - 2022-11-19]
+
+### Added
+- New Kohlingen Courtroom area
+- New database token
+	
+### Changed
+- Banners and statues in Fort Cystana for Courtroom
+- Tweaked prices of Boarshead drinks
+
 ## [2.4.0] - 2022-11-18]
 
 ### Added

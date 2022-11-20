@@ -228,7 +228,6 @@ int GetItemPropertyIsApplyAbleOnItem( object oItem, itemproperty IP ){
             break;
 
         case BASE_ITEM_MAGICSTAFF:
-        case BASE_ITEM_MAGICSTAFF2h:
             sColumn = "3_Staves";
             break;
 

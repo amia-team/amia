@@ -626,7 +626,6 @@ string GetItemBaseTypeName( object oItem ){
         case BASE_ITEM_TWOBLADEDSWORD:  return "a two-bladed sword";  break;
         case BASE_ITEM_WARHAMMER:       return "a war hammer";        break;
         case BASE_ITEM_WHIP:            return "a whip";              break;
-        case BASE_ITEM_MAGICSTAFF2h:    return "a magic staff";       break;
     }
 
     return "an unidentified item";
@@ -1299,7 +1298,6 @@ int GetIsWeapon( object oItem ){
         case BASE_ITEM_TWOBLADEDSWORD:  return TRUE;   break;
         case BASE_ITEM_WARHAMMER:       return TRUE;   break;
         case BASE_ITEM_WHIP:            return TRUE;   break;
-        case BASE_ITEM_MAGICSTAFF2h:    return TRUE;   break;
     }
 
     return FALSE;
@@ -1854,8 +1852,7 @@ int GetBludgeoningWeapon( object oItem ) {
       ( nItem == BASE_ITEM_QUARTERSTAFF ) ||
       ( nItem == BASE_ITEM_MORNINGSTAR ) ||
       ( nItem == BASE_ITEM_SLING )||
-      ( nItem == BASE_ITEM_CBLUDGWEAPON ) ||
-      ( nItem == BASE_ITEM_MAGICSTAFF2h )
+      ( nItem == BASE_ITEM_CBLUDGWEAPON )
       ) {
         return TRUE;
    }

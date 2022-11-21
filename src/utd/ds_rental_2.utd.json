@@ -18,7 +18,7 @@
   },
   "Comment": {
     "type": "cexostring",
-    "value": "Door that closes in 8 seconds"
+    "value": "Ensure that each room/home is using a different resref door\r\nResref: ds_rental_1 (rental_2, rental_3)\r\n\r\nEnsure that the tag of the door follows this convention:\r\nTag: [area tag]_house_a2 (house_b2, house_c2)\r\n\r\nIn the case of rental homes, follow this convention for area transition:\r\nDestination: [area tag]_house_a1 (house_b1, house_c1)\r\n\r\nNAMING CONVENTIONS:\r\n\r\nRental Homes\r\n----------------\r\nThe name of this door MUST be one of the following:\r\nRental Home, Large\r\nRental Home, Medium\r\nRental Home, Small\r\n\r\nRental Rooms\r\n----------------\r\nThe name of this door MUST be one of the following:\r\nRental Room, Luxury\r\nRental Room, Deluxe\r\nRental Room, Basic"
   },
   "Conversation": {
     "type": "resref",
@@ -30,9 +30,7 @@
   },
   "Description": {
     "type": "cexolocstring",
-    "value": {
-      "0": ""
-    }
+    "value": {}
   },
   "DisarmDC": {
     "type": "byte",
@@ -48,7 +46,7 @@
   },
   "GenericType_New": {
     "type": "dword",
-    "value": 13
+    "value": 0
   },
   "Hardness": {
     "type": "byte",
@@ -68,7 +66,7 @@
   },
   "KeyRequired": {
     "type": "byte",
-    "value": 1
+    "value": 0
   },
   "LinkedTo": {
     "type": "cexostring",
@@ -84,7 +82,7 @@
   },
   "Lockable": {
     "type": "byte",
-    "value": 1
+    "value": 0
   },
   "Locked": {
     "type": "byte",
@@ -93,7 +91,7 @@
   "LocName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Rental Home, Medium"
+      "0": "ds_rental_2"
     }
   },
   "OnClick": {
@@ -158,7 +156,7 @@
   },
   "PaletteID": {
     "type": "byte",
-    "value": 4
+    "value": 8
   },
   "Plot": {
     "type": "byte",
@@ -174,7 +172,7 @@
   },
   "Tag": {
     "type": "cexostring",
-    "value": "ds_rental_1a"
+    "value": "AREATAG_house_b2"
   },
   "TemplateResRef": {
     "type": "resref",

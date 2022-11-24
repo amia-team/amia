@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Obsidian Isle: Great Hall has been reconfigured for flow and security
 - Triumvir: Courtyard: Plot update, a new family moved in
 - Boat travel added from Wiltun -> Blue Lagoon, per Pinky
+- Adjusted Scholar rolls to be 100 Primary and 80 Secondary to match other jobs
 	
 ### Fixed
 - Typo in Arivara's name in Fort Cystana, North

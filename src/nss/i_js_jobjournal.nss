@@ -445,7 +445,7 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
      // Based on job being primary/secondary roll to get item
      if(nRank == 2)
      {
-        if(nRandom <= 90)
+        if(nRandom <= 100)
         {
           sSuccessOrFailure = "SUCCESS";
           GiveExactXP(oPC,nXP);
@@ -456,13 +456,13 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
           sSuccessOrFailure = "FAILURE";
           GiveExactXP(oPC,nXP/2);
         }
-        SendMessageToPC(oPC,"Rolled "+IntToString(nRandom)+" vs 90 or less. "+sSuccessOrFailure);
+        SendMessageToPC(oPC,"Rolled "+IntToString(nRandom)+" vs 100 or less. "+sSuccessOrFailure);
 
      }
      else if(nRank == 1)
      {
 
-        if(nRandom <= 60)
+        if(nRandom <= 80)
         {
           sSuccessOrFailure = "SUCCESS";
           GiveExactXP(oPC,nXP);
@@ -473,7 +473,7 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
           sSuccessOrFailure = "FAILURE";
           GiveExactXP(oPC,nXP/2);
         }
-        SendMessageToPC(oPC,"Rolled "+IntToString(nRandom)+" vs 60 or less. "+sSuccessOrFailure);
+        SendMessageToPC(oPC,"Rolled "+IntToString(nRandom)+" vs 80 or less. "+sSuccessOrFailure);
 
      }
      SetLocalInt(oPC,"siteblocker",1);
@@ -844,8 +844,8 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
      if((GetResRef(oTargeted) == "js_chest_kit") && (GetGold(oPC) >= 10000))
      {
         CreateItemOnObject("js_mini_merchest",oPC);
-		TakeGoldFromCreature(10000, oPC, TRUE);
-		DestroyObject(oTargeted);
+        TakeGoldFromCreature(10000, oPC, TRUE);
+        DestroyObject(oTargeted);
         SendMessageToPC(oPC,"Merchant Chest created!");
      }
      else if((GetResRef(oTargeted) == "js_chest_kit"))

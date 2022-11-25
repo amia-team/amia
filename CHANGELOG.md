@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+	
+### Changed
+	
+### Fixed
+
+## [2.5.0] - 2022-11-25]
+
+### Added
 - New areas for Obsidian Island encompassing the southeastern side of the island
 - New OI Spawns
 - 2 new OI quests
@@ -22,6 +30,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Adjusted Scholar rolls to be 100 Primary and 80 Secondary to match other jobs
 - ds_random_head allows for females, too
 - Amia Forest: Oakmist Vale, Tent : remade area in difirent tile and big overhaul as per player request/rp
+- Amia Forest: Oakmist Vale : Neley is now a proper (arch) druid + fishy animal companion
 	
 ### Fixed
 - Typo in Arivara's name in Fort Cystana, North

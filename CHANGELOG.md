@@ -15,16 +15,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Food and drinks for Cystana restaurant
 	
 ### Changed
-- Obsidian Isle: Port has had a big facelift
-- Obsidian Isle: Great Hall has been reconfigured for flow and security
-- Triumvir: Courtyard: Plot update, a new family moved in
+- Obsidian Isle: Port : has had a big facelift
+- Obsidian Isle: Great Hall : has been reconfigured for flow and security
+- Triumvir: Courtyard : Plot update, a new family moved in
 - Boat travel added from Wiltun -> Blue Lagoon, per Pinky
 - Adjusted Scholar rolls to be 100 Primary and 80 Secondary to match other jobs
 - ds_random_head allows for females, too
+- Amia Forest: Oakmist Vale, Tent : remade area in difirent tile and big overhaul as per player request/rp
 	
 ### Fixed
 - Typo in Arivara's name in Fort Cystana, North
 - spawn_dance not working as intended, fixed
+- Renamed npc in wiltun that had old jobsystem name to Sheila
+- Switched classes for hawkeye due to woopsie
 
 ## [2.4.1] - 2022-11-19]
 

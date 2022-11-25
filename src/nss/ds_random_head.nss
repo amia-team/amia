@@ -5,7 +5,7 @@ void main(){
     int nGender = GetGender( OBJECT_SELF );
     string sName;
 
-    if ( nGender == GENDER_MALE ){
+    if ( nGender == GENDER_MALE || nGender == GENDER_FEMALE ){
 
         sName = RandomName( NAME_LAST_HUMAN );
 

@@ -5,6 +5,6 @@
 void main()
 {
 
-    ActionPlayAnimation(ANIMATION_LOOPING_CUSTOM19, 1.0f, 999.0f);
+    PlayAnimation(ANIMATION_LOOPING_CUSTOM19, 1.0, 28000.0);
 
 }

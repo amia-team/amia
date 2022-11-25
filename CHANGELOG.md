@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 2 new OI quests
 - Script for creating dungeon lever doors
 - Script for spawning randomized PLCs
+- Food and drinks for Cystana restaurant
 	
 ### Changed
 - Obsidian Isle: Port has had a big facelift
@@ -23,7 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	
 ### Fixed
 - Typo in Arivara's name in Fort Cystana, North
-- spawn_dance not working as intended, fixing
+- spawn_dance not working as intended, fixed
 
 ## [2.4.1] - 2022-11-19]
 

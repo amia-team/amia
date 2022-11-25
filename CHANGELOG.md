@@ -19,9 +19,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Triumvir: Courtyard: Plot update, a new family moved in
 - Boat travel added from Wiltun -> Blue Lagoon, per Pinky
 - Adjusted Scholar rolls to be 100 Primary and 80 Secondary to match other jobs
+- ds_random_head allows for females, too
 	
 ### Fixed
 - Typo in Arivara's name in Fort Cystana, North
+- spawn_dance not working as intended, fixing
 
 ## [2.4.1] - 2022-11-19]
 

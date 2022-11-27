@@ -37,7 +37,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - spawn_dance not working as intended, fixed
 - Renamed npc in wiltun that had old jobsystem name to Sheila
 - Switched classes for hawkeye due to woopsie
-- Spawn size is now considerd based on party size in area not total again
+- Spawn size is now considered based on party size in area not total again
 
 ## [2.4.1] - 2022-11-19]
 

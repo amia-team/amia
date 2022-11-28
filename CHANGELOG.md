@@ -7,10 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Bistro La Suzail! (and Cellar)
+- New dynamic PLC resizing script
 	
 ### Changed
+- Updated sign, door, and NPCs outside restaurant in Fort Cystana
+- Key update for a faction
+- Added scale to Medieval Chair 1 on palette so it's human-sized by default
 	
 ### Fixed
+- Typos in some Bistro food/drinks
 
 ## [2.5.0] - 2022-11-25]
 

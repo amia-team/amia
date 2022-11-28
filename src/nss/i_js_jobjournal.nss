@@ -385,7 +385,7 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
      case 77: break; // Merchant script - LEAVE BLANK
      case 78: break; // Merchant script - LEAVE BLANK
      case 79: break; // Merchant script - LEAVE BLANK
-     case 80: sResource = "js_hunt_tra2"; break; // Hunter's Meat Trap
+     case 80: sResource = "js_hunt_tra2"; break; // Hunter's Fur Trap
      case 81: break; // Hunter script - LEAVE BLANK
      case 82: break; // Merchant Chest Creation Script
      case 83: break; // Merchant Chest Transfer Resource Script

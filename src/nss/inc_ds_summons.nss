@@ -17,6 +17,7 @@
 #include "inc_td_appearanc"
 #include "amia_include"
 #include "inc_td_shifter"
+#include "nwnx_creature"
 //-------------------------------------------------------------------------------
 // prototypes: spell summons
 //-------------------------------------------------------------------------------
@@ -1200,6 +1201,7 @@ void sd_sum_skinchange(object oPC, float fDuration)
 {
     object oAssociate = GetAssociate(ASSOCIATE_TYPE_SUMMONED, oPC);
     int nAppearance = GetAppearanceType(oPC);
+    int nGender = GetGender(oPC);
     int nTail = GetCreatureTailType(oPC);
     int nWings = GetCreatureWingType(oPC);
     int nRFoot = GetCreatureBodyPart(CREATURE_PART_RIGHT_FOOT,oPC);
@@ -1232,6 +1234,7 @@ void sd_sum_skinchange(object oPC, float fDuration)
     else
     {
       SetCreatureAppearanceType(oAssociate,nAppearance);
+      NWNX_Creature_SetGender(oAssociate,nGender);
       SetCreatureWingType(nWings,oAssociate);
       SetCreatureTailType(nTail,oAssociate);
       SetCreatureBodyPart(CREATURE_PART_RIGHT_FOOT,nRFoot,oAssociate);

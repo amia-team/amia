@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Typos in some Bistro food/drinks
 - Changed some doors in Obsidian Isle: Sewers
 - Added boat travel trigger to Fallion in Obsidian Isle: Port
+- SD Shadowlord summon should mirror PC's gender
 
 ## [2.5.0] - 2022-11-25]
 

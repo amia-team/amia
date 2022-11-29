@@ -7,11 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
-- Bistro La Suzail! (and Cellar)
+- Fort Cystana: Bistro La Suzail (and Cellar)
+- Fort Cystana: Emerald Bathhouse
 - New dynamic PLC resizing script
+- Shop for Bathhouse
+- 2 New PLCs added to palette (Tent and Piano)
 	
 ### Changed
-- Updated sign, door, and NPCs outside restaurant in Fort Cystana
+- Updated sign, door, and NPCs outside restaurant and bathhouse in Fort Cystana
 - Key update for a faction
 - Added scale to Medieval Chair 1 on palette so it's human-sized by default
 	

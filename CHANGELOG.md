@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Changed some doors in Obsidian Isle: Sewers
 - Added boat travel trigger to Fallion in Obsidian Isle: Port
 - SD Shadowlord summon should mirror PC's gender
+- Certain Job System PLCs have had their rotation corrected
 
 ## [2.5.0] - 2022-11-25]
 

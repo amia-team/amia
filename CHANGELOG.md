@@ -7,16 +7,32 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [2.5.1] - 2022-12-03]
+
+### Added
 - Fort Cystana: Bistro La Suzail (and Cellar)
 - Fort Cystana: Emerald Bathhouse
 - New dynamic PLC resizing script
 - Shop for Bathhouse
 - 2 New PLCs added to palette (Tent and Piano)
+- New area: Amia Forrest: Oakmist Vale, Caves
+	- Added wolf den + moved wolfs in it
+	- Added storrage cave, partialy filled with storage plc's but room for more
 	
 ### Changed
 - Updated sign, door, and NPCs outside restaurant and bathhouse in Fort Cystana
 - Key update for a faction
 - Added scale to Medieval Chair 1 on palette so it's human-sized by default
+- Area changes: 
+	- Amia Forrest: Oakmist Vale, Tent
+		- Per player request, placed more pillows and moved some barrels
+	- Amia Forrest: Oakmist Vale
+		- Added entries to wolf den and storage cave
 	
 ### Fixed
 - Typos in some Bistro food/drinks

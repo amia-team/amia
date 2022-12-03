@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - New dynamic PLC resizing script
 - Shop for Bathhouse
 - 2 New PLCs added to palette (Tent and Piano)
+- Player portrait malandria
 - New area: Amia Forrest: Oakmist Vale, Caves
 	- Added wolf den + moved wolfs in it
 	- Added storrage cave, partialy filled with storage plc's but room for more
@@ -40,6 +41,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added boat travel trigger to Fallion in Obsidian Isle: Port
 - SD Shadowlord summon should mirror PC's gender
 - Certain Job System PLCs have had their rotation corrected
+- Next attempt to fix Spawn sizes
 
 ## [2.5.0] - 2022-11-25]
 

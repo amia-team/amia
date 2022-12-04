@@ -7,10 +7,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Big game hunter guides added to the oakmist vale grove and Winya Ravana
 
 ### Changed
-
+- new armor design for winya's temple gaurds
+- Area changes:
+	- Winya Ravana: Commons area -> Winya Ravana: Council Tower
+		- Area name change
+		- phase 1 of overhaule of tower to serve the ruling body of winya
+	- Amia Forest: Oakmist vale	
+		- Minor tweaks to suit previuos updates
+	- Winya Ravana: Temple of corellon
+		- Futher updates to progress construction interior
+		- placed bariers to plug a hole
 ### Fixed
+- Minor woopsy fixes in grove and grove caves
+- Obsidian island: Port, Great hall = Soldier trainer fixed, should now give the job, not just empty log
 
 ## [2.5.1] - 2022-12-03]
 

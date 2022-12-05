@@ -10,9 +10,9 @@
 
 const int RESOURCE_XP    = 100;
 
-const int MAX_CROPS = 3; // Sets the max amount of crops one player can grow at at time
-const int MAX_ANIMALS = 3; // Sets the max amount of animals one player can grow at at time
-const int MAX_TRAPS = 2; // Sets the max amount of traps one player can have out
+const int MAX_CROPS = 1; // Sets the max amount of crops one player can grow at at time
+const int MAX_ANIMALS = 1; // Sets the max amount of animals one player can grow at at time
+const int MAX_TRAPS = 1; // Sets the max amount of traps one player can have out
 
 void LaunchConvo( object oPC); // launches journal convo
 
@@ -404,11 +404,13 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
 
      oResource = CreateObject(OBJECT_TYPE_PLACEABLE,sResource,GetLocation(oPC));
      SetName(oResource, GetName(oPC)+"'s "+GetName(oResource));
-     DelayCommand(GetLocalFloat(oResource,"growrate"),DeleteLocalInt(oResource,"blocker"));
+     SetLocalInt(oResource, "blocker", 1);
+     SetLocalInt(oResource, "SingleUse", 1);
+     DelayCommand(GetLocalFloat(oResource,"refreshrate"),DeleteLocalInt(oResource,"blocker"));
      SetLocalInt(oResource,"PreviousHarvestTime",GetRunTimeInSeconds());
-     DelayCommand(GetLocalFloat(oResource,"growrate"),DeleteLocalInt(oResource,"PreviousHarvestTime"));
+     DelayCommand(GetLocalFloat(oResource,"refreshrate"),DeleteLocalInt(oResource,"PreviousHarvestTime"));
      AssignCommand(oPC,ActionPlayAnimation(ANIMATION_LOOPING_GET_LOW,1.0,1.0));
-     SendMessageToPC(oPC,"*You plant a crop it will take: " +FloatToString(GetLocalFloat(oResource,"growrate"),0,1)+ " seconds to grow*");
+     SendMessageToPC(oPC,"*You plant a crop it will take: " +FloatToString(GetLocalFloat(oResource,"refreshrate"),0,1)+ " seconds to grow*");
      SetLocalInt(oPC,"crops",nCrops+1);
    }
 
@@ -495,11 +497,13 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
 
      oResource = CreateObject(OBJECT_TYPE_PLACEABLE,sResource,GetLocation(oPC));
      SetName(oResource, GetName(oPC)+"'s "+GetName(oResource));
-     DelayCommand(GetLocalFloat(oResource,"traprate"),DeleteLocalInt(oResource,"blocker"));
+     SetLocalInt(oResource, "blocker", 1);
+     SetLocalInt(oResource, "SingleUse", 1);
+     DelayCommand(GetLocalFloat(oResource,"refreshrate"),DeleteLocalInt(oResource,"blocker"));
      SetLocalInt(oResource,"PreviousHarvestTime",GetRunTimeInSeconds());
-     DelayCommand(GetLocalFloat(oResource,"traprate"),DeleteLocalInt(oResource,"PreviousHarvestTime"));
+     DelayCommand(GetLocalFloat(oResource,"refreshrate"),DeleteLocalInt(oResource,"PreviousHarvestTime"));
      AssignCommand(oPC,ActionPlayAnimation(ANIMATION_LOOPING_GET_LOW,1.0,1.0));
-     SendMessageToPC(oPC,"*You lay down a trap it will take: " +FloatToString(GetLocalFloat(oResource,"traprate"),0,1)+ " seconds to catch something*");
+     SendMessageToPC(oPC,"*You lay down a trap it will take: " +FloatToString(GetLocalFloat(oResource,"refreshrate"),0,1)+ " seconds to catch something*");
      SetLocalInt(oPC,"traps",nTraps+1);
    }
 
@@ -522,11 +526,13 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
 
      oResource = CreateObject(OBJECT_TYPE_CREATURE,sResource,GetLocation(oPC));
      SetName(oResource, GetName(oPC)+"'s "+GetName(oResource));
-     DelayCommand(GetLocalFloat(oResource,"growrate"),DeleteLocalInt(oResource,"blocker"));
+     SetLocalInt(oResource, "blocker", 1);
+     SetLocalInt(oResource, "SingleUse", 1);
+     DelayCommand(GetLocalFloat(oResource,"refreshrate"),DeleteLocalInt(oResource,"blocker"));
      SetLocalInt(oResource,"PreviousHarvestTime",GetRunTimeInSeconds());
-     DelayCommand(GetLocalFloat(oResource,"growrate"),DeleteLocalInt(oResource,"PreviousHarvestTime"));
+     DelayCommand(GetLocalFloat(oResource,"refreshrate"),DeleteLocalInt(oResource,"PreviousHarvestTime"));
      AssignCommand(oPC,ActionPlayAnimation(ANIMATION_LOOPING_GET_LOW,1.0,1.0));
-     SendMessageToPC(oPC,"*You begin to raise an animal and it will take: " +FloatToString(GetLocalFloat(oResource,"growrate"),0,1)+ " seconds to grow*");
+     SendMessageToPC(oPC,"*You begin to raise an animal and it will take: " +FloatToString(GetLocalFloat(oResource,"refreshrate"),0,1)+ " seconds to grow*");
      SetLocalInt(oPC,"animals",nAnimals+1);
    }
 

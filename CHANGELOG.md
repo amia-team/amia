@@ -20,6 +20,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Winya Ravana: Temple of corellon
 		- Futher updates to progress construction interior
 		- placed bariers to plug a hole
+- Job System Base Resource changes:
+	- All cooldowns now set to 120 seconds
+	- Farmer, Rancher, and Hunter Trap spawnable resources set to 1
+	- Farmer, Rancher, and Hunter Traps now able to be placed in-world
+	- Unlimited number of resources allowed on a base resource (was previously 3 max)
+	- Raided Supplies added to the palette (Random set of resources on a theme, harvestable by Scoundrels)
+	- Chance for Scholar Artifacts & Ivory to be found in random dungeon chests
+
 ### Fixed
 - Minor woopsy fixes in grove and grove caves
 - Obsidian island: Port, Great hall = Soldier trainer fixed, should now give the job, not just empty log

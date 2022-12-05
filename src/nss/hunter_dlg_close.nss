@@ -218,7 +218,8 @@ void spawnPrey(int nInstance, int nRandomCount, int nRandom, string sArea)
   string sInstance = "instance"+IntToString(nRandom)+sArea;
   if((sResRef == "hunter_chest_5") || (sResRef == "hunter_chest_15") || (sResRef == "hunter_chest_25"))
   {
-    CreateObject(OBJECT_TYPE_PLACEABLE,sResRef,GetLocation(oWaypoint),FALSE,sInstance);
+    object oChest = CreateObject(OBJECT_TYPE_PLACEABLE,sResRef,GetLocation(oWaypoint),FALSE,sInstance);
+    AssignCommand(oChest, SetFacing( (GetFacing(oWaypoint)) + 180.0));
   }
   else
   {

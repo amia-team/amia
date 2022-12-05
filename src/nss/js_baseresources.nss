@@ -4,7 +4,8 @@
   - Maverick00053
 
   - Edited: Lord-Jyssev - 8/5/22 Include cooldown counter for resource nodes
-            Lord-Jyssev - 9/12/22 Included logic to allow single-use crops/animals to be placed in-world
+            Lord-Jyssev - 12/1/22 Included logic to allow single-use crops/animals to be placed in-world
+            Lord-Jyssev - 12/5/22 Added ability to have any number of resource variables attached to an object (previously was 3 max)
 
 */
 
@@ -14,6 +15,7 @@
 #include "x0_i0_campaign"
 #include "inc_call_time"
 #include "amia_include"
+#include "nwnx_object"
 
 
 const int RESOURCE_XP    = 100;
@@ -29,6 +31,7 @@ void main()
     object oInventoryItem = GetFirstItemInInventory(oPC);
     object oJobJournal;
     int nBlocker = GetLocalInt(oResourceNode, "blocker");
+    int nSingleUse = GetLocalInt(oResourceNode, "SingleUse");
     int nRank;
     int nRand;
     int nPreviousTime = GetLocalInt(oResourceNode,"PreviousHarvestTime");
@@ -37,7 +40,6 @@ void main()
     float fRefresh;
     string sResource = GetLocalString(oResourceNode, "resource");
     string sResource2 = GetLocalString(oResourceNode, "resource2");
-    string sResource3 = GetLocalString(oResourceNode, "resource3");
     string sJob = GetLocalString(oResourceNode, "job");
     string sPrimaryJob;
     string sSecondaryJob;
@@ -101,46 +103,52 @@ void main()
 
     }
 
-     // For the systems that have more than one resource on the node
-     if((sResource3 != "") && (sResource2 != ""))  // 3 Resources
+     //If more than one resource set, run a loop to determine number of resources and randomly select one
+     int nVariableCount = NWNX_Object_GetLocalVariableCount(oResourceNode);
+
+     if((sResource2 != ""))// 2nd Resource not blank
      {
-        nRand = Random(3)+1;
-        if(nRand == 3)
-        {
-          sResource = sResource3;
-        }
-        else if(nRand == 2)
-        {
-          sResource = sResource2;
-        }
-     }
-     else if((sResource2 != ""))// 2 Resources
-     {
-        nRand = Random(2)+1;
-        if(nRand == 2)
-        {
-          sResource = sResource2;
-        }
+         int nResourceCount;
+         int i = 0;
+         for(i; i < nVariableCount; i++)
+         {
+            if( GetSubString( NWNX_Object_GetLocalVariable( oResourceNode, i ).key, 0, 8 ) == "resource" )
+            {
+                nResourceCount++;
+            }
+         }
+         nRand = Random(nResourceCount)+1;
+
+         if(nRand > 1)
+         {
+            sResource = GetLocalString(oResourceNode, ("resource"+IntToString(nRand)));
+         }
      }
      //
 
     // Launches the appropriate resource node script
+    if( nSingleUse == 1) //nSingleUse is set by the job journal where appropriate (Farm crops, Rancher animals, Hunter traps)
+    {
+        SingleUseNode(oPC,sResource,oResourceNode,nRank);
+    }
+    else
+    {
+        RefreshingNode(oPC,sResource,oResourceNode,nRank);
+    }
+
+    /*
     if((sJob == "Miner") || (sJob == "Alchemist") || (sJob == "Artist") || (sJob == "Hunter") || (sJob == "Physician") ||
     (sJob == "Scoundrel") || (sJob == "Tailor") || (sJob == "FarmerTree"))
     {
 
-      RefreshingNode(oPC,sResource,oResourceNode,nRank);
+        RefreshingNode(oPC,sResource,oResourceNode,nRank);
 
     }
-//    else if((sJob == "Farmer") || (sJob == "Rancher") || (sJob == "HunterTrap") && nBlocker == 0)  //Checks to see if the resource has a Blocker pre-populated. If not, it is a Refreshing Node
-//    {
-//      RefreshingNode(oPC,sResource,oResourceNode,nRank);
-//    }
     else if((sJob == "Farmer") || (sJob == "Rancher") || (sJob == "HunterTrap"))
     {
-      SingleUseNode(oPC,sResource,oResourceNode,nRank);
+        SingleUseNode(oPC,sResource,oResourceNode,nRank);
     }
-
+    */
 
 }
 
@@ -236,6 +244,7 @@ void SingleUseNode(object oPC, string sResource, object oResourceNode, int nRank
     SendMessageToPC(oPC,"100% SUCCESS! RESOURCE HARVESTED!");
     GiveExactXP(oPC,nXP);
     CreateItemOnObject(sResource,oPC);
+    SetLocalInt(oResourceNode,"blocker",1);
     DestroyObject(oResourceNode,0.2);
   }
   else if(nRank == 1)
@@ -245,12 +254,14 @@ void SingleUseNode(object oPC, string sResource, object oResourceNode, int nRank
      sSuccessOrFailure = "SUCCESS";
      GiveExactXP(oPC,nXP);
      CreateItemOnObject(sResource,oPC);
+     SetLocalInt(oResourceNode,"blocker",1);
      DestroyObject(oResourceNode,0.2);
     }
     else
     {
      sSuccessOrFailure = "FAILURE";
      GiveExactXP(oPC,nXP/2);
+     SetLocalInt(oResourceNode,"blocker",1);
      DestroyObject(oResourceNode,0.2);
     }
     SendMessageToPC(oPC,"Rolled "+IntToString(nRandom)+" vs 80 or less. "+sSuccessOrFailure);
@@ -263,11 +274,13 @@ void SingleUseNode(object oPC, string sResource, object oResourceNode, int nRank
     {
      sSuccessOrFailure = "SUCCESS";
      CreateItemOnObject(sResource,oPC);
+     SetLocalInt(oResourceNode,"blocker",1);
      DestroyObject(oResourceNode,0.2);
     }
     else
     {
      sSuccessOrFailure = "FAILURE";
+     SetLocalInt(oResourceNode,"blocker",1);
      DestroyObject(oResourceNode,0.2);
     }
     SendMessageToPC(oPC,"Rolled "+IntToString(nRandom)+" vs 60 or less. "+sSuccessOrFailure);

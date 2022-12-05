@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Minor woopsy fixes in grove and grove caves
 - Obsidian island: Port, Great hall = Soldier trainer fixed, should now give the job, not just empty log
+- More job PLCs rotations corrected (Colored Rugs, Big Leather/Bone horn)
 
 ## [2.5.1] - 2022-12-03]
 

@@ -27,7 +27,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Unlimited number of resources allowed on a base resource (was previously 3 max)
 	- Raided Supplies added to the palette (Random set of resources on a theme, harvestable by Scoundrels)
 	- Chance for Scholar Artifacts & Ivory to be found in random dungeon chests
-
+- Area name / resref changes to be more in line with current state / way of working
+	- Crystal River: Bridge -> Silent Bay: Crystal Bridge
+	- Crystal River: Bridge, animal shelter -> Silent Bay: Crystal Bridge, Animal Shelter
+	- Crystal River: The Falls -> Winya Ravana: The Falls
+	
 ### Fixed
 - Minor woopsy fixes in grove and grove caves
 - Obsidian island: Port, Great hall = Soldier trainer fixed, should now give the job, not just empty log

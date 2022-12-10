@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [2.5.2] - 2022-12-10]
+
+### Added
 - Area additions:
 	- Winya ravana
 		- Big game hunter guides 

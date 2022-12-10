@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- Hunter camp
 	- amia forrest: Oakmist vale
 		- Big game hunter guides
+	- Redacted area
+		- Secret entry set up
 	- All "winya" out door areas
 		- Seeded Crops, traps and rancher nodes
 - 2x Dm Area for beans

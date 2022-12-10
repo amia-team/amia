@@ -528,6 +528,7 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
      SetName(oResource, GetName(oPC)+"'s "+GetName(oResource));
      SetLocalInt(oResource, "blocker", 1);
      SetLocalInt(oResource, "SingleUse", 1);
+     SetPlotFlag(oResource, FALSE);
      DelayCommand(GetLocalFloat(oResource,"refreshrate"),DeleteLocalInt(oResource,"blocker"));
      SetLocalInt(oResource,"PreviousHarvestTime",GetRunTimeInSeconds());
      DelayCommand(GetLocalFloat(oResource,"refreshrate"),DeleteLocalInt(oResource,"PreviousHarvestTime"));

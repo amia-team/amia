@@ -36,10 +36,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Job System Base Resource changes:
 	- All cooldowns now set to 120 seconds
 	- Farmer, Rancher, and Hunter Trap spawnable resources set to 1
-	- Farmer, Rancher, and Hunter Traps now able to be placed in-world
+	- Farmer, Rancher, and Hunter Traps now able to be placed in-world by developers
 	- Unlimited number of resources allowed on a base resource (was previously 3 max)
 	- Raided Supplies added to the palette (Random set of resources on a theme, harvestable by Scoundrels)
 	- Chance for Scholar Artifacts & Ivory to be found in random dungeon chests
+	- Areas have been seeded with Farmer, Rancher, and Hunter resources, with emphasis on areas A-I and civilized areas
 - Area name / resref changes to be more in line with current state / way of working
 	- Crystal River: Bridge -> Silent Bay: Crystal Bridge
 	- Crystal River: Bridge, animal shelter -> Silent Bay: Crystal Bridge, Animal Shelter

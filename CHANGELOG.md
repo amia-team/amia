@@ -15,8 +15,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- Big game hunter guides
 	- Redacted area
 		- Secret entry set up
-	- All "winya" out door areas
-		- Seeded Crops, traps and rancher nodes
 - 2x Dm Area for beans
 
 ### Changed

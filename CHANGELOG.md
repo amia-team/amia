@@ -7,10 +7,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
-- Big game hunter guides added to the oakmist vale grove and Winya Ravana
+- Area additions:
+	- Winya ravana
+		- Big game hunter guides 
+		- Hunter camp
+	- amia forrest: Oakmist vale
+		- Big game hunter guides
+	- All "winya" out door areas
+		- Seeded Crops, traps and rancher nodes
+- 2x Dm Area for beans
 
 ### Changed
 - new armor design for winya's temple gaurds
+- Hunter trainer moved from falls to inside winya (to new hunter camp)
 - Area changes:
 	- Winya Ravana: Commons area -> Winya Ravana: Council Tower
 		- Area name change
@@ -20,6 +29,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Winya Ravana: Temple of corellon
 		- Futher updates to progress construction interior
 		- placed bariers to plug a hole
+	- Silent Bay: Crystal Bridge
+		- Tweaked lighting setting to be in line with silent bay, this will remove compleet blacknes at night
 - Job System Base Resource changes:
 	- All cooldowns now set to 120 seconds
 	- Farmer, Rancher, and Hunter Trap spawnable resources set to 1

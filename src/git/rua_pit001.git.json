@@ -1701,7 +1701,7 @@
         },
         "ChallengeRating": {
           "type": "float",
-          "value": 0.25
+          "value": 3.0
         },
         "ClassList": {
           "type": "list",
@@ -1721,7 +1721,7 @@
         },
         "Con": {
           "type": "byte",
-          "value": 8
+          "value": 15
         },
         "Conversation": {
           "type": "resref",
@@ -1733,7 +1733,7 @@
         },
         "CurrentHitPoints": {
           "type": "short",
-          "value": 5
+          "value": 50
         },
         "DecayTime": {
           "type": "dword",
@@ -1744,13 +1744,12 @@
           "value": ""
         },
         "Description": {
-          "id": 12415,
           "type": "cexolocstring",
           "value": {}
         },
         "Dex": {
           "type": "byte",
-          "value": 7
+          "value": 17
         },
         "Disarmable": {
           "type": "byte",
@@ -1762,24 +1761,17 @@
         },
         "FactionID": {
           "type": "word",
-          "value": 2
+          "value": 12
         },
         "FeatList": {
           "type": "list",
-          "value": [
-            {
-              "__struct_id": 1,
-              "Feat": {
-                "type": "word",
-                "value": 289
-              }
-            }
-          ]
+          "value": []
         },
         "FirstName": {
-          "id": 12416,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "0": "<c~Îë>Chicken</c>"
+          }
         },
         "fortbonus": {
           "type": "short",
@@ -1787,7 +1779,7 @@
         },
         "Gender": {
           "type": "byte",
-          "value": 1
+          "value": 0
         },
         "GoodEvil": {
           "type": "byte",
@@ -1795,7 +1787,7 @@
         },
         "HitPoints": {
           "type": "short",
-          "value": 5
+          "value": 50
         },
         "Int": {
           "type": "byte",
@@ -1815,7 +1807,9 @@
         },
         "LastName": {
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "0": ""
+          }
         },
         "LawfulChaotic": {
           "type": "byte",
@@ -1827,7 +1821,7 @@
         },
         "MaxHitPoints": {
           "type": "short",
-          "value": 4
+          "value": 52
         },
         "NaturalAC": {
           "type": "byte",
@@ -1835,7 +1829,7 @@
         },
         "NoPermDeath": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "PerceptionRange": {
           "type": "byte",
@@ -1867,7 +1861,7 @@
         },
         "ScriptDamaged": {
           "type": "resref",
-          "value": ""
+          "value": "js_ai_attacked"
         },
         "ScriptDeath": {
           "type": "resref",
@@ -1875,7 +1869,7 @@
         },
         "ScriptDialogue": {
           "type": "resref",
-          "value": ""
+          "value": "js_baseresources"
         },
         "ScriptDisturbed": {
           "type": "resref",
@@ -1962,7 +1956,35 @@
               "__struct_id": 0,
               "Rank": {
                 "type": "byte",
-                "value": 2
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 0,
+              "Rank": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 0,
+              "Rank": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 0,
+              "Rank": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 0,
+              "Rank": {
+                "type": "byte",
+                "value": 4
               }
             },
             {
@@ -2012,34 +2034,6 @@
               "Rank": {
                 "type": "byte",
                 "value": 0
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Rank": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Rank": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Rank": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Rank": {
-                "type": "byte",
-                "value": 2
               }
             },
             {
@@ -2116,7 +2110,7 @@
         },
         "SoundSetFile": {
           "type": "word",
-          "value": 21
+          "value": 65535
         },
         "SpecAbilityList": {
           "type": "list",
@@ -2124,11 +2118,11 @@
         },
         "StartingPackage": {
           "type": "byte",
-          "value": 0
+          "value": 74
         },
         "Str": {
           "type": "byte",
-          "value": 3
+          "value": 13
         },
         "Subrace": {
           "type": "cexostring",
@@ -2136,7 +2130,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "NW_CHICKEN"
+          "value": "js_ran_chi1"
         },
         "Tail_New": {
           "type": "dword",
@@ -2148,7 +2142,57 @@
         },
         "TemplateResRef": {
           "type": "resref",
-          "value": "chicken001"
+          "value": "js_ran_chi1"
+        },
+        "VarTable": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Name": {
+                "type": "cexostring",
+                "value": "job"
+              },
+              "Type": {
+                "type": "dword",
+                "value": 3
+              },
+              "Value": {
+                "type": "cexostring",
+                "value": "Rancher"
+              }
+            },
+            {
+              "__struct_id": 0,
+              "Name": {
+                "type": "cexostring",
+                "value": "resource"
+              },
+              "Type": {
+                "type": "dword",
+                "value": 3
+              },
+              "Value": {
+                "type": "cexostring",
+                "value": "js_ran_cheg"
+              }
+            },
+            {
+              "__struct_id": 0,
+              "Name": {
+                "type": "cexostring",
+                "value": "refreshrate"
+              },
+              "Type": {
+                "type": "dword",
+                "value": 2
+              },
+              "Value": {
+                "type": "float",
+                "value": 120.0
+              }
+            }
+          ]
         },
         "WalkRate": {
           "type": "int",
@@ -2164,27 +2208,27 @@
         },
         "Wis": {
           "type": "byte",
-          "value": 8
+          "value": 12
         },
         "XOrientation": {
           "type": "float",
-          "value": 0.7071
+          "value": 0.9569
         },
         "XPosition": {
           "type": "float",
-          "value": 18.3581
+          "value": 18.5846
         },
         "YOrientation": {
           "type": "float",
-          "value": 0.7071
+          "value": 0.2903
         },
         "YPosition": {
           "type": "float",
-          "value": 26.7652
+          "value": 26.8343
         },
         "ZPosition": {
           "type": "float",
-          "value": 1.1287
+          "value": 1.079
         }
       }
     ]

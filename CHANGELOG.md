@@ -7,10 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Lots of job resources added to the Underdark
+- Finished seeding areas with new farmer/rancher/hunter resources
 
 ### Changed
+- Nec'perya/Thraan'dariv removed from the module
 
 ### Fixed
+- Fire Ant Queen Scale now gives the proper fire immunity
+- Fire Ants nerfed to be in line with other similar-CR creatures
+- Fixed Argh's Antidote quest
+- Fixed Spider Clutch not giving XP
 
 ## [2.5.2] - 2022-12-10]
 

@@ -14,6 +14,8 @@
 
 #include "x2_inc_spellhook"
 #include "inc_td_shifter"
+#include "inc_domains"
+
 void main()
 {
 
@@ -55,7 +57,7 @@ void main()
     int nMetaMagic = GetMetaMagicFeat();
     //Enter Metamagic conditions
     if (GetIsPolymorphed(OBJECT_SELF)){/*Disable metamagic if shifted*/}
-    else if (nMetaMagic == METAMAGIC_EXTEND)
+    else if (nMetaMagic == METAMAGIC_EXTEND || GetHasFeat( FEAT_ILLUSION_DOMAIN_POWER, OBJECT_SELF) == TRUE)
     {
         nDuration = nDuration *2; //Duration is +100%
     }

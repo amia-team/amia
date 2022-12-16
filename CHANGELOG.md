@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fire Ants nerfed to be in line with other similar-CR creatures
 - Fixed Argh's Antidote quest
 - Fixed Spider Clutch not giving XP
+- Illusion Domain now properly gives extended Invisibility, Improved Invisibility, and Invisibility Sphere
 
 ## [2.5.2] - 2022-12-10]
 

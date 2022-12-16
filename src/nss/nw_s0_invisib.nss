@@ -1,10 +1,10 @@
 //::///////////////////////////////////////////////
-//:: Invisibility Sphere
-//:: NW_S0_InvSph.nss
+//:: Invisibility
+//:: NW_S0_Invisib.nss
 //:: Copyright (c) 2001 Bioware Corp.
 //:://////////////////////////////////////////////
 /*
-    All allies within 15ft are rendered invisible.
+    Target creature becomes invisibility
 */
 //:://////////////////////////////////////////////
 //:: Created By: Preston Watamaniuk
@@ -34,20 +34,26 @@ void main()
 // End of Spell Cast Hook
 
 
-    //Declare major variables including Area of Effect Object
-    effect eAOE = EffectAreaOfEffect(AOE_MOB_SILENCE, "nw_s0_invspha", "****", "nw_s0_invsphb");
+    //Declare major variables
+    object oTarget = GetSpellTargetObject();
+
+    //effect eVis = EffectVisualEffect(VFX_DUR_INVISIBILITY);
+    effect eInvis = EffectInvisibility(INVISIBILITY_TYPE_NORMAL);
+    effect eDur = EffectVisualEffect(VFX_DUR_CESSATE_POSITIVE);
+
+    effect eLink = EffectLinkEffects(eInvis, eDur);
+    //eLink = EffectLinkEffects(eLink, eVis);
+
+    //Fire cast spell at event for the specified target
+    SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, SPELL_INVISIBILITY, FALSE));
     int nDuration = GetCasterLevel(OBJECT_SELF);
     int nMetaMagic = GetMetaMagicFeat();
-    //Make sure duration does no equal 0
-    if (nDuration < 1)
-    {
-        nDuration = 1;
-    }
-    //Check Extend metamagic feat.
+    //Enter Metamagic conditions
     if (nMetaMagic == METAMAGIC_EXTEND || GetHasFeat( FEAT_ILLUSION_DOMAIN_POWER, OBJECT_SELF) == TRUE)
     {
-       nDuration = nDuration *2;    //Duration is +100%
+        nDuration = nDuration *2; //Duration is +100%
     }
-    //Create an instance of the AOE Object using the Apply Effect function
-    ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eAOE, OBJECT_SELF, TurnsToSeconds(nDuration));
+    //Apply the VFX impact and effects
+    ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oTarget, TurnsToSeconds(nDuration));
 }
+

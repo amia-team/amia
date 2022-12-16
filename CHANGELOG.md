@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [2.5.2] - 2022-12-16]
+
+### Added
 - Lots of job resources added to the Underdark
 - Finished seeding areas with new farmer/rancher/hunter resources
 

@@ -14,11 +14,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Nec'perya/Thraan'dariv removed from the module
 
 ### Fixed
-- Fire Ant Queen Scale now gives the proper fire immunity
+- Fire Ant Queen's Scale now gives the proper 25% fire immunity (script didn't exist previously)
 - Fire Ants nerfed to be in line with other similar-CR creatures
 - Fixed Argh's Antidote quest
 - Fixed Spider Clutch not giving XP
-- Illusion Domain now properly gives extended Invisibility, Improved Invisibility, and Invisibility Sphere
+- Illusion & Gnome Domains now properly extend Invisibility, Improved Invisibility, and Invisibility Sphere
+- Tyranny Domain now properly extends Dominate Animal, Person, Monster, and Control Undead
 
 ## [2.5.2] - 2022-12-10]
 

@@ -12,6 +12,7 @@
 
 #include "NW_I0_SPELLS"
 #include "x2_inc_spellhook"
+#include "inc_domains"
 //#include "subraces"
 
 
@@ -85,7 +86,7 @@ void main()
                         nDurationPC += 1;
                     }
                     //Check for metamagic extension
-                    if (nMetaMagic == METAMAGIC_EXTEND)
+                    if (nMetaMagic == METAMAGIC_EXTEND || GetHasFeat( FEAT_TYRANNY_DOMAIN_POWER, OBJECT_SELF))
                     {
                         nDuration = nDuration * 2;
                         nDurationPC = nDurationPC * 2;

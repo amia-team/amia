@@ -26,6 +26,7 @@
 #include "NW_I0_SPELLS"
 #include "x2_inc_spellhook"
 #include "amia_include"
+#include "inc_domains"
 
 void main()
 {
@@ -95,7 +96,7 @@ void main()
     int nHD = nCasterLevel * 2;
 
     //Make meta magic
-    if (nMetaMagic == METAMAGIC_EXTEND)
+    if (nMetaMagic == METAMAGIC_EXTEND || GetHasFeat( FEAT_TYRANNY_DOMAIN_POWER, OBJECT_SELF))
     {
         nDuration = nCasterLevel * 2;
     }

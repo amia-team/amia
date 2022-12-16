@@ -44,7 +44,7 @@ void main()
         nDuration = 1;
     }
     //Check Extend metamagic feat.
-    if (nMetaMagic == METAMAGIC_EXTEND || GetHasFeat( FEAT_ILLUSION_DOMAIN_POWER, OBJECT_SELF) == TRUE)
+    if (nMetaMagic == METAMAGIC_EXTEND || GetHasFeat( FEAT_ILLUSION_DOMAIN_POWER, OBJECT_SELF) == TRUE || GetHasFeat( FEAT_GNOME_DOMAIN_POWER, OBJECT_SELF) == TRUE)
     {
        nDuration = nDuration *2;    //Duration is +100%
     }

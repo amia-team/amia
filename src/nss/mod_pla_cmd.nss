@@ -1380,6 +1380,13 @@ void f_Voice( object oPC, string sOption, string sValue ){
         SetLocalInt( oTarget, "chat_reverse", GetLocalInt( oPC, "chat_reverse" ) );
         SetLocalString( oTarget, "chat_emote", GetLocalString( oPC, "chat_emote" ) );
     }
+	else if( sOption == "v" ){
+    oTarget = GetNearestObjectByTag( "vassal_"+GetPCPublicCDKey( oPC ), oPC );
+
+    SetLocalInt( oTarget, "chat_language", GetLocalInt( oPC, "chat_language" ) );
+    SetLocalInt( oTarget, "chat_reverse", GetLocalInt( oPC, "chat_reverse" ) );
+    SetLocalString( oTarget, "chat_emote", GetLocalString( oPC, "chat_emote" ) );
+    }
 
     if ( GetIsObjectValid( oTarget ) ){
 

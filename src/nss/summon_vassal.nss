@@ -133,6 +133,7 @@ void main()
      if(nEffect == 1)
      {
        ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink, oHench);
+	   SetTag (oHench, ("vassal_"+GetPCPublicCDKey( oPC )));
      }
 
      if(sName != "")

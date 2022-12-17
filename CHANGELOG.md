@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- "v" voice command to make Vassals (peerage summon) speak, use "/s f_voice v [text]"
 
 ### Changed
 

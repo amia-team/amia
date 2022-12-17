@@ -463,7 +463,7 @@ void f_Help( object oPC ){
         SendMessageToPC( oPC, "Functions are shown as f_Function [argument 1][argument 2]. Options are separated by commas, and ranges are given by the minus sign. You can use 'help' or '?' as the first argument to get a detailed explanation of a function. The function name and the first argument are case-insensitive.\n\nFunction list:" );
         SendMessageToPC( oPC, " f_plain - Toggles on and off plainchat (no colors)." );
         SendMessageToPC( oPC, " f_Bio [R,B,N,A][Text] - Use this to edit your bio." );
-        SendMessageToPC( oPC, " f_Voice [C,F,S,D,B][Text] - Use this to make companions, familiars, summons, dominated or bottled-champions say things." );
+        SendMessageToPC( oPC, " f_Voice [C,F,S,D,B,V[Text] - Use this to make companions, familiars, summons, dominated, bottled-companions or vassals say things." );
         SendMessageToPC( oPC, " f_File is temporarily disabled." );
         SendMessageToPC( oPC, " f_Note [New,Add,Remove,Load,List][Text] - Deals with persistent map pins and note." );
         SendMessageToPC( oPC, " f_debuff - Removes all positive buffs from your character." );
@@ -1351,7 +1351,7 @@ void f_Voice( object oPC, string sOption, string sValue ){
 
     if ( sOption == "?" || sOption == "help" ){
 
-        SendMessageToPC( oPC, "Use:[f_Voice C,F,S,D,B] [Text]\nOptions: C=companion, F=Familiar, S=summon D=Dominated, B=Bottled Champion.\nExample: f_Voice F Donkey Kong\nThis makes your familiar say 'Donkey Kong'." );
+        SendMessageToPC( oPC, "Use:[f_Voice C,F,S,D,B,V] [Text]\nOptions: C=companion, F=Familiar, S=summon D=Dominated, B=Bottled Companion, V=Vassal.\nExample: f_Voice F Donkey Kong\nThis makes your familiar say 'Donkey Kong'." );
         return;
     }
 

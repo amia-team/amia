@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - "v" voice command to make Vassals (peerage summon) speak, use "/s f_voice v [text]"
 
 ### Changed
+- Many BGH creatures now will have correct racial type, and some will be not hostile unless attacked first
 
 ### Fixed
 

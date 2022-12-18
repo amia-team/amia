@@ -26,12 +26,12 @@ void main()
    string sSecondaryJob = GetLocalString(oJobJournal,"secondaryjob");
 
    //Timer Cooldown
-   if((nCooldownTime < 1) && (sPrimaryJob == "Hunter" || sSecondaryJob == "Hunter")) // SET TO 600
+   if((nCooldownTime < 600) && (sPrimaryJob == "Hunter" || sSecondaryJob == "Hunter")) // SET TO 600
    {
      SendMessageToPC(oPC,"You must wait " + IntToString(10-(nCooldownTime/60)) + " minutes before hunting again!");
      return;
    }
-   else if((nCooldownTime < 1) && (sPrimaryJob != "Hunter" && sSecondaryJob != "Hunter"))// SET TO 3600
+   else if((nCooldownTime < 3600) && (sPrimaryJob != "Hunter" && sSecondaryJob != "Hunter"))// SET TO 3600
    {
      SendMessageToPC(oPC,"You must wait " + IntToString(60-(nCooldownTime/60)) + " minutes before hunting again!");
      return;

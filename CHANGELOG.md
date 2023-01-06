@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Many BGH creatures now will have correct racial type, and some will be not hostile unless attacked first
 
+
 ### Fixed
 
 ## [2.5.2] - 2022-12-16]

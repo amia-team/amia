@@ -27,6 +27,7 @@ void main( ){
     object oCreature        = OBJECT_SELF;
     int nVFX                = GetLocalInt( oCreature, VFX );
     int nCustFaction        = GetLocalInt( oCreature, "CustFaction" );
+    effect eGhost           = EffectCutsceneGhost();
 
     // apply undispellable petrification to the creature when it spawns in
 
@@ -35,6 +36,7 @@ void main( ){
         DURATION_TYPE_PERMANENT,
         SupernaturalEffect( EffectVisualEffect( VFX_DUR_FREEZE_ANIMATION ) ),
         oCreature ));
+        ApplyEffectToObject(DURATION_TYPE_PERMANENT, eGhost, oCreature);
 
     // Perma-Glow.
     if( nVFX )

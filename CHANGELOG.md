@@ -7,13 +7,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [2.5.3] - 2023-01-07]
+
+### Added
 - "v" voice command to make Vassals (peerage summon) speak, use "/s f_voice v [text]"
 
 ### Changed
 - Many BGH creatures now will have correct racial type, and some will be not hostile unless attacked first
-
-
-### Fixed
+- Added removal of collision bubble to script that freezes creatures permanently (for statues and such) so they cant be pushed around any more
+- Removed class restrictions of crafted magic staff (due enforced properties added light, masterwork qualit and +1 attack)
+- Area changes
+	- Winya Ravana
+		- New guards for council tower
+	- Winya Ravana: Council tower
+		- reconstruction finished
+		- partly furniched now (more will follow later updates, but its functional now)
 
 ## [2.5.2] - 2022-12-16]
 

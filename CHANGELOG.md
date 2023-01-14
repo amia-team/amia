@@ -24,7 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- Staff, archive and variuos support rooms updated, but not finished
 
 ### Fixed
-- Fixed tileset bug cordor_Westcoast
+- Fixed tileset bug Kingdom of Cetha: Southport, West Coast (cordor_Westcoast)
 
 ## [2.5.3] - 2023-01-07]
 

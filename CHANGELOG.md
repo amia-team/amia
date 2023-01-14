@@ -20,9 +20,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Area changes
 	- Winya Ravana: Council tower
-		- councilor rooms finished
-		- Ambassador room finished
-		- Staff, archive and variuos support rooms updated, not finished
+		- Councilors, ambassador, kitchen, atrium rooms finished, corridors enhanced
+		- Staff, archive and variuos support rooms updated, but not finished
 
 ### Fixed
 - Fixed tileset bug cordor_Westcoast

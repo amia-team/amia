@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Hunter traps changed, hunters can now chose between 3 trap kinds
 	- Hide trap = gives 1 Hide of random quality + 1 game meat
-	- Fur trap = gives 1 Fur of random quality + 1 game meat
+	- Fur trap 	= gives 1 Fur of random quality  + 1 game meat
 	- Bone trap = gives 1 Bone of random quality + 1 game meat
 	
 ### Fixed 

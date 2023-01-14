@@ -24,6 +24,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- Ambassador room finished
 		- Staff, archive and variuos support rooms updated, not finished
 
+### Fixed
+- Fixed tileset bug cordor_Westcoast
+
 ## [2.5.3] - 2023-01-07]
 
 ### Added

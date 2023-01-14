@@ -12,6 +12,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed 
 
+## [2.5.4] - 2023-01-14]
+
+### Added
+- New Item icon (small3_232)
+
+### Changed
+- Area changes
+	- Winya Ravana: Council tower
+		- councilor rooms finished
+		- Ambassador room finished
+		- Staff, archive and variuos support rooms updated, not finished
+
 ## [2.5.3] - 2023-01-07]
 
 ### Added

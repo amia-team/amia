@@ -20,9 +20,9 @@
 
 const int RESOURCE_XP    = 100;
 
-void RefreshingNode(object oPC, string sResource, object oResourceNode, int nRank); // Refreshing Nodes
+void RefreshingNode(object oPC, string sResource, string sBonusresource, object oResourceNode, int nRank); // Refreshing Nodes
 
-void SingleUseNode(object oPC, string sResource, object oResourceNode, int nRank); // Single Use Nodes, like livestock
+void SingleUseNode(object oPC, string sResource, string sBonusresource, object oResourceNode, int nRank); // Single Use Nodes, like livestock
 
 void main()
 {
@@ -40,6 +40,7 @@ void main()
     float fRefresh;
     string sResource = GetLocalString(oResourceNode, "resource");
     string sResource2 = GetLocalString(oResourceNode, "resource2");
+    string sBonusresource = GetLocalString(oResourceNode, "BonusResource");
     string sJob = GetLocalString(oResourceNode, "job");
     string sPrimaryJob;
     string sSecondaryJob;
@@ -129,11 +130,11 @@ void main()
     // Launches the appropriate resource node script
     if( nSingleUse == 1) //nSingleUse is set by the job journal where appropriate (Farm crops, Rancher animals, Hunter traps)
     {
-        SingleUseNode(oPC,sResource,oResourceNode,nRank);
+        SingleUseNode(oPC,sResource,sBonusresource,oResourceNode,nRank);
     }
     else
     {
-        RefreshingNode(oPC,sResource,oResourceNode,nRank);
+        RefreshingNode(oPC,sResource,sBonusresource,oResourceNode,nRank);
     }
 
     /*
@@ -152,8 +153,9 @@ void main()
 
 }
 
-void RefreshingNode(object oPC, string sResource, object oResourceNode, int nRank)
+void RefreshingNode(object oPC, string sResource, string sBonusresource, object oResourceNode, int nRank)
 {
+
   int nRandom = Random(100)+1;
   float fRefresh = GetLocalFloat(oResourceNode,"refreshrate");
   string sSuccessOrFailure;
@@ -171,6 +173,7 @@ void RefreshingNode(object oPC, string sResource, object oResourceNode, int nRan
     SendMessageToPC(oPC,"100% SUCCESS! RESOURCE HARVESTED!");
     GiveExactXP(oPC,nXP);
     CreateItemOnObject(sResource,oPC);
+    CreateItemOnObject(sBonusresource,oPC);
   }
   else if(nRank == 1)
   {
@@ -179,6 +182,7 @@ void RefreshingNode(object oPC, string sResource, object oResourceNode, int nRan
      sSuccessOrFailure = "SUCCESS";
      GiveExactXP(oPC,nXP);
      CreateItemOnObject(sResource,oPC);
+     CreateItemOnObject(sBonusresource,oPC);
     }
     else
     {
@@ -195,6 +199,7 @@ void RefreshingNode(object oPC, string sResource, object oResourceNode, int nRan
     {
      sSuccessOrFailure = "SUCCESS";
      CreateItemOnObject(sResource,oPC);
+     CreateItemOnObject(sBonusresource,oPC);
     }
     else
     {
@@ -214,7 +219,7 @@ void RefreshingNode(object oPC, string sResource, object oResourceNode, int nRan
 
 
 
-void SingleUseNode(object oPC, string sResource, object oResourceNode, int nRank)
+void SingleUseNode(object oPC, string sResource, string sBonusresource, object oResourceNode, int nRank)
 {
 
   int nRandom = Random(100)+1;
@@ -244,6 +249,7 @@ void SingleUseNode(object oPC, string sResource, object oResourceNode, int nRank
     SendMessageToPC(oPC,"100% SUCCESS! RESOURCE HARVESTED!");
     GiveExactXP(oPC,nXP);
     CreateItemOnObject(sResource,oPC);
+    CreateItemOnObject(sBonusresource,oPC);
     SetLocalInt(oResourceNode,"blocker",1);
     DestroyObject(oResourceNode,0.2);
   }
@@ -254,6 +260,7 @@ void SingleUseNode(object oPC, string sResource, object oResourceNode, int nRank
      sSuccessOrFailure = "SUCCESS";
      GiveExactXP(oPC,nXP);
      CreateItemOnObject(sResource,oPC);
+     CreateItemOnObject(sBonusresource,oPC);
      SetLocalInt(oResourceNode,"blocker",1);
      DestroyObject(oResourceNode,0.2);
     }
@@ -274,6 +281,7 @@ void SingleUseNode(object oPC, string sResource, object oResourceNode, int nRank
     {
      sSuccessOrFailure = "SUCCESS";
      CreateItemOnObject(sResource,oPC);
+     CreateItemOnObject(sBonusresource,oPC);
      SetLocalInt(oResourceNode,"blocker",1);
      DestroyObject(oResourceNode,0.2);
     }

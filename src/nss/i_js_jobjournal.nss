@@ -321,7 +321,7 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
      case 13: sResource = "js_farm_fir"; break;
      case 14: sResource = "js_farm_zur"; break;
      case 15: break; // Scholar Search - LEAVE BLANK
-     case 16: sResource = "js_hunt_tra"; break; // Hunter's Pelt Trap
+     case 16: sResource = "js_hunt_tra"; break; // Hunter's hide Trap
      case 17: sResource = "js_ran_cam"; break;
      case 18: sResource = "js_ran_chi1"; break;
      case 19: sResource = "js_ran_chi2"; break;
@@ -389,6 +389,7 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
      case 81: break; // Hunter script - LEAVE BLANK
      case 82: break; // Merchant Chest Creation Script
      case 83: break; // Merchant Chest Transfer Resource Script
+     case 84: sResource = "js_hunt_tra3"; break; // Hunter's bone Trap
    }
 
    // Farming/Planting
@@ -485,7 +486,7 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
 
 
    // Hunter trapping
-   if((nNode == 16) || (nNode == 80))
+   if((nNode == 16) || (nNode == 80) || (nNode == 84) )
    {
      // Make sure they aren't at their max traps out
      if(nTraps >= MAX_TRAPS)

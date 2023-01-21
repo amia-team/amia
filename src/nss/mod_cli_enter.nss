@@ -312,7 +312,7 @@ void DailyDC(object oPC)
       if(nWeeklyCnt < 10)
       {
        ApplyEffectToObject(DURATION_TYPE_INSTANT, EffectVisualEffect(VFX_DUR_CESSATE_POSITIVE), oPC);
-       SendMessageToPC(oPC,"You have recieved a daily log-in DC!");
+       SendMessageToPC(oPC,"You have received a daily log-in DC!");
        SetCampaignInt(pcCdKey,"WeeklyDCCount",nWeeklyCnt+1);
 
        int playerDreamCoins = GetDreamCoins(pcCdKey);
@@ -331,7 +331,7 @@ void DailyDC(object oPC)
          SetCampaignInt(pcCdKey,"nLastDCDay",nCurrentDay);
          if(nWeeklyCnt < 10)
          {
-           SendMessageToPC(oPC,"You have recieved a daily log-in DC!");
+           SendMessageToPC(oPC,"You have received a daily log-in DC!");
            SendMessageToPC(oPC,"Automated DCs earned so far this week: " + IntToString(nWeeklyCnt+1));
            SetCampaignInt(pcCdKey,"WeeklyDCCount",nWeeklyCnt+1);
 

@@ -9,12 +9,33 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed 
+		
+### Fixed 
+
+## [2.5.5] - 2023-01-21]
+
+### Added
+- Obsidian Island Recall stone quest added (start at the mythal forge in the Great Hall)
+
+### Changed 
+- Camping tools (old plc spawners (like cushions, stool, campfire etc ) now no longer show the name of who placed it 
+- Travel agency Flag to Winya now leads directly to winya's entry rather then the far away path
 - Hunter traps changed, hunters can now chose between 3 trap kinds
 	- Hide trap = gives 1 Hide of random quality + 1 game meat
 	- Fur trap 	= gives 1 Fur of random quality  + 1 game meat
 	- Bone trap = gives 1 Bone of random quality + 1 game meat
-	
+- Area changes
+	- Winya Ravana: Council tower
+		- Guest rooms finished, staff room finished (just no staff yet) variuos signs added
+		- Variuos rooms are now warded (message on entering)
+		- Cook hired
+	- Obsidian Isle: Port, Great Hall	
+		- Added npc to start/end recall stone quest
+	- Obsidian Isle: Port
+		- 2 new npcs for recall stone quest
+		
 ### Fixed 
+- Automatic dc message changed to "received" (was Recieved)
 
 ## [2.5.4] - 2023-01-14]
 

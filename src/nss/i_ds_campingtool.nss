@@ -11,11 +11,12 @@ Changelog
 
 Date    Name        Reason
 ------------------------------------------------------------------
-062206  Disco       Start of header
-062306  Disco       Bugfix
-101106  Disco       Added chairs and tables
-121306  Disco       Some changes
+062206   Disco      Start of header
+062306   Disco      Bugfix
+101106   Disco      Added chairs and tables
+121306   Disco      Some changes
 12/25/13 Glim       Facing setup for sittable objects
+01/20/23 Frozen     Removed pc name being put on plc spawned
 
 ------------------------------------------------------------------
 
@@ -248,7 +249,7 @@ void SpawnItem(object oPC, string sResRef, string sTagPrefix, location lTarget, 
         else{
 
             object oPLC = CreateObject( OBJECT_TYPE_PLACEABLE, sResRef, lTarget, FALSE, sTag );
-            SetName( oPLC, GetName( oPC )+"'s "+GetName( oPLC ) );
+            SetName( oPLC, GetName( oPLC ) );
             SetPlotFlag( oPLC, FALSE );
 
             if ( nFlagIt ){

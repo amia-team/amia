@@ -9,7 +9,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed 
-		
+- The grand Vetzer store house closing
+	- Locations closed:
+		- Frontier's Rest
+		- Barak Runedar
+		- Endir's Point
+		- Wiltun
+		- Kampo's
+		- The Dale
+		- L'Obsul
+- Bringing old scripts with portals for [redacted] in line with cannon and other current portal systems
+- [redacted] portal exit moved to new location
+ 		
 ### Fixed 
 
 ## [2.5.5] - 2023-01-21]

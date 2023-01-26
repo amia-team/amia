@@ -6,6 +6,8 @@
 //used as: OnUse script
 //date:    aug 30 2007
 //author:  disco
+//changes:
+//  25/jan/2023 -   Frozen  -   Removed exit portal from spawning (in line with lore and other portals)
 
 
 //-------------------------------------------------------------------------------
@@ -21,17 +23,17 @@ void main(){
     location lExitPoint  = GetLocation( GetObjectByTag( "ds_root_exit_"+sNumber ) );
 
     object oEntryPortal  = CreateObject( OBJECT_TYPE_PLACEABLE, "ds_grove_portal", lEntryPoint );
-    object oExitPortal   = CreateObject( OBJECT_TYPE_PLACEABLE, "ds_grove_portal", lExitPoint );
+    //object oExitPortal   = CreateObject( OBJECT_TYPE_PLACEABLE, "ds_grove_portal", lExitPoint );
 
     DelayCommand( 0.1, SetLocalLocation( oEntryPortal, "ds_destination", lExitPoint ) );
-    DelayCommand( 0.1, SetLocalLocation( oExitPortal, "ds_destination", lEntryPoint ) );
+    //DelayCommand( 0.1, SetLocalLocation( oExitPortal, "ds_destination", lEntryPoint ) );
 
     effect eVis         = EffectVisualEffect( VFX_DUR_PROTECTION_GOOD_MINOR  );
 
     ApplyEffectToObject( DURATION_TYPE_TEMPORARY, eVis, oEntryPortal, 20.0 );
-    ApplyEffectToObject( DURATION_TYPE_TEMPORARY, eVis, oExitPortal, 20.0 );
+    //ApplyEffectToObject( DURATION_TYPE_TEMPORARY, eVis, oExitPortal, 20.0 );
 
     DestroyObject( oEntryPortal, 11.0 );
-    DestroyObject( oExitPortal, 11.0 );
+    //DestroyObject( oExitPortal, 11.0 );
 
 }

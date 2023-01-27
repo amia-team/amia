@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- New quest in Greengarden: "A giant with a warm heart."
+- Added quest item to palette
+- Kingdom of Kohlingen: Fort Cystana, Argent Keep (New Area)
 
 ### Changed 
 - The grand Vetzer store house closing
@@ -18,10 +21,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- Kampo's
 		- The Dale
 		- L'Obsul
-- Bringing old scripts with portals for [redacted] in line with cannon and other current portal systems
+- Bringing old scripts with portals for [redacted] in line with lore and other current portal systems
 - [redacted] portal exit moved to new location
+- Construction progression in Fort Cystana and Fort Cystana: North, mostly the exterior of the new Keep
+- Simmons Estate location removed/emptied, House Guard/Everguard moved
+- Travel Agency banners updated:
+	- "City of Kohlingen" banner changed to "Greengarden"
+	- Removed "Return to Prior Location" banner because that's not ready yet
+	- Added "Bloodspear Keep" and "Start Location: Evil Underdark" sparkles (Also added waypoint to Bloodspear outside the gates)
+	- Added "Blue Lagoon" (Also added waypoint to Blue Lagoon docks)
+	- Added "The Triumvir" (Also added a waypoint outside Triumvir Courtyard inn)
  		
 ### Fixed 
+- Descriptions, voicesets, and scripts fixed on lots of guard NPCs
+- Tweaked an item spawn script that was behaving oddly
 
 ## [2.5.5] - 2023-01-21]
 

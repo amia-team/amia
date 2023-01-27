@@ -26,26 +26,30 @@ void main(){
     string sResRef      = GetLocalString( OBJECT_SELF, "ds_item" );
     string sQuest       = GetLocalString ( OBJECT_SELF, "questname");
     object oPCKey       = GetItemPossessedBy(oPC, "ds_pckey");
+    string sPubKey      = GetPCPublicCDKey(oPC, TRUE);
 
-    SendMessageToPC( oPC, "DEBUG: sQuest: "+sQuest );                                                                        ///
-    SendMessageToPC( oPC, "DEBUG: sQuest Value: "+IntToString(GetLocalInt(oPCKey, sQuest) == 2) );                                                                        ///
+    //SendMessageToPC( oPC, "DEBUG: sQuest: "+sQuest );                                                                        ///
+    //SendMessageToPC( oPC, "DEBUG: sQuest Value: "+IntToString(GetLocalInt(oPCKey, sQuest) == 2) );                                                                        ///
 
     if(GetLocalInt(oPCKey, sQuest) == 2)
-    {
-        SendMessageToPC( oPC, "Quest completed! You would have no need for this item.");
-        return;
-    }
-    else if(nOncePerReset == 1 && GetLocalInt( OBJECT_SELF, GetPCPublicCDKey( oPC, TRUE ) ) == 1)
-    {
-        //SendMessageToPC( oPC, "Only one item per reset!");
-        return;
-    }
+        {
+            SendMessageToPC( oPC, "Quest completed! You would have no need for this item.");
+            return;
+        }
+    else if((nOncePerReset == 1) && (GetLocalInt(OBJECT_SELF, sPubKey) == 1))
+        {
+            SendMessageToPC( oPC, "Only one item per reset!");
+            return;
+        }
+    else if ((nOncePerReset == 1) && (GetLocalInt(OBJECT_SELF, sPubKey) == 0))
+        {
+            //Set a variable on this object saying that the PC has spawned this once this reset
+            SetLocalInt( OBJECT_SELF, sPubKey, 1 );
+            ds_create_item( sResRef, oPC );
+            SendMessageToPC( oPC, "You cannot acquire any more of this item this reset!");
+        }
     else
-    {
-        ds_create_item( sResRef, oPC );
-    }
-
-    //Set a variable on this object saying that the PC has spawned this once this reset
-    SetLocalInt( OBJECT_SELF, GetPCPublicCDKey( oPC, TRUE ), 1 );
+        {
+            CreateItemOnObject( sResRef, oPC, 1 );
+        }
 }
-

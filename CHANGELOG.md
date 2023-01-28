@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- L'Obsul
 - Bringing old scripts with portals for [redacted] in line with lore and other current portal systems
 - [redacted] portal exit moved to new location
+- Added door guards to Blue Lagoon: Underpass
 - Construction progression in Fort Cystana and Fort Cystana: North, mostly the exterior of the new Keep
 - Simmons Estate location removed/emptied, House Guard/Everguard moved
 - Travel Agency banners updated:

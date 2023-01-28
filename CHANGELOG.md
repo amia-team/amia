@@ -3,8 +3,15 @@ All notable changes to this project will be documented in this file.
  
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
-
 ## [Unreleased]
+
+### Added
+
+### Changed 
+	
+### Fixed 
+
+## [2.5.6] - 2023-01-28]
 
 ### Added
 - New quest in Greengarden: "A giant with a warm heart."
@@ -21,6 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- Kampo's
 		- The Dale
 		- L'Obsul
+- Winya council tower: Meeting room finished
 - Bringing old scripts with portals for [redacted] in line with lore and other current portal systems
 - [redacted] portal exit moved to new location
 - Added door guards to Blue Lagoon: Underpass

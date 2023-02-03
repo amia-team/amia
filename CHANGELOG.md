@@ -17,19 +17,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 5 player portraits
 
 ### Changed 
-- Skin changer (i_ds_skin_change) script now sets portrait again each time its used to change into set form (this to allow portrait changes for people with them, and in line with alter self widgets)
+- Skin changer script now saves portrait each time its used to change into set form (this to allow portrait changes for people with them, and in line with alter self script)
 - slight modification to plc jump script to hide feedback
 - Area changes
 	- Winya Ravana: Council tower
-		- Clean up of lose stuff and minor tweaks
+		- Clean up stuff and minor tweaks
 		- Archives now done
 	- Winya Ravana
 		- Map pin updated of council tower
 	- Winya Ravana: Temple of corellon
 		- Statue of corellon changed to new model
 	- amia forrest: Oakmist vale, tent
-		- Colors of pillow changed (oversight originaly)
-		- Tiny statue added on desk
+		- Colors of pillow changed (oversight originaly) and minor decoration tweak
 	- amia forrest: Oakmist vale, caves
 		- table added to storage
 

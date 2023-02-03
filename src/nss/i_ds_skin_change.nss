@@ -14,6 +14,7 @@ Date         Name        Reason
 2007-05-02   Disco       Start of header
 2011-02-12   PoS         Added more features.
 2011-03-19   PoS         Added yet more features.
+2023-02-02   Frozen
 ------------------------------------------------------------------
 
 */
@@ -177,6 +178,7 @@ void change_skin( object oPC, object oItem ){
             nTail       = GetLocalInt( oItem, "cr_tail" );
             nWing       = GetLocalInt( oItem, "cr_wings" );
             fScale      = GetLocalFloat(oItem, "cr_scale");
+            SetLocalString( oItem, "pc_portrait", GetPortraitResRef( oPC ) );
             SetLocalInt( oItem, "switch", 1 );
         }
 

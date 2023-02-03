@@ -64,6 +64,7 @@ void main(){
     int nOpen       = 0;
     int nTesting    = GetLocalInt( OBJECT_SELF, "testing" );
     int nGold       = GetLocalInt( OBJECT_SELF, "gold" );
+    int nSecret     = GetLocalInt( OBJECT_SELF, "secret");
     string sKey     = GetLocalString( OBJECT_SELF, "ds_key" );
     string sMessage = GetLocalString( OBJECT_SELF, "ds_message" );
 
@@ -117,6 +118,10 @@ void main(){
     else if ( GetItemPossessedBy( oPC, sKey ) != OBJECT_INVALID ){
 
         DoTransition( oPC, oTarget, sMessage, nOpen );
+    }
+    else if ( nSecret == 1 ){
+
+        ;
     }
     else{
 

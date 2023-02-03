@@ -17,7 +17,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 5 player portraits
 
 ### Changed 
-- Skin changer script now sets portrait again each time its used to change into set form (this to allow portrait changes for people with them, and in line with alter self widgets)
+- Skin changer (i_ds_skin_change) script now sets portrait again each time its used to change into set form (this to allow portrait changes for people with them, and in line with alter self widgets)
+- slight modification to plc jump script to hide feedback
 - Area changes
 	- Winya Ravana: Council tower
 		- Clean up of lose stuff and minor tweaks

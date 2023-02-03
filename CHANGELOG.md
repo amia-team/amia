@@ -9,7 +9,31 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed 
 	
+### Fixed
+
+## [2.5.7] - 2023-02-03]
+
+### Added
+- 5 player portraits
+
+### Changed 
+- Skin changer script now sets portrait again each time its used to change into set form (this to allow portrait changes for people with them, and in line with alter self widgets)
+- Area changes
+	- Winya Ravana: Council tower
+		- Clean up of lose stuff and minor tweaks
+		- Archives now done
+	- Winya Ravana
+		- Map pin updated of council tower
+	- Winya Ravana: Temple of corellon
+		- Statue of corellon changed to new model
+	- amia forrest: Oakmist vale, tent
+		- Colors of pillow changed (oversight originaly)
+		- Tiny statue added on desk
+	- amia forrest: Oakmist vale, caves
+		- table added to storage
+
 ### Fixed 
+- Oakmist vale, nemo has a fish portrait now
 
 ## [2.5.6] - 2023-01-28]
 

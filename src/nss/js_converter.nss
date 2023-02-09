@@ -1379,7 +1379,7 @@ void TailorConverter(object oPC, object oBench, int nNode)
       case 52: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtent"; sIngredient2 = "js_art_colblu"; sType = "js_bui_tent4"; sPlaceableName = "Big Blue and White Tent"; sMaterial = "plc"; nCost = 10000; break;
       case 53: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtent"; sIngredient2 = "js_art_colred"; sType = "js_bui_tent5"; sPlaceableName = "Big Red and White Tent"; sMaterial = "plc"; nCost = 10000; break;
       case 54: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtentrdwht"; sIngredient2 = "js_art_colblk"; sType = "js_bui_tent6"; sPlaceableName = "Big Red and Black Tent"; sMaterial = "plc"; nCost = 10000; break;
-
+	  case 55: sProduct = "js_tailorkit"; sIngredient1 = "js_tai_bosi"; sIngredient2 = "js_bla_stin"; nCost = 10000; break;
 
     }
 

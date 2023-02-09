@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed 
 	
 ### Fixed
+- Fixed an oops with the tailor kit recipe
 
 ## [2.5.7] - 2023-02-03]
 

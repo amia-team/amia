@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
  
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+
 ## [Unreleased]
 
 ### Added
@@ -10,7 +11,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed 
 	
 ### Fixed
+
+## [2.5.7] - 2023-02-11]
+
+### Added
+- 1 player portrait
+
+### Changed 
+- Area changes
+	- Winya Ravana: Council tower
+		- minor tweaks/cleanup
+	- amia forrest: Oakmist vale
+		- changed transition type to tent, and added faction lock
+	- Ruathym: Fortress Wiltun
+		- Plot area update
+		
+### Fixed
 - Fixed an oops with the tailor kit recipe
+- Wiltun: Dahey and Tamara now have shop inventories like they're supposed to.
 
 ## [2.5.7] - 2023-02-03]
 

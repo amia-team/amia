@@ -42,12 +42,15 @@ void main(){
             object oTarget   = GetItemActivatedTarget();
 
             string sTag      = "ds_npc_"+GetPCPublicCDKey( oPC );
+            string sUUID;
             string sName;
             string sPortrait;
             string sSex;
             string sResRef;
             string sBio;
+            object oUUID;
             object oNPC      = GetObjectByTag( sTag );
+            int nSpawned     = GetLocalInt( oItem, "spawned");
             int nType        = GetLocalInt( oItem, "ds_set" );
             int nRace        = GetRacialType( oTarget );
             int nAppearance;
@@ -58,11 +61,25 @@ void main(){
             int nColor;
 
 
-            if ( GetIsObjectValid( oNPC ) ){
+            if ( nSpawned = 1 ){
 
-                DestroyObject( oNPC );
-                return;
+                sUUID   = GetLocalString (oItem, "UUID");
+                oUUID   = GetObjectByUUID (sUUID);
+                sName   = GetLocalString( oItem, "ds_name" );
+
+                if ( GetIsObjectValid( oUUID ) ){
+                    DestroyObject( oUUID );
+                    DeleteLocalInt ( oItem, "spawned");
+                    SendMessageToPC(oPC, "Despawning"+sName);
+                    return;
+                    }
+                else {
+                    DeleteLocalInt ( oItem, "spawned");
+                    }
+
+
             }
+
 
             if ( nType == 0 ){
 
@@ -192,6 +209,10 @@ void main(){
                 if (scaleSet > 0.0) {
                     SetObjectVisualTransform(oNPC, 10, scaleSet);
                 }
+                sUUID = GetObjectUUID(oNPC);
+
+                SetLocalString (oItem, "UUID", sUUID);
+                SetLocalInt (oItem, "spawned", 1);
                 SetLocalObject( oNPC, "ds_master", oPC );
                 DelayCommand( 1.0, DressNPC( oPC, oNPC ) );
                 DelayCommand( 3.0, SetCreatureWingType( nWings, oNPC ) );
@@ -211,7 +232,7 @@ void main(){
                 nSex           = GetLocalInt( oItem, "ds_sex" );
                 sSex           = "m_";
                 sBio           = GetLocalString( oItem , "td_bio" );
-				float scaleSet = GetLocalFloat(oItem, "ds_scale");
+                float scaleSet = GetLocalFloat(oItem, "ds_scale");
 
                 if ( nSex == 1 ){
 
@@ -223,12 +244,17 @@ void main(){
                 oNPC        = CreateObject( OBJECT_TYPE_CREATURE, sResRef, GetLocation( oPC ), FALSE, sTag );
 
                 SetName( oNPC, sName );
-				if (scaleSet == 0.0) {
+                if (scaleSet == 0.0) {
                     SetObjectVisualTransform(oNPC, 10, 1.0);
                 }
                 if (scaleSet > 0.0) {
                     SetObjectVisualTransform(oNPC, 10, scaleSet);
                 }
+
+                sUUID = GetObjectUUID(oNPC);
+
+                SetLocalString (oItem, "UUID", sUUID);
+                SetLocalInt (oItem, "spawned", 1);
                 SetLocalObject( oNPC, "ds_master", oPC );
                 SetLocalInt( oNPC, "ds_type", 2 );
                 DelayCommand( 1.0, SetCreatureAppearanceType( oNPC, nAppearance ) );
@@ -265,4 +291,3 @@ void DressNPC( object oPC, object oNPC ){
      DelayCommand( 2.0, AssignCommand( oNPC, ActionEquipItem( oNewSuit, INVENTORY_SLOT_CHEST ) ) );
 
 }
-

@@ -70,7 +70,7 @@ void main(){
                 if ( GetIsObjectValid( oUUID ) ){
                     DestroyObject( oUUID );
                     DeleteLocalInt ( oItem, "spawned");
-                    SendMessageToPC(oPC, "Despawning"+sName);
+                    SendMessageToPC(oPC, "Despawning "+sName);
                     return;
                     }
                 else {

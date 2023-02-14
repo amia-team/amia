@@ -7,17 +7,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Papers and other identification items for settlements
 
 ### Changed 
 - You can now spawn multiple (different) bottled companions (f_voice b, will target closest to you)
-	
+- Area changes
+	- Fort Cystana: North/Argent Keep
+		- Key Updates
+	- Fort Cystana: North/Argent Keep
+		- Key Updates	
 ### Fixed
 
 ## [2.5.8] - 2023-02-11]
 
 ### Added
 - 1 player portrait
-- Papers and other identification items for settlements
 
 ### Changed 
 - Area changes
@@ -27,8 +31,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- changed transition type to tent, and added faction lock
 	- Ruathym: Fortress Wiltun
 		- Plot area update
-	- Fort Cystana: North/Argent Keep
-		- Key Updates
 		
 ### Fixed
 - Fixed an oops with the tailor kit recipe

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed 
+- You can now spawn multiple (difirent) bottled companions (f_voice b, will target closest to you)
 	
 ### Fixed
 

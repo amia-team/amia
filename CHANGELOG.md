@@ -10,12 +10,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Papers and other identification items for settlements
 
 ### Changed 
-- You can now spawn multiple (different) bottled companions (f_voice b, will target closest to you)
+- You can now spawn multiple (different) bottled companions ("/s f_voice b" will target closest to you)
 - Area changes
 	- Fort Cystana: North/Argent Keep
 		- Key Updates
-	- Fort Cystana: North/Argent Keep
-		- Key Updates	
+
 ### Fixed
 
 ## [2.5.8] - 2023-02-11]

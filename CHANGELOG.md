@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-## [2.5.9] - 2023-02-11]
+## [2.5.9] - 2023-02-18]
 
 ### Added
 - Papers and other identification items for settlements

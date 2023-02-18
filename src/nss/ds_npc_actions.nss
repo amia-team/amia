@@ -100,7 +100,7 @@ void main(){
     }
     else if ( nNode ==9 ){
 
-        //helmet
+        //Weapon
         object oSword = GetItemPossessedBy( oNPC, "ds_npc_sword" );
 
         if ( GetItemInSlot( INVENTORY_SLOT_RIGHTHAND, oNPC ) == oSword ){
@@ -120,12 +120,12 @@ void main(){
     if ( nNode == 10 ){
 
         //follow
-        AssignCommand( oNPC, PlayAnimation( ANIMATION_LOOPING_DEAD_FRONT, 1.0, 600.0 ) );
+        AssignCommand( oNPC, PlayAnimation( ANIMATION_LOOPING_DEAD_FRONT, 1.0, 60000.0 ) );
     }
     if ( nNode == 11 ){
 
         //follow
-        AssignCommand( oNPC, PlayAnimation( ANIMATION_LOOPING_DEAD_BACK, 1.0, 600.0 ) );
+        AssignCommand( oNPC, PlayAnimation( ANIMATION_LOOPING_DEAD_BACK, 1.0, 60000.0 ) );
     }
     if ( nNode == 12 ){
 
@@ -144,8 +144,8 @@ void main(){
     }
     if ( nNode == 15 ){
 
-        //follow
-        AssignCommand( oNPC, PlayAnimation( ANIMATION_LOOPING_SIT_CROSS, 1.0, 600.0 ) );
+        //sit on the ground
+        AssignCommand( oNPC, PlayAnimation( ANIMATION_LOOPING_SIT_CROSS, 1.0, 60000.0 ) );
     }
     if ( nNode == 16 ){
 

@@ -7,16 +7,41 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
-- Papers and other identification items for settlements
 
 ### Changed 
-- You can now spawn multiple (different) bottled companions ("/s f_voice b" will target closest to you)
-- Area changes
-	- Fort Cystana: North/Argent Keep
-		- Key Updates
 
 ### Fixed
 
+## [2.5.9] - 2023-02-11]
+
+### Added
+- Papers and other identification items for settlements
+- Area added: Ruathym: Caraigh, Commerce Hall
+
+### Changed 
+- You can now spawn multiple (different) bottled companions ("/s f_voice b" will target closest to you)
+- BC's can now sit/lay on the floor indefinitly (was 10 min)
+- BC "do someting" conversation now looping to stay in the conversation when messing with equipment
+- Area changes
+	- Fort Cystana: North/Argent Keep
+		- Key Updates
+	- Ruathym: Caraigh, Stormy Cliffs
+		- Plot update
+	- Ruathym: Caraigh, Shadowflame Keep
+		- area name change (was Ruathym: Caraigh, Fortress of The Thane)
+	- Ruathym: Caraigh Land's End Inn
+		- Transition to stormy cliffs changed to commerce hall
+	- Winya Ravana: Council tower
+		- Removal of names
+		- moving a lever so it can be used
+		- no longer under construction
+
+### Fixed
+- Job Resource nodes fixes:
+	- Cape Slakh: Den of Webs: Silver vein moved (should now be usable)
+	- Khem: Khalem: removed 1 job cow, made the other able to be milked (also added a few more normal cows)
+	- Northern Sea: The Chute: Felsu tree moved (should now be usable)
+	
 ## [2.5.8] - 2023-02-11]
 
 ### Added

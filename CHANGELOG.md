@@ -9,8 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed 
+- Some descriptions and names edited on NPCs for lore expansion/correction
+- Kingdom of Kohlingen: Old City Grounds renamed to Greengarden, East
 
 ### Fixed
+- Obsidian Isle: Port
+	- Removed a seemingly stray wall and moved some lamps around at Puresoul's request
 
 ## [2.5.9] - 2023-02-18]
 

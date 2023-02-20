@@ -14,9 +14,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Kingdom of Kohlingen: Old City Grounds > Greengarden, East
 	- Kingdom of Kohlingen: North Pass > Tristram's Path
 	- Kingdom of Kohlingen: Manor Grounds > Greengarden, Manor Grounds
+	- Kingdom of Cetha: Southport, Outside the Walls > Frontier's Rest, West
 - Area Plot Updates
 	- Kingdom of Cetha: Knight's Hallow
 	- Kingdom of Cetha: Frontier's Rest
+	- Kingdom of Cetha: Frontier's Rest, West
 
 ### Fixed
 - Obsidian Isle: Port

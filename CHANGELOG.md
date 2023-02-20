@@ -10,7 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed 
 - Some descriptions and names edited on NPCs for lore expansion/correction
-- Kingdom of Kohlingen: Old City Grounds renamed to Greengarden, East
+-Areas Renamed
+	- Kingdom of Kohlingen: Old City Grounds > Greengarden, East
+	- Kingdom of Kohlingen: North Pass > Tristram's Path
+	- Kingdom of Kohlingen: Manor Grounds > Greengarden, Manor Grounds
 
 ### Fixed
 - Obsidian Isle: Port

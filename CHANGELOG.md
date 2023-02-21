@@ -20,11 +20,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Kingdom of Cetha: Frontier's Rest
 	- Kingdom of Cetha: Frontier's Rest, West Outskirts
 	- Kingdom of Cetha: Southport Central
-- Removed an area that was dead
+	- Kingdom of Cetha: Southport East
 
 ### Fixed
 - Obsidian Isle: Port
 	- Removed a seemingly stray wall and moved some lamps around at Puresoul's request
+- Removed an unused area (removed in a plot ages ago)
 
 ## [2.5.9] - 2023-02-18]
 

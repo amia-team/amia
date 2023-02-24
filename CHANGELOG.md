@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed 
+
+### Fixed
+
+## [2.6.0] - 2023-02-24]
+
+### Added
+- New area
+	- Amia Forest: Oakmist Vale, Treetop Village (wont be accesible till 26th mini update)
+	- Amia Forest: Oakmist Vale, Community Hut (wont be accessible till requested/approved and finished icly, just needed to a place holder for it)
+
+### Changed 
 - Some descriptions and names edited on NPCs for lore expansion/correction
 - Areas Renamed
 	- Kingdom of Kohlingen: Old City Grounds > Greengarden, East
@@ -21,11 +32,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Kingdom of Cetha: Frontier's Rest, West Outskirts
 	- Kingdom of Cetha: Southport Central
 	- Kingdom of Cetha: Southport East
+	- Amia Forest: Oakmist Vale 
+		- Lift added to treetop village
+	- Winya Ravana: Council Tower
+		- Trashcans added
+		- Door upstairs now city token locked
 
 ### Fixed
 - Obsidian Isle: Port
 	- Removed a seemingly stray wall and moved some lamps around at Puresoul's request
 - Removed an unused area (removed in a plot ages ago)
+- BC dialog tweaked in hopes it loops properly now
+- gender changer now displays message only to player
+- Many racial descriptions fixed (had odd tokens/signs in them)
 
 ## [2.5.9] - 2023-02-18]
 

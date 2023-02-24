@@ -1,3 +1,10 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//This changes the gender of the player                                                        //
+//                                                                                             //
+//created by Frozen-ass                                                                        //
+//date: 01-11-2022                                                                             //
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
 #include "cs_inc_leto"
 #include "inc_td_appearanc"
 #include "x2_inc_switches"
@@ -15,11 +22,11 @@ void main(){
 
 
             object oPC = GetItemActivator();
-           	int nNewGender = !GetGender(oPC);
+            int nNewGender = !GetGender(oPC);
 
-				            NWNX_Creature_SetGender(oPC, nNewGender);
-				            string genderString = nNewGender == 0 ? "male" : "female";
-				            AssignCommand( oPC, SpeakString( "<c Û >Changed gender to " + genderString + "</c>" ) );
+                            NWNX_Creature_SetGender(oPC, nNewGender);
+                            string genderString = nNewGender == 0 ? "male" : "female";
+                            FloatingTextStringOnCreature(( "<c Û >Changed gender to " + genderString + "</c>" ), oPC, FALSE );
          }
     }
 

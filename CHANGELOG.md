@@ -12,6 +12,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
+## [2.6.1] - 2023-02-26]
+
+### Changed 
+- Rest menu emotes now last indefinitly rather then 20 min
+- BC's no longer have collision bubbles (they where bumping npcs around)
+- Amia Forest: Oakmist Vale, lift to treetops now open
+
+### Fixed
+- Removed resting showing "<c ï¿½ï¿½>"
+
 ## [2.6.0] - 2023-02-24]
 
 ### Added

@@ -34,7 +34,7 @@
 //void main (){}
 
 //Colours is always nice, cheers up.
-const string REST_SYSTEM_COLOUR_TAG          = "<c ��>";
+const string REST_SYSTEM_COLOUR_TAG          = "";
 
 //The amount of hours you have to wait before next rest
 const int    REST_BLOCK                      = 15;

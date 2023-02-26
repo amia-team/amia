@@ -12,6 +12,7 @@
     ----------------------------------------------------------------------------
     050906  kfw         Initial release.
     060616  msheeler    updated to account for custom factions
+    2023-01-07   Frozen      Made spawned npc not have collision
     ----------------------------------------------------------------------------
 
 */

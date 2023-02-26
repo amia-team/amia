@@ -12,6 +12,7 @@
 //2008-10-17    Terra       Added DM messenger
 //2009-06-20    Disco       Cleaned up scripting, added XP blocker
 //2017-05-22    RaveN       Epic Summon Stuff
+//2023-02-26    Frozen      Increased duration of emote loop
 
 //-------------------------------------------------------------------------------
 // includes
@@ -99,7 +100,7 @@ void main(){
 
     if ( nAnimation > -1 ){
 
-        AssignCommand( oPC, ActionPlayAnimation( nAnimation, 1.0, 1200.0 ) );
+        AssignCommand( oPC, ActionPlayAnimation( nAnimation, 1.0, 120000.0 ) );
     }
 
 }

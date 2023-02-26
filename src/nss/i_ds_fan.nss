@@ -7,6 +7,9 @@
 //date:    oct 10 2007
 //author:  disco
 
+//2008-05-19    Disco       Added The Hurting :D
+//2023-02-13    Frozen      Made multi (difirent)BC spawning possible
+//2023-02-26    Frozen      Made spawned npc not have collision
 
 //-------------------------------------------------------------------------------
 // includes
@@ -214,6 +217,7 @@ void main(){
                 SetLocalString (oItem, "UUID", sUUID);
                 SetLocalInt (oItem, "spawned", 1);
                 SetLocalObject( oNPC, "ds_master", oPC );
+                ApplyEffectToObject(DURATION_TYPE_PERMANENT, EffectCutsceneGhost(), oNPC);
                 DelayCommand( 1.0, DressNPC( oPC, oNPC ) );
                 DelayCommand( 3.0, SetCreatureWingType( nWings, oNPC ) );
                 DelayCommand( 4.0, SetCreatureTailType( nTail, oNPC ) );
@@ -257,6 +261,7 @@ void main(){
                 SetLocalInt (oItem, "spawned", 1);
                 SetLocalObject( oNPC, "ds_master", oPC );
                 SetLocalInt( oNPC, "ds_type", 2 );
+                ApplyEffectToObject(DURATION_TYPE_PERMANENT, EffectCutsceneGhost(), oNPC);
                 DelayCommand( 1.0, SetCreatureAppearanceType( oNPC, nAppearance ) );
                 DelayCommand( 2.0, SetPortraitResRef( oNPC, sPortrait ) );
 

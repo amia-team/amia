@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-## [2.6.1] - 2023-02-26]
+## [2.6.0.1] - 2023-02-26]
 
 ### Changed 
 - Rest menu emotes now last indefinitly rather then 20 min

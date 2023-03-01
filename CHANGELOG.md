@@ -7,10 +7,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
-
+- New area
+	- Amia Forest: Oakmist Vale, Treetop huts (wont be accessible till requested/approved and finished icly, just working in advance)
+	
 ### Changed 
+- slight palette adjustment (moving a faction key, and adding a old item back)
+- Epic Gloves of Swordplay (+30 parry) added back to (epic) lootbin
+- Area changes:
+	- Amia Forest: Oakmist Vale, Treetop Village
+		- Area slightly changed to fit designe better
+		- New (temporarly) exit
+		- Signs of construction (temporarly)
+	- Amia Forest: Oakmist Vale
+		- New ladder to topside 
+	- Frozenfar: Endir's Point
+		- Rental signs now reflects proper prices
 
 ### Fixed
+
 
 ## [2.6.0.1] - 2023-02-26]
 

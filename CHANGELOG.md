@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+	
+### Changed 
+	
+### Fixed
+	
+## [2.6.1] - 2023-03-03]
+
+### Added
 - New area
 	- Amia Forest: Oakmist Vale, Treetop huts (wont be accessible till requested/approved and finished icly, just working in advance)
 	
@@ -20,11 +28,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- Signs of construction (temporarly)
 	- Amia Forest: Oakmist Vale
 		- New ladder to topside 
-	- Frozenfar: Endir's Point
-		- Rental signs now reflects proper prices
-
+	- Ruathym: Caraigh, Commerce Hall
+		- Changed key needed
+		
 ### Fixed
-
+- Blue Lagoon: Interior
+	- Chair adjustments
+	- broken door fixed
+- Frozenfar: Endir's Point
+	- Rental signs now reflects proper prices
 
 ## [2.6.0.1] - 2023-02-26]
 

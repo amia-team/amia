@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 	
 ### Changed 
+- Winya Ravana Token on palette updated as per request
 	
 ### Fixed
 	

@@ -7,12 +7,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Actand: Obsidian Cave (and  cave deeper)
+	- Added a few resource nodes
+- Fox portrait (1462 po_CuteFox_) If you see a fox with a wolf/dog portrait let us know!
 	
 ### Changed 
 - Winya Ravana Token on palette updated as per request
+- Variuos foxes now have new fox portrait
 	
 ### Fixed
-	
+- Silent Bay: Shrine of Eilistraee, Mushroom Cave
+	- Silk spiders now correct usable/farmable
+	- Removed pre EE Jobsystem station
+	- Set doors to auto close 20
+	- Linked Tailor trainer to actualy train
+	- Properly set up transition to work now as intended (faction locked)
+	- Tweaked placment of resource node to be better reachable
+- Silent Bay: Crystal Bridge
+		- Lowerd floating rock and dirt patch
+		
 ## [2.6.1] - 2023-03-03]
 
 ### Added

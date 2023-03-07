@@ -54,9 +54,9 @@ void main(){
 
     int nPolyLevel = 0;
 
-    if(GetIsPolymorphed(OBJECT_SELF) == TRUE)
+    if(GetLocalInt(OBJECT_SELF,"POLY_COOLDOWN") == 1)
     {
-      SendMessageToPC(OBJECT_SELF,"You cant shift while already being Polymorphed");
+      SendMessageToPC(OBJECT_SELF,"You must wait for the cool down to expire to shift again!");
       return;
     }
 

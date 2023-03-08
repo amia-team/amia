@@ -7,24 +7,39 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
-- Actand: Obsidian Cave (and  cave deeper)
-	- Added a few resource nodes
+Area Additions:
+	- Actand: Obsidian Cave (and  cave deeper)
+		- Added a few resource nodes
+	- Kingdom of Kohlingen: Greengarden
+		- Added a few resource nodes
 - Fox portrait (1462 po_CuteFox_) If you see a fox with a wolf/dog portrait let us know!
 	
 ### Changed 
 - Winya Ravana Token on palette updated as per request
 - Variuos foxes now have new fox portrait
+Area changes:
+	- Silent Bay: Crystal Bridge
+		- Changed Peacock to Peahen (will now spawn eggs rather then you murdering animals in the shelter for meat)
 	
 ### Fixed
-- Silent Bay: Shrine of Eilistraee, Mushroom Cave
-	- Silk spiders now correct usable/farmable
-	- Removed pre EE Jobsystem station
-	- Set doors to auto close 20
-	- Linked Tailor trainer to actualy train
-	- Properly set up transition to work now as intended (faction locked)
-	- Tweaked placment of resource node to be better reachable
-- Silent Bay: Crystal Bridge
+Area Fixes:
+	- Silent Bay: Shrine of Eilistraee, Mushroom Cave
+		- Silk spiders now correct usable/farmable
+		- Removed pre EE Jobsystem station
+		- Set doors to auto close 20 seconds
+		- Linked Tailor trainer to actualy train
+		- Properly set up transition to work now as intended (faction locked)
+		- Tweaked placment of resource node to be better reachable
+	- Silent Bay: Crystal Bridge
 		- Lowerd floating rock and dirt patch
+	- Silent Bay: Salandran Temple
+		- Merchant box removed (should not be there)
+	- Kingdom of Kohlingen: Tristram's Path
+		- Variuos resourse nodes fixed (can now be reached/used)
+	- Kingdom of Kohlingen: Greengarden
+		- Moved smithing station to not randomly float
+	- Blue Lagoon: Underpass
+		- Resourse node fixed (can now be reached/used)
 		
 ## [2.6.1] - 2023-03-03]
 

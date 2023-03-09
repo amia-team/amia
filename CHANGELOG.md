@@ -20,9 +20,34 @@ Area Additions:
 Area changes:
 	- Silent Bay: Crystal Bridge
 		- Changed Peacock to Peahen (will now spawn eggs rather then you murdering animals in the shelter for meat)
+	- Quagmire: Mercenary Camp
+		- Changed steer to to dairy cow (will now milk rather then you murdering random animals in a camp)
+	- Northern Sea: The Underport	
+		- Updated outdated map pin
+	- Winya Ravana: Council Tower
+		- Dev side Tag/name plc changes for better orginization (part 1)
 	
 ### Fixed
 Area Fixes:
+	- Variuos resourse nodes fixed/moved (can now be reached/used/Appropiate job assigned)
+		- Kingdom of Kohlingen: Tristram's Path
+		- Kingdom of Kohlingen: Greengarden, Outskirts
+		- Kingdom of Kohlingen: Fort Cystana
+		- Kingdom of Kohlingen: Fort Cystana, Western Beach
+		- Kingdom of Kohlingen: Fort Cystana, South
+		- Kingdom of Kohlingen: Fort Cystana, North
+		- Blue Lagoon: Underpass
+		- Winya Ravana: Sky Forest
+		- Winya Ravana (also some dev side Tag/name plc changes for better orginization)
+		- Quagmire: Ruins
+		- Northern Sea: The Chute
+		- Northern Sea: Springer's Point
+			- Also Removed a spawn point as it was spawning mobs at unreacable places
+	- Floating/misplaced plc fixes
+		- Kingdom of Kohlingen: Greengarden (smithing station moved)
+		- Silent Bay: Salandran Temple (merchant box removed)
+		- Silent Bay: Crystal Bridge (Floating plcs lowerd)
+		- Kingdom of Kohlingen: Construction Site (floating mountains changed)
 	- Silent Bay: Shrine of Eilistraee, Mushroom Cave
 		- Silk spiders now correct usable/farmable
 		- Removed pre EE Jobsystem station
@@ -30,16 +55,6 @@ Area Fixes:
 		- Linked Tailor trainer to actualy train
 		- Properly set up transition to work now as intended (faction locked)
 		- Tweaked placment of resource node to be better reachable
-	- Silent Bay: Crystal Bridge
-		- Lowerd floating rock and dirt patch
-	- Silent Bay: Salandran Temple
-		- Merchant box removed (should not be there)
-	- Kingdom of Kohlingen: Tristram's Path
-		- Variuos resourse nodes fixed (can now be reached/used)
-	- Kingdom of Kohlingen: Greengarden
-		- Moved smithing station to not randomly float
-	- Blue Lagoon: Underpass
-		- Resourse node fixed (can now be reached/used)
 		
 ## [2.6.1] - 2023-03-03]
 

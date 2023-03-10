@@ -172,6 +172,25 @@ void main()
             //Delete the old item
             DestroyObject( oInContainer, 0.1 );
         }
+        else if (sItemResRef == "nw_it_gem008" || // Sapphire
+                 sItemResRef == "nw_it_gem006" || // Ruby
+                 sItemResRef == "nw_it_gem012" || //Emerald
+                 sItemResRef == "nw_it_gem005" ) // Diamond
+               {
+                    string sReplaceItem;
+                    sName = GetName(oInContainer);
+                    nStackSize = GetNumStackedItems(oInContainer);
+
+                    if      ( sItemResRef == "nw_it_gem008" && sName == "Sapphire") { sReplaceItem = "js_jew_sapp"; }
+                    else if ( sItemResRef == "nw_it_gem006" && sName == "Ruby")     { sReplaceItem = "js_jew_ruby"; }
+                    else if ( sItemResRef == "nw_it_gem012" && sName == "Emerald")  { sReplaceItem = "js_jew_emer"; }
+                    else if ( sItemResRef == "nw_it_gem005" && sName == "Diamond")  { sReplaceItem = "js_jew_diam"; }
+
+                    oRefreshedItem = CreateItemOnObject(sReplaceItem, OBJECT_SELF, nStackSize);
+
+                    //Delete the old item
+                    DestroyObject( oInContainer, 0.1 );
+                }
 
         if(GetLocalInt(GetNextItemInInventory( OBJECT_SELF ), "RefreshedItem") != 1)
         {

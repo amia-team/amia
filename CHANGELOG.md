@@ -13,6 +13,7 @@ Area Additions:
 	- Kingdom of Kohlingen: Greengarden
 		- Added a few resource nodes
 - Fox portrait (1462 po_CuteFox_) If you see a fox with a wolf/dog portrait let us know!
+- Job Item Refresher (in Maintenance: Character Modifier), now also converts non job-system gems into job system gems (Sapphire, Emerald, Ruby, Diamond)
 	
 ### Changed 
 - Winya Ravana Token on palette updated as per request

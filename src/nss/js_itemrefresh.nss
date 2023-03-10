@@ -2,6 +2,7 @@
   Job System Item Refresh Script - Converts the old, larger Job System PLCs into smaller counterparts
 
   - Lord-Jyssev
+  - Frozen  = 2023-March-10 = Added Regulare Gems to job sytem gems conversion
 */
 
 
@@ -108,6 +109,25 @@ void main()
             //Delete the old item
             DestroyObject( oInContainer, 0.1 );
         }
+        else if (sItemResRef == "nw_it_gem008" || // Sapphire
+                 sItemResRef == "nw_it_gem006" || // Ruby
+                 sItemResRef == "nw_it_gem012" || // Emerald
+                 sItemResRef == "nw_it_gem005" )  // Diamond
+               {
+                    string sReplaceItem;
+                    sName = GetName(oInContainer);
+                    nStackSize = GetNumStackedItems(oInContainer);
+
+                    if      ( sItemResRef == "nw_it_gem008" && sName == "Sapphire") { sReplaceItem = "js_jew_sapp"; }
+                    else if ( sItemResRef == "nw_it_gem006" && sName == "Ruby")     { sReplaceItem = "js_jew_ruby"; }
+                    else if ( sItemResRef == "nw_it_gem012" && sName == "Emerald")  { sReplaceItem = "js_jew_emer"; }
+                    else if ( sItemResRef == "nw_it_gem005" && sName == "Diamond")  { sReplaceItem = "js_jew_diam"; }
+
+                    oRefreshedItem = CreateItemOnObject(sReplaceItem, OBJECT_SELF, nStackSize);
+
+                    //Delete the old item
+                    DestroyObject( oInContainer, 0.1 );
+                }
         // Disallow equipable items that allow properties/mythal crafting, new storage items, and non-job items
         else if(     GetSubString(sItemResRef, 0, 3) != "js_"
              || sItemResRef == "js_arch_adbt"
@@ -132,8 +152,7 @@ void main()
              || sItemResRef == "js_arca_scbx"
              || sItemResRef == "js_arca_trca"
              || sItemResRef == "js_arca_wdca"
-             || GetSubString(sItemResRef, 0, 9) == "js_jew_am"
-             || GetSubString(sItemResRef, 0, 9) == "js_jew_ri"
+             || GetSubString(sItemResRef, 0, 7) == "js_jew_"
              || GetSubString(sItemResRef, 0, 9) == "js_bla_we"
              || GetSubString(sItemResRef, 0, 9) == "js_bla_ar"
              || GetSubString(sItemResRef, 0, 9) == "js_bla_sh"
@@ -172,25 +191,6 @@ void main()
             //Delete the old item
             DestroyObject( oInContainer, 0.1 );
         }
-        else if (sItemResRef == "nw_it_gem008" || // Sapphire
-                 sItemResRef == "nw_it_gem006" || // Ruby
-                 sItemResRef == "nw_it_gem012" || //Emerald
-                 sItemResRef == "nw_it_gem005" ) // Diamond
-               {
-                    string sReplaceItem;
-                    sName = GetName(oInContainer);
-                    nStackSize = GetNumStackedItems(oInContainer);
-
-                    if      ( sItemResRef == "nw_it_gem008" && sName == "Sapphire") { sReplaceItem = "js_jew_sapp"; }
-                    else if ( sItemResRef == "nw_it_gem006" && sName == "Ruby")     { sReplaceItem = "js_jew_ruby"; }
-                    else if ( sItemResRef == "nw_it_gem012" && sName == "Emerald")  { sReplaceItem = "js_jew_emer"; }
-                    else if ( sItemResRef == "nw_it_gem005" && sName == "Diamond")  { sReplaceItem = "js_jew_diam"; }
-
-                    oRefreshedItem = CreateItemOnObject(sReplaceItem, OBJECT_SELF, nStackSize);
-
-                    //Delete the old item
-                    DestroyObject( oInContainer, 0.1 );
-                }
 
         if(GetLocalInt(GetNextItemInInventory( OBJECT_SELF ), "RefreshedItem") != 1)
         {

@@ -7,7 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
-Area Additions:
+
+### Changed 
+		
+### Fixed
+	
+## [2.6.2] - 2023-03-10]
+
+### Added
+- Area Additions:
 	- Actand: Obsidian Cave (and  cave deeper)
 		- Added a few resource nodes
 	- Kingdom of Kohlingen: Greengarden
@@ -18,7 +26,7 @@ Area Additions:
 ### Changed 
 - Winya Ravana Token on palette updated as per request
 - Variuos foxes now have new fox portrait
-Area changes:
+- Area changes:
 	- Silent Bay: Crystal Bridge
 		- Changed Peacock to Peahen (will now spawn eggs rather then you murdering animals in the shelter for meat)
 	- Quagmire: Mercenary Camp
@@ -27,10 +35,16 @@ Area changes:
 		- Updated outdated map pin
 	- Winya Ravana: Council Tower
 		- Dev side Tag/name plc changes for better orginization (part 1)
+	- Amia Forest: Oakmist Vale, Treetop Village
+		- pool now functional
+		- Hutgroup 1&2 now have decorated platform
+		- Lanterns on walkway
+		- (rest will follow)
 	
 ### Fixed
-Area Fixes:
-	- Variuos resourse nodes fixed/moved (can now be reached/used/Appropiate job assigned)
+- Replacment for portrait po_grifffon_ , this cause a fill was missing, making it not work
+- Area Fixes:
+	- Variuos resourse nodes fixed/moved (can now be reached/used/Appropiate job assigned, part 1 of massive resource checkup)
 		- Kingdom of Kohlingen: Tristram's Path
 		- Kingdom of Kohlingen: Greengarden, Outskirts
 		- Kingdom of Kohlingen: Fort Cystana
@@ -54,8 +68,8 @@ Area Fixes:
 		- Removed pre EE Jobsystem station
 		- Set doors to auto close 20 seconds
 		- Linked Tailor trainer to actualy train
-		- Properly set up transition to work now as intended (faction locked)
-		- Tweaked placment of resource node to be better reachable
+		- Fixed not working transition
+		- Tweaked placement of resource node to be better reachable
 		
 ## [2.6.1] - 2023-03-03]
 

@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		
 ### Fixed
 	
-## [2.6.2] - 2023-03-10]
+## [2.6.2] - 2023-03-11]
 
 ### Added
 - Area Additions:
@@ -23,10 +23,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fox portrait (1462 po_CuteFox_) If you see a fox with a wolf/dog portrait let us know!
 - Player portrait addition
 - Job Item Refresher (in Maintenance: Character Modifier), now also converts non job-system gems into job system gems (Sapphire, Emerald, Ruby, Diamond)
+- Some dev/dm QoL
 	
 ### Changed 
 - Winya Ravana Token on palette updated as per request
 - Variuos foxes now have new fox portrait
+- Feline Empathy now 1x1 (ask dm/rh for exchange of old one)
 - Area changes:
 	- Silent Bay: Crystal Bridge
 		- Changed Peacock to Peahen (will now spawn eggs rather then you murdering animals in the shelter for meat)
@@ -44,6 +46,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	
 ### Fixed
 - Replacment for portrait po_grifffon_ , this cause a fill was missing, making it not work
+- Fixed 2da portrait issue with missing/overwriten values (should not effect anything, but if you see a wrong portrait (non shifter related) let us know, we can fix it)
 - Area Fixes:
 	- Variuos resourse nodes fixed/moved (can now be reached/used/Appropiate job assigned, part 1 of massive resource checkup)
 		- Kingdom of Kohlingen: Tristram's Path

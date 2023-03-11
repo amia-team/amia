@@ -39,7 +39,7 @@ void main(){
                  itemproperty iNew = ItemPropertyCastSpell( 329, IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE );
                  IPSafeAddItemProperty( oTarget, iNew, 0.0f, X2_IP_ADDPROP_POLICY_REPLACE_EXISTING, TRUE, TRUE );
 
-                 AssignCommand( oPC, SpeakString( "<c Û >Changed: ~</c>" +GetName ( oTarget ) + "<c Û >~ to unlimited uses self</c>" ) );
+                 AssignCommand( oPC, SpeakString( "<c Û >Changed: ~</c>" +GetName ( oTarget ) + "<c Û >~ to unlimited uses target</c>" ) );
             }
         break;
     }

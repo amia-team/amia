@@ -4,6 +4,7 @@
 // Date       Name             Description
 // ---------- ---------------- ---------------------------------------------
 // 02/24/2013 PoS              Initial Release
+// 22/03/2023 Frozen           Changed to handle all generic summon widgets in one script
 //
 
 // Includes
@@ -17,10 +18,18 @@ void ActivateItem( )
     // Major variables.
     object oPC          = GetItemActivator();
     location lLocation  = GetItemActivatedTargetLocation();
-    string sSummon      = "gen_sum_cre";
+    object oItem        = GetItemActivated();
+    string sItem        = GetResRef (oItem);
+    string sSummon;
     effect eSummon      = EffectSummonCreature( sSummon, VFX_FNF_SUMMON_MONSTER_1, 0.5 );
 
-    ApplyEffectAtLocation( DURATION_TYPE_PERMANENT, eSummon, lLocation );
+        if      (sItem == "gen_summon" ) { sSummon = "gen_sum_cre" ; }
+        else if (sItem == "gen_summon2") { sSummon = "gen_sum_cre2"; }
+        else if (sItem == "gen_summon3") { sSummon = "gen_sum_cre3"; }
+        else if (sItem == "gen_summon4") { sSummon = "gen_sum_cre4"; }
+        else if (sItem == "gen_summon5") { sSummon = "gen_sum_cre5"; }
+
+        ApplyEffectAtLocation( DURATION_TYPE_PERMANENT, eSummon, lLocation );
 
     // Handle reskins/optional visuals.
     DelayCommand( 2.0, HandleSummonVisuals( oPC, 1 ) );

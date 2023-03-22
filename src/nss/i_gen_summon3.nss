@@ -4,9 +4,10 @@
 // Date       Name             Description
 // ---------- ---------------- ---------------------------------------------
 // 02/24/2013 PoS              Initial Release
-//
+// 22/03/2023 Frozen           Updated to refere generic summons to single script usage
 
 // Includes
+/*
 #include "x2_inc_switches"
 #include "inc_ds_records"
 #include "inc_td_appearanc"
@@ -42,4 +43,15 @@ void main( )
             log_to_exploits( GetPCItemLastEquippedBy(), "Equipped: "+GetName(GetPCItemLastEquipped()), GetTag(GetPCItemLastEquipped()) );
             break;
     }
+}
+*/
+#include "x2_inc_switches"
+
+void main( )
+{
+   object oPC          = GetItemActivator();
+   object oItem        = GetItemActivated();
+
+   SetTag (oItem, "gen_summon");
+   FloatingTextStringOnCreature ( "Widget updated, please use again", oPC, FALSE);
 }

@@ -8,8 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - PLC added to palette
+- 2 more Generic summons (so you can have a total of 5 now)
 
-### Changed 
+### Changed
+- Playertools now also mark a bottled Companion for speech with "f_voice b" (rather then auto closest, will still do that if non is marked)
 		
 ### Fixed
 	

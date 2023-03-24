@@ -548,7 +548,7 @@ void f_playertools( object oPC, object oObject, string sOption, string sValue ){
        if(!GetHasFeat( 1106, oPC ))
        {
             DelayCommand( 5.0, NWNX_Creature_AddFeat( oPC, 1106) );
-            SendMessageToPC(oPC, "<c���>~ Associate Tool Added ~</c>");
+            SendMessageToPC(oPC, "~ Associate Tool Added ~");
        }
     }
 

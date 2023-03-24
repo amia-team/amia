@@ -123,11 +123,14 @@ void main()
     oAssociate5 = GetAssociate(5, oPC, 1); // Dominated
     oAssociate6 = GetAssociate(1, oPC, 1); // Henchman
 
+	// This is to tag a target (linked) BC for use of the f_voice b command
     if (sTag == "ds_npc_"+GetPCPublicCDKey( oPC )){
         sUUUID = GetObjectUUID (oTarget);
         SetLocalString (oPC, "bc_marked", sUUUID);
         SetLocalInt (oPC, "marked_bc", 1);
-        }
+
+		      return;
+    }
     // If target is valid & hostile, command all associates to attack the target.
     if (GetIsObjectValid(oCreature) && GetIsReactionTypeHostile(oCreature, oPC) == TRUE) {
         attackTarget(oCreature);

@@ -1374,13 +1374,26 @@ void f_Voice( object oPC, string sOption, string sValue ){
         oTarget = GetAssociate( ASSOCIATE_TYPE_DOMINATED, oPC );
     }
     else if( sOption == "b" ){
-        oTarget = GetNearestObjectByTag( "ds_npc_"+GetPCPublicCDKey( oPC ), oPC );
 
-        SetLocalInt( oTarget, "chat_language", GetLocalInt( oPC, "chat_language" ) );
-        SetLocalInt( oTarget, "chat_reverse", GetLocalInt( oPC, "chat_reverse" ) );
-        SetLocalString( oTarget, "chat_emote", GetLocalString( oPC, "chat_emote" ) );
+       string  sMarked = GetLocalString    (oPC, "bc_marked");
+       int     iMarked = GetLocalInt       (oPC, "marked_bc");
+
+       if (iMarked == 1){
+            oTarget = GetObjectByUUID (sMarked);
+
+            SetLocalInt( oTarget, "chat_language", GetLocalInt( oPC, "chat_language" ) );
+            SetLocalInt( oTarget, "chat_reverse", GetLocalInt( oPC, "chat_reverse" ) );
+            SetLocalString( oTarget, "chat_emote", GetLocalString( oPC, "chat_emote" ) );
+            }
+       else {
+            oTarget = GetNearestObjectByTag( "ds_npc_"+GetPCPublicCDKey( oPC ), oPC );
+
+            SetLocalInt( oTarget, "chat_language", GetLocalInt( oPC, "chat_language" ) );
+            SetLocalInt( oTarget, "chat_reverse", GetLocalInt( oPC, "chat_reverse" ) );
+            SetLocalString( oTarget, "chat_emote", GetLocalString( oPC, "chat_emote" ) );
+            }
     }
-	else if( sOption == "v" ){
+    else if( sOption == "v" ){
     oTarget = GetNearestObjectByTag( "vassal_"+GetPCPublicCDKey( oPC ), oPC );
 
     SetLocalInt( oTarget, "chat_language", GetLocalInt( oPC, "chat_language" ) );

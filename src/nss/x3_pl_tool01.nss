@@ -108,6 +108,8 @@ void main()
 {
     oPC = OBJECT_SELF;
     object oTarget = GetSpellTargetObject();
+    string sTag = GetTag (oTarget);
+    string sUUUID;
     location lLocation = GetSpellTargetLocation();
     int nNode = GetLocalInt( oPC, "ds_node" );
 
@@ -121,7 +123,11 @@ void main()
     oAssociate5 = GetAssociate(5, oPC, 1); // Dominated
     oAssociate6 = GetAssociate(1, oPC, 1); // Henchman
 
-
+    if (sTag == "ds_npc_"+GetPCPublicCDKey( oPC )){
+        sUUUID = GetObjectUUID (oTarget);
+        SetLocalString (oPC, "bc_marked", sUUUID);
+        SetLocalInt (oPC, "marked_bc", 1);
+        }
     // If target is valid & hostile, command all associates to attack the target.
     if (GetIsObjectValid(oCreature) && GetIsReactionTypeHostile(oCreature, oPC) == TRUE) {
         attackTarget(oCreature);

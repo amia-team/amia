@@ -128,8 +128,9 @@ void main()
         sUUUID = GetObjectUUID (oTarget);
         SetLocalString (oPC, "bc_marked", sUUUID);
         SetLocalInt (oPC, "marked_bc", 1);
+        SendMessageToPC ( oPC, "BC marked for text: "+GetName( oTarget )+"." );
 
-		      return;
+	return;
     }
     // If target is valid & hostile, command all associates to attack the target.
     if (GetIsObjectValid(oCreature) && GetIsReactionTypeHostile(oCreature, oPC) == TRUE) {

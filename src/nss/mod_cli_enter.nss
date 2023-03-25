@@ -1,3 +1,8 @@
+//
+//Update log:
+// 24-March-2023    Frozen  Added shifter, flight cooldown and bc marking removal (similare to HIPS)
+
+
 #include "nw_i0_tool"
 #include "amia_include"
 #include "inc_dc_api"
@@ -211,10 +216,11 @@ void main(){
     CheckWeeklyReset(oPC);
     DailyDC(oPC);
     }
-
-    if (GetLocalInt(oPC,"HIPSCooldown") != 0) {
-        DeleteLocalInt(oPC,"HIPSCooldown");
-    }
+    // Cleaning cooldowns and variables to prevent bugs/issues
+    if (GetLocalInt(oPC,"HIPSCooldown") != 0)   { DeleteLocalInt(oPC,"HIPSCooldown"); }
+    if (GetLocalInt(oPC,"flight_cooldown") != 0){ DeleteLocalInt(oPC,"flight_cooldown"); }
+    if (GetLocalInt(oPC,"POLY_COOLDOWN") != 0)  { DeleteLocalInt(oPC,"POLY_COOLDOWN"); }
+    if (GetLocalInt(oPC,"marked_bc") != 0)      { DeleteLocalInt(oPC,"marked_bc"); }
 
     //Check DwD and AA prereq
     CheckPrereq( oPC );

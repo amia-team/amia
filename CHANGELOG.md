@@ -33,8 +33,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- Massive new docks added
 ### Fixed
 - Kingdom of Kohlingen: Fort Cystana, Argent Keep = Changed griffon to have correct portrait
-- Fix to prevent shifter CD getting stuck on logging outdated (there was one, this is a failsafe)
-- Fix to prevent Flight CD from getting stuck on logging outdated
+- Fix to prevent shifter CD getting stuck on logging out (there was one, this is a failsafe)
+- Fix to prevent Flight CD from getting stuck on logging out
 - removed "<c ï¿½ï¿½>" from getting playertools 
 
 	

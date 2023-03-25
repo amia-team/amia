@@ -111,6 +111,7 @@ void main()
     object oTarget = GetSpellTargetObject();
     string sTag = GetTag (oTarget);
     string sUUUID;
+    string sScriptUsed = GetEventScript (oTarget, 9012);
     location lLocation = GetSpellTargetLocation();
     int nNode = GetLocalInt( oPC, "ds_node" );
 
@@ -123,6 +124,10 @@ void main()
     oAssociate4 = GetAssociate(2, oPC, 1); // Animal Companion
     oAssociate5 = GetAssociate(5, oPC, 1); // Dominated
     oAssociate6 = GetAssociate(1, oPC, 1); // Henchman
+
+    //debug for testing us_sit
+    SendMessageToPC (oPC, "script onused: " + sScriptUsed);
+    DelayCommand (5.0, SendMessageToPC (oPC, "Tag: " +sTag) );
 
     // This is to tag a target (linked) BC for use of the f_voice b command
     if (sTag == "ds_npc_"+GetPCPublicCDKey( oPC )){

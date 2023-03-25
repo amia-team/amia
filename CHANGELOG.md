@@ -23,14 +23,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Playertools now also mark a bottled Companion for speech with "f_voice b" (rather then auto closest, will still do that if non is marked)
 - Generic summon is now streamlined to 1 script, using your existing 2e or 3rd GS first time will update them.
 - Area changes:	
-		- Amia Forest: Oakmist Vale, Treetop Village
-			- Daycare finished 
-			- Spa bar finished (save a drinks merchant that will come later)
-			- Pool finished
-		- Amia Forest: Oakmist Vale
-			- Added waterfall to match treetop village
-		- Blue Lagoon
-			- Massive new docks added
+	- Amia Forest: Oakmist Vale, Treetop Village
+		- Daycare finished 
+		- Spa bar finished (save a drinks merchant that will come later)
+		- Pool finished
+	- Amia Forest: Oakmist Vale
+		- Added waterfall to match treetop village
+	- Blue Lagoon
+		- Massive new docks added
 ### Fixed
 - Kingdom of Kohlingen: Fort Cystana, Argent Keep = Changed griffon to have correct portrait
 - Fix to prevent shifter CD getting stuck on logging outdated (there was one, this is a failsafe)

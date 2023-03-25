@@ -109,6 +109,7 @@ void main()
 {
     oPC = OBJECT_SELF;
     object oTarget = GetSpellTargetObject();
+    object oMarkedBC;
     string sTag = GetTag (oTarget);
     string sUUUID;
     string sScriptUsed = GetEventScript (oTarget, 9012);
@@ -137,6 +138,14 @@ void main()
         SendMessageToPC ( oPC, "BC marked for text: "+GetName( oTarget )+"." );
 
               return;
+    }
+
+    if (GetLocalInt (oPC, "marked_bc") == 1 && sScriptUsed == "us_sit"){
+        sUUUID = GetLocalString (oPC, "bc_marked");
+        oMarkedBC = GetObjectByUUID (sUUUID);
+
+        AssignCommand (oMarkedBC, ActionMoveToObject (oTarget, FALSE));
+        AssignCommand (oMarkedBC, ActionInteractObject (oTarget));
     }
     // If target is valid & hostile, command all associates to attack the target.
     if (GetIsObjectValid(oCreature) && GetIsReactionTypeHostile(oCreature, oPC) == TRUE) {

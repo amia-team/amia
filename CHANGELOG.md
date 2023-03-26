@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Player tools now can make a marked bottled companion sit on most places PCs can
 
 ### Fixed
 

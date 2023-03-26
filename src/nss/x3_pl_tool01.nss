@@ -6,6 +6,7 @@ LOG:
     Faded Wings [11/12/2015 - Dawn of Time]
     Raven       [5/1/2017 - Fixes + Henchman ]
     Frozen      [24/March/2023 - BC tagging for f_voice command assignment ]
+	Frozen      [25/March/2023 - added functionality for taged bc to sit ]
 ----------------------------------------------------------------------------------
 */
 
@@ -126,26 +127,24 @@ void main()
     oAssociate5 = GetAssociate(5, oPC, 1); // Dominated
     oAssociate6 = GetAssociate(1, oPC, 1); // Henchman
 
-    //debug for testing us_sit
-    SendMessageToPC (oPC, "script onused: " + sScriptUsed);
-    DelayCommand (5.0, SendMessageToPC (oPC, "Tag: " +sTag) );
-
-    // This is to tag a target (linked) BC for use of the f_voice b command
+    // This is to mark a target (linked) BC for variuos functions
     if (sTag == "ds_npc_"+GetPCPublicCDKey( oPC )){
         sUUUID = GetObjectUUID (oTarget);
         SetLocalString (oPC, "bc_marked", sUUUID);
         SetLocalInt (oPC, "marked_bc", 1);
-        SendMessageToPC ( oPC, "BC marked for text: "+GetName( oTarget )+"." );
+        SendMessageToPC ( oPC, "BC marked: "+GetName( oTarget )+"." );
 
-              return;
+    return;
     }
-
+    // Makes a marked target bc sit on chairs and such
     if (GetLocalInt (oPC, "marked_bc") == 1 && sScriptUsed == "us_sit"){
         sUUUID = GetLocalString (oPC, "bc_marked");
         oMarkedBC = GetObjectByUUID (sUUUID);
 
         AssignCommand (oMarkedBC, ActionMoveToObject (oTarget, FALSE));
         AssignCommand (oMarkedBC, ActionInteractObject (oTarget));
+
+    return;
     }
     // If target is valid & hostile, command all associates to attack the target.
     if (GetIsObjectValid(oCreature) && GetIsReactionTypeHostile(oCreature, oPC) == TRUE) {

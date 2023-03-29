@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Player tools now can make a marked bottled companion sit on most places PCs can
 
 ### Fixed
-
+- Demonreach/hangmans cove area npcs now have a faction of themselfs, so only they will turn hostile when attacked not random guards elswhere.
 
 ## [2.6.3] - 2023-03-25]
 

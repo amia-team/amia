@@ -9,8 +9,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
-- Player tools now can make a marked bottled companion sit on most places PCs can
 
+### Fixed
+
+## [2.6.4] - 2023-03-31]
+
+### Added
+- 2x new player portrait
+- 2x replacment player portrait
+
+### Changed
+- Player tools now can make a marked bottled companion sit on most places PCs can
+- Area Changes
+	- Winya Ravana: council tower
+		- missing chair added
+	- Amia forest: oakmist vale
+		- Waters of life added in 2 spots as per player request
+	- Amia forest: oakmist vale, Treetop village
+		- "gym" platform finished
+		- Spa bar update to fix issues
+		
 ### Fixed
 - Demonreach/hangmans cove area npcs now have a faction of themselfs, so only they will turn hostile when attacked not random guards elswhere.
 

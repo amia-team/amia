@@ -22,7 +22,12 @@ void ActivateItem( )
     string sItem        = GetResRef (oItem);
     string sSummon;
 
-        if      (sItem == "gen_summon" ) { sSummon = "gen_sum_cre" ; }
+        if (sItem == "recall_stone"){
+            // this is due to a weird bug with portal stones turning to gen summons
+            SetTag (oItem, "recall_stone");
+            FloatingTextStringOnCreature ( "PLEASE REPORT SEEING THIS MESSAGE, and use widget again to recall", oPC, FALSE);
+            return; }
+        else if (sItem == "gen_summon" ) { sSummon = "gen_sum_cre" ; }
         else if (sItem == "gen_summon2") { sSummon = "gen_sum_cre2"; }
         else if (sItem == "gen_summon3") { sSummon = "gen_sum_cre3"; }
         else if (sItem == "gen_summon4") { sSummon = "gen_sum_cre4"; }

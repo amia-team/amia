@@ -46,12 +46,19 @@ void main( )
 }
 */
 #include "x2_inc_switches"
+#include "inc_ds_records"
 
 void main( )
 {
    object oPC          = GetItemActivator();
    object oItem        = GetItemActivated();
+   string sItem        = GetTag (oItem);
 
-   SetTag (oItem, "gen_summon");
-   FloatingTextStringOnCreature ( "Widget updated, please use again", oPC, FALSE);
+   if (sItem == "gen_summon3"){
+        SetTag (oItem, "gen_summon");
+        FloatingTextStringOnCreature ( "Widget updated, please use again", oPC, FALSE);
+        }
+   else{
+        FloatingTextStringOnCreature ( "ERROR, Please notify a dev/dm what happend", oPC, FALSE);
+        }
 }

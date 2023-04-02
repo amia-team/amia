@@ -12,6 +12,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
+## [2.6.4.1]
+
+### Hotfix
+- Fixed recall stones turning into generic summoners, including build in fix for existing recallstones that are bugged already
+
+### Changed
+- Alter Self widget moved to tutorial on palette
+
 ## [2.6.4] - 2023-03-31]
 
 ### Added

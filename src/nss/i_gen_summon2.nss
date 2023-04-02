@@ -59,6 +59,6 @@ void main( )
         FloatingTextStringOnCreature ( "Widget updated, please use again", oPC, FALSE);
         }
    else{
-        FloatingTextStringOnCreature ( "ERROR, Please notify a dev/dm what happend", oPC, FALSE);
+        FloatingTextStringOnCreature ( "ERROR, Please notify a dev/dm what happend and: gen2, " +sItem +", " +sResRef, oPC, FALSE);
         }
 }

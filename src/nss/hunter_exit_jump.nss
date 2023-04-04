@@ -1,4 +1,6 @@
-
+//
+// 04-March-2023    Frozen = added faction innocent reset to neutral
+//
 #include "inc_call_time"
 #include "amia_include"
 
@@ -15,6 +17,7 @@ void main()
 
    DeleteLocalInt(oWaypoint,"IsOccupied");
    SetLocalInt(oWidget,"PreviousStartTime",GetRunTimeInSeconds());
+   SetStandardFactionReputation (21 , 50, oPC);
    DelayCommand( 1.0, AssignCommand( oPC, ClearAllActions() ) );
    DelayCommand( 1.1, AssignCommand( oPC, JumpToLocation(lJump) ) );
    DelayCommand( 1.5, giveXP(oPC));

@@ -1,4 +1,4 @@
-# Introductionz
+# Introduction
 This is a guide on how to pull, pack, develop, and unpack the mod so that your changes can be pushed to version control. Familiarity with how git and docker work are not required to be able to complete this guide. If there are any questions, do not hesitate to ask them on the forums or on the discord.
 
 ## Contribution Guidelines

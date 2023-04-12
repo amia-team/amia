@@ -8,11 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Priming module for warlock changes
-
 	- Update includes a lot of empty scripts and creature blueprints that will come into effect with a later hak and Anvil plugin update. As of now, this update has no effect!
-
-	- For more info on the warlock update:
-	https://www.amiaworld.com/phpbb/viewtopic.php?t=4334
+	- For more info on the warlock update: https://www.amiaworld.com/phpbb/viewtopic.php?t=4334
 
 ### Changed
 

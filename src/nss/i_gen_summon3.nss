@@ -53,6 +53,7 @@ void main( )
    object oPC          = GetItemActivator();
    object oItem        = GetItemActivated();
    string sItem        = GetTag (oItem);
+   string sResRef      = GetResRef (oItem);
 
    if (sItem == "gen_summon3"){
         SetTag (oItem, "gen_summon");

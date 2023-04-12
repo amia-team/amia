@@ -1,5 +1,5 @@
 //
-// 04-april-2023    Frozen = added faction innocent reset to neutral
+// 04-March-2023    Frozen = added faction innocent reset to neutral
 //
 #include "inc_call_time"
 #include "amia_include"

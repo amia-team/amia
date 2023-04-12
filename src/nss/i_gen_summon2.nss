@@ -53,7 +53,8 @@ void main( )
    object oPC          = GetItemActivator();
    object oItem        = GetItemActivated();
    string sItem        = GetTag (oItem);
-
+   string sResRef      = GetResRef (oItem);
+   
    if (sItem == "gen_summon2"){
         SetTag (oItem, "gen_summon");
         FloatingTextStringOnCreature ( "Widget updated, please use again", oPC, FALSE);

@@ -2,6 +2,8 @@
   Job Journal On Use Script
 
 - Maverick00053
+
+13-April-2023   Frozen  Added block to prevent BGH from starting in a no-portal zone (which BGH areas are aswel)
 */
 
 #include "x2_inc_switches"
@@ -510,7 +512,16 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
 
    if(nNode == 81)
    {
-      AssignCommand(oPC,ActionStartConversation(oPC,"c_hunter_bgh",TRUE,FALSE));
+    int iAreaBlock = GetLocalInt (GetArea (oPC), "PreventRodOfPorting");
+
+        if  (iAreaBlock == 1)
+            {
+            FloatingTextStringOnCreature(( "<cõ# >You can't start a Big Game Hunt from here.</c>" ), oPC, FALSE );
+            return;
+            }
+        else{
+            AssignCommand(oPC,ActionStartConversation(oPC,"c_hunter_bgh",TRUE,FALSE));
+            }
    }
 
 

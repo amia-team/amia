@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Prework for warlock changes
-	- empty scripts and creature blueprints, wont be active till future anvil plugin update.
+	- Empty scripts and creature blueprints, wont be active till future anvil plugin update.
 	- For more info on the warlock update: https://www.amiaworld.com/phpbb/viewtopic.php?t=4334
 
 ### Changed

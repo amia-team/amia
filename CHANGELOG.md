@@ -7,13 +7,31 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
-- Priming module for warlock changes
-	- Update includes a lot of empty scripts and creature blueprints that will come into effect with a later hak and Anvil plugin update. As of now, this update has no effect!
-	- For more info on the warlock update: https://www.amiaworld.com/phpbb/viewtopic.php?t=4334
 
 ### Changed
 
 ### Fixed
+
+## [2.6.5]
+
+### Added
+- Prework for warlock changes
+	- empty scripts and creature blueprints, wont be active till future anvil plugin update.
+	- For more info on the warlock update: https://www.amiaworld.com/phpbb/viewtopic.php?t=4334
+
+### Changed
+- Area Changes
+	- Amia forest: oakmist vale
+		- relabeling pie/drinks baskets
+	- Amia forest: oakmist vale, Treetop village
+		- Reduced size siege gear (was massive)
+		- Removed random floaty lamp
+
+### Fixed
+- Big Game Hunter exit, starting bug/exploit
+- Big Game Hunter resets Innocent faction on exit
+- Unicorn statue mane, made to not be moving now
+
 
 ## [2.6.4.1]
 

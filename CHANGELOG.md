@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Hair dye kit, crafted by artists with any Dye and Elemental Essence: water
 - Tattoo Kit, Crafted by artist with any Dye and Steel Ingot
 - Hair and Tattoo widget, can be bought with dc, and is meaned for shifters, druids, assasins, transmuters and others who can change their looks on the go
+- Player portrait
 
 ### Changed
 - Area Changes

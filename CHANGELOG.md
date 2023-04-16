@@ -18,6 +18,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Prework for warlock changes
 	- Empty scripts and creature blueprints, wont be active till future anvil plugin update.
 	- For more info on the warlock update: https://www.amiaworld.com/phpbb/viewtopic.php?t=4334
+- Hair dye kit, crafted by artists with any Dye and Elemental Essence: water
+- Tattoo Kit, Crafted by artist with any Dye and Steel Ingot
+- Hair and Tattoo widget, can be bought with dc, and is meaned for shifters, druids, assasins, transmuters and others who can change their looks on the go
 
 ### Changed
 - Area Changes

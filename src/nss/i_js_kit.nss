@@ -6,6 +6,10 @@
 //                                                                                             //
 //Contains:                                                                                    //
 //-armor appearance storace function                                                           //
+//-Hair/tattoo dye/set kits + unlim                                                                                             //
+//                                                                                             //
+//edits:                                                                                       //
+//16-april-2023 Frozen  added hair, tattoo and both kits                                       //                                                   //
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 

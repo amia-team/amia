@@ -5,7 +5,8 @@
 
   Edits:
   072722 Lord-Jyssev: new sPlaceableName naming method for placeables and ability to use PLC Spawners in recipes by sType Variable
-
+  ??     Frozen: Tailor kit added
+  16-april-2023 Frozen: Hair and tattoo kit added
 
 */
 
@@ -598,6 +599,8 @@ void ArtistConverter(object oPC, object oBench, int nNode)
           case 6: sProduct = "js_art_colred"; sIngredient1 = "js_farm_cher"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 500; break;
           case 7: sProduct = "js_art_colwht"; sIngredient1 = "js_alch_elea"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 500; break;
           case 8: sProduct = "js_art_colyel"; sIngredient1 = "js_farm_carr"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 500; break;
+		  case 9: sProduct = "js_tattoo_kit"; sIngredient1 = "jobsystemdye"; sIngredient2 = "js_bla_stin"; sType = "none"; sMaterial = "none"; nCost = 1000; break;
+		  case 10: sProduct = "js_hairdye_kit"; sIngredient1 = "jobsystemdye"; sIngredient2 = "js_alch_elew"; sType = "none"; sMaterial = "none"; nCost = 1000; break;
 
         }
     }
@@ -1379,7 +1382,7 @@ void TailorConverter(object oPC, object oBench, int nNode)
       case 52: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtent"; sIngredient2 = "js_art_colblu"; sType = "js_bui_tent4"; sPlaceableName = "Big Blue and White Tent"; sMaterial = "plc"; nCost = 10000; break;
       case 53: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtent"; sIngredient2 = "js_art_colred"; sType = "js_bui_tent5"; sPlaceableName = "Big Red and White Tent"; sMaterial = "plc"; nCost = 10000; break;
       case 54: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtentrdwht"; sIngredient2 = "js_art_colblk"; sType = "js_bui_tent6"; sPlaceableName = "Big Red and Black Tent"; sMaterial = "plc"; nCost = 10000; break;
-	  case 55: sProduct = "js_tailorkit"; sIngredient1 = "js_tai_bosi"; sIngredient2 = "js_bla_stin"; nCost = 10000; break;
+      case 55: sProduct = "js_tailorkit"; sIngredient1 = "js_tai_bosi"; sIngredient2 = "js_bla_stin"; nCost = 10000; break;
 
     }
 
@@ -1910,6 +1913,32 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
            nWeaponMaterial = GetLocalInt(oItemInChest, "material");
            sWeaponResRef = GetResRef(oItemInChest);
            nWeaponMaterialPresent = 1;
+        }
+      }
+      //
+
+	        // Catch all for dye so any work with jobs
+      if(sIngredient1 == "jobsystemdye")
+      {
+        if((GetResRef(oItemInChest) == "js_art_colblk") || (GetResRef(oItemInChest) == "js_art_colblu") ||
+        (GetResRef(oItemInChest) == "js_art_colgrn") || (GetResRef(oItemInChest) == "js_art_colorn") ||
+        (GetResRef(oItemInChest) == "js_art_colprp") || (GetResRef(oItemInChest) == "js_art_colred") ||
+		(GetResRef(oItemInChest) == "js_art_colwht") || (GetResRef(oItemInChest) == "js_art_colyel"))
+        {
+           nIngredient1Found == 1;
+           oIngredient1 = oItemInChest;
+        }
+      }
+
+      if(sIngredient2 == "jobsystemdye")
+      {
+        if((GetResRef(oItemInChest) == "js_art_colblk") || (GetResRef(oItemInChest) == "js_art_colblu") ||
+        (GetResRef(oItemInChest) == "js_art_colgrn") || (GetResRef(oItemInChest) == "js_art_colorn") ||
+        (GetResRef(oItemInChest) == "js_art_colprp") || (GetResRef(oItemInChest) == "js_art_colred") ||
+		(GetResRef(oItemInChest) == "js_art_colwht") || (GetResRef(oItemInChest) == "js_art_colyel"))
+        {
+           nIngredient2Found == 1;
+           oIngredient2 = oItemInChest;
         }
       }
       //

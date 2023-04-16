@@ -6,8 +6,12 @@
 //used as: action script
 //date:    08/06/08
 //author:  Terra
-
-
+//
+//-----------------------------------------------------------------------------
+// Edits
+//-----------------------------------------------------------------------------
+//16-april-2023 Frozen  added parts for using script/conversation from widget (oItem)
+//
 //-------------------------------------------------------------------------------
 // includes
 //-------------------------------------------------------------------------------
@@ -67,23 +71,31 @@ void main()
     }
 
     SetColor( oPC, nColorChannel, GetLocalInt( oPC, "td_color_selected" ) );
-    //DEBUG MESSAGE
-    SendMessageToPC (oPC, "debug check 1 " + GetTag (oItem) + GetResRef (oItem));
+
+        if ( GetResRef (oItem) == "js_hairdye_kit" || GetResRef (oItem) == "js_tattoo_kit" ) {
+            DestroyObject (oItem);
+            SendMessageToPC (oPC, "You used up the kit.");
+            }
 
     if ( nColorChannel == COLOR_CHANNEL_HAIR && d100() > 97 ){
 
         AssignCommand( oNPC, SpeakString( "Ooops! A tiny bit of your ear just went 'POOFF'! Sorry!?" ) );
         ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectDamage( 1 ), oPC );
-            //DEBUG MESSAGE
-        SendMessageToPC (oPC, "debug check 2 " + GetTag (oItem) + GetResRef (oItem));
+
+            if ( GetResRef (oItem) == "js_hairdye_kit" || GetResRef (oItem) == "js_tattoo_kit" ) {
+                DestroyObject (oItem);
+                SendMessageToPC (oPC, "You used up the kit.");
+                }
     }
     else if ( ( nColorChannel == COLOR_CHANNEL_TATTOO_1 || nColorChannel == COLOR_CHANNEL_TATTOO_2 )
               && d100() > 97 ){
 
         AssignCommand( oNPC, SpeakString( "Ooops! Did that hurt?" ) );
         ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectDamage( 1 ), oPC );
-            //DEBUG MESSAGE
-        SendMessageToPC (oPC, "debug check 3" + GetTag (oItem) + GetResRef (oItem));
+            if ( GetResRef (oItem) == "js_hairdye_kit" || GetResRef (oItem) == "js_tattoo_kit" ) {
+                DestroyObject (oItem);
+                SendMessageToPC (oPC, "You used up the kit.");
+                }
     }
 
     break;
@@ -115,8 +127,10 @@ void main()
     case 9:
     TakeGoldFromCreature(iPrice,oPC, TRUE);
     SetCreatureBodyPart(GetLocalInt(oPC, "td_tattooe_target"), GetLocalInt(oPC, "td_skintype"), oPC);
-        //DEBUG MESSAGE
-    SendMessageToPC (oPC, "debug check 4" + GetTag (oItem) + GetResRef (oItem));
+        if ( GetResRef (oItem) == "js_hairdye_kit" || GetResRef (oItem) == "js_tattoo_kit" ) {
+            DestroyObject (oItem);
+            SendMessageToPC (oPC, "You used up the kit.");
+            }
     if( d100() > 90 )
     {
     AssignCommand( oNPC, SpeakString( "Ooops! Did that sting?" ) );

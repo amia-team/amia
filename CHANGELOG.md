@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-## [2.6.5]
+## [2.6.5] - 2023-04-16]
 
 ### Added
 - Prework for warlock changes
@@ -22,8 +22,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Tattoo Kit, Crafted by artist with any Dye and Steel Ingot
 - Hair and Tattoo widget, can be bought with dc, and is meaned for shifters, druids, assasins, transmuters and others who can change their looks on the go
 - Player portrait
+- 2x new plc (flowers) to palette
 
 ### Changed
+- fire giant king sword now super fancy looking
 - Area Changes
 	- Amia forest: oakmist vale
 		- relabeling pie/drinks baskets
@@ -32,6 +34,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- Removed random floaty lamp
 
 ### Fixed
+- Fire Giant axes now have shafts again
+- Shifter azar and dwarf shape axes now have shafts again
 - Big Game Hunter exit, starting bug/exploit
 - Big Game Hunter resets Innocent faction on exit
 - Unicorn statue mane, made to not be moving now

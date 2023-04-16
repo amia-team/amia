@@ -32,6 +32,7 @@ void main()
 
     object oPC  = OBJECT_SELF;
     object oNPC = GetLocalObject( oPC , "ds_target" );
+    object oItem    = GetLocalObject (oPC , "ds_item" );
     int iNode   = GetLocalInt( oPC , "ds_node" );
     int iNumber = 0;
     int nColorChannel;
@@ -66,17 +67,23 @@ void main()
     }
 
     SetColor( oPC, nColorChannel, GetLocalInt( oPC, "td_color_selected" ) );
+    //DEBUG MESSAGE
+    SendMessageToPC (oPC, "debug check 1 " + GetTag (oItem) + GetResRef (oItem));
 
     if ( nColorChannel == COLOR_CHANNEL_HAIR && d100() > 97 ){
 
         AssignCommand( oNPC, SpeakString( "Ooops! A tiny bit of your ear just went 'POOFF'! Sorry!?" ) );
         ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectDamage( 1 ), oPC );
+            //DEBUG MESSAGE
+        SendMessageToPC (oPC, "debug check 2 " + GetTag (oItem) + GetResRef (oItem));
     }
     else if ( ( nColorChannel == COLOR_CHANNEL_TATTOO_1 || nColorChannel == COLOR_CHANNEL_TATTOO_2 )
               && d100() > 97 ){
 
         AssignCommand( oNPC, SpeakString( "Ooops! Did that hurt?" ) );
         ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectDamage( 1 ), oPC );
+            //DEBUG MESSAGE
+        SendMessageToPC (oPC, "debug check 3" + GetTag (oItem) + GetResRef (oItem));
     }
 
     break;
@@ -108,6 +115,8 @@ void main()
     case 9:
     TakeGoldFromCreature(iPrice,oPC, TRUE);
     SetCreatureBodyPart(GetLocalInt(oPC, "td_tattooe_target"), GetLocalInt(oPC, "td_skintype"), oPC);
+        //DEBUG MESSAGE
+    SendMessageToPC (oPC, "debug check 4" + GetTag (oItem) + GetResRef (oItem));
     if( d100() > 90 )
     {
     AssignCommand( oNPC, SpeakString( "Ooops! Did that sting?" ) );

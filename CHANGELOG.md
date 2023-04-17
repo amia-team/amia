@@ -39,6 +39,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Big Game Hunter exit, starting bug/exploit
 - Big Game Hunter resets Innocent faction on exit
 - Unicorn statue mane, made to not be moving now
+- Combat dummy crafting now correctly needs phandar wood not planks
 
 
 ## [2.6.4.1]

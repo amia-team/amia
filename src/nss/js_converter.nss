@@ -328,7 +328,7 @@ void ArchitectConverter(object oPC, object oBench, int nNode)
       case 5: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_zupl"; sIngredient2 = "js_bla_stin"; sType = "js_bui_drta"; sPlaceableName = "Drow Table"; sMaterial = "plc"; nCost = 2000; break;
       case 6: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_phpl"; sIngredient2 = "js_tai_boco"; sType = "js_bui_couc"; sPlaceableName = "Couch"; sMaterial = "plc"; nCost = 2000; break;
       case 7: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_zupl"; sIngredient2 = "js_bla_siin"; sType = "js_bui_dral"; sPlaceableName = "Drow Altar"; sMaterial = "plc"; nCost = 2000; break;
-      case 8: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_phpl"; sIngredient2 = "js_farm_cott"; sType = "js_bui_comb"; sPlaceableName = "Combat Dummy"; sMaterial = "plc"; nCost = 2000; break;
+      case 8: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_farm_cott"; sType = "js_bui_comb"; sPlaceableName = "Combat Dummy"; sMaterial = "plc"; nCost = 2000; break;
       case 9: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_tai_bowo"; sType = "js_bui_bed"; sPlaceableName = "Bed"; sMaterial = "plc"; nCost = 2000; break;
       case 10: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_bla_irin"; sType = "js_bui_trsi"; sPlaceableName = "Transportable Sign"; sMaterial = "plc"; nCost = 2000; break;
       case 11: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_phpl"; sIngredient2 = "none"; sType = "js_bui_chai"; sPlaceableName = "Chair"; sMaterial = "plc"; nCost = 2000; break;

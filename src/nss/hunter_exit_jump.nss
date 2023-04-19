@@ -17,7 +17,7 @@ void main()
 
    DeleteLocalInt(oWaypoint,"IsOccupied");
    SetLocalInt(oWidget,"PreviousStartTime",GetRunTimeInSeconds());
-   SetStandardFactionReputation (18 , 50, oPC);
+   //SetStandardFactionReputation (18 , 50, oPC);
    DelayCommand( 1.0, AssignCommand( oPC, ClearAllActions() ) );
    DelayCommand( 1.1, AssignCommand( oPC, JumpToLocation(lJump) ) );
    DelayCommand( 1.5, giveXP(oPC));

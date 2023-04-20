@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
+- Weapon focus and improved critical feats for trident now require either simple or druid weapon proficiency to be taken. Incorrectly used to require martial weapon proficiency.
 
 ## [2.6.5] - 2023-04-16]
 

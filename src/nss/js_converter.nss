@@ -330,7 +330,7 @@ void ArchitectConverter(object oPC, object oBench, int nNode)
       case 7: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_zupl"; sIngredient2 = "js_bla_siin"; sType = "js_bui_dral"; sPlaceableName = "Drow Altar"; sMaterial = "plc"; nCost = 2000; break;
       case 8: sProduct = "js_plcspawner"; sIngredient1 = "js_tree_phaw"; sIngredient2 = "js_farm_cott"; sType = "js_bui_comb"; sPlaceableName = "Combat Dummy"; sMaterial = "plc"; nCost = 2000; break;
       case 9: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_tai_bowo"; sType = "js_bui_bed"; sPlaceableName = "Bed"; sMaterial = "plc"; nCost = 2000; break;
-      case 10: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_bla_irin"; sType = "js_bui_trsi"; sPlaceableName = "Transportable Sign"; sMaterial = "plc"; nCost = 2000; break;
+      case 10: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_bla_irin"; sType = "js_bui_trsi"; sPlaceableName = "Transportable Sign Small"; sMaterial = "plc"; nCost = 2000; break;
       case 11: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_phpl"; sIngredient2 = "none"; sType = "js_bui_chai"; sPlaceableName = "Chair"; sMaterial = "plc"; nCost = 2000; break;
       case 12: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_bla_goin"; sType = "js_bui_thro"; sPlaceableName = "Throne"; sMaterial = "plc"; nCost = 2000; break;
       case 13: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "none"; sType = "js_bui_stoo"; sPlaceableName = "Stool"; sMaterial = "plc"; nCost = 2000; break;
@@ -373,8 +373,8 @@ void ArchitectConverter(object oPC, object oBench, int nNode)
       case 50: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_treant"; sIngredient2 = "js_tree_shaw"; sType = "js_bui_totem"; sPlaceableName = "Massive Tribal Totem"; sMaterial = "plc"; nCost = 10000; break;
       case 51: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_sbone"; sIngredient2 = "js_tai_boco"; sType = "js_bui_dreamcat"; sPlaceableName = "Dream Catcher"; sMaterial = "plc"; nCost = 5000; break;
       case 52: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_sbone"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_bonecage"; sPlaceableName = "Bone Cage"; sMaterial = "plc"; nCost = 5000; break;
-      case 53: sProduct = "js_chest_kit"; sIngredient1 = "js_tree_shaw"; sIngredient2 = "js_herb_sils"; nCost = 5000; break;
-
+      case 53: sProduct = "js_chest_kit";  sIngredient1 = "js_tree_shaw"; sIngredient2 = "js_herb_sils"; nCost = 5000; break;
+      case 54: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_bla_irin"; sType = "js_bui_trsi2"; sPlaceableName = "Transportable Sign Large"; sMaterial = "plc"; nCost = 2000; break;
     }
 
     CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
@@ -599,8 +599,8 @@ void ArtistConverter(object oPC, object oBench, int nNode)
           case 6: sProduct = "js_art_colred"; sIngredient1 = "js_farm_cher"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 500; break;
           case 7: sProduct = "js_art_colwht"; sIngredient1 = "js_alch_elea"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 500; break;
           case 8: sProduct = "js_art_colyel"; sIngredient1 = "js_farm_carr"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 500; break;
-		  case 9: sProduct = "js_tattoo_kit"; sIngredient1 = "jobsystemdye"; sIngredient2 = "js_bla_stin"; sType = "none"; sMaterial = "none"; nCost = 1000; break;
-		  case 10: sProduct = "js_hairdye_kit"; sIngredient1 = "jobsystemdye"; sIngredient2 = "js_alch_elew"; sType = "none"; sMaterial = "none"; nCost = 1000; break;
+          case 9: sProduct = "js_tattoo_kit"; sIngredient1 = "jobsystemdye"; sIngredient2 = "js_bla_stin"; sType = "none"; sMaterial = "none"; nCost = 1000; break;
+          case 10: sProduct = "js_hairdye_kit"; sIngredient1 = "jobsystemdye"; sIngredient2 = "js_alch_elew"; sType = "none"; sMaterial = "none"; nCost = 1000; break;
 
         }
     }
@@ -1917,13 +1917,13 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
       }
       //
 
-	        // Catch all for dye so any work with jobs
+            // Catch all for dye so any work with jobs
       if(sIngredient1 == "jobsystemdye")
       {
         if((GetResRef(oItemInChest) == "js_art_colblk") || (GetResRef(oItemInChest) == "js_art_colblu") ||
         (GetResRef(oItemInChest) == "js_art_colgrn") || (GetResRef(oItemInChest) == "js_art_colorn") ||
         (GetResRef(oItemInChest) == "js_art_colprp") || (GetResRef(oItemInChest) == "js_art_colred") ||
-		(GetResRef(oItemInChest) == "js_art_colwht") || (GetResRef(oItemInChest) == "js_art_colyel"))
+        (GetResRef(oItemInChest) == "js_art_colwht") || (GetResRef(oItemInChest) == "js_art_colyel"))
         {
            nIngredient1Found == 1;
            oIngredient1 = oItemInChest;
@@ -1935,7 +1935,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
         if((GetResRef(oItemInChest) == "js_art_colblk") || (GetResRef(oItemInChest) == "js_art_colblu") ||
         (GetResRef(oItemInChest) == "js_art_colgrn") || (GetResRef(oItemInChest) == "js_art_colorn") ||
         (GetResRef(oItemInChest) == "js_art_colprp") || (GetResRef(oItemInChest) == "js_art_colred") ||
-		(GetResRef(oItemInChest) == "js_art_colwht") || (GetResRef(oItemInChest) == "js_art_colyel"))
+        (GetResRef(oItemInChest) == "js_art_colwht") || (GetResRef(oItemInChest) == "js_art_colyel"))
         {
            nIngredient2Found == 1;
            oIngredient2 = oItemInChest;

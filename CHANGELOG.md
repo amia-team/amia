@@ -7,12 +7,29 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
-- Player portrait, Izia
 
 ### Changed
 
 ### Fixed
-- Weapon focus and improved critical feats for trident now require either simple or druid weapon proficiency to be taken. Incorrectly used to require martial weapon proficiency.
+
+## [2.6.6] - 2023-04-22]
+
+### Added
+- Player portrait, Izia
+- large Signs for job system crafting (arcitects) (these look like the old ones pre EE)
+- Plc shrinking unicorn
+
+### Changed
+- Changed job system Gargoyel to fancier model
+- Craftable signs renamed to small
+- Area Changes
+	- Djinn oasis 	
+		- Minor name tweak
+	
+### Fixed
+- Weapon focus and improved critical feats for trident now require either simple or druid weapon proficiency.
+- Crash fix + setting BGH neutral creatures to difirent faction
+- Ancient Cordor scriped removed to stop error message + updating cetha areas to have proper entry scripts
 
 ## [2.6.5] - 2023-04-16]
 

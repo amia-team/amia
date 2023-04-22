@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Plc shrinking unicorn
 
 ### Changed
-- Changed job system Gargoyel to fancier model
+- Changed job system Gargoyle to fancier model
 - Craftable signs renamed to small
 - Area Changes
 	- Djinn oasis 	

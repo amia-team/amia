@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Weapon focus and improved critical feats for trident now require either simple or druid weapon proficiency.
 - Crash fix + setting BGH neutral creatures to difirent faction
 - Ancient Cordor scriped removed to stop error message + updating cetha areas to have proper entry scripts
+- Reapplied some pulled things in the crash bug hunting
 
 ## [2.6.5] - 2023-04-16]
 

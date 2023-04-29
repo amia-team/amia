@@ -10,6 +10,7 @@
 //2008-05-19    Disco       Added The Hurting :D
 //2023-02-13    Frozen      Made multi (difirent)BC spawning possible
 //2023-02-26    Frozen      Made spawned npc not have collision
+//2023-04-29	Frozen		Added option to not have hitbox killed (ghost int 1)
 
 //-------------------------------------------------------------------------------
 // includes
@@ -224,7 +225,6 @@ void main(){
 
                 if (GetLocalInt( oItem, "ghost") == 0){
                     ApplyEffectToObject(DURATION_TYPE_PERMANENT, EffectCutsceneGhost(), oNPC);
-                    SendMessageToPC(oPC, "Applying ghost effect 1"); //debug
                     }
                     
                 if ( sBio != "" ){
@@ -270,7 +270,6 @@ void main(){
 
                 if (GetLocalInt( oItem, "ghost") == 0){
                     ApplyEffectToObject(DURATION_TYPE_PERMANENT, EffectCutsceneGhost(), oNPC);
-                    SendMessageToPC(oPC, "Applying ghost effect 2"); //debug
                     }
                     
                 if ( sBio != "" ){

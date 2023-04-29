@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - 2 new plcs (flag, floating candle)
 - 1 new item (misc small 2, was missing for QoL)
+- unicorn Poly potion (item and new script)
 
 ### Changed
 - Area Changes

@@ -217,12 +217,16 @@ void main(){
                 SetLocalString (oItem, "UUID", sUUID);
                 SetLocalInt (oItem, "spawned", 1);
                 SetLocalObject( oNPC, "ds_master", oPC );
-                ApplyEffectToObject(DURATION_TYPE_PERMANENT, EffectCutsceneGhost(), oNPC);
                 DelayCommand( 1.0, DressNPC( oPC, oNPC ) );
                 DelayCommand( 3.0, SetCreatureWingType( nWings, oNPC ) );
                 DelayCommand( 4.0, SetCreatureTailType( nTail, oNPC ) );
                 DelayCommand( 5.0, SetPortraitResRef( oNPC, sPortrait ) );
 
+                if (GetLocalInt( oItem, "ghost") == 0){
+                    ApplyEffectToObject(DURATION_TYPE_PERMANENT, EffectCutsceneGhost(), oNPC);
+                    SendMessageToPC(oPC, "Applying ghost effect 1"); //debug
+                    }
+                    
                 if ( sBio != "" ){
 
                     DelayCommand( 6.0, SetDescription( oNPC, sBio ) );
@@ -261,10 +265,14 @@ void main(){
                 SetLocalInt (oItem, "spawned", 1);
                 SetLocalObject( oNPC, "ds_master", oPC );
                 SetLocalInt( oNPC, "ds_type", 2 );
-                ApplyEffectToObject(DURATION_TYPE_PERMANENT, EffectCutsceneGhost(), oNPC);
                 DelayCommand( 1.0, SetCreatureAppearanceType( oNPC, nAppearance ) );
                 DelayCommand( 2.0, SetPortraitResRef( oNPC, sPortrait ) );
 
+                if (GetLocalInt( oItem, "ghost") == 0){
+                    ApplyEffectToObject(DURATION_TYPE_PERMANENT, EffectCutsceneGhost(), oNPC);
+                    SendMessageToPC(oPC, "Applying ghost effect 2"); //debug
+                    }
+                    
                 if ( sBio != "" ){
 
                     DelayCommand( 4.0, SetDescription( oNPC, sBio ) );

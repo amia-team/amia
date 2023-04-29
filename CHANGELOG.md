@@ -7,8 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- 2 new plcs (flag, floating candle)
+- 1 new item (misc small 2, was missing for QoL)
 
 ### Changed
+- Area Changes
+	- Winya Ravana: council tower
+		- Plot updates
+- Name changer bio, added the comand to set names (for dm/rh)
 
 ### Fixed
 

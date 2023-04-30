@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Area Changes
 	- Winya Ravana: council tower
-		- Plot updates
+		- Plot updates 
 - Name changer bio, added the comand to set names (for dm/rh)
 
 ### Fixed

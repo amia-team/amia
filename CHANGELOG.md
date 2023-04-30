@@ -7,17 +7,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [2.6.7] - 2023-04-30]
+
+### Added
 - 2 new plcs (flag, floating candle)
 - 1 new item (misc small 2, was missing for QoL)
-- unicorn Poly potion (item and new script)
+- unicorn Poly potion (2da update, new potion item and new script)
 
 ### Changed
 - Area Changes
 	- Winya Ravana: council tower
 		- Plot updates 
-- Name changer bio, added the comand to set names (for dm/rh)
+- Name changer, added the comand to set names in bio (for dm/rh)
 
 ### Fixed
+- Gen summon bio's updated to reflect number of summoner
 
 ## [2.6.6] - 2023-04-22]
 

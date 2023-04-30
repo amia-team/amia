@@ -41,7 +41,8 @@ void main( ){
                 case 3: nAppearance = 1361 ;    break; //Unicorn_Celestial_Charger_White
                 case 4: nAppearance = 1389 ;    break; //Unicorn_Celestial_Charger_White_Mare
                 case 5: nAppearance = 1390 ;    break; //Unicorn_Celestial_Charger_White_Mare
-
+				case 6: nAppearance = 1391 ;    break; //Unicorn_White_Mare
+				
                 default:                                        break;
 
             }

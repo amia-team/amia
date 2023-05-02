@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- New-ish, "Fox: Red" model (current one renamed to "Fox: Desert")
 
 ### Changed
 

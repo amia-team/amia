@@ -521,9 +521,9 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
    {
       string sTarget = GetResRef( oTarget );
       string sContainerType = "Bag";
-      int nCapacity = 2000;
+      int nCapacity = 10000;
       int nItemCount = GetLocalInt(oWidget, "ItemCount");
-      int nBatch = 20;
+      int nBatch = 100;
 
       if ( ( GetSubString(sTarget, 0, 12) == "nw_it_medkit" ) && GetObjectType( oTarget ) == OBJECT_TYPE_ITEM  )
       {
@@ -566,9 +566,9 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
    {
       string sTarget = GetResRef( oTarget );
       string sContainerType = "Pouch";
-      int nCapacity = 1000;
+      int nCapacity = 10000;
       int nItemCount = GetLocalInt(oWidget, "ItemCount");
-      int nBatch = 10;
+      int nBatch = 100;
 
       if ( ( GetStringLeft( sTarget, 7 ) == "js_gem_"
              || sTarget == "js_jew_sapp"
@@ -617,7 +617,7 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
    {
       string sTarget = GetResRef( oTarget );
       string sContainerType = "Tube";
-      int nCapacity = 50;
+      int nCapacity = 100;
       int nItemCount = GetLocalInt(oWidget, "ItemCount");
       int nBatch = 1;
 
@@ -669,7 +669,7 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
    {
       string sTarget = GetResRef( oTarget );
       string sContainerType = "Holder";
-      int nCapacity = 50;
+      int nCapacity = 100;
       int nItemCount = GetLocalInt(oWidget, "ItemCount");
       int nBatch = 10;
 
@@ -759,9 +759,9 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
    {
       string sTarget = GetResRef( oTarget );
       string sContainerType = "Case";
-      int nCapacity = 50;
+      int nCapacity = 100;
       int nItemCount = GetLocalInt(oWidget, "ItemCount");
-      int nBatch = 1;
+      int nBatch = 10;
 
       if ( GetBaseItemType( oTarget ) == BASE_ITEM_BLANK_WAND )
       {

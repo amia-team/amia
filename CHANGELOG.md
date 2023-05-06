@@ -3,15 +3,27 @@ All notable changes to this project will be documented in this file.
  
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
-
 ## [Unreleased]
 
 ### Added
-- New-ish, "Fox: Red" model (current one renamed to "Fox: Desert")
 
 ### Changed
 
 ### Fixed
+
+## [2.6.8 - 2023-05-06]
+
+### Added
+- New-ish, "Fox: Red" model (current one renamed to "Fox: Desert")
+- many new alchemy plcs added to palette
+
+### Changed
+- Jobsystem artificer bags/cases max/recovery amounts changed
+	- Wand case: 100 max Storage, recover amount 10
+	- Scroll case: 100 max Storage, recover amount 10
+	- Mythal tube: 100 max Storage, recover amount 1
+	- Gem case: 10.000 max Storage, recover amount 100
+	- Healing kit case: 10.000 max Storage, recover amount 100
 
 ## [2.6.7] - 2023-04-30]
 

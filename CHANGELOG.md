@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [2.6.8 - 2023-05-06]
 
 ### Added
+- Player portrait
 - New-ish, "Fox: Red" model (current one renamed to "Fox: Desert")
 - many new alchemy plcs added to palette
 

@@ -142,7 +142,7 @@ void main(){
 void SetWidget( object oPC, object oItem, location lTarget ){
 
     int i;
-    int nFlag = 31;
+    int nFlag = 32;
 
     if( GetLocalInt( oItem, "plcs_allowed" ) > 0 )
         nFlag = 2;
@@ -236,7 +236,7 @@ void SpawnGroup( object oPC, object oItem, location lTarget ){
         SendMessageToPC( oPC, "Did you know: using the PLC spawner on yourself will apply your last said message (degrees) to the rotation of your PLC group." );
 
     int i;
-    int nFlag = 31;
+    int nFlag = 32;
 
     for ( i=1; i<nFlag; ++i ){
 

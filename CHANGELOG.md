@@ -6,8 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- few more nature plcs to palette for requests
 
 ### Changed
+- Closed and removed all Vetzer parts of OI bank
 
 ### Fixed
 

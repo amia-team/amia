@@ -519,13 +519,19 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
    }
    else if(sItemResRef == "js_arca_bdbg")//Artificer Bandage Bag
    {
-      string sTarget = GetResRef( oTarget );
+      string sTargetResRef = GetResRef( oTarget );
       string sContainerType = "Bag";
+	     string sTarget;
       int nCapacity = 10000;
       int nItemCount = GetLocalInt(oWidget, "ItemCount");
       int nBatch = 100;
 
-      if ( ( GetSubString(sTarget, 0, 12) == "nw_it_medkit" ) && GetObjectType( oTarget ) == OBJECT_TYPE_ITEM  )
+	         if((sTargetResRef == "js_alch_kit1") ||(sTargetResRef == "nw_it_medkit001") || (sTargetResRef == "basehealerskit1")  || (sTargetResRef == "medkitx1x10")  || (sTargetResRef == "it_medkit002") ) { sTarget = "js_alch_kit1"; }
+     else if((sTargetResRef == "js_alch_kit3") ||(sTargetResRef == "nw_it_medkit002") || (sTargetResRef == "basehealerskit3")  || (sTargetResRef == "medkitx3x10")  || (sTargetResRef == "it_medkit003") ) { sTarget = "js_alch_kit3"; }
+     else if((sTargetResRef == "js_alch_kit6") ||(sTargetResRef == "nw_it_medkit003") || (sTargetResRef == "basehealerskit6")  || (sTargetResRef == "medkitx6x10")  || (sTargetResRef == "it_medkit004") ) { sTarget = "js_alch_kit6"; }
+     else if((sTargetResRef == "js_alch_kit10")||(sTargetResRef == "nw_it_medkit004") || (sTargetResRef == "basehealerskit10" )|| (sTargetResRef == "medkitx10x10") || (sTargetResRef == "it_medkit005") ) { sTarget = "js_alch_kit10";}
+
+      if ( ( GetSubString(sTarget, 0, 11) == "js_alch_kit" ) && GetObjectType( oTarget ) == OBJECT_TYPE_ITEM  )
       {
          StoreItem(oPC, oWidget, oTarget, nCapacity, sContainerType);
       }

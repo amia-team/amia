@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
-- few more nature plcs to palette for requests
+- MANY more nature plcs to palette for requests
 - New PLC additions to module:
 	- 6 Mirrors
 	- 2 Cat statues
@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Closed and removed all Vetzer parts of OI bank
 
 ### Fixed
+- Cetha west, relocating a fence waypoint to prevent spawn next to eachother
 
 ## [2.6.8 - 2023-05-06]
 

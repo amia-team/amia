@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - few more nature plcs to palette for requests
+- 6 new mirror plcs
+- 2 new Cat plcs
+- 1 new painting plc
 
 ### Changed
 - Closed and removed all Vetzer parts of OI bank

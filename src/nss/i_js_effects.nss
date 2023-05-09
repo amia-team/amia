@@ -8,8 +8,9 @@
 
     Changes:
 
-    8/8/2022 Lord Jyssev - Moved scripts for Artificer storage items and made them modular. Also moved Tailor backpack, quiver, and scabbards into js_effects
-
+    08/August/2022 	Lord Jyssev - Moved scripts for Artificer storage items and made them modular. Also moved Tailor backpack, quiver, and scabbards into js_effects
+	06/May/2023		Frozen		- Changed bag/case storage/retrieval amount
+	09/May/2023		Frozen		- Fixed Gem and healing case to store any kind of gem and healing kit + allowing non job/job system things in same bag
 */
 
 
@@ -577,11 +578,18 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
       int nBatch = 100;
 
       if ( ( GetStringLeft( sTarget, 7 ) == "js_gem_"
-             || sTarget == "js_jew_sapp"
-             || sTarget == "js_jew_ruby"
-             || sTarget == "js_jew_crys"
-             || sTarget == "js_jew_diam"
-             || sTarget == "js_jew_emer"
+        || sTarget == "js_jew_sapp"
+        || sTarget == "js_jew_ruby"
+        || sTarget == "js_jew_crys"
+        || sTarget == "js_jew_diam"
+        || sTarget == "js_jew_emer"
+        	||sTarget == "js_arca_ncry"
+        || sTarget == "js_arca_necore"
+        || sTarget == "js_arca_ecore"
+        || sTarget == "blackonyx"
+        || sTarget == "blackpearl"
+        || GetStringLeft( sTarget, 9 ) == "nw_it_gem"
+
              && GetObjectType( oTarget ) == OBJECT_TYPE_ITEM ) )
       {
          StoreItem(oPC, oWidget, oTarget, nCapacity, sContainerType);
@@ -1113,10 +1121,14 @@ void StoreItem(object oPC, object oWidget, object oTarget, int nCapacity, string
    int nItemCount = GetLocalInt(oWidget, "ItemCount");
 
 
-          if((sTargetResRef == "js_alch_kit1") ||(sTargetResRef == "nw_it_medkit001") || (sTargetResRef == "medkitx1x10")  || (sTargetResRef == "it_medkit002") ) { sTarget = "js_alch_kit1"; }
-   else if((sTargetResRef == "js_alch_kit3") ||(sTargetResRef == "nw_it_medkit002") || (sTargetResRef == "medkitx3x10")  || (sTargetResRef == "it_medkit003") ) { sTarget = "js_alch_kit3"; }
-   else if((sTargetResRef == "js_alch_kit6") ||(sTargetResRef == "nw_it_medkit003") || (sTargetResRef == "medkitx6x10")  || (sTargetResRef == "it_medkit004") ) { sTarget = "js_alch_kit6"; }
-   else if((sTargetResRef == "js_alch_kit10")||(sTargetResRef == "nw_it_medkit004") || (sTargetResRef == "medkitx10x10") || (sTargetResRef == "it_medkit005") ) { sTarget = "js_alch_kit10";}
+        if((sTargetResRef == "js_alch_kit1") || (sTargetResRef == "nw_it_medkit001") || (sTargetResRef == "medkitx1x10")  || (sTargetResRef == "it_medkit002") ) { sTarget = "js_alch_kit1"; }
+   else if((sTargetResRef == "js_alch_kit3") || (sTargetResRef == "nw_it_medkit002") || (sTargetResRef == "medkitx3x10")  || (sTargetResRef == "it_medkit003") ) { sTarget = "js_alch_kit3"; }
+   else if((sTargetResRef == "js_alch_kit6") || (sTargetResRef == "nw_it_medkit003") || (sTargetResRef == "medkitx6x10")  || (sTargetResRef == "it_medkit004") ) { sTarget = "js_alch_kit6"; }
+   else if((sTargetResRef == "js_alch_kit10")|| (sTargetResRef == "nw_it_medkit004") || (sTargetResRef == "medkitx10x10") || (sTargetResRef == "it_medkit005") ) { sTarget = "js_alch_kit10";}
+   else if((sTargetResRef == "js_jew_sapp")  || (sTargetResRef == "nw_it_gem008") ) { sTarget = "js_jew_sapp";}
+   else if((sTargetResRef == "js_jew_ruby")  || (sTargetResRef == "nw_it_gem006") ) { sTarget = "js_jew_ruby";}
+   else if((sTargetResRef == "js_jew_diam")  || (sTargetResRef == "nw_it_gem005") ) { sTarget = "js_jew_diam";}
+   else if((sTargetResRef == "js_jew_emer")  || (sTargetResRef == "nw_it_gem012") ) { sTarget = "js_jew_emer";}
    else { sTarget = GetResRef(oTarget); }
 
    if(GetLocalInt(oWidget, "ItemCount") == 0)
@@ -1165,14 +1177,9 @@ void RetrieveItem(object oPC, object oWidget, int nItemCount, int nBatch)
       nBatch = nBatch/2;
       nNewItemCount = nItemCount - nBatch;
    }
-   else if(nItemCount > 1)
+   else if (nItemCount >= 1)
    {
-      nBatch = 1;
-      nNewItemCount = nItemCount - nBatch;
-   }
-   else if (nItemCount == 1)
-   {
-      nBatch = 1;
+      nBatch = nItemCount;
       string sNameReset = GetName(oWidget, TRUE);
 
       SetName(oWidget, sNameReset);

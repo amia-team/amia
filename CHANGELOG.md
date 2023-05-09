@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Recovery amount is set properly (if between half and max recovery, dispends half recovery, if below, all)
 	- Gem pouches can store any normal gem kind, and will merge job/non job gems of one kind
 	- Bandage bag will store any +1,+3,+6,+10 healing kit type and merge them aslong as they match healing amount
+	- Bio's now reflexts right amounts
 	
 ### Fixed
 - Cetha west, relocating a fence waypoint to prevent spawn next to eachother

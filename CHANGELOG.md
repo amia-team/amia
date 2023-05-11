@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 	
 ### Fixed
+- Cavalry: Can wield light crossbow while mounted with Mounted Archery.
 
 ## [2.6.9 - 2023-05-11]
 

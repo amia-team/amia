@@ -2,6 +2,8 @@
 Editted: Maverick00053 April 15 2019
 Custom Ride Feat for Calvary class
 
+// 2023/05/11   Opustus     Fixed light crossbow not working while riding as Cav
+
 */
 
 void ChangeSkins(object oPC); // Handles the skin changing aspect
@@ -48,16 +50,18 @@ void main()
    {
 
     //Cav bow additions - do not let them equip a bow and mount unless they have the mounted archery feat and it is a shortbow.
-    if((mounted != 1) && ((nPrimaryType == BASE_ITEM_LONGBOW) || (nPrimaryType == BASE_ITEM_SLING) || (nPrimaryType == BASE_ITEM_THROWINGAXE) || (nPrimaryType == BASE_ITEM_DART) || (nPrimaryType == BASE_ITEM_LIGHTCROSSBOW) || (nPrimaryType == BASE_ITEM_SHURIKEN) || (nPrimaryType == BASE_ITEM_HEAVYCROSSBOW)))
+    if((mounted != 1) && ((nPrimaryType == BASE_ITEM_LONGBOW) || (nPrimaryType == BASE_ITEM_SLING) || (nPrimaryType == BASE_ITEM_THROWINGAXE) || (nPrimaryType == BASE_ITEM_DART) || (nPrimaryType == BASE_ITEM_SHURIKEN) || (nPrimaryType == BASE_ITEM_HEAVYCROSSBOW)))
     {
        SendMessageToPC( oPC, "You cannot use that weapon while mounted!");
        ActionUnequipItem(oPrimaryHand);
-
     }
-    else if((mounted != 1) && (nPrimaryType == BASE_ITEM_SHORTBOW) && (GetHasFeat(FEAT_MOUNTED_ARCHERY, oPC) != TRUE))
+    else if((mounted != 1) &&  && (GetHasFeat(FEAT_MOUNTED_ARCHERY, oPC) != TRUE))
     {
-       SendMessageToPC( oPC, "You cannot use that weapon while mounted without proper training!");
-       ActionUnequipItem(oPrimaryHand);
+      if ((nPrimaryType == BASE_ITEM_SHORTBOW) || (nPrimaryType == BASE_ITEM_LIGHTCROSSBOW))
+      {
+         SendMessageToPC( oPC, "You cannot use that weapon while mounted without proper training!");
+         ActionUnequipItem(oPrimaryHand);
+      }
     }
 
    // Set speed bonus and temp hp bonus

@@ -7,13 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - MANY more nature plcs to palette for requests
-- New PLC additions to module:
-	- 6 Mirrors
-	- 2 Cat statues
-	- 1 Painting
+- New Hak additions to module:
+	- 6 Mirrors (pretty!) plc's
+	- 2 Cat statues plc's
+	- 1 Painting plc's
+	- Kelpie skin
+	- Kelpie Tail (and thus mount)
 
 ### Changed
 - Closed and removed all Vetzer parts of OI bank
+- Skin changers now check current skin if it will apply new skin or revert to original (rather then on/off usuage)
+- Bottled Companion widget shrunk to 1x1 (of you want to replace your 1x2 poke a dm/rh)
 - Artificer storage cases:
 	- Recovery amount is set properly (if between half and max recovery, dispends half recovery, if below, all)
 	- Gem pouches can store any normal gem kind, and will merge job/non job gems of one kind
@@ -22,6 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	
 ### Fixed
 - Cetha west, relocating a fence waypoint to prevent spawn next to eachother
+- Bottled Companion non player race (dynamic) models now also correctly can copy tails/wings if skin allows
 
 ## [2.6.8 - 2023-05-06]
 

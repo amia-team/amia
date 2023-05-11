@@ -3,7 +3,16 @@ All notable changes to this project will be documented in this file.
  
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+
 ## [Unreleased]
+
+### Added
+
+### Changed
+	
+### Fixed
+
+## [2.6.9 - 2023-05-11]
 
 ### Added
 - MANY more nature plcs to palette for requests
@@ -26,7 +35,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	
 ### Fixed
 - Cetha west, relocating a fence waypoint to prevent spawn next to eachother
-- Bottled Companion non player race (dynamic) models now also correctly can copy tails/wings if skin allows
+- Bottled Companion non player race (dynamic) models, now also correctly can copy tails/wings if skin allows
 
 ## [2.6.8 - 2023-05-06]
 

@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	
 ### Fixed
 - Cavalry: Can wield light crossbow while mounted with Mounted Archery.
+- Dualist can be take as shifter again
 
 ## [2.6.9 - 2023-05-11]
 

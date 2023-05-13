@@ -9,7 +9,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
-	
+- Area update
+		- Kingdom of Cetha: The Wave and Serpent
+			- plot update
+			- old bank now recall room
+		- Kingdom of Cetha: The Wave and Serpent, Portal Chamber
+			- Plot update
+			- No more portals
+			
 ### Fixed
 - Cavalry: Can wield light crossbow while mounted with Mounted Archery.
 - Dualist can be take as shifter again

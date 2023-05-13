@@ -10,7 +10,8 @@
 //2008-05-19    Disco       Added The Hurting :D
 //2023-02-13    Frozen      Made multi (difirent)BC spawning possible
 //2023-02-26    Frozen      Made spawned npc not have collision
-//2023-04-29	Frozen		Added option to not have hitbox killed (ghost int 1)
+//2023-04-29    Frozen      Added option to not have hitbox killed (ghost int 1)
+//2023-05-11    Frozen      Added wings and tail options for non dynamic
 
 //-------------------------------------------------------------------------------
 // includes
@@ -132,6 +133,7 @@ void main(){
                     SetLocalString( oItem, "ds_portr", GetPortraitResRef( oTarget ) );
                     SetLocalString( oItem, "td_bio", GetDescription( oTarget ) );
                     SetLocalInt( oItem, "ds_tail", GetCreatureTailType( oTarget ) );
+                    SetLocalInt( oItem, "ds_wings", GetCreatureWingType( oTarget ) );
                     SetLocalFloat( oItem, "ds_scale", GetObjectVisualTransform( oTarget, 10) );
                     SetLocalInt( oItem, "ds_set", 2 );
                 }
@@ -226,7 +228,7 @@ void main(){
                 if (GetLocalInt( oItem, "ghost") == 0){
                     ApplyEffectToObject(DURATION_TYPE_PERMANENT, EffectCutsceneGhost(), oNPC);
                     }
-                    
+
                 if ( sBio != "" ){
 
                     DelayCommand( 6.0, SetDescription( oNPC, sBio ) );
@@ -237,6 +239,8 @@ void main(){
                 sName          = GetLocalString( oItem, "ds_name" );
                 sPortrait      = GetLocalString( oItem, "ds_portr" );
                 nAppearance    = GetLocalInt( oItem, "ds_app" );
+                nWings         = GetLocalInt( oItem, "ds_wings" );
+                nTail          = GetLocalInt( oItem, "ds_tail" );
                 nSex           = GetLocalInt( oItem, "ds_sex" );
                 sSex           = "m_";
                 sBio           = GetLocalString( oItem , "td_bio" );
@@ -267,11 +271,13 @@ void main(){
                 SetLocalInt( oNPC, "ds_type", 2 );
                 DelayCommand( 1.0, SetCreatureAppearanceType( oNPC, nAppearance ) );
                 DelayCommand( 2.0, SetPortraitResRef( oNPC, sPortrait ) );
+                DelayCommand( 3.0, SetCreatureWingType( nWings, oNPC ) );
+                DelayCommand( 4.0, SetCreatureTailType( nTail, oNPC ) );
 
                 if (GetLocalInt( oItem, "ghost") == 0){
                     ApplyEffectToObject(DURATION_TYPE_PERMANENT, EffectCutsceneGhost(), oNPC);
                     }
-                    
+
                 if ( sBio != "" ){
 
                     DelayCommand( 4.0, SetDescription( oNPC, sBio ) );

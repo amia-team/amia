@@ -15,6 +15,8 @@ Date         Name        Reason
 2011-02-12   PoS         Added more features.
 2011-03-19   PoS         Added yet more features.
 2023-02-02   Frozen
+2023-05-11   Frozen      Changed script to check on current appearance to deside-
+                         -if to change or revert rather then on/off when using
 ------------------------------------------------------------------
 
 */
@@ -148,6 +150,8 @@ void change_skin( object oPC, object oItem ){
         int nVisualDur          = GetLocalInt( oItem, "pc_vfx_dur" );
         int nVisualDur2         = GetLocalInt( oItem, "pc_vfx_dur2" );
         int nVisualDur3         = GetLocalInt( oItem, "pc_vfx_dur3" );
+        int iCRskin             = GetLocalInt( oItem, "cr_appearance" );
+        int iPCSkin             = GetAppearanceType (oPC);
         int nAppearance         = -1;
         int nPheno              = -1;
         int nTail               = -1;
@@ -158,7 +162,7 @@ void change_skin( object oPC, object oItem ){
         string sSFX2            = GetLocalString( oItem, "pc_sfx2" );
         string sSFX3            = GetLocalString( oItem, "pc_sfx3" );
 
-        if( nAppearanceSwitch == 1 ){
+        if( iPCSkin == iCRskin ){
 
             // original form
             nAppearance = GetLocalInt( oItem, "pc_appearance" );
@@ -167,10 +171,9 @@ void change_skin( object oPC, object oItem ){
             nTail       = GetLocalInt( oItem, "pc_tail" );
             nWing       = GetLocalInt( oItem, "pc_wings" );
             fScale      = GetLocalFloat( oItem, "pc_scale");
-            SetLocalInt( oItem, "switch", 0 );
+            //SetLocalInt( oItem, "switch", 0 );
         }
         else {
-
             // alternate form
             nAppearance = GetLocalInt( oItem, "cr_appearance" );
             sPortrait   = GetLocalString( oItem, "cr_portrait" );
@@ -179,7 +182,6 @@ void change_skin( object oPC, object oItem ){
             nWing       = GetLocalInt( oItem, "cr_wings" );
             fScale      = GetLocalFloat(oItem, "cr_scale");
             SetLocalString( oItem, "pc_portrait", GetPortraitResRef( oPC ) );
-            SetLocalInt( oItem, "switch", 1 );
         }
 
         //morph effect
@@ -199,7 +201,7 @@ void change_skin( object oPC, object oItem ){
         }
 
         // Permanent VFX effect
-        if( nAppearanceSwitch == 1 ) {
+        if( iPCSkin == iCRskin ) {
 
             effect eEffect = GetFirstEffect( oPC );
             while ( GetIsEffectValid(eEffect) ) {
@@ -212,7 +214,7 @@ void change_skin( object oPC, object oItem ){
                 eEffect = GetNextEffect( oPC );
             }
         }
-        else if( nAppearanceSwitch == 0 )
+        else if( iPCSkin != iCRskin )
         {
             if( nVisualDur != 0 )
             {

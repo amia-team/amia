@@ -13,6 +13,7 @@
 // 2019/06/17   Maverick00053 Added in Cav bow check and Two Weapon Fighter Check
 // 2022/09/11   Opustus     Fixed TWF AB bonus from +4 to +2 as intended
 // 2022/09/15   Opustus     Fixed Indomitable removed by (Lesser) Restoration
+// 2023/05/13   Opustus     Fixed light crossbow not working with Cav
 
 //-------------------------------------------------------------------------------
 // includes
@@ -336,17 +337,20 @@ void main( ){
     //
 
 
-    // Cavalry bow additions - do not let them equip a bow unless they have the mounted archery feat and it is a shortbow.
-    if((mounted == 1) && ((oItemType == BASE_ITEM_LONGBOW) || (oItemType == BASE_ITEM_SLING) || (oItemType == BASE_ITEM_THROWINGAXE) || (oItemType == BASE_ITEM_DART) || (oItemType == BASE_ITEM_LIGHTCROSSBOW) || (oItemType == BASE_ITEM_SHURIKEN) || (oItemType == BASE_ITEM_HEAVYCROSSBOW)))
+    // Cavalry bow additions - do not let them equip a bow unless they have the mounted archery feat and it is a shortbow or light crossbow.
+    if((mounted == 1) && ((oItemType == BASE_ITEM_LONGBOW) || (oItemType == BASE_ITEM_SLING) || (oItemType == BASE_ITEM_THROWINGAXE) || (oItemType == BASE_ITEM_DART) || (oItemType == BASE_ITEM_SHURIKEN) || (oItemType == BASE_ITEM_HEAVYCROSSBOW)))
     {
        SendMessageToPC( oPC, "You cannot use that weapon while mounted!");
        AssignCommand(oPC, ActionUnequipItem(oItem));
 
     }
-    else if((mounted == 1) && (oItemType == BASE_ITEM_SHORTBOW) && (GetHasFeat(FEAT_MOUNTED_ARCHERY, oPC) != TRUE))
+    else if((mounted == 1) && (GetHasFeat(FEAT_MOUNTED_ARCHERY, oPC) != TRUE))
     {
-       SendMessageToPC( oPC, "You cannot use that weapon while mounted without proper training!");
-       AssignCommand(oPC, ActionUnequipItem(oItem));
+      if ((oItemType == BASE_ITEM_SHORTBOW) || (oItemType == BASE_ITEM_LIGHTCROSSBOW))
+      {
+        SendMessageToPC( oPC, "You cannot use that weapon while mounted without proper training!");
+        AssignCommand(oPC, ActionUnequipItem(oItem));
+      }
     }
 
 

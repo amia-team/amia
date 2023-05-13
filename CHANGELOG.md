@@ -7,8 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Include script for mob effects
 
 ### Changed
+- ds_ai2_onspawn has an effect option, to be expanded
 - Area update
 		- Kingdom of Cetha: The Wave and Serpent
 			- plot update

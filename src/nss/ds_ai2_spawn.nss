@@ -14,6 +14,7 @@
 // includes
 //-------------------------------------------------------------------------------
 #include "ds_ai2_include"
+#include "inc_spwn_effects"
 
 //-------------------------------------------------------------------------------
 // main
@@ -21,8 +22,31 @@
 
 void main(){
 
-    object oCritter = OBJECT_SELF;
-    float scale = GetLocalFloat(oCritter, "scale");
+    object oCritter         = OBJECT_SELF;
+    float scale             = GetLocalFloat(oCritter, "scale");
+    int spawnEffect         = GetLocalInt( oCritter, "spawn_effect" );
+    int effect1             = GetLocalInt( oCritter, "effect1" );
+    int effect2             = GetLocalInt( oCritter, "effect2" );
+    int effect3             = GetLocalInt( oCritter, "effect3" );
+    int effectDurType1      = GetLocalInt( oCritter, "effect_type1" );
+    int effectDurType2      = GetLocalInt( oCritter, "effect_type2" );
+    int effectDurType3      = GetLocalInt( oCritter, "effect_type3" );
+    float effectDur1        = GetLocalFloat( oCritter, "effect_dur1" );
+    float effectDur2        = GetLocalFloat( oCritter, "effect_dur2" );
+    float effectDur3        = GetLocalFloat( oCritter, "effect_dur3" );
+
+
+    //Check if creature has an on-spawn effect.
+    if (spawnEffect = TRUE)
+    {
+        effect mob1 = EffectFromConstant(effect1);
+        effect mob2 = EffectFromConstant(effect2);
+        effect mob3 = EffectFromConstant(effect3);
+
+        ApplyEffectToObject(effectDurType1, mob1, oCritter, effectDur1);
+        ApplyEffectToObject(effectDurType2, mob2, oCritter, effectDur2);
+        ApplyEffectToObject(effectDurType3, mob3, oCritter, effectDur3);
+    }
 
     //Accounting for floating point error.
     if(scale > 0.1f)

@@ -22,14 +22,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - ds_ai2_onspawn has an effect option, to be expanded
 - Area update
-		- Kingdom of Cetha: The Wave and Serpent
-			- plot update
-			- old bank now recall room
-		- Kingdom of Cetha: The Wave and Serpent, Portal Chamber
-			- Plot update
-			- No more portals
-		- Kingdom of Cetha: All other areas
-			- Plot updates
+	- Kingdom of Cetha: The Wave and Serpent
+		- plot update
+		- old bank now recall room
+	- Kingdom of Cetha: The Wave and Serpent, Portal Chamber
+		- Plot update
+		- No more portals
+	- Kingdom of Cetha: All other areas
+		- Plot updates
 			
 ### Fixed
 - Cavalry: Can wield light crossbow while mounted with Mounted Archery.

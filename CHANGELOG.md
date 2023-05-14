@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- Kingdom of Cetha: The Wave and Serpent, Portal Chamber
 			- Plot update
 			- No more portals
+		- Kingdom of Cetha: All other areas
+			- Plot updates
 			
 ### Fixed
 - Cavalry: Can wield light crossbow while mounted with Mounted Archery.

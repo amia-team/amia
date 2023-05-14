@@ -11,13 +11,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 			
 ### Fixed
-- Dualist can be take as shifter again
-- 2x Tiger portrait added (normal and white)
+
+
 
 ## [2.7.0 - 2023-05-14]
 
 ### Added
 - Include script for mob effects
+- 2x Tiger portrait added (normal and white)
 
 ### Changed
 - ds_ai2_onspawn has an effect option, to be expanded
@@ -33,7 +34,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 			
 ### Fixed
 - Cavalry: Can wield light crossbow while mounted with Mounted Archery.
-
+- Dualist can be take as shifter again
 
 ## [2.6.9 - 2023-05-11]
 

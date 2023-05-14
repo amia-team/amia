@@ -7,7 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+
+### Changed
+			
+### Fixed
+
+
+## [2.7.0 - 2023-05-14]
+
+### Added
 - Include script for mob effects
+- 2x Tiger portrait added (normal and white)
 
 ### Changed
 - ds_ai2_onspawn has an effect option, to be expanded

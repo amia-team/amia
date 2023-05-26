@@ -12,7 +12,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 			
 ### Fixed
 
+## [2.7.1 - 2023-05-26]
 
+### Added
+- Variuos plcs to palette
+
+### Changed
+- Area changes
+	- All cetha areas updated with removal/replacment of all knights and some guards (plot related)
 
 ## [2.7.0 - 2023-05-14]
 

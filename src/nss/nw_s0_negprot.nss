@@ -15,6 +15,7 @@
 /*
     19/05/2014  Glim    Changed Immunity to 50% instead of 100% with Abjuration
                         Focus bonuses of 5% per grade of Spell Focus.
+    05/06/2023  Opustus Prevented immunity% stacking.
 */
 
 #include "x2_inc_spellhook"
@@ -73,9 +74,19 @@ void main()
     //Link Effects
     effect eLink = EffectLinkEffects(eNeg, eLevel);
     eLink = EffectLinkEffects(eLink, eAbil);
+    eLink = TagEffect(eLink, "negenergyprot");
+    
     //Fire cast spell at event for the specified target
     SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, SPELL_NEGATIVE_ENERGY_PROTECTION, FALSE));
-
+    
+    // Remove previous neg energy prot effect to prevent stacking of immunity%.
+    effect eEffect = GetFirstEffect(oTarget);
+    while(GetIsEffectValid(eEffect))
+    {
+        if(GetEffectTag(eEffect) == "negenergyprot") RemoveEffect(oPC, eEffect);
+        eEffect = GetNextEffect(oPC);
+    }
+    
     //Apply the VFX impact and effects
     ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
     ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oTarget, TurnsToSeconds(nDuration));

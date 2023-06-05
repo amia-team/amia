@@ -83,7 +83,7 @@ void main()
     effect eEffect = GetFirstEffect(oTarget);
     while(GetIsEffectValid(eEffect))
     {
-        if(GetEffectTag(eEffect) == "negenergyprot") RemoveEffect(oPC, eEffect);
+        if(GetEffectTag(eEffect) == "negenergyprot") RemoveEffect(oTarget, eEffect);
         eEffect = GetNextEffect(oTarget);
     }
     

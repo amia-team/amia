@@ -84,7 +84,7 @@ void main()
     while(GetIsEffectValid(eEffect))
     {
         if(GetEffectTag(eEffect) == "negenergyprot") RemoveEffect(oPC, eEffect);
-        eEffect = GetNextEffect(oPC);
+        eEffect = GetNextEffect(oTarget);
     }
     
     //Apply the VFX impact and effects

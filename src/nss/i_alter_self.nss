@@ -8,7 +8,7 @@
 // 04/13/2013 PaladinOfSune    Added functionality for heads
 // 04/27/2015 PaladinOfSune    Added optional checks, removed VFX
 // 03/04/2016 PaladinOfSune    Added support for portrait, torso, arms and legs
-//
+// 06/18/2023 Frozen           Added Z axis function
 //-----------------------------------------------------------------------------
 // includes
 //-----------------------------------------------------------------------------
@@ -79,6 +79,8 @@ void AlterSelf( object oPC, object oItem )
     int nRShin          = GetLocalInt( oItem, "alter_rshin" );
     int nRFoot          = GetLocalInt( oItem, "alter_rfoot" );
 
+    float fZaxis        = GetLocalFloat( oItem, "alter_zaxis");
+
     string sPortrait    = GetLocalString( oItem, "alter_portrait" );
 
     // Get the original PC appearance and save on the widget.
@@ -105,6 +107,7 @@ void AlterSelf( object oPC, object oItem )
     SetLocalInt( oItem, "revert_rfoot", GetCreatureBodyPart( CREATURE_PART_RIGHT_FOOT, oPC ) );
 
     SetLocalString( oItem, "revert_portrait", GetPortraitResRef( oPC ) );
+    SetLocalFloat( oItem, "revert_zaxis", GetObjectVisualTransform(oPC, 23) );
 
     SetLocalInt( oItem, "revert_wings", GetCreatureWingType( oPC ) );
     SetLocalInt( oItem, "revert_tail", GetCreatureTailType( oPC ) );
@@ -194,6 +197,10 @@ void AlterSelf( object oPC, object oItem )
     if( sPortrait != "" ) {
         SetPortraitResRef( oPC, sPortrait );
     }
+
+    if ( fZaxis > 0.0) {
+        SetObjectVisualTransform( oPC, 23, fZaxis);
+    }
 }
 
 void AlterSelfRevert( object oPC, object oItem )
@@ -225,6 +232,7 @@ void AlterSelfRevert( object oPC, object oItem )
     int nRFoot      = GetLocalInt( oItem, "revert_rfoot" );
 
     string sPortrait = GetLocalString( oItem, "revert_portrait" );
+    float fZaxis    = GetLocalFloat( oItem, "revert_zaxis");
 
     SetLocalInt( oItem, "alter_set", 0 );
 
@@ -310,5 +318,9 @@ void AlterSelfRevert( object oPC, object oItem )
 
     if( sPortrait != "" ) {
         SetPortraitResRef( oPC, sPortrait );
+    }
+
+    if ( fZaxis > 0.0) {
+        SetObjectVisualTransform( oPC, 23, fZaxis);
     }
 }

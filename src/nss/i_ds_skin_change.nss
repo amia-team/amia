@@ -17,6 +17,7 @@ Date         Name        Reason
 2023-02-02   Frozen
 2023-05-11   Frozen      Changed script to check on current appearance to deside-
                          -if to change or revert rather then on/off when using
+2023-06-18   Frozen      Added Z axis function
 ------------------------------------------------------------------
 
 */
@@ -34,6 +35,7 @@ Date         Name        Reason
 //-------------------------------------------------------------------------------
 void change_skin( object oPC, object oItem );
 void change_scale( object oPC, float fScale);
+void change_axis(object oPC, float fZaxis);
 
 //-------------------------------------------------------------------------------
 //main
@@ -106,6 +108,7 @@ void change_skin( object oPC, object oItem ){
         SetLocalInt( oItem, "cr_tail", GetCreatureTailType( oTarget ) );
         SetLocalInt( oItem, "cr_wings", GetCreatureWingType( oTarget ) );
         SetLocalFloat( oItem, "cr_scale", GetObjectVisualTransform(oTarget, 10) );
+        SetLocalFloat( oItem, "cr_zaxis", GetObjectVisualTransform(oTarget, 23) );
         SetLocalInt( oItem, "initialised", 1 );
 
         //set item name
@@ -128,6 +131,7 @@ void change_skin( object oPC, object oItem ){
         SetLocalInt( oItem, "pc_tail", GetCreatureTailType( oPC ) );
         SetLocalInt( oItem, "pc_wings", GetCreatureWingType( oPC ) );
         SetLocalFloat( oItem, "pc_scale", GetObjectVisualTransform(oPC, 10) );
+        SetLocalFloat( oItem, "pc_zaxis", GetObjectVisualTransform(oPC, 23) );
         SetLocalInt( oItem, "initialised", 2 );
 
         //save character
@@ -157,6 +161,7 @@ void change_skin( object oPC, object oItem ){
         int nTail               = -1;
         int nWing               = -1;
         float fScale            = 1.0;
+        float fZaxis            = 1.0;
         string sPortrait        = "";
         string sSFX1            = GetLocalString( oItem, "pc_sfx1" );
         string sSFX2            = GetLocalString( oItem, "pc_sfx2" );
@@ -171,6 +176,7 @@ void change_skin( object oPC, object oItem ){
             nTail       = GetLocalInt( oItem, "pc_tail" );
             nWing       = GetLocalInt( oItem, "pc_wings" );
             fScale      = GetLocalFloat( oItem, "pc_scale");
+            fZaxis      = GetLocalFloat( oItem, "pc_zaxis");
             //SetLocalInt( oItem, "switch", 0 );
         }
         else {
@@ -181,6 +187,7 @@ void change_skin( object oPC, object oItem ){
             nTail       = GetLocalInt( oItem, "cr_tail" );
             nWing       = GetLocalInt( oItem, "cr_wings" );
             fScale      = GetLocalFloat(oItem, "cr_scale");
+            fZaxis      = GetLocalFloat( oItem, "cr_zaxis");
             SetLocalString( oItem, "pc_portrait", GetPortraitResRef( oPC ) );
         }
 
@@ -250,6 +257,7 @@ void change_skin( object oPC, object oItem ){
         DelayCommand( fDelay, SetCreatureTailType( nTail, oPC ) );
         DelayCommand( fDelay, SetCreatureWingType( nWing, oPC ) );
         DelayCommand( fDelay, change_scale( oPC, fScale) );
+        DelayCommand( fDelay, change_axis( oPC, fZaxis) );
         if( fDelay < 0.5 )
             DelayCommand( fDelay+1.0, ApplyEffectToObject( DURATION_TYPE_TEMPORARY, EffectPolymorph( POLYMORPH_TYPE_NULL_HUMAN ), oPC, 0.5 ) );
 
@@ -262,5 +270,13 @@ void change_scale(object oPC, float fScale){
     }
     if (fScale > 0.0) {
         SetObjectVisualTransform( oPC, 10, fScale);
+    }
+}
+void change_axis(object oPC, float fZaxis){
+    if (fZaxis == 0.0) {
+        SetObjectVisualTransform( oPC, 23, 1.0);
+    }
+    if (fZaxis > 0.0) {
+        SetObjectVisualTransform( oPC, 23, fZaxis);
     }
 }

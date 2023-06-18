@@ -13,11 +13,13 @@
 //:://////////////////////////////////////////////
 //:: Bug Fix: Andrew Nobbs, April 17, 2003
 //:: Notes: Took out ranged attack roll.
+//:: Opustus 6/18/23 Changed to scale 1d3 per 2 CL
 //:://////////////////////////////////////////////
 
 
 #include "NW_I0_SPELLS"
 #include "x2_inc_spellhook"
+#include "nwnx_creature"
 
 void main()
 {
@@ -38,55 +40,50 @@ void main()
 
 // End of Spell Cast Hook
 
+	// Restore cantrips.
+    if(GetLevelByClass(CLASS_TYPE_WIZARD) > 0)
+    {
+       NWNX_Creature_RestoreSpells(OBJECT_SELF, 0);
+    }
+    if (GetLevelByClass(CLASS_TYPE_SORCERER) > 0)
+    {
+       NWNX_Creature_RestoreSpells(OBJECT_SELF, 0);
+    }
 
-    //Declare major variables
+
+    // Declare major variables
     object oTarget = GetSpellTargetObject();
     int nMeta = GetMetaMagicFeat();
     int nCasterLevel = GetCasterLevel(OBJECT_SELF);
-    int nDamageCount =1;
+    int nDamageCount = nCasterLevel / 2;
     int nDamage;
     effect eVis = EffectVisualEffect(VFX_IMP_FROST_S);
     effect eRay = EffectBeam(VFX_BEAM_COLD, OBJECT_SELF, BODY_NODE_HAND);
-    effect eDam;
 
     if(!GetIsReactionTypeFriendly(oTarget))
     {
         //Fire cast spell at event for the specified target
         SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, SPELL_RAY_OF_FROST));
-        eRay = EffectBeam(VFX_BEAM_COLD, OBJECT_SELF, BODY_NODE_HAND);
+
         //Make SR Check
         if(!MyResistSpell(OBJECT_SELF, oTarget))
         {
-
-
-             if (GetHasFeat( FEAT_SPELL_FOCUS_CONJURATION, OBJECT_SELF ))
-             {
-                nDamageCount += 1;
-             }
-             if (GetHasFeat( FEAT_GREATER_SPELL_FOCUS_CONJURATION, OBJECT_SELF ))
-             {
-                nDamageCount += 1;
-             }
-             if (GetHasFeat( FEAT_EPIC_SPELL_FOCUS_CONJURATION, OBJECT_SELF ))
-             {
-                nDamageCount += 1;
-             }
             // roll damage
-             nDamage= d4(nDamageCount)+nDamageCount*1;
+             nDamage= d3(nDamageCount);
             //Make metamagic  check
-             if (nMeta == METAMAGIC_MAXIMIZE)
-             {
-                nDamage= 4*nDamageCount+nDamageCount*1;
-             }
-             else if (nMeta == METAMAGIC_EMPOWER)
-             {
-                nDamage+= nDamage + nDamage/2;
-             }
+            if (nMeta == METAMAGIC_MAXIMIZE)
+			{
+				nDamage= 3*nDamageCount;
+			}
+			if (nMeta == METAMAGIC_EMPOWER)
+			{
+				nDamage = nDamage + nDamage/2;
+			}
             //Set damage effect
-            eDam = EffectDamage(nDamage, DAMAGE_TYPE_COLD);
+            effect eDamage = EffectDamage(nDamage, DAMAGE_TYPE_COLD);
             //Apply the VFX impact and damage effect
             ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
-            ApplyEffectToObject(DURATION_TYPE_INSTANT, eDam, oTarget);
+            ApplyEffectToObject(DURATION_TYPE_INSTANT, eDamage, oTarget);
         }
     }
     ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eRay, oTarget, 1.7);

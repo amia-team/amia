@@ -4,15 +4,17 @@
 //:: Copyright (c) 2002 Bioware Corp.
 //:://////////////////////////////////////////////
 /*
-1d3 points of electrical damage to one target.
+1d3 per 2 caster levels points of electrical damage to one target.
 */
 //:://////////////////////////////////////////////
 //:: Created By: Brent
 //:: Created On: July 17 2002
+//:: Opustus 6/18/23 Changed to scale 1d3 per 2 CL
 //:://////////////////////////////////////////////
 
 #include "X0_I0_SPELLS"
 #include "x2_inc_spellhook"
+#include "nwnx_creature"
 
 void main()
 {
@@ -22,7 +24,6 @@ void main()
   Added 2003-06-20 by Georg
   If you want to make changes to all spells,
   check x2_inc_spellhook.nss to find out more
-
 */
 
     if (!X2PreSpellCastCode())
@@ -33,12 +34,22 @@ void main()
 
 // End of Spell Cast Hook
 
-    //Declare major variables
+	// Restore cantrips.
+    if(GetLevelByClass(CLASS_TYPE_WIZARD) > 0)
+    {
+       NWNX_Creature_RestoreSpells(OBJECT_SELF, 0);
+    }
+    if (GetLevelByClass(CLASS_TYPE_SORCERER) > 0)
+    {
+       NWNX_Creature_RestoreSpells(OBJECT_SELF, 0);
+    }
+
+    // Declare major variables
     object oTarget = GetSpellTargetObject();
     int nCasterLevel = GetCasterLevel(OBJECT_SELF);
-    int nDamageCount =1;
+    int nDamageCount = nCasterLevel / 2;
     int nDamage;
-    int nMeta = GetMetaMagicFeat();
+	int nMeta = GetMetaMagicFeat();
 
     effect eVis = EffectVisualEffect(VFX_IMP_LIGHTNING_S);
     if(!GetIsReactionTypeFriendly(oTarget))
@@ -48,32 +59,17 @@ void main()
         //Make SR Check
         if(!MyResistSpell(OBJECT_SELF, oTarget))
         {
-
-            //check for epic spell focus
-                     if (GetHasFeat( FEAT_SPELL_FOCUS_EVOCATION, OBJECT_SELF ))
-                     {
-                        nDamageCount += 1;
-                     }
-                     if (GetHasFeat( FEAT_GREATER_SPELL_FOCUS_EVOCATION, OBJECT_SELF ))
-                     {
-                        nDamageCount += 1;
-                     }
-                     if (GetHasFeat( FEAT_EPIC_SPELL_FOCUS_EVOCATION, OBJECT_SELF ))
-                     {
-                        nDamageCount += 1;
-                     }
-
-                    // roll damage
-                    nDamage= d3(nDamageCount)+nDamageCount*1;
-                    //Make metamagic  check
-                    if (nMeta == METAMAGIC_MAXIMIZE)
-                    {
-                       nDamage= 3*nDamageCount+nDamageCount*1;
-                    }
-                    else if (nMeta == METAMAGIC_EMPOWER)
-                    {
-                        nDamage+= nDamage + nDamage/2;
-                    }
+			// roll damage
+			nDamage = d3(nDamageCount);
+			//Make metamagic  check
+			if (nMeta == METAMAGIC_MAXIMIZE)
+			{
+			   nDamage = 3*nDamageCount;
+			}
+			if (nMeta == METAMAGIC_EMPOWER)
+			{
+				nDamage = nDamage + nDamage/2;
+			}
 
             //Set damage effect
 
@@ -84,9 +80,3 @@ void main()
         }
     }
 }
-
-
-
-
-
-

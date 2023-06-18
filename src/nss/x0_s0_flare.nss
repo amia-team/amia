@@ -4,17 +4,19 @@
 //:: Copyright (c) 2002 Bioware Corp.
 //:://////////////////////////////////////////////
 /*
-    Creature hit by ray loses 1 to attack rolls.
+    Creature hit by flare loses 1 to attack rolls and is damaged by 1d4 per 3 caster levels points of fire damage.
 
     DURATION: 10 rounds.
 */
 //:://////////////////////////////////////////////
 //:: Created By: Brent
 //:: Created On: July 17 2002
+//:: Opustus 6/18/23 Added damage to scale 1d4 per 3 CL
 //:://////////////////////////////////////////////
 
 #include "NW_I0_SPELLS"
 #include "x2_inc_spellhook"
+#include "nwnx_creature"
 
 void main()
 {
@@ -35,36 +37,55 @@ void main()
 
 // End of Spell Cast Hook
 
-   //Declare major variables
-    object oTarget = GetSpellTargetObject();
-    int nCasterLevel = GetCasterLevel(OBJECT_SELF);
-    int nAttackDecrease = 1;
+	// Restore cantrips.
+    if(GetLevelByClass(CLASS_TYPE_WIZARD) > 0)
+    {
+       NWNX_Creature_RestoreSpells(OBJECT_SELF, 0);
+    }
+    if (GetLevelByClass(CLASS_TYPE_SORCERER) > 0)
+    {
+       NWNX_Creature_RestoreSpells(OBJECT_SELF, 0);
+    }
+
+    //Declare major variables
+	object oTarget = GetSpellTargetObject();
+	int nCasterLevel = GetCasterLevel(OBJECT_SELF);
+    int nDamageCount = nCasterLevel / 3;
+    int nDamage;
+	int nMeta = GetMetaMagicFeat();
+	int nAttackDecrease = 1;
 
     effect eVis = EffectVisualEffect(VFX_IMP_FLAME_S);
 
-    if (GetHasFeat( FEAT_EPIC_SPELL_FOCUS_EVOCATION, OBJECT_SELF ))
-    {
-                nAttackDecrease = 2;
-    }
-
     if(!GetIsReactionTypeFriendly(oTarget))
     {
-        //Fire cast spell at event for the specified target
-        SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, 416));
-
-       // * Apply the hit effect so player knows something happened
-       ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
-
+	   //Fire cast spell at event for the specified target
+		SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, 416));
 
         //Make SR Check
-        if ((!MyResistSpell(OBJECT_SELF, oTarget)) &&  (MySavingThrow(SAVING_THROW_FORT, oTarget, GetSpellSaveDC()) == FALSE) )
+        if ((!MyResistSpell(OBJECT_SELF, oTarget)))
         {
-            //Set damage effect
-            effect eBad = EffectAttackDecrease(nAttackDecrease);
-            //Apply the VFX impact and damage effect
-            ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eBad, oTarget, RoundsToSeconds(10));
+			// roll damage
+			nDamage = d4(nDamageCount);
+			//Make metamagic check
+			if (nMeta == METAMAGIC_MAXIMIZE)
+			{
+			   nDamage = 4*nDamageCount;
+			}
+			if (nMeta == METAMAGIC_EMPOWER)
+			{
+				nDamage = nDamage + nDamage/2;
+			}
+			
+			effect eDamage = EffectDamage(nDamage, DAMAGE_TYPE_FIRE);
+			ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+			ApplyEffectToObject(DURATION_TYPE_INSTANT, eDamage, oTarget);
+			
+			if (MySavingThrow(SAVING_THROW_FORT, oTarget, GetSpellSaveDC()) == FALSE)
+			{
+				effect eBad = EffectAttackDecrease(nAttackDecrease);
+				ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eBad, oTarget, TurnsToSeconds(1));
+			}
         }
     }
 }
-
-

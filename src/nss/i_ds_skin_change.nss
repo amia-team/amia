@@ -161,7 +161,7 @@ void change_skin( object oPC, object oItem ){
         int nTail               = -1;
         int nWing               = -1;
         float fScale            = 1.0;
-        float fZaxis            = 0.0;
+        float fZaxis;
         string sPortrait        = "";
         string sSFX1            = GetLocalString( oItem, "pc_sfx1" );
         string sSFX2            = GetLocalString( oItem, "pc_sfx2" );

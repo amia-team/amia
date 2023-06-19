@@ -276,10 +276,7 @@ void change_axis(object oPC, float fZaxis){
     if (fZaxis == 0.0) {
         SetObjectVisualTransform( oPC, 33, 0.0);
     }
-    if (fZaxis > 0.0) {
-        SetObjectVisualTransform( oPC, 33, fZaxis);
-    }
-	if (fZaxis < 0.0) {
+    if (fZaxis != 0.0) {
         SetObjectVisualTransform( oPC, 33, fZaxis);
     }
 }

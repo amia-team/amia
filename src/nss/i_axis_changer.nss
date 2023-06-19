@@ -81,9 +81,7 @@ void change_axis(object oPC, object oItem, object oTarget){
         if ( nZset == 3 ) {fZSet = GetLocalFloat ( oItem, "zaxis_set3" );
             if ( fZSet == 0.0 ) { fZSet = 1.5;
 			FloatingTextStringOnCreature(( "Test set3" ), oPC, FALSE );} }
-			
-		FloatingTextStringOnCreature(( fZSet ), oPC, FALSE );
-		
+					
         // Logic part, to assigne right function
         if ( oTarget == oItem )                             { nLogic = 1; } // Changing hight setting
         else if ( oTarget == oPC )                          { nLogic = 2; } // PC

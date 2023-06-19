@@ -108,7 +108,7 @@ void change_skin( object oPC, object oItem ){
         SetLocalInt( oItem, "cr_tail", GetCreatureTailType( oTarget ) );
         SetLocalInt( oItem, "cr_wings", GetCreatureWingType( oTarget ) );
         SetLocalFloat( oItem, "cr_scale", GetObjectVisualTransform(oTarget, 10) );
-        SetLocalFloat( oItem, "cr_zaxis", GetObjectVisualTransform(oTarget, 23) );
+        SetLocalFloat( oItem, "cr_zaxis", GetObjectVisualTransform(oTarget, 33) );
         SetLocalInt( oItem, "initialised", 1 );
 
         //set item name
@@ -131,7 +131,7 @@ void change_skin( object oPC, object oItem ){
         SetLocalInt( oItem, "pc_tail", GetCreatureTailType( oPC ) );
         SetLocalInt( oItem, "pc_wings", GetCreatureWingType( oPC ) );
         SetLocalFloat( oItem, "pc_scale", GetObjectVisualTransform(oPC, 10) );
-        SetLocalFloat( oItem, "pc_zaxis", GetObjectVisualTransform(oPC, 23) );
+        SetLocalFloat( oItem, "pc_zaxis", GetObjectVisualTransform(oPC, 33) );
         SetLocalInt( oItem, "initialised", 2 );
 
         //save character
@@ -161,7 +161,7 @@ void change_skin( object oPC, object oItem ){
         int nTail               = -1;
         int nWing               = -1;
         float fScale            = 1.0;
-        float fZaxis            = 1.0;
+        float fZaxis            = 0.0;
         string sPortrait        = "";
         string sSFX1            = GetLocalString( oItem, "pc_sfx1" );
         string sSFX2            = GetLocalString( oItem, "pc_sfx2" );
@@ -274,9 +274,9 @@ void change_scale(object oPC, float fScale){
 }
 void change_axis(object oPC, float fZaxis){
     if (fZaxis == 0.0) {
-        SetObjectVisualTransform( oPC, 23, 1.0);
+        SetObjectVisualTransform( oPC, 33, 0.0);
     }
     if (fZaxis > 0.0) {
-        SetObjectVisualTransform( oPC, 23, fZaxis);
+        SetObjectVisualTransform( oPC, 33, fZaxis);
     }
 }

@@ -107,7 +107,7 @@ void AlterSelf( object oPC, object oItem )
     SetLocalInt( oItem, "revert_rfoot", GetCreatureBodyPart( CREATURE_PART_RIGHT_FOOT, oPC ) );
 
     SetLocalString( oItem, "revert_portrait", GetPortraitResRef( oPC ) );
-    SetLocalFloat( oItem, "revert_zaxis", GetObjectVisualTransform(oPC, 23) );
+    SetLocalFloat( oItem, "revert_zaxis", GetObjectVisualTransform(oPC, 33) );
 
     SetLocalInt( oItem, "revert_wings", GetCreatureWingType( oPC ) );
     SetLocalInt( oItem, "revert_tail", GetCreatureTailType( oPC ) );
@@ -199,7 +199,7 @@ void AlterSelf( object oPC, object oItem )
     }
 
     if ( fZaxis > 0.0) {
-        SetObjectVisualTransform( oPC, 23, fZaxis);
+        SetObjectVisualTransform( oPC, 33, fZaxis);
     }
 }
 
@@ -321,6 +321,6 @@ void AlterSelfRevert( object oPC, object oItem )
     }
 
     if ( fZaxis > 0.0) {
-        SetObjectVisualTransform( oPC, 23, fZaxis);
+        SetObjectVisualTransform( oPC, 33, fZaxis);
     }
 }

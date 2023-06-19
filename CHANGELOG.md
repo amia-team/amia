@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+Cantrip update
+- Acid Splash, Electrical Jolt, and Acid Splash's damage scales 1d3 per 2 caster levels. Flare's damage scales 1d4 per 3 caster levels points of fire damage in addition to the original -1 attack bonus penalty against a fortitude saving throw.
+- Sorcerers and wizards have infinite cantrips. This might later be extended to other or all spellcasting classes.
+- The change is meant to encourage sorcerers and wizards to actively use their spells and to keep them engaged in combat after their spells run out.
+- The damage is meant to be minor but substantial enough to encourage casters not to constantly hide under invisibility. The damage can be tuned later.
 			
 ### Fixed
 

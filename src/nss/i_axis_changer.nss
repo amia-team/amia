@@ -73,12 +73,17 @@ void change_axis(object oPC, object oItem, object oTarget){
         // Defining hight to set
         if ( nZset == 0 ) { SetLocalInt ( oItem, "zaxis_setting", 1 ); }
         if ( nZset == 1 ) {fZSet = GetLocalFloat ( oItem, "zaxis_set1" );
-            if ( fZSet == 0.0 ) { fZSet = 0.5;} }
+            if ( fZSet == 0.0 ) { fZSet = 0.5;
+			FloatingTextStringOnCreature(( "Test set1" ), oPC, FALSE );	} }
         if ( nZset == 2 ) {fZSet = GetLocalFloat ( oItem, "zaxis_set2" );
-            if ( fZSet == 0.0 ) { fZSet = 1.0;} }
+            if ( fZSet == 0.0 ) { fZSet = 1.0;
+			FloatingTextStringOnCreature(( "Test set2" ), oPC, FALSE );} }
         if ( nZset == 3 ) {fZSet = GetLocalFloat ( oItem, "zaxis_set3" );
-            if ( fZSet == 0.0 ) { fZSet = 1.5;} }
-
+            if ( fZSet == 0.0 ) { fZSet = 1.5;
+			FloatingTextStringOnCreature(( "Test set3" ), oPC, FALSE );} }
+			
+		FloatingTextStringOnCreature(( fZSet ), oPC, FALSE );
+		
         // Logic part, to assigne right function
         if ( oTarget == oItem )                             { nLogic = 1; } // Changing hight setting
         else if ( oTarget == oPC )                          { nLogic = 2; } // PC
@@ -100,7 +105,8 @@ void change_axis(object oPC, object oItem, object oTarget){
         }
     }
     else if ( nLogic == 2 ) {
-        if ( fZcurrent >= 0.0 ) { SetObjectVisualTransform( oTarget, 33, fZdefault );} //Changes you to defaut if your already afloat
-        else { SetObjectVisualTransform( oTarget, 33, fZSet );} //Changes the set hight
+        if ( fZcurrent != 0.0 ) { SetObjectVisualTransform( oTarget, 33, fZdefault );} //Changes you to defaut if your already afloat
+        else { SetObjectVisualTransform( oTarget, 33, fZSet );
+			FloatingTextStringOnCreature(( "Test Set to fzset" ), oPC, FALSE );		} //Changes the set hight
     }
 }

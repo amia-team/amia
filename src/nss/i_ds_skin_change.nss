@@ -274,9 +274,9 @@ void change_scale(object oPC, float fScale){
 }
 void change_axis(object oPC, float fZaxis){
     if (fZaxis == 0.0) {
-        SetObjectVisualTransform( oPC, 33, 0.0);
+        SetObjectVisualTransform( oPC, 23, 0.0);
     }
-    if (fZaxis > 0.0) {
-        SetObjectVisualTransform( oPC, 33, fZaxis);
+    if (fZaxis != 0.0) {
+        SetObjectVisualTransform( oPC, 23, fZaxis);
     }
 }

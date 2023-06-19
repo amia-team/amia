@@ -198,8 +198,11 @@ void AlterSelf( object oPC, object oItem )
         SetPortraitResRef( oPC, sPortrait );
     }
 
-    if ( fZaxis > 0.0) {
+    if ( fZaxis != 0.0) {
         SetObjectVisualTransform( oPC, 33, fZaxis);
+    }
+	if ( fZaxis == 0.0) {
+        SetObjectVisualTransform( oPC, 33, 0.0);
     }
 }
 
@@ -320,7 +323,11 @@ void AlterSelfRevert( object oPC, object oItem )
         SetPortraitResRef( oPC, sPortrait );
     }
 
-    if ( fZaxis > 0.0) {
+    if ( fZaxis != 0.0) {
         SetObjectVisualTransform( oPC, 33, fZaxis);
+    }
+
+    if ( fZaxis == 0.0) {
+        SetObjectVisualTransform( oPC, 33, 0.0);
     }
 }

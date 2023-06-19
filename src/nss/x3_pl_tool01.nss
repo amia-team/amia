@@ -6,7 +6,7 @@ LOG:
     Faded Wings [11/12/2015 - Dawn of Time]
     Raven       [5/1/2017 - Fixes + Henchman ]
     Frozen      [24/March/2023 - BC tagging for f_voice command assignment ]
-    	Frozen      [25/March/2023 - added functionality for taged bc to sit ]
+    Frozen      [25/March/2023 - added functionality for taged bc to sit ]
 ----------------------------------------------------------------------------------
 */
 

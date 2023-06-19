@@ -19,7 +19,6 @@
 
 #include "NW_I0_SPELLS"
 #include "x2_inc_spellhook"
-#include "nwnx_creature"
 
 void main()
 {
@@ -39,17 +38,6 @@ void main()
     }
 
 // End of Spell Cast Hook
-
-	// Restore cantrips.
-    if(GetLevelByClass(CLASS_TYPE_WIZARD) > 0)
-    {
-       NWNX_Creature_RestoreSpells(OBJECT_SELF, 0);
-    }
-    if (GetLevelByClass(CLASS_TYPE_SORCERER) > 0)
-    {
-       NWNX_Creature_RestoreSpells(OBJECT_SELF, 0);
-    }
-
 
     // Declare major variables
     object oTarget = GetSpellTargetObject();

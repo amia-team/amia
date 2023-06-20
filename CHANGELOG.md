@@ -7,15 +7,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Floating Hight Adjuster widget + script (comes with 3 build in hights options (and default), dm can alter these or lock it to just 1)
 
 ### Changed
-Cantrip update
+- Alter selfs can now have a preset Z-axis added
+- Skin changers can now have a preset Z-axis added
+
+- Cantrip update
 - Acid Splash, Electrical Jolt, and Acid Splash's damage scales 1d3 per 2 caster levels. Flare's damage scales 1d4 per 3 caster levels points of fire damage in addition to the original -1 attack bonus penalty against a fortitude saving throw.
 - Sorcerers and wizards have infinite cantrips. This might later be extended to other or all spellcasting classes.
 - The change is meant to encourage sorcerers and wizards to actively use their spells and to keep them engaged in combat after their spells run out.
 - The damage is meant to be minor but substantial enough to encourage casters not to constantly hide under invisibility. The damage can be tuned later.
 			
 ### Fixed
+- The dale
+	- 3rd firework target, back in the sky
 
 ## [2.7.1 - 2023-05-26]
 

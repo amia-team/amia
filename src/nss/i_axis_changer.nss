@@ -68,17 +68,19 @@ void change_axis(object oPC, object oItem, object oTarget){
     float  fZdefault = 0.0;
     float  fZSet;
     float  fZcurrent = GetObjectVisualTransform  (oTarget, 33);
+    string sName     = GetName ( oItem );
     string sTag      = GetTag ( oTarget );
 
         // Defining hight to set
-        if ( nZset == 0 ) { SetLocalInt ( oItem, "zaxis_setting", 1 ); }
+        if ( nZset == 0 ) { SetLocalInt ( oItem, "zaxis_setting", 1 ); SetName( oItem, sName +" <c Û >Low</c>");
+            FloatingTextStringOnCreature(( "<c Û >Widget activated.</c>" ), oPC, FALSE ); }
         if ( nZset == 1 ) {fZSet = GetLocalFloat ( oItem, "zaxis_set1" );
             if ( fZSet == 0.0 ) { fZSet = 0.5; } }
         if ( nZset == 2 ) {fZSet = GetLocalFloat ( oItem, "zaxis_set2" );
             if ( fZSet == 0.0 ) { fZSet = 1.0; } }
         if ( nZset == 3 ) {fZSet = GetLocalFloat ( oItem, "zaxis_set3" );
             if ( fZSet == 0.0 ) { fZSet = 1.5; } }
-					
+
         // Logic part, to assigne right function
         if ( oTarget == oItem )                             { nLogic = 1; } // Changing hight setting
         else if ( oTarget == oPC )                          { nLogic = 2; } // PC
@@ -94,9 +96,9 @@ void change_axis(object oPC, object oItem, object oTarget){
     if ( nLogic == 1 ) {
         if (nLock == 1 ) { FloatingTextStringOnCreature(( "<cÉ  >You can not change the hight settings on this widget.</c>" ), oPC, FALSE ); return; }
         else {
-            if ( nZset == 0 || nZset == 1 ) { SetLocalInt ( oItem, "zaxis_setting", 2 ); FloatingTextStringOnCreature(( "<c Û >Hight Set to medium,</c>" ), oPC, FALSE ); return; }
-            else if ( nZset == 2 )          { SetLocalInt ( oItem, "zaxis_setting", 3 ); FloatingTextStringOnCreature(( "<c Û >Hight Set to High,</c>" ), oPC, FALSE ); return; }
-            else if ( nZset == 3 )          { SetLocalInt ( oItem, "zaxis_setting", 1 ); FloatingTextStringOnCreature(( "<c Û >Hight Set to low,</c>" ), oPC, FALSE ); return; }
+            if ( nZset == 0 || nZset == 1 ) { SetLocalInt ( oItem, "zaxis_setting", 2 ); FloatingTextStringOnCreature(( "<c Û >Hight Set to Medium,</c>" ), oPC, FALSE ); SetName( oItem, sName +" <c Û >Medium</c>"); return; }
+            else if ( nZset == 2 )          { SetLocalInt ( oItem, "zaxis_setting", 3 ); FloatingTextStringOnCreature(( "<c Û >Hight Set to High,</c>" ), oPC, FALSE ); SetName( oItem, sName +" <c Û >High</c>"); return;  }
+            else if ( nZset == 3 )          { SetLocalInt ( oItem, "zaxis_setting", 1 ); FloatingTextStringOnCreature(( "<c Û >Hight Set to Low,</c>" ), oPC, FALSE ); SetName( oItem, sName +" <c Û >Low</c>"); return; }
         }
     }
     else if ( nLogic == 2 ) {

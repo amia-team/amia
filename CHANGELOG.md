@@ -22,6 +22,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - The dale
 	- 3rd firework target, back in the sky
+- Price typo in Master Scout crafting dialogue
+- Arbalest Freedom exploit fix
 
 ## [2.7.1 - 2023-05-26]
 

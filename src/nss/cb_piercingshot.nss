@@ -30,8 +30,10 @@ void main()
     effect eAB = EffectAttackIncrease(nAB);
     effect eDam1 = EffectDamageIncrease(nDam,DAMAGE_TYPE_DIVINE);
     effect eFreeze = EffectCutsceneImmobilize();
+    effect eFlatFoot = EffectBonusFeat(226); //temporarily adds monster feat Uncanny Reflex to prevent flat-footed immobilization
+    effect eImmobile = EffectLinkEffects(eFlatFoot, eFreeze);
     effect eLink = EffectLinkEffects(eAB, eDam1);
-    eLink = EffectLinkEffects(eFreeze, eLink);
+    eLink = EffectLinkEffects(eImmobile, eLink);
     eLink = ExtraordinaryEffect(eLink);
 
      // Check to make sure the weapon is a crossbow (light or heavy)

@@ -3,8 +3,6 @@
 
    Piercing Shot Feat for Crossbow PRC
 
-    6/28/23 Lord-Jyssev: Changed movement speed decrease to Cutscene Immobilize to fix Freedom exploit
-
 */
 
 void main()
@@ -29,7 +27,7 @@ void main()
     effect eLoop                    = GetFirstEffect(oPC);
     effect eAB = EffectAttackIncrease(nAB);
     effect eDam1 = EffectDamageIncrease(nDam,DAMAGE_TYPE_DIVINE);
-    effect eFreeze = EffectCutsceneImmobilize();
+    effect eFreeze = EffectMovementSpeedDecrease(99);
     effect eLink = EffectLinkEffects(eAB, eDam1);
     eLink = EffectLinkEffects(eFreeze, eLink);
     eLink = ExtraordinaryEffect(eLink);

@@ -7,6 +7,7 @@
   072722 Lord-Jyssev: new sPlaceableName naming method for placeables and ability to use PLC Spawners in recipes by sType Variable
   ??     Frozen: Tailor kit added
   16-april-2023 Frozen: Hair and tattoo kit added
+  070523 Lord-Jyssev: Added epic loot crafting, looping through all correct ingredients, and ingredient retention option
 
 */
 
@@ -82,7 +83,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
 
 
 //Launches the function to take the ingredients and produce the product
-void CraftProduct(object oPC, object oBench, string sProduct, string sType, string sMaterial, string sIngredient1, string sIngredient2, string sPlaceableName, int nCost, int nStack, int nProductStackSize);
+void CraftProduct(object oPC, object oBench, string sProduct, string sType, string sMaterial, string sIngredient1, string sIngredient2, string sPlaceableName, int nCost, int nStack, int nProductStackSize, int nRetainItem);
 
 //Sets the material local variables
 void SetMaterialType(object oCraftedItem, string sWeaponResRef, int nArmorMaterialPresent, int nArmorMaterial, int nWeaponMaterialPresent, int nWeaponMaterial);
@@ -263,6 +264,7 @@ void ArtificerConverter(object oPC, object oBench, int nNode)
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName;
+    int nRetainItem; //Retains ingredients on failure for epic loot
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -297,7 +299,7 @@ void ArtificerConverter(object oPC, object oBench, int nNode)
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
 
 }
 
@@ -312,6 +314,7 @@ void ArchitectConverter(object oPC, object oBench, int nNode)
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName = "Job System Placeable";
+    int nRetainItem; //Retains ingredients on failure for epic loot
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -377,7 +380,7 @@ void ArchitectConverter(object oPC, object oBench, int nNode)
       case 54: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_bla_irin"; sType = "js_bui_trsi2"; sPlaceableName = "Transportable Sign Large"; sMaterial = "plc"; nCost = 2000; break;
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
 
 
 }
@@ -393,6 +396,7 @@ void AlchemistConverter(object oPC, object oBench, int nNode)
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName;
+    int nRetainItem; //Retains ingredients on failure for epic loot
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -431,7 +435,7 @@ void AlchemistConverter(object oPC, object oBench, int nNode)
 
      }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
 
 
 }
@@ -447,6 +451,7 @@ void ArtistConverter(object oPC, object oBench, int nNode)
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName = "Job System Placeable";
+    int nRetainItem; //Retains ingredients on failure for epic loot
     int nActionNode = GetLocalInt( oPC, "ds_actionnode");
     int nIngredient1Found;
     int nIngredient2Found;
@@ -606,7 +611,7 @@ void ArtistConverter(object oPC, object oBench, int nNode)
     }
 
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
 
 
 }
@@ -622,6 +627,7 @@ void BrewerConverter(object oPC, object oBench, int nNode)
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName;
+    int nRetainItem; //Retains ingredients on failure for epic loot
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -648,7 +654,7 @@ void BrewerConverter(object oPC, object oBench, int nNode)
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
 
 
 }
@@ -663,6 +669,7 @@ void ChefConverter(object oPC, object oBench, int nNode)
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName;
+    int nRetainItem; //Retains ingredients on failure for epic loot
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -717,7 +724,7 @@ void ChefConverter(object oPC, object oBench, int nNode)
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
 
 
 
@@ -733,6 +740,7 @@ void JewelerConverter(object oPC, object oBench, int nNode)
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName;
+    int nRetainItem; //Retains ingredients on failure for epic loot
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -759,7 +767,7 @@ void JewelerConverter(object oPC, object oBench, int nNode)
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
 
 
 
@@ -775,6 +783,7 @@ void RangedCraftsmanConverter(object oPC, object oBench, int nNode)
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName;
+    int nRetainItem; //Retains ingredients on failure for epic loot
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -822,7 +831,7 @@ void RangedCraftsmanConverter(object oPC, object oBench, int nNode)
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
 
 
 }
@@ -837,6 +846,7 @@ void ScoundrelConverter(object oPC, object oBench, int nNode)
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName;
+    int nRetainItem; //Retains ingredients on failure for epic loot
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -857,7 +867,7 @@ void ScoundrelConverter(object oPC, object oBench, int nNode)
       case 10: sProduct = "js_arca_spiderl"; sIngredient1 = "js_hun_cspider"; sIngredient2 = "js_alch_slee"; nCost = 2000; break;
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
 
 
 
@@ -873,6 +883,7 @@ void ScholarConverter(object oPC, object oBench, int nNode)
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName;
+    int nRetainItem; //Retains ingredients on failure for epic loot
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -891,7 +902,7 @@ void ScholarConverter(object oPC, object oBench, int nNode)
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
 
 
 
@@ -907,6 +918,7 @@ void SmithConverter(object oPC, object oBench, int nNode)
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName;
+    int nRetainItem; //Retains ingredients on failure for epic loot
     int nActionNode = GetLocalInt( oPC, "ds_actionnode");
     int nIngredient1Found;
     int nIngredient2Found;
@@ -1305,7 +1317,49 @@ void SmithConverter(object oPC, object oBench, int nNode)
       }
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
+    else if(nActionNode == 9) // Sure/True/Warforged
+    {
+
+      switch(nNode)
+      {
+
+        case 1: sProduct = "sureforgeddagger"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 2: sProduct = "sureforgedhandax"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 3: sProduct = "sureforgedkama"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 4: sProduct = "sureforgedkukri"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 5: sProduct = "trueforgedlighth"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 6: sProduct = "sureforgedmace"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 7: sProduct = "sureforgedrapier"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 8: sProduct = "sureforgedscimit"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 9: sProduct = "sureforgedshorts"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 10: sProduct = "sureforgedsickle"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 11: sProduct = "sureforgedwhip"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 12: sProduct = "warforgedbastard"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 13: sProduct = "warforgedbattlea"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 14: sProduct = "warforgedclub"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 15: sProduct = "trueforgeddwarve"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 16: sProduct = "trueforgedkatana"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 17: sProduct = "trueforgedlightf"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 18: sProduct = "trueforgedlongsw"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 19: sProduct = "trueforgedmornin"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 20: sProduct = "trueforgedtriden"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 21: sProduct = "trueforgedwarham"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 22: sProduct = "warforgeddiremac"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 23: sProduct = "warforgeddoublea"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 24: sProduct = "warforgedgreatax"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 25: sProduct = "warforgedgreatsw"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 26: sProduct = "warforgedhalberd"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 27: sProduct = "warforgedheavyfl"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 28: sProduct = "warforgedquarter"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 29: sProduct = "warforgedscythe"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 30: sProduct = "warforgedspear"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 31: sProduct = "warforgedtwoblad"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "none"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        //case 32: sProduct = "warforged"; sIngredient1 = "js_bui_phpl"; sIngredient2 = "none"; sType = "weapon"; sMaterial = "training"; nCost = 1000; break;
+
+      }
+    }
+
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
 
 }
 
@@ -1319,6 +1373,7 @@ void TailorConverter(object oPC, object oBench, int nNode)
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName = "Job System Placeable";
+    int nRetainItem; //Retains ingredients on failure for epic loot
     int nIngredient1Found;
     int nIngredient2Found;
     int nCost;
@@ -1386,7 +1441,7 @@ void TailorConverter(object oPC, object oBench, int nNode)
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
 
 
 
@@ -1731,7 +1786,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
 }
 
 
-void CraftProduct(object oPC, object oBench, string sProduct, string sType, string sMaterial, string sIngredient1, string sIngredient2, string sPlaceableName, int nCost, int nStack, int nProductStackSize)
+void CraftProduct(object oPC, object oBench, string sProduct, string sType, string sMaterial, string sIngredient1, string sIngredient2, string sPlaceableName, int nCost, int nStack, int nProductStackSize, int nRetainItem)
 {
 
     object oItemInChest = GetFirstItemInInventory(oBench);
@@ -1801,6 +1856,16 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
       }
       //
 
+      // Catch all for any epic ore
+      if(sIngredient1 == "epic_ore")
+      {
+        if((GetResRef(oItemInChest) == "nep_largemagic") || (GetResRef(oItemInChest) == "nep_mediummagic") ||
+        (GetResRef(oItemInChest) == "nep_smallmagic"))
+        {
+           nIngredient1Found == 1;
+           oIngredient1 = oItemInChest;
+        }
+      }
 
       // Catch all for meats so any work with jobs
       if(sIngredient1 == "jobsystemmeat")
@@ -2132,24 +2197,31 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
             sSuccessOrFailure = "FAILURE";
             GiveExactXP(oPC,nXP/2);
             TakeGoldFromCreature(nCost,oPC,TRUE);
-            // If there is a stack for ingredient1  we reduce the stack by 1
-            if(GetItemStackSize(oIngredient1) == 1)
-              {
-                DestroyObject(oIngredient1);
-              }
-              else
-              {
-                SetItemStackSize(oIngredient1,GetItemStackSize(oIngredient1)-1);
-              }
-            // If there is a stack for ingredient2 we reduce the stack by 1
-            if(GetItemStackSize(oIngredient2) == 1)
-              {
-                DestroyObject(oIngredient2);
-              }
-              else
-              {
-                SetItemStackSize(oIngredient2,GetItemStackSize(oIngredient2)-1);
-              }
+
+            if(nRetainItem == 1) //Don't destroy items if retain item is set to true
+            {
+                SendMessageToPC(oPC, "Your ingredient isn't destroyed.");
+            }
+            else // If there is a stack for ingredient1  we reduce the stack by 1
+            {
+                if(GetItemStackSize(oIngredient1) == 1)
+                  {
+                    DestroyObject(oIngredient1);
+                  }
+                  else
+                  {
+                    SetItemStackSize(oIngredient1,GetItemStackSize(oIngredient1)-1);
+                  }
+                // If there is a stack for ingredient2 we reduce the stack by 1
+                if(GetItemStackSize(oIngredient2) == 1)
+                  {
+                    DestroyObject(oIngredient2);
+                  }
+                  else
+                  {
+                    SetItemStackSize(oIngredient2,GetItemStackSize(oIngredient2)-1);
+                  }
+             }
             //
           }
           SendMessageToPC(oPC,"Rolled "+IntToString(nRandom)+" vs 100 or less. "+sSuccessOrFailure);
@@ -2191,24 +2263,31 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
             sSuccessOrFailure = "FAILURE";
             GiveExactXP(oPC,nXP/2);
             TakeGoldFromCreature(nCost,oPC,TRUE);
-            // If there is a stack for ingredient1  we reduce the stack by 1
-            if(GetItemStackSize(oIngredient1) == 1)
-              {
-                DestroyObject(oIngredient1);
-              }
-              else
-              {
-                SetItemStackSize(oIngredient1,GetItemStackSize(oIngredient1)-1);
-              }
-            // If there is a stack for ingredient2 we reduce the stack by 1
-            if(GetItemStackSize(oIngredient2) == 1)
-              {
-                DestroyObject(oIngredient2);
-              }
-              else
-              {
-                SetItemStackSize(oIngredient2,GetItemStackSize(oIngredient2)-1);
-              }
+
+            if(nRetainItem == 1) //Don't destroy items if retain item is set to true
+            {
+                SendMessageToPC(oPC, "Your ingredient isn't destroyed.");
+            }
+            else // If there is a stack for ingredient1  we reduce the stack by 1
+            {
+                if(GetItemStackSize(oIngredient1) == 1)
+                  {
+                    DestroyObject(oIngredient1);
+                  }
+                  else
+                  {
+                    SetItemStackSize(oIngredient1,GetItemStackSize(oIngredient1)-1);
+                  }
+                // If there is a stack for ingredient2 we reduce the stack by 1
+                if(GetItemStackSize(oIngredient2) == 1)
+                  {
+                    DestroyObject(oIngredient2);
+                  }
+                  else
+                  {
+                    SetItemStackSize(oIngredient2,GetItemStackSize(oIngredient2)-1);
+                  }
+            }
             //
           }
           SendMessageToPC(oPC,"Rolled "+IntToString(nRandom)+" vs 80 or less. "+sSuccessOrFailure);
@@ -2249,24 +2328,31 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
           {
             sSuccessOrFailure = "FAILURE";
             TakeGoldFromCreature(nCost,oPC,TRUE);
-            // If there is a stack for ingredient1  we reduce the stack by 1
-            if(GetItemStackSize(oIngredient1) == 1)
-              {
-                DestroyObject(oIngredient1);
-              }
-              else
-              {
-                SetItemStackSize(oIngredient1,GetItemStackSize(oIngredient1)-1);
-              }
-            // If there is a stack for ingredient2 we reduce the stack by 1
-            if(GetItemStackSize(oIngredient2) == 1)
-              {
-                DestroyObject(oIngredient2);
-              }
-              else
-              {
-                SetItemStackSize(oIngredient2,GetItemStackSize(oIngredient2)-1);
-              }
+            if(nRetainItem == 1) //Don't destroy items if retain item is set to true
+            {
+                SendMessageToPC(oPC, "Your ingredient isn't destroyed.");
+            }
+            else
+            {
+                // If there is a stack for ingredient1  we reduce the stack by 1
+                if(GetItemStackSize(oIngredient1) == 1)
+                  {
+                    DestroyObject(oIngredient1);
+                  }
+                  else
+                  {
+                    SetItemStackSize(oIngredient1,GetItemStackSize(oIngredient1)-1);
+                  }
+                // If there is a stack for ingredient2 we reduce the stack by 1
+                if(GetItemStackSize(oIngredient2) == 1)
+                  {
+                    DestroyObject(oIngredient2);
+                  }
+                  else
+                  {
+                    SetItemStackSize(oIngredient2,GetItemStackSize(oIngredient2)-1);
+                  }
+            }
             //
           }
           SendMessageToPC(oPC,"Rolled "+IntToString(nRandom)+" vs 60 or less. "+sSuccessOrFailure);
@@ -2278,6 +2364,8 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
       {
         CraftProperties(oPC,oCraftedItem,sType,sMaterial,sPlaceableName);
       }
+
+      oItemInChest = GetNextItemInInventory( oBench );
 
     }
     else

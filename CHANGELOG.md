@@ -8,10 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Floating Hight Adjuster widget + script (comes with 3 build in hights options (and default), dm can alter these or lock it to just 1)
+- OI Areas (unreleased, just created)
 
 ### Changed
 - Alter selfs can now have a preset Z-axis added
 - Skin changers can now have a preset Z-axis added
+- Job System: Smith is now able to craft Magical Ore into Sure/True/Warforged weaponry; note that on failure the ore is not destroyed, but gold is taken
 
 - Cantrip update
 - Acid Splash, Electrical Jolt, and Acid Splash's damage scales 1d3 per 2 caster levels. Flare's damage scales 1d4 per 3 caster levels points of fire damage in addition to the original -1 attack bonus penalty against a fortitude saving throw.
@@ -22,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - The dale
 	- 3rd firework target, back in the sky
+- Arbalest Freedom exploit fix
 
 ## [2.7.1 - 2023-05-26]
 

@@ -2200,6 +2200,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
             sSuccessOrFailure = "SUCCESS";
             GiveExactXP(oPC,nXP);
             oCraftedItem = CreateItemOnObject(sProduct,oBench,nProductStackSize);
+            SetIdentified(oCraftedItem, TRUE);
             SetMaterialType(oCraftedItem,sWeaponResRef,nArmorMaterialPresent,nArmorMaterial,nWeaponMaterialPresent,nWeaponMaterial);
             TakeGoldFromCreature(nCost,oPC,TRUE);
             // If there is a stack for ingredient1  we reduce the stack by 1
@@ -2266,6 +2267,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
             sSuccessOrFailure = "SUCCESS";
             GiveExactXP(oPC,nXP);
             oCraftedItem = CreateItemOnObject(sProduct,oBench,nProductStackSize);
+            SetIdentified(oCraftedItem, TRUE);
             SetMaterialType(oCraftedItem,sWeaponResRef,nArmorMaterialPresent,nArmorMaterial,nWeaponMaterialPresent,nWeaponMaterial);
             TakeGoldFromCreature(nCost,oPC,TRUE);
             // If there is a stack for ingredient1  we reduce the stack by 1
@@ -2332,6 +2334,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
           {
             sSuccessOrFailure = "SUCCESS";
             oCraftedItem = CreateItemOnObject(sProduct,oBench,nProductStackSize);
+            SetIdentified(oCraftedItem, TRUE);
             SetMaterialType(oCraftedItem,sWeaponResRef,nArmorMaterialPresent,nArmorMaterial,nWeaponMaterialPresent,nWeaponMaterial);
             TakeGoldFromCreature(nCost,oPC,TRUE);
             // If there is a stack for ingredient1  we reduce the stack by 1

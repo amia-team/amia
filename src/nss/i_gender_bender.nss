@@ -9,6 +9,7 @@
 #include "inc_td_appearanc"
 #include "x2_inc_switches"
 #include "x2_inc_itemprop"
+#include "nwnx_creature"
 
 
 void main(){
@@ -24,12 +25,10 @@ void main(){
             object oPC = GetItemActivator();
             int nNewGender = !GetGender(oPC);
 
-                            SendMessageToPC (oPC, IntToString (nNewGender));
-							SendMessageToPC (oPC, "debug 1");
-                            SetGender (oPC, 1);
-							SendMessageToPC (oPC, "debug 2");
-							//nNewGender
-                            //string genderString = nNewGender == 0 ? "male" : "female";
-                            //FloatingTextStringOnCreature(( "<c Û >Changed gender to " + genderString + "</c>" ), oPC, FALSE );
+							SendMessageToPC (oPC, IntToString (nNewGender));
+                            NWNX_Creature_SetGender(oPC, nNewGender);
+                            string genderString = nNewGender == 0 ? "male" : "female";
+                            FloatingTextStringOnCreature(( "<c Û >Changed gender to " + genderString + "</c>" ), oPC, FALSE );
          }
     }
+

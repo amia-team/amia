@@ -24,9 +24,9 @@ void main(){
             object oPC = GetItemActivator();
             int nNewGender = !GetGender(oPC);
 
+                            SendMessageToPC (oPC, IntToString (nNewGender));
                             NWNX_Creature_SetGender(oPC, nNewGender);
                             string genderString = nNewGender == 0 ? "male" : "female";
                             FloatingTextStringOnCreature(( "<c Û >Changed gender to " + genderString + "</c>" ), oPC, FALSE );
          }
     }
-

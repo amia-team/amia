@@ -15,21 +15,18 @@ void main(){
 
     int nEvent  = GetUserDefinedItemEventNumber();
     int nResult = X2_EXECUTE_SCRIPT_END;
-	SendMessageToPC (oPC, "debug 1");
+
     switch (nEvent){
 
         case X2_ITEM_EVENT_ACTIVATE:
 
-			SendMessageToPC (oPC, "debug 2");
+
             object oPC = GetItemActivator();
-			SendMessageToPC (oPC, "debug 3");
             int nNewGender = !GetGender(oPC);
 
-							SendMessageToPC (oPC, "debug 4");
-                            NWNX_Creature_SetGender (oPC, GENDER_FEMALE);
-							SendMessageToPC (oPC, "debug 5");
-                            string genderString = nNewGender == 0 ? "male" : "female";
-                            FloatingTextStringOnCreature(( "<c Û >Changed gender to " + genderString + "</c>" ), oPC, FALSE );
+                            NWNX_Creature_SetGender(oPC, nNewGender);
+                            //string genderString = nNewGender == 0 ? "male" : "female";
+                            //FloatingTextStringOnCreature(( "<c Û >Changed gender to " + genderString + "</c>" ), oPC, FALSE );
          }
     }
 

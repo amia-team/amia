@@ -25,8 +25,11 @@ void main(){
             int nNewGender = !GetGender(oPC);
 
                             SendMessageToPC (oPC, IntToString (nNewGender));
-                            SetGender(oPC, nNewGender);
-                            string genderString = nNewGender == 0 ? "male" : "female";
-                            FloatingTextStringOnCreature(( "<c Û >Changed gender to " + genderString + "</c>" ), oPC, FALSE );
+							SendMessageToPC (oPC, "debug 1");
+                            SetGender (oPC, 1);
+							SendMessageToPC (oPC, "debug 2");
+							//nNewGender
+                            //string genderString = nNewGender == 0 ? "male" : "female";
+                            //FloatingTextStringOnCreature(( "<c Û >Changed gender to " + genderString + "</c>" ), oPC, FALSE );
          }
     }

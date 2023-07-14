@@ -52,6 +52,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - The dale
 	- 3rd firework target, back in the sky
 - Gender changer fix
+- Helmet 199 (TeS dummer helmet) position fixed
+- Rainbow and default feathered armored wings fix
 
 ## [2.7.1 - 2023-05-26]
 

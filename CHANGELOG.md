@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
  
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+
 ## [Unreleased]
 
 ### Added
@@ -10,6 +11,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 	
 ### Fixed
+
+
+## [2.7.3A]
+
+### Added
+- Wings
+	- Rainbow feather without armor
+	- White feather without armor
+- Portrait change option to master hair/tatoo changer	
+
+### Changed
+	
+### Fixed
+- All 10 dragon pointy "butt" wings now normal
 
 ## [2.7.2A - 2023-07-14]
 

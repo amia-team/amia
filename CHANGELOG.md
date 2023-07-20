@@ -25,6 +25,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	
 ### Fixed
 - All 10 dragon pointy "butt" wings now normal
+- Treant no longer magical beast
+- DM tool fix
 
 ## [2.7.2A - 2023-07-14]
 

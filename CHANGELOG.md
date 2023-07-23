@@ -13,20 +13,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 
 
-## [2.7.3A]
+## [2.7.3A - 2023-07-23]
 
 ### Added
 - Wings
 	- Rainbow feather without armor
 	- White feather without armor
-- Portrait change option to master hair/tatoo changer	
+- Portrait change option to master hair/tatoo changer
+- 2 new mummy horse skins/tails (mounts)
+- 2 new portraits (goat and mummy horse)
+- 1 new item icon (guild badge)
+- Plc to palette	
 
-### Changed
-	
 ### Fixed
 - All 10 dragon pointy "butt" wings now normal
 - Treant no longer magical beast
 - DM tool fix
+- Soundset changer in character maintinance now works again
 
 ## [2.7.2A - 2023-07-14]
 

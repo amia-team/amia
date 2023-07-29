@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-## [Unreleased]
+## [2.7.4A - 2023-07-29]
 
 ### Added
 - Rabbit tail that uses haircolor

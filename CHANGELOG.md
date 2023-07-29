@@ -22,7 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Triumvir lamp now notes greengarden correctly	
 - Candlekeep plot update
-- Bottle companions (dynamic ones) can no be mounted
+- Bottle companions dynamic support (meaning they can float, be old, be mounted, etc mostly for dynamic ones only) 
 
 ### Fixed
 

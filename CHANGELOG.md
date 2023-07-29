@@ -9,7 +9,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 	
 ### Changed
+
+### Fixed
+
+## [Unreleased]
+
+### Added
+- Rabbit tail that uses haircolor
+- Area: The table
+- 1x Player portrait
 	
+### Changed
+- Triumvir lamp now notes greengarden correctly	
+- Candlekeep plot update
+- Bottle companions (dynamic ones) can no be mounted
+
 ### Fixed
 
 

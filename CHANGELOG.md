@@ -7,8 +7,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Enhanced Recall Stone
+- Divine Recall Stone
+- Quest for Enhanced Recall Stone
+- Dialogue that explains all Recall Stones fully
+- Kingdom of Kohlingen: Argent Keep, Lower (New Area)
 	
 ### Changed
+- Plot Area Updates:
+	- Kingdom of Kohlingen: Argent Keep
+	- Kingdom of Kohlingen: Fort Cystana, Trade Hall
+	- Kingdom of Cetha: Wave & Serpent Guildhouse
+	- Silent Bay
+	- L'Obsul
+- All Recall Stones keep the gold lettering after being attuned
 
 ### Fixed
 

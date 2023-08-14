@@ -11,12 +11,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Divine Recall Stone
 - Quest for Enhanced Recall Stone
 - Dialogue that explains all Recall Stones fully
-- Kingdom of Kohlingen: Argent Keep, Lower (New Area)
+- Kingdom of Kohlingen: Argent Keep, Barracks (New Area)
 	
 ### Changed
 - Plot Area Updates:
 	- Kingdom of Kohlingen: Argent Keep
 	- Kingdom of Kohlingen: Fort Cystana, Trade Hall
+	- Kingdom of Kohlingen: Fort Cystana North
 	- Kingdom of Cetha: Wave & Serpent Guildhouse
 	- Silent Bay
 	- L'Obsul

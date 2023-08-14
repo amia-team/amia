@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Silent Bay
 	- L'Obsul
 - All Recall Stones keep the gold lettering after being attuned
+- Mini quest script gained a max item feature so certain quests don't take all items at once
 
 ### Fixed
 

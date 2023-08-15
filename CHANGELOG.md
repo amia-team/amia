@@ -15,16 +15,30 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	
 ### Changed
 - Plot Area Updates:
-	- Kingdom of Kohlingen: Argent Keep
-	- Kingdom of Kohlingen: Fort Cystana, Trade Hall
 	- Kingdom of Kohlingen: Fort Cystana North
-	- Kingdom of Cetha: Wave & Serpent Guildhouse
-	- Silent Bay
-	- L'Obsul
+	- Kingdom of Kohlingen: Argent Keep
+	- Name changes:
+		- All "Kingdom of Cetha" area names part, removed
+		- Frontiers rest and all interiors now renamed to "Traveller's Rest"
+		- Festifal grounds now part of traveller's rest domain.
+	- Enhanced Recall stone Npcs added to: 
+		- Kingdom of Kohlingen: Fort Cystana, Trade Hall
+		- Traveller's Rest: Wave & Serpent Guildhouse
+		- Silent Bay
+		- L'Obsul
+		- Winya Ravana: council tower
+	- L'obsul
+		- Poral has a destination again on amia (and assosiated "rule" pilares updated)
+	- All Traveller's Rest areas updated with lawsigns, and new guards.
 - All Recall Stones keep the gold lettering after being attuned
 - Mini quest script gained a max item feature so certain quests don't take all items at once
+- Removed Int req of healing merchant conversation
 
 ### Fixed
+- Barbarian rage widget fix, no longer changes names of people
+- New Bunny tail should now actually work
+- Racial gate Traveller's Rest (former frontiers rest) at lamp now in line with other gates
+
 
 ## [2.7.4A - 2023-07-29]
 

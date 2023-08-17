@@ -7,21 +7,115 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
-- Floating Hight Adjuster widget + script (comes with 3 build in hights options (and default), dm can alter these or lock it to just 1)
-
+- Enhanced Recall Stone
+- Divine Recall Stone
+- Quest for Enhanced Recall Stone
+- Dialogue that explains all Recall Stones fully
+- Kingdom of Kohlingen: Argent Keep, Barracks (New Area)
+	
 ### Changed
-- Alter selfs can now have a preset Z-axis added
-- Skin changers can now have a preset Z-axis added
+- Plot Area Updates:
+	- Kingdom of Kohlingen: Fort Cystana North
+	- Kingdom of Kohlingen: Argent Keep
+	- Name changes:
+		- All "Kingdom of Cetha" area names part, removed
+		- Frontiers rest and all interiors now renamed to "Traveller's Rest"
+		- Festifal grounds now part of traveller's rest domain.
+	- Enhanced Recall stone Npcs added to: 
+		- Kingdom of Kohlingen: Fort Cystana, Trade Hall
+		- Traveller's Rest: Wave & Serpent Guildhouse
+		- Silent Bay
+		- L'Obsul
+		- Winya Ravana: council tower
+	- L'obsul
+		- Poral has a destination again on amia (and assosiated "rule" pilares updated)
+	- All Traveller's Rest areas updated with lawsigns, and new guards.
+- All Recall Stones keep the gold lettering after being attuned
+- Mini quest script gained a max item feature so certain quests don't take all items at once
+- Removed Int req of healing merchant conversation
 
-- Cantrip update
-- Acid Splash, Electrical Jolt, and Acid Splash's damage scales 1d3 per 2 caster levels. Flare's damage scales 1d4 per 3 caster levels points of fire damage in addition to the original -1 attack bonus penalty against a fortitude saving throw.
-- Sorcerers and wizards have infinite cantrips. This might later be extended to other or all spellcasting classes.
-- The change is meant to encourage sorcerers and wizards to actively use their spells and to keep them engaged in combat after their spells run out.
-- The damage is meant to be minor but substantial enough to encourage casters not to constantly hide under invisibility. The damage can be tuned later.
-			
+### Fixed
+- Barbarian rage widget fix, no longer changes names of people
+- New Bunny tail should now actually work
+- Racial gate Traveller's Rest (former frontiers rest) at lamp now in line with other gates
+
+
+## [2.7.4A - 2023-07-29]
+
+### Added
+- Rabbit tail that uses haircolor
+- Area: The table
+- 1x Player portrait
+	
+### Changed
+- Triumvir lamp now notes greengarden correctly	
+- Candlekeep plot update
+- Bottle companions phenotype support (meaning they can float, be old, be mounted, etc mostly for dynamic ones only) 
+
+### Fixed
+
+
+## [2.7.3A - 2023-07-23]
+
+### Added
+- Wings
+	- Rainbow feather without armor
+	- White feather without armor
+- Portrait change option to master hair/tatoo changer
+- 2 new mummy horse skins/tails (mounts)
+- 2 new portraits (goat and mummy horse)
+- 1 new item icon (guild badge)
+- Plc to palette	
+
+### Fixed
+- All 10 dragon pointy "butt" wings now normal
+- Treant no longer magical beast
+- DM tool fix
+- Soundset changer in character maintinance now works again
+
+## [2.7.2A - 2023-07-14]
+
+### Added
+- Floating Hight Adjuster widget + script (comes with 3 build in hights options (and default), dm can alter these or lock it to just 1)
+- Jobsystem Smith:
+	- Can now craft warforged, sureforged and trueforged weaponry with the apropiate usual ingots + 50.000 gold (failure will not lose the ingot)
+- Jobsytem Ranged craftsman:
+	- Can now craft the Seeking and isaacs ranged weapons with the appropiate usual hemp/wood + 50.000 gold (failure will not lose the hemp/wood)
+	
+### Changed
+- Alter self widget:
+	- Z-axis support added.
+ 	- Scale support added. 
+- Skin changer:
+	- Z-axis support added.
+- Cantrip update:
+	- Ray of Frost: Damage scales 1d3 per 2 caster levels (metamagic does not apply)
+	- Electrical Jolt: Damage scales 1d3 per 2 caster levels (metamagic does not apply)
+	- Acid Splash: Damage scales 1d3 per 2 caster levels (metamagic does not apply)
+	- Flare: Damage scales 1d4 per 3 caster levels (metamagic does not apply) in addition to the default -1 attack bonus penalty against a fort save.
+
+- Area Changes:
+	- All cetha areas related to southport/attached areas
+		- Plot updates
+	- Frontiers rest
+		- Orc quest npcs re-added
+		- floating fence fixed
+		- Guild guards added aditional to SotS guards
+	- Wave and serpent guild
+		- SotS mostly replaced by guild guards
+	- Kingdom of Cetha: Knights Hallow -> Skull Peaks: Knights hallow
+		- (name change)
+		- All guards, encampments removed
+		- Area no longer hallowed as its not supported.
+	- Obsidian island: portable
+		- Golem added per player request
+		
 ### Fixed
 - The dale
 	- 3rd firework target, back in the sky
+- Gender changer fix
+- Helmet 199 (TeS dummer helmet) position fixed
+- Rainbow and default feathered armored wings fix
 
 ## [2.7.1 - 2023-05-26]
 

@@ -12,10 +12,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Quest for Enhanced Recall Stone
 - Dialogue that explains all Recall Stones fully
 - Kingdom of Kohlingen: Argent Keep, Lower (New Area)
-- 25 new appearances (skins) see forum for list
-- 1  new wings set (quadruple wings)
-- 1  new player portrait
-- 6  new Creature portraits (see forum for list)
+- 25 New Creature appearances (See forum for list.)
+- 1  New Wings set (Quadruple wings)
+- 1  New Player portrait
+- 6  New Creature portraits (See forum for list.)
 	
 ### Changed
 - Plot Area Updates:
@@ -24,25 +24,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Kingdom of Kohlingen: Argent Keep
 	- Name changes:
 		- All "Kingdom of Cetha" references removed
-		- Frontiers rest and all interiors now renamed to "Traveller's Rest"
-		- Festival grounds now part of Traveller's Rest domain.
-	- Enhanced Recall stone NPCs added to: 
+		- Frontier's rest and all attached interiors renamed to "Traveller's Rest"
+		- Festival grounds now part of Traveller's Rest
+	- Enhanced Recall stone quest NPCs added to: 
 		- Kingdom of Kohlingen: Fort Cystana, Trade Hall
 		- Traveller's Rest: Wave & Serpent Guildhouse
 		- Silent Bay
 		- L'Obsul
 		- Winya Ravana: Council Tower
 	- L'obsul
-		- Portal has a destination again on Amia (and assosiated "rule" pillars updated)
-	- All Traveller's Rest areas updated with law signs, and new guards.
+		- Portal has a destination again on Amia (and associated "rule" pillars updated)
+	- All Traveller's Rest areas updated with law signs, and new guards
 - All Recall Stones keep the gold lettering after being attuned
 - Mini quest script gained a max item feature so certain quests don't take all items at once
-- Removed Int req of healing merchant conversation
+- Removed INT requirement in the healing merchant conversation
 
 ### Fixed
 - Barbarian rage widget fix, no longer changes names of people
 - New Bunny tail should now actually work
-- Racial gate Traveller's Rest (former Frontier's Rest) at lamp now in line with other gates
+- Racial gate in Traveller's Rest (former Frontier's Rest) at lamp now in line with other gates
 
 
 ## [2.7.4A - 2023-07-29]

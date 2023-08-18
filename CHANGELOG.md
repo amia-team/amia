@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Quest for Enhanced Recall Stone
 - Dialogue that explains all Recall Stones fully
 - Kingdom of Kohlingen: Argent Keep, Lower (New Area)
+- 25 new appearances (skins) see forum for list
+- 1  new wings set (quadruple wings)
+- 1  new player portrait
+- 6  new Creature portraits (see forum for list)
 	
 ### Changed
 - Plot Area Updates:

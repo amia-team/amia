@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [2.7.5A - 2023-08-18]
+
+### Added
 - Enhanced Recall Stone
 - Divine Recall Stone
 - Quest for Enhanced Recall Stone

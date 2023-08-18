@@ -11,25 +11,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Divine Recall Stone
 - Quest for Enhanced Recall Stone
 - Dialogue that explains all Recall Stones fully
-- Kingdom of Kohlingen: Argent Keep, Barracks (New Area)
+- Kingdom of Kohlingen: Argent Keep, Lower (New Area)
 	
 ### Changed
 - Plot Area Updates:
 	- Kingdom of Kohlingen: Fort Cystana North
+	- Kingdom of Kohlingen: Fort Cystana
 	- Kingdom of Kohlingen: Argent Keep
 	- Name changes:
-		- All "Kingdom of Cetha" area names part, removed
+		- All "Kingdom of Cetha" references removed
 		- Frontiers rest and all interiors now renamed to "Traveller's Rest"
-		- Festifal grounds now part of traveller's rest domain.
-	- Enhanced Recall stone Npcs added to: 
+		- Festival grounds now part of Traveller's Rest domain.
+	- Enhanced Recall stone NPCs added to: 
 		- Kingdom of Kohlingen: Fort Cystana, Trade Hall
 		- Traveller's Rest: Wave & Serpent Guildhouse
 		- Silent Bay
 		- L'Obsul
-		- Winya Ravana: council tower
+		- Winya Ravana: Council Tower
 	- L'obsul
-		- Poral has a destination again on amia (and assosiated "rule" pilares updated)
-	- All Traveller's Rest areas updated with lawsigns, and new guards.
+		- Portal has a destination again on Amia (and assosiated "rule" pillars updated)
+	- All Traveller's Rest areas updated with law signs, and new guards.
 - All Recall Stones keep the gold lettering after being attuned
 - Mini quest script gained a max item feature so certain quests don't take all items at once
 - Removed Int req of healing merchant conversation
@@ -37,7 +38,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Barbarian rage widget fix, no longer changes names of people
 - New Bunny tail should now actually work
-- Racial gate Traveller's Rest (former frontiers rest) at lamp now in line with other gates
+- Racial gate Traveller's Rest (former Frontier's Rest) at lamp now in line with other gates
 
 
 ## [2.7.4A - 2023-07-29]

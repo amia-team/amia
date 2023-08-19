@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 25 New Creature appearances (See forum for list.)
 - 1  New Wings set (Quadruple wings)
 - 1  New Player portrait
-- 6  New Creature portraits (See forum for list.)
+- 7  New Creature portraits (See forum for list.)
 - 9  New VFX Glasses (See forum for list.)
 	
 ### Changed

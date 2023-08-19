@@ -18,6 +18,8 @@ Date         Name        Reason
 2023-05-11   Frozen      Changed script to check on current appearance to deside-
                          -if to change or revert rather then on/off when using
 2023-06-18   Frozen      Added Z axis function
+2023-08-18   Frozen      Added extra time to tail/wing apply to ensure delayed
+                         applies it properly
 ------------------------------------------------------------------
 
 */
@@ -251,13 +253,13 @@ void change_skin( object oPC, object oItem ){
         }
 
         // morph
-        DelayCommand( fDelay, SetCreatureAppearanceType( oPC, nAppearance ) );
-        DelayCommand( fDelay, SetPortraitResRef( oPC, sPortrait ) );
-        DelayCommand( fDelay, SetPhenoType( nPheno, oPC ) );
-        DelayCommand( fDelay+1, SetCreatureTailType( nTail, oPC ) );
-        DelayCommand( fDelay, SetCreatureWingType( nWing, oPC ) );
-        DelayCommand( fDelay, change_scale( oPC, fScale) );
-        DelayCommand( fDelay, change_axis( oPC, fZaxis) );
+        DelayCommand( fDelay,     SetCreatureAppearanceType( oPC, nAppearance ) );
+        DelayCommand( fDelay,     SetPortraitResRef( oPC, sPortrait ) );
+        DelayCommand( fDelay,     SetPhenoType( nPheno, oPC ) );
+        DelayCommand( fDelay+0.5, SetCreatureTailType( nTail, oPC ) );
+        DelayCommand( fDelay+0.5, SetCreatureWingType( nWing, oPC ) );
+        DelayCommand( fDelay,     change_scale( oPC, fScale) );
+        DelayCommand( fDelay,     change_axis( oPC, fZaxis) );
         if( fDelay < 0.5 )
             DelayCommand( fDelay+1.0, ApplyEffectToObject( DURATION_TYPE_TEMPORARY, EffectPolymorph( POLYMORPH_TYPE_NULL_HUMAN ), oPC, 0.5 ) );
 

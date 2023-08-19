@@ -90,6 +90,27 @@ void main(){
         return;
     }
 
+    else {
+        if ( d2() == 1 ){
+
+            ActionUnequipItem( GetItemInSlot( INVENTORY_SLOT_HEAD , OBJECT_SELF ) );
+        }
+        if ( d2() == 1 ){
+
+            ActionUnequipItem( GetItemInSlot( INVENTORY_SLOT_CLOAK , OBJECT_SELF ) );
+        }
+        if ( d3() == 1 ){
+
+            ActionEquipItem( GetItemPossessedBy( OBJECT_SELF, "NW_WPLMHB010" ), INVENTORY_SLOT_RIGHTHAND );
+            return;
+        }
+        if ( d2() == 1 ){
+
+            ActionEquipItem( GetItemPossessedBy( OBJECT_SELF, "NW_WBWMXH008" ), INVENTORY_SLOT_RIGHTHAND );
+        }
+
+        return;
+    }
 
 }
 

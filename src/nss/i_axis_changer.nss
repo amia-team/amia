@@ -68,10 +68,10 @@ void change_axis(object oPC, object oItem, object oTarget){
     float  fZdefault = 0.0;
     float  fZSet;
     float  fZcurrent = GetObjectVisualTransform  (oTarget, 33);
-    string sName     = GetName ( oItem );
+    string sName     = "Height Adjuster: ";
     string sTag      = GetTag ( oTarget );
 
-        // Defining hight to set
+        // Defining Height to set
         if ( nZset == 0 ) { SetLocalInt ( oItem, "zaxis_setting", 1 ); SetName( oItem, sName +" <c Û >Low</c>");
             FloatingTextStringOnCreature(( "<c Û >Widget activated.</c>" ), oPC, FALSE ); }
         if ( nZset == 1 ) {fZSet = GetLocalFloat ( oItem, "zaxis_set1" );
@@ -82,9 +82,9 @@ void change_axis(object oPC, object oItem, object oTarget){
             if ( fZSet == 0.0 ) { fZSet = 1.5; } }
 
         // Logic part, to assigne right function
-        if ( oTarget == oItem )                             { nLogic = 1; } // Changing hight setting
+        if ( oTarget == oItem )                             { nLogic = 1; } // Changing Height setting
         else if ( oTarget == oPC )                          { nLogic = 2; } // PC
-        else if ( sTag == "ds_npc_"+GetPCPublicCDKey( oPC )){ nLogic = 2; } // Bottled companion
+        else if ( sTag == "ds_npc_"+GetPCPublicCDKey(oPC))  { nLogic = 2; } // Bottled companion
         else if ( oTarget == GetAssociate(1, oPC, 1))       { nLogic = 2; } // Henchman
         else if ( oTarget == GetAssociate(2, oPC, 1))       { nLogic = 2; } // Animal Companion
         else if ( oTarget == GetAssociate(3, oPC, 1))       { nLogic = 2; } // Familiar
@@ -92,17 +92,17 @@ void change_axis(object oPC, object oItem, object oTarget){
         else if ( oTarget == GetAssociate(5, oPC, 1))       { nLogic = 2; } // Dominated
         else                                                { nLogic = 3; FloatingTextStringOnCreature(( "<cÉ  >You only use this on yourself, the widget, or an associate..</c>" ), oPC, FALSE ); return; }
 
-    // Changing Hight setting
+    // Changing Height setting
     if ( nLogic == 1 ) {
-        if (nLock == 1 ) { FloatingTextStringOnCreature(( "<cÉ  >You can not change the hight settings on this widget.</c>" ), oPC, FALSE ); return; }
+        if (nLock == 1 ) { FloatingTextStringOnCreature(( "<cÉ  >You can not change the height settings on this widget.</c>" ), oPC, FALSE ); return; }
         else {
-            if ( nZset == 0 || nZset == 1 ) { SetLocalInt ( oItem, "zaxis_setting", 2 ); FloatingTextStringOnCreature(( "<c Û >Hight Set to Medium,</c>" ), oPC, FALSE ); SetName( oItem, sName +" <c Û >Medium</c>"); return; }
-            else if ( nZset == 2 )          { SetLocalInt ( oItem, "zaxis_setting", 3 ); FloatingTextStringOnCreature(( "<c Û >Hight Set to High,</c>" ), oPC, FALSE ); SetName( oItem, sName +" <c Û >High</c>"); return;  }
-            else if ( nZset == 3 )          { SetLocalInt ( oItem, "zaxis_setting", 1 ); FloatingTextStringOnCreature(( "<c Û >Hight Set to Low,</c>" ), oPC, FALSE ); SetName( oItem, sName +" <c Û >Low</c>"); return; }
+            if ( nZset == 0 || nZset == 1 ) { SetLocalInt ( oItem, "zaxis_setting", 2 ); FloatingTextStringOnCreature(( "<c Û >Height Set to Medium,</c>" ), oPC, FALSE ); SetName( oItem, sName +" <c Û >Medium</c>"); return; }
+            else if ( nZset == 2 )          { SetLocalInt ( oItem, "zaxis_setting", 3 ); FloatingTextStringOnCreature(( "<c Û >Height Set to High,</c>" ), oPC, FALSE ); SetName( oItem, sName +" <c Û >High</c>"); return;  }
+            else if ( nZset == 3 )          { SetLocalInt ( oItem, "zaxis_setting", 1 ); FloatingTextStringOnCreature(( "<c Û >Height Set to Low,</c>" ), oPC, FALSE ); SetName( oItem, sName +" <c Û >Low</c>"); return; }
         }
     }
     else if ( nLogic == 2 ) {
         if ( fZcurrent != 0.0 ) { SetObjectVisualTransform ( oTarget, 33, fZdefault ); } //Changes you to defaut if your already afloat
-        else { SetObjectVisualTransform( oTarget, 33, fZSet ); } //Changes the set hight
+        else { SetObjectVisualTransform( oTarget, 33, fZSet ); } //Changes the set Height
     }
 }

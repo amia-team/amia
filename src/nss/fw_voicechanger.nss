@@ -4,6 +4,7 @@ NAME: fw_voicechanger
 Description: This is a simple script that can be used to change portrait.
 LOG:
     Faded Wings [12/31/2015 - Born!]
+    Frozen      [07/23/2023 - Fixed nwnx removal of soundset functions]
 ----------------------------------------------------------------------------------
 */
 
@@ -16,7 +17,7 @@ void main()
     object oPortraitChanger = OBJECT_SELF;
     int scriptState = GetLocalInt( oPC, "fw_voicechanger" );
     string sLast = GetLocalString( oPC, "last_chat" );
-    int iVoiceSet = NWNX_Creature_GetSoundset ( oPC );
+    int iVoiceSet = GetSoundset ( oPC );
 
     if( scriptState == FALSE ) {
         SetLocalInt( oPC, "fw_voicechanger", TRUE );
@@ -44,7 +45,7 @@ void main()
                 SendMessageToPC( oPC, "Spaces not allowed in the voiceset id!" );
                 return;
             }
-            NWNX_Creature_SetSoundset ( oPC , newVoice );
+            SetSoundset ( oPC , newVoice );
         }
         else {
             SendMessageToPC( oPC, "You have not entered anything to change the voiceset into!" );

@@ -14,6 +14,7 @@
 //-------------------------------------------------------------------------------
 #include "inc_ds_info"
 #include "amia_include"
+#include "inc_player_api"
 
 //-------------------------------------------------------------------------------
 // prototypes: general
@@ -614,13 +615,10 @@ void ban_pc( object oDM, object oTarget, int nBoot=FALSE ){
 
         SendMessageToPC( oDM, "CD key " + sCDKey + " is already banned." );
     }
+
     else {
 
-        SetLocalInt( oModule, "Banned_" + sCDKey, TRUE );
-
-        //cache
-        object oStorage = GetWaypointByTag( "ds_cdkey_storage" );
-        SetLocalInt( oStorage, sCDKey, 1 );
+        BanPlayer(sCDKey);
 
         string sPlayer  = SQLEncodeSpecialChars( GetPCPlayerName( oTarget ) );
         string sTag     = SQLEncodeSpecialChars( GetName( oTarget ) );
@@ -637,13 +635,17 @@ void ban_pc( object oDM, object oTarget, int nBoot=FALSE ){
         if ( !GetIsDM( oDM ) ){
 
             SendMessageToPC( oDM, sMsg );     // Admin, logged in as a player
-        }
-    }
+            }
+        if ( !GetIsDM( oDM ) ){
+
+            SendMessageToPC( oDM, sMsg );     // Admin, logged in as a player
+			}
+		}
 
     if ( nBoot ){
 
         boot_pc( oDM, oTarget );
-    }
+		}
 }
 
 //-------------------------------------------------------------------------------

@@ -23,6 +23,8 @@
 
 #include "inc_td_mythal"
 #include "inc_ds_porting"
+#include "inc_recall_chg"
+#include "inc_recall_stne"
 
 void main( ){
 
@@ -40,10 +42,83 @@ void main( ){
             object oReagent     = GetItemActivated( );
             object oItem        = GetItemActivatedTarget( );
 
-            //Recharge wand
-            if ( GetTag( oItem ) == "ds_porting" ){
+            //Recharge Enhanced Recall Stone
+            if ( GetTag( oItem ) == "recall_enh" ){
+                if (ChargesToAdd(oReagent) == 100){
+                    string recallCarry = GetLocalString(oItem, LVAR_RECALL_WP);
+                    object divineStone = CreateItemOnObject("recall_div", oPC, 1);
+                    string oldName     = GetName(oItem);
+                    string divName     = GetSubString(oldName, 15, 50);
 
-                port_mythal_init( oPC, oItem, oReagent, oMythal );
+                    SetLocalString(divineStone, LVAR_RECALL_WP, recallCarry);
+                    SetName(divineStone, "<cÿÓ'>Divine "+divName);
+                    DestroyObject(oReagent);
+                    DestroyObject(oItem);
+                    FloatingTextStringOnCreature("Recall Stone upgraded to Divine!", oPC, FALSE);
+                    return;
+                }
+                if(ChargesToAdd(oReagent) == 15){
+                    if (GetLocalInt(oItem, "size") < 15){
+                        string bioQty    = GetDescription(oItem, FALSE, TRUE);
+                        string bioFirst  = GetSubString(bioQty, 0, 13);
+                        string bioLast   = GetSubString(bioQty, 16, 500);
+                        SetLocalInt(oItem, "size", 15);
+                        SetItemCharges(oItem, 15);
+                        DestroyObject(oReagent);
+                        FloatingTextStringOnCreature("Recall Stone upgraded to hold 15 charges!", oPC, FALSE);
+                        SetDescription(oItem, bioFirst+"15 "+bioLast);
+                        return;
+                    }
+                    if (CanAddCharges(oReagent, oItem) == TRUE){
+                        SafeAddCharges(oItem, oReagent, ChargesToAdd(oReagent));
+                        DestroyObject(oReagent);
+                        FloatingTextStringOnCreature("Added 15 Charges!", oPC, FALSE);
+                        return;
+                    }
+                    else{
+                        FloatingTextStringOnCreature("This mythal is too powerful. Use a smaller mythal reagent or upgrade your recall stone first.", oPC, FALSE);
+                        return;
+                    }
+                }
+                if(ChargesToAdd(oReagent) == 20){
+                    if (GetLocalInt(oItem, "size") < 20){
+                        string bioQty    = GetDescription(oItem, FALSE, TRUE);
+                        string bioFirst  = GetSubString(bioQty, 0, 13);
+                        string bioLast   = GetSubString(bioQty, 16, 500);
+                        SetLocalInt(oItem, "size", 20);
+                        SetItemCharges(oItem, 20);
+                        DestroyObject(oReagent);
+                        FloatingTextStringOnCreature("Recall Stone upgraded to hold 20 charges!", oPC, FALSE);
+                        SetDescription(oItem, bioFirst+"20 "+bioLast);
+                        return;
+                    }
+                    if (CanAddCharges(oReagent, oItem) == TRUE){
+                        SafeAddCharges(oItem, oReagent, ChargesToAdd(oReagent));
+                        DestroyObject(oReagent);
+                        FloatingTextStringOnCreature("Added 20 Charges!", oPC, FALSE);
+                        return;
+                    }
+                    else{
+                        FloatingTextStringOnCreature("This mythal is too powerful. Use a smaller mythal reagent or upgrade your recall stone first.", oPC, FALSE);
+                        return;
+                    }
+                }
+                else{
+                    if (CanAddCharges(oReagent, oItem) == TRUE){
+                        int chargeAdd = ChargesToAdd(oReagent);
+                        SafeAddCharges(oItem, oReagent, ChargesToAdd(oReagent));
+                        DestroyObject(oReagent);
+                        FloatingTextStringOnCreature("Added "+IntToString(chargeAdd)+" Charge(s)!", oPC, FALSE);
+                        return;
+                    }
+                    else{
+                        FloatingTextStringOnCreature("This mythal is too powerful. Use a smaller mythal reagent or upgrade your recall stone first.", oPC, FALSE);
+                        return;
+                    }
+                }
+            }
+            if ( GetTag( oItem ) == "recall_div" ){
+                FloatingTextStringOnCreature("You do not need to recharge a Divine Recall Stone!", oPC, FALSE);
                 return;
             }
 

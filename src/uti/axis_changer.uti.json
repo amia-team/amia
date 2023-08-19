@@ -18,7 +18,7 @@
   },
   "Cost": {
     "type": "dword",
-    "value": 3
+    "value": 1003
   },
   "Cursed": {
     "type": "byte",
@@ -26,7 +26,9 @@
   },
   "DescIdentified": {
     "type": "cexolocstring",
-    "value": {}
+    "value": {
+      "0": "This widget allows you to change the Z axis of your character/companions/summons and such.\n\nIt comes build in with 3 default settings that you can change by using it on the widget itself. And ofcourse using it when already adjusted will reset to ground level.\n\nDM's can adjust the settings of each of the 3 levels with using the following commands on the widget:\nLow (default 0.5) :##SetVarFloat zaxis_set1 [Height]\nMedium (default 1.0): ##SetVarFloat zaxis_set2 [Height)\nHigh(default 1.5): ##SetVarFloat zaxis_set3 [Height)\n\nDm's can also Lock it to only have one height to change to (the low setting, which you can adjust as said above) Use the following command for that on the widget: ##SetVarInt zaxis_lock 1"
+    }
   },
   "Description": {
     "type": "cexolocstring",
@@ -41,7 +43,7 @@
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Floating Hight Adjuster"
+      "0": "Height Adjuster: "
     }
   },
   "ModelPart1": {
@@ -59,6 +61,37 @@
   "PropertiesList": {
     "type": "list",
     "value": [
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 10
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 7
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 11
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 0
+        }
+      },
       {
         "__struct_id": 0,
         "ChanceAppear": {

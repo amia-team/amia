@@ -17,5 +17,5 @@ void main()
     }
 
     Recall_SetWaypointTag(player, pylonWaypoint);
-    Recall_ChangeItemName(player, newName);
+    Recall_ChangeItemName(player, "<cÿÓ'>" + newName + "</c>");
 }

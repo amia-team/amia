@@ -254,7 +254,7 @@ void change_skin( object oPC, object oItem ){
         DelayCommand( fDelay, SetCreatureAppearanceType( oPC, nAppearance ) );
         DelayCommand( fDelay, SetPortraitResRef( oPC, sPortrait ) );
         DelayCommand( fDelay, SetPhenoType( nPheno, oPC ) );
-        DelayCommand( fDelay, SetCreatureTailType( nTail, oPC ) );
+        DelayCommand( fDelay+1, SetCreatureTailType( nTail, oPC ) );
         DelayCommand( fDelay, SetCreatureWingType( nWing, oPC ) );
         DelayCommand( fDelay, change_scale( oPC, fScale) );
         DelayCommand( fDelay, change_axis( oPC, fZaxis) );

@@ -2,6 +2,7 @@
 #include "nwnx_creature"
 
 // Opustus 6/18/23 added cantrip restoration for wiz and sorc.
+// Frozen 07/14/23 Deactivated cantrip restoraction as nwnx removed the function
 
 void main(){
 
@@ -25,7 +26,8 @@ void main(){
         return;
     }
 
-    // Restore cantrips for wizard and sorcerer.
+    // Restore cantrips for wizard and sorcerer. (deactivated as nwnx removed function)
+   /*
     if(GetLevelByClass(CLASS_TYPE_WIZARD, oCaster) > 0)
     {
        NWNX_Creature_RestoreSpells(oCaster, 0);
@@ -34,4 +36,5 @@ void main(){
     {
        NWNX_Creature_RestoreSpells(oCaster, 0);
     }
+    */
 }

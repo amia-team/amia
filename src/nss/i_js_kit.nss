@@ -194,6 +194,7 @@ void HairAndTattoo ( object oPC, object oItem, string sResRef ){
                 if ( sResRef == "hair_and_tattoo" )
                 {
                 SetLocalInt( oPC, "ds_check_3", iOk );
+                SetLocalInt( oPC, "ds_check_4", iOk );
                 {
                 sFirstLine = "Greetings! I can remake your tattoos or dye your hair!";
                 }

@@ -9,6 +9,7 @@
 // 04/27/2015 PaladinOfSune    Added optional checks, removed VFX
 // 03/04/2016 PaladinOfSune    Added support for portrait, torso, arms and legs
 // 06/18/2023 Frozen           Added Z axis function
+// 07/14/2023 Frozen           Added Scale function
 //-----------------------------------------------------------------------------
 // includes
 //-----------------------------------------------------------------------------
@@ -18,6 +19,7 @@
 // prototypes
 //-----------------------------------------------------------------------------
 void AlterSelf( object oPC, object oItem );
+void change_scale( object oPC, float fScale);
 void AlterSelfRevert( object oPC, object oItem );
 
 //-----------------------------------------------------------------------------
@@ -79,6 +81,7 @@ void AlterSelf( object oPC, object oItem )
     int nRShin          = GetLocalInt( oItem, "alter_rshin" );
     int nRFoot          = GetLocalInt( oItem, "alter_rfoot" );
 
+    float fScale        = GetLocalFloat( oItem, "cr_scale");
     float fZaxis        = GetLocalFloat( oItem, "alter_zaxis");
 
     string sPortrait    = GetLocalString( oItem, "alter_portrait" );
@@ -107,6 +110,7 @@ void AlterSelf( object oPC, object oItem )
     SetLocalInt( oItem, "revert_rfoot", GetCreatureBodyPart( CREATURE_PART_RIGHT_FOOT, oPC ) );
 
     SetLocalString( oItem, "revert_portrait", GetPortraitResRef( oPC ) );
+    SetLocalFloat( oItem, "pc_scale", GetObjectVisualTransform(oPC, 10) );
     SetLocalFloat( oItem, "revert_zaxis", GetObjectVisualTransform(oPC, 33) );
 
     SetLocalInt( oItem, "revert_wings", GetCreatureWingType( oPC ) );
@@ -201,9 +205,12 @@ void AlterSelf( object oPC, object oItem )
     if ( fZaxis != 0.0) {
         SetObjectVisualTransform( oPC, 33, fZaxis);
     }
-    	if ( fZaxis == 0.0) {
+
+    if ( fZaxis == 0.0) {
         SetObjectVisualTransform( oPC, 33, 0.0);
     }
+
+    DelayCommand( 0.5, change_scale( oPC, fScale) );
 }
 
 void AlterSelfRevert( object oPC, object oItem )
@@ -235,7 +242,8 @@ void AlterSelfRevert( object oPC, object oItem )
     int nRFoot      = GetLocalInt( oItem, "revert_rfoot" );
 
     string sPortrait = GetLocalString( oItem, "revert_portrait" );
-    float fZaxis    = GetLocalFloat( oItem, "revert_zaxis");
+    float fScale     = GetLocalFloat( oItem, "pc_scale");
+    float fZaxis     = GetLocalFloat( oItem, "revert_zaxis");
 
     SetLocalInt( oItem, "alter_set", 0 );
 
@@ -329,5 +337,16 @@ void AlterSelfRevert( object oPC, object oItem )
 
     if ( fZaxis == 0.0) {
         SetObjectVisualTransform( oPC, 33, 0.0);
+    }
+
+    DelayCommand( 0.5, change_scale( oPC, fScale) );
+}
+
+void change_scale(object oPC, float fScale){
+    if (fScale == 0.0) {
+        SetObjectVisualTransform( oPC, 10, 1.0);
+    }
+    if (fScale > 0.0) {
+        SetObjectVisualTransform( oPC, 10, fScale);
     }
 }

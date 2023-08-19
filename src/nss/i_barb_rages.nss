@@ -32,8 +32,8 @@ void main(){
             if(nEvent==X2_ITEM_EVENT_INSTANT)
                 EVENTS_Bypass();
 
-            object oPC       = InstantGetItemActivator();
-            object oItem     = InstantGetItemActivated();
+            object oPC       = GetItemActivator();
+            object oItem     = GetItemActivated();
 
             SendMessageToPC( oPC, "Item: " + GetName( oItem ) );
 

@@ -7,10 +7,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Kingdom of Kohlingen: Argent Keep, Prison (New Area)
+- Kingdom of Kohlingen: Gregory's Landing, Destrier Stables (New Area)
 
 ### Changed
+- Kingdom of Kohlingen: Construction Site renamed to Kingdom of Kohlingen: Gregory's Landing
+- Plor Area Updates:
+	- Khem: Djedet
+	- Kingdom of Kohlingen: Argent Keep
+	- Kingdom of Kohlingen: Fort Cystana
+	- Kingdom of Kohlingen: Fort Cystana, Hall of the Even Handed
+	- Kingdom of Kohlingen: Fort Cystana, North
+	- Kingdom of Kohlingen: Fort Cystana, South
+	- Kingdom of Kohlingen: Fort Cystana, Western Beach
+	- Kingdom of Kohlingen: Gregory's Landing
+	- Kingdom of Kohlingen: Trade Way
+	- Trackless Sea: Tropical Island
 
 ### Fixed
+
 
 ## [2.7.5A - 2023-08-18]
 

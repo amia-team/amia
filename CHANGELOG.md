@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Kingdom of Kohlingen: Argent Keep, Prison (New Area)
 - Kingdom of Kohlingen: Gregory's Landing, Destrier Stables (New Area)
+- Kingdom of Kohlingen: Gregory's Landing, Portal Chamber (New Area)
+- Kingdom of Kohlingen: Gregory's Landing, Gregory's Landing, Estate (New Area)
 
 ### Changed
 - Kingdom of Kohlingen: Construction Site renamed to Kingdom of Kohlingen: Gregory's Landing
@@ -20,11 +22,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Kingdom of Kohlingen: Fort Cystana, North
 	- Kingdom of Kohlingen: Fort Cystana, South
 	- Kingdom of Kohlingen: Fort Cystana, Western Beach
+	- Kingdom of Kohlingen: Greengarden
 	- Kingdom of Kohlingen: Gregory's Landing
 	- Kingdom of Kohlingen: Trade Way
+	- The Dale
 	- Trackless Sea: Tropical Island
+	- Barak Runedar: Grumdek Murr, Peak
+	- Frozenfar: Endir's Point
+	- Frozenfar: Endir's Point, Northgarn
 
 ### Fixed
+- Tweaked link oops in Recall Explainer conversation
 
 
 ## [2.7.5A - 2023-08-18]

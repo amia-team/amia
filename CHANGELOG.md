@@ -7,6 +7,49 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Fixed
+
+
+## [2.7.7 - 2023-09-03]
+
+### Added
+- 2x Player housing areas added
+	- Oakmist vale: cave
+	- Winya ravana: Estate
+- Variuos plcs to palette
+- 3x new player portrait added
+
+
+### Changed
+- Area updates
+	- Silent bay / Shrine of elistraeen (interior)
+		- Minor plc tweaks
+		- Old plot update that was forgoten
+	- Winya Ravana
+		- Massive exterior update, exterior construction now compleeted icly
+	-Winya Ravana: Council tower
+		- Tweaks to bring uptodate
+	- Oakmist vale: Community hut
+		- Now Finished with all that entails
+	- Oakmist vale: Tent
+		- Plot update
+	- Oakmist vale: Tree top village
+		- Unicorn magic statue
+	- Amia forest
+		- Spawns more deeper in forrest and less hostile
+	
+### Fixed
+- Hydra in big game hunt crashes fixed
+- Big game hunter creatures on spawn script minor fixes
+- Werefox portrait fixed
+
+
+## [2.7.6 - 2023-08-27]
+
+### Added
 - Kingdom of Kohlingen: Argent Keep, Prison (New Area)
 - Kingdom of Kohlingen: Gregory's Landing, Destrier Stables (New Area)
 - Kingdom of Kohlingen: Gregory's Landing, Portal Chamber (New Area)
@@ -14,7 +57,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Kingdom of Kohlingen: Construction Site renamed to Kingdom of Kohlingen: Gregory's Landing
-- Plor Area Updates:
+- Plot Area Updates:
 	- Khem: Djedet
 	- Kingdom of Kohlingen: Argent Keep
 	- Kingdom of Kohlingen: Fort Cystana

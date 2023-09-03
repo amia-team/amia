@@ -10,10 +10,14 @@
 //-------------------------------------------------------------------------------
 
 void spawnJobSystemItems(object oCritter);
+void spawnscale (object oCritter, float fScale);
 
 void main(){
 
     object oCritter = OBJECT_SELF;
+    float  fScale   = GetLocalFloat (oCritter, "scale");
+    int    iScale   = GetLocalInt   (oCritter, "Scale_on");
+
 
     spawnJobSystemItems(oCritter);
 
@@ -46,6 +50,14 @@ void main(){
 
         IP = GetNextItemProperty( oHide );
     }
+    if ( iScale == 1 ){
+    DelayCommand(1.0, spawnscale(oCritter, fScale));
+    }
+
+}
+void spawnscale (object oCritter, float fScale)
+{
+SetObjectVisualTransform (oCritter, 10, fScale);
 }
 
 void spawnJobSystemItems(object oCritter)

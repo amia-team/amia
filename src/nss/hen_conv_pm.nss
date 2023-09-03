@@ -84,7 +84,6 @@ void main()
 
             string sDialogFileToUse = GetDialogFileToUse(GetLastSpeaker());
 
-
             BeginConversation(sDialogFileToUse);
         }
     }

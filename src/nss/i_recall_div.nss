@@ -16,8 +16,14 @@ void main()
     {
         if(GetLocalInt(area, "PreventRodOfPorting") == TRUE)
         {
-            FloatingTextStringOnCreature("Teleporting is disallowed in this area.", player);
-            return;
+            object allowedPoint    =   GetNearestObjectByTag ("recal_allowed_point", player);
+            float  distanceAllowed =   GetLocalFloat (allowedPoint, "distance");
+
+                if(GetDistanceBetween (player, allowedPoint) >= distanceAllowed)
+                {
+                FloatingTextStringOnCreature("Teleporting is disallowed in this area.", player);
+                return;
+                }
         }
 
         if(nearestCreature != OBJECT_INVALID)

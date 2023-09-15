@@ -4,7 +4,7 @@
 
 void main(){
 
-    int iAnimation = GetLocalInt (OBJECT_SELF, "Animation");
+    int iAnimation = GetLocalInt (OBJECT_SELF, "animation");
 
     PlayAnimation(iAnimation, 1.0, 30000.0);
 

@@ -2,6 +2,7 @@
 #include "X0_I0_PARTYWIDE"
 #include "nw_i0_plot"
 
+const string REST_SYSTEM_COLOUR_TAG          = "";
 //creature info functions
 void GetNpcInfo(object oTarget,object oDM,int nToggle);
 
@@ -31,6 +32,14 @@ void main(){
             oItem   = GetItemActivated();
             oTarget = GetItemActivatedTarget();
             lTarget = GetItemActivatedTargetLocation();
+
+    int nRunTime = GetRunTime();
+    int nReload  = GetAutoReload() + nRunTime;
+
+    int resetTime = ((nReload - nRunTime) - (GetRunTime() - GetStartTime())) / 60;
+
+    SendMessageToPC( oDM, REST_SYSTEM_COLOUR_TAG+"Estimated reset time: " + IntToString(resetTime) + " minutes." );
+
 
             if ( GetObjectType( oTarget ) == OBJECT_TYPE_CREATURE ){
 

@@ -12,6 +12,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
+## [2.7.8 - 2023-09-16]
+
+### Added
+
+### Changed
+
+### Fixed
+
+
+## [2.7.8 - 2023-09-09]
+
+### Added
+
+### Changed
+
+### Fixed
+
 
 ## [2.7.7 - 2023-09-03]
 

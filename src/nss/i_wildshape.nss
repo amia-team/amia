@@ -2,6 +2,8 @@
   Made 4/28/19 by Maverick00053
 
   Wildshape script  for a widget so players can use the other forms once they get epic
+  Updated:
+  10-sep-2023   Frozen  Changed duration for druid/shifter to unlimited
 
 */
 
@@ -149,7 +151,7 @@ void Polymorph( object oPC, int nNode){
     //Apply the VFX impact and effects
     ClearAllActions(); // prevents an exploit
     ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oPC);
-    ApplyEffectToObject(DURATION_TYPE_TEMPORARY, ePoly, oPC, NewHoursToSeconds(nDuration));
+    ApplyEffectToObject(DURATION_TYPE_PERMANENT, ePoly, oPC); //NewHoursToSeconds(nDuration)
 
     object oWeaponNew = GetItemInSlot(INVENTORY_SLOT_RIGHTHAND,oPC);
     object oArmorNew = GetItemInSlot(INVENTORY_SLOT_CARMOUR,oPC);

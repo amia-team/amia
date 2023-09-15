@@ -8,9 +8,10 @@
 
     Changes:
 
-    08/August/2022 	Lord Jyssev - Moved scripts for Artificer storage items and made them modular. Also moved Tailor backpack, quiver, and scabbards into js_effects
-	06/May/2023		Frozen		- Changed bag/case storage/retrieval amount
-	09/May/2023		Frozen		- Fixed Gem and healing case to store any kind of gem and healing kit + allowing non job/job system things in same bag
+    08/August/2022  Lord Jyssev - Moved scripts for Artificer storage items and made them modular. Also moved Tailor backpack, quiver, and scabbards into js_effects
+    06/May/2023     Frozen      - Changed bag/case storage/retrieval amount
+    09/May/2023     Frozen      - Fixed Gem and healing case to store any kind of gem and healing kit + allowing non job/job system things in same bag
+    10/sep/2023     Frozen      - (shaped) Ivory check added so it wont get in a gem bag
 */
 
 
@@ -577,20 +578,26 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
       int nItemCount = GetLocalInt(oWidget, "ItemCount");
       int nBatch = 100;
 
-      if ( ( GetStringLeft( sTarget, 7 ) == "js_gem_"
+      if ( sTarget == "js_gem_sivo" || sTarget == "js_gem_ivor" )
+      {
+          //invalid target
+          SendMessageToPC( oPC, "<cþ  >This is not a valid target for this container. You can use it on yourself, gems, or storage containers.</c>" );
+          return;
+      }
+
+      else if ( ( GetStringLeft( sTarget, 7 ) == "js_gem_"
         || sTarget == "js_jew_sapp"
         || sTarget == "js_jew_ruby"
         || sTarget == "js_jew_crys"
         || sTarget == "js_jew_diam"
         || sTarget == "js_jew_emer"
-        	||sTarget == "js_arca_ncry"
+        || sTarget == "js_arca_ncry"
         || sTarget == "js_arca_necore"
         || sTarget == "js_arca_ecore"
         || sTarget == "blackonyx"
         || sTarget == "blackpearl"
         || GetStringLeft( sTarget, 9 ) == "nw_it_gem"
-
-             && GetObjectType( oTarget ) == OBJECT_TYPE_ITEM ) )
+        && GetObjectType( oTarget ) == OBJECT_TYPE_ITEM ) )
       {
          StoreItem(oPC, oWidget, oTarget, nCapacity, sContainerType);
       }
@@ -1139,6 +1146,7 @@ void StoreItem(object oPC, object oWidget, object oTarget, int nCapacity, string
       SetName(oWidget, sBox);
       SetLocalString(oWidget, "StoredItem", sTarget);
    }
+
    else if(sTarget != GetLocalString(oWidget, "StoredItem"))
    {
       SendMessageToPC(oPC, "<cþ  >You cannot store "+sName+" in this "+ GetStringLowerCase(sContainerType) +".</c>");

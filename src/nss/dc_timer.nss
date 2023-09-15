@@ -4,7 +4,8 @@
     A consistent 5 minute timer to add time to players accounts till
     they hit 2 hours, and grant them a DC as a result.
 
-    Jes edit 7/13/23: Added auto DM payment, same script with no weekly cap.
+    13/jul/2023     Jes         Added auto DM payment, same script with no weekly cap.
+    11/sep/2023     Frozen      Changed dc to uncapped
 */
 
 
@@ -34,7 +35,7 @@ void main()
        if ( GetLocalInt (oModule, "testserver") == 1 )
         { return;
         }
-       if(nWeeklyCnt < 10)
+       else //(nWeeklyCnt < 10)
        {
 
          ApplyEffectToObject(DURATION_TYPE_INSTANT, EffectVisualEffect(VFX_DUR_CESSATE_POSITIVE), oPlayer);
@@ -46,12 +47,13 @@ void main()
          SetDreamCoins(PcCdKey, playerDreamCoins + 1);
 
        }
+       /*
        else
        {
          SendMessageToPC(oPlayer,"You have hit your weekly cap of automated DCs!");
        }
-
-        SetCampaignInt(PcCdKey, "nPCTime", 0);
+       */
+       SetCampaignInt(PcCdKey, "nPCTime", 0);
     }
     else
     {
@@ -69,10 +71,10 @@ void main()
     if(nPCTime >= 120) // 2 Hours
     {
          ApplyEffectToObject(DURATION_TYPE_INSTANT, EffectVisualEffect(VFX_DUR_CESSATE_POSITIVE), oPlayer);
-         SendMessageToPC(oPlayer,"You have earned a DC for DM'ing for 2 hours!");
+         SendMessageToPC(oPlayer,"You have earned 2 DC's for DM'ing for 2 hours!");
 
          int playerDreamCoins = GetDreamCoins(PcCdKey);
-         SetDreamCoins(PcCdKey, playerDreamCoins + 1);
+         SetDreamCoins(PcCdKey, playerDreamCoins + 2);
 
          SetCampaignInt(PcCdKey, "nPCTime", 0);
     }

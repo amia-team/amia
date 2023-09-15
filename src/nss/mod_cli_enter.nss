@@ -1,6 +1,7 @@
 //
 //Update log:
 // 24-March-2023    Frozen  Added shifter, flight cooldown and bc marking removal (similare to HIPS)
+// 11-Sep-2023      Frozen  Removed daily dc and weekly reset from being launced
 
 
 #include "nw_i0_tool"
@@ -210,12 +211,13 @@ void main(){
 
         DelayCommand(1.0f, CreateItemsOnPlayer(enteringPlayer));
     }
-    // Daily DC check and weekly DC reset
+    //Daily DC check and weekly DC reset
     if(!GetIsDM(oPC))
     {
     CheckWeeklyReset(oPC);
-    DailyDC(oPC);
+    //DailyDC(oPC);
     }
+
     // Cleaning cooldowns and variables to prevent bugs/issues
     if (GetLocalInt(oPC,"HIPSCooldown") != 0)   { DeleteLocalInt(oPC,"HIPSCooldown"); }
     if (GetLocalInt(oPC,"flight_cooldown") != 0){ DeleteLocalInt(oPC,"flight_cooldown"); }

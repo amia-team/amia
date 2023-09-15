@@ -11,6 +11,9 @@
         more useful.
     Updated: Nov 14, 2016. Maverick00053
       * Adding in Epic Wildshape forms at 25 druid.
+    Updated: Sep 10, 2023. Frozen
+      * Changed duration for both to unlimited
+      * Changed progression same for shifter and druid
 */
 //:://////////////////////////////////////////////
 //:: Created By: Preston Watamaniuk
@@ -51,12 +54,12 @@ void main()
     // Adding in the variables for epic forms.
     int nEpicForms = 25;
 
-    //Determine Polymorph subradial type
+    //Determine Polymorph subradial type: removed:  && (nShifter <= 5)
     if(nSpell == 401)
     {
         nPoly = 232;
 
-        if ((nDuration >= nEpicForms) && (nShifter <= 5))
+        if ((nDuration >= nEpicForms))
         {
             nPoly = 222;
         }
@@ -68,7 +71,7 @@ void main()
     else if (nSpell == 402)
     {
         nPoly = 233;
-        if ((nDuration >= nEpicForms) && (nShifter <= 5))
+        if ((nDuration >= nEpicForms))
         {
             nPoly = 223;
         }
@@ -81,7 +84,7 @@ void main()
     {
         nPoly = 234;
 
-        if ((nDuration >= nEpicForms) && (nShifter <= 5))
+        if ((nDuration >= nEpicForms))
         {
             nPoly = 224;
         }
@@ -94,7 +97,7 @@ void main()
     {
         nPoly = 235;
 
-        if ((nDuration >= nEpicForms) && (nShifter <= 5))
+        if ((nDuration >= nEpicForms))
         {
             nPoly = 225;
         }
@@ -107,7 +110,7 @@ void main()
     {
         nPoly = 236;
 
-        if ((nDuration >= nEpicForms) && (nShifter <= 5))
+        if ((nDuration >= nEpicForms))
         {
             nPoly = 226;
         }
@@ -175,7 +178,7 @@ void main()
     //Apply the VFX impact and effects
     ClearAllActions(); // prevents an exploit
     ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, OBJECT_SELF);
-    ApplyEffectToObject(DURATION_TYPE_TEMPORARY, ePoly, OBJECT_SELF, NewHoursToSeconds(nDuration));
+    ApplyEffectToObject(DURATION_TYPE_PERMANENT, ePoly, OBJECT_SELF); //NewHoursToSeconds(nDuration)
 
     object oWeaponNew = GetItemInSlot(INVENTORY_SLOT_RIGHTHAND,OBJECT_SELF);
     object oArmorNew = GetItemInSlot(INVENTORY_SLOT_CARMOUR,OBJECT_SELF);

@@ -26,8 +26,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Coastal hills
 		- removed sign indicating dangerus creatures as per plot
 - Wild shape changes:
-	- Shifter gets same progression of shapes
-	- Druid changed to unlimited duration rather then 1 min/lvl
+	- Shifter gets same progression of shapes as druid does
+	- Druid changed to unlimited duration rather then 1 min/lvl in line with shifter
 - Dreamcoin changes:
 	- daily login dc removed
 	- Weelky dc uncapped now (still 1 per 2 hours of game time)

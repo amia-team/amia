@@ -50,7 +50,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Area changes
 	- The Dale
 		- Overhaul Phase 1: general layout and market square
-		- Removal of jayer (plot)
+		- Removal of Jayek (plot)
 	- Player housing Updates
 	- ALL Cystana and Gregory's landing areas set to no poral allowed due to plot
 		- exception zones added

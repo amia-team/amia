@@ -59,9 +59,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 			- [redacted]
 	- Oakmist vale
 		- Treetop huts 1-2 and 7 added interior
-	
-		
-### Fixed
+		- Treetops community hut game corner and halway lighting
 
 
 ## [2.7.7 - 2023-09-03]

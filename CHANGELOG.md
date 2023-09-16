@@ -14,19 +14,53 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [2.7.8 - 2023-09-16]
 
-### Added
-
 ### Changed
-
+- Area changes:
+	- Oakmist vale treetop huts
+		- Minor changes to grove huts as per player feedback + tweaks/woopsy fixs
+	- The Dale
+		- Overhaul Phase 2: Farmlands
+		- Jayek returned (plot)
+	- Winya ravana
+		- Playerhouse woopsy door fixed
+	- Coastal hills
+		- removed sign indicating dangerus creatures as per plot
+- Wild shape changes:
+	- Shifter gets same progression of shapes
+	- Druid changed to unlimited duration rather then 1 min/lvl
+- Dreamcoin changes:
+	- daily login dc removed
+	- Weelky dc uncapped now (still 1 per 2 hours of game time)
+	- Dm dc's raised to 2 per 2 hours to insentivice running things + compensationg for out of game activity
+	
 ### Fixed
-
+- Gem bags 
+	- Can no longer stores ivory (shaped or not)
+	- Can no longer store players, npcs, terain, gods or reality
 
 ## [2.7.8 - 2023-09-09]
 
 ### Added
+- spawn_animations script (npcs can spawn with any animation now if set on_spawn)
 
 ### Changed
-
+- Recall stone changes:
+	- all stone types have a exception added to no portal areas
+	- Plc can be spawned from palette as plc for dms to make allowed spots on the go (Portal Allowed Zone))
+- Area changes
+	- The Dale
+		- Overhaul Phase 1: general layout and market square
+		- Removal of jayer (plot)
+	- Player housing Updates
+	- ALL Cystana and Gregory's landing areas set to no poral allowed due to plot
+		- exception zones added
+			- Recall point Central cystana
+			- City hall portal room
+			- [redacted]
+	- Oakmist vale
+		- Treetop huts 1-2 and 7 added interior
+	
+		
 ### Fixed
 
 

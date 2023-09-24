@@ -106,10 +106,13 @@ void main(){
                      sTileSet == TILESET_RESREF_RURAL_WINTER ||
                      sTileSet == "tcr10" || // City/Rural base set
                      sTileSet == "twl01" || // Rural Wildlands
-                     sTileSet == "ttw01" ) { // Wild Woods
+                     sTileSet == "ttw01" || // Wild Woods
+                     sTileSet == "thf02" || // Elven treetop city
+                     sTileSet == "thq02" ) { // Elven city
 
                     grove_portal( oPC, lTarget );
                 }
+
                 else{
 
                     SendMessageToPC( oPC, "You can only use this item in rural or forest areas!" );

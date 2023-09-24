@@ -9,6 +9,9 @@
 //:://////////////////////////////////////////////
 //:: Created By: PaladinOfSune
 //:: Created On: Dec 03, 05
+//::
+//:: 24-Sep-2023    Frozen      Removed ice skin to be more universal usable
+//::
 //:://////////////////////////////////////////////
 
 #include "x2_inc_switches"
@@ -24,12 +27,7 @@ void ActivateItem()
     // Define the variables
 
     effect eVFX1   = EffectVisualEffect(VFX_IMP_PULSE_COLD);
-    effect eVFX2   = EffectVisualEffect(VFX_DUR_ICESKIN);
     effect eElec   = EffectDamageImmunityIncrease(DAMAGE_TYPE_COLD, 25);
-
-    effect eBoost  = EffectLinkEffects(
-                     eVFX2,
-                     eElec);
 
     // Apply the effect
 
@@ -38,7 +36,7 @@ void ActivateItem()
                         oUser);
 
     ApplyEffectToObject(DURATION_TYPE_TEMPORARY,
-                        eBoost,
+                        eElec,
                         oUser,
                         NewHoursToSeconds(24));
 }

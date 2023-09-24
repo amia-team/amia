@@ -14,6 +14,7 @@ Date         Name        Reason
 2013-06-24   PoS         Start of header
 2015-03-24   PoS         Added optional support for targeting others
 2017-08-04   msheeler    Added check to stop removal of Ioun stone visuals
+2023-09-24   Frozen      Added oneshot for one of vfx use rather then on/off
 ------------------------------------------------------------------
 
 */
@@ -75,8 +76,24 @@ void add_visuals( object oPC, object oTarget, object oItem ){
     int nVisualDur2         = GetLocalInt( oItem, "pc_vfx_dur2" );
     int nVisualDur3         = GetLocalInt( oItem, "pc_vfx_dur3" );
     int nVisualSwitch       = GetLocalInt( oItem, "switch" );
+    int nOneShot            = GetLocalInt( oItem, "oneshot" );
 
-    if( nVisualSwitch == 0 )
+    if( nOneShot == 1 ){
+
+        if( nVisual1 > 0 ){
+            ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectVisualEffect( nVisual1 ), oTarget );
+                    }
+        if( nVisual2 > 0 ){
+            ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectVisualEffect( nVisual2 ), oTarget );
+                    }
+
+        if( nVisual3 > 0 ){
+            ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectVisualEffect( nVisual3 ), oTarget );
+                    }
+        return;
+
+        }
+    else if( nVisualSwitch == 0 )
     {
         FloatingTextStringOnCreature( "Applying visuals:", oPC, FALSE );
 

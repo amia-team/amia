@@ -12,6 +12,29 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
+## [2.7.9 - 2023-09-24]
+
+### Added
+- Player portrait replacment
+- Bunch of plcs to palette for plc spawner requests
+
+### Changed
+- Area changes:
+	- Winya Ravana (and burrows)
+		- New gate
+		- New gate exception tokens
+	- Oakmist vale
+		- Variuos farmland patches
+		- Entry gate (amia forrest) now correctly blocks outsiders (as we cant block just tieflings yet, will be looked into)
+	- Trackless Sea: Merfolk
+		- Now open to the public trough the tropical island
+- Visualizers now have one shot function rather then only on/off
+- Added tilesets as allowed to [redacted]
+- Old whitescale script cleaned up for re-use
+
+### Fixed
+- Bear Rakshasa hide fix
+
 ## [2.7.8 - 2023-09-16]
 
 ### Changed

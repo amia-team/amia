@@ -1637,7 +1637,6 @@ int GetPM_ArcaneOrDevineCasterLevels( object oPC , int nIsUndead = FALSE)
     int iPM             = GetLevelByClass(CLASS_TYPE_PALEMASTER,oPC);
     int iSorceror       = GetLevelByClass(CLASS_TYPE_SORCERER,oPC);
     int iWizard         = GetLevelByClass(CLASS_TYPE_WIZARD,oPC);
-    int iUndeadruid     = GetLocalInt(EDKItem, "Druid_allow_undead");
 
     int iArcane         = iSorceror + iWizard;
     int iDevine         = iCleric + iDruid;
@@ -1646,10 +1645,7 @@ int GetPM_ArcaneOrDevineCasterLevels( object oPC , int nIsUndead = FALSE)
     if(nIsUndead)
     {
     iArcane += iPM;
-
-        if ( iUndeadruid == 1){iDevine = iDevine;}// For reskinning or emulation
-        else {iDevine -= iDruid;}
-
+    iDevine -= iDruid;
     }
     //Which one is higher?
     if(iDevine > iArcane)return iDevine;

@@ -72,6 +72,10 @@ void main(){
     //player key stuff
     object oKey     = GetPCKEY( oPC );
     int nDone       = GetLocalInt( oKey, "ds_done" );
+    string sKey     = GetPCPublicCDKey ( oPC );
+    string sKeyName = GetName (oKey);
+    string sKeyPC   = GetStringLeft( sKeyName, 8 );
+
 
     if ( !GetIsObjectValid( oKey ) || nDone <= 0 ){
 
@@ -87,6 +91,14 @@ void main(){
 
         return;
     }
+
+    else if ( sKey != sKeyPC ){
+
+        SendMessageToPC( oPC, "Access denied, your character is pre NWN EE, you wont be permited to enter till you followed the mantatory rebuild. Contact a DM or See forum for more details." );
+        SendMessageToAllDMs( "Access denied, "+GetName( oPC )+" has a pre EE pc key" );
+        return;
+    }
+
     else if ( nDone == 2 && GetName( oKey ) != "Rescue PCKEY" ){
 
         SendMessageToAllDMs( "Loading quests and mushrooms on rescue key." );

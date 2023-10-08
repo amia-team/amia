@@ -23,6 +23,7 @@ Date        Name        Reason
 2014-04-19  Glim        Added support for Climb Checks and Falling
 2014-10-20  Glim        Added support for racial restricted use.
 2015-09-29  PoS         Polymorphed PCs aren't screwed by this script now
+2023-10-08  Frozen      Added 2 key check option
 ------------------------------------------------------------------
 
 */
@@ -65,8 +66,11 @@ void main(){
     int nTesting    = GetLocalInt( OBJECT_SELF, "testing" );
     int nGold       = GetLocalInt( OBJECT_SELF, "gold" );
     int nSecret     = GetLocalInt( OBJECT_SELF, "secret");
+    int nDoublekey  = GetLocalInt( OBJECT_SELF, "double_key");
     string sKey     = GetLocalString( OBJECT_SELF, "ds_key" );
+    string sKey2    = GetLocalString( OBJECT_SELF, "ds_key_2" );
     string sMessage = GetLocalString( OBJECT_SELF, "ds_message" );
+
 
 
     if ( GetObjectType( OBJECT_SELF ) == OBJECT_TYPE_CREATURE ){
@@ -114,6 +118,19 @@ void main(){
     else if ( sKey == "" ){
 
         DoTransition( oPC, oTarget, sMessage, nOpen );
+    }
+    else if ( nDoublekey == 1){
+
+        if ( GetItemPossessedBy( oPC, sKey ) != OBJECT_INVALID && GetItemPossessedBy( oPC, sKey2 ) != OBJECT_INVALID){
+
+            DoTransition( oPC, oTarget, sMessage, nOpen );
+        }
+        else if ( nSecret == 1 ){
+
+        ;}
+        else{
+            SendMessageToPC( oPC, "-- You need two keys or items to activate this transition --" );
+        }
     }
     else if ( GetItemPossessedBy( oPC, sKey ) != OBJECT_INVALID ){
 

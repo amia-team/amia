@@ -18,4 +18,5 @@ void main(){
     location lTarget  = GetLocalLocation( OBJECT_SELF, "ds_destination" );
 
     AssignCommand( oPC, JumpToLocation( lTarget ) );
+    AssignCommand( oPC, SpeakString( "*Steps out of a tree*" ) );
 }

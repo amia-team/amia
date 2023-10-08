@@ -12,6 +12,33 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
+## [2.7.10 - 2023-10-08]
+
+### Changed
+- Area changes: 
+	- Amia forest
+		- Proper tiefling block on gate (was already active in another way)
+	- Oakmist vale
+		- Cherry tree portal active
+	- Oakmist vale, Treetops
+		- Sundeck furnished
+		- Palmtree portal active
+	- Winya Ravana
+		- Cherry tree Portal Active
+	- 2x [Redacted]
+		- [Redacted]
+		- [Redacted]
+	- Chult savana (multiple areas)
+		- Updated to dm wishes
+	- Tropical island 
+		- Extra palm trees for exit of portal
+- Thousand faces widget now has size changing options (standart max 10 +/- convo)
+- Temporary name changer, added function for random names (description how to set this put in bio of widget)
+- Jump_to_tag added option for double key check (needing 2 keys to work)
+- Entry gate script ready to block pre ee characters (wont be active till 01-Nov-2023)
+- Lichsong widget now 1x1 (ask a dm for replacment)
+- Option for dms to allow druids undead summons (for emulation purposes)
+
 ## [2.7.9 - 2023-09-24]
 
 ### Added

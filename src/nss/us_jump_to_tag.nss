@@ -121,9 +121,14 @@ void main(){
     }
     else if ( nDoublekey == 1){
 
-        if ( GetItemPossessedBy( oPC, sKey ) != OBJECT_INVALID && GetItemPossessedBy( oPC, sKey2 ) != OBJECT_INVALID){
+        if ( GetItemPossessedBy( oPC, sKey ) != OBJECT_INVALID){
+            if ( GetItemPossessedBy( oPC, sKey2 ) != OBJECT_INVALID){
 
             DoTransition( oPC, oTarget, sMessage, nOpen );
+            }
+            else{
+            SendMessageToPC( oPC, "-- You need two keys or items to activate this transition --" );
+            }
         }
         else if ( nSecret == 1 ){
 

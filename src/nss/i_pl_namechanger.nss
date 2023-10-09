@@ -14,10 +14,12 @@ void main()
   object oPC            = GetItemActivator();
   object oWidget        = GetItemActivated();
   string sWidgetSetName = GetLocalString(oWidget, "newName");
+  string sOverwriteName = NWNX_Rename_GetPCNameOverride(oPC);
   int nRandom           = GetLocalInt(oWidget,"random");
   int nWidgetNameSet    = GetLocalInt(oWidget,"widgetSet");
 
-  if(nRandom == 1)
+
+  if(nRandom == 1 && sOverwriteName != sWidgetSetName)
   {
     int nGender = GetGender (oPC);
     int nRace   = GetAppearanceType (oPC);
@@ -56,7 +58,7 @@ void main()
     else {SetName(oWidget,"Temporary Name Changer: Random");}
   }
 
-  if(NWNX_Rename_GetPCNameOverride(oPC) == sWidgetSetName)
+  if(sOverwriteName == sWidgetSetName)
   {
     NWNX_Rename_ClearPCNameOverride(oPC,OBJECT_INVALID,TRUE);
     SendMessageToPC(oPC,"Clearing Temporary Name");
@@ -65,5 +67,6 @@ void main()
   {
     NWNX_Rename_SetPCNameOverride(oPC,sWidgetSetName);
     SendMessageToPC(oPC,"Setting Temporary Name");
+    if(nRandom == 1){SetLocalString(oWidget, "newName", sWidgetSetName);}
   }
 }

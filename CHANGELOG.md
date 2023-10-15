@@ -12,6 +12,32 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
+## [2.7.11 - 2023-10-15]
+
+### Added
+- New abyss area: Cambion Emporium + assosiated convos
+- New 100% superior bag of holding (no weight, non at all)
+
+### Changed
+- area changes:
+	- Abyss, variuos
+		- Removal of spirit merchant
+		- Relaying portals (forgoten temple -> emporium -> citadel)
+	- Oakmist vale tree top village
+		- Hut 7/8 patio finished
+	- Endirs point
+		- Militia now updated uniformal uniforms and better gear
+		- Additions of helment horrors
+	- Triumvir / Wave&serpant 
+		- Lady Ayan relocated to the wave
+
+### Fixed
+- Endirs point
+	- Replacment of resref/tags
+	- Resource node reachable now
+	- area transition properly at edge of map
+- Lady Ayan fixes
+
 ## [2.7.10 - 2023-10-08]
 
 ### Changed

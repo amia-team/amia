@@ -3,7 +3,6 @@ All notable changes to this project will be documented in this file.
  
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
-
 ## [Unreleased]
 
 ### Added
@@ -11,6 +10,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
+
+## [2.7.12 - 2023-10-22]
+
+### Added
+- 3x Plc to palette for requests
+
+### Changed
+- Area changes
+	- Ruathym: Fortress Wiltun, Keep
+		- Portal added to Shadowflame keep
+	- Ruathym: Caraigh, Shadowflame Keep
+		- Portal added to Wiltun Keep
+	- Amia Forest: Oakmist Vale, Treetop Village
+		- Patio hut 3/4 & 5/6 finished
+- New skin over Abyssal horror
 
 ## [2.7.11 - 2023-10-15]
 

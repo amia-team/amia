@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
  
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+
 ## [Unreleased]
 
 ### Added
@@ -10,6 +11,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
+
+## [2.7.13 - 2023-10-27]
+
+### Changed
+- Area changes
+	- The Dale
+		- Recall stone now active
+		- Carts moved a bit
+	- Oakmist Vale, treetop village
+		- Pixies added
+	- Winya Ravana
+		- Gates update tweaking allowed races better
+		- Small Decoration update
+	- Player house updates
+- Door Lever script now supports tag bassed (opening doors far away)	
+- Backend stuff	
+
+### Fixed
+- Ayan should now actualy sit down
+- winya council tower meeting room glitch fixed
 
 ## [2.7.12 - 2023-10-22]
 

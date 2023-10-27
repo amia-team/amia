@@ -1,7 +1,15 @@
+//  Changelog:
+//
+//  25-Oct-2023 Frozen  cleanup and adding tag support
+
+
+
 void main(){
 
     object oDoor = GetLocalObject( OBJECT_SELF, "door" );
     object oPC   = GetLastUsedBy();
+    string sTag  = GetLocalString (OBJECT_SELF, "tag");
+    object oDoor2 = GetNearestObjectByTag( sTag, OBJECT_SELF );
 
     //generic bolt
     if ( GetName( OBJECT_SELF ) == "Lock" ){
@@ -31,12 +39,10 @@ void main(){
     }
     else {
 
-        if ( oDoor == OBJECT_INVALID ){
+        if (sTag != "") {oDoor = GetNearestObjectByTag( sTag, OBJECT_SELF );}
+        else            {oDoor = GetNearestObjectByTag( "ds_lever_door", OBJECT_SELF );}
 
-            oDoor = GetNearestObjectByTag( "ds_lever_door", OBJECT_SELF );
-            SetLocalObject( OBJECT_SELF, "door", oDoor );
 
-        }
 
         if ( GetIsOpen( oDoor ) ) {
 

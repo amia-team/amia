@@ -23,7 +23,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- Pixies added
 	- Winya Ravana
 		- Gates update tweaking allowed races better
-		- Small Decoration update
+		- Small Decoration update / player house things
+	- Travel Agency
+		- Wave & Serpent statue: updated to allowe previuos unbanned races
+		- Winya Ravana flag: updated to reflect bannend races properly
 	- Player house updates
 - Door Lever script now supports tag bassed (opening doors far away)	
 - Backend stuff	

@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- Start of cave expansion (area extension + empty rooms are in)
 	
 ### Fixed
+- Polymorph Drow forms, now properly "drow"
 - Robes +4 Merchant fix to show torso
 - Winya Ravana: Old map pin removed
 - big game hunter, Snowy mountaim

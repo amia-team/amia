@@ -12,6 +12,29 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
+## [2.7.13 - 2023-11-10]
+
+### Changed
+- Area changes: 
+	- Barak Rundar: Citadel, Port
+		- Recall pylon added
+	- Oakmist Vale
+		- (more) Druids, Feys and Redacted added
+		- Fire pit new benches
+	- Oakmist Vale: Treetop Village (interior and exterior)
+		- Weapons Platform finished (last part, all exterior now done)
+		- Rental doors added
+		- Huts 3-6 and hut 8 interior finished
+		- Beacon tree added
+	- Oakmist Vale: Caves
+		- Start of cave expansion (area extension + empty rooms are in)
+	
+### Fixed
+- Robes +4 Merchant fix to show torso
+- Winya Ravana: Old map pin removed
+- big game hunter, Snowy mountaim
+	- Block to get into other zone
+	- Extra exit in a "dead" zone in case player gets stuck there
 ## [2.7.13 - 2023-10-27]
 
 ### Changed

@@ -34,6 +34,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- New Key to doors of keep
 	- Ruathym: Caraigh, Shadowflame Keep (interior and exterior)
 		- Portal rellocated to roof rather then basment
+	- Skull Peaks: Crouching Lemur Monastery
+		- Master Tsn removed (passed away)
 
 ### Fixed
 - Hunters now no longer faill BGH attempts

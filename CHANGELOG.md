@@ -12,6 +12,34 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
+## [2.7.15A - 2023-11-19]
+
+### Added
+- Dukes estate area (not accesible yet)
+- Food and drink Plc with inventory
+
+### Changed
+- Area changes:
+	- Player house update
+	- Oakmist Vale Grove:
+		- Minor tweaks to previuos added npcs
+	- The Dale
+		- Further Hinification
+	- Kingdom of Kohlingen: Green Garden (main, north, and old city grounds)
+		- Plot updates
+		- Dukes guards added, Militia replaced
+	- Obsidian Island (port, Guard house, Great hall)
+		- Guard gear/uniform updated
+	- Ruathym: Fortress Wiltun, Keep
+		- New Key to doors of keep
+	- Ruathym: Caraigh, Shadowflame Keep (interior and exterior)
+		- Portal rellocated to roof rather then basment
+
+### Fixed
+- Hunters now no longer faill BGH attempts
+- Consuming orb of darkness no longer gives party members alighment shift
+- Zau'tar interior no longer leads to old L'obsul
+
 ## [2.7.14A - 2023-11-10]
 
 ### Changed

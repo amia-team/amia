@@ -12,6 +12,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
+## [2.7.16A - 2023-11-25]
+
+### Changed
+- Area changes: 
+	- Player house update
+	- Oakmist Vale Grove, caves
+		- Prep for player request finishing
+	- Ruathym: Fortress Wiltun, Keep
+		- At player leaders request, locked more doors
+- Mythal Fuser update! Mythal fusers will now go upto/including Divine.
+	- 12 Greaters fuse into 1 Flawless
+	- 6  Flawless fuse into 1 Perfect
+	- 6  Perfects fuse into 1 Divine
+	
+### Fixed
+- Ruathym: Fortress Wiltun, Keep, Made throne proper sit-able
+
 ## [2.7.15A - 2023-11-19]
 
 ### Added

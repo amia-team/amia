@@ -12,6 +12,43 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
+## [2.8.A - 2023-12-06]
+
+### Added
+- [redacted] event script
+- Custom polymorp script
+- Actand demi plane (massive new dungeon)
+- Lich raid Quest
+- Variuos palette items (rewards of bosses/quests)
+- DTS system (dynamic system for adding random things to dungeons that are difirent each time)
+
+### Changed
+- Area changes:
+	- Actand: The Cliff Village
+		- Demi plane entry (not accessible yet)
+	- Ruathym: Ostland, Ancient Crypt
+		- exploit barrier (doors close/lock at a point in lich fight)
+	- Ruathym: Fortress Wiltun
+		- Quest giver added for Lich raid (wave will get one aswell soon)
+	- Ridgewood, Indoors
+		- Gnome golem quest updated to new system
+	- Skull Peaks: Glinulan's Hold, Halls
+		- Missing companion quest updated to new system
+- Dragon disipline overhaull (addition of spells!)
+- Dwarven Defender/Defender:
+	- Defencive stance 1 round Cooldown when stance drops
+	- Defensive stance drops when using items (like healing kits)
+	- Bite back reduced to 1 divine per 5 levels of Dwarven Defender/Defender
+
+### Fixed
+- Two Weapon fighter AB fix
+- Portal lamp bug fix (that one you before needed the crafting menu)
+- Hidden object scipt bypass exploit fix
+- Storage item (artificer created ones) bug fix that made you lose last item
+- Arbarista Piercing Shot exploit fix (no longer able to move with freedom items/spells)
+- Fixes to entry statue and subraces (blocking illigal subraces, giving out proper widgets)
+
+
 ## [2.7.16A - 2023-11-25]
 
 ### Changed

@@ -36,7 +36,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- Missing companion quest updated to new system
 - Dragon disipline overhaull (addition of spells!)
 - Dwarven Defender/Defender:
-	- Defencive stance 1 round Cooldown when stance drops
+	- Defensive stance 1 round Cooldown when stance drops
 	- Defensive stance drops when using items (like healing kits)
 	- Bite back reduced to 1 divine per 5 levels of Dwarven Defender/Defender
 

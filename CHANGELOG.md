@@ -12,6 +12,37 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
+## [2.8.1A - 2023-12-10]
+
+### Added
+- Raid boss summoning system
+- Palette items
+
+### Changed
+- Area changes:
+	- Oakmist Vale Grove
+		- Moved few job system nodes
+	- Oakmist Vale Grove, hut
+		- repurposing kitchen to tailor hut (with tailor models)
+	- Oakmist Vale Grove, Community Hut
+		- Adding Chef trainer from kitchen area
+		- Adding Kitchen cabinet/supplies from kitchen area
+	- Frostspear's Cave / Ancient Crypt / Positive elemental plane
+		- removal of default raid boss
+		- Summoner pylon added
+	- Amia Forest, West
+		- Removal of skulls/redlights (ruins now just ruins)
+	- Actand Demiplane: Unknown x2
+		- Tweaks to area
+		- Chest updates
+- Demon and Celestial end boss of new dungeon tweaked to be less pushovers
+- cavalery will loss bonuses and dismount when trying to polymorp
+	
+### Fixed
+- Amia Forest deers should no not be hostile by default
+- DTS loot fixes and tweaks
+- Entry statue allows dragon subrace now
+
 ## [2.8.A - 2023-12-06]
 
 ### Added

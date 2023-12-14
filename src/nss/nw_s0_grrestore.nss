@@ -16,6 +16,7 @@
 // 2008/07/05 disco               new racial trait system
 // 2009/02/23 disco            Updated racial/class/area effects refresher
 // 2011/04/16 PoS       Fixed polymorphed monks being deshifted
+// 2023/12/07 Mav - Added Lycan Infection Removal
     ----------------------------------------------------------------------------
 
 */
@@ -27,6 +28,7 @@
 #include "x2_inc_spellhook"
 #include "cs_inc_xp"
 #include "amia_include"
+#include "lycan_removal"
 
 int GetEffectIsPolyEffect( effect eEffect, object oTarget ){
 
@@ -67,6 +69,8 @@ void main(){
 
     //Remove extra Age variable from Time Leach, even if no penalties were applied
     DeleteLocalInt( oPC, "AgeDrain" );
+
+    RemoveLycanInfection(oPC);
 
     // Void if of undead type.
     if( GetRacialType( oPC ) == RACIAL_TYPE_UNDEAD ){

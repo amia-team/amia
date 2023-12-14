@@ -1,3 +1,5 @@
+// Edit: Maverick00053, 11/23/2023, nerfed biteback hard.
+
 void ApplyDefenderPassives(object player);
 effect CreateDefenderDamageShield(object player);
 effect CreateDefenderAbDamageBonus(object player);
@@ -45,10 +47,9 @@ effect CreateDefenderAbDamageBonus(object player)
 
 effect CreateDefenderDamageShield(object player)
 {
-    int damageShieldAmount = FloatToInt(ConBonus / 2.0f) + FloatToInt((DefenderLevels / 4) * 3.0f) + GetEpicDrPoints(player);
+    int damageShieldAmount = DefenderLevels/5;
 
-    int baseDie = GetRacialType(player) == RACIAL_TYPE_DWARF ? DAMAGE_BONUS_1d8 : DAMAGE_BONUS_1d6;
-    effect damageShield = EffectDamageShield(damageShieldAmount, baseDie, DAMAGE_TYPE_DIVINE);
+    effect damageShield = EffectDamageShield(damageShieldAmount,0, DAMAGE_TYPE_DIVINE);
 
     damageShield = SupernaturalEffect(damageShield);
 

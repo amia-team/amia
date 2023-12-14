@@ -6,6 +6,8 @@
 //used as: OnDamage
 //date:    dec 23 2007
 //author:  disco
+//
+// Edit: 12/9/2023 - Maverick00053 - Added in raidsummoner support for normal bosses
 
 
 //-------------------------------------------------------------------------------
@@ -22,6 +24,7 @@ void main(){
 
     object oCritter         = OBJECT_SELF;
     object oKiller          = GetLastKiller();
+
 
     //OnDeath custom ability usage
     string sDE = GetLocalString( oCritter, "DeathEffect" );
@@ -41,5 +44,14 @@ void main(){
 
         // Generate treasure.
         GenerateLoot( oCritter, nXPResult );
+    }
+
+    // If this variable is set on the boss or other critter it will function alongside the raidsummoner plc
+    string sRaidSpawner = GetLocalString(oCritter,"raidsummoner");
+    if(sRaidSpawner != "")
+    {
+     // Removes the variable on the raid summoner when the boss "dies" so it can be summoned again
+     object oRaidSpawner = GetObjectByTag(sRaidSpawner);
+     DeleteLocalInt(oRaidSpawner,"bossOut");
     }
 }

@@ -55,6 +55,7 @@ struct tDamageType {
 
 // Add randomly generated items to a merchant
 void InjectIntoStore( object oStore);
+//DO NOT USE FOR STANDARD LOOT! BE CAREFUL! Use inc_ds_ondeath include instead
 void InjectIntoChest( object oChest, int nLevelBottom, int nLevelTop, int nUnique=5 );
 void CreateWeapon( object oStore, int nLevel, string sType="", int nUnique=5 );
 void SetWeapon( object oWeapon, int nLevel, int nUnique );

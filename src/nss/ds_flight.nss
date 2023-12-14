@@ -6,6 +6,8 @@
 // 10/10/2011 PaladinOfSune    Initial release.
 //
 
+#include "amia_include"
+
 void main( ){
 
     // Declare variables
@@ -15,6 +17,12 @@ void main( ){
 
     location lTarget    = GetSpellTargetLocation();
     effect eFly         = EffectDisappearAppear( lTarget );
+
+    if(GetIsInsideTrigger(oPC,"deny_flight")==1)
+    {
+      SendMessageToPC( oPC, "You cannot use flight in this specific zone inside this area! This doesn't mean you cannot fly in the rest of the area.");
+      return;
+    }
 
     // Check if they can fly here
     if( GetLocalInt( oArea, "CS_NO_FLY" ) == 1 ) {

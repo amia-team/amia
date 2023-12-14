@@ -19,6 +19,7 @@ Date        Name        Reason
                         properly when needed.
 2013-01-12  Glim        Bugfix: Clean variablies on PC before conversation begins
                         to allow proper choice of destination and activation.
+2023-12-04 Maverick     Fixed a bug where the clean variables function wasnt in the right spot
 ------------------------------------------------------------------
 
 */
@@ -63,12 +64,12 @@ void main()
     object oPC;
     object oDevice;
 
-    clean_vars( oPC, 4 );
 
     oPC   = GetPCSpeaker();
 
     if ( !GetIsObjectValid( oPC ) ) oPC   = GetLastUsedBy();
     if ( !GetIsObjectValid( oPC ) ) return;
+
 
     oDevice = GetLocalObject( oPC, "ds_target" );
 
@@ -82,14 +83,14 @@ void main()
     int nNode;
 
     if(GetLocalString(oPC, "ds_action") != "se_gen_portal") {
-	       nNode = 0;
+           nNode = 0;
     }
     else {
         nNode = GetLocalInt( oPC, "ds_node" );
     }
     // After we have got nNode, we delete ds_node so that it doesn't produce
     // unexpected results on a subsequent run.
-    DeleteLocalInt( oPC, "ds_node" );
+    clean_vars( oPC, 4 );
 
     if ( nNode > 0 ){
 

@@ -264,6 +264,96 @@ void main()
       nAnimalSkin = 1580;
       nAnimalPo = 168;
     }
+    else if(GetHasFeat(1299,oPC))   // Owl -
+    {
+        if((nLevel >= 25) && (nLevelLycan==5))
+        {
+           nPoly = 316;
+        }
+        else if((nLevel >= 20) && (nLevelLycan==4))
+        {
+           nPoly = 315;
+        }
+        else if((nLevel >= 15) && (nLevelLycan==3))
+        {
+           nPoly = 314;
+        }
+        else if((nLevel >= 10) && (nLevelLycan==2))
+        {
+           nPoly = 313;
+        }
+        else if(nLevel >= 5)
+        {
+           nPoly = 312;
+        }
+        else if(nLevel >= 1)
+        {
+           nPoly = 311;
+        }
+
+      nAnimalSkin = 0;
+      nAnimalPo = 0;
+    }
+    else if(GetHasFeat(1300,oPC))   // Croc
+    {
+        if((nLevel >= 25) && (nLevelLycan==5))
+        {
+           nPoly = 322;
+        }
+        else if((nLevel >= 20) && (nLevelLycan==4))
+        {
+           nPoly = 321;
+        }
+        else if((nLevel >= 15) && (nLevelLycan==3))
+        {
+           nPoly = 320;
+        }
+        else if((nLevel >= 10) && (nLevelLycan==2))
+        {
+           nPoly = 319;
+        }
+        else if(nLevel >= 5)
+        {
+           nPoly = 318;
+        }
+        else if(nLevel >= 1)
+        {
+           nPoly = 317;
+        }
+
+      nAnimalSkin = 1828;
+      nAnimalPo = 1394;
+    }
+    else if(GetHasFeat(1301,oPC))   // Shark
+    {
+        if((nLevel >= 25) && (nLevelLycan==5))
+        {
+           nPoly = 328;
+        }
+        else if((nLevel >= 20) && (nLevelLycan==4))
+        {
+           nPoly = 327;
+        }
+        else if((nLevel >= 15) && (nLevelLycan==3))
+        {
+           nPoly = 326;
+        }
+        else if((nLevel >= 10) && (nLevelLycan==2))
+        {
+           nPoly = 325;
+        }
+        else if(nLevel >= 5)
+        {
+           nPoly = 324;
+        }
+        else if(nLevel >= 1)
+        {
+           nPoly = 323;
+        }
+
+      nAnimalSkin = 1872;
+      nAnimalPo = 731;
+    }
 
 
     int nStrBefore,nConBefore,nDexBefore,nStrAfter,nConAfter,nDexAfter;
@@ -325,8 +415,15 @@ void main()
 
     if(nSpell == 980) // Animal
     {
-        SetCreatureAppearanceType(OBJECT_SELF, nAnimalSkin);
-        SetPortraitId(OBJECT_SELF, nAnimalPo);
+        if((nAnimalSkin==0))
+        {
+         SendMessageToPC(OBJECT_SELF,"You do not have a hybrid form.");
+        }
+        else
+        {
+         SetCreatureAppearanceType(OBJECT_SELF, nAnimalSkin);
+         SetPortraitId(OBJECT_SELF, nAnimalPo);
+        }
     }
 
     //--------------------------------------------------------------------------

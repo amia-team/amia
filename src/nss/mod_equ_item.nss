@@ -261,9 +261,10 @@ void main( ){
          if((oPrimaryType == BASE_ITEM_KAMA || oPrimaryType == BASE_ITEM_SICKLE || oPrimaryType == BASE_ITEM_WHIP
          || oPrimaryType == BASE_ITEM_SHORTSWORD || oPrimaryType == BASE_ITEM_LIGHTMACE || oPrimaryType == BASE_ITEM_LIGHTHAMMER) &&
          (oOffItemType == BASE_ITEM_KAMA || oOffItemType == BASE_ITEM_SICKLE || oOffItemType == BASE_ITEM_WHIP
-         || oOffItemType == BASE_ITEM_SHORTSWORD || oOffItemType == BASE_ITEM_LIGHTMACE || oOffItemType == BASE_ITEM_LIGHTHAMMER))
+         || oOffItemType == BASE_ITEM_SHORTSWORD || oOffItemType == BASE_ITEM_LIGHTMACE || oOffItemType == BASE_ITEM_LIGHTHAMMER ||
+         oOffItemType == BASE_ITEM_HANDAXE))
          {
-           eAB = EffectAttackIncrease(1,ATTACK_BONUS_MISC);
+           eAB = EffectAttackIncrease(2,ATTACK_BONUS_MISC);
            eLink = EffectLinkEffects(eAC,eAB);
          }
          else
@@ -305,7 +306,7 @@ void main( ){
          || oOffItemType == BASE_ITEM_KATANA || oOffItemType == BASE_ITEM_MORNINGSTAR || oOffItemType == BASE_ITEM_RAPIER
          || oOffItemType == BASE_ITEM_SCIMITAR || oOffItemType == BASE_ITEM_TRIDENT || oOffItemType == BASE_ITEM_WARHAMMER || oOffItemType == BASE_ITEM_LIGHTFLAIL))
          {
-           eAB = EffectAttackIncrease(1,ATTACK_BONUS_MISC);
+           eAB = EffectAttackIncrease(2,ATTACK_BONUS_MISC);
            eLink = EffectLinkEffects(eAC,eAB);
          }
          else

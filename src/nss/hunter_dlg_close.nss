@@ -172,7 +172,7 @@ void main()
    {
      // Hunt is always a success!
    }
-   if((sSecondaryJob == "Hunter") && (nRandomJobJournal >= 80))
+   else if((sSecondaryJob == "Hunter") && (nRandomJobJournal >= 80))
    {
      AssignCommand(oPC,ActionSpeakString("<c~Îë>*After some time you return unsuccesful. Better luck next time*</c>"));
      return;

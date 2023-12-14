@@ -12,6 +12,7 @@
     06/May/2023     Frozen      - Changed bag/case storage/retrieval amount
     09/May/2023     Frozen      - Fixed Gem and healing case to store any kind of gem and healing kit + allowing non job/job system things in same bag
     10/sep/2023     Frozen      - (shaped) Ivory check added so it wont get in a gem bag
+    27/Nov/2023     Mav         - Fixed a very specific case bug where removing items from storage units that have a batch 1, when the item count is 2 it would drop item count to 0 instead of 1
 */
 
 
@@ -1183,6 +1184,10 @@ void RetrieveItem(object oPC, object oWidget, int nItemCount, int nBatch)
    else if(nItemCount < nBatch && nItemCount > nBatch/2+1)
    {
       nBatch = nBatch/2;
+      nNewItemCount = nItemCount - nBatch;
+   }
+   else if((nBatch == 1) && (nItemCount == 2))// A very weird situtation where if batch is 1, and the nitemcount is 2 it would drop to 0 before this else if was added
+   {
       nNewItemCount = nItemCount - nBatch;
    }
    else if (nItemCount >= 1)

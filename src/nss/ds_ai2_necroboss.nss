@@ -105,6 +105,13 @@ void main()
       else if((GetPercentageHPLoss(OBJECT_SELF) <= 50) && (n50PercentHP == 0))
       {   // 50% HP and the boss invulns for a moment
 
+
+          // Lock outside doors so noone else can come in
+          object oDoor1 = GetObjectByTag ("ost_msc_3");
+          AssignCommand(oDoor1,ActionCloseDoor(oDoor1));
+          SetLocked(oDoor1,TRUE);
+          SetLockKeyRequired(oDoor1, TRUE);
+
           // Invuln, Cast Uber Death Spell, Heal
           Invulnerability(OBJECT_SELF, 10.0);
           SpeakString("I will tear your souls from your chests! *Summons forth an epic spell of death filling the arena");
@@ -708,6 +715,11 @@ void LootDrop(object oArea, object oWayPoint1, object oWaypoint2)
     int nRandom3 = Random(5);
     object oHorde = CreateObject(OBJECT_TYPE_PLACEABLE,"lichlootchest",GetLocation(oWayPoint1));
     CreateObject(OBJECT_TYPE_PLACEABLE,"lbossexit",GetLocation(oWaypoint2));
+
+    // Removes the variable on the raid summoner when the boss "dies" so it can be summoned again
+    object oRaidSpawner = GetObjectByTag("raidsummonerlich");
+    DeleteLocalInt(oRaidSpawner,"bossOut");
+    //
 
     if(nRandom <= 10)      //  Divine Mythal
     {

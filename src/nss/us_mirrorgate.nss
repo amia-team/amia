@@ -6,7 +6,7 @@
 //used as: checks subraces and key status
 //date:    nov 12 2007
 //author:  disco
-
+// Edit: December 4th 2023, Maverick00053. Adding in a few fixes. Do note that a lot of this back code isnt used but might still be important.
 //-------------------------------------------------------------------------------
 // includes
 //-------------------------------------------------------------------------------
@@ -22,13 +22,13 @@
 void CheckKeyStatus( object oPC );
 
 //gets alternative home location of PC
-void CheckNativeHome( object oPC );
+void CheckNativeHome( object oPC );   // Defninitely sure this isnt anymore. I am still afraid to remove it though. - Mav
 
 //fixes some forgotten journal entries
-void FixMissingValues( object oPC, object oKey );
+void FixMissingValues( object oPC, object oKey );  // Pretty sure this isnt used anymore. I am afraid to remove it though. - Mav
 
 //copies variable from oJournal to oKey if the value in oKey isn't set
-void CopyVariable( object oPC, object oJournal, object oKey, string sQuest );
+void CopyVariable( object oPC, object oJournal, object oKey, string sQuest );  // Pretty sure this isnt used anymore. I am afraid to remove it though. - Mav
 
 
 //-------------------------------------------------------------------------------
@@ -47,7 +47,22 @@ void main(){
         return;
     }
 
+    // Check to make sure they are picking the correct subraces or none.
+    if((GetSubRace(oPC) == "Aasimar") || (GetSubRace(oPC) == "Feytouched") || (GetSubRace(oPC) == "Tiefling") || (GetSubRace(oPC) == "Air Genasi") ||
+    (GetSubRace(oPC) == "Earth Genasi") || (GetSubRace(oPC) == "Fire Genasi") || (GetSubRace(oPC) == "Water Genasi") || (GetSubRace(oPC) == "Lizardfolk") ||
+    (GetSubRace(oPC) == "Half-Dragon") || (GetSubRace(oPC) == "Aquatic Elf") || (GetSubRace(oPC) == "Avariel") || (GetSubRace(oPC) == "Centaur") ||
+    (GetSubRace(oPC) == "Shadovar") || (GetSubRace(oPC) == "Kenku") || (GetSubRace(oPC) == "Dragon") || (GetSubRace(oPC) == ""))
+    {
+
+    }
+    else
+    {
+     SendMessageToPC(oPC,"Error: Your subrace field is filled in incorrectly. Make sure the spelling is correct. If it is and you are getting this error, please contact DMs.");
+     return;
+    }
+
     ExecuteScript("subrace_setup", oPC);
+
     ExecuteScript("subrace_spells",oPC);
     ExecuteScript("monster_check", oPC);
 

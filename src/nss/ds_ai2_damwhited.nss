@@ -417,6 +417,11 @@ void LootDrop(object oArea, object oWayPoint3, object oWaypoint4)
     object oHorde = CreateObject(OBJECT_TYPE_PLACEABLE,"whitedragonhorde",GetLocation(oWayPoint3));
     CreateObject(OBJECT_TYPE_PLACEABLE,"dbossexit",GetLocation(oWaypoint4));
 
+    // Removes the variable on the raid summoner when the boss "dies" so it can be summoned again
+    object oRaidSpawner = GetObjectByTag("raidsummonerfrosty");
+    DeleteLocalInt(oRaidSpawner,"bossOut");
+    //
+
     if(nRandom <= 10)      //  wdragonbossrewar - Frostspear's Treasure, and 4 more unique bin drops
     {
 

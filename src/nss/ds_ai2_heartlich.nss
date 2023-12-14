@@ -60,6 +60,11 @@ void main(){
        DeleteLocalInt(oCritter,"70%AbilityFired");
        DeleteLocalInt(oCritter,"80%AbilityFired");
        DeleteLocalInt(oCritter,"90%AbilityFired");
+
+       // Unlock outside doors so noone else can come in
+       object oDoor1 = GetObjectByTag ("ost_msc_3");
+       AssignCommand(oDoor1,ActionUnlockObject(oDoor1));
+       SetLockKeyRequired(oDoor1, FALSE);
       }
 
       SetLocalInt( oCritter, L_INACTIVE, 0 );

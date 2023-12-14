@@ -17,10 +17,12 @@
 // 2008/07/05 disco               new blindness/underwater system
 // 2008/07/05 disco               new racial trait system
 // 7/11/2016  msheeler            added immunity for epic spell focus
+// 12/7/2023  Mav                 Added in lycan infection removal
 
 #include "X0_I0_SPELLS"
 #include "x2_inc_spellhook"
 #include "cs_inc_xp"
+#include "lycan_removal"
 
 
 void main()
@@ -56,6 +58,9 @@ void main()
     int nCasterLevel = GetCasterLevel (OBJECT_SELF);
 
     effect eVis = EffectVisualEffect(VFX_IMP_REMOVE_CONDITION);
+
+    RemoveLycanInfection(oTarget);
+
     //Check for which removal spell is being cast.
     if(nSpellID == SPELL_REMOVE_BLINDNESS_AND_DEAFNESS)
     {

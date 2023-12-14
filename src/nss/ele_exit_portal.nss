@@ -38,6 +38,10 @@ void main()
 
      SpeakString("*The crystal shatters as it activates, creating a portal nearby*");
      CreateObject(OBJECT_TYPE_PLACEABLE,"ele_jump_portal",GetLocation(oWayP));
+     // Removes the variable on the raid summoner when the boss "dies" so it can be summoned again
+     object oRaidSpawner = GetObjectByTag("raidsummonerele");
+     DeleteLocalInt(oRaidSpawner,"bossOut");
+     //
      DestroyObject(OBJECT_SELF,1.0);
 
 

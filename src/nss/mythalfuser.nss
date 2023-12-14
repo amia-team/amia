@@ -1,7 +1,7 @@
 /*
   Mythal Fuser Script - Fuses 4 of a lesser kind of mythal into a higher version
   - Maverick00053
-
+  Edit: Mav 11/24/2023 - I revamped ALL the code to just be better. I also added in the ratios for higher version mythal fusing.
 */
 
 // Launches the Convo Script
@@ -10,15 +10,35 @@ void LaunchConvo( object oBench, object oPC);
 // Launches the LaunchFuser Function
 void LaunchFuser(object oPC, object oBench, int nNode);
 
+// Destroys the mythals used in crafting
+void DestroyMythals(object oFuser, int nRatio);
+
 #include "x2_inc_switches"
 #include "inc_ds_records"
 #include "x0_i0_campaign"
 #include "inc_td_itemprop"
 
+// Global variables for how many mythals of each to get the higher verison. Adjust as needed.
+int nMinorToLesser = 4;
+int nLesserToInterm = 4;
+int nIntermToGreater = 4;
+int nGreaterToFlawless = 12;
+int nFlawlessToPerfect = 6;
+int nPerfectToDivine = 6;
+
+// Global resref strings for the mythal types
+string sMinor = "mythal1";
+string sLesser = "mythal2";
+string sInterm = "mythal3";
+string sGreater = "mythal4";
+string sFlawless = "mythal5";
+string sPerfect = "mythal6";
+string sDivine = "mythal7";
+
 void main()
 {
     object oPC          = GetLastClosedBy();
-    object oBench       = OBJECT_SELF;
+    object oFuser       = OBJECT_SELF;
     object oDoor;
 
     // Second run through the code makes sure the PC is set
@@ -30,7 +50,7 @@ void main()
     int nNode           = GetLocalInt( oPC, "ds_node" );
     string sAction      = GetLocalString( oPC, "ds_action");
 
-    if(!GetIsObjectValid(GetFirstItemInInventory(oBench)))
+    if(!GetIsObjectValid(GetFirstItemInInventory(oFuser)))
     {
       DeleteLocalInt( oPC, "ds_node");
       DeleteLocalString( oPC, "ds_action");
@@ -43,7 +63,7 @@ void main()
        DeleteLocalInt( oPC, "ds_node");
        DeleteLocalString( oPC, "ds_action");
        DeleteLocalString( oPC, "ds_actionnode");
-       LaunchConvo(oBench,oPC);
+       LaunchConvo(oFuser,oPC);
     }
     else if(nNode > 0)
     {
@@ -52,8 +72,8 @@ void main()
       {
          // Since the script is going to be launched a second time and moved from the Bench to the PC you need to make sure the NPC is set
          // properly on the second run.
-         oBench = GetNearestObjectByTag("mythalfuser",oPC);
-         LaunchFuser(oPC,oBench,nNode);
+         oFuser = GetNearestObjectByTag("mythalfuser",oPC);
+         LaunchFuser(oPC,oFuser,nNode);
          DeleteLocalInt( oPC, "ds_node");
          DeleteLocalString( oPC, "ds_action");
          DeleteLocalString( oPC, "ds_actionnode");
@@ -69,75 +89,72 @@ void main()
       DeleteLocalInt( oPC, "ds_node");
       DeleteLocalString( oPC, "ds_action");
       DeleteLocalString( oPC, "ds_actionnode");
-      LaunchConvo(oBench,oPC);
+      LaunchConvo(oFuser,oPC);
     }
 
 
 }
 
-void LaunchConvo( object oBench, object oPC){
+void LaunchConvo( object oFuser, object oPC){
     SetLocalString(oPC,"ds_action","mythalfuser");
-    AssignCommand(oBench, ActionStartConversation(oPC, "c_mythalfuser", TRUE, FALSE));
+    AssignCommand(oFuser, ActionStartConversation(oPC, "c_mythalfuser", TRUE, FALSE));
 }
 
-void LaunchFuser(object oPC, object oBench, int nNode)
+void LaunchFuser(object oPC, object oFuser, int nNode)
 {
-   object oItemInChest = GetFirstItemInInventory(oBench);
-   string sBlueprintR;
-   string sBlueprintP;
-   object chestItem1;
-   object chestItem2;
-   object chestItem3;
-   object chestItem4;
-   int chestItemNum = 1;
+   object oItem = GetFirstItemInInventory(oFuser);
+   string sResRefRecipe;
+   string sResRefProduct;
+   string sResRef;
+   int nRatio;
+   int nItemCount;
 
    // Figures out their selection
    switch(nNode)
    {
-      case 1:  sBlueprintR = "mythal1"; sBlueprintP = "mythal2"; break; // Mythal Reagent, Minor => Lesser
-      case 2:  sBlueprintR = "mythal2"; sBlueprintP = "mythal3"; break; // Mythal Reagent, Lesser  => Intermediate
-      case 3:  sBlueprintR = "mythal3"; sBlueprintP = "mythal4"; break; // Mythal Reagent, Intermediate  => Greater
+      case 1:  sResRefRecipe = sMinor; sResRefProduct = sLesser; nRatio = nMinorToLesser; break; // Mythal Reagent, Minor => Lesser
+      case 2:  sResRefRecipe = sLesser; sResRefProduct = sInterm; nRatio = nLesserToInterm; break; // Mythal Reagent, Lesser  => Intermediate
+      case 3:  sResRefRecipe = sInterm; sResRefProduct = sGreater; nRatio = nIntermToGreater; break; // Mythal Reagent, Intermediate  => Greater
+      case 4:  sResRefRecipe = sGreater; sResRefProduct = sFlawless; nRatio = nGreaterToFlawless; break; // Mythal Reagent, Greater  => Flawess
+      case 5:  sResRefRecipe = sFlawless; sResRefProduct = sPerfect; nRatio = nFlawlessToPerfect; break; // Mythal Reagent, Flawess  => Perfect
+      case 6:  sResRefRecipe = sPerfect; sResRefProduct = sDivine; nRatio = nPerfectToDivine; break; // Mythal Reagent, Perfect  => Divine
    }
 
-   // Gets the items in the chest, saves them if they match the ingredients needed
-   while(GetIsObjectValid(oItemInChest))
+   while ( GetIsObjectValid(oItem) )
    {
-     if(GetResRef(oItemInChest) == sBlueprintR)
+     sResRef = GetResRef(oItem);
+
+     if(sResRef==sResRefRecipe)
      {
-       switch(chestItemNum)
-       {
-         case 1: chestItem1= oItemInChest; chestItemNum++; break;
-         case 2: chestItem2= oItemInChest; chestItemNum++; break;
-         case 3: chestItem3= oItemInChest; chestItemNum++; break;
-         case 4: chestItem4= oItemInChest; chestItemNum++; break;
-       }
+       nItemCount = nItemCount + 1;
+       SetLocalObject(oFuser,"mythalused"+IntToString(nItemCount),oItem);
      }
-     oItemInChest = GetNextItemInInventory(oBench);
+     oItem = GetNextItemInInventory(oFuser);
    }
 
-  if(chestItemNum < 5)
-  {
-    SendMessageToPC(oPC, "Not enough material to fuse together.");
-  }
-  else if(chestItemNum == 5)
-  {
-    // Destroys the material and makes the product
-    DelayCommand(0.1,DestroyObject(chestItem1));
-    DelayCommand(0.1,DestroyObject(chestItem2));
-    DelayCommand(0.2,DestroyObject(chestItem3));
-    DelayCommand(0.2,DestroyObject(chestItem4));
-    CreateItemOnObject(sBlueprintP,oBench,1);
-    SendMessageToPC(oPC, "Mythal fusion successful!");
-    ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectVisualEffect( VFX_FNF_MYSTICAL_EXPLOSION ), oPC );
-  }
-  else if(chestItemNum > 5)
-  {
-    SendMessageToPC(oPC, "ERROR: Item Number > 5. Report to Dev.");
-  }
-
+   if(nItemCount>=nRatio)
+   {
+     DestroyMythals(oFuser,nRatio);
+     SendMessageToPC(oPC, "Mythal fusion successful!");
+     CreateItemOnObject(sResRefProduct,oFuser);
+     ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectVisualEffect( VFX_FNF_MYSTICAL_EXPLOSION ), oPC );
+   }
+   else
+   {
+     SendMessageToPC(oPC, "Not enough material to fuse together");
+   }
 
    DeleteLocalInt( oPC, "ds_node");
    DeleteLocalString( oPC, "ds_action");
    DeleteLocalString( oPC, "ds_actionnode");
+}
 
+
+void DestroyMythals(object oFuser, int nRatio)
+{
+   int i;
+   for ( i=1; i<=nRatio; ++i )
+   {
+     DestroyObject(GetLocalObject(oFuser,"mythalused"+IntToString(i)));
+   }
 }

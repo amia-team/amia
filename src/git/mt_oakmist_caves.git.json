@@ -105,10 +105,10 @@
           "value": ""
         },
         "Description": {
-          "id": 12815,
           "type": "cexolocstring",
           "value": {
-            "0": "Hyper and playful, Claisi excitedly meets anyone who comes to visit the little den."
+            "0": "Hyper and playful, Claisi excitedly meets anyone who comes to visit the little den.",
+            "id": 12815
           }
         },
         "Dex": {
@@ -157,9 +157,10 @@
                 "value": 0
               },
               "LocalizedName": {
-                "id": 13238,
                 "type": "cexolocstring",
-                "value": {}
+                "value": {
+                  "id": 13238
+                }
               },
               "ModelPart1": {
                 "type": "byte",
@@ -221,6 +222,10 @@
                 "type": "resref",
                 "value": "nw_it_crewps005"
               },
+              "xModelPart1": {
+                "type": "word",
+                "value": 1
+              },
               "XOrientation": {
                 "type": "float",
                 "value": 0.0
@@ -268,10 +273,10 @@
           ]
         },
         "FirstName": {
-          "id": 12816,
           "type": "cexolocstring",
           "value": {
-            "0": "Claisi"
+            "0": "Claisi",
+            "id": 12816
           }
         },
         "fortbonus": {
@@ -979,6 +984,10 @@
                 "type": "resref",
                 "value": "kolothsjaws"
               },
+              "xModelPart1": {
+                "type": "word",
+                "value": 1
+              },
               "XOrientation": {
                 "type": "float",
                 "value": 0.0
@@ -1254,6 +1263,10 @@
               "TemplateResRef": {
                 "type": "resref",
                 "value": "kolothspelt"
+              },
+              "xModelPart1": {
+                "type": "word",
+                "value": 1
               },
               "XOrientation": {
                 "type": "float",
@@ -1888,10 +1901,10 @@
           "value": ""
         },
         "Description": {
-          "id": 12815,
           "type": "cexolocstring",
           "value": {
-            "0": "This young pup seems to have developed a constant itch just above his eye."
+            "0": "This young pup seems to have developed a constant itch just above his eye.",
+            "id": 12815
           }
         },
         "Dex": {
@@ -1940,9 +1953,10 @@
                 "value": 0
               },
               "LocalizedName": {
-                "id": 13238,
                 "type": "cexolocstring",
-                "value": {}
+                "value": {
+                  "id": 13238
+                }
               },
               "ModelPart1": {
                 "type": "byte",
@@ -2004,6 +2018,10 @@
                 "type": "resref",
                 "value": "nw_it_crewps005"
               },
+              "xModelPart1": {
+                "type": "word",
+                "value": 1
+              },
               "XOrientation": {
                 "type": "float",
                 "value": 0.0
@@ -2051,10 +2069,10 @@
           ]
         },
         "FirstName": {
-          "id": 12816,
           "type": "cexolocstring",
           "value": {
-            "0": "Rubb"
+            "0": "Rubb",
+            "id": 12816
           }
         },
         "fortbonus": {
@@ -2426,24 +2444,207 @@
           "type": "resref",
           "value": "nw_wolf"
         },
-        "VisualTransform": {
-          "__struct_id": 6,
-          "type": "struct",
-          "value": {
-            "__struct_id": 6,
-            "ScaleX": {
-              "type": "float",
-              "value": 0.7738
-            },
-            "ScaleY": {
-              "type": "float",
-              "value": 0.7738
-            },
-            "ScaleZ": {
-              "type": "float",
-              "value": 0.7738
+        "VisTransformList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 6,
+              "AnimationSpeed": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 1.0
+                  }
+                }
+              },
+              "RotateX": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "RotateY": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "RotateZ": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "ScaleX": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.7738
+                  }
+                }
+              },
+              "ScaleY": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.7738
+                  }
+                }
+              },
+              "ScaleZ": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.7738
+                  }
+                }
+              },
+              "Scope": {
+                "type": "int",
+                "value": 0
+              },
+              "TranslateX": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "TranslateY": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "TranslateZ": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              }
             }
-          }
+          ]
         },
         "WalkRate": {
           "type": "int",
@@ -2541,10 +2742,10 @@
           "value": ""
         },
         "Description": {
-          "id": 12815,
           "type": "cexolocstring",
           "value": {
-            "0": "A sloppy, wet tongue lolls out of Jediun's mouth as he almost constantly hounds the other wolves for food."
+            "0": "A sloppy, wet tongue lolls out of Jediun's mouth as he almost constantly hounds the other wolves for food.",
+            "id": 12815
           }
         },
         "Dex": {
@@ -2593,9 +2794,10 @@
                 "value": 0
               },
               "LocalizedName": {
-                "id": 13238,
                 "type": "cexolocstring",
-                "value": {}
+                "value": {
+                  "id": 13238
+                }
               },
               "ModelPart1": {
                 "type": "byte",
@@ -2657,6 +2859,10 @@
                 "type": "resref",
                 "value": "nw_it_crewps005"
               },
+              "xModelPart1": {
+                "type": "word",
+                "value": 1
+              },
               "XOrientation": {
                 "type": "float",
                 "value": 0.0
@@ -2704,10 +2910,10 @@
           ]
         },
         "FirstName": {
-          "id": 12816,
           "type": "cexolocstring",
           "value": {
-            "0": "Jediun"
+            "0": "Jediun",
+            "id": 12816
           }
         },
         "fortbonus": {
@@ -3356,444 +3562,6 @@
         },
         "Bearing": {
           "type": "float",
-          "value": -1.5708
-        },
-        "CloseLockDC": {
-          "type": "byte",
-          "value": 0
-        },
-        "Conversation": {
-          "type": "resref",
-          "value": ""
-        },
-        "CurrentHP": {
-          "type": "short",
-          "value": 10
-        },
-        "Description": {
-          "type": "cexolocstring",
-          "value": {
-            "0": ""
-          }
-        },
-        "DisarmDC": {
-          "type": "byte",
-          "value": 0
-        },
-        "Faction": {
-          "type": "dword",
-          "value": 1
-        },
-        "Fort": {
-          "type": "byte",
-          "value": 5
-        },
-        "GenericType_New": {
-          "type": "dword",
-          "value": 55
-        },
-        "Hardness": {
-          "type": "byte",
-          "value": 5
-        },
-        "HP": {
-          "type": "short",
-          "value": 10
-        },
-        "Interruptable": {
-          "type": "byte",
-          "value": 1
-        },
-        "KeyName": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "KeyRequired": {
-          "type": "byte",
-          "value": 0
-        },
-        "LinkedTo": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "LinkedToFlags": {
-          "type": "byte",
-          "value": 0
-        },
-        "LoadScreenID": {
-          "type": "word",
-          "value": 0
-        },
-        "Lockable": {
-          "type": "byte",
-          "value": 0
-        },
-        "Locked": {
-          "type": "byte",
-          "value": 0
-        },
-        "LocName": {
-          "type": "cexolocstring",
-          "value": {
-            "0": "door"
-          }
-        },
-        "OnClick": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnClosed": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnDamaged": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnDeath": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnDisarm": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnFailToOpen": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnHeartbeat": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnLock": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnMeleeAttacked": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnOpen": {
-          "type": "resref",
-          "value": "op_autoclose20"
-        },
-        "OnSpellCastAt": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnTrapTriggered": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnUnlock": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnUserDefined": {
-          "type": "resref",
-          "value": ""
-        },
-        "OpenLockDC": {
-          "type": "byte",
-          "value": 0
-        },
-        "Plot": {
-          "type": "byte",
-          "value": 1
-        },
-        "PortraitId": {
-          "type": "word",
-          "value": 558
-        },
-        "Ref": {
-          "type": "byte",
-          "value": 0
-        },
-        "Tag": {
-          "type": "cexostring",
-          "value": "ClosingMetalDoor5"
-        },
-        "TemplateResRef": {
-          "type": "resref",
-          "value": "closingmetaldoor"
-        },
-        "TrapDetectable": {
-          "type": "byte",
-          "value": 1
-        },
-        "TrapDetectDC": {
-          "type": "byte",
-          "value": 0
-        },
-        "TrapDisarmable": {
-          "type": "byte",
-          "value": 1
-        },
-        "TrapFlag": {
-          "type": "byte",
-          "value": 0
-        },
-        "TrapOneShot": {
-          "type": "byte",
-          "value": 1
-        },
-        "TrapType": {
-          "type": "byte",
-          "value": 0
-        },
-        "Will": {
-          "type": "byte",
-          "value": 0
-        },
-        "X": {
-          "type": "float",
-          "value": 60.0
-        },
-        "Y": {
-          "type": "float",
-          "value": 45.0
-        },
-        "Z": {
-          "type": "float",
-          "value": 0.0
-        }
-      },
-      {
-        "__struct_id": 8,
-        "AnimationState": {
-          "type": "byte",
-          "value": 0
-        },
-        "Appearance": {
-          "type": "dword",
-          "value": 0
-        },
-        "AutoRemoveKey": {
-          "type": "byte",
-          "value": 0
-        },
-        "Bearing": {
-          "type": "float",
-          "value": 1.5708
-        },
-        "CloseLockDC": {
-          "type": "byte",
-          "value": 0
-        },
-        "Conversation": {
-          "type": "resref",
-          "value": ""
-        },
-        "CurrentHP": {
-          "type": "short",
-          "value": 10
-        },
-        "Description": {
-          "type": "cexolocstring",
-          "value": {
-            "0": ""
-          }
-        },
-        "DisarmDC": {
-          "type": "byte",
-          "value": 0
-        },
-        "Faction": {
-          "type": "dword",
-          "value": 1
-        },
-        "Fort": {
-          "type": "byte",
-          "value": 5
-        },
-        "GenericType_New": {
-          "type": "dword",
-          "value": 55
-        },
-        "Hardness": {
-          "type": "byte",
-          "value": 5
-        },
-        "HP": {
-          "type": "short",
-          "value": 10
-        },
-        "Interruptable": {
-          "type": "byte",
-          "value": 1
-        },
-        "KeyName": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "KeyRequired": {
-          "type": "byte",
-          "value": 0
-        },
-        "LinkedTo": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "LinkedToFlags": {
-          "type": "byte",
-          "value": 0
-        },
-        "LoadScreenID": {
-          "type": "word",
-          "value": 0
-        },
-        "Lockable": {
-          "type": "byte",
-          "value": 0
-        },
-        "Locked": {
-          "type": "byte",
-          "value": 0
-        },
-        "LocName": {
-          "type": "cexolocstring",
-          "value": {
-            "0": "door"
-          }
-        },
-        "OnClick": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnClosed": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnDamaged": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnDeath": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnDisarm": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnFailToOpen": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnHeartbeat": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnLock": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnMeleeAttacked": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnOpen": {
-          "type": "resref",
-          "value": "op_autoclose20"
-        },
-        "OnSpellCastAt": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnTrapTriggered": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnUnlock": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnUserDefined": {
-          "type": "resref",
-          "value": ""
-        },
-        "OpenLockDC": {
-          "type": "byte",
-          "value": 0
-        },
-        "Plot": {
-          "type": "byte",
-          "value": 1
-        },
-        "PortraitId": {
-          "type": "word",
-          "value": 558
-        },
-        "Ref": {
-          "type": "byte",
-          "value": 0
-        },
-        "Tag": {
-          "type": "cexostring",
-          "value": "ClosingMetalDoor5"
-        },
-        "TemplateResRef": {
-          "type": "resref",
-          "value": "closingmetaldoor"
-        },
-        "TrapDetectable": {
-          "type": "byte",
-          "value": 1
-        },
-        "TrapDetectDC": {
-          "type": "byte",
-          "value": 0
-        },
-        "TrapDisarmable": {
-          "type": "byte",
-          "value": 1
-        },
-        "TrapFlag": {
-          "type": "byte",
-          "value": 0
-        },
-        "TrapOneShot": {
-          "type": "byte",
-          "value": 1
-        },
-        "TrapType": {
-          "type": "byte",
-          "value": 0
-        },
-        "Will": {
-          "type": "byte",
-          "value": 0
-        },
-        "X": {
-          "type": "float",
-          "value": 70.0
-        },
-        "Y": {
-          "type": "float",
-          "value": 45.0
-        },
-        "Z": {
-          "type": "float",
-          "value": 0.0
-        }
-      },
-      {
-        "__struct_id": 8,
-        "AnimationState": {
-          "type": "byte",
-          "value": 0
-        },
-        "Appearance": {
-          "type": "dword",
-          "value": 0
-        },
-        "AutoRemoveKey": {
-          "type": "byte",
-          "value": 0
-        },
-        "Bearing": {
-          "type": "float",
           "value": 1.5708
         },
         "CloseLockDC": {
@@ -4209,11 +3977,449 @@
         },
         "Y": {
           "type": "float",
-          "value": 74.5
+          "value": 100.0
         },
         "Z": {
           "type": "float",
-          "value": 11.5
+          "value": 10.0
+        }
+      },
+      {
+        "__struct_id": 8,
+        "AnimationState": {
+          "type": "byte",
+          "value": 0
+        },
+        "Appearance": {
+          "type": "dword",
+          "value": 0
+        },
+        "AutoRemoveKey": {
+          "type": "byte",
+          "value": 0
+        },
+        "Bearing": {
+          "type": "float",
+          "value": 1.5708
+        },
+        "CloseLockDC": {
+          "type": "byte",
+          "value": 0
+        },
+        "Conversation": {
+          "type": "resref",
+          "value": ""
+        },
+        "CurrentHP": {
+          "type": "short",
+          "value": 10
+        },
+        "Description": {
+          "type": "cexolocstring",
+          "value": {
+            "0": ""
+          }
+        },
+        "DisarmDC": {
+          "type": "byte",
+          "value": 0
+        },
+        "Faction": {
+          "type": "dword",
+          "value": 1
+        },
+        "Fort": {
+          "type": "byte",
+          "value": 5
+        },
+        "GenericType_New": {
+          "type": "dword",
+          "value": 55
+        },
+        "Hardness": {
+          "type": "byte",
+          "value": 5
+        },
+        "HP": {
+          "type": "short",
+          "value": 10
+        },
+        "Interruptable": {
+          "type": "byte",
+          "value": 1
+        },
+        "KeyName": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "KeyRequired": {
+          "type": "byte",
+          "value": 0
+        },
+        "LinkedTo": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "LinkedToFlags": {
+          "type": "byte",
+          "value": 0
+        },
+        "LoadScreenID": {
+          "type": "word",
+          "value": 0
+        },
+        "Lockable": {
+          "type": "byte",
+          "value": 0
+        },
+        "Locked": {
+          "type": "byte",
+          "value": 0
+        },
+        "LocName": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "door"
+          }
+        },
+        "OnClick": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnClosed": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnDamaged": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnDeath": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnDisarm": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnFailToOpen": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnHeartbeat": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnLock": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnMeleeAttacked": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnOpen": {
+          "type": "resref",
+          "value": "op_autoclose20"
+        },
+        "OnSpellCastAt": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnTrapTriggered": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnUnlock": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnUserDefined": {
+          "type": "resref",
+          "value": ""
+        },
+        "OpenLockDC": {
+          "type": "byte",
+          "value": 0
+        },
+        "Plot": {
+          "type": "byte",
+          "value": 1
+        },
+        "PortraitId": {
+          "type": "word",
+          "value": 558
+        },
+        "Ref": {
+          "type": "byte",
+          "value": 0
+        },
+        "Tag": {
+          "type": "cexostring",
+          "value": "ClosingMetalDoor5"
+        },
+        "TemplateResRef": {
+          "type": "resref",
+          "value": "closingmetaldoor"
+        },
+        "TrapDetectable": {
+          "type": "byte",
+          "value": 1
+        },
+        "TrapDetectDC": {
+          "type": "byte",
+          "value": 0
+        },
+        "TrapDisarmable": {
+          "type": "byte",
+          "value": 1
+        },
+        "TrapFlag": {
+          "type": "byte",
+          "value": 0
+        },
+        "TrapOneShot": {
+          "type": "byte",
+          "value": 1
+        },
+        "TrapType": {
+          "type": "byte",
+          "value": 0
+        },
+        "Will": {
+          "type": "byte",
+          "value": 0
+        },
+        "X": {
+          "type": "float",
+          "value": 70.0
+        },
+        "Y": {
+          "type": "float",
+          "value": 45.0
+        },
+        "Z": {
+          "type": "float",
+          "value": 0.0
+        }
+      },
+      {
+        "__struct_id": 8,
+        "AnimationState": {
+          "type": "byte",
+          "value": 0
+        },
+        "Appearance": {
+          "type": "dword",
+          "value": 0
+        },
+        "AutoRemoveKey": {
+          "type": "byte",
+          "value": 0
+        },
+        "Bearing": {
+          "type": "float",
+          "value": -1.5708
+        },
+        "CloseLockDC": {
+          "type": "byte",
+          "value": 0
+        },
+        "Conversation": {
+          "type": "resref",
+          "value": ""
+        },
+        "CurrentHP": {
+          "type": "short",
+          "value": 10
+        },
+        "Description": {
+          "type": "cexolocstring",
+          "value": {
+            "0": ""
+          }
+        },
+        "DisarmDC": {
+          "type": "byte",
+          "value": 0
+        },
+        "Faction": {
+          "type": "dword",
+          "value": 1
+        },
+        "Fort": {
+          "type": "byte",
+          "value": 5
+        },
+        "GenericType_New": {
+          "type": "dword",
+          "value": 55
+        },
+        "Hardness": {
+          "type": "byte",
+          "value": 5
+        },
+        "HP": {
+          "type": "short",
+          "value": 10
+        },
+        "Interruptable": {
+          "type": "byte",
+          "value": 1
+        },
+        "KeyName": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "KeyRequired": {
+          "type": "byte",
+          "value": 0
+        },
+        "LinkedTo": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "LinkedToFlags": {
+          "type": "byte",
+          "value": 0
+        },
+        "LoadScreenID": {
+          "type": "word",
+          "value": 0
+        },
+        "Lockable": {
+          "type": "byte",
+          "value": 0
+        },
+        "Locked": {
+          "type": "byte",
+          "value": 0
+        },
+        "LocName": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "door"
+          }
+        },
+        "OnClick": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnClosed": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnDamaged": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnDeath": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnDisarm": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnFailToOpen": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnHeartbeat": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnLock": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnMeleeAttacked": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnOpen": {
+          "type": "resref",
+          "value": "op_autoclose20"
+        },
+        "OnSpellCastAt": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnTrapTriggered": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnUnlock": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnUserDefined": {
+          "type": "resref",
+          "value": ""
+        },
+        "OpenLockDC": {
+          "type": "byte",
+          "value": 0
+        },
+        "Plot": {
+          "type": "byte",
+          "value": 1
+        },
+        "PortraitId": {
+          "type": "word",
+          "value": 558
+        },
+        "Ref": {
+          "type": "byte",
+          "value": 0
+        },
+        "Tag": {
+          "type": "cexostring",
+          "value": "ClosingMetalDoor5"
+        },
+        "TemplateResRef": {
+          "type": "resref",
+          "value": "closingmetaldoor"
+        },
+        "TrapDetectable": {
+          "type": "byte",
+          "value": 1
+        },
+        "TrapDetectDC": {
+          "type": "byte",
+          "value": 0
+        },
+        "TrapDisarmable": {
+          "type": "byte",
+          "value": 1
+        },
+        "TrapFlag": {
+          "type": "byte",
+          "value": 0
+        },
+        "TrapOneShot": {
+          "type": "byte",
+          "value": 1
+        },
+        "TrapType": {
+          "type": "byte",
+          "value": 0
+        },
+        "Will": {
+          "type": "byte",
+          "value": 0
+        },
+        "X": {
+          "type": "float",
+          "value": 60.0
+        },
+        "Y": {
+          "type": "float",
+          "value": 45.0
+        },
+        "Z": {
+          "type": "float",
+          "value": 0.0
         }
       }
     ]
@@ -8979,24 +9185,207 @@
           "type": "byte",
           "value": 0
         },
-        "VisualTransform": {
-          "__struct_id": 6,
-          "type": "struct",
-          "value": {
-            "__struct_id": 6,
-            "ScaleX": {
-              "type": "float",
-              "value": 0.1
-            },
-            "ScaleY": {
-              "type": "float",
-              "value": 0.1
-            },
-            "ScaleZ": {
-              "type": "float",
-              "value": 0.1
+        "VisTransformList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 6,
+              "AnimationSpeed": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 1.0
+                  }
+                }
+              },
+              "RotateX": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "RotateY": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "RotateZ": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "ScaleX": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.1
+                  }
+                }
+              },
+              "ScaleY": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.1
+                  }
+                }
+              },
+              "ScaleZ": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.1
+                  }
+                }
+              },
+              "Scope": {
+                "type": "int",
+                "value": 0
+              },
+              "TranslateX": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "TranslateY": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "TranslateZ": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              }
             }
-          }
+          ]
         },
         "Will": {
           "type": "byte",
@@ -9906,24 +10295,207 @@
           "type": "byte",
           "value": 0
         },
-        "VisualTransform": {
-          "__struct_id": 6,
-          "type": "struct",
-          "value": {
-            "__struct_id": 6,
-            "ScaleX": {
-              "type": "float",
-              "value": 0.5674
-            },
-            "ScaleY": {
-              "type": "float",
-              "value": 0.5674
-            },
-            "ScaleZ": {
-              "type": "float",
-              "value": 0.5674
+        "VisTransformList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 6,
+              "AnimationSpeed": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 1.0
+                  }
+                }
+              },
+              "RotateX": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "RotateY": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "RotateZ": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "ScaleX": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.5674
+                  }
+                }
+              },
+              "ScaleY": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.5674
+                  }
+                }
+              },
+              "ScaleZ": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.5674
+                  }
+                }
+              },
+              "Scope": {
+                "type": "int",
+                "value": 0
+              },
+              "TranslateX": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "TranslateY": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "TranslateZ": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              }
             }
-          }
+          ]
         },
         "Will": {
           "type": "byte",
@@ -10606,24 +11178,207 @@
           "type": "byte",
           "value": 0
         },
-        "VisualTransform": {
-          "__struct_id": 6,
-          "type": "struct",
-          "value": {
-            "__struct_id": 6,
-            "ScaleX": {
-              "type": "float",
-              "value": 1.262
-            },
-            "ScaleY": {
-              "type": "float",
-              "value": 1.262
-            },
-            "ScaleZ": {
-              "type": "float",
-              "value": 1.262
+        "VisTransformList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 6,
+              "AnimationSpeed": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 1.0
+                  }
+                }
+              },
+              "RotateX": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "RotateY": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "RotateZ": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "ScaleX": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 1.262
+                  }
+                }
+              },
+              "ScaleY": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 1.262
+                  }
+                }
+              },
+              "ScaleZ": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 1.262
+                  }
+                }
+              },
+              "Scope": {
+                "type": "int",
+                "value": 0
+              },
+              "TranslateX": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "TranslateY": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              },
+              "TranslateZ": {
+                "__struct_id": 0,
+                "type": "struct",
+                "value": {
+                  "__struct_id": 0,
+                  "LerpType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "TimerType": {
+                    "type": "int",
+                    "value": 0
+                  },
+                  "ValueTo": {
+                    "type": "float",
+                    "value": 0.0
+                  }
+                }
+              }
             }
-          }
+          ]
         },
         "Will": {
           "type": "byte",
@@ -11812,9 +12567,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -11861,10 +12617,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -12039,9 +12795,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -12088,10 +12845,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -12266,9 +13023,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -12315,10 +13073,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -12493,9 +13251,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -12542,10 +13301,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -12720,9 +13479,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -12769,10 +13529,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -12947,9 +13707,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -12996,10 +13757,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -13174,9 +13935,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -13223,10 +13985,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -13401,9 +14163,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -13450,10 +14213,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -13628,9 +14391,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -13677,10 +14441,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -13855,9 +14619,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -13904,10 +14669,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -14082,9 +14847,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -14131,10 +14897,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -14309,9 +15075,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -14358,10 +15125,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -14536,9 +15303,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -14585,10 +15353,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -14763,9 +15531,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -14812,10 +15581,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -14990,9 +15759,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -15039,10 +15809,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -15217,9 +15987,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -15266,10 +16037,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -15444,9 +16215,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -15493,10 +16265,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -15671,9 +16443,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -15720,10 +16493,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -15898,9 +16671,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -15947,10 +16721,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -16125,9 +16899,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -16174,10 +16949,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -16352,9 +17127,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -16401,10 +17177,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -16579,9 +17355,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -16628,10 +17405,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -16806,9 +17583,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -16855,10 +17633,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -17033,9 +17811,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -17082,10 +17861,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -17260,9 +18039,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -17309,10 +18089,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -17487,9 +18267,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -17536,10 +18317,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -17714,9 +18495,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -17763,10 +18545,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -17941,9 +18723,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -17990,10 +18773,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -18168,9 +18951,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -18217,10 +19001,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -18395,9 +19179,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -18444,10 +19229,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -18622,9 +19407,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -18671,10 +19457,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -18849,9 +19635,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -18898,10 +19685,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -19076,9 +19863,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -19125,10 +19913,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -19303,9 +20091,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -19352,10 +20141,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -19530,9 +20319,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -19579,10 +20369,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -19757,9 +20547,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -19806,10 +20597,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -19984,9 +20775,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -20033,10 +20825,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -20211,9 +21003,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -20260,10 +21053,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -20438,9 +21231,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -20487,10 +21281,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -20665,9 +21459,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -20714,10 +21509,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -20892,9 +21687,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -20941,10 +21737,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -21119,9 +21915,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -21168,10 +21965,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -21346,9 +22143,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -21395,10 +22193,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -21573,9 +22371,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -21622,10 +22421,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -21800,9 +22599,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -21849,10 +22649,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -22027,9 +22827,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -22076,10 +22877,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -22254,9 +23055,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -22303,10 +23105,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -22481,9 +23283,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -22530,10 +23333,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -22708,9 +23511,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -22757,10 +23561,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -22935,9 +23739,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -22984,10 +23789,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -23162,9 +23967,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -23211,10 +24017,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -23389,9 +24195,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -23438,10 +24245,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -23616,9 +24423,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -23665,10 +24473,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -23843,9 +24651,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -23892,10 +24701,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -24070,9 +24879,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -24119,10 +24929,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -24297,9 +25107,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -24346,10 +25157,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -24524,9 +25335,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -24573,10 +25385,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -24751,9 +25563,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -24800,10 +25613,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -24978,9 +25791,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -25027,10 +25841,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -25205,9 +26019,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 14550
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -25254,10 +26069,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "bone"
+            "0": "bone",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -45985,15 +46800,15 @@
         },
         "X": {
           "type": "float",
-          "value": 62.738
+          "value": 63.211
         },
         "Y": {
           "type": "float",
-          "value": 71.4645
+          "value": 72.8535
         },
         "Z": {
           "type": "float",
-          "value": 10.1219
+          "value": 1.4267
         }
       },
       {
@@ -46212,15 +47027,15 @@
         },
         "X": {
           "type": "float",
-          "value": 67.4969
+          "value": 66.7667
         },
         "Y": {
           "type": "float",
-          "value": 62.4181
+          "value": 63.054
         },
         "Z": {
           "type": "float",
-          "value": 6.209
+          "value": 0.0
         }
       },
       {
@@ -49890,9 +50705,10 @@
           "value": 15
         },
         "Description": {
-          "id": 6792,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 6792
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -49939,9 +50755,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 111664,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 111664
+          }
         },
         "OnClick": {
           "type": "resref",
@@ -50115,10 +50932,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14700,
           "type": "cexolocstring",
           "value": {
-            "0": ""
+            "0": "",
+            "id": 14700
           }
         },
         "DisarmDC": {
@@ -50166,10 +50983,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14701,
           "type": "cexolocstring",
           "value": {
-            "0": "Platter, Cheese 2"
+            "0": "Platter, Cheese 2",
+            "id": 14701
           }
         },
         "OnClick": {
@@ -50344,9 +51161,10 @@
           "value": 15
         },
         "Description": {
-          "id": 68852,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 68852
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -50393,9 +51211,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 9208,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 9208
+          }
         },
         "OnClick": {
           "type": "resref",
@@ -50569,9 +51388,10 @@
           "value": 15
         },
         "Description": {
-          "id": 68852,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 68852
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -50618,9 +51438,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 9208,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 9208
+          }
         },
         "OnClick": {
           "type": "resref",
@@ -50794,10 +51615,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
           "value": {
-            "0": ""
+            "0": "",
+            "id": 14550
           }
         },
         "DisarmDC": {
@@ -50845,10 +51666,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "Altar, Druidic"
+            "0": "Altar, Druidic",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -51023,10 +51844,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
           "value": {
-            "0": ""
+            "0": "",
+            "id": 14550
           }
         },
         "DisarmDC": {
@@ -51074,10 +51895,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "Altar, Druidic"
+            "0": "Altar, Druidic",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -51252,10 +52073,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
           "value": {
-            "0": ""
+            "0": "",
+            "id": 14550
           }
         },
         "DisarmDC": {
@@ -51303,10 +52124,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "Altar, Druidic"
+            "0": "Altar, Druidic",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -51481,10 +52302,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
           "value": {
-            "0": ""
+            "0": "",
+            "id": 14550
           }
         },
         "DisarmDC": {
@@ -51532,10 +52353,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "Altar, Druidic"
+            "0": "Altar, Druidic",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -51710,10 +52531,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
           "value": {
-            "0": ""
+            "0": "",
+            "id": 14550
           }
         },
         "DisarmDC": {
@@ -51761,10 +52582,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "Altar, Druidic"
+            "0": "Altar, Druidic",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -51939,10 +52760,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
           "value": {
-            "0": ""
+            "0": "",
+            "id": 14550
           }
         },
         "DisarmDC": {
@@ -51990,10 +52811,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "Altar, Druidic"
+            "0": "Altar, Druidic",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -52168,10 +52989,10 @@
           "value": 15
         },
         "Description": {
-          "id": 14550,
           "type": "cexolocstring",
           "value": {
-            "0": ""
+            "0": "",
+            "id": 14550
           }
         },
         "DisarmDC": {
@@ -52219,10 +53040,10 @@
           "value": 0
         },
         "LocName": {
-          "id": 14551,
           "type": "cexolocstring",
           "value": {
-            "0": "Altar, Druidic"
+            "0": "Altar, Druidic",
+            "id": 14551
           }
         },
         "OnClick": {
@@ -53948,6 +54769,233 @@
           "type": "float",
           "value": 1.11
         }
+      },
+      {
+        "__struct_id": 9,
+        "AnimationState": {
+          "type": "byte",
+          "value": 0
+        },
+        "Appearance": {
+          "type": "dword",
+          "value": 5894
+        },
+        "AutoRemoveKey": {
+          "type": "byte",
+          "value": 0
+        },
+        "Bearing": {
+          "type": "float",
+          "value": -1.3254
+        },
+        "BodyBag": {
+          "type": "byte",
+          "value": 0
+        },
+        "CloseLockDC": {
+          "type": "byte",
+          "value": 0
+        },
+        "Conversation": {
+          "type": "resref",
+          "value": ""
+        },
+        "CurrentHP": {
+          "type": "short",
+          "value": 10
+        },
+        "Description": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "Job System PLC"
+          }
+        },
+        "DisarmDC": {
+          "type": "byte",
+          "value": 0
+        },
+        "Faction": {
+          "type": "dword",
+          "value": 1
+        },
+        "Fort": {
+          "type": "byte",
+          "value": 5
+        },
+        "Hardness": {
+          "type": "byte",
+          "value": 5
+        },
+        "HasInventory": {
+          "type": "byte",
+          "value": 0
+        },
+        "HP": {
+          "type": "short",
+          "value": 10
+        },
+        "Interruptable": {
+          "type": "byte",
+          "value": 1
+        },
+        "KeyName": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "KeyRequired": {
+          "type": "byte",
+          "value": 0
+        },
+        "Lockable": {
+          "type": "byte",
+          "value": 1
+        },
+        "Locked": {
+          "type": "byte",
+          "value": 0
+        },
+        "LocName": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<c~Îë>Lantern, Hanging</c>"
+          }
+        },
+        "OnClick": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnClosed": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnDamaged": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnDeath": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnDisarm": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnHeartbeat": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnInvDisturbed": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnLock": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnMeleeAttacked": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnOpen": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnSpellCastAt": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnTrapTriggered": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnUnlock": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnUsed": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnUserDefined": {
+          "type": "resref",
+          "value": ""
+        },
+        "OpenLockDC": {
+          "type": "byte",
+          "value": 0
+        },
+        "Plot": {
+          "type": "byte",
+          "value": 1
+        },
+        "PortraitId": {
+          "type": "word",
+          "value": 431
+        },
+        "Ref": {
+          "type": "byte",
+          "value": 0
+        },
+        "Static": {
+          "type": "byte",
+          "value": 1
+        },
+        "Tag": {
+          "type": "cexostring",
+          "value": "js_art_lantern1"
+        },
+        "TemplateResRef": {
+          "type": "resref",
+          "value": "js_art_lantern1"
+        },
+        "TrapDetectable": {
+          "type": "byte",
+          "value": 1
+        },
+        "TrapDetectDC": {
+          "type": "byte",
+          "value": 0
+        },
+        "TrapDisarmable": {
+          "type": "byte",
+          "value": 1
+        },
+        "TrapFlag": {
+          "type": "byte",
+          "value": 0
+        },
+        "TrapOneShot": {
+          "type": "byte",
+          "value": 1
+        },
+        "TrapType": {
+          "type": "byte",
+          "value": 0
+        },
+        "Type": {
+          "type": "byte",
+          "value": 0
+        },
+        "Useable": {
+          "type": "byte",
+          "value": 0
+        },
+        "Will": {
+          "type": "byte",
+          "value": 0
+        },
+        "X": {
+          "type": "float",
+          "value": 67.37260000000001
+        },
+        "Y": {
+          "type": "float",
+          "value": 84.0988
+        },
+        "Z": {
+          "type": "float",
+          "value": 7.0494
+        }
       }
     ]
   },
@@ -53985,9 +55033,10 @@
           "value": 5000
         },
         "LocName": {
-          "id": 68036,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 68036
+          }
         },
         "Looping": {
           "type": "byte",
@@ -54189,10 +55238,10 @@
           "value": 5000
         },
         "LocName": {
-          "id": 68036,
           "type": "cexolocstring",
           "value": {
-            "0": "waterdrip"
+            "0": "waterdrip",
+            "id": 68036
           }
         },
         "Looping": {
@@ -54311,10 +55360,10 @@
           "value": 5000
         },
         "LocName": {
-          "id": 68036,
           "type": "cexolocstring",
           "value": {
-            "0": "waterdrip"
+            "0": "waterdrip",
+            "id": 68036
           }
         },
         "Looping": {
@@ -54515,10 +55564,10 @@
           "value": 0
         },
         "LocalizedName": {
-          "id": 14760,
           "type": "cexolocstring",
           "value": {
-            "0": "New Area Transition"
+            "0": "New Area Transition",
+            "id": 14760
           }
         },
         "OnClick": {
@@ -54697,10 +55746,10 @@
           "value": ""
         },
         "LocalizedName": {
-          "id": 14817,
           "type": "cexolocstring",
           "value": {
-            "0": "Waypoint"
+            "0": "Waypoint",
+            "id": 14817
           }
         },
         "MapNote": {
@@ -54725,7 +55774,7 @@
         },
         "XPosition": {
           "type": "float",
-          "value": 65.0917
+          "value": 65.17019999999999
         },
         "YOrientation": {
           "type": "float",
@@ -54733,11 +55782,11 @@
         },
         "YPosition": {
           "type": "float",
-          "value": 71.3609
+          "value": 97.93810000000001
         },
         "ZPosition": {
           "type": "float",
-          "value": 10.4025
+          "value": 10.0
         }
       }
     ]

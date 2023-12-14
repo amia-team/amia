@@ -119,8 +119,11 @@ void InfuseRing( object oLootBag, object oCritter );
 //adds nValue to the current value of sVariable
 void UpdateModuleVariable2( string sVariable, int nValue );
 
-// Generates an Epic Item in the select Chest/container
-void GenerateEpicLoot(object oChest);
+// Generates an Epic Item in the select Chest/container/inventory
+void GenerateEpicLoot(object oInventory);
+
+// Generates an Standard Item in the select Chest/container/inventory. Will never generate epic loot.
+void GenerateStandardLoot(object oInventory, int nLevel);
 //-------------------------------------------------------------------------------
 // functions
 //-------------------------------------------------------------------------------
@@ -881,7 +884,7 @@ void UpdateModuleVariable2( string sVariable, int nValue ){
 }
 
 
-void GenerateEpicLoot(object oChest)
+void GenerateEpicLoot(object oInventory)
 {
 
     // Variables.
@@ -897,7 +900,53 @@ void GenerateEpicLoot(object oChest)
     sIndex       = ITEM_PREFIX + IntToString( nIndex );
     oTemplate    = GetLocalObject( oContainer, sIndex );
 
-    CopyItemVoid( oTemplate, oChest, TRUE );
+    CopyItemVoid( oTemplate, oInventory, TRUE );
+
+
+}
+
+
+
+void GenerateStandardLoot(object oInventory, int nLevel)
+{
+
+    // Variables.
+    int nIndex              = 0;
+    string sIndex           = "";
+    string sTag             = LOOTBIN_PREFIX;
+    object oTemplate        = OBJECT_INVALID;
+    object oContainer;
+
+    if ( nLevel >= GetLootBinCR( "High", 26 ) ){
+
+        // High is 26-40+
+        sTag += "HIGH";
+    }
+    else if ( nLevel >= GetLootBinCR( "Medium", 17 ) ){
+
+        // Medium is 17-25
+        sTag += "MEDIUM";
+    }
+    else if ( nLevel >= GetLootBinCR( "Low", 9 ) ){
+
+        // Low is 9-16
+        sTag += "LOW";
+    }
+    else {
+
+        // Uber low is 1-8
+        sTag += "UBERLOW";
+    }
+
+    oContainer = GetObjectByTag(sTag);
+
+    InitialiseLootBin( oContainer );
+
+    nIndex       = Random( GetLocalInt( oContainer, LOOTBIN_COUNT ) );
+    sIndex       = ITEM_PREFIX + IntToString( nIndex );
+    oTemplate    = GetLocalObject( oContainer, sIndex );
+
+    CopyItemVoid( oTemplate, oInventory, TRUE );
 
 
 }

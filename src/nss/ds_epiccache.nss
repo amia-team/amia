@@ -7,7 +7,7 @@
 //also works for setting buried treasure
 //msheeler  9/14/2015 - added support for inventory items to bypass the search check
 //                      also removed OOC feedback from failed checks
-
+// Edit: Mav - 12/4/2023 - Fix an error when sBypassItem is set to ""
 //-------------------------------------------------------------------------------
 // includes
 //-------------------------------------------------------------------------------
@@ -43,9 +43,13 @@ void main(){
 
     SendMessageToPC( oPC, "You feel like you should Search this area." );
     int checkedItem = 0;
-    if ( GetItemPossessedBy ( oPC, sBypassItem ) != OBJECT_INVALID ) {
+
+    if(sBypassItem!="")
+    {
+     if ( GetItemPossessedBy ( oPC, sBypassItem ) != OBJECT_INVALID ) {
         checkedItem = 1;
         // SendMessageToPC( oPC, "You have the bypass item" );
+     }
     }
 
     if ( checkedItem == 0 ) {

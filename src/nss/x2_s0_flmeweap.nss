@@ -18,6 +18,7 @@
 // 2007-04-20 Disco            Changed visual fx ADDPROP_POLICY
 // 2007-04-29 Disco            Changed damage
 // 2011-07-07 Selmak           Added support for Master Scout weapon essences
+// 2023-12-07 Frozen           Added Cold custom weaponry
 
 // Includes.
 #include "x2_inc_itemprop"
@@ -70,6 +71,12 @@ void main( ){
             // Standard flame weapon scroll
             nFlameWepDamage = 1;
 
+        }
+        if ( sTag == "itm_coldweapon_dmg" ){
+            // cold dmg
+            nFlameWepDamage = 2;
+            nCasterLevel = 15;
+            fDuration /= 2.0;
         }
         if ( sTag == "itm_sc_wyvernbil" ){
             // Wyvern Bile

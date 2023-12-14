@@ -4,8 +4,12 @@
    Piercing Shot Feat for Crossbow PRC
 
     6/28/23 Lord-Jyssev: Changed movement speed decrease to Cutscene Immobilize to fix Freedom exploit
+    11/27/2023 Mav - Fixed the freedom bug finally, I replaced it with a new NWN EE forced walk function.
 
 */
+
+#include "nwnx_events"
+#include "nwnx_funcs"
 
 void main()
 {
@@ -23,18 +27,18 @@ void main()
       nDam = nDam + 10;
     }
 
+    SendMessageToPC(oPC,"Test4");
 
     int nAB = nClassLevel/2;
     int    eLoopSpellID;
     effect eLoop                    = GetFirstEffect(oPC);
     effect eAB = EffectAttackIncrease(nAB);
     effect eDam1 = EffectDamageIncrease(nDam,DAMAGE_TYPE_DIVINE);
-    effect eFreeze = EffectMovementSpeedDecrease(99);
-    effect eImmunity = IgnoreEffectImmunity(EffectImmunity(IMMUNITY_TYPE_MOVEMENT_SPEED_DECREASE));
-    effect eImmobile = EffectLinkEffects(eImmunity, eFreeze);
+    effect eFreeze = EffectForceWalk();
     effect eLink = EffectLinkEffects(eAB, eDam1);
-    eLink = EffectLinkEffects(eImmobile, eLink);
+    eLink = EffectLinkEffects(eFreeze, eLink);
     eLink = ExtraordinaryEffect(eLink);
+    eLink = TagEffect(eLink,"piercingshot");
 
      // Check to make sure the weapon is a crossbow (light or heavy)
    if((GetBaseItemType(oItem)== BASE_ITEM_HEAVYCROSSBOW) ||(GetBaseItemType(oItem)== BASE_ITEM_LIGHTCROSSBOW))

@@ -182,11 +182,10 @@ void main( ){
     // Abyssal Corrupted Class
      if ((nClassAbyssal == 1) && (sBodyPart == ""))
      {
-       int nRandBody = Random(4)+1;
+       string sAbyssalBodyPart = GetLocalString(oWidget, "abyssalBodyPart");
 
-       if(nRandBody == 1)
+       if(sAbyssalBodyPart=="wings")
        {
-         SetLocalString(oWidget, "abyssalBodyPart","wings");
          int nRandWing = Random(3)+1;
          if(nRandWing == 1)
          {
@@ -202,9 +201,8 @@ void main( ){
          }
          FloatingTextStringOnCreature("*Filthy demonic wings painfully sprout from your backside*",oPC);
        }
-       else if(nRandBody == 2)
+       else if(sAbyssalBodyPart=="tail")
        {
-         SetLocalString(oWidget, "abyssalBodyPart","tail");
          int nRandTail = Random(4)+1;
          if(nRandTail == 1)
          {
@@ -224,15 +222,11 @@ void main( ){
          }
          FloatingTextStringOnCreature("*A powerful but clearly demonic tail sprouts from your tail bone*",oPC);
        }
-       else if(nRandBody == 3)
+       else if(sAbyssalBodyPart=="horns")
        {
-         int nRandHorns = Random(6)+1;
-         SetLocalInt(oWidget, "abyssalHorns",nRandHorns);
-
-         SetLocalString(oWidget, "abyssalBodyPart","horns");
          FloatingTextStringOnCreature("*Your forehead hurts as you feel a constant pressure in two locations, opposite of eachother on your forehead.*",oPC);
        }
-       else if(nRandBody == 4)
+       else if(sAbyssalBodyPart=="legs")
        {
          SetCreatureBodyPart(CREATURE_PART_RIGHT_FOOT,197,oPC);
          SetCreatureBodyPart(CREATURE_PART_LEFT_FOOT,197,oPC);
@@ -243,6 +237,10 @@ void main( ){
          SetLocalString(oWidget, "abyssalBodyPart","legs");
          FloatingTextStringOnCreature("*Your legs twist, and snap painfully into demonic like positions*",oPC);
          SendMessageToPC(oPC,"// Your new legs might not be visable in your current armor. Remove your armor to see them and/or modify your armor legs to display your legs properly");
+       }
+       else
+       {
+         SendMessageToPC(oPC,"Error: Your Body Part Variable wasn't set properly. Please report to Dev/DM team.");
        }
      }
 

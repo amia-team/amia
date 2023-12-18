@@ -10,9 +10,6 @@
 #include "inc_td_shifter"
 #include "x0_i0_spells"
 
-//Merges oPC's old weapon according to the shifter rules
-void GearMerge( object oPC, object oOldWeapon, object oArmor, object oRing1, object oRing2, object oBoots, object oSheild, object oAmulet, object oCloak, object oHands, object oBelt, object oHelm, int nPolymorph );
-
 void main()
 {
     object oPC = OBJECT_SELF;
@@ -26,6 +23,7 @@ void main()
     int nAnimal;
     int nAnimalSkin;
     int nAnimalPo;
+    int nTail = 0;
 
     if(GetLocalInt(OBJECT_SELF,"POLY_COOLDOWN") == 1)
     {
@@ -264,7 +262,7 @@ void main()
       nAnimalSkin = 1580;
       nAnimalPo = 168;
     }
-    else if(GetHasFeat(1299,oPC))   // Owl -
+    else if(GetHasFeat(1329,oPC))   // Owl -
     {
         if((nLevel >= 25) && (nLevelLycan==5))
         {
@@ -294,7 +292,7 @@ void main()
       nAnimalSkin = 0;
       nAnimalPo = 0;
     }
-    else if(GetHasFeat(1300,oPC))   // Croc
+    else if(GetHasFeat(1330,oPC))   // Croc
     {
         if((nLevel >= 25) && (nLevelLycan==5))
         {
@@ -323,8 +321,9 @@ void main()
 
       nAnimalSkin = 1828;
       nAnimalPo = 1394;
+      nTail = 842;
     }
-    else if(GetHasFeat(1301,oPC))   // Shark
+    else if(GetHasFeat(1331,oPC))   // Shark
     {
         if((nLevel >= 25) && (nLevelLycan==5))
         {
@@ -353,6 +352,67 @@ void main()
 
       nAnimalSkin = 1872;
       nAnimalPo = 731;
+      nTail = 843;
+    }
+    else if(GetHasFeat(1332,oPC))   // Fox
+    {
+        if((nLevel >= 25) && (nLevelLycan==5))
+        {
+           nPoly = 334;
+        }
+        else if((nLevel >= 20) && (nLevelLycan==4))
+        {
+           nPoly = 333;
+        }
+        else if((nLevel >= 15) && (nLevelLycan==3))
+        {
+           nPoly = 332;
+        }
+        else if((nLevel >= 10) && (nLevelLycan==2))
+        {
+           nPoly = 331;
+        }
+        else if(nLevel >= 5)
+        {
+           nPoly = 330;
+        }
+        else if(nLevel >= 1)
+        {
+           nPoly = 329;
+        }
+
+      nAnimalSkin = 1844;
+      nAnimalPo = 1473;
+    }
+    else if(GetHasFeat(1333,oPC))   // Raccoon
+    {
+        if((nLevel >= 25) && (nLevelLycan==5))
+        {
+           nPoly = 340;
+        }
+        else if((nLevel >= 20) && (nLevelLycan==4))
+        {
+           nPoly = 339;
+        }
+        else if((nLevel >= 15) && (nLevelLycan==3))
+        {
+           nPoly = 338;
+        }
+        else if((nLevel >= 10) && (nLevelLycan==2))
+        {
+           nPoly = 337;
+        }
+        else if(nLevel >= 5)
+        {
+           nPoly = 336;
+        }
+        else if(nLevel >= 1)
+        {
+           nPoly = 335;
+        }
+
+      nAnimalSkin = 1064;
+      nAnimalPo = 1402; // Using the Jackal port as a sub for now
     }
 
 
@@ -392,6 +452,12 @@ void main()
     ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectVisualEffect( iVis ), OBJECT_SELF);
     ApplyEffectToObject( DURATION_TYPE_PERMANENT, ePoly, OBJECT_SELF );
     SignalEvent( oTarget, EventSpellCastAt(OBJECT_SELF, GetSpellId( ), FALSE ) );
+
+    //Add tail if present
+    if(nTail != 0)
+    {
+      DelayCommand(0.1,SetCreatureTailType(nTail,OBJECT_SELF));
+    }
 
     // Remove Bard Song if its on
     effect eLoop = GetFirstEffect(OBJECT_SELF);
@@ -433,7 +499,7 @@ void main()
     SetLocalInt( OBJECT_SELF, "CannotDrown", nCannotDrown );
 
     //This is it
-    GearMerge( OBJECT_SELF, oWeaponOld, oArmor, oRing1, oRing2, oBoots, oSheild, oAmulet, oCloak, oHands, oBelt, oHelm, nPoly );
+    ShifterMerge( OBJECT_SELF, oWeaponOld, oArmor, oRing1, oRing2, oBoots, oSheild, oAmulet, oCloak, oHands, oBelt, oHelm, nPoly );
 
     SetLocalInt(OBJECT_SELF,"X2_GWILDSHP_LIMIT_" + IntToString( GetSpellId( ) ), 2147483646 );
 
@@ -441,105 +507,3 @@ void main()
 
 }
 
-void GearMerge( object oPC, object oOldWeapon, object oArmor, object oRing1, object oRing2, object oBoots, object oSheild, object oAmulet, object oCloak, object oHands, object oBelt, object oHelm, int nPolymorph ){
-
-    object oWeaponNew   = GetItemInSlot( INVENTORY_SLOT_RIGHTHAND, oPC );
-    object oRClaw       = GetItemInSlot( INVENTORY_SLOT_CWEAPON_R, oPC );
-    object oLClaw       = GetItemInSlot( INVENTORY_SLOT_CWEAPON_L, oPC );
-    object oBite        = GetItemInSlot( INVENTORY_SLOT_CWEAPON_B, oPC );
-    object oArmorNew    = GetItemInSlot( INVENTORY_SLOT_CARMOUR, oPC );
-
-    if( oOldWeapon == oWeaponNew )
-        return;
-
-    RemoveItemPropertyByType( oWeaponNew, ITEM_PROPERTY_VISUALEFFECT );
-
-    if( GetIsObjectValid( oWeaponNew ) && GetIsObjectValid( oOldWeapon ) ){
-
-        SendMessageToPC( oPC, "<c þ >Merging "+GetName( oOldWeapon )+" with "+GetName( oWeaponNew )+"!" );
-        SetIdentified( oWeaponNew, TRUE );
-        MergeItemProperties( oPC, oOldWeapon, oWeaponNew );
-    }
-    else if( ( GetIsObjectValid( oRClaw ) || GetIsObjectValid( oBite ) || GetIsObjectValid( oLClaw ) ) && GetIsObjectValid( oOldWeapon ) ){
-
-        if( GetIsObjectValid( oRClaw ) ){
-            SendMessageToPC( oPC, "<c þ >Merging "+GetName( oOldWeapon )+" with right claw!" );
-            MergeItemProperties( oPC, oOldWeapon, oRClaw );
-        }
-        if( GetIsObjectValid( oBite ) ){
-            SendMessageToPC( oPC, "<c þ >Merging "+GetName( oOldWeapon )+" with bite!" );
-            MergeItemProperties( oPC, oOldWeapon, oBite );
-        }
-        if( GetIsObjectValid( oLClaw ) ){
-            SendMessageToPC( oPC, "<c þ >Merging "+GetName( oOldWeapon )+" with left claw!" );
-            MergeItemProperties( oPC, oOldWeapon, oLClaw );
-        }
-
-    }
-
-    if( StringToInt( Get2DAString( "polymorph", "MergeA", nPolymorph ) ) ){
-
-
-        if( GetIsObjectValid( oArmorNew ) ){
-
-            SetIdentified( oArmorNew, TRUE );
-
-            if( GetIsObjectValid( oArmor ) ){
-                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oArmor )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
-                MergeItemProperties( oPC, oArmor, oArmorNew );
-            }
-
-            if( GetIsObjectValid( oSheild ) ){
-                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oSheild )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
-                MergeItemProperties( oPC, oSheild, oArmorNew );
-            }
-
-            if( GetIsObjectValid( oHelm ) ){
-                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oHelm )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
-                MergeItemProperties( oPC, oHelm, oArmorNew );
-            }
-        }
-    }
-
-    if( StringToInt( Get2DAString( "polymorph", "MergeI", nPolymorph ) ) ){
-        if( GetIsObjectValid( oArmorNew ) ){
-
-            SetIdentified( oArmorNew, TRUE );
-
-            if( GetIsObjectValid( oRing1 ) ){
-                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oRing1 )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
-                MergeItemProperties( oPC, oRing1, oArmorNew );
-            }
-
-            if( GetIsObjectValid( oRing2 ) ){
-                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oRing2 )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
-                MergeItemProperties( oPC, oRing2, oArmorNew );
-            }
-
-            if( GetIsObjectValid( oAmulet ) ){
-                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oAmulet )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
-                MergeItemProperties( oPC, oAmulet, oArmorNew );
-            }
-
-            if( GetIsObjectValid( oCloak ) ){
-                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oCloak )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
-                MergeItemProperties( oPC, oCloak, oArmorNew );
-            }
-
-            if( GetIsObjectValid( oBoots ) ){
-                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oBoots )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
-                MergeItemProperties( oPC, oBoots, oArmorNew );
-            }
-
-            if( GetIsObjectValid( oBelt ) ){
-                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oBelt )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
-                MergeItemProperties( oPC, oBelt, oArmorNew );
-            }
-
-            if( GetIsObjectValid( oHands ) ){
-                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oHands )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
-                MergeItemProperties( oPC, oHands, oArmorNew );
-            }
-        }
-    }
-}

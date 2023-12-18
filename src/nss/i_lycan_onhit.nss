@@ -68,15 +68,23 @@ void main()
        }
        else if(sLycanType == "owl")
        {
-         DelayCommand( 5.0, NWNX_Creature_AddFeat( oTarget, 1299));  // 1299 Wereowl
+         DelayCommand( 5.0, NWNX_Creature_AddFeat( oTarget, 1329));  // 1329 Wereowl
        }
        else if(sLycanType == "crocodile")
        {
-         DelayCommand( 5.0, NWNX_Creature_AddFeat( oTarget, 1300));  // 1300 Werecroc
+         DelayCommand( 5.0, NWNX_Creature_AddFeat( oTarget, 1330));  // 1330 Werecroc
        }
        else if(sLycanType == "shark")
        {
-         DelayCommand( 5.0, NWNX_Creature_AddFeat( oTarget, 1301));  // 1300 Wereshark
+         DelayCommand( 5.0, NWNX_Creature_AddFeat( oTarget, 1331));  // 1331 Wereshark
+       }
+       else if(sLycanType == "fox")
+       {
+         DelayCommand( 5.0, NWNX_Creature_AddFeat( oTarget, 1332));  // 1332 Werefox
+       }
+       else if(sLycanType == "raccoon")
+       {
+         DelayCommand( 5.0, NWNX_Creature_AddFeat( oTarget, 1333));  // 1333 Wereraccoon
        }
        SendMessageToPC(oTarget, "*You start to feel ill, like something instead right. Your body shivers and you start to feel sick*");
        SetPCKEYValue(oTarget,"lycanInfected",1);

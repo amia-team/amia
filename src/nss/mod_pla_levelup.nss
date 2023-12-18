@@ -25,17 +25,18 @@ void CheckPrereq(object oPC);
 void main( ){
 
     // Variables.
-    object oPC      = GetPCLevellingUp( );
-    object oModule  = GetModule( );
-    string szRace   = GetSubRace( oPC );
-    int nClassCav   = GetLevelByClass(45,oPC);
-    int nClassLord   = GetLevelByClass(54,oPC);
-    int nClassAbyssal   = GetLevelByClass(55,oPC);
+    object oPC        = GetPCLevellingUp( );
+    object oModule    = GetModule( );
+    string szRace     = GetSubRace( oPC );
+    int nClassCav     = GetLevelByClass(45,oPC);
+    int nClassLord    = GetLevelByClass(54,oPC);
+    int nClassAbyssal = GetLevelByClass(55,oPC);
     int nClassMonkPrc = GetLevelByClass(50,oPC);
-    int nClassMonk = GetLevelByClass(5,oPC);
+    int nClassMonk    = GetLevelByClass(5,oPC);
     int nClassDuelist = GetLevelByClass(52,oPC);
-    int nXP         = GetXP( oPC );
-    int nHD         = GetHitDice( oPC );
+    int nClassWarlock = GetLevelByClass(57,oPC);
+    int nXP           = GetXP( oPC );
+    int nHD           = GetHitDice( oPC );
     int nPrevLevel;
     int nPrevLevelXP;
     string sQuery;
@@ -243,6 +244,15 @@ void main( ){
          SendMessageToPC(oPC,"Error: Your Body Part Variable wasn't set properly. Please report to Dev/DM team.");
        }
      }
+
+    // Warlock Class
+    if ((nClassWarlock == 1)){
+        if(!(GetHasFeat(1314) || GetHasFeat(1315) || GetHasFeat(1316) || GetHasFeat(1317) || GetHasFeat(1318) || GetHasFeat(1319)))
+        {
+        CreateItemOnObject( "l_wlkpact", oPC,1);
+
+        }
+    }
 
 
     //area effects

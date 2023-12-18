@@ -1,4 +1,7 @@
 #include "nwnx_magic"
+#include "amia_include"
+#include "x2_inc_itemprop"
+#include "x0_i0_spells"
 
 void RemoveShapeEffects(object oPC, int nPoly);
 void RestoreSpellState( object oPC );
@@ -20,6 +23,12 @@ void main( ){
     SetLocalInt( OBJECT_SELF, "POLY_COOLDOWN", 1 );
     DelayCommand(24.0,DeleteLocalInt(OBJECT_SELF,"POLY_COOLDOWN"));
     DelayCommand(24.0,SendMessageToPC(OBJECT_SELF,"You may now shift to another form!"));
+    }
+
+    if(GetPCKEYValue(OBJECT_SELF,"lycanTailTransform")==1)
+    {
+     SetPCKEYValue(OBJECT_SELF,"lycanTailTransform",0);
+     DelayCommand(0.1,SetCreatureTailType(GetPCKEYValue(OBJECT_SELF,"lycanTail"),OBJECT_SELF));
     }
 
     /*   Removed the Nerf for the time being to counteract nerf from poly delay in place now - Maverick 7/24/22

@@ -210,6 +210,16 @@ void main(){
 
 
         DelayCommand(1.0f, CreateItemsOnPlayer(enteringPlayer));
+
+    int nClassWarlock = GetLevelByClass(57,enteringPlayer);
+
+    if ((nClassWarlock == 1)){
+        if(!(GetHasFeat(1314, enteringPlayer) || GetHasFeat(1315, enteringPlayer) || GetHasFeat(1316, enteringPlayer) || GetHasFeat(1317, enteringPlayer) || GetHasFeat(1318, enteringPlayer) || GetHasFeat(1319, enteringPlayer)))
+        {
+          ds_create_item("wlk_pactchoose", enteringPlayer);
+        }
+    }
+
     }
     //Daily DC check and weekly DC reset
     if(!GetIsDM(oPC))

@@ -247,10 +247,9 @@ void main( ){
 
     // Warlock Class
     if ((nClassWarlock == 1)){
-        if(!(GetHasFeat(1314) || GetHasFeat(1315) || GetHasFeat(1316) || GetHasFeat(1317) || GetHasFeat(1318) || GetHasFeat(1319)))
+        if(!(GetHasFeat(1314, oPC) || GetHasFeat(1315, oPC) || GetHasFeat(1316, oPC) || GetHasFeat(1317, oPC) || GetHasFeat(1318, oPC) || GetHasFeat(1319, oPC)))
         {
-        CreateItemOnObject( "l_wlkpact", oPC,1);
-
+          ds_create_item( "wlk_pactchoose", oPC, 1);
         }
     }
 

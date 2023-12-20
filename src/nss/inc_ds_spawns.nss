@@ -9,6 +9,7 @@
 
 //update:  06-10-2014
 //         msheeler - changed value on line 389 from <4 to <8
+// Edit: 12/20/2023 - Mav - Fixing ambush for post EE
 //-------------------------------------------------------------------------------
 // includes
 //-------------------------------------------------------------------------------
@@ -41,7 +42,7 @@ const string SPAWNPOINT_TAG         = "ds_spwn";
 float IsCloseToSpawnpoint( object oPC );
 
 //checks if this area contains spawntriggers and spawnable critters
-//returns TRUE if so, and FALSE if not
+//returns TRUE if so, and FALSE if not. Fixed to work POST EE! - MAV
 int AreaHasCritters( object oArea );
 
 //spawns nCritters on lSpawnpoint based on what's available in oArea
@@ -143,6 +144,7 @@ location ds_random_spawnpoint( object oSpawntrigger );
 //deal with patrolling routines, returns 1 if the trigger is blocked by patrol
 int ds_patrol( object oPC, object oArea, object oSpawntrigger );
 
+//void main(){}
 
 //-------------------------------------------------------------------------------
 // functions
@@ -162,15 +164,15 @@ float IsCloseToSpawnpoint( object oPC ){
 
 int AreaHasCritters( object oArea ){
 
-    if ( GetLocalInt( oArea, "spw_grps" ) > 0 ){
+    if ( GetLocalString( oArea, "night_spawn1" ) != "" ){
 
         return TRUE;
     }
-    else if ( GetLocalString( oArea, "monster0" ) != "" ){
+    else if ( GetLocalString( oArea, "day_spawn1" ) != "" ){
 
         return TRUE;
     }
-    else if ( GetLocalInt( oArea, "tst" ) > 0 ){
+    else if ( GetLocalInt( oArea, "spawns_vary" ) > 0 ){
 
         return TRUE;
     }

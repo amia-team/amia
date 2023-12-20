@@ -44,7 +44,7 @@ const float  HOSTILE_RANGE                   = 20.0;
 
 //This is tested against a D100
 //It may not be set less then 0 or more then 100
-const int    AMBUSH_RATE_PROCENT             = 5;
+const int    AMBUSH_RATE_PROCENT             = 70; // I set this higher most of the server doesnt have an ambush set atm - Mav
 
 //Minumum allowed % rate
 const int    AMBUSH_RATE_PROCENT_CAP         = 1;
@@ -72,6 +72,12 @@ const int    ALLOW_BLINDING                  = TRUE;
 //for the amount of minutes specified here
 //Default: Same as the rest dalay
 const int    MINUTES_BETWEEN_POSSIBLE_AMBUSH = REST_BLOCK;
+
+//The amount of creatures that is rolled with a Random() function in an ambush to appear. Adjust as needed.
+const int    AMBUSH_SPAWN_AMOUNT = 6;
+
+//The amount of creatures that is the minimum that will spawn.
+const int    AMBUSH_SPAWN_MIN = 2;
 
 //-----------------------------------------------------------------------------
 // prototypes
@@ -115,6 +121,9 @@ void RestEffects(object oPC, int nAdd);
 //Returns oArea 's center location
 location GetCenterInArea( object oArea );
 
+// Added in SpawnAmbush for post EE Spawning in. A lot of the old functions are tied into inc_ds_spawns, and am not touching those -Mav
+int SpawnAmbush( object oPC, object oArea );
+
 //void main(){}
 
 //-----------------------------------------------------------------------------
@@ -126,6 +135,8 @@ void OnRestStarted( object oPC ){
     //Vars
     object  oArea   = GetArea( oPC );
     int     nBlock  = GetIsBlocked( oPC, "AR_LastRestHour" );
+
+
 
     //Its returned in seconds, lets change
     //Avoid devide by zero error
@@ -457,7 +468,7 @@ int GetCampPLCsWithinRange( object oPC ){
 //-----------------------------------------------------------------------------
 void DoAmbush(object oPC, object oArea ){
 
-    int nSpawn = 0; //SpawnAreaCritters( oPC, oArea  );
+    int nSpawn = SpawnAmbush( oPC, oArea  );
 
     if ( nSpawn ){
 
@@ -518,4 +529,75 @@ location GetCenterInArea( object oArea ){
 
 }
 //-----------------------------------------------
+
+int SpawnAmbush( object oPC, object oArea )
+{
+
+    object oSpawnPoint = GetNearestObjectByTag( SPAWNPOINT_TAG, oPC );
+
+    // Send a notification if spawnpoint isn't set
+    if ( !GetIsObjectValid( oSpawnPoint ) ){
+
+        Notify( oPC, "No spawnpoint." );
+        return FALSE;
+    }
+
+    //Check to see if it is night, and if variable spawns are enabled.
+    string sSpawnLoopVariable;
+    if((GetIsNight()==TRUE) && (GetLocalInt(oArea,"spawns_vary")==1))
+    {
+      sSpawnLoopVariable = "night_spawn";
+
+      // Error catcher for people who misused the spawns_vary int
+      if(GetLocalString(oArea,"night_spawn1")=="")
+      {
+       sSpawnLoopVariable = "day_spawn";
+      }
+
+    }
+    else
+    {
+      sSpawnLoopVariable = "day_spawn";
+    }
+
+
+    // Loop through the area variables to get how many are set
+    string sSpawnLoop = GetLocalString(oArea,sSpawnLoopVariable+"1");
+    int nTrack = 0;
+    while(sSpawnLoop != "")
+    {
+      sSpawnLoop = GetLocalString(oArea,sSpawnLoopVariable+IntToString(nTrack+2));
+      nTrack=nTrack+1;
+    }
+
+    // If none are set send a notification
+    if(nTrack==0)
+    {
+       Notify( oPC, "Spawns not set." );
+       return FALSE;
+    }
+
+    // Spawn in critters
+    int nRandom;
+    float fAngleFacing      = IntToFloat( Random( 361 ) );
+    location lSpawnPosition;
+
+    int nSpawn = AMBUSH_SPAWN_AMOUNT;
+    nSpawn = Random(nSpawn)+1;
+
+    if(nSpawn<AMBUSH_SPAWN_MIN)
+    {
+      nSpawn=AMBUSH_SPAWN_MIN;
+    }
+
+    int i;
+    for(i=0;i<nSpawn;i++)
+    {
+     lSpawnPosition = GenerateNewLocationFromLocation( GetLocation( oSpawnPoint ), 5.0, fAngleFacing, fAngleFacing );
+     nRandom = Random(nTrack)+1;
+     CreateObject(OBJECT_TYPE_CREATURE,GetLocalString(oArea,sSpawnLoopVariable+IntToString(nRandom)),lSpawnPosition);
+    }
+
+    return TRUE;
+}
 

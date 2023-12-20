@@ -7,10 +7,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Lycan forms:
+	- Werecrocodile
+	- Wereowl
+	- Wereshark
+	- Wereraccoon
+	- Werefox
+-Support for Lycans with tails
 
 ### Changed
+- Lycan forms placed into different build categories:
+	- Damage Type: Werewolf, Werebat, Werechicken, Wereshark
+	- Tank Type: Werecrocodile, Wereboar, Werebear
+	- Nimble Type: Wererat, Wereowl, Werefox, Wereraccoon, Werecat
+- Lycan class requirement updated: 6 BAB, Infection Feat, DM Approval
+- Lycan OnHit will fire off every strike now, and have a DC 20 Fort save
+- Lycan infections can be removed through appropriate healing/restoration spells
+- Complete Warlock 2.0 Overhaul (See Class Modifications forum for details)
 
 ### Fixed
+- Ambush system fixed: Resting in hunting areas may cause monster ambushes again
 
 ## [2.8.1A - 2023-12-10]
 

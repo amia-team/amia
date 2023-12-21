@@ -319,7 +319,7 @@ void main()
            nPoly = 317;
         }
 
-      nAnimalSkin = 1828;
+      nAnimalSkin = 1280;
       nAnimalPo = 1394;
       nTail = 842;
     }
@@ -350,7 +350,7 @@ void main()
            nPoly = 323;
         }
 
-      nAnimalSkin = 1872;
+      nAnimalSkin = 1871;
       nAnimalPo = 731;
       nTail = 843;
     }
@@ -453,6 +453,11 @@ void main()
     ApplyEffectToObject( DURATION_TYPE_PERMANENT, ePoly, OBJECT_SELF );
     SignalEvent( oTarget, EventSpellCastAt(OBJECT_SELF, GetSpellId( ), FALSE ) );
 
+    //Add tail if present
+    if(nTail != 0)
+    {
+      DelayCommand(0.1,SetCreatureTailType(nTail,OBJECT_SELF));
+    }
 
     // Remove Bard Song if its on
     effect eLoop = GetFirstEffect(OBJECT_SELF);
@@ -485,17 +490,6 @@ void main()
          SetCreatureAppearanceType(OBJECT_SELF, nAnimalSkin);
          SetPortraitId(OBJECT_SELF, nAnimalPo);
         }
-    }
-    else
-    {
-      //Add tail if present
-      if(nTail != 0)
-      {
-        SetPCKEYValue(OBJECT_SELF,"lycanTail",GetCreatureTailType(OBJECT_SELF));
-        SetPCKEYValue(OBJECT_SELF,"lycanTailTransform",1);
-        DelayCommand(0.1,SetCreatureTailType(nTail,OBJECT_SELF));
-      }
-
     }
 
     //--------------------------------------------------------------------------

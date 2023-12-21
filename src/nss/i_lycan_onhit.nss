@@ -18,11 +18,8 @@ void main()
     object oTarget = GetSpellTargetObject();
     string sLycanType = GetLocalString(oLycan, "lycanType");
     int nLevel = GetLevelByPosition(1,oTarget) + GetLevelByPosition(2,oTarget) + GetLevelByPosition(3,oTarget);
-    int nRandom = Random(4*nLevel) + 1;
     int nInfectedCheck = GetPCKEYValue(oTarget,"lycanInfected");
 
-
-    ;
 
     if((GetHasFeat(1249,oTarget) == TRUE) || (GetHasFeat(1250,oTarget) == TRUE) || (GetHasFeat(1251,oTarget) == TRUE)
     || (GetHasFeat(1252,oTarget) == TRUE) || (GetHasFeat(1253,oTarget) == TRUE) || (GetHasFeat(1254,oTarget) == TRUE)
@@ -34,9 +31,10 @@ void main()
     else if((GetLevelByClass(CLASS_TYPE_PALADIN,oTarget) >= 1) || (GetLevelByClass(CLASS_TYPE_MONK,oTarget) >= 20)
     || (GetIsImmune(oTarget,IMMUNITY_TYPE_DISEASE)==TRUE) || (GetLevelByClass(CLASS_TYPE_DRAGON_DISCIPLE,oTarget) >= 1))
     {
+      SendMessageToPC(oTarget, "*You are immune to the effects of the lycan infectation*");
       return;
     }
-    else if(nRandom == 5)
+    else if(FortitudeSave(oTarget,20,SAVING_THROW_TYPE_DISEASE) == 0)
     {
        if((sLycanType == "") || (sLycanType == "wolf"))
        {

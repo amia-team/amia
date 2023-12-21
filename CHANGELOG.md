@@ -13,7 +13,37 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Wereshark
 	- Wereraccoon
 	- Werefox
--Support for Lycans with tails
+- Support for Lycans with tails
+- 20 New Mount skins
+	- 1659 "Horse: Pegasus, Black, Wing"
+	- 1660 "Horse: Pegasus, Brown, Wing"
+	- 1661 "Horse: Pegasus, White leather barding packs,Wing"
+	- 1662 "Horse: Pegasus, White leather barding,Wing"
+	- 1663 "Horse: Pegasus, White saddle packs,Wing"
+	- 1664 "Horse: Pegasus, White saddle,Wing"
+	- 1665 "Horse: Pegasus, White"
+	- 1666 "Birb_Mount"
+	- 1667 "spider_Mount3"
+	- 1668 "spider_Mount2"
+	- 1669 "spider_Mount"
+	- 1670 "Beetle_Mount"
+	- 1671 "Lizard_Mount1"
+	- 1672 "Lizard_Mount2"
+	- 1673 "Wolf_Mount"
+	- 1674 "Shark_Mount"
+	- 1675 "Wolf_Mount_Black"
+	- 1676 "Lion_Mount"
+	- 1677 "Gallimimus_mt"
+	- 1678 "Gallimimus_chariot"
+- 8 New Creature skins
+	- 1946 "Giant Birb, Walking"
+	- 1947 Spider2_mt
+	- 1948 Spider1_mt
+	- 1949 Spider_mt
+	- 1950 Lizard_Mt1
+	- 1951 Lizard_Mt2
+	- 1952 Gallimimus_chariot
+	- 1953 Gallimimus
 
 ### Changed
 - Lycan forms placed into different build categories:
@@ -22,7 +52,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Nimble Type: Wererat, Wereowl, Werefox, Wereraccoon, Werecat
 - Lycan class requirement updated: 6 BAB, Infection Feat, DM Approval
 - Lycan OnHit will fire off every strike now, and have a DC 20 Fort save
-- Lycan infections can be removed through appropriate healing/restoration spells
+- Lycan infections can be removed through Remove Disease or Greater Restoration (including Healer NPC casting)
 - Complete Warlock 2.0 Overhaul (See Class Modifications forum for details)
 - Abyssal Corrupted: You can now choose which type of feature you want (such as Wings), but the exact appearance will be random
 

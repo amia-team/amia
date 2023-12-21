@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Lycan OnHit will fire off every strike now, and have a DC 20 Fort save
 - Lycan infections can be removed through appropriate healing/restoration spells
 - Complete Warlock 2.0 Overhaul (See Class Modifications forum for details)
+- Abyssal Corrupted: You can now choose which type of feature you want (such as Wings), but the exact appearance will be random
 
 ### Fixed
 - Ambush system fixed: Resting in hunting areas may cause monster ambushes again

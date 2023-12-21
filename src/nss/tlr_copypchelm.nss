@@ -28,31 +28,31 @@ void main()
 
     // Cloth 2
     iSourceHelmValue = GetItemAppearance(oSourceHelm, ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_CLOTH2);
-    oCurrentHelm = oHelm;
+    oCurrentHelm = oNewHelm;
     oNewHelm = CopyItemAndModify(oCurrentHelm,ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_CLOTH2, iSourceHelmValue, TRUE);
     DestroyObject(oCurrentHelm);
 
     // Leather 1
     iSourceHelmValue = GetItemAppearance(oSourceHelm, ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_LEATHER1);
-    oCurrentHelm = oHelm;
+    oCurrentHelm = oNewHelm;
     oNewHelm = CopyItemAndModify(oCurrentHelm,ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_LEATHER1, iSourceHelmValue, TRUE);
     DestroyObject(oCurrentHelm);
 
     // Leather 2
     iSourceHelmValue = GetItemAppearance(oSourceHelm, ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_LEATHER2);
-    oCurrentHelm = oHelm;
+    oCurrentHelm = oNewHelm;
     oNewHelm = CopyItemAndModify(oCurrentHelm,ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_LEATHER2, iSourceHelmValue, TRUE);
     DestroyObject(oCurrentHelm);
 
     // Metal 1
     iSourceHelmValue = GetItemAppearance(oSourceHelm, ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_METAL1);
-    oCurrentHelm = oHelm;
+    oCurrentHelm = oNewHelm;
     oNewHelm = CopyItemAndModify(oCurrentHelm,ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_METAL1, iSourceHelmValue, TRUE);
     DestroyObject(oCurrentHelm);
 
     // Metal 2
     iSourceHelmValue = GetItemAppearance(oSourceHelm, ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_METAL2);
-    oCurrentHelm = oHelm;
+    oCurrentHelm = oNewHelm;
     oNewHelm = CopyItemAndModify(oCurrentHelm,ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_METAL2, iSourceHelmValue, TRUE);
     DestroyObject(oCurrentHelm);
 

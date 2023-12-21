@@ -58,6 +58,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Ambush system fixed: Resting in hunting areas may cause monster ambushes again
+- Peerage helmet dropping will stop
+- Peerage conversation will be silent now
 
 ## [2.8.1A - 2023-12-10]
 

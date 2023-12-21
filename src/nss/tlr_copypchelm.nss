@@ -71,5 +71,6 @@ void main()
     if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_HEAD, oPC)))
     {
        DelayCommand(0.5f, AssignCommand(OBJECT_SELF, ActionEquipItem(oNewHelm, INVENTORY_SLOT_HEAD)));
+       SetDroppableFlag(oNewHelm,FALSE);
     }
 }

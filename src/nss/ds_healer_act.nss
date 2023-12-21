@@ -1,6 +1,7 @@
 #include "inc_ds_actions"
 #include "x0_i0_petrify"
 #include "inc_func_classes"
+#include "lycan_removal"
 
 void main()
 {
@@ -88,6 +89,7 @@ void main()
         eVis   = EffectVisualEffect( VFX_IMP_HEALING_S );
 
         RemoveEffectOfType( oPC, EFFECT_TYPE_DISEASE );
+        RemoveLycanInfection(oPC);
     }
     else if ( nNode == 3 ){
 
@@ -202,6 +204,7 @@ void main()
         }
 
         ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectHeal( GetMaxHitPoints( oPC ) - GetCurrentHitPoints( oPC ) ), oPC );
+        RemoveLycanInfection(oPC);
     }
 
 

@@ -29,7 +29,8 @@ void main()
       return;
     }
     else if((GetLevelByClass(CLASS_TYPE_PALADIN,oTarget) >= 1) || (GetLevelByClass(CLASS_TYPE_MONK,oTarget) >= 20)
-    || (GetIsImmune(oTarget,IMMUNITY_TYPE_DISEASE)==TRUE) || (GetLevelByClass(CLASS_TYPE_DRAGON_DISCIPLE,oTarget) >= 1))
+    || (GetIsImmune(oTarget,IMMUNITY_TYPE_DISEASE)==TRUE) || (GetLevelByClass(CLASS_TYPE_DRAGON_DISCIPLE,oTarget) >= 1) ||
+    (GetRacialType(oTarget)==RACIAL_TYPE_OUTSIDER) || (GetRacialType(oTarget)==RACIAL_TYPE_FEY))
     {
       SendMessageToPC(oTarget, "*You are immune to the effects of the lycan infectation*");
       return;

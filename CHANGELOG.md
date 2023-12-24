@@ -3,10 +3,19 @@ All notable changes to this project will be documented in this file.
  
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
-
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [2.9A - 2023-12-24]
+
+### Added
+- Palette additions ( 4 plcs, 1 item, 1 creature)
+- Custom summon script for items 
 - Lycan forms:
 	- Werecrocodile
 	- Wereowl
@@ -14,52 +23,39 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Wereraccoon
 	- Werefox
 - Support for Lycans with tails
-- 20 New Mount skins
-	- 1659 "Horse: Pegasus, Black, Wing"
-	- 1660 "Horse: Pegasus, Brown, Wing"
-	- 1661 "Horse: Pegasus, White leather barding packs,Wing"
-	- 1662 "Horse: Pegasus, White leather barding,Wing"
-	- 1663 "Horse: Pegasus, White saddle packs,Wing"
-	- 1664 "Horse: Pegasus, White saddle,Wing"
-	- 1665 "Horse: Pegasus, White"
-	- 1666 "Birb_Mount"
-	- 1667 "spider_Mount3"
-	- 1668 "spider_Mount2"
-	- 1669 "spider_Mount"
-	- 1670 "Beetle_Mount"
-	- 1671 "Lizard_Mount1"
-	- 1672 "Lizard_Mount2"
-	- 1673 "Wolf_Mount"
-	- 1674 "Shark_Mount"
-	- 1675 "Wolf_Mount_Black"
-	- 1676 "Lion_Mount"
-	- 1677 "Gallimimus_mt"
-	- 1678 "Gallimimus_chariot"
-- 8 New Creature skins
-	- 1946 "Giant Birb, Walking"
-	- 1947 Spider2_mt
-	- 1948 Spider1_mt
-	- 1949 Spider_mt
-	- 1950 Lizard_Mt1
-	- 1951 Lizard_Mt2
-	- 1952 Gallimimus_chariot
-	- 1953 Gallimimus
+- 20 New Mount skins 1659 to 1678
+- 8 New Creature skins 1946 to 1953
+- More robes will now work on mounts
 
 ### Changed
-- Lycan forms placed into different build categories:
-	- Damage Type: Werewolf, Werebat, Werechicken, Wereshark
-	- Tank Type: Werecrocodile, Wereboar, Werebear
-	- Nimble Type: Wererat, Wereowl, Werefox, Wereraccoon, Werecat
-- Lycan class requirement updated: 6 BAB, Infection Feat, DM Approval
-- Lycan OnHit will fire off every strike now, and have a DC 20 Fort save
-- Lycan infections can be removed through Remove Disease or Greater Restoration (including Healer NPC casting)
+- Area changes:
+	- Gates and lawsigns update in regards of bannished races
+		- The Dale
+		- Kingdom of Cystana: All cystana areas
+		- Travellers Rest: all areas
+		- Oakmist Vale
+	- Oakmist vale
+		- Pre work for player boat request
+	- Actand (the war areas)
+		- Final changes, Dungeon now open
+- Lycan changes
+	- Forms placed into different build categories:
+		- Damage Type: Werewolf, Werebat, Werechicken, Wereshark
+		- Tank Type: Werecrocodile, Wereboar, Werebear
+		- Nimble Type: Wererat, Wereowl, Werefox, Wereraccoon, Werecat
+	- Class requirement updated: 6 BAB, Infection Feat, DM Approval
+	- Lycantropy Infection (from lycans in the wild, players cant infect)
+		- OnHit will fire off every strike now, and have a DC 20 Fort save to get infected
+		- Infections can be removed through Remove Disease or Greater Restoration (including Healer NPC casting)
 - Complete Warlock 2.0 Overhaul (See Class Modifications forum for details)
-- Abyssal Corrupted: You can now choose which type of feature you want (such as Wings), but the exact appearance will be random
+- Abyssal Corrupted: You can now choose which type of feature rather then random, but the exact appearance will be random
+- Lavender ioun stone now +5 Discipline, +3 Fortitude Saving Throw
 
 ### Fixed
 - Ambush system fixed: Resting in hunting areas may cause monster ambushes again
 - Peerage helmet dropping will stop
 - Peerage conversation will be silent now
+- Defender stance not working while polymorped
 
 ## [2.8.1A - 2023-12-10]
 

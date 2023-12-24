@@ -55,7 +55,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Ambush system fixed: Resting in hunting areas may cause monster ambushes again
 - Peerage helmet dropping will stop
 - Peerage conversation will be silent now
-- Defender stance not working while polymorped
+- Defender stance will now not work while polymorped
 
 ## [2.8.1A - 2023-12-10]
 

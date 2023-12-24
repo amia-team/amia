@@ -51,7 +51,7 @@ void main()
     {
         eVFX = EffectVisualEffect(691);
         eBonus1 = EffectSkillIncrease(SKILL_DISCIPLINE, 5);
-        eBonus2 = EffectSkillIncrease(SKILL_CONCENTRATION, 5);
+        eBonus2 = EffectSavingThrowIncrease (SAVING_THROW_FORT, 3);
         eLink = EffectLinkEffects( eVFX, eBonus1 );
         eLink = EffectLinkEffects( eBonus2, eLink );
         eLink = SupernaturalEffect( eLink );

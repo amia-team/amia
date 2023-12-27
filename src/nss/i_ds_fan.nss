@@ -26,7 +26,7 @@
 //-------------------------------------------------------------------------------
 
 void DressNPC( object oPC, object oNPC );
-
+void change_axis(object oNPC, float fZaxis);
 
 //-------------------------------------------------------------------------------
 // main
@@ -66,7 +66,8 @@ void main(){
             int nSex;
             int nColor;
             int nPheno;
-
+            float fZaxis;
+            float scaleSet;
 
             if ( nSpawned = 1 ){
 
@@ -121,21 +122,22 @@ void main(){
                     }
 
                     //1.69 new!
-                    SetLocalInt( oItem, "td_skincolor", GetColor( oTarget, COLOR_CHANNEL_SKIN ) );
-                    SetLocalInt( oItem, "td_haircolor", GetColor( oTarget, COLOR_CHANNEL_HAIR ) );
-                    SetLocalInt( oItem, "td_tattoo1", GetColor( oTarget, COLOR_CHANNEL_TATTOO_1 ) );
-                    SetLocalInt( oItem, "td_tattoo2", GetColor( oTarget, COLOR_CHANNEL_TATTOO_2 ) );
-                    SetLocalInt( oItem, "ds_wings", GetCreatureWingType( oTarget ) );
-                    SetLocalInt( oItem, "ds_tail", GetCreatureTailType( oTarget ) );
-                    SetLocalInt( oItem, "ds_race", nRace );
-                    SetLocalInt( oItem, "ds_pheno", GetPhenoType( oTarget ) );
-                    SetLocalInt( oItem, "ds_sex", GetGender( oTarget ) );
-                    SetLocalInt( oItem, "ds_app", nAppearance );
-                    SetLocalFloat( oItem, "ds_scale", GetObjectVisualTransform( oTarget, 10) );
+                    SetLocalInt   ( oItem, "td_skincolor", GetColor( oTarget, COLOR_CHANNEL_SKIN ) );
+                    SetLocalInt   ( oItem, "td_haircolor", GetColor( oTarget, COLOR_CHANNEL_HAIR ) );
+                    SetLocalInt   ( oItem, "td_tattoo1", GetColor( oTarget, COLOR_CHANNEL_TATTOO_1 ) );
+                    SetLocalInt   ( oItem, "td_tattoo2", GetColor( oTarget, COLOR_CHANNEL_TATTOO_2 ) );
+                    SetLocalInt   ( oItem, "ds_wings", GetCreatureWingType( oTarget ) );
+                    SetLocalInt   ( oItem, "ds_tail", GetCreatureTailType( oTarget ) );
+                    SetLocalInt   ( oItem, "ds_race", nRace );
+                    SetLocalInt   ( oItem, "ds_pheno", GetPhenoType( oTarget ) );
+                    SetLocalInt   ( oItem, "ds_sex", GetGender( oTarget ) );
+                    SetLocalInt   ( oItem, "ds_app", nAppearance );
+                    SetLocalFloat ( oItem, "ds_scale", GetObjectVisualTransform( oTarget, 10) );
+                    SetLocalFloat ( oItem, "cr_zaxis", GetObjectVisualTransform(oTarget, 33) );
                     SetLocalString( oItem, "ds_name", GetName( oTarget ) );
                     SetLocalString( oItem, "ds_portr", GetPortraitResRef( oTarget ) );
                     SetLocalString( oItem, "td_bio", GetDescription( oTarget ) );
-                    SetLocalInt( oItem, "ds_set", 1 );
+                    SetLocalInt   ( oItem, "ds_set", 1 );
 
                     CreateItemOnObject( "ds_npc_suit", oPC );
                     CreateItemOnObject( "ds_npc_helm", oPC );
@@ -146,15 +148,16 @@ void main(){
                 else{
 
                     //basic appearance
-                    SetLocalInt( oItem, "ds_app", nAppearance );
-                    SetLocalString( oItem, "ds_name", GetName( oTarget ) );
-                    SetLocalString( oItem, "ds_portr", GetPortraitResRef( oTarget ) );
-                    SetLocalString( oItem, "td_bio", GetDescription( oTarget ) );
-                    SetLocalInt( oItem, "ds_tail", GetCreatureTailType( oTarget ) );
-                    SetLocalInt( oItem, "ds_wings", GetCreatureWingType( oTarget ) );
-                    SetLocalInt( oItem, "ds_pheno", GetPhenoType( oTarget ) );
-                    SetLocalFloat( oItem, "ds_scale", GetObjectVisualTransform( oTarget, 10) );
-                    SetLocalInt( oItem, "ds_set", 2 );
+                    SetLocalInt     ( oItem, "ds_app", nAppearance );
+                    SetLocalString  ( oItem, "ds_name", GetName( oTarget ) );
+                    SetLocalString  ( oItem, "ds_portr", GetPortraitResRef( oTarget ) );
+                    SetLocalString  ( oItem, "td_bio", GetDescription( oTarget ) );
+                    SetLocalInt     ( oItem, "ds_tail", GetCreatureTailType( oTarget ) );
+                    SetLocalInt     ( oItem, "ds_wings", GetCreatureWingType( oTarget ) );
+                    SetLocalInt     ( oItem, "ds_pheno", GetPhenoType( oTarget ) );
+                    SetLocalFloat   ( oItem, "ds_scale", GetObjectVisualTransform( oTarget, 10) );
+                    SetLocalFloat   ( oItem, "cr_zaxis", GetObjectVisualTransform(oTarget, 33) );
+                    SetLocalInt     ( oItem, "ds_set", 2 );
                 }
 
                 //chame cast spell to Self unlimited times a day.
@@ -174,6 +177,8 @@ void main(){
                 nWings         = GetLocalInt( oItem, "ds_wings" );
                 nTail          = GetLocalInt( oItem, "ds_tail" );
                 nPheno         = GetLocalInt( oItem, "ds_pheno" );
+                scaleSet       = GetLocalFloat(oItem, "ds_scale");
+                fZaxis         = GetLocalFloat( oItem, "cr_zaxis");
 
                 if ( nSex == 1 ){
 
@@ -226,7 +231,6 @@ void main(){
                 }
 
                 //----------------------------
-                float scaleSet = GetLocalFloat(oItem, "ds_scale");
 
                 SetLocalInt( oNPC, "ds_type", 1 );
                 SetName( oNPC, sName );
@@ -239,6 +243,7 @@ void main(){
                 if (nAppearance != 0) {
                     DelayCommand( 1.0, SetCreatureAppearanceType( oNPC, nAppearance ) );
                 }
+
                 sUUID = GetObjectUUID(oNPC);
 
                 SetLocalString (oItem, "UUID", sUUID);
@@ -249,6 +254,7 @@ void main(){
                 DelayCommand( 3.0, SetCreatureWingType( nWings, oNPC ) );
                 DelayCommand( 3.0, SetCreatureTailType( nTail, oNPC ) );
                 DelayCommand( 3.0, SetPortraitResRef( oNPC, sPortrait ) );
+                DelayCommand( 1.0, change_axis( oNPC, fZaxis) );
 
                 if (GetLocalInt( oItem, "ghost") == 0){
                     ApplyEffectToObject(DURATION_TYPE_PERMANENT, EffectCutsceneGhost(), oNPC);
@@ -270,7 +276,8 @@ void main(){
                 sSex           = "m_";
                 nPheno         = GetLocalInt( oItem, "ds_pheno" );
                 sBio           = GetLocalString( oItem , "td_bio" );
-                float scaleSet = GetLocalFloat(oItem, "ds_scale");
+                scaleSet       = GetLocalFloat(oItem, "ds_scale");
+                fZaxis         = GetLocalFloat( oItem, "cr_zaxis");
 
                 if ( nSex == 1 ){
 
@@ -300,6 +307,7 @@ void main(){
                 DelayCommand( 2.0, SetPortraitResRef( oNPC, sPortrait ) );
                 DelayCommand( 3.0, SetCreatureWingType( nWings, oNPC ) );
                 DelayCommand( 4.0, SetCreatureTailType( nTail, oNPC ) );
+                DelayCommand( 1.0, change_axis( oNPC, fZaxis) );
 
                 if (GetLocalInt( oItem, "ghost") == 0){
                     ApplyEffectToObject(DURATION_TYPE_PERMANENT, EffectCutsceneGhost(), oNPC);
@@ -335,4 +343,12 @@ void DressNPC( object oPC, object oNPC ){
 
      DelayCommand( 2.0, AssignCommand( oNPC, ActionEquipItem( oNewSuit, INVENTORY_SLOT_CHEST ) ) );
 
+}
+void change_axis(object oNPC, float fZaxis){
+    if (fZaxis == 0.0) {
+        SetObjectVisualTransform( oNPC, 33, 0.0);
+    }
+    if (fZaxis != 0.0) {
+        SetObjectVisualTransform( oNPC, 33, fZaxis);
+    }
 }

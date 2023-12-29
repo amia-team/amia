@@ -180,8 +180,9 @@ void main( ){
         }
     }
 
-    // Abyssal Corrupted Class
-     if ((nClassAbyssal == 1) && (sBodyPart == ""))
+	// Abyssal Corrupted Class
+    int nBodySet = GetLocalInt(oWidget,"abyssalBodyPartSet");
+     if ((nClassAbyssal == 1) && (nBodySet==0))
      {
        string sAbyssalBodyPart = GetLocalString(oWidget, "abyssalBodyPart");
 
@@ -201,6 +202,7 @@ void main( ){
           SetCreatureWingType(99,oPC);
          }
          FloatingTextStringOnCreature("*Filthy demonic wings painfully sprout from your backside*",oPC);
+         SetLocalInt(oWidget,"abyssalBodyPartSet",1);
        }
        else if(sAbyssalBodyPart=="tail")
        {
@@ -222,10 +224,12 @@ void main( ){
           SetCreatureTailType(993,oPC);
          }
          FloatingTextStringOnCreature("*A powerful but clearly demonic tail sprouts from your tail bone*",oPC);
+         SetLocalInt(oWidget,"abyssalBodyPartSet",1);
        }
        else if(sAbyssalBodyPart=="horns")
        {
          FloatingTextStringOnCreature("*Your forehead hurts as you feel a constant pressure in two locations, opposite of eachother on your forehead.*",oPC);
+         SetLocalInt(oWidget,"abyssalBodyPartSet",1);
        }
        else if(sAbyssalBodyPart=="legs")
        {
@@ -238,6 +242,7 @@ void main( ){
          SetLocalString(oWidget, "abyssalBodyPart","legs");
          FloatingTextStringOnCreature("*Your legs twist, and snap painfully into demonic like positions*",oPC);
          SendMessageToPC(oPC,"// Your new legs might not be visable in your current armor. Remove your armor to see them and/or modify your armor legs to display your legs properly");
+         SetLocalInt(oWidget,"abyssalBodyPartSet",1);
        }
        else
        {

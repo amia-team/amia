@@ -44,7 +44,7 @@ const float  HOSTILE_RANGE                   = 20.0;
 
 //This is tested against a D100
 //It may not be set less then 0 or more then 100
-const int    AMBUSH_RATE_PROCENT             = 70; // I set this higher most of the server doesnt have an ambush set atm - Mav
+const int    AMBUSH_RATE_PROCENT             = 20; // I set this higher most of the server doesnt have an ambush set atm - Mav
 
 //Minumum allowed % rate
 const int    AMBUSH_RATE_PROCENT_CAP         = 1;

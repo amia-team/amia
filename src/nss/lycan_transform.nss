@@ -438,7 +438,7 @@ void main()
 
 
     // Bonus AC
-    effect eACEffect = EffectACIncrease( nLevel/5, AC_SHIELD_ENCHANTMENT_BONUS );
+    effect eACEffect = EffectACIncrease( nLevelLycan+1, AC_SHIELD_ENCHANTMENT_BONUS );
     eACEffect = EffectLinkEffects( EffectACIncrease( nLevel/6, AC_NATURAL_BONUS ), eACEffect );
     eACEffect = EffectLinkEffects( EffectACIncrease( nLevel/6, AC_DEFLECTION_BONUS ), eACEffect );
     eACEffect = EffectLinkEffects( EffectACIncrease( nLevel/6, AC_DODGE_BONUS ), eACEffect );

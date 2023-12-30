@@ -8,6 +8,9 @@
 #include "inc_td_shifter"
 #include "x2_inc_spellhook"
 
+// Generating Horns
+int GenerateHorns(object oPC);
+
 void main()
 {
    object oPC = OBJECT_SELF;
@@ -18,7 +21,6 @@ void main()
    itemproperty ipEvasion = ItemPropertyBonusFeat(226);
    itemproperty ipImproEvasion = ItemPropertyBonusFeat(231);
    string sBodyPart = GetLocalString(oWidget, "abyssalBodyPart");
-   int nHorns = GetLocalInt(oWidget, "abyssalHorns");
    int nAbyssalLevel = GetLevelByClass(55,oPC);
    int nHornLevel;
    location lTarget = GetSpellTargetLocation();
@@ -134,10 +136,85 @@ void main()
    }
    else if(sBodyPart == "horns") // Buff
    {
+     if(GetLocalInt(oPC,"abyssalHorn") == 0)
+     {
+
+      if(GetPCKEYValue(oPC,"abyssalHornsFinal") == 0)
+      {
+       int nFinalHorns = GenerateHorns(oPC);
+       eVisHorn = EffectVisualEffect(nFinalHorns);
+       SetPCKEYValue(oPC,"abyssalHornsFinal",nFinalHorns);
+      }
+      else
+      {
+       eVisHorn = EffectVisualEffect(GetPCKEYValue(oPC,"abyssalHornsFinal"));
+      }
+
+      eVisHorn = UnyieldingEffect(eVisHorn);
+      eVisHorn2 = EffectVisualEffect(1038);
+      eVisHorn3 = EffectVisualEffect(1041);
+      eLinkHorns =EffectLinkEffects(eVisHorn2, eHornBuff);
+      if(nAbyssalLevel == 5)
+      {
+        eLinkHorns =EffectLinkEffects(eLinkHorns, eImmunityS);
+        eLinkHorns =EffectLinkEffects(eLinkHorns, eImmunityP);
+        eLinkHorns =EffectLinkEffects(eLinkHorns, eImmunityB);
+      }
+      eLinkHorns =EffectLinkEffects(eLinkHorns, eVisHorn3);
+      FloatingTextStringOnCreature("*Large powerful horns manifest on your head as power swells around you*",oPC);
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eVisHorn, oPC);
+      ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLinkHorns, oPC, 48.0);
+      SetLocalInt(oPC,"abyssalHorn",1);
+      DelayCommand(60.0,DeleteLocalInt(oPC,"abyssalHorn"));
+      }
+     else
+     {
+      SendMessageToPC(oPC, "You must wait 10 rounds before activating this ability again!");
+     }
+
+   }
+   else if(sBodyPart == "legs")// Movement Speed Buff
+   {
+     if(GetLocalInt(oPC,"abyssalSpeed") == 0)
+     {
+      int nSpeed = 125;
+
+      if(nAbyssalLevel >= 5)
+      {
+         nSpeed = 150;
+         IPSafeAddItemProperty(oItem, ipImproEvasion, 48.0, X2_IP_ADDPROP_POLICY_IGNORE_EXISTING, FALSE, FALSE);
+      }
+      else if(nAbyssalLevel >= 3)
+      {
+         nSpeed = 150;
+         IPSafeAddItemProperty(oItem, ipEvasion, 48.0, X2_IP_ADDPROP_POLICY_IGNORE_EXISTING, FALSE, FALSE);
+      }
+      eSpeed = EffectMovementSpeedIncrease(nSpeed);
+      eVisSpeed = EffectVisualEffect(VFX_DUR_CESSATE_POSITIVE);
+      eLinkSpeed = EffectLinkEffects(eSpeed, eVisSpeed);
+      ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLinkSpeed, oPC, 48.0);
+      SetLocalInt(oPC,"abyssalSpeed",1);
+      FloatingTextStringOnCreature("*You begin to sprint with your powerful demonic legs*",oPC);
+      DelayCommand(60.0,DeleteLocalInt(oPC,"abyssalSpeed"));
+
+
+     }
+     else
+     {
+      SendMessageToPC(oPC, "You must wait 10 rounds before activating this ability again!");
+     }
+   }
+}
+
+int GenerateHorns(object oPC)
+{
+
       int nRace = GetAppearanceType(oPC);
       int nGender = GetGender(oPC);
-      int nFinalHorns;
-       // nHorns
+      int nFinalHorns = 0;
+      int nHorns = Random(6)+1;
+
+      // nHorns
       if(nGender == 0)  // Male
       {
         if((nRace == 4) || (nRace == 6)) // Human + Half Elf
@@ -297,60 +374,6 @@ void main()
 
       }
 
-     if(GetLocalInt(oPC,"abyssalHorn") == 0)
-     {
-      eVisHorn = EffectVisualEffect(nFinalHorns);
-      eVisHorn2 = EffectVisualEffect(1038);
-      eVisHorn3 = EffectVisualEffect(1041);
-      eLinkHorns =EffectLinkEffects(eVisHorn2, eHornBuff);
-      if(nAbyssalLevel == 5)
-      {
-        eLinkHorns =EffectLinkEffects(eLinkHorns, eImmunityS);
-        eLinkHorns =EffectLinkEffects(eLinkHorns, eImmunityP);
-        eLinkHorns =EffectLinkEffects(eLinkHorns, eImmunityB);
-      }
-      eLinkHorns =EffectLinkEffects(eLinkHorns, eVisHorn3);
-      FloatingTextStringOnCreature("*Large powerful horns manifest on your head as power swells around you*",oPC);
-      ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVisHorn, oPC, 48.0);
-      ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLinkHorns, oPC, 48.0);
-      SetLocalInt(oPC,"abyssalHorn",1);
-      DelayCommand(60.0,DeleteLocalInt(oPC,"abyssalHorn"));
-      }
-     else
-     {
-      SendMessageToPC(oPC, "You must wait 10 rounds before activating this ability again!");
-     }
+  return nFinalHorns;
 
-   }
-   else if(sBodyPart == "legs")// Movement Speed Buff
-   {
-     if(GetLocalInt(oPC,"abyssalSpeed") == 0)
-     {
-      int nSpeed = 125;
-
-      if(nAbyssalLevel >= 5)
-      {
-         nSpeed = 150;
-         IPSafeAddItemProperty(oItem, ipImproEvasion, 48.0, X2_IP_ADDPROP_POLICY_IGNORE_EXISTING, FALSE, FALSE);
-      }
-      else if(nAbyssalLevel >= 3)
-      {
-         nSpeed = 150;
-         IPSafeAddItemProperty(oItem, ipEvasion, 48.0, X2_IP_ADDPROP_POLICY_IGNORE_EXISTING, FALSE, FALSE);
-      }
-      eSpeed = EffectMovementSpeedIncrease(nSpeed);
-      eVisSpeed = EffectVisualEffect(VFX_DUR_CESSATE_POSITIVE);
-      eLinkSpeed = EffectLinkEffects(eSpeed, eVisSpeed);
-      ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLinkSpeed, oPC, 48.0);
-      SetLocalInt(oPC,"abyssalSpeed",1);
-      FloatingTextStringOnCreature("*You begin to sprint with your powerful demonic legs*",oPC);
-      DelayCommand(60.0,DeleteLocalInt(oPC,"abyssalSpeed"));
-
-
-     }
-     else
-     {
-      SendMessageToPC(oPC, "You must wait 10 rounds before activating this ability again!");
-     }
-   }
 }

@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 20 New Mount skins 1659 to 1678
 - 8 New Creature skins 1946 to 1953
 - More robes will now work on mounts
+- Deployed Dungeon Tool System to Stinkpot Warrens (Kobold Newbie Area)
 
 ### Changed
 - Area changes:

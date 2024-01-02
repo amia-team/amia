@@ -8,16 +8,20 @@ void main()
 {
    object oPC = GetLastUsedBy();
    object oPLC = OBJECT_SELF;
-   string sIdentifier = GetLocalString(oPLC,"identifier");
+   string sMessage = GetLocalString(oPLC,"message");
    string sResRef = GetLocalString(oPLC,"resref");
-   int nUsedRecently = GetLocalInt(oPLC,sIdentifier+"identifier");
+   int nUsedRecently = GetLocalInt(oPLC,"block");
    float fDelay = GetLocalFloat(oPLC,"delay");
 
    if(nUsedRecently==0)
    {
      CreateItemOnObject(sResRef,oPC);
-     SetLocalInt(oPLC,sIdentifier+"identifier",1);
-     DelayCommand(fDelay,DeleteLocalInt(oPLC,sIdentifier+"identifier"));
+     SetLocalInt(oPLC,"block",1);
+     if(sMessage != "")
+     {
+      SendMessageToPC(oPC,sMessage);
+     }
+     DelayCommand(fDelay,DeleteLocalInt(oPLC,"block"));
    }
    else
    {

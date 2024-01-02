@@ -280,12 +280,13 @@ int CheckPCKEYAlreadyUsed(object oPC, object oItem)
 {
   object oPCKEY = GetPCKEY(oPC);
   string sPCKEYName = GetName(oPCKEY);
+  string sPCKEYNameSub = GetSubString(sPCKEYName,0,8);
   int nStored = GetLocalInt(oItem,"stored"); // Internal counter to know how many PCKEYS are stored on the device
   int nCheck;
 
   if(nStored==0) // If non are stored, just go ahead and store it in PCKEY0
   {
-    SetLocalString(oItem,"PCKEY"+IntToString(nStored),sPCKEYName);
+    SetLocalString(oItem,"PCKEY"+IntToString(nStored),sPCKEYNameSub);
     SetLocalInt(oItem,"stored",nStored+1);
     return 0;
   }
@@ -294,7 +295,7 @@ int CheckPCKEYAlreadyUsed(object oPC, object oItem)
     int i;
     for(i=0;i<nStored+1;++i)
     {
-      if(sPCKEYName==GetLocalString(oItem,"PCKEY"+IntToString(i))) // If their PCKEY matches saved, break the loop and set check to 1
+      if(sPCKEYNameSub==GetLocalString(oItem,"PCKEY"+IntToString(i))) // If their PCKEY matches saved, break the loop and set check to 1
       {
         nCheck=1;
         break;
@@ -307,7 +308,7 @@ int CheckPCKEYAlreadyUsed(object oPC, object oItem)
     }
     else
     {
-     SetLocalString(oItem,"PCKEY"+IntToString(nStored),sPCKEYName);
+     SetLocalString(oItem,"PCKEY"+IntToString(nStored),sPCKEYNameSub);
      SetLocalInt(oItem,"stored",nStored+1);
      return 0;
     }

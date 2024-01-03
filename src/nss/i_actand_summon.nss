@@ -12,5 +12,8 @@ void main()
     SetLocalObject(oPC,"actandsummonitem",oItem);
     SetLocalLocation(oPC,"actandsummonlocation",lTarget);
 
+    // adding uncursing cause many items where handed out while being cursed
+    SetItemCursedFlag( oItem, FALSE );
+
     ExecuteScript("actand_summon_fn", oPC);
 }

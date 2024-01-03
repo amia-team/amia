@@ -65,6 +65,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Moonpier, small woppsie fix backend
 - Ambush % lowerd
 - Gulf of Lumorier: South Coast: Resource node fixed
+- Group boss summon system exploit fix
 
 
 ## [2.9A - 2023-12-24]

@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
  
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+
 ## [Unreleased]
 
 ### Added
@@ -10,6 +11,61 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
+
+## [2.9.1A - 2024-01-03]
+
+### Added
+- 2x player portrait added
+- Dungeon Tool System Deployed to Stinkpot Warrens
+- Variuos Palette items/plcs/creatures to support plot and other updates
+
+### Changed
+- Area Changes
+	- Ruathym: Caraigh, Cloudfen Grove
+		- Camp upgrade
+		- Recall Pylon
+	- 3x Player housing progression
+	- Oakmist Vale: main, treetops hut, Caves
+		- Cave expansion progression (not finished)
+		- Tree tops, hut, small tweak of adding plot plc
+		- Main, minor tweaks issue fixes
+	- Bloodspear Keep 
+		- Undead additional Guards
+	- Travellers rest
+		- Lamp gate brought in line with other gates
+	- AshCaverns (all)
+		- Complete removal of all area
+	- Khem: whispering rift
+		- Recall Pylon added
+		- Portals that lead to the Alamber sea entry directly redirected here
+	- Frozenfar: Belenoth, Interior <-> Obsidian Isle: Port, Great Hall
+		- Portal between these two areas, per player request
+		- Guards at both ends of the portal
+	- Eternal Horizon Hull (ratpack ship)
+		- Activation system for Mage private sanctum
+	- Ruins of The Underkingdom, The Lava Depths
+		- changed CL for loot bonus table
+	- Kingdom of Kohlingen: Fort Cystana, South
+		- Orpanage playground start (not finished)
+	- Barak Rundar: The Frozen Wastes (main, Northern Pass, Southern Fields)
+		- Drow Replaced with Aurilites
+		- Area name change : Khazat Murr, Northwestern Face -> Southern Fields
+- Druid dragon shape now requires only 28 wisdom (was 30)
+- Bottled companions now support Z axis difirences
+- Sea Travel conversation removal of Ashcaverns
+- Actand summons (both demon and celestial)
+	- Added bios to summon and widget
+	- Overhauled their looks
+	- Summon widget uncursed (if you have one already just use it, it will remove the cursed part)
+- Lycan ac progression set to lycan level +1 
+
+### Fixed
+- Wrowl portrait mash should now display properly
+- Abyssal corrupt now properly get the extra body part
+- Moonpier, small woppsie fix backend
+- Ambush % lowerd
+- Gulf of Lumorier: South Coast: Resource node fixed
+
 
 ## [2.9A - 2023-12-24]
 
@@ -26,7 +82,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 20 New Mount skins 1659 to 1678
 - 8 New Creature skins 1946 to 1953
 - More robes will now work on mounts
-- Deployed Dungeon Tool System to Stinkpot Warrens (Kobold Newbie Area)
 
 ### Changed
 - Area changes:

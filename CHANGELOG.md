@@ -8,7 +8,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
+DTS deployed to Amia Frontier Orc 
+New Hidden Area made for DTS for Amia Frontier Orcs
+
 ### Changed
+
+Switched out a PLC for DTS with another smaller one to fix difficulty in using old PLC
+Swapped out and added in new wings/tails for Abyssal Corrupted
+Swapped out Stinkpot DTS hidden item from ghost visage item to regen ring
 
 ### Fixed
 

@@ -180,7 +180,7 @@ void main( ){
         }
     }
 
-	// Abyssal Corrupted Class
+    // Abyssal Corrupted Class
     int nBodySet = GetLocalInt(oWidget,"abyssalBodyPartSet");
      if ((nClassAbyssal == 1) && (nBodySet==0))
      {
@@ -188,25 +188,33 @@ void main( ){
 
        if(sAbyssalBodyPart=="wings")
        {
-         int nRandWing = Random(3)+1;
+         int nRandWing = Random(5)+1;
          if(nRandWing == 1)
          {
           SetCreatureWingType(1,oPC);
          }
          else if(nRandWing == 2)
          {
-          SetCreatureWingType(93,oPC);
+          SetCreatureWingType(8,oPC);
          }
          else if(nRandWing == 3)
          {
           SetCreatureWingType(99,oPC);
+         }
+         else if(nRandWing == 4)
+         {
+          SetCreatureWingType(94,oPC);
+         }
+         else if(nRandWing == 5)
+         {
+          SetCreatureWingType(106,oPC);
          }
          FloatingTextStringOnCreature("*Filthy demonic wings painfully sprout from your backside*",oPC);
          SetLocalInt(oWidget,"abyssalBodyPartSet",1);
        }
        else if(sAbyssalBodyPart=="tail")
        {
-         int nRandTail = Random(4)+1;
+         int nRandTail = Random(5)+1;
          if(nRandTail == 1)
          {
           SetCreatureTailType(1,oPC);
@@ -222,6 +230,10 @@ void main( ){
          else if(nRandTail == 4)
          {
           SetCreatureTailType(993,oPC);
+         }
+         else if(nRandTail == 5)
+         {
+          SetCreatureTailType(989,oPC);
          }
          FloatingTextStringOnCreature("*A powerful but clearly demonic tail sprouts from your tail bone*",oPC);
          SetLocalInt(oWidget,"abyssalBodyPartSet",1);

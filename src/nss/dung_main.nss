@@ -46,6 +46,7 @@ void main()
    string sDungeon = GetLocalString(oTrans,"dungeon");
    int nLevel = GetLocalInt(oTrans,"level");
    int nActive = GetLocalInt(oTrans,"activated");
+   int nTriggerCount = GetLocalInt(oTrans,"triggerCount");
    float nTimer = GetLocalFloat(oTrans,"resetTimer");
 
    if(nTimer==0.0)
@@ -65,8 +66,14 @@ void main()
 
      SpawnHiddenDoors(oTrans, sDungeon, nLevel);
 
-     SetLocalInt(oTrans,"activated",1);
-     DelayCommand(nTimer,DeleteLocalInt(oTrans,"activated"));
+     int i;
+     object oTransObject;
+     for(i=0;i<nTriggerCount;i++)
+     {
+      oTransObject = GetObjectByTag(sDungeon+"DTS",i);
+      SetLocalInt(oTransObject,"activated",1);
+      DelayCommand(nTimer,DeleteLocalInt(oTransObject,"activated"));
+     }
    }
 }
 

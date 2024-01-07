@@ -8,8 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-DTS deployed to Amia Frontier Orc 
-New Hidden Area made for DTS for Amia Frontier Orcs
+- DTS deployed to Amia Frontier Orc 
+- New Hidden Area made for DTS for Amia Frontier Orcs
+- DTS deployed to Darkhold
+- New Hidden Area made for DTS for Darhold
 
 ### Changed
 
@@ -21,6 +23,7 @@ New Hidden Area made for DTS for Amia Frontier Orcs
 - Swapped out and added in new wings/tails for Abyssal Corrupted
 - Swapped out Stinkpot DTS hidden item from ghost visage item to regen ring
 - Expanded NPC collision functionality
+- Added DTS support for multiple triggers for multiple entrances to a dungeon
 
 ### Fixed
 

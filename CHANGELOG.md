@@ -13,9 +13,14 @@ New Hidden Area made for DTS for Amia Frontier Orcs
 
 ### Changed
 
-Switched out a PLC for DTS with another smaller one to fix difficulty in using old PLC
-Swapped out and added in new wings/tails for Abyssal Corrupted
-Swapped out Stinkpot DTS hidden item from ghost visage item to regen ring
+- Area Updates
+	- Kingdom of Kohlingen: Fort Cystana, South
+		- Orphanage playground finished
+		- 3 Interiors added (unfinished)
+- Switched out a PLC for DTS with another smaller one to fix difficulty in using old PLC
+- Swapped out and added in new wings/tails for Abyssal Corrupted
+- Swapped out Stinkpot DTS hidden item from ghost visage item to regen ring
+- Expanded NPC collision functionality
 
 ### Fixed
 

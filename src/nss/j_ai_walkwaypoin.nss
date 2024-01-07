@@ -64,8 +64,16 @@ const string AI_OTHER_MASTER    = "AI_OTHER_MASTER";
 // For return  to.
 int AI_GetSpawnInCondition(int nCondition, string sName, object oTarget = OBJECT_SELF);
 
+//Set Collision Box, Default is off
+int collision = GetLocalInt( OBJECT_SELF, "collision" );
+
 void main()
 {
+    if (collision != 1){
+        effect eGhost = EffectCutsceneGhost();
+        ApplyEffectToObject(DURATION_TYPE_PERMANENT, eGhost, OBJECT_SELF);
+    }
+
     // FIRST, if we are meant to move back to the start location, do it.
     if(AI_GetSpawnInCondition(AI_FLAG_OTHER_RETURN_TO_SPAWN_LOCATION, AI_OTHER_MASTER))
     {

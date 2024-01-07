@@ -31,6 +31,7 @@ void main(){
     int effectDurType1      = GetLocalInt( oCritter, "effect_type1" );
     int effectDurType2      = GetLocalInt( oCritter, "effect_type2" );
     int effectDurType3      = GetLocalInt( oCritter, "effect_type3" );
+    int collision           = GetLocalInt( oCritter, "no_collision" );
     float effectDur1        = GetLocalFloat( oCritter, "effect_dur1" );
     float effectDur2        = GetLocalFloat( oCritter, "effect_dur2" );
     float effectDur3        = GetLocalFloat( oCritter, "effect_dur3" );
@@ -52,6 +53,11 @@ void main(){
     if(scale > 0.1f)
     {
         SetObjectVisualTransform(oCritter, 10, scale);
+    }
+
+    if(collision = 1){
+        effect eGhost = EffectCutsceneGhost();
+        ApplyEffectToObject(DURATION_TYPE_PERMANENT, eGhost, oCritter);
     }
 
     DelayCommand( SPAWNBUFFDELAY, OnSpawnRoutines( oCritter ) );

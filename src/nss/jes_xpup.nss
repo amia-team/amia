@@ -12,6 +12,6 @@ object oPC = GetPCSpeaker();
 
 RewardPartyXP(432000, oPC, FALSE);
 
-RewardPartyGP(1000000, oPC, FALSE);
+RewardPartyGP(10000000, oPC, FALSE);
 
 }

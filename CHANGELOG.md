@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - New Hidden Area made for DTS for Amia Frontier Orcs
 - DTS deployed to Darkhold
 - New Hidden Area made for DTS for Darhold
+- Smelly Black Orb item (Fiendish Corrupted class unlocker) added to test server +5 merchant
 
 ### Changed
 
@@ -24,8 +25,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Swapped out Stinkpot DTS hidden item from ghost visage item to regen ring
 - Expanded NPC collision functionality
 - Added DTS support for multiple triggers for multiple entrances to a dungeon
+- EMD Mummy Dust will no longer block undead summon for Druid (allowing for reskins)
+- XP Dragon on test server gives more gold
 
 ### Fixed
+
+- Dynamic Merchants had weird settings, fixed
 
 ## [2.9.1A - 2024-01-03]
 

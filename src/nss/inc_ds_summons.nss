@@ -921,7 +921,7 @@ void sum_MummyDust( object oPC, location lTarget ){
            nEpicSchool = FEAT_EPIC_SPELL_FOCUS_EVOCATION;
            break;
         default://If the PC doesn't have the book or chose Undead.
-           nDuration = GetPM_ArcaneOrDevineCasterLevels( oPC , TRUE );
+           nDuration   = GetPM_ArcaneOrDevineCasterLevels( oPC , TRUE );
            eSummon     = EffectSummonCreature("cs_dustymummyf1",VFX_FNF_SUMMON_EPIC_UNDEAD,1.0f);
            sResRef     = "cs_dustymummyf1";
            nEpicSchool = FEAT_EPIC_SPELL_FOCUS_NECROMANCY;
@@ -1645,7 +1645,6 @@ int GetPM_ArcaneOrDevineCasterLevels( object oPC , int nIsUndead = FALSE)
     if(nIsUndead)
     {
     iArcane += iPM;
-    iDevine -= iDruid;
     }
     //Which one is higher?
     if(iDevine > iArcane)return iDevine;

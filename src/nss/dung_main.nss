@@ -250,6 +250,8 @@ void SpawnBlockers(object oTrans, string sDungeon, int nLevel)
   int nRandom;
   int nPercentageSpawnChance = GetLocalInt(oTrans,"blockerPercentage");
   int nBlockCount = GetLocalInt(oTrans,"blockerCount");
+  int nBlocked1 = GetLocalInt(oTrans,"banBlocker1");
+  int nBlocked2 = GetLocalInt(oTrans,"banBlocker2");
 
   int a;
   for(a=1;a<nBlockCount+1;a++) // Runs through all your blocker waypoints
@@ -257,6 +259,13 @@ void SpawnBlockers(object oTrans, string sDungeon, int nLevel)
    if((Random(100)+1)<=nPercentageSpawnChance)
    {
     nRandom = Random(6)+1; // Scale this up if you are adding more options
+
+    // Rerolls the random variable if a blocked number is not present
+    while(((nRandom == nBlocked1) || (nRandom == nBlocked2)) )
+    {
+      nRandom = Random(6)+1;
+    }
+
     switch(nRandom)
     {
      case 1: sBlockerType = "rockblockage" ; break;

@@ -416,10 +416,10 @@ void GenerateLoot( object oCritter, int nXPResult, int nIsChest=0 ){
         return;
     }
 
-    //uber loot droppers are always at 25%
+    //uber loot drops are 5% per party member
     if ( GetChallengeRating( oCritter ) > 40.0 ){
 
-        nPercent = 25;
+        nPercent = 5 * nXPResult;
     }
     else if ( nPercent == 0 ){
 

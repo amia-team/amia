@@ -8,12 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-- DTS deployed to Amia Frontier Orc 
-- New Hidden Area made for DTS for Amia Frontier Orcs
-- DTS deployed to Darkhold
-- New Hidden Area made for DTS for Darhold
+- DTS deployed to Amia Frontier Orcs, Darkhold, and Skull Peaks Trolls
+	- New Hidden Area made for DTS Orcs, Darkhold, and Trolls
 - Smelly Black Orb item (Fiendish Corrupted class unlocker) added to test server +5 merchant
 - Icons and items for OI animal hunting
+- Player portrait
 
 ### Changed
 
@@ -21,6 +20,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Kingdom of Kohlingen: Fort Cystana, South
 		- Orphanage playground finished
 		- 3 Interiors added (unfinished)
+	- Kingdom of Kohlingen: Greengarden
+		- Player Housing Added
 - Switched out a PLC for DTS with another smaller one to fix difficulty in using old PLC
 - Swapped out and added in new wings/tails for Abyssal Corrupted
 - Swapped out Stinkpot DTS hidden item from ghost visage item to regen ring
@@ -32,6 +33,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - OI: Eastern Cape; renamed to "Dragon's Fang Cape", guards swapped, construction added
 - OI: Eastern Plains; spawns changed
 - OI Boars & Bats now drop items for an event
+- Wizard, Sorcerer, Bard, Cleric, and Druid cantrips are now infinite cast
+- Flare, Ray of Frost, and Acid Splash are now cantrips for all cantrip classes
+- Flare Changed: 1d4 fire per 3 Caster Level, and -1 to Attack rolls
+- Ray of Frost Changed: 1d3 Cold per 2 Caster Level
+- Acid Splash Changed: 1d3 Acid per 2 Caster Level
+- Lesser Ring of Evasion and Kumakawa no longer have -2 Reflex save
+	- Players can just ask in-game to swap for a new version without the Reflex penalty
 
 ### Fixed
 

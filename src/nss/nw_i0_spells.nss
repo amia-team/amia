@@ -13,10 +13,10 @@
 // 2009/02/23 disco            Updated racial/class/area effects refresher
 
 
-
 #include "inc_ds_traps"
 #include "inc_td_shifter"
 
+//void main (){}
 // GZ: Number of spells in GetSpellBreachProtections
 const int NW_I0_SPELLS_MAX_BREACH = 33;
 
@@ -109,6 +109,8 @@ int AmIAHumanoid(object oTarget)
    }
    return FALSE;
 }
+
+void CantripRefresh();
 
 //::///////////////////////////////////////////////
 //:: spellsCure
@@ -892,3 +894,20 @@ void TrapDoElectricalDamage(int ngDamageMaster, int nSaveDC, int nSecondary)
     }
 }
 
+void CantripRefresh()
+{
+    int classCast    = GetLastSpellCastClass();
+
+    if (classCast == CLASS_TYPE_BARD || classCast == CLASS_TYPE_SORCERER){
+        ReadySpellLevel(OBJECT_SELF, 0, classCast);
+    }
+
+    else if (classCast == CLASS_TYPE_CLERIC || classCast == CLASS_TYPE_DRUID || classCast == CLASS_TYPE_WIZARD){
+            SetMemorizedSpellReady(OBJECT_SELF, classCast, 0, 0, TRUE);
+            SetMemorizedSpellReady(OBJECT_SELF, classCast, 0, 1, TRUE);
+            SetMemorizedSpellReady(OBJECT_SELF, classCast, 0, 2, TRUE);
+            SetMemorizedSpellReady(OBJECT_SELF, classCast, 0, 3, TRUE);
+            SetMemorizedSpellReady(OBJECT_SELF, classCast, 0, 4, TRUE);
+            SetMemorizedSpellReady(OBJECT_SELF, classCast, 0, 5, TRUE);
+    }
+}

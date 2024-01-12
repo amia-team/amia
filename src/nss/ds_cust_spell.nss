@@ -22,6 +22,7 @@ Date         Name        Reason
 //-----------------------------------------------------------------------------
 #include "inc_dc_spells"
 #include "aps_include"
+#include "NW_I0_SPELLS"
 
 //-----------------------------------------------------------------------------
 // prototypes
@@ -36,6 +37,8 @@ void main( ){
     object      oPC         = OBJECT_SELF;
     int         nSpell      = GetSpellId( );
     string      sPCKey      = GetName( GetPCKEY( oPC ) );
+
+    CantripRefresh();
 
     if( sPCKey == "" )
         sPCKey = GetLocalString( oPC, "PCKEY" );

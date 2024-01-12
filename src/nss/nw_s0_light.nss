@@ -27,7 +27,7 @@
 
 void main()
 {
-
+    CantripRefresh();
    // If code within the PreSpellCastHook (i.e. UMD) reports FALSE, do not run
     // this spell.
     if (!X2PreSpellCastCode())
@@ -103,6 +103,5 @@ void main()
         //Apply the VFX impact and effects
         ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oTarget, NewHoursToSeconds(nDuration));
     }
-
 }
 

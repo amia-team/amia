@@ -19,7 +19,7 @@
 
 void main()
 {
-
+    CantripRefresh();
 /*
   Spellcast Hook Code
   Added 2003-06-20 by Georg
@@ -37,44 +37,44 @@ void main()
 // End of Spell Cast Hook
 
     //Declare major variables
-	object oTarget = GetSpellTargetObject();
-	int nCasterLevel = GetCasterLevel(OBJECT_SELF);
+    object oTarget = GetSpellTargetObject();
+    int nCasterLevel = GetCasterLevel(OBJECT_SELF);
     int nDamageCount = nCasterLevel / 3;
     int nDamage;
-	int nMeta = GetMetaMagicFeat();
-	int nAttackDecrease = 1;
+    int nMeta = GetMetaMagicFeat();
+    int nAttackDecrease = 1;
 
     effect eVis = EffectVisualEffect(VFX_IMP_FLAME_S);
 
     if(!GetIsReactionTypeFriendly(oTarget))
     {
-	   //Fire cast spell at event for the specified target
-		SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, 416));
+       //Fire cast spell at event for the specified target
+        SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, 416));
 
         //Make SR Check
         if ((!MyResistSpell(OBJECT_SELF, oTarget)))
         {
-			// roll damage
-			nDamage = d4(nDamageCount);
-			//Make metamagic check
-			if (nMeta == METAMAGIC_MAXIMIZE)
-			{
-			   nDamage = 4*nDamageCount;
-			}
-			if (nMeta == METAMAGIC_EMPOWER)
-			{
-				nDamage = nDamage + nDamage/2;
-			}
-			
-			effect eDamage = EffectDamage(nDamage, DAMAGE_TYPE_FIRE);
-			ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
-			ApplyEffectToObject(DURATION_TYPE_INSTANT, eDamage, oTarget);
-			
-			if (MySavingThrow(SAVING_THROW_FORT, oTarget, GetSpellSaveDC()) == FALSE)
-			{
-				effect eBad = EffectAttackDecrease(nAttackDecrease);
-				ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eBad, oTarget, TurnsToSeconds(1));
-			}
+            // roll damage
+            nDamage = d4(nDamageCount);
+            //Make metamagic check
+            if (nMeta == METAMAGIC_MAXIMIZE)
+            {
+               nDamage = 4*nDamageCount;
+            }
+            if (nMeta == METAMAGIC_EMPOWER)
+            {
+                nDamage = nDamage + nDamage/2;
+            }
+
+            effect eDamage = EffectDamage(nDamage, DAMAGE_TYPE_FIRE);
+            ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+            ApplyEffectToObject(DURATION_TYPE_INSTANT, eDamage, oTarget);
+
+            if (MySavingThrow(SAVING_THROW_FORT, oTarget, GetSpellSaveDC()) == FALSE)
+            {
+                effect eBad = EffectAttackDecrease(nAttackDecrease);
+                ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eBad, oTarget, TurnsToSeconds(1));
+            }
         }
     }
 }

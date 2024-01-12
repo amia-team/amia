@@ -15,7 +15,7 @@
 
 void main()
 {
-
+    CantripRefresh();
 /*
   Spellcast Hook Code
   Added 2003-06-23 by GeorgZ

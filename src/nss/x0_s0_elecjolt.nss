@@ -17,7 +17,7 @@
 
 void main()
 {
-
+    CantripRefresh();
 /*
   Spellcast Hook Code
   Added 2003-06-20 by Georg
@@ -38,7 +38,7 @@ void main()
     int nCasterLevel = GetCasterLevel(OBJECT_SELF);
     int nDamageCount = nCasterLevel / 2;
     int nDamage;
-	int nMeta = GetMetaMagicFeat();
+    int nMeta = GetMetaMagicFeat();
 
     effect eVis = EffectVisualEffect(VFX_IMP_LIGHTNING_S);
     if(!GetIsReactionTypeFriendly(oTarget))
@@ -48,17 +48,17 @@ void main()
         //Make SR Check
         if(!MyResistSpell(OBJECT_SELF, oTarget))
         {
-			// roll damage
-			nDamage = d3(nDamageCount);
-			//Make metamagic  check
-			if (nMeta == METAMAGIC_MAXIMIZE)
-			{
-			   nDamage = 3*nDamageCount;
-			}
-			if (nMeta == METAMAGIC_EMPOWER)
-			{
-				nDamage = nDamage + nDamage/2;
-			}
+            // roll damage
+            nDamage = d3(nDamageCount);
+            //Make metamagic  check
+            if (nMeta == METAMAGIC_MAXIMIZE)
+            {
+               nDamage = 3*nDamageCount;
+            }
+            if (nMeta == METAMAGIC_EMPOWER)
+            {
+                nDamage = nDamage + nDamage/2;
+            }
 
             //Set damage effect
 

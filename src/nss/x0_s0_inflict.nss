@@ -17,7 +17,10 @@
 
 void main()
 {
-
+    int cantripCheck = GetSpellId();
+if (cantripCheck == 431){
+    CantripRefresh();
+}
 /*
   Spellcast Hook Code
   Added 2003-06-20 by Georg

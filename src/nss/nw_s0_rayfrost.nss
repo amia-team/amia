@@ -22,7 +22,7 @@
 
 void main()
 {
-
+    CantripRefresh();
 /*
   Spellcast Hook Code
   Added 2003-06-20 by Georg
@@ -40,13 +40,13 @@ void main()
 // End of Spell Cast Hook
 
     // Declare major variables
-    object oTarget = GetSpellTargetObject();
-    int nMeta = GetMetaMagicFeat();
+    object oTarget   = GetSpellTargetObject();
+    int nMeta        = GetMetaMagicFeat();
     int nCasterLevel = GetCasterLevel(OBJECT_SELF);
     int nDamageCount = nCasterLevel / 2;
     int nDamage;
-    effect eVis = EffectVisualEffect(VFX_IMP_FROST_S);
-    effect eRay = EffectBeam(VFX_BEAM_COLD, OBJECT_SELF, BODY_NODE_HAND);
+    effect eVis      = EffectVisualEffect(VFX_IMP_FROST_S);
+    effect eRay      = EffectBeam(VFX_BEAM_COLD, OBJECT_SELF, BODY_NODE_HAND);
 
     if(!GetIsReactionTypeFriendly(oTarget))
     {
@@ -60,13 +60,13 @@ void main()
              nDamage= d3(nDamageCount);
             //Make metamagic  check
             if (nMeta == METAMAGIC_MAXIMIZE)
-			{
-				nDamage= 3*nDamageCount;
-			}
-			if (nMeta == METAMAGIC_EMPOWER)
-			{
-				nDamage = nDamage + nDamage/2;
-			}
+            {
+                nDamage= 3*nDamageCount;
+            }
+            if (nMeta == METAMAGIC_EMPOWER)
+            {
+                nDamage = nDamage + nDamage/2;
+            }
             //Set damage effect
             effect eDamage = EffectDamage(nDamage, DAMAGE_TYPE_COLD);
             //Apply the VFX impact and damage effect
@@ -74,5 +74,6 @@ void main()
             ApplyEffectToObject(DURATION_TYPE_INSTANT, eDamage, oTarget);
         }
     }
+
     ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eRay, oTarget, 1.7);
 }

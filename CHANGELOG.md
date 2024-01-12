@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - DTS deployed to Darkhold
 - New Hidden Area made for DTS for Darhold
 - Smelly Black Orb item (Fiendish Corrupted class unlocker) added to test server +5 merchant
+- Icons and items for OI animal hunting
 
 ### Changed
 
@@ -27,6 +28,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added DTS support for multiple triggers for multiple entrances to a dungeon
 - EMD Mummy Dust will no longer block undead summon for Druid (allowing for reskins)
 - XP Dragon on test server gives more gold
+- OI: Southeastern Bay; spawns changed
+- OI: Eastern Cape; renamed to "Dragon's Fang Cape", guards swapped, construction added
+- OI: Eastern Plains; spawns changed
+- OI Boars & Bats now drop items for an event
 
 ### Fixed
 

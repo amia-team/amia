@@ -40,6 +40,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Acid Splash Changed: 1d3 Acid per 2 Caster Level
 - Lesser Ring of Evasion and Kumakawa no longer have -2 Reflex save
 	- Players can just ask in-game to swap for a new version without the Reflex penalty
+- Salandran Temple NPCs updated per plot
 
 ### Fixed
 

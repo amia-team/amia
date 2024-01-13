@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
+### Changed
+
+### Fixed
+
+## [2.9.2A - 2024-01-013]
+
+### Added
+
 - DTS deployed to Amia Frontier Orcs, Darkhold, and Skull Peaks Trolls
 	- New Hidden Area made for DTS Orcs, Darkhold, and Trolls
 - Smelly Black Orb item (Fiendish Corrupted class unlocker) added to test server +5 merchant

@@ -38,7 +38,7 @@ void main(){
 
 
     //Check if creature has an on-spawn effect.
-    if (spawnEffect = TRUE)
+    if (spawnEffect == TRUE)
     {
         effect mob1 = EffectFromConstant(effect1);
         effect mob2 = EffectFromConstant(effect2);
@@ -55,7 +55,7 @@ void main(){
         SetObjectVisualTransform(oCritter, 10, scale);
     }
 
-    if(collision = 1){
+    if(collision == 1){
         effect eGhost = EffectCutsceneGhost();
         ApplyEffectToObject(DURATION_TYPE_PERMANENT, eGhost, oCritter);
     }

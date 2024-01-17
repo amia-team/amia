@@ -39,6 +39,7 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
     int nSkillRank1;
     int nSkillRank2;
     int nSkillRank3;
+    int nSkillRank4;
     int nDiceRoll = Random(20)+1;
     int nDiceRollTotal;
     object oDungeonObject = GetLocalObject(oPC,"dungobject");
@@ -51,6 +52,7 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
      nSkillRank1 = GetSkillRank(SKILL_PERSUADE,oPC);
      nSkillRank2 = GetSkillRank(SKILL_BLUFF,oPC);
      nSkillRank3 = GetSkillRank(SKILL_INTIMIDATE,oPC);
+     nSkillRank4 = GetSkillRank(SKILL_PICK_POCKET,oPC);
 
      if(nNode==1)
      {
@@ -106,6 +108,23 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
         SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank3) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
        }
      }
+     else if(nNode==4)
+     {
+        sSkill = "PICK POCKET";
+        nDiceRollTotal = nDiceRoll + nSkillRank4;
+
+       if(nDiceRollTotal >= nDC)
+       {
+        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank4) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
+        RewardPC(oPC, nLevel, sType, sWaypoint);
+        AssignCommand(oDungeonObject,ActionSpeakString("No! I am busy! Shoo! *As they are distracted shooing you off you successfully pick pocket the map, and location off of them. Revealing the door way after they take off*"));
+        DelayCommand(0.5,DestroyObject(oDungeonObject));
+       }
+       else
+       {
+        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank4) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
+       }
+     }
 
     }
     else if(sType == "talknpc")
@@ -113,6 +132,7 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
      nSkillRank1 = GetSkillRank(SKILL_PERSUADE,oPC);
      nSkillRank2 = GetSkillRank(SKILL_BLUFF,oPC);
      nSkillRank3 = GetSkillRank(SKILL_INTIMIDATE,oPC);
+     nSkillRank4 = GetSkillRank(SKILL_PICK_POCKET,oPC);
 
      if(nNode==1)
      {
@@ -167,7 +187,24 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
        {
         SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank3) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
        }
-      }
+     }
+     else if(nNode==4)
+     {
+        sSkill = "PICK POCKET";
+        nDiceRollTotal = nDiceRoll + nSkillRank4;
+
+       if(nDiceRollTotal >= nDC)
+       {
+        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank4) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
+        RewardPC(oPC, nLevel, sType, sWaypoint);
+        AssignCommand(oDungeonObject,ActionSpeakString("I said pike off! *As they grumble and take off you quickly picket pocket them successfully and recover a bag of something*"));
+        DelayCommand(0.5,DestroyObject(oDungeonObject));
+       }
+       else
+       {
+        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank4) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
+       }
+     }
     }
     else if(sType == "injuriednpc")
     {

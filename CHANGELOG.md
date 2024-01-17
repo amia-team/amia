@@ -7,10 +7,31 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Beacon system for settlement attacks, including an item to engage it
 
 ### Changed
+- Area changes
+	- Moonpier: exterior rebuilding complete (interiors pending); Beacon finished
+	- Traveller's Rest: Beacon finished
+	- Southport East: Beacon finished
+	- Fort Cystana: Beacon finished
+	- Oakmist Vale Treetops: Beacon finished
+	- Blue Lagoon: Beacon finished
+	- Winya Ravana: Beacon finished
+	- Whitestag: Beacon finished
+	- Salandran Temple: Beacon finished
+	- Greengarden: Beacon finished
+	- Ridgewood: Beacon finished
+	- The Dale: Beacon finished
+	- Eilistraeen Shrine: Beacon finished
+- Gator/Alligator monsters that spawn all drop alligator hide for quest now
+- A few dialogue changes to reflect plot changes
+- Job System camel NPCs updated to new camel skins
+- Epic loot drop percentage changed to 5% per party member, to a maximum of 50% with ten party members
 
 ### Fixed
+- Bug fix for trophy drops in OI
+- Gator hide tanner quest in Moonpier re-added
 
 ## [2.9.2A - 2024-01-013]
 

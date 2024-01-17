@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Beacon system for settlement attacks, including an item to engage it
-- Swarm summoner: summons up to 15 identical level 1 creatures, can be fully customized to any 1 creature
+- Swarm summoner: summons up to 15 level 1 creatures, can be fully customized with up to 3 creatures
 
 ### Changed
 - Area changes

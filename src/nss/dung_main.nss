@@ -317,6 +317,7 @@ void SpawnChallenges(object oTrans, string sDungeon, int nLevel)
   string sChallengePLC;
   string sChallengeObject;
   string sChallengeName;
+  string sChallengeBio;
   object oTempChallenge;
 
   for(a=1;a<nChallengeCount+1;a++) // Runs through all your blocker waypoints
@@ -331,16 +332,15 @@ void SpawnChallenges(object oTrans, string sDungeon, int nLevel)
     nRandType = Random(9)+1; // Scale this up if you are adding more options
     switch(nRandType) // Generates random challenge type
     {
-
-     case 1: sChallengeType = "talknpc"; sChallengeName = "Knowledgable Adventurer"; nIsNPC=1; sChallengeObject = RandomRaceAndGender(); break;
-     case 2: sChallengeType = "injuriednpc"; sChallengeName = "Injuried Adventurer"; nIsNPC=1; sChallengeObject = RandomRaceAndGender(); break;
-     case 3: sChallengeType = "lorepuzzle"; sChallengeName = "Quizzical Contraption"; nIsNPC=0; sChallengeObject = RandomPuzzlePLC(); break;
-     case 4: sChallengeType = "spellcraftumdpuzzle"; sChallengeName = "Shimmering Magical Contraption"; nIsNPC=0; sChallengeObject = RandomPuzzlePLC(); break;
-     case 5: sChallengeType = "cagedanimal"; nIsNPC=0; nAnimalType=RandomAnimal(); sChallengeObject = AnimalLevel(nLevel); break;
-     case 6: sChallengeType = "depressednpc"; sChallengeName = "Distressed Adventurer"; nIsNPC=1; sChallengeObject = RandomRaceAndGender(); break;
-     case 7: sChallengeType = "appriasepuzzle"; sChallengeName = "Useless Junk"; nIsNPC=0; sChallengeObject = RandomPuzzlePLC(); break;
-     case 8: sChallengeType = "summonshrine"; sChallengeName = "Glowing Contraption"; nIsNPC=0; sChallengeObject = RandomPuzzlePLC(); break;
-     case 9: sChallengeType = "buffshrine"; sChallengeName = "Pulsing Contraption"; nIsNPC=0; sChallengeObject = RandomPuzzlePLC(); break;
+     case 1: sChallengeType = "talknpc"; sChallengeName = "Knowledgeable Adventurer"; sChallengeBio = "This individual appears to be quite knowledgeable about something. Perhaps you should talk to them?"; nIsNPC=1; sChallengeObject = RandomRaceAndGender(); break;
+     case 2: sChallengeType = "injuriednpc"; sChallengeName = "Injured Adventurer"; sChallengeBio = "This poor individual is injured! Perhaps you should offer some aid?"; nIsNPC=1; sChallengeObject = RandomRaceAndGender(); break;
+     case 3: sChallengeType = "lorepuzzle"; sChallengeName = "Quizzical Contraption"; sChallengeBio = "What a mysterious device before you. Perhaps you could twinker with it a bit and solve it?"; nIsNPC=0; sChallengeObject = RandomPuzzlePLC(); break;
+     case 4: sChallengeType = "spellcraftumdpuzzle"; sChallengeName = "Shimmering Magical Contraption"; sChallengeBio = "This device shimmers with magic and yet it appears to be a puzzle of some kind! Can you solve it?"; nIsNPC=0; sChallengeObject = RandomPuzzlePLC(); break;
+     case 5: sChallengeType = "cagedanimal"; nIsNPC=0; nAnimalType=RandomAnimal(); sChallengeBio = "This animal appears like it might be lost? Perhaps a certain talented Druid or Ranger might be interested in communicating with them."; sChallengeObject = AnimalLevel(nLevel); break;
+     case 6: sChallengeType = "depressednpc"; sChallengeName = "Distressed Adventurer"; sChallengeBio = "This poor individual looks to be in distress! Are those tears you see? Perhaps you should speak with them?"; nIsNPC=1; sChallengeObject = RandomRaceAndGender(); break;
+     case 7: sChallengeType = "appriasepuzzle"; sChallengeName = "Useless Junk"; sChallengeBio = "What an absolute pile of junk! You should just ignore this and move on... absolutely nothing to see here"; nIsNPC=0; sChallengeObject = RandomPuzzlePLC(); break;
+     case 8: sChallengeType = "summonshrine"; sChallengeName = "Glowing Contraption"; sChallengeBio = "This device seems to give off a powerful glow. You should see if you can claim it for yourself?"; nIsNPC=0; sChallengeObject = RandomPuzzlePLC(); break;
+     case 9: sChallengeType = "buffshrine"; sChallengeName = "Pulsing Contraption"; sChallengeBio = "This device seems to give off a powerful pulse of magic. You should see if you can claim it for yourself?"; nIsNPC=0; sChallengeObject = RandomPuzzlePLC(); break;
     }
 
 
@@ -381,16 +381,17 @@ void SpawnChallenges(object oTrans, string sDungeon, int nLevel)
      {
       SetName(oTempChallenge,sAnimalName);
       SetCreatureAppearanceType(oTempChallenge,nAnimalType);
-      SetDescription(oTempChallenge,"This animal appears like it might be lost? Perhaps a certain talented Druid or Ranger might be interested in communicating with them.");
+      SetDescription(oTempChallenge,sChallengeBio);
      }
      else
      {
       SetName(oTempChallenge,sChallengeName);
+      SetDescription(oTempChallenge,sChallengeBio);
      }
 
      SetFacing(GetFacing(oWayPoint));
      SetLocalString(oTempChallenge,"waypoint",sDungeon+"Challenge"+IntToString(a));
-    SetLocalInt(oTempChallenge,"level",nLevel);
+     SetLocalInt(oTempChallenge,"level",nLevel);
      SetTag(oTempChallenge,"dungtool");
    }
   }  // End of for loop a

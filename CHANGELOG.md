@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Beacon system for settlement attacks, including an item to engage it
 - Swarm summoner: summons up to 15 level 1 creatures, can be fully customized with up to 3 creatures
+- Added in a custom random NPC list for DTS for the underdark areas
+- Added in the ability to ban NPCs or PLCs from spawning in DTS
+- Added bios to all DTS NPC/PLC
 
 ### Changed
 - Area changes
@@ -33,6 +36,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Bug fix for trophy drops in OI
 - Gator hide tanner quest in Moonpier re-added
+- Fixed DTS spelling errors, and added ports to NPCS
 
 ## [2.9.2A - 2024-01-013]
 

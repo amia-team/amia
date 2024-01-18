@@ -21,7 +21,7 @@ void SpawnChallenges(object oTrans, string sDungeon, int nLevel);
 void SpawnHiddenDoors(object oTrans, string sDungeon, int nLevel);
 
 // Generates a random resref string from templates premade. These templates represent male/female of almost all races.
-string RandomRaceAndGender();
+string RandomRaceAndGender(object oTrans);
 
 // Generates a random animal skin number, and name to go with it
 int RandomAnimal();
@@ -309,6 +309,16 @@ void SpawnChallenges(object oTrans, string sDungeon, int nLevel)
 {
   int nRandType;
   int nChallengeCount = GetLocalInt(oTrans,"challengeCount");
+  int nBanPLC = GetLocalInt(oTrans,"banPLC");
+  int nBanNPC = GetLocalInt(oTrans,"banNPC");
+
+  // Making sure there isn't any weirdness if someone messes up and sets ban to both types.
+  if((nBanPLC==1) && (nBanNPC==1))
+  {
+    nBanPLC=0;
+    nBanNPC=0;
+  }
+
   int a;
   int nIsNPC;
   int nAnimalType;
@@ -332,24 +342,23 @@ void SpawnChallenges(object oTrans, string sDungeon, int nLevel)
     nRandType = Random(9)+1; // Scale this up if you are adding more options
     switch(nRandType) // Generates random challenge type
     {
-     case 1: sChallengeType = "talknpc"; sChallengeName = "Knowledgeable Adventurer"; sChallengeBio = "This individual appears to be quite knowledgeable about something. Perhaps you should talk to them?"; nIsNPC=1; sChallengeObject = RandomRaceAndGender(); break;
-     case 2: sChallengeType = "injuriednpc"; sChallengeName = "Injured Adventurer"; sChallengeBio = "This poor individual is injured! Perhaps you should offer some aid?"; nIsNPC=1; sChallengeObject = RandomRaceAndGender(); break;
+     case 1: sChallengeType = "talknpc"; sChallengeName = "Knowledgeable Adventurer"; sChallengeBio = "This individual appears to be quite knowledgeable about something. Perhaps you should talk to them?"; nIsNPC=1; sChallengeObject = RandomRaceAndGender(oTrans); break;
+     case 2: sChallengeType = "injuriednpc"; sChallengeName = "Injured Adventurer"; sChallengeBio = "This poor individual is injured! Perhaps you should offer some aid?"; nIsNPC=1; sChallengeObject = RandomRaceAndGender(oTrans); break;
      case 3: sChallengeType = "lorepuzzle"; sChallengeName = "Quizzical Contraption"; sChallengeBio = "What a mysterious device before you. Perhaps you could twinker with it a bit and solve it?"; nIsNPC=0; sChallengeObject = RandomPuzzlePLC(); break;
      case 4: sChallengeType = "spellcraftumdpuzzle"; sChallengeName = "Shimmering Magical Contraption"; sChallengeBio = "This device shimmers with magic and yet it appears to be a puzzle of some kind! Can you solve it?"; nIsNPC=0; sChallengeObject = RandomPuzzlePLC(); break;
-     case 5: sChallengeType = "cagedanimal"; nIsNPC=0; nAnimalType=RandomAnimal(); sChallengeBio = "This animal appears like it might be lost? Perhaps a certain talented Druid or Ranger might be interested in communicating with them."; sChallengeObject = AnimalLevel(nLevel); break;
-     case 6: sChallengeType = "depressednpc"; sChallengeName = "Distressed Adventurer"; sChallengeBio = "This poor individual looks to be in distress! Are those tears you see? Perhaps you should speak with them?"; nIsNPC=1; sChallengeObject = RandomRaceAndGender(); break;
+     case 5: sChallengeType = "cagedanimal"; nAnimalType=RandomAnimal(); sChallengeBio = "This animal appears like it might be lost? Perhaps a certain talented Druid or Ranger might be interested in communicating with them."; nIsNPC=1; sChallengeObject = AnimalLevel(nLevel); break;
+     case 6: sChallengeType = "depressednpc"; sChallengeName = "Distressed Adventurer"; sChallengeBio = "This poor individual looks to be in distress! Are those tears you see? Perhaps you should speak with them?"; nIsNPC=1; sChallengeObject = RandomRaceAndGender(oTrans); break;
      case 7: sChallengeType = "appriasepuzzle"; sChallengeName = "Useless Junk"; sChallengeBio = "What an absolute pile of junk! You should just ignore this and move on... absolutely nothing to see here"; nIsNPC=0; sChallengeObject = RandomPuzzlePLC(); break;
      case 8: sChallengeType = "summonshrine"; sChallengeName = "Glowing Contraption"; sChallengeBio = "This device seems to give off a powerful glow. You should see if you can claim it for yourself?"; nIsNPC=0; sChallengeObject = RandomPuzzlePLC(); break;
      case 9: sChallengeType = "buffshrine"; sChallengeName = "Pulsing Contraption"; sChallengeBio = "This device seems to give off a powerful pulse of magic. You should see if you can claim it for yourself?"; nIsNPC=0; sChallengeObject = RandomPuzzlePLC(); break;
     }
-
 
     int i;
     object oSubWayPoint;
     location lSubWayPoint;
     object oTemp;
 
-    if(nIsNPC==1)// The extra PLCs will only be placed IF it is an NPC, otherwise it will just throw down the animal or interactable PLC
+    if((nIsNPC==1) || (nBanNPC==0))// The extra PLCs will only be placed IF it is an NPC, otherwise it will just throw down the animal or interactable PLC
     {
      for(i=1;i<nWaypointCount+1;i++) // Runs through all your sub challenge waypoints for each waypoint if they exist
      {
@@ -366,15 +375,27 @@ void SpawnChallenges(object oTrans, string sDungeon, int nLevel)
 
     }   // End of for loop i
 
-    if((nIsNPC==1) || (sChallengeType=="cagedanimal"))
+    if(nIsNPC==1)
     {
-     oTempChallenge = CreateObject(OBJECT_TYPE_CREATURE,sChallengeObject,lWayPoint);
+     if(nBanNPC==0)
+     {
+      oTempChallenge = CreateObject(OBJECT_TYPE_CREATURE,sChallengeObject,lWayPoint);
+     }
     }
     else
     {
-     oTempChallenge = CreateObject(OBJECT_TYPE_PLACEABLE,sChallengeObject,lWayPoint);
+     if(nBanPLC==0)
+     {
+      oTempChallenge = CreateObject(OBJECT_TYPE_PLACEABLE,sChallengeObject,lWayPoint);
+     }
     }
 
+    if(((nBanNPC==1) && (nIsNPC==1)) || ((nBanPLC==1) && (nIsNPC==0)))
+    {
+       // DO NOTHING
+    }
+    else
+    {
      SetLocalString(oTempChallenge,"type",sChallengeType);
 
      if(sChallengeType=="cagedanimal") // If it is an animal there are special conditions
@@ -393,6 +414,7 @@ void SpawnChallenges(object oTrans, string sDungeon, int nLevel)
      SetLocalString(oTempChallenge,"waypoint",sDungeon+"Challenge"+IntToString(a));
      SetLocalInt(oTempChallenge,"level",nLevel);
      SetTag(oTempChallenge,"dungtool");
+    }
    }
   }  // End of for loop a
 
@@ -403,11 +425,21 @@ void SpawnHiddenDoors(object oTrans, string sDungeon, int nLevel)
 
   int nHDoorCount = GetLocalInt(oTrans,"hdoorCount");  // How many hidden door challenges
   int nDoorWPCount = GetLocalInt(oTrans,"doorwp");  // How many hidden door destination waypoints
+  int nBanPLC = GetLocalInt(oTrans,"banPLC");
+  int nBanNPC = GetLocalInt(oTrans,"banNPC");
+
+  // Making sure there isn't any weirdness if someone messes up and sets ban to both types.
+  if((nBanPLC==1) && (nBanNPC==1))
+  {
+    nBanPLC=0;
+    nBanNPC=0;
+  }
+
   int a;
   int nRandom;
   int nRandType;
   int nRandLockDoor;
-  int nNPC;
+  int nIsNPC;
   int nDC = nLevel + 10 + (nLevel-(nLevel/3));
   int nPercentageSpawnChance = GetLocalInt(oTrans,"hdoorPercentage");
   object oTemp;
@@ -422,11 +454,11 @@ void SpawnHiddenDoors(object oTrans, string sDungeon, int nLevel)
     nRandLockDoor = Random(2) + 1;
     switch(nRandType)
     {
-     case 1: sDoorType = "dungdoorspellcra" ; break;
-     case 2: sDoorType = "dungdoorsearch" ; break;
-     case 3: sDoorType = "hiddendoornpc"; sRandomNPC = RandomRaceAndGender(); nNPC=1; break;   // Special case hidden door. NPC with map spawns.
-     case 4: sDoorType = "dungdoorlore" ; break;
-     case 5: if(nRandLockDoor==1){sDoorType = "hiddendoorlocked";}else if(nRandLockDoor==2){sDoorType = "hiddendoorlock2";} break;
+     case 1: sDoorType = "dungdoorspellcra" ; nIsNPC=0; break;
+     case 2: sDoorType = "dungdoorsearch" ; nIsNPC=0; break;
+     case 3: sDoorType = "hiddendoornpc"; sRandomNPC = RandomRaceAndGender(oTrans); nIsNPC=1; break;   // Special case hidden door. NPC with map spawns.
+     case 4: sDoorType = "dungdoorlore" ; nIsNPC=0; break;
+     case 5: nIsNPC=0; if(nRandLockDoor==1){sDoorType = "hiddendoorlocked";}else if(nRandLockDoor==2){sDoorType = "hiddendoorlock2";} break;
     }
 
     nRandom = Random(nDoorWPCount)+1;
@@ -436,50 +468,87 @@ void SpawnHiddenDoors(object oTrans, string sDungeon, int nLevel)
 
     if(sDoorType=="hiddendoornpc")
     {
-     oTemp = CreateObject(OBJECT_TYPE_CREATURE,sRandomNPC,lWayPoint);
-     SetName(oTemp,"Distracted Adventurer");
+     if(nBanNPC==0)
+     {
+      oTemp = CreateObject(OBJECT_TYPE_CREATURE,sRandomNPC,lWayPoint);
+      SetName(oTemp,"Distracted Adventurer");
+     }
     }
     else
     {
-     oTemp = CreateObject(OBJECT_TYPE_PLACEABLE,sDoorType,lWayPoint);
+     if(nBanPLC==0)
+     {
+      oTemp = CreateObject(OBJECT_TYPE_PLACEABLE,sDoorType,lWayPoint);
+     }
     }
 
-    SetLocalInt(oTemp,"active",1);
-    SetLocalInt(oTemp,"level",nLevel);
-    SetLocalString(oTemp,"waypoint",sDungeon+"HDoor"+IntToString(a));
-    SetFacing(GetFacing(oWayPoint));  // Sets the facing the same as the waypoint
-    SetLocalString(oTemp,"destination",sDungeon+"DoorWP"+IntToString(nRandom));
-    SetLocalString(oTemp,"type",sDoorType);
-    SetTag(oTemp,"dungtool");
-
-    if((sDoorType == "hiddendoorlocked") || (sDoorType == "hiddendoorlock2"))
+    if(((nBanNPC==1) && (nIsNPC==1)) || ((nBanPLC==1) && (nIsNPC==0)))
     {
+       // DO NOTHING
+    }
+    else
+    {
+     SetLocalInt(oTemp,"active",1);
+     SetLocalInt(oTemp,"level",nLevel);
+     SetLocalString(oTemp,"waypoint",sDungeon+"HDoor"+IntToString(a));
+     SetFacing(GetFacing(oWayPoint));  // Sets the facing the same as the waypoint
+     SetLocalString(oTemp,"destination",sDungeon+"DoorWP"+IntToString(nRandom));
+     SetLocalString(oTemp,"type",sDoorType);
+     SetTag(oTemp,"dungtool");
+
+     if((sDoorType == "hiddendoorlocked") || (sDoorType == "hiddendoorlock2"))
+     {
       SetLockLockDC(oTemp,nDC);
       SetLockUnlockDC(oTemp,nDC);
       SetLocked(oTemp,1);
+     }
     }
+
    }
   }
 }
 
-string RandomRaceAndGender()
+string RandomRaceAndGender(object oTrans)
 {
+   int nUnderdark = GetLocalInt(oTrans,"underdark");
    string sRace = "";
    int nRandRace = Random(12)+1; // Scale this up if you are adding more options
-   switch(nRandRace)
+
+   if(nUnderdark==0)
    {
-    case 1: sRace = "dungnpcfhuman" ; break;
-    case 2: sRace = "dungnpcmhuman" ; break;
-    case 3: sRace = "dungnpcfelf" ; break;
-    case 4: sRace = "dungnpcmelf" ; break;
-    case 5: sRace = "dungnpcfdwarf" ; break;
-    case 6: sRace = "dungnpcmdwarf" ; break;
-    case 7: sRace = "dungnpcfhalflin" ; break;
-    case 8: sRace = "dungnpcmhalflin" ; break;
-    case 9: sRace = "dungnpcfhalforc" ; break;
-    case 10: sRace = "dungnpcmhalforc" ; break;
-    case 11: sRace = "dungnpcfgnome" ; break;
-    case 12: sRace = "dungnpcmgnome" ; break;
+    switch(nRandRace)
+    {
+     case 1: sRace = "dungnpcfhuman" ; break;
+     case 2: sRace = "dungnpcmhuman" ; break;
+     case 3: sRace = "dungnpcfelf" ; break;
+     case 4: sRace = "dungnpcmelf" ; break;
+     case 5: sRace = "dungnpcfdwarf" ; break;
+     case 6: sRace = "dungnpcmdwarf" ; break;
+     case 7: sRace = "dungnpcfhalflin" ; break;
+     case 8: sRace = "dungnpcmhalflin" ; break;
+     case 9: sRace = "dungnpcfhalforc" ; break;
+     case 10: sRace = "dungnpcmhalforc" ; break;
+     case 11: sRace = "dungnpcfgnome" ; break;
+     case 12: sRace = "dungnpcmgnome" ; break;
+    }
+   }
+   else if(nUnderdark==1)
+   {
+    switch(nRandRace)
+    {
+     case 1: sRace = "dungnpcmsvif" ; break;
+     case 2: sRace = "dungnpcfsvif" ; break;
+     case 3: sRace = "dungnpcmduergar" ; break;
+     case 4: sRace = "dungnpcfduergar" ; break;
+     case 5: sRace = "dungnpcmdrow" ; break;
+     case 6: sRace = "dungnpcfdrow" ; break;
+     case 7: sRace = "dungnpcmkobold" ; break;
+     case 8: sRace = "dungnpcfkobold" ; break;
+     case 9: sRace = "dungnpcmkuotoa" ; break;
+     case 10: sRace = "dungnpcfkuotoa" ; break;
+     case 11: sRace = "dungnpcmgoblin" ; break;
+     case 12: sRace = "dungnpcfgoblin" ; break;
+    }
    }
 
    return sRace;

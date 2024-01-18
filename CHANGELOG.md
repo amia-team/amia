@@ -4,31 +4,6 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## Added
-- DTS to Frozenfar:Raider's Area in the Underdark
-- ud_raiderunknown for Raider hidden Area
-- mushrooms to svirf pool pillars in L'Obsul
-- js spider to spider Ranch
-- construction in front of closed bank
-- hunting cats (non-aggressive) to Old city
-- duke's estate interior to Greengarden, including transitions
-- rat spawn to Greengarden, Greengarden Outskirts, Fey Lake West
-- duke's personal guard for Greengarden
-
-##Changed
-- the market area so there will be no more air walking
-- set 2 of 4 idol statues (redundant) to static to reduce Lagoon
-- reduced rat spawn in Old city
-- reduced debris in Old city
-- dialog with the rat quest giver
-
-## Fixed
-- various floor heights to remove fuzziness
-- took the dirt out of the bar (adjusted the tiles there)
-- a door that should have been locked
-
-
-
 
 ### Added
 - Beacon system for settlement attacks, including an item to engage it
@@ -36,6 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added in a custom random NPC list for DTS for the underdark areas
 - Added in the ability to ban NPCs or PLCs from spawning in DTS
 - Added bios to all DTS NPC/PLC
+- DTS to Frozenfar: Raider's Area in the Underdark
+- Guard summoner for settlements - only functional in designated settlement areas
+- Mage Guard settlement template NPC complete
 
 ### Changed
 - Area changes
@@ -52,6 +30,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Ridgewood: Beacon finished
 	- The Dale: Beacon finished
 	- Eilistraeen Shrine: Beacon finished
+	- Kingdom of Kohlingen: Greengarden
+		- the market area so there will be no more air walking
+		- set 2 of 4 idol statues (redundant) to static to reduce Lagoon
+		- reduced rat spawn in Old city
+		- reduced debris in Old city
+		- dialog with the rat quest giver
+		- hunting cats (non-aggressive) to Old city
+		- duke's estate interior to Greengarden, including transitions
+		- rat spawn to Greengarden, Greengarden Outskirts, Fey Lake West
+		- duke's personal guard for Greengarden
+	- Underdark
+		- ud_raiderunknown for Raider hidden Area
+		- mushrooms to svirf pool pillars in L'Obsul
+		- js spider to spider Ranch
+		- construction in front of closed bank
+		- various floor heights to remove fuzziness
+		- took the dirt out of the bar (adjusted the tiles there)
+		- a door that should have been locked
 - Gator/Alligator monsters that spawn all drop alligator hide for quest now
 - A few dialogue changes to reflect plot changes
 - Job System camel NPCs updated to new camel skins
@@ -61,6 +57,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Bug fix for trophy drops in OI
 - Gator hide tanner quest in Moonpier re-added
 - Fixed DTS spelling errors, and added ports to NPCS
+- Shadow Mastiff bug fix
 
 ## [2.9.2A - 2024-01-013]
 

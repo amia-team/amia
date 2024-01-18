@@ -4,7 +4,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## Added
+- DTS to Frozenfar:Raider's Area in the Underdark
+- ud_raiderunknown for Raider hidden Area
+- mushrooms to svirf pool pillars in L'Obsul
+- js spider to spider Ranch
+- construction in front of closed bank
+- hunting cats (non-aggressive) to Old city
+- duke's estate interior to Greengarden, including transitions
+- rat spawn to Greengarden, Greengarden Outskirts, Fey Lake West
+- duke's personal guard for Greengarden
+
+##Changed
+- the market area so there will be no more air walking
+- set 2 of 4 idol statues (redundant) to static to reduce Lagoon
+- reduced rat spawn in Old city
+- reduced debris in Old city
+- dialog with the rat quest giver
+
+## Fixed
+- various floor heights to remove fuzziness
+- took the dirt out of the bar (adjusted the tiles there)
+- a door that should have been locked
+
+
+
 
 ### Added
 - Beacon system for settlement attacks, including an item to engage it

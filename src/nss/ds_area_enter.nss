@@ -66,8 +66,19 @@ void main(){
 
     // Applicable to player characters only.
     if( !GetIsPC( oPC ) ){
+        string guardCheck = GetLocalString(oPC, "guard_allow");
 
-        return;
+        if(guardCheck != ""){
+            string areaCheck  = GetLocalString(OBJECT_SELF,"guard_allow");
+
+            if(guardCheck != areaCheck){
+                object master = GetMaster(oPC);
+
+                SendMessageToPC(master, "Your guard returns home.");
+                DestroyObject(oPC);
+            }
+        }
+
     }
 
     DelayCommand( 1.0, ds_j_SpawnTarget( oPC, oArea ) );

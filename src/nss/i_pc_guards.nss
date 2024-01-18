@@ -123,9 +123,11 @@ void main (){
                 effect unsummon = EffectVisualEffect(VFX_IMP_PDK_RALLYING_CRY);
                 location guardSpot = GetLocation(guardDie);
 
-                ApplyEffectAtLocation(DURATION_TYPE_INSTANT,unsummon,guardSpot);
-                RemoveHenchman(pc,guardDie);
-                DestroyObject(guardDie,0.1);
+                if(GetIsObjectValid(guardDie)){
+                    ApplyEffectAtLocation(DURATION_TYPE_INSTANT,unsummon,guardSpot);
+                    RemoveHenchman(pc,guardDie);
+                    DestroyObject(guardDie,0.1);
+                }
                 i = (i - 1);
             }
         SetLocalInt(pc,"guard_spawned",0);

@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - DTS to Frozenfar: Raider's Area in the Underdark
 - Guard summoner for settlements - only functional in designated settlement areas
 - Mage Guard settlement template NPC complete
+- Added fully customizable DTS conversations with NPCs and Challenge PLCs
 
 ### Changed
 - Area changes

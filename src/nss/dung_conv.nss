@@ -46,20 +46,71 @@ void main()
 void SetChecks(object oPC, object oNPC_PLC)
 {
     string sType = GetLocalString(oNPC_PLC,"type");
+    string sCustomConvo = GetLocalString(oNPC_PLC,"customConvo");
     int nLevel = GetLocalInt(oNPC_PLC,"level");
     int nDC = nLevel + 10 + (nLevel-(nLevel/3));
 
     //This is how we track which NPC is talking.
-    if(sType == "hiddendoornpc") SetLocalInt(oPC,"ds_check_1",1);
-    else if(sType == "talknpc") SetLocalInt(oPC,"ds_check_2",1);
-    else if(sType == "injuriednpc") SetLocalInt(oPC,"ds_check_3",1);
-    else if(sType == "lorepuzzle") SetLocalInt(oPC,"ds_check_4",1);
-    else if(sType == "spellcraftumdpuzzle") SetLocalInt(oPC,"ds_check_5",1);
-    else if(sType == "depressednpc") SetLocalInt(oPC,"ds_check_6",1);
-    else if(sType == "appriasepuzzle") SetLocalInt(oPC,"ds_check_7",1);
-    else if(sType == "summonshrine") SetLocalInt(oPC,"ds_check_8",1);
-    else if(sType == "buffshrine") SetLocalInt(oPC,"ds_check_9",1);
+    if(sType == "hiddendoornpc")
+    {
+     SetLocalInt(oPC,"ds_check_1",1);
+     // Default convo
+     SetCustomToken(73333334,"What do you want? I am busy right now... *Quickly hides a map into their pouches*");
+    }
+    else if(sType == "talknpc")
+    {
+     SetLocalInt(oPC,"ds_check_2",1);
+     // Default convo
+     SetCustomToken(73333334,"What do you want? I am busy right now... *Stands between you and some objects*");
+    }
+    else if(sType == "injurednpc")
+    {
+     SetLocalInt(oPC,"ds_check_3",1);
+     // Default convo
+     SetCustomToken(73333334,"Please! I could use your help. I can't stop the bleeding...");
+    }
+    else if(sType == "lorepuzzle")
+    {
+     SetLocalInt(oPC,"ds_check_4",1);
+     // Default convo
+     SetCustomToken(73333334,"*The contrapation before you turns, clicks, and trembles in a mysterious way. Religious, historical, and cultural images and writing are ingraved into the device*");
+    }
+    else if(sType == "spellcraftumdpuzzle")
+    {
+     SetLocalInt(oPC,"ds_check_5",1);
+     // Default convo
+     SetCustomToken(73333334,"*The contrapation before you shimmers and emites a magical aura. Arcane and divine text are ingraved into the device*");
+    }
+    else if(sType == "depressednpc")
+    {
+     SetLocalInt(oPC,"ds_check_6",1);
+     // Default convo
+     SetCustomToken(73333334,"*The individual before you appears distressed. His breathing is rapid and his eyes are unfocused* No... No... NO...");
+    }
+    else if(sType == "appraisepuzzle")
+    {
+     SetLocalInt(oPC,"ds_check_7",1);
+     // Default convo
+     SetCustomToken(73333334,"*This object before you appears to look like junk upon first glance*");
+    }
+    else if(sType == "summonshrine")
+    {
+     SetLocalInt(oPC,"ds_check_8",1);
+     // Default convo
+     SetCustomToken(73333334,"*The object glows and pulses with power*");
+    }
+    else if(sType == "buffshrine")
+    {
+     SetLocalInt(oPC,"ds_check_9",1);
+     // Default convo
+     SetCustomToken(73333334,"*The object glows and pulses with power*");
+    }
 
+    // Custom Convo
+    if(sCustomConvo != "")
+    {
+     SetCustomToken(73333334,sCustomConvo);
+    }
 
     SetCustomToken(73333331,"(DC:"+IntToString(nDC)+ ") ");// Standard DC
     SetCustomToken(73333332,"(DC:"+IntToString(nDC-5)+ ") ");// Standard DC with adjustment of -5

@@ -206,7 +206,7 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
        }
      }
     }
-    else if(sType == "injuriednpc")
+    else if(sType == "injurednpc")
     {
       nSkillRank1 = GetSkillRank(SKILL_HEAL,oPC);
       nDiceRollTotal = nDiceRoll + nSkillRank1;
@@ -218,7 +218,7 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
       {
        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
         RewardPC(oPC, nLevel, sType, sWaypoint);
-        AssignCommand(oDungeonObject,ActionSpeakString("I won't forget your kindness. This is the least I can do. *Passes over a heavy sack before taking his leave*"));
+        AssignCommand(oDungeonObject,ActionSpeakString("I won't forget your kindness. This is the least I can do. *Passes over a heavy sack before taking their leave*"));
         DelayCommand(0.5,DestroyObject(oDungeonObject));
       }
       else
@@ -327,7 +327,7 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
        }
      }
     }
-    else if(sType == "appriasepuzzle")
+    else if(sType == "appraisepuzzle")
     {
       nSkillRank1 = GetSkillRank(SKILL_APPRAISE,oPC);
       nDiceRollTotal = nDiceRoll + nSkillRank1;

@@ -358,7 +358,7 @@ void SpawnChallenges(object oTrans, string sDungeon, int nLevel)
     location lSubWayPoint;
     object oTemp;
 
-    if((nIsNPC==1) || (nBanNPC==0))// The extra PLCs will only be placed IF it is an NPC, otherwise it will just throw down the animal or interactable PLC
+    if((nIsNPC==1) && (nBanNPC==0) && (sChallengeType != "cagedanimal"))// The extra PLCs will only be placed IF it is an NPC, otherwise it will just throw down the animal or interactable PLC
     {
      for(i=1;i<nWaypointCount+1;i++) // Runs through all your sub challenge waypoints for each waypoint if they exist
      {

@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Guard summoner for settlements - only functional in designated settlement areas
 - Mage Guard settlement template NPC complete
 - Added fully customizable DTS conversations with NPCs and Challenge PLCs
+- Added DTS to Crag Beetles
 
 ### Changed
 - Area changes

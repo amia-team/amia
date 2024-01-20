@@ -16,6 +16,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Mage Guard settlement template NPC complete
 - Added fully customizable DTS conversations with NPCs and Challenge PLCs
 - Added DTS to Crag Beetles
+- About 100 new PLCs
+- New Staff appearance
+- New Staff type for holdable playing cards
+- New skins
+	- 1954	Dragon_Amethyst
+	- 1955	Dragon_Crystal
+	- 1956	Dragon_Emerald
+	- 1957	Dragon_Ruby
+	- 1958	Dragon_Sapphire
+	- 1959	Dragon_Topaz
+	- 1960	Dragon_Obsidian
+	- 1961	"Humanoid: Fey SH Pixie 1 Black"
+	- 1962	"Humanoid: Fey SH Pixie 2 White"
+	- 1963	"Humanoid: Fey SH Pixie 3 Red"
+	- 1964	"Humanoid: Fey SH Pixie 4 Blue"
+	- 1965	"Humanoid: Fey SH Pixie 5 Yellow"
+	- 1966	"Humanoid: Fey SH Pixie 6 Orange"
+	- 1967	"Humanoid: Fey SH Pixie 7 Purple"
+	- 1968	"Humanoid: Fey SH Pixie 8 Green"
 
 ### Changed
 - Area changes
@@ -23,6 +42,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Traveller's Rest: Beacon finished
 	- Southport East: Beacon finished
 	- Fort Cystana: Beacon finished
+	- Fort Cystana South: Library exterior finished
 	- Oakmist Vale Treetops: Beacon finished
 	- Blue Lagoon: Beacon finished
 	- Winya Ravana: Beacon finished
@@ -32,24 +52,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Ridgewood: Beacon finished
 	- The Dale: Beacon finished
 	- Eilistraeen Shrine: Beacon finished
-	- Kingdom of Kohlingen: Greengarden
-		- the market area so there will be no more air walking
-		- set 2 of 4 idol statues (redundant) to static to reduce Lagoon
-		- reduced rat spawn in Old city
-		- reduced debris in Old city
-		- dialog with the rat quest giver
-		- hunting cats (non-aggressive) to Old city
-		- duke's estate interior to Greengarden, including transitions
-		- rat spawn to Greengarden, Greengarden Outskirts, Fey Lake West
-		- duke's personal guard for Greengarden
-	- Underdark
-		- ud_raiderunknown for Raider hidden Area
-		- mushrooms to svirf pool pillars in L'Obsul
-		- js spider to spider Ranch
-		- construction in front of closed bank
-		- various floor heights to remove fuzziness
-		- took the dirt out of the bar (adjusted the tiles there)
-		- a door that should have been locked
+	- Kingdom of Kohlingen: Greengarden: Plot updates, player housing
+	- Underdark: L'Obsul: Bug fixes, tweaks
 - Gator/Alligator monsters that spawn all drop alligator hide for quest now
 - A few dialogue changes to reflect plot changes
 - Job System camel NPCs updated to new camel skins

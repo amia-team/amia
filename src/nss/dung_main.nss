@@ -178,8 +178,8 @@ void SpawnTraps(object oTrans, string sDungeon, int nLevel)
     {
      nTrapType1=TRAP_BASE_TYPE_DEADLY_ACID;
      nTrapType2=TRAP_BASE_TYPE_DEADLY_ACID_SPLASH;
-     nTrapType3=TRAP_BASE_TYPE_DEADLY_ELECTRICAL;
-     nTrapType4=TRAP_BASE_TYPE_DEADLY_FIRE;
+     nTrapType3=TRAP_BASE_TYPE_STRONG_ELECTRICAL;
+     nTrapType4=TRAP_BASE_TYPE_STRONG_FIRE;
      nTrapType5=TRAP_BASE_TYPE_DEADLY_FROST;
      nTrapType6=TRAP_BASE_TYPE_DEADLY_GAS;
      nTrapType7=TRAP_BASE_TYPE_DEADLY_SONIC;
@@ -190,8 +190,8 @@ void SpawnTraps(object oTrans, string sDungeon, int nLevel)
     {
      nTrapType1=TRAP_BASE_TYPE_STRONG_ACID;
      nTrapType2=TRAP_BASE_TYPE_STRONG_ACID_SPLASH;
-     nTrapType3=TRAP_BASE_TYPE_STRONG_ELECTRICAL;
-     nTrapType4=TRAP_BASE_TYPE_STRONG_FIRE;
+     nTrapType3=TRAP_BASE_TYPE_AVERAGE_ELECTRICAL;
+     nTrapType4=TRAP_BASE_TYPE_AVERAGE_FIRE;
      nTrapType5=TRAP_BASE_TYPE_STRONG_FROST;
      nTrapType6=TRAP_BASE_TYPE_STRONG_GAS;
      nTrapType7=TRAP_BASE_TYPE_STRONG_SONIC;
@@ -202,8 +202,8 @@ void SpawnTraps(object oTrans, string sDungeon, int nLevel)
     {
      nTrapType1=TRAP_BASE_TYPE_AVERAGE_ACID;
      nTrapType2=TRAP_BASE_TYPE_AVERAGE_ACID_SPLASH;
-     nTrapType3=TRAP_BASE_TYPE_AVERAGE_ELECTRICAL;
-     nTrapType4=TRAP_BASE_TYPE_AVERAGE_FIRE;
+     nTrapType3=TRAP_BASE_TYPE_MINOR_ELECTRICAL;
+     nTrapType4=TRAP_BASE_TYPE_MINOR_FIRE;
      nTrapType5=TRAP_BASE_TYPE_AVERAGE_FROST;
      nTrapType6=TRAP_BASE_TYPE_AVERAGE_GAS;
      nTrapType7=TRAP_BASE_TYPE_AVERAGE_SONIC;
@@ -214,8 +214,8 @@ void SpawnTraps(object oTrans, string sDungeon, int nLevel)
     {
      nTrapType1=TRAP_BASE_TYPE_MINOR_ACID;
      nTrapType2=TRAP_BASE_TYPE_MINOR_ACID_SPLASH;
-     nTrapType3=TRAP_BASE_TYPE_MINOR_ELECTRICAL;
-     nTrapType4=TRAP_BASE_TYPE_MINOR_FIRE;
+     nTrapType3=TRAP_BASE_TYPE_MINOR_TANGLE;     // Removed minor electric because it was too powerful
+     nTrapType4=TRAP_BASE_TYPE_MINOR_SPIKE;      // Removed minor fire because it was too powerful
      nTrapType5=TRAP_BASE_TYPE_MINOR_FROST;
      nTrapType6=TRAP_BASE_TYPE_MINOR_GAS;
      nTrapType7=TRAP_BASE_TYPE_MINOR_SONIC;

@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Moonpier pylon positioning adjusted so it can be clicked easier
+- Swarm and Guard summoner widgets won't unsummon other henchmen anymore
 
 ## [2.9.2A - 2024-01-020]
 

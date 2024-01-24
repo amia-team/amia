@@ -22,7 +22,7 @@ void main (){
     int swarmCount   = GetLocalInt(swarmer, "swarmCount");
 
     if(GetIsDM(pc)){
-        if(GetObjectType(swarmUse) == OBJECT_TYPE_CREATURE){
+        if((GetObjectType(swarmUse) == OBJECT_TYPE_CREATURE) && (GetResRef(swarmUse) == "swarm_summon")){
             if(swarmCount == 0){
                 json swarm1  = ObjectToJson(swarmUse, TRUE);
                 string name1 = GetName(swarmUse);
@@ -50,6 +50,9 @@ void main (){
                 FloatingTextStringOnCreature("Maximum swarm objects set. Use this item on itself to finalize.", pc, TRUE);
             }
 
+        }
+        else if((GetObjectType(swarmUse) == OBJECT_TYPE_CREATURE) && (GetResRef(swarmUse) != "swarm_summon")){
+            FloatingTextStringOnCreature("You must use the Swarm Summon Template creature base. Select a creature with the correct base template.", pc, TRUE);
         }
         else if(swarmUse == swarmer){
             itemproperty uniqueRanged = GetFirstItemProperty(swarmer);
@@ -100,13 +103,13 @@ void main (){
     else{
         int dieQty = GetLocalInt(swarmer, "qty");
 
-        int i = dieQty;
+        int i = (dieQty + 1);
             while (i > 0){
                 object swarmDie = GetHenchman(pc,1);
                 effect unsummon = EffectVisualEffect(VFX_IMP_PDK_RALLYING_CRY);
                 location swarmSpot = GetLocation(swarmDie);
 
-                if(GetIsObjectValid(swarmDie)){
+                if(GetIsObjectValid(swarmDie) && (GetResRef(swarmUse) == "swarm_summon")){
                     ApplyEffectAtLocation(DURATION_TYPE_INSTANT,unsummon,swarmSpot);
                     RemoveHenchman(pc,swarmDie);
                     DestroyObject(swarmDie,0.1);

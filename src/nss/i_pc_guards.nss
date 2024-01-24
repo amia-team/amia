@@ -25,7 +25,7 @@ void main (){
     int guardCount    = GetLocalInt(widget,"guardCount");
 
     if(GetIsDM(pc)){
-        if(GetObjectType(guardNPC) == OBJECT_TYPE_CREATURE){
+        if((GetObjectType(guardNPC) == OBJECT_TYPE_CREATURE) && (GetTag(guardNPC) == "guard_template")){
             if(guardCount == 0){
                 json guard1  = ObjectToJson(guardNPC, TRUE);
                 string name1 = GetName(guardNPC);
@@ -60,6 +60,9 @@ void main (){
                 FloatingTextStringOnCreature("Maximum guard objects set. Use this item on itself to finalize.", pc, TRUE);
             }
 
+        }
+        else if((GetObjectType(guardNPC) == OBJECT_TYPE_CREATURE) && (GetTag(guardNPC) != "guard_template")){
+            FloatingTextStringOnCreature("You must use one of the guard templates for this item. Select a creature with the correct template.", pc, TRUE);
         }
         else if(guardNPC == widget){
             itemproperty uniqueRanged = GetFirstItemProperty(widget);
@@ -117,13 +120,13 @@ void main (){
         int guardQty      = GetLocalInt(widget, "qty");
         int dieQty        = guardQty;
 
-        int i = dieQty;
+        int i = (dieQty + 1);
             while (i > 0){
                 object guardDie = GetHenchman(pc,1);
                 effect unsummon = EffectVisualEffect(VFX_IMP_PDK_RALLYING_CRY);
                 location guardSpot = GetLocation(guardDie);
 
-                if(GetIsObjectValid(guardDie)){
+                if((GetIsObjectValid(guardDie)) && (GetTag(guardDie) == "guard_template")){
                     ApplyEffectAtLocation(DURATION_TYPE_INSTANT,unsummon,guardSpot);
                     RemoveHenchman(pc,guardDie);
                     DestroyObject(guardDie,0.1);

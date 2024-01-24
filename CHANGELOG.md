@@ -9,9 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Moonpier resref update
 
 ### Fixed
-
+- Moonpier pylon positioning adjusted so it can be clicked easier
 
 ## [2.9.2A - 2024-01-020]
 

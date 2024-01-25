@@ -24,10 +24,13 @@ void main()
         SetName(manacles, settlement+" Guard Manacles");
         SetDescription(manacles, "These are guard manacles for "+settlement+"! Use these to banish unruly criminals. It will cast them out of the settlement and bar them from entry through the gates.\n\nUse the manacles on them again to remove their banishment.", TRUE);
     }
-    else if((GetLocalInt(criminalpckey, settlement+"_ban") && (area_ban == settlement) != 1)){
+    else if((GetIsPC(criminal)) && (GetLocalInt(criminalpckey, settlement+"_ban") && (area_ban == settlement) != 1)){
         SetLocalInt(criminalpckey, settlement+"_ban", 1);
         DelayCommand(3.0,DoTransition(criminal, dropoffpoint, "You have been cast out of "+settlement+"! You may not re-enter until a guard revokes your banishment."));
         FloatingTextStringOnCreature("You have cast "+criminalname+" out of your city! Use the manacles on them again to revoke their banishment.", pc, TRUE);
+    }
+    else if(!GetIsPC(criminal)){
+        FloatingTextStringOnCreature("You cannot use this on an NPC!", pc, TRUE);
     }
     else{
         SetLocalInt(criminalpckey, settlement+"_ban", 0);

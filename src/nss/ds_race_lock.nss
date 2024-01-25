@@ -88,6 +88,8 @@ int IsBanned( object oPC, object oDoor ){
     int nRacialType     = GetRacialType(oPC);
     string sSubRace     = GetSubRace(oPC);
     int nRaceSlot       = GetLocalInt( oDoor, "race_"+IntToString( nRacialType ) );
+    string sSettlement  = GetLocalString(oDoor,"settlement");
+    int nPersonalBan    = GetPCKEYValue(oPC,sSettlement + "_ban");
 
     if(sSubRace != "")
     {
@@ -98,6 +100,12 @@ int IsBanned( object oPC, object oDoor ){
     string sInsignia    = GetLocalString( GetInsigniaB( oPC ), "HouseName" );
     int nBindpoint      = GetLocalInt( oDoor, "ds_bindpoint" );
     object oItem        = GetItemPossessedBy( oPC, GetLocalString( oDoor, "ItemName" ) );
+
+    // Checks for personal ban variable on PCKEY
+    if(nPersonalBan == 1)
+    {
+         return TRUE;
+    }
 
     // This is checking key for door
     if( GetLocalString( oDoor, "ItemName" ) != "" )

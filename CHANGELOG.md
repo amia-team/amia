@@ -8,9 +8,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Settlement guard manacles added
+- OI: Emberwood East and Central (inaccessible for now)
+- OI: Dragon's Eye Lighthouse
+- OI: Dragon's Fang Cape, Bitch Queen's Sway
+- New Dungeon & Enemies (Still WIP, inaccessible for now)
 
 ### Changed
 - Moonpier resref update
+- OI: Arena Updated
+- OI: Abandoned Ruin > Research Outpost
 
 ### Fixed
 - Moonpier pylon positioning adjusted so it can be clicked easier

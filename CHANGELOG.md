@@ -12,7 +12,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - OI: Dragon's Eye Lighthouse
 - OI: Dragon's Fang Cape, Bitch Queen's Sway
 - New Dungeon & Enemies (Still WIP, inaccessible for now)
-
+- DTS - Shekat
+ 
 ### Changed
 - Moonpier resref update
 - OI: Arena Updated
@@ -24,6 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Moonpier pylon positioning adjusted so it can be clicked easier
 - Swarm and Guard summoner widgets won't unsummon other henchmen anymore
 - Bugfix for swarm summoning with multiple swarm widgets
+- Bugfix for DTS and appraise skill being off
 
 ## [2.9.2A - 2024-01-020]
 

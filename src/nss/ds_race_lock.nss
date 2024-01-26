@@ -88,8 +88,9 @@ int IsBanned( object oPC, object oDoor ){
     int nRacialType     = GetRacialType(oPC);
     string sSubRace     = GetSubRace(oPC);
     int nRaceSlot       = GetLocalInt( oDoor, "race_"+IntToString( nRacialType ) );
-    string sSettlement  = GetLocalString(oDoor,"settlement");
-    int nPersonalBan    = GetPCKEYValue(oPC,sSettlement + "_ban");
+    int nSettlement     = GetLocalInt(oDoor,"settlement");
+    string settleName   = IntToString(nSettlement);
+    int nPersonalBan    = GetPCKEYValue(oPC,settleName + "_banish");
 
     if(sSubRace != "")
     {

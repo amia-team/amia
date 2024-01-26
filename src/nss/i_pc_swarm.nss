@@ -14,6 +14,8 @@
 // prototypes
 //-------------------------------------------------------------------------------
 
+int HenchCount(object pc);
+
 void main (){
 
     object pc        = GetItemActivator();
@@ -101,9 +103,9 @@ void main (){
         SetLocalInt(pc,"spawned",1);
     }
     else{
-        int dieQty = GetLocalInt(swarmer, "qty");
+        int dieQty = HenchCount(pc);
 
-        int i = (dieQty + 1);
+        int i = (dieQty);
             while (i > 0){
                 object swarmDie = GetHenchman(pc,1);
                 effect unsummon = EffectVisualEffect(VFX_IMP_PDK_RALLYING_CRY);
@@ -120,4 +122,14 @@ void main (){
         SendMessageToPC(pc, "Unsummoned your swarm.");
     }
 
+}
+
+int HenchCount(object pc){
+    int henchCount;
+    int h = 1;
+    while (GetIsObjectValid(GetHenchman(pc,h))){
+        henchCount = h;
+        h = h + 1;
+    }
+    return henchCount;
 }

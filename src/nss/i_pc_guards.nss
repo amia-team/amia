@@ -13,6 +13,7 @@
 //-------------------------------------------------------------------------------
 // prototypes
 //-------------------------------------------------------------------------------
+int HenchCount(object pc);
 
 void main (){
 
@@ -117,10 +118,9 @@ void main (){
         SetLocalInt(pc,"guard_spawned",1);
     }
     else if((GetLocalInt(pc,"guard_spawned") == 1) && (guardCheck == areaCheck)){
-        int guardQty      = GetLocalInt(widget, "qty");
-        int dieQty        = guardQty;
+        int dieQty = HenchCount(pc);
 
-        int i = (dieQty + 1);
+        int i = dieQty;
             while (i > 0){
                 object guardDie = GetHenchman(pc,1);
                 effect unsummon = EffectVisualEffect(VFX_IMP_PDK_RALLYING_CRY);
@@ -140,4 +140,14 @@ void main (){
         SendMessageToPC(pc,"You can only summon your guards in your approved settlement areas!");
     }
 
+}
+
+int HenchCount(object pc){
+    int henchCount;
+    int h = 1;
+    while (GetIsObjectValid(GetHenchman(pc,h))){
+        henchCount = h;
+        h = h + 1;
+    }
+    return henchCount;
 }

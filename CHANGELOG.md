@@ -17,10 +17,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Moonpier resref update
 - OI: Arena Updated
 - OI: Abandoned Ruin > Research Outpost
+- Winya Ravana primary settlement variables Added
+- Added check to racial gates for individual banishments
 
 ### Fixed
 - Moonpier pylon positioning adjusted so it can be clicked easier
 - Swarm and Guard summoner widgets won't unsummon other henchmen anymore
+- Bugfix for swarm summoning with multiple swarm widgets
 
 ## [2.9.2A - 2024-01-020]
 

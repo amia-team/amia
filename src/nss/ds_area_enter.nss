@@ -61,21 +61,28 @@ void main(){
     //string RETURN_SPAWN_CHECK = "day_spawn1";
 
     //some vars and a break when the entering object is not a pc (a spawn, for example)
-    object oArea            = OBJECT_SELF;
-    object oPC              = GetEnteringObject( );
+    object oArea       = OBJECT_SELF;
+    object oPC         = GetEnteringObject( );
+    object master      = GetMaster(oPC);
+    object masterPCKey = GetItemPossessedBy(master, "ds_pckey");
 
     // Applicable to player characters only.
     if( !GetIsPC( oPC ) ){
-        string guardCheck = GetLocalString(oPC, "guard_allow");
+        string isGuard = GetTag(oPC);
 
-        if(guardCheck != ""){
-            string areaCheck  = GetLocalString(OBJECT_SELF,"guard_allow");
-
-            if(guardCheck != areaCheck){
-                object master = GetMaster(oPC);
-
-                SendMessageToPC(master, "Your guard returns home.");
+        if(isGuard == "guard_template"){
+            int areaCheck    = GetLocalInt(OBJECT_SELF,"settlement");
+            int messageBlock = GetLocalInt(master, "guard_leave");
+            if(areaCheck == 0){
                 DestroyObject(oPC);
+                DeleteLocalInt(master, "guard_spawned");
+                SetLocalInt(master, "guard_leave", 1);
+                if(!messageBlock){
+                    SendMessageToPC(master, "Your guard returns home.");
+                }
+                else{
+                    DelayCommand(0.5,DeleteLocalInt(master,"guard_leave"));
+                }
             }
         }
 

@@ -14,6 +14,7 @@
 // prototypes
 //-------------------------------------------------------------------------------
 int HenchCount(object pc);
+int AllyCheck(object widget, object pc);
 
 void main (){
 
@@ -21,9 +22,10 @@ void main (){
     object widget     = GetItemActivated();
     object guardNPC   = GetItemActivatedTarget();
     object inArea     = GetArea(pc);
-    string guardCheck = GetLocalString(widget,"guard_allow");
-    string areaCheck  = GetLocalString(inArea,"guard_allow");
-    int guardCount    = GetLocalInt(widget,"guardCount");
+    int guardCheck    = GetLocalInt(widget, "settlement_1");
+    int areaCheck     = GetLocalInt(inArea, "settlement");
+    int guardCount    = GetLocalInt(widget, "guardCount");
+    int alliedArea    = AllyCheck(widget, pc);
 
     if(GetIsDM(pc)){
         if((GetObjectType(guardNPC) == OBJECT_TYPE_CREATURE) && (GetTag(guardNPC) == "guard_template")){
@@ -73,14 +75,14 @@ void main (){
             RemoveItemProperty(widget, uniqueRanged);
             IPSafeAddItemProperty(widget, uniqueSelf, 0.0f, X2_IP_ADDPROP_POLICY_REPLACE_EXISTING, TRUE, TRUE);
             SetName(widget,"Summon "+guardName+" Guard Group");
-            SetDescription(widget,"This widget will summon a group of settlement guards with infinite duration, which only works in your settlement or surrounding areas. Use it again to unsummon.",TRUE);
+            SetDescription(widget,"This widget will summon a group of settlement guards with infinite duration, which only works in your settlement, surrounding areas, or in allied lands. Use it again to unsummon.",TRUE);
             FloatingTextStringOnCreature("Guards finalized. You may give this item to the player now.", pc, TRUE);
         }
         else{
             FloatingTextStringOnCreature("Use this item on a guard NPC to set the guard object, or finalize it by targeting itself.", pc, TRUE);
         }
     }
-    else if((GetLocalInt(pc,"guard_spawned") != 1) && (guardCheck == areaCheck)){
+    else if((GetLocalInt(pc,"guard_spawned") != 1) && (alliedArea == 1)){
         int guardQty      = GetLocalInt(widget, "qty");
         int guardTypes    = GetLocalInt(widget,"guardCount");
         int subGuard      = (guardQty / guardTypes);
@@ -117,7 +119,7 @@ void main (){
         }
         SetLocalInt(pc,"guard_spawned",1);
     }
-    else if((GetLocalInt(pc,"guard_spawned") == 1) && (guardCheck == areaCheck)){
+    else if(GetLocalInt(pc,"guard_spawned") == 1){
         int dieQty = HenchCount(pc);
 
         int i = dieQty;
@@ -133,11 +135,11 @@ void main (){
                 }
                 i = (i - 1);
             }
-        SetLocalInt(pc,"guard_spawned",0);
+        DeleteLocalInt(pc,"guard_spawned");
         SendMessageToPC(pc, "Your guards have returned to their duties.");
     }
-    else if(guardCheck != areaCheck){
-        SendMessageToPC(pc,"You can only summon your guards in your approved settlement areas!");
+    else{
+        SendMessageToPC(pc,"You can only summon your guards in your approved settlement areas! Allied Area:"+IntToString(alliedArea));
     }
 
 }
@@ -150,4 +152,23 @@ int HenchCount(object pc){
         h = h + 1;
     }
     return henchCount;
+}
+
+int AllyCheck(object widget, object pc){
+    int settlement = GetLocalInt(widget, "settlement_1");
+    int areaCheck  = GetLocalInt(GetArea(pc), "settlement");
+    int allyCount  = GetLocalInt(widget, "ally_count");
+    int alliedArea;
+    int a = 1;
+    while (a <= allyCount){
+        string allyNumber = (IntToString(a));
+        if(GetLocalInt(widget, "settlement_"+allyNumber) == areaCheck){
+            alliedArea = 1;
+            a = a + 1;
+        }
+        else{
+            a = a + 1;
+        }
+    }
+    return alliedArea;
 }

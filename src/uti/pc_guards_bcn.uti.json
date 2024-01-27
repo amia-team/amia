@@ -27,7 +27,7 @@
   "DescIdentified": {
     "type": "cexolocstring",
     "value": {
-      "0": "This item will activate the distress Beacon for which it is attuned. Used by settlement leaders and trusted individuals (or DMs) to call for help.\n\nThe first time this item is used, it will attune the activator to a location based on the int variable, settlement. The list of int variables for settlements can be found on the forums. You will receive feedback when it is successfully set."
+      "0": "INSTRUCTIONS\n\nYou will need:\nGuard Templates - Guard NPC templates are listed under Tutorial, but you can also use a guard from the area itself, since they also use the templates.\n\nCreate or copy the guard NPCs for the settlement. Do not make any mechanical changes to them, as they all use a template. This is intentional.\n\nFollow these steps afterward:\n\n--- Use the widget on each guard NPC, one after the other. It will tell you when the maximum (4) is reached. The first creature you use it on will determine the name given to the widget.\n--- Use the widget on itself to finalize the summons. This will change the name and the bio, as well as replace the Unique Power to be Self-Only.\n--- Set the settlement via integer variable settlement_1. The correct int value is listed on the forums.\n--- You can add additional settlements as settlement_2, settlement_3, etc., but make sure you then update the ally_count int variable inclusive of the first number. So if you set up to settlement_3, make sure ally_count is 3.\n--- OPTIONAL: Change the qty string variable lower than 8 if the player doesn't want to summon 8 guards at once.\n--- Give the widget to the player.\n\nNOTE: This is the same as the other Guard Summoner, except it's already set up to all the variables of the Beacon Alliance. Set this one to an appropriate Beacon Alliance response group. It will also default to 4 guards for this group."
     }
   },
   "Description": {
@@ -43,12 +43,12 @@
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "<cýÿÍ>Beacon Activator</c>"
+      "0": "Guard Summoner: Beacon Settings"
     }
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 47
+    "value": 5
   },
   "PaletteID": {
     "type": "byte",
@@ -89,7 +89,7 @@
         },
         "Subtype": {
           "type": "word",
-          "value": 335
+          "value": 329
         }
       }
     ]
@@ -104,11 +104,11 @@
   },
   "Tag": {
     "type": "cexostring",
-    "value": "act_beacon"
+    "value": "pc_guards"
   },
   "TemplateResRef": {
     "type": "resref",
-    "value": "act_beacon"
+    "value": "pc_guards_bcn"
   },
   "VarTable": {
     "type": "list",
@@ -117,202 +117,7 @@
         "__struct_id": 0,
         "Name": {
           "type": "cexostring",
-          "value": "SpawnPoint1"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 3
-        },
-        "Value": {
-          "type": "cexostring",
-          "value": "beacon_lagoon"
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
-          "value": "SpawnPoint2"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 3
-        },
-        "Value": {
-          "type": "cexostring",
-          "value": "beacon_dale"
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
-          "value": "SpawnPoint3"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 3
-        },
-        "Value": {
-          "type": "cexostring",
-          "value": "beacon_shrine"
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
-          "value": "SpawnPoint4"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 3
-        },
-        "Value": {
-          "type": "cexostring",
-          "value": "beacon_cystana"
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
-          "value": "SpawnPoint5"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 3
-        },
-        "Value": {
-          "type": "cexostring",
-          "value": "beacon_green"
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
-          "value": "SpawnPoint6"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 3
-        },
-        "Value": {
-          "type": "cexostring",
-          "value": "beacon_moon"
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
-          "value": "SpawnPoint7"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 3
-        },
-        "Value": {
-          "type": "cexostring",
-          "value": "beacon_oakmist"
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
-          "value": "SpawnPoint8"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 3
-        },
-        "Value": {
-          "type": "cexostring",
-          "value": "beacon_ridgewood"
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
-          "value": "SpawnPoint9"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 3
-        },
-        "Value": {
-          "type": "cexostring",
-          "value": "beacon_sally"
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
-          "value": "SpawnPoint10"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 3
-        },
-        "Value": {
-          "type": "cexostring",
-          "value": "beacon_southport"
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
-          "value": "SpawnPoint11"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 3
-        },
-        "Value": {
-          "type": "cexostring",
-          "value": "beacon_trest"
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
-          "value": "SpawnPoint12"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 3
-        },
-        "Value": {
-          "type": "cexostring",
-          "value": "beacon_stag"
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
-          "value": "SpawnPoint13"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 3
-        },
-        "Value": {
-          "type": "cexostring",
-          "value": "beacon_winya"
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
-          "value": "SpawnAmt"
+          "value": "qty"
         },
         "Type": {
           "type": "dword",
@@ -320,13 +125,238 @@
         },
         "Value": {
           "type": "int",
-          "value": 13
+          "value": 4
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "settlement_1"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 27
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "settlement_2"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 38
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "ally_count"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 14
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "settlement_3"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 6
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "settlement_4"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 7
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "settlement_5"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 8
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "settlement_6"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 9
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "settlement_7"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 18
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "settlement_8"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 21
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "settlement_9"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 23
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "settlement_10"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 29
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "settlement_11"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 32
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "settlement_12"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 33
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "settlement_13"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 35
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "settlement_14"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 36
         }
       }
     ]
   },
   "xModelPart1": {
     "type": "word",
-    "value": 47
+    "value": 5
   }
 }

@@ -27,7 +27,7 @@
   "DescIdentified": {
     "type": "cexolocstring",
     "value": {
-      "0": "INSTRUCTIONS\n\nYou will need:\nGuard Templates - Guard NPC templates are listed under Tutorial, but you can also use a guard from the area itself, since they also use the templates.\n\nCreate or copy the guard NPCs for the settlement. Do not make any mechanical changes to them, as they all use a template. This is intentional.\n\nFollow these steps afterward:\n\n--- Use the widget on each guard NPC, one after the other. It will tell you when the maximum (4) is reached. The first creature you use it on will determine the name given to the widget.\n--- Use the widget on itself to finalize the summons. This will change the name and the bio, as well as replace the Unique Power to be Self-Only.\n--- OPTIONAL: Change the qty string variable lower than 8 if the player doesn't want to summon 8 guards at once.\n--- Give the widget to the player."
+      "0": "INSTRUCTIONS\n\nYou will need:\nGuard Templates - Guard NPC templates are listed under Tutorial, but you can also use a guard from the area itself, since they also use the templates.\n\nCreate or copy the guard NPCs for the settlement. Do not make any mechanical changes to them, as they all use a template. This is intentional.\n\nFollow these steps afterward:\n\n--- Use the widget on each guard NPC, one after the other. It will tell you when the maximum (4) is reached. The first creature you use it on will determine the name given to the widget.\n--- Use the widget on itself to finalize the summons. This will change the name and the bio, as well as replace the Unique Power to be Self-Only.\n--- Set the settlement via integer variable settlement_1. The correct int value is listed on the forums.\n--- You can add additional settlements as settlement_2, settlement_3, etc., but make sure you then update the ally_count int variable inclusive of the first number. So if you set up to settlement_3, make sure ally_count is 3.\n--- OPTIONAL: Change the qty string variable lower than 8 if the player doesn't want to summon 8 guards at once.\n--- Give the widget to the player."
     }
   },
   "Description": {
@@ -126,6 +126,51 @@
         "Value": {
           "type": "int",
           "value": 8
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "settlement_1"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 27
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "settlement_2"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 38
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "ally_count"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 2
         }
       }
     ]

@@ -32,6 +32,7 @@ void main()
         if(settlement >= 1){
             SetLocalInt(criminalpckey, settleName+"_banish", 1);
             DelayCommand(0.3, DoTransition(criminal, dropoffpoint, "You have been cast out of "+fullName+"! You may not re-enter until a guard revokes your banishment."));
+            DelayCommand(3.0,AssignCommand(criminal,(ActionPlayAnimation(16, 1.0,5.0))));
             SendMessageToPC(pc, "You have cast "+criminalname+" out of "+fullName+"! Use the manacles on them again to revoke their banishment.");
         }
     }

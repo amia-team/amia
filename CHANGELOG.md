@@ -14,11 +14,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - New Dungeon & Enemies (Still WIP, inaccessible for now)
 - DTS - Shekat
 - Beeacon alliance guard spawner
+- Added 17 Zodiac creature appearances
 - Added 4 Pegasus mounts (with wings)
-	- 1679	"Horse: Pegasus, Black,Wing*"
-	- 1680	"Horse: Pegasus, Brown,Wing*"
-	- 1681	"Horse: Pegasus, White saddle packs,Wing*"
-	- 1682	"Horse: Pegasus, White saddle,Wing*"
  
 ### Changed
 - Moonpier resref update

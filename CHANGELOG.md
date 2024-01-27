@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Swarm and Guard summoner widgets won't unsummon other henchmen anymore
 - Bugfix for swarm summoning with multiple swarm widgets
 - Bugfix for DTS and appraise skill being off
+- Made Blinding Speed instant again
 
 ## [2.9.2A - 2024-01-020]
 

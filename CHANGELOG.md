@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - OI: Dragon's Fang Cape, Bitch Queen's Sway
 - New Dungeon & Enemies (Still WIP, inaccessible for now)
 - DTS - Shekat
+- Beeacon alliance guard spawner
  
 ### Changed
 - Moonpier resref update
@@ -20,7 +21,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - OI: Abandoned Ruin > Research Outpost
 - Primary settlement variables added:
 	- Winya Ravana
+	- Moonpier
 - Added check to racial gates for individual banishments
+- Guard spawner will work in allied territories
+- ds_area_enter unsummons guards being used outside of settlement areas
 
 ### Fixed
 - Moonpier pylon positioning adjusted so it can be clicked easier

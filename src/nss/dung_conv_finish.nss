@@ -332,7 +332,7 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
       nSkillRank1 = GetSkillRank(SKILL_APPRAISE,oPC);
       nDiceRollTotal = nDiceRoll + nSkillRank1;
       sSkill = "APPRAISE";
-      nDC = nDC - 19;
+      nDC = nDC - 10;
 
      if(nNode==1)
      {

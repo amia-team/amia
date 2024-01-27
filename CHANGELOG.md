@@ -18,7 +18,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Moonpier resref update
 - OI: Arena Updated
 - OI: Abandoned Ruin > Research Outpost
-- Winya Ravana primary settlement variables Added
+- Primary settlement variables added:
+	- Winya Ravana
 - Added check to racial gates for individual banishments
 
 ### Fixed

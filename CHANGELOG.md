@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Beeacon alliance guard spawner
 - Added 17 Zodiac creature appearances
 - Added 4 Pegasus mounts (with wings)
+- Added more mage staves
+- Added more VFX
  
 ### Changed
 - Moonpier resref update

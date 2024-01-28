@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-### changed
+### Changed
+- OI Boar/Bat Spawn & Token removal
 
 ### Fixed
 

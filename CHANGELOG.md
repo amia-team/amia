@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### changed
+
+### Fixed
+
+## [2.9.2B - 2024-01-027]
+
+### Added
 - Settlement guard manacles added
 - OI: Emberwood East and Central (inaccessible for now)
 - OI: Dragon's Eye Lighthouse
@@ -14,10 +22,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - New Dungeon & Enemies (Still WIP, inaccessible for now)
 - DTS - Shekat
 - Beeacon alliance guard spawner
+- Added HD override to 10 base dragon appearances
 - Added 17 Zodiac creature appearances
+- Added Ettin, Evil Snowman, Treant 2 appearances
+- Added 10 komodo dragon appearances
+- Added Weasel, Rat, Spotted Cat appearances
 - Added 4 Pegasus mounts (with wings)
-- Added more mage staves
-- Added more VFX
+- Added 1 zodiac mount
+- Added "Enhanced" mage staff overrides
+- Added more VFX (horns, quivers)
+- Added parasols
+- Added magic wand appearances
  
 ### Changed
 - Moonpier resref update
@@ -29,6 +44,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added check to racial gates for individual banishments
 - Guard spawner will work in allied territories
 - ds_area_enter unsummons guards being used outside of settlement areas
+- Added parasol items to the items vendor
 
 ### Fixed
 - Moonpier pylon positioning adjusted so it can be clicked easier
@@ -36,6 +52,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Bugfix for swarm summoning with multiple swarm widgets
 - Bugfix for DTS and appraise skill being off
 - Made Blinding Speed instant again
+- Fixed new ring icons overriding old icons
 
 ## [2.9.2A - 2024-01-020]
 

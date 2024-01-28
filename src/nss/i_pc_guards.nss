@@ -82,7 +82,7 @@ void main (){
             FloatingTextStringOnCreature("Use this item on a guard NPC to set the guard object, or finalize it by targeting itself.", pc, TRUE);
         }
     }
-    else if((GetLocalInt(pc,"guard_spawned") != 1) && (alliedArea == 1)){
+    else if((GetLocalInt(pc,"guard_spawned") != 1) && (alliedArea == 1) && (GetLocalInt(pc, "swarm_spawned") != 1)){
         int guardQty      = GetLocalInt(widget, "qty");
         int guardTypes    = GetLocalInt(widget,"guardCount");
         int subGuard      = (guardQty / guardTypes);
@@ -119,27 +119,33 @@ void main (){
         }
         SetLocalInt(pc,"guard_spawned",1);
     }
+    else if(GetLocalInt(pc, "swarm_spawned") == 1){
+        SendMessageToPC(pc, "You cannot summon your guards while you have a swarm. Unsummon your swarm to proceed.");
+    }
     else if(GetLocalInt(pc,"guard_spawned") == 1){
         int dieQty = HenchCount(pc);
 
         int i = dieQty;
             while (i > 0){
-                object guardDie = GetHenchman(pc,1);
+                object guardDie = GetHenchman(pc,i);
                 effect unsummon = EffectVisualEffect(VFX_IMP_PDK_RALLYING_CRY);
                 location guardSpot = GetLocation(guardDie);
 
-                if((GetIsObjectValid(guardDie)) && (GetTag(guardDie) == "guard_template")){
-                    ApplyEffectAtLocation(DURATION_TYPE_INSTANT,unsummon,guardSpot);
-                    RemoveHenchman(pc,guardDie);
-                    DestroyObject(guardDie,0.1);
-                }
+                if(GetIsObjectValid(guardDie)){
+                    if(GetTag(guardDie) == "guard_template"){
+                        ApplyEffectAtLocation(DURATION_TYPE_INSTANT,unsummon,guardSpot);
+                        RemoveHenchman(pc,guardDie);
+                        DestroyObject(guardDie,0.1);
+                    }
                 i = (i - 1);
+                }
+
             }
         DeleteLocalInt(pc,"guard_spawned");
         SendMessageToPC(pc, "Your guards have returned to their duties.");
     }
     else{
-        SendMessageToPC(pc,"You can only summon your guards in your approved settlement areas! Allied Area:"+IntToString(alliedArea));
+        SendMessageToPC(pc,"You can only summon your guards in your approved settlement areas!");
     }
 
 }

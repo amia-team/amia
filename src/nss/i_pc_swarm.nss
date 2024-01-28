@@ -71,7 +71,7 @@ void main (){
             FloatingTextStringOnCreature("Use this item on a monster to set the swarm creature, or finalize it by targeting itself.", pc, TRUE);
         }
     }
-    else if(GetLocalInt(pc,"spawned") != 1){
+    else if(GetLocalInt(pc,"swarm_spawned") != 1 && GetLocalInt(pc, "guard_spawned") != 1){
         int henchQty      = GetLocalInt(swarmer, "qty");
         int subSwarm      = henchQty / swarmCount;
         int swarm2        = subSwarm;
@@ -100,25 +100,30 @@ void main (){
             AddHenchman(pc, henchSwarm3);
             i3 = (i3 - 1);
         }
-        SetLocalInt(pc,"spawned",1);
+        SetLocalInt(pc,"swarm_spawned",1);
     }
-    else{
+    else if(GetLocalInt(pc, "guard_spawned") == 1){
+        SendMessageToPC(pc, "You cannot summon your swarm while you have your guards. Unsummon your guards to proceed.");
+    }
+    else if(GetLocalInt(pc,"swarm_spawned") == 1 ){
         int dieQty = HenchCount(pc);
 
         int i = (dieQty);
             while (i > 0){
-                object swarmDie = GetHenchman(pc,1);
+                object swarmDie = GetHenchman(pc,i);
                 effect unsummon = EffectVisualEffect(VFX_IMP_PDK_RALLYING_CRY);
                 location swarmSpot = GetLocation(swarmDie);
 
-                if(GetIsObjectValid(swarmDie) && (GetResRef(swarmUse) == "swarm_summon")){
-                    ApplyEffectAtLocation(DURATION_TYPE_INSTANT,unsummon,swarmSpot);
-                    RemoveHenchman(pc,swarmDie);
-                    DestroyObject(swarmDie,0.1);
+                if(GetIsObjectValid(swarmDie)){
+                    if(GetResRef(swarmDie) == "swarm_summon"){
+                        ApplyEffectAtLocation(DURATION_TYPE_INSTANT,unsummon,swarmSpot);
+                        RemoveHenchman(pc,swarmDie);
+                        DestroyObject(swarmDie,0.1);
+                        i = (i - 1);
+                    }
                 }
-                i = (i - 1);
             }
-        SetLocalInt(pc,"spawned",0);
+        SetLocalInt(pc,"swarm_spawned",0);
         SendMessageToPC(pc, "Unsummoned your swarm.");
     }
 

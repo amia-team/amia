@@ -7,11 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- 7 character portraits
+- Holdable playing cards added to items merchants
 
 ### Changed
 - OI Boar/Bat Spawn & Token removal
 
 ### Fixed
+- Fix to Trolls Unknown area (Tileset bug)
 
 ## [2.9.2B - 2024-01-027]
 

@@ -7,17 +7,28 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-- 7 character portraits
+- 8 character portraits
 - Holdable playing cards added to items merchants
 - OI Emberwood, East - Cave
 - Added an egg to the palette
+- Deployed DTS to Ruins of the Underkingdom (Fire Giants)
+- Added purple worm appearance and portrait
 
 ### Changed
 - OI Boar/Bat Spawn & Token removal
 - OI Emberwood, East: Added spawns
+- Added Settlement variables to:
+	- Fort Cystana
+	- Thordstein
+	- Thykkvi
+	- Howness
+	- Setersborg
+	- Barak Runedar
 
 ### Fixed
 - Fix to Trolls Unknown area (Tileset bug)
+- Fix Lentle's quest dialogue
+- Fix Frustrated Guard quest NPC pointing to the wrong NPC to visit next
 
 ## [2.9.2B - 2024-01-027]
 

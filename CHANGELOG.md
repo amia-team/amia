@@ -9,9 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - 7 character portraits
 - Holdable playing cards added to items merchants
+- OI Emberwood, East - Cave
+- Added an egg to the palette
 
 ### Changed
 - OI Boar/Bat Spawn & Token removal
+- OI Emberwood, East: Added spawns
 
 ### Fixed
 - Fix to Trolls Unknown area (Tileset bug)

@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added purple worm appearance and portrait
 - Personal/Bank storage chests
 - Storage database
+- SUPER SECRET RAID THINGY
 
 ### Changed
 - OI Boar/Bat Spawn & Token removal
@@ -44,6 +45,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fix Lentle's quest dialogue
 - Fix Frustrated Guard quest NPC pointing to the wrong NPC to visit next
 - Fix Lente's name (it wasn't supposed to be Lentle)
+- Attempted to fix the Hunter Cave line of sight issue with boss
 
 ## [2.9.2B - 2024-01-027]
 

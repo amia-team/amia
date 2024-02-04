@@ -325,12 +325,27 @@ void SpawnBoss(object oItem)
   string sPLCClear3 = GetLocalString(oItem,"PLC3");
   string sSpawnPLC1 = GetLocalString(oItem,"spawnPLC1");
   string sSpawnWP1 = GetLocalString(oItem,"spawnWP1");
+  string sSpawnPLC2 = GetLocalString(oItem,"spawnPLC2");
+  string sSpawnWP2 = GetLocalString(oItem,"spawnWP2");
+  string sSpawnPLC3 = GetLocalString(oItem,"spawnPLC3");
+  string sSpawnWP3 = GetLocalString(oItem,"spawnWP3");
   string sUnlockDoor1 = GetLocalString(oItem,"unlockDoor1");
 
   object oWaypoint = GetWaypointByTag(sWaypointBoss);
+
+  int NoBossWP=FALSE;
+  if(!GetIsObjectValid(oWaypoint))
+  {
+    NoBossWP=TRUE;
+  }
+
   location lWaypoint = GetLocation(oWaypoint);
   object oWPSpawn1 = GetWaypointByTag(sSpawnWP1);
+  object oWPSpawn2 = GetWaypointByTag(sSpawnWP2);
+  object oWPSpawn3 = GetWaypointByTag(sSpawnWP3);
   location lWPSpawn1 = GetLocation(oWPSpawn1);
+  location lWPSpawn2 = GetLocation(oWPSpawn2);
+  location lWPSpawn3 = GetLocation(oWPSpawn3);
   object oPLC1 = GetObjectByTag(sPLCClear1);
   object oPLC2 = GetObjectByTag(sPLCClear2);
   object oPLC3 = GetObjectByTag(sPLCClear3);
@@ -362,7 +377,20 @@ void SpawnBoss(object oItem)
    CreateObject(OBJECT_TYPE_PLACEABLE,sSpawnPLC1,lWPSpawn1,TRUE);
   }
 
-  CreateObject(OBJECT_TYPE_CREATURE,sBossResRef,lWaypoint,TRUE);
+  if(sSpawnPLC2 != "")
+  {
+   CreateObject(OBJECT_TYPE_PLACEABLE,sSpawnPLC2,lWPSpawn2,TRUE);
+  }
+
+  if(sSpawnPLC3 != "")
+  {
+   CreateObject(OBJECT_TYPE_PLACEABLE,sSpawnPLC3,lWPSpawn3,TRUE);
+  }
+
+  if(!NoBossWP)
+  {
+   CreateObject(OBJECT_TYPE_CREATURE,sBossResRef,lWaypoint,TRUE);
+  }
   SetLocalInt(oItem,"bossOut",1);
 
 }

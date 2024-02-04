@@ -13,10 +13,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added an egg to the palette
 - Deployed DTS to Ruins of the Underkingdom (Fire Giants)
 - Added purple worm appearance and portrait
+- Personal/Bank storage chests
+- Storage database
 
 ### Changed
 - OI Boar/Bat Spawn & Token removal
 - OI Emberwood, East: Added spawns
+- Palette Updates
+- Banks re-opened in:
+	- Traveller's Rest
+	- The Dale
+	- Fort Wiltun
+	- Endir's Point
+	- L'Obsul
+	- Barak Runedar
+	- Kampo's Storehouse
+- Bank functionality added to:
+	- Fort Cystana: Trade Hall
+	- Obsidian Isle: Bank
 - Added Settlement variables to:
 	- Fort Cystana
 	- Thordstein
@@ -29,6 +43,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fix to Trolls Unknown area (Tileset bug)
 - Fix Lentle's quest dialogue
 - Fix Frustrated Guard quest NPC pointing to the wrong NPC to visit next
+- Fix Lente's name (it wasn't supposed to be Lentle)
 
 ## [2.9.2B - 2024-01-027]
 

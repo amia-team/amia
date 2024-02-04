@@ -38,7 +38,7 @@ void main(){
     {
      // If there is no enemy or if they are not in the combat zone area then this will NOT FIRE
     }
-    else if((fDistanceEnemy>2.4) && (fDistanceEnemy<3.65)) // This is the perfect mele range for the Sand Worm Skin
+    else if(((fDistanceEnemy>0.0) && (fDistanceEnemy<4.0)) || ((fDistancePC>0.0) && (fDistancePC<4.0))) // This is the perfect mele range for the Sand Worm Skin
     {
      // --- TEST SCRIPT ---
      // SpeakString("Enemy Distance: " + FloatToString(fDistanceEnemy));
@@ -51,7 +51,7 @@ void main(){
      LaunchAoEDamage(oCritter);
      SetLocalInt(oCritter,"aoeTimer",0);
      SetLocalInt(oCritter,"aoeFired",1);
-     SpeakString("*Finally with the enemy just out of range the worm becomes enraged and beguns to bite and trash against the ceiling causing it begin to crumble down on everything in the area*");
+     SpeakString("*Finally with the enemy just out of range the worm becomes enraged and begins to bite and thrash against the ceiling causing it begin to crumble down on everything in the area*");
     }
     else if(nAoETimer==1)
     {

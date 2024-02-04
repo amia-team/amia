@@ -12,16 +12,21 @@ void main()
    if(nSet==0)
    {
      SetLocalInt(oTrigger,"set",1);
-     int nRandom = Random(6)+1;
+     int nRandom1 = Random(3)+1;
+     int nRandom2 = Random(3)+1;
 
-     switch(nRandom)
+     switch(nRandom1)
      {
-      case 1: SetLocalInt(oTrigger,"setOne",1); SetLocalInt(oTrigger,"setTwo",3); break;
-      case 2: SetLocalInt(oTrigger,"setOne",2); SetLocalInt(oTrigger,"setTwo",6); break;
-      case 3: SetLocalInt(oTrigger,"setOne",3); SetLocalInt(oTrigger,"setTwo",4); break;
-      case 4: SetLocalInt(oTrigger,"setOne",4); SetLocalInt(oTrigger,"setTwo",5); break;
-      case 5: SetLocalInt(oTrigger,"setOne",5); SetLocalInt(oTrigger,"setTwo",2); break;
-      case 6: SetLocalInt(oTrigger,"setOne",1); SetLocalInt(oTrigger,"setTwo",6); break;
+      case 1: SetLocalInt(oTrigger,"setOne",1); break;
+      case 2: SetLocalInt(oTrigger,"setOne",2); break;
+      case 3: SetLocalInt(oTrigger,"setOne",3); break;
+     }
+
+     switch(nRandom2)
+     {
+      case 1: SetLocalInt(oTrigger,"setTwo",4); break;
+      case 2: SetLocalInt(oTrigger,"setTwo",5); break;
+      case 3: SetLocalInt(oTrigger,"setTwo",6); break;
      }
    }
 

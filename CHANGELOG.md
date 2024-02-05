@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Personal/Bank storage chests
 - Storage database
 - SUPER SECRET RAID THINGY
+- Construct familiar option
+- Construct creature/hide/weapon blueprints
 
 ### Changed
 - OI Boar/Bat Spawn & Token removal
@@ -39,6 +41,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Howness
 	- Setersborg
 	- Barak Runedar
+- Familiars and Animal Companions now have silent conversations
+- Greater Restoration/Neutralize Poison will work on sekret custom poison
 
 ### Fixed
 - Fix to Trolls Unknown area (Tileset bug)

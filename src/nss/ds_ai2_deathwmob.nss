@@ -44,11 +44,11 @@ void main(){
     {
      if(GetTag(oCritter)=="respawnfast")
      {
-       DelayCommand(12.0,RespawnCreature(oCritter,lWP));
+       DelayCommand(24.0,RespawnCreature(oCritter,lWP));
      }
      else if(GetTag(oCritter)=="respawnslow")
      {
-       DelayCommand(30.0,RespawnCreature(oCritter,lWP));
+       DelayCommand(36.0,RespawnCreature(oCritter,lWP));
      }
     }
 

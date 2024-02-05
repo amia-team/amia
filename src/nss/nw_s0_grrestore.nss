@@ -72,6 +72,18 @@ void main(){
 
     RemoveLycanInfection(oPC);
 
+    // Special removal of raid boss Purple Worm poison
+    effect ePoison = GetFirstEffect(oPC);
+    while(GetIsEffectValid(ePoison))
+    {
+     if(GetEffectTag(ePoison)=="wormpoison")
+     {
+      RemoveEffect(oPC,ePoison);
+     }
+      ePoison = GetNextEffect(oPC);
+    }
+    //
+
     // Void if of undead type.
     if( GetRacialType( oPC ) == RACIAL_TYPE_UNDEAD ){
 

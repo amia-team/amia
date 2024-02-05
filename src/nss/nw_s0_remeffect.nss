@@ -93,12 +93,25 @@ void main()
     {
         nEffect1 = EFFECT_TYPE_POISON;
         nEffect2 = EFFECT_TYPE_DISEASE;
-        nEffect3 = EFFECT_TYPE_ABILITY_DECREASE;;
+        nEffect3 = EFFECT_TYPE_ABILITY_DECREASE;
         if (GetHasFeat (FEAT_EPIC_SPELL_FOCUS_CONJURATION, OBJECT_SELF))
         {
             eImmunity = EffectImmunity (IMMUNITY_TYPE_POISON);
             ApplyEffectToObject (DURATION_TYPE_TEMPORARY, eImmunity, oTarget, RoundsToSeconds(nCasterLevel));
         }
+
+        // Special removal of raid boss Purple Worm poison
+        effect ePoison = GetFirstEffect(oTarget);
+        while(GetIsEffectValid(ePoison))
+        {
+         if(GetEffectTag(ePoison)=="wormpoison")
+         {
+           RemoveEffect(oTarget,ePoison);
+         }
+         ePoison = GetNextEffect(oTarget);
+        }
+        //
+
     }
 
 

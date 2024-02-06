@@ -339,7 +339,7 @@ void main( ){
 
 
     // Cavalry bow additions - do not let them equip a bow unless they have the mounted archery feat and it is a shortbow or light crossbow.
-    if((mounted == 1) && ((oItemType == BASE_ITEM_LONGBOW) || (oItemType == BASE_ITEM_SLING) || (oItemType == BASE_ITEM_THROWINGAXE) || (oItemType == BASE_ITEM_DART) || (oItemType == BASE_ITEM_SHURIKEN) || (oItemType == BASE_ITEM_HEAVYCROSSBOW)))
+    if((mounted == 1) && ((oItemType == BASE_ITEM_LONGBOW) || (oItemType == BASE_ITEM_THROWINGAXE) || (oItemType == BASE_ITEM_DART) || (oItemType == BASE_ITEM_SHURIKEN) || (oItemType == BASE_ITEM_HEAVYCROSSBOW)))
     {
        SendMessageToPC( oPC, "You cannot use that weapon while mounted!");
        AssignCommand(oPC, ActionUnequipItem(oItem));
@@ -347,7 +347,7 @@ void main( ){
     }
     else if((mounted == 1) && (GetHasFeat(FEAT_MOUNTED_ARCHERY, oPC) != TRUE))
     {
-      if ((oItemType == BASE_ITEM_SHORTBOW) || (oItemType == BASE_ITEM_LIGHTCROSSBOW))
+      if ((oItemType == BASE_ITEM_SHORTBOW) || (oItemType == BASE_ITEM_LIGHTCROSSBOW) || (oItemType == BASE_ITEM_SLING))
       {
         SendMessageToPC( oPC, "You cannot use that weapon while mounted without proper training!");
         AssignCommand(oPC, ActionUnequipItem(oItem));

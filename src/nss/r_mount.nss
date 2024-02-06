@@ -58,7 +58,7 @@ void main()
     }
     else if((mounted != 1) && (GetHasFeat(FEAT_MOUNTED_ARCHERY, oPC) != TRUE))
     {
-      if ((nPrimaryType == BASE_ITEM_SHORTBOW) || (nPrimaryType == BASE_ITEM_LIGHTCROSSBOW))
+      if ((nPrimaryType == BASE_ITEM_SHORTBOW) || (nPrimaryType == BASE_ITEM_LIGHTCROSSBOW) || (nPrimaryType == BASE_ITEM_SLING))
       {
          SendMessageToPC( oPC, "You cannot use that weapon while mounted without proper training!");
          ActionUnequipItem(oPrimaryHand);

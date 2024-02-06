@@ -304,7 +304,7 @@ void GenerateWormLoot(object oWorm)
    nRandom1 = Random(3)+4;
    for(i=0;i<nRandom1;i++)
    {
-    oLoot = CreateItemOnObject("js_met_iroo", oWorm); // Iron Ore
+    oLoot = CreateItemOnObject("js_bla_stin", oWorm); // Steel Ingot
     SetDroppableFlag(oLoot,TRUE);
    }
 
@@ -317,23 +317,23 @@ void GenerateWormLoot(object oWorm)
    }
 
 
-   nRandom1 = Random(20)+20;
+   nRandom1 = Random(10)+11;
    oLoot = CreateItemOnObject("js_gem_rcry", oWorm,nRandom1); // Raw Crystal
    SetDroppableFlag(oLoot,TRUE);
 
-   nRandom1 = Random(20)+20;
+   nRandom1 = Random(10)+11;
    oLoot = CreateItemOnObject("js_gem_rdia", oWorm,nRandom1); // Raw Diamond
    SetDroppableFlag(oLoot,TRUE);
 
-   nRandom1 = Random(20)+20;
+   nRandom1 = Random(10)+11;
    oLoot = CreateItemOnObject("js_gem_reme", oWorm,nRandom1); // Raw Emerald
    SetDroppableFlag(oLoot,TRUE);
 
-   nRandom1 = Random(20)+20;
+   nRandom1 = Random(10)+11;
    oLoot = CreateItemOnObject("js_gem_rrub", oWorm,nRandom1); // Raw Ruby
    SetDroppableFlag(oLoot,TRUE);
 
-   nRandom1 = Random(20)+20;
+   nRandom1 = Random(10)+11;
    oLoot = CreateItemOnObject("js_gem_rsap", oWorm,nRandom1); // Raw Sapphire
    SetDroppableFlag(oLoot,TRUE);
 

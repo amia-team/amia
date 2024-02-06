@@ -301,10 +301,18 @@ void GenerateWormLoot(object oWorm)
    }
 
    i=0;
+   nRandom1 = Random(6)+8;
+   for(i=0;i<nRandom1;i++)
+   {
+    oLoot = CreateItemOnObject("js_bla_carb", oWorm); // Carbon
+    SetDroppableFlag(oLoot,TRUE);
+   }
+
+   i=0;
    nRandom1 = Random(3)+4;
    for(i=0;i<nRandom1;i++)
    {
-    oLoot = CreateItemOnObject("js_bla_stin", oWorm); // Steel Ingot
+    oLoot = CreateItemOnObject("js_met_iroo", oWorm); // Iron Ingot
     SetDroppableFlag(oLoot,TRUE);
    }
 

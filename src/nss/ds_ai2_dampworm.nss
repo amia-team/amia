@@ -219,7 +219,7 @@ void LaunchAoEDamage(object oCritter)
   effect eDam2;
   effect eLink;
   int nDamage1;
-  int nDamage2 = 41 + Random(20);
+  int nDamage2;
 
   int nWPCount = 5;
 
@@ -236,13 +236,26 @@ void LaunchAoEDamage(object oCritter)
   {
     if(GetIsInsideTrigger(oObject,"purplewormzone"))
     {
-     if(ReflexSave(oObject,42)==0)
+
+     // Mobs will take "less" damage to avoid using the AoE to hard cheese the mobs, but still showing the mobs are getting damaged too
+     if((GetResRef(oObject)=="raid_giantspider") || (GetResRef(oObject)=="raid_formorian"))
      {
-       nDamage1 = 21 + Random(20);
+      nDamage2 = 31 + Random(20);
+      nDamage1 = 21 + Random(20);
      }
      else
      {
-       nDamage1 = 11 + Random(10);  // Half damage
+      nDamage2 = 61 + Random(30);
+      nDamage1 = 41 + Random(30);
+     }
+
+     if(ReflexSave(oObject,42)==0)
+     {
+       // Save "failed" do nothing more
+     }
+     else
+     {
+       nDamage1 = nDamage1/2;  // Half damage
      }
       eDam1 = EffectDamage(nDamage1,DAMAGE_TYPE_PIERCING);
       eDam2 = EffectDamage(nDamage2,DAMAGE_TYPE_BLUDGEONING);

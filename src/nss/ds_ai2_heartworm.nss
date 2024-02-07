@@ -115,7 +115,7 @@ void LaunchAoEDamage(object oCritter)
 
   while(GetIsObjectValid(oObject))
   {
-    if(GetIsInsideTrigger(oObject,"purplewormzone"))
+    if(GetIsInsideTrigger(oObject,"purplewormzone") && (GetResRef(oObject) != "raid_purpleworm"))
     {
 
      // Mobs will take "less" damage to avoid using the AoE to hard cheese the mobs, but still showing the mobs are getting damaged too

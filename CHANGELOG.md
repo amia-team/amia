@@ -47,6 +47,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Job System Corpse Weight changed to 1 lb
 - Cav with Mounted Archery can use Sling/Light Crossbow now 
 - Removed Mounted Combat Pre-req for Mounted Archery
+- Scholar Sites reduced from 5 minutes to 1 minute cool down
 
 ### Fixed
 - Fix to Trolls Unknown area (Tileset bug)

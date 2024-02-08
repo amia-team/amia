@@ -6,6 +6,7 @@
   - Edited: Lord-Jyssev - 8/5/22 Include cooldown counter for resource nodes
             Lord-Jyssev - 12/1/22 Included logic to allow single-use crops/animals to be placed in-world
             Lord-Jyssev - 12/5/22 Added ability to have any number of resource variables attached to an object (previously was 3 max)
+            Maverick00053 - 2/7/24 Added in functionality to give bonus resources for job primary and secondary holders on a new bonus roll
 
 */
 
@@ -157,6 +158,8 @@ void RefreshingNode(object oPC, string sResource, string sBonusresource, object 
 {
 
   int nRandom = Random(100)+1;
+  int nRandomBonus = Random(100)+1;
+  string nBonusSuccess = "FAILURE";
   float fRefresh = GetLocalFloat(oResourceNode,"refreshrate");
   string sSuccessOrFailure;
   int nPCLevel = GetHitDice(oPC);
@@ -174,6 +177,11 @@ void RefreshingNode(object oPC, string sResource, string sBonusresource, object 
     GiveExactXP(oPC,nXP);
     CreateItemOnObject(sResource,oPC);
     CreateItemOnObject(sBonusresource,oPC);
+    if(nRandomBonus <= 75)
+    {
+     nBonusSuccess="SUCCESS";
+    }
+
   }
   else if(nRank == 1)
   {
@@ -183,6 +191,10 @@ void RefreshingNode(object oPC, string sResource, string sBonusresource, object 
      GiveExactXP(oPC,nXP);
      CreateItemOnObject(sResource,oPC);
      CreateItemOnObject(sBonusresource,oPC);
+     if(nRandomBonus <= 40)
+     {
+      nBonusSuccess="SUCCESS";
+     }
     }
     else
     {
@@ -190,7 +202,6 @@ void RefreshingNode(object oPC, string sResource, string sBonusresource, object 
      GiveExactXP(oPC,nXP/2);
     }
     SendMessageToPC(oPC,"Rolled "+IntToString(nRandom)+" vs 80 or less. "+sSuccessOrFailure);
-
   }
   else
   {
@@ -213,6 +224,25 @@ void RefreshingNode(object oPC, string sResource, string sBonusresource, object 
    SetLocalInt(oResourceNode,"PreviousHarvestTime",GetRunTimeInSeconds());
    DelayCommand(fRefresh,DeleteLocalInt(oResourceNode,"PreviousHarvestTime"));
 
+   if((nRank==2) && (sSuccessOrFailure=="SUCCESS"))
+   {
+    if(nBonusSuccess=="SUCCESS")
+    {
+     CreateItemOnObject(sResource,oPC);
+     CreateItemOnObject(sBonusresource,oPC);
+    }
+    SendMessageToPC(oPC,"BONUS ROLL: Rolled "+IntToString(nRandomBonus)+" vs 75 or less. " + nBonusSuccess);
+   }
+   else if((nRank==1) && (sSuccessOrFailure=="SUCCESS"))
+   {
+    if(nBonusSuccess=="SUCCESS")
+    {
+     CreateItemOnObject(sResource,oPC);
+     CreateItemOnObject(sBonusresource,oPC);
+    }
+    SendMessageToPC(oPC,"BONUS ROLL: Rolled "+IntToString(nRandomBonus)+" vs 40 or less. " + nBonusSuccess);
+   }
+
 }
 
 
@@ -223,6 +253,8 @@ void SingleUseNode(object oPC, string sResource, string sBonusresource, object o
 {
 
   int nRandom = Random(100)+1;
+  int nRandomBonus = Random(100)+1;
+  string nBonusSuccess = "FAILURE";
   int nPCNameLength = GetStringLength(GetName(oPC));
   string sSuccessOrFailure;
   string sResourceNodeName = GetName(oResourceNode);
@@ -252,6 +284,10 @@ void SingleUseNode(object oPC, string sResource, string sBonusresource, object o
     CreateItemOnObject(sBonusresource,oPC);
     SetLocalInt(oResourceNode,"blocker",1);
     DestroyObject(oResourceNode,0.2);
+    if(nRandomBonus <= 75)
+    {
+     nBonusSuccess="SUCCESS";
+    }
   }
   else if(nRank == 1)
   {
@@ -263,6 +299,10 @@ void SingleUseNode(object oPC, string sResource, string sBonusresource, object o
      CreateItemOnObject(sBonusresource,oPC);
      SetLocalInt(oResourceNode,"blocker",1);
      DestroyObject(oResourceNode,0.2);
+     if(nRandomBonus <= 40)
+     {
+      nBonusSuccess="SUCCESS";
+     }
     }
     else
     {
@@ -306,6 +346,25 @@ void SingleUseNode(object oPC, string sResource, string sBonusresource, object o
   else if(GetLocalString(oResourceNode,"job") == "HunterTrap")
   {
     SetLocalInt(oPC,"traps",GetLocalInt(oPC,"traps")-1);
+  }
+
+  if((nRank==2) && (sSuccessOrFailure=="SUCCESS"))
+  {
+   if(nBonusSuccess=="SUCCESS")
+   {
+    CreateItemOnObject(sResource,oPC);
+    CreateItemOnObject(sBonusresource,oPC);
+   }
+   SendMessageToPC(oPC,"BONUS ROLL: Rolled "+IntToString(nRandomBonus)+" vs 75 or less. " + nBonusSuccess);
+  }
+  else if((nRank==1) && (sSuccessOrFailure=="SUCCESS"))
+  {
+   if(nBonusSuccess=="SUCCESS")
+   {
+    CreateItemOnObject(sResource,oPC);
+    CreateItemOnObject(sBonusresource,oPC);
+   }
+   SendMessageToPC(oPC,"BONUS ROLL: Rolled "+IntToString(nRandomBonus)+" vs 40 or less. " + nBonusSuccess);
   }
 
 

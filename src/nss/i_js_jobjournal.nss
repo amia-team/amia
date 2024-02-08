@@ -482,7 +482,7 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
 
      }
      SetLocalInt(oPC,"siteblocker",1);
-     DelayCommand(300.0,DeleteLocalInt(oPC,"siteblocker"));
+     DelayCommand(60.0,DeleteLocalInt(oPC,"siteblocker"));
      AssignCommand(oPC,ActionPlayAnimation(ANIMATION_LOOPING_GET_LOW,1.0,3.0));
    }
 

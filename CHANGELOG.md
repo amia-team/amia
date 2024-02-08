@@ -15,9 +15,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added purple worm appearance and portrait
 - Personal/Bank storage chests
 - Storage database
-- SUPER SECRET RAID THINGY
+- Purple Worm Raid Added
 - Construct familiar option
 - Construct creature/hide/weapon blueprints
+- Primary/Secondary harvest bonus. They get a secondary roll to gain a second resource. 
 
 ### Changed
 - OI Boar/Bat Spawn & Token removal
@@ -42,7 +43,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Setersborg
 	- Barak Runedar
 - Familiars and Animal Companions now have silent conversations
-- Greater Restoration/Neutralize Poison will work on sekret custom poison
+- Greater Restoration/Neutralize Poison will work on Purple Worm custom poison
+- Job System Corpse Weight changed to 1 lb
+- Cav with Mounted Archery can use Sling/Light Crossbow now 
+- Removed Mounted Combat Pre-req for Mounted Archery
 
 ### Fixed
 - Fix to Trolls Unknown area (Tileset bug)
@@ -50,6 +54,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fix Frustrated Guard quest NPC pointing to the wrong NPC to visit next
 - Fix Lente's name (it wasn't supposed to be Lentle)
 - Attempted to fix the Hunter Cave line of sight issue with boss
+
 
 ## [2.9.2B - 2024-01-027]
 

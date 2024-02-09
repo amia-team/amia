@@ -44,6 +44,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Thordstein
 	- Thykkvi
 	- Fort Cystana
+	- Greengarden
+	- Gregory's Landing
+	- Whitestag Shore
 - Familiars and Animal Companions now have silent conversations
 - Greater Restoration/Neutralize Poison will work on Purple Worm custom poison
 - Job System Corpse Weight changed to 1 lb

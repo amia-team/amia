@@ -40,7 +40,7 @@ void main()
      eEffectOn = GetNextEffect(oTarget);
     }
 
-    if(FortitudeSave(oTarget,44)==0)
+    if(FortitudeSave(oTarget,44, 2)==0)
     {
 
       if(nPoisoned==1)

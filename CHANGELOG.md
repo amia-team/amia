@@ -7,11 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-- 8 character portraits
+- 11 character portraits
 - Holdable playing cards added to items merchants
 - OI Emberwood, East - Cave
 - Added an egg to the palette
 - Deployed DTS to Ruins of the Underkingdom (Fire Giants)
+	- Fixes for some PLCs
 - Added purple worm appearance and portrait
 - Personal/Bank storage chests
 - Storage database
@@ -19,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Construct familiar option
 - Construct creature/hide/weapon blueprints
 - Primary/Secondary harvest bonus. They get a secondary roll to gain a second resource. 
+- New faction for Job System NPCs
 
 ### Changed
 - OI Boar/Bat Spawn & Token removal
@@ -36,12 +38,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Fort Cystana: Trade Hall
 	- Obsidian Isle: Bank
 - Added Settlement variables to:
-	- Fort Cystana
+	- Barak Runedar
+	- Setersborg
+	- Howness
 	- Thordstein
 	- Thykkvi
-	- Howness
-	- Setersborg
-	- Barak Runedar
+	- Fort Cystana
 - Familiars and Animal Companions now have silent conversations
 - Greater Restoration/Neutralize Poison will work on Purple Worm custom poison
 - Job System Corpse Weight changed to 1 lb

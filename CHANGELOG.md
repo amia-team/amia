@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Purple Worm Raid Added
 - Construct familiar option
 - Construct creature/hide/weapon blueprints
-- Primary/Secondary harvest bonus. They get a secondary roll to gain a second resource. 
+- Primary/Secondary harvest bonus. They get a secondary roll to gain a second resource on successful roll, the chances are 75%/40% for primary/secondary.
 - New faction for Job System NPCs
 
 ### Changed

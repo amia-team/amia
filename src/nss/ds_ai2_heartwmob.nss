@@ -16,6 +16,8 @@ void HuntEnemy(object oCritter);
 void main(){
 
     object oCritter     = OBJECT_SELF;
+    object oRaidSummoner = GetObjectByTag("wormraid");
+    int nBossOut = GetLocalInt(oRaidSummoner,"bossOut");
     int nCount          = GetLocalInt( oCritter, L_INACTIVE );
     int nSunkill        = GetLocalInt( oCritter, F_SUNKILL );
 
@@ -23,6 +25,10 @@ void main(){
 
     if (nCount == 1)
     {
+      if(nBossOut==0)
+      {
+        DestroyObject(oCritter);
+      }
       HuntEnemy(oCritter);
     }
 }
@@ -51,6 +57,7 @@ void HuntEnemy(object oCritter)
   {
    AssignCommand(oCritter, ActionMoveToObject(GetWaypointByTag("purplewormstart"),TRUE));
   }
+
 
 
 }

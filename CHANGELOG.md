@@ -55,6 +55,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Belenoth
 	- Bloodspear Keep
 	- Blue Lagoon
+	- Brokentooth Cave
+	- Chillwyck
+	- The Dale
 - Familiars and Animal Companions now have silent conversations
 - Greater Restoration/Neutralize Poison will work on Purple Worm custom poison
 - Job System Corpse Weight changed to 1 lb

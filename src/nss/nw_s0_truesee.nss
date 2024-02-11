@@ -88,7 +88,7 @@ void main()
     while (GetIsEffectValid(eAOE))
     {
         //Removes only the Darkness (blindness) portion of the effect, not the Invisibility
-        if( GetEffectType( eAOE ) == EFFECT_TYPE_DARKNESS )
+        if( GetEffectSpellId(eAOE) == 36 )
         {
             RemoveEffect(oTarget, eAOE);
             /*  True Races vulnerability handling    */

@@ -56,7 +56,7 @@ void main(){
     // Create a PLC marker - this makes removing existing Alarms much easier
     oAlarm = CreateObject( OBJECT_TYPE_PLACEABLE, "plc_spl_alarm", lTarget, FALSE );
 
-    AssignCommand( oAlarm, ApplyEffectAtLocation( DURATION_TYPE_TEMPORARY, EffectAreaOfEffect( 49, "spl_alarm_en", "****", "****" ), lTarget, fDur ) );
+    AssignCommand( oAlarm, ApplyEffectAtLocation( DURATION_TYPE_TEMPORARY, EffectAreaOfEffect( 54, "spl_alarm_en", "****", "****" ), lTarget, fDur ) );
 
     FloatingTextStringOnCreature( "New Alarm created! Duration: " + IntToString( nDur ) + " hours.", oCaster, FALSE );
 

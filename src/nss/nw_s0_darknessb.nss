@@ -51,12 +51,7 @@ void main()
     while (GetIsEffectValid(eAOE))
     {
         //Removes the Darkness (blindness) portion of the effect
-        if( GetEffectType( eAOE ) == EFFECT_TYPE_DARKNESS )
-        {
-            RemoveEffect(oTarget, eAOE);
-        }
-        //Removes the Darkness (invisibility) portion of the effect
-        else if( GetEffectType( eAOE ) == EFFECT_TYPE_INVISIBILITY && GetEffectDurationType( eAOE ) == DURATION_TYPE_PERMANENT )
+        if( GetEffectSpellId(eAOE) == 36  )
         {
             RemoveEffect(oTarget, eAOE);
         }

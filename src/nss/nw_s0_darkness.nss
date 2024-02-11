@@ -12,6 +12,8 @@
 //:: Created On: Jan 7, 2002
 //:://////////////////////////////////////////////
 
+// Editted: 2.10.2024 - Mav + Jes - Reworking Darkness to no longer use EffectDarkness because it sucks
+
 #include "NW_I0_SPELLS"
 #include "x2_inc_spellhook"
 #include "inc_td_shifter"
@@ -19,14 +21,6 @@
 void main()
 {
     string DARKNESS_PROHIBITED = "NO_DARKNESS";
-
-/*
-  Spellcast Hook Code
-  Added 2003-06-20 by Georg
-  If you want to make changes to all spells,
-  check x2_inc_spellhook.nss to find out more
-
-*/
 
     if (!X2PreSpellCastCode())
     {
@@ -39,25 +33,20 @@ void main()
         SendMessageToPC(oPC,"The Darkness Spell Fizzles!");
         return;
     }
-// End of Spell Cast Hook
-
 
     //Declare major variables including Area of Effect Object
-
-    effect eAOE = EffectAreaOfEffect(AOE_PER_DARKNESS);
+    effect eAOE = EffectAreaOfEffect(55,"nw_s0_darknessa","****","nw_s0_darknessb");
     location lTarget = GetSpellTargetLocation();
     int nDuration = GetNewCasterLevel(oPC);
 
     // Duration override from Item scripts
     int nDuration_override=0;
 
+    // Used for drow racial item and old assassian darkness
     if( ( nDuration_override=GetLocalInt( oPC, "darkduration") ) >0 )
     {
-
-        nDuration=nDuration_override;
-
-        DeleteLocalInt( oPC , "darkduration");
-
+       nDuration=nDuration_override;
+       DeleteLocalInt( oPC , "darkduration");
     }
 
     // Blackguard PrC PnP Spells.

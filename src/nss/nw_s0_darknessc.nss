@@ -39,11 +39,15 @@ void main(){
 
     string szRace=GetSubRace(oTarget);
 
-    effect eDark = EffectDarkness();
     effect eUV = EffectUltravision();
-    effect eInvis = EffectInvisibility( INVISIBILITY_TYPE_DARKNESS );
+
+    effect eAC = EffectACDecrease(1);
+    effect eAB = EffectAttackDecrease(1);
+    effect eMovementDecrease = EffectMovementSpeedDecrease(10);
     effect eDur = EffectVisualEffect(VFX_DUR_CESSATE_NEGATIVE);
-    effect eLink = EffectLinkEffects(eDark, eDur);
+    effect eLink = EffectLinkEffects(eAC, eAB);
+    eLink = EffectLinkEffects(eMovementDecrease, eLink);
+    eLink = EffectLinkEffects(eDur, eLink);
 
     //April 2013: If already affected, remove the old effect before applying new one
     effect eAOE = GetFirstEffect(oTarget);
@@ -51,12 +55,7 @@ void main(){
     while (GetIsEffectValid(eAOE))
     {
         //Removes the Darkness (blindness) portion of the effect
-        if( GetEffectType( eAOE ) == EFFECT_TYPE_DARKNESS )
-        {
-            RemoveEffect(oTarget, eAOE);
-        }
-        //Removes the fake blindness
-        else if( GetEffectType( eAOE ) == EFFECT_TYPE_BLINDNESS && GetEffectDurationType( eAOE ) == DURATION_TYPE_PERMANENT )
+        if( GetEffectSpellId(eAOE) == 36 )
         {
             RemoveEffect(oTarget, eAOE);
         }
@@ -72,18 +71,9 @@ void main(){
     //Continue applying new effect
     if(GetIsObjectValid(oTarget))
     {
-        if (spellsIsTarget(oTarget, SPELL_TARGET_STANDARDHOSTILE, GetAreaOfEffectCreator()))
-        {
-            SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, GetEffectSpellId(eLink)));
-        }
-        else
-        {
-            SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, GetEffectSpellId(eLink), FALSE));
-        }
         // Creatures immune to the darkness spell are not affected.
-        if ( ResistSpell(OBJECT_SELF,oTarget) != 2 || GetChallengeRating( oTarget ) < 42.0 )
+        if ( (ResistSpell(OBJECT_SELF,oTarget) != 2) || (GetHasEffect( EFFECT_TYPE_ULTRAVISION, oTarget ) == FALSE))
         {
-            ApplyEffectToObject( DURATION_TYPE_PERMANENT, eInvis, oTarget );
             DelayCommand( 1.0, ApplyEffectToObject( DURATION_TYPE_PERMANENT, eLink, oTarget ) );
         }
         /*  True Races vulnerability handling    */

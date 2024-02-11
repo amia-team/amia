@@ -56,6 +56,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Cav with Mounted Archery can use Sling/Light Crossbow now 
 - Removed Mounted Combat Pre-req for Mounted Archery
 - Scholar Sites reduced from 5 minutes to 1 minute cool down
+- Darkvision rework. Now uses Anti Light VFX. It is now -1 AB, -1 AC, and -10% Movementspeed. If you have ultravision or true seeing it ignores it. 
+
 
 ### Fixed
 - Fix to Trolls Unknown area (Tileset bug)

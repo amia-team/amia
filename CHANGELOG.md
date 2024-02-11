@@ -53,6 +53,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Fortress Wiltun
 	- Ceyren's Mill
 	- Belenoth
+	- Bloodspear Keep
+	- Blue Lagoon
 - Familiars and Animal Companions now have silent conversations
 - Greater Restoration/Neutralize Poison will work on Purple Worm custom poison
 - Job System Corpse Weight changed to 1 lb
@@ -61,6 +63,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Scholar Sites reduced from 5 minutes to 1 minute cool down
 - Darkness rework. Now uses Anti Light VFX. It is now -1 AB, -1 AC, and -10% Movement speed. If you have ultravision or true seeing it ignores it. 
 - Warlock Light's Calling/Loud Decay/Primordial Gust summons now summon without needing to target a hostile creature
+- Added map notes in Bloodspear Keep areas
 
 
 ### Fixed

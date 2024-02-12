@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [3.0.0 - 2024-02-11]
+
+### Added
 - 11 character portraits
 - Holdable playing cards added to items merchants
 - OI Emberwood, East - Cave
@@ -80,7 +88,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Warlock Light's Calling/Loud Decay/Primordial Gust summons now summon without needing to target a hostile creature
 - Added map notes in Bloodspear Keep areas
 
-
 ### Fixed
 - Fix to Trolls Unknown area (Tileset bug)
 - Fix Lentle's quest dialogue
@@ -89,7 +96,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Attempted to fix the Hunter Cave line of sight issue with boss
 
 
-## [2.9.2B - 2024-01-027]
+## [2.9.4 - 2024-01-027]
 
 ### Added
 - Settlement guard manacles added
@@ -131,7 +138,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Made Blinding Speed instant again
 - Fixed new ring icons overriding old icons
 
-## [2.9.2A - 2024-01-020]
+## [2.9.3 - 2024-01-020]
 
 ### Added
 - Beacon system for settlement attacks, including an item to engage it
@@ -193,7 +200,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed DTS spelling errors, and added ports to NPCS
 - Shadow Mastiff bug fix
 
-## [2.9.2A - 2024-01-013]
+## [2.9.2 - 2024-01-013]
 
 ### Added
 
@@ -235,7 +242,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Dynamic Merchants had weird settings, fixed
 
-## [2.9.1A - 2024-01-03]
+## [2.9.1 - 2024-01-03]
 
 ### Added
 - 2x player portrait added
@@ -291,7 +298,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Group boss summon system exploit fix
 
 
-## [2.9A - 2023-12-24]
+## [2.9.0 - 2023-12-24]
 
 ### Added
 - Palette additions ( 4 plcs, 1 item, 1 creature)
@@ -337,7 +344,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Peerage conversation will be silent now
 - Defender stance will now not work while polymorped
 
-## [2.8.1A - 2023-12-10]
+## [2.8.1 - 2023-12-10]
 
 ### Added
 - Raid boss summoning system
@@ -368,7 +375,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - DTS loot fixes and tweaks
 - Entry statue allows dragon subrace now
 
-## [2.8.A - 2023-12-06]
+## [2.8.0 - 2023-12-06]
 
 ### Added
 - [redacted] event script
@@ -405,7 +412,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixes to entry statue and subraces (blocking illigal subraces, giving out proper widgets)
 
 
-## [2.7.16A - 2023-11-25]
+## [2.7.16 - 2023-11-25]
 
 ### Changed
 - Area changes: 
@@ -422,7 +429,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Ruathym: Fortress Wiltun, Keep, Made throne proper sit-able
 
-## [2.7.15A - 2023-11-19]
+## [2.7.15 - 2023-11-19]
 
 ### Added
 - Dukes estate area (not accesible yet)
@@ -452,7 +459,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Consuming orb of darkness no longer gives party members alighment shift
 - Zau'tar interior no longer leads to old L'obsul
 
-## [2.7.14A - 2023-11-10]
+## [2.7.14 - 2023-11-10]
 
 ### Changed
 - Area changes: 
@@ -476,6 +483,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - big game hunter, Snowy mountaim
 	- Block to get into other zone
 	- Extra exit in a "dead" zone in case player gets stuck there
+	
 ## [2.7.13 - 2023-10-27]
 
 ### Changed

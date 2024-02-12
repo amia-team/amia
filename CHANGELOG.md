@@ -21,6 +21,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Construct creature/hide/weapon blueprints
 - Primary/Secondary harvest bonus. They get a secondary roll to gain a second resource on successful roll, the chances are 75%/40% for primary/secondary.
 - New faction for Job System NPCs
+- Weapon Appearances:
+	- 2 Scythes
+	- 2 Spears
+	- 1 Halberd
+	- 2 Bastard Swords
+	- 1 Greatsword
 
 ### Changed
 - OI Boar/Bat Spawn & Token removal
@@ -62,6 +68,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Eilistraeen Shrine
 	- Endir's Point
 	- Hangman's Cove
+	- L'obsul
+	- Moonpier (Fixed)
 - Familiars and Animal Companions now have silent conversations
 - Greater Restoration/Neutralize Poison will work on Purple Worm custom poison
 - Job System Corpse Weight changed to 1 lb

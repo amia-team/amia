@@ -173,10 +173,11 @@ void RefreshingNode(object oPC, string sResource, string sBonusresource, object 
 
   if(nRank == 2)
   {
-    SendMessageToPC(oPC,"100% SUCCESS! RESOURCE HARVESTED!");
+    sSuccessOrFailure = "SUCCESS";
     GiveExactXP(oPC,nXP);
     CreateItemOnObject(sResource,oPC);
     CreateItemOnObject(sBonusresource,oPC);
+    SendMessageToPC(oPC,"100% SUCCESS! RESOURCE HARVESTED!");
     if(nRandomBonus <= 75)
     {
      nBonusSuccess="SUCCESS";
@@ -278,10 +279,11 @@ void SingleUseNode(object oPC, string sResource, string sBonusresource, object o
 
   if(nRank == 2)
   {
-    SendMessageToPC(oPC,"100% SUCCESS! RESOURCE HARVESTED!");
+    sSuccessOrFailure = "SUCCESS";
     GiveExactXP(oPC,nXP);
     CreateItemOnObject(sResource,oPC);
     CreateItemOnObject(sBonusresource,oPC);
+    SendMessageToPC(oPC,"100% SUCCESS! RESOURCE HARVESTED!");
     SetLocalInt(oResourceNode,"blocker",1);
     DestroyObject(oResourceNode,0.2);
     if(nRandomBonus <= 75)

@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed the two BAD mundane PLC in the DTS system
 - Fixed a bug in the Job System bonus harvest system
 - Dynamic merchant bugfix
+- TLK issues
 
 ## [3.0.0 - 2024-02-11]
 

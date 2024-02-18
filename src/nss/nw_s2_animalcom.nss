@@ -96,6 +96,8 @@ void Buff( object oPC )
     IPSafeAddItemProperty( oClaw3, ipClaw, 0.0, X2_IP_ADDPROP_POLICY_REPLACE_EXISTING );
 
     ApplyEffectToObject( DURATION_TYPE_PERMANENT, eBuff, oAnimalCompanion, 0.0 );
+    effect eGhost = EffectCutsceneGhost();
+    ApplyEffectToObject(DURATION_TYPE_PERMANENT, eGhost, oAnimalCompanion);
 
     SendMessageToPC( oPC, "<cþ þ>Bonuses added to companion:\n "      +
     "+ "+IntToString( nCasterLevel / 2 ) + " Neutral AC.\n"           +

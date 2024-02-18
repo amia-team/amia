@@ -86,6 +86,8 @@ void Buff( object oPC )
     IPSafeAddItemProperty( oClaw3, ipClaw, 0.0, X2_IP_ADDPROP_POLICY_REPLACE_EXISTING );
 
     ApplyEffectToObject( DURATION_TYPE_PERMANENT, eBuff, oFamiliar, 0.0 );
+    effect eGhost = EffectCutsceneGhost();
+    ApplyEffectToObject(DURATION_TYPE_PERMANENT, eGhost, oFamiliar);
 
     SendMessageToPC( oPC, "<cþ þ>Bonuses added to familiar:\n"        +
     "+ "+IntToString( nCasterLevel / 2 ) + " Natural AC.\n"           +

@@ -1,66 +1,48 @@
-//: DarkSorcerer's Scripts - Merchant OnClose Event (06/15/2018)
-//: Modified for Amia dynamic merchants by Jes (06/08/21)
-// =============================================================================
-/*
-    Resets the shop's inventory by clearing the current items (including any
-    sold items from PCs); then copying over the original store set.
-*/
-// destroys all items within oTarget's inventory
-void ClearInventory(object oTarget);
-
-// copies all items from oChest back into oSelf's inventory;
-// then destroys oChest's inventory.
-void TransferItems(object oSelf, object oChest);
-
+// Amia dynamic merchants by Jes (06/08/21)
 // =============================================================================
 
-
+// Copies all items from chest into merchant's inventory;
+void TransferItems(object merchant, object chest);
+// =============================================================================
 void main()
 {
-    object oChest = GetNearestObjectByTag("storage_" + GetTag(OBJECT_SELF));
+    object chest    = GetNearestObjectByTag("storage_" + GetTag(OBJECT_SELF));
+    int maxBuy      = GetLocalInt(chest, "maxBuy");
+    object merchant = OBJECT_SELF;
 
-    // Clear self inventory first
-    ClearInventory(OBJECT_SELF);
-
-    // copy back the original items
-    DelayCommand(0.2, TransferItems(OBJECT_SELF, oChest));
-}
-
-
-
-//: Functions //////////////////////////////////////////////////////////////////
-void ClearInventory(object oTarget)
-{
-    object oItem = GetFirstItemInInventory(oTarget);
-    while (GetIsObjectValid(oItem))
-    {
-        DestroyObject(oItem);
-        oItem = GetNextItemInInventory(oTarget);
+    if(GetLocalInt(merchant, "store_opened") != 1){
+        //Transfer items to merchant
+        TransferItems(merchant, chest);
+        //Set variable so this only runs when first opened
+        SetLocalInt(merchant, "store_opened", 1);
+    }
+    //Set maximum purchase price, default is 20,000
+    if(GetLocalInt(chest, "maxBuy") != 0){
+        SetStoreMaxBuyPrice(merchant, maxBuy);
     }
 }
 
-void TransferItems(object oSelf, object oChest)
+void TransferItems(object merchant, object chest)
 {
-    if (!GetIsObjectValid(oSelf) || !GetIsObjectValid(oChest)) return;
+    if (!GetIsObjectValid(merchant) || !GetIsObjectValid(chest)) return;
+    object item = GetFirstItemInInventory(chest);
+    //Make sure item is not marked Plot
+    SetPlotFlag(item, FALSE);
 
-    // transfer original items
-    object oItem = GetFirstItemInInventory(oChest);
-    while (GetIsObjectValid(oItem))
-    {
-        object oOriginal = CopyItem(oItem, oSelf);
-        if (GetLocalInt(oItem,"dynamic_infinite") == 1)
-        {
-            SetInfiniteFlag(oOriginal, TRUE);
+    while (GetIsObjectValid(item)){
+        location shop = GetLocation(merchant);
+        json original = ObjectToJson(item, TRUE);
+        object newCopy = JsonToObject(original, shop, merchant, TRUE);
+        //No infinite flag for once-per-reset items
+        if (GetLocalInt(newCopy, "dynamicSingle") == 1){
+            DelayCommand(0.1f, SetInfiniteFlag(newCopy, FALSE));
         }
-        if (GetLocalInt(oItem,"mythalblock") == 1)
-        {
-            SetLocalInt(oOriginal, "mythalblock", 1);
+        else {
+            //Set infinite flag on item in merchant settings
+            DelayCommand(0.1f, SetInfiniteFlag(newCopy, TRUE));
         }
-
-
-        oItem = GetNextItemInInventory(oChest);
+        item = GetNextItemInInventory(chest);
+        //Make sure next item is not marked Plot
+        SetPlotFlag(item, FALSE);
     }
-
-    // clean out temp chest (Do not need for Amia dymamics)
-    //ClearInventory(oChest);
 }

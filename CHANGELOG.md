@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [3.0.1 - 2024-02-18]
+
+### Added
 - 1 robe to mounted phenotypes
 
 ### Changed
@@ -17,6 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed a bug in the Job System bonus harvest system
 - Dynamic merchant bugfix
 - TLK issues
+- Polymorph fix for spell slots
 
 ## [3.0.0 - 2024-02-11]
 

@@ -10,10 +10,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 1 robe to mounted phenotypes
 
 ### Changed
+- Remove collision bubble from animal companions and familiars
 
 ### Fixed
 - Fixed the two BAD mundane PLC in the DTS system
 - Fixed a bug in the Job System bonus harvest system
+- Dynamic merchant bugfix
 
 ## [3.0.0 - 2024-02-11]
 

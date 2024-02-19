@@ -37,6 +37,9 @@ pipeline {
         }
     }
     post {
+        always {
+             discordSend description: "Builder for Amia module finished.", footer: "Build results for Amia module", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discord.com/api/webhooks/957814431704842270/2A6zZ4x7fsWULXnfrLLyRvgqexcnAvreXr6fbym8IoHdAHGpEoQgXjLn1XKry75uN_Zg"
+        }
         success {
             echo 'Build success'
             archiveArtifacts artifacts: 'Amia.mod', followSymlinks: false

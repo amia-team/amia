@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building..'
                  script {
-                    sh "docker run --rm -t -u \$(id -u):\$(id -g) -v \$(pwd):/nasher nasher pack --clean --verbose --yes"
+                    sh "docker run --rm -t -u \$(id -u):\$(id -g) -v \$(pwd):/nasher nasher pack --clean --verbose --yes --nssCompiler:/home/nasher/.nimble/bin/nwn_script_comp --nssFlags:\"--userdirectory . -y -c\""
                 }
             }
         }

@@ -9,14 +9,14 @@ effect SetEffectSpellID( effect eEffect, int nSpellID );
 effect SetEffectScript( effect eEffect, string sEffectScript );
 
 //Set the CL for eEffect
-effect SetEffectCasterLevel( effect eEffect, int nCL );
+
 
 //Get the unique effect ID
 //this has two parts, index 0 and index 1 since its a 64bit unsigned intiger
 int GetEffectID( effect eEffect, int nIndex=0 );
 
 //Set eEffect's creator to o Creator
-effect SetEffectCreator( effect eEffect, object oCreator );
+
 
 //Get the casterlevel of the effect
 int GetLegacyEffectCasterLevel( effect eEffect );
@@ -53,12 +53,6 @@ int GetLegacyEffectCasterLevel( effect eEffect ){
     return GetEffectDurationType( eEffect );
 }
 
-effect SetEffectCreator( effect eEffect, object oCreator ){
-
-    SetLocalString( OBJECT_SELF, "NWNX!EFFECTS!SetEffectCreator", ObjectToString( oCreator ) );
-    DeleteLocalString( OBJECT_SELF, "NWNX!EFFECTS!SetEffectCreator" );
-    return MagicalEffect( eEffect );
-}
 
 int GetEffectID( effect eEffect, int nIndex ){
 
@@ -67,12 +61,6 @@ int GetEffectID( effect eEffect, int nIndex ){
     return GetEffectDurationType( eEffect );
 }
 
-effect SetEffectCasterLevel( effect eEffect, int nCL ){
-
-    SetLocalString( OBJECT_SELF, "NWNX!EFFECTS!SetEffectCasterLevel", IntToString( nCL ) );
-    DeleteLocalString( OBJECT_SELF, "NWNX!EFFECTS!SetEffectCasterLevel" );
-    return MagicalEffect( eEffect );
-}
 
 effect SetEffectScript( effect eEffect, string sEffectScript ){
 

@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Oakmist Vale
 	- Quagmire Mercenary Camp
 	- Quagmire Kobold Warren
+	- Ridgewood
 
 ### Fixed
 - Removed defunct Amia Music 2da entries

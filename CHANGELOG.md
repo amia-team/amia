@@ -29,6 +29,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Salandran Temple
 	- Shadowscape
 	- Southport
+	- Traveller's Rest
 
 ### Fixed
 - Removed defunct Amia Music 2da entries

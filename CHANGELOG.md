@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed some outdated items from the palette
 - Added new itemd to the palette
 - Added more functionality to PLC scaling
+- Remove ruins from Skull Peaks Trummels
 - Area Plot Updates:
 	- Moonpier
 	- Moonpier: Moonbeam Chapel

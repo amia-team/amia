@@ -25,6 +25,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Quagmire Mercenary Camp
 	- Quagmire Kobold Warren
 	- Ridgewood
+	- Salandran Temple
+	- Shadowscape
 
 ### Fixed
 - Removed defunct Amia Music 2da entries

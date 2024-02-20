@@ -7,8 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- New item spawner item
 
 ### Changed
+- Improved Item Spawners on backend; can now set quantity; no longer uses database, so will not break with name/login changes (will not break existing items)
+- Updated Faction/Settlement spawn area
+- Removed some outdated items from the palette
+- Added new itemd to the palette
+- Added more functionality to PLC scaling
+- Area Plot Updates:
+	- Moonpier
+	- Moonpier: Moonbeam Chapel
+	- Moonpier: Moonstone Caves
 
 ### Fixed
 

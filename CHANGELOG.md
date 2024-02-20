@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Ridgewood
 	- Salandran Temple
 	- Shadowscape
+	- Southport
 
 ### Fixed
 - Removed defunct Amia Music 2da entries

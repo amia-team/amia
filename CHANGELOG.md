@@ -23,6 +23,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Removed defunct Amia Music 2da entries
 - Fixed missing EE music entries in 2da
+- Unlimited cantrip function moved to C# so it'll stop breaking randomly every update
+- Fix the familiar/animal companion bubble removal
 
 ## [3.0.1 - 2024-02-18]
 

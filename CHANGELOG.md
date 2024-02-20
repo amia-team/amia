@@ -16,10 +16,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added new itemd to the palette
 - Added more functionality to PLC scaling
 - Remove ruins from Skull Peaks Trummels
+- Added cart from Moonpier to Gregory's Landing and back
 - Area Plot Updates:
 	- Moonpier
 	- Moonpier: Moonbeam Chapel
 	- Moonpier: Moonstone Caves
+	- Ridgewood (NPC updates)
 - Add settlement variables to:
 	- Nes'ek
 	- Oakmist Vale

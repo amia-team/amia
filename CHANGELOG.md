@@ -22,6 +22,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Add settlement variables to:
 	- Nes'ek
 	- Oakmist Vale
+	- Quagmire Mercenary Camp
+	- Quagmire Kobold Warren
 
 ### Fixed
 - Removed defunct Amia Music 2da entries

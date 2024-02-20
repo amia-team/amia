@@ -19,6 +19,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Moonpier
 	- Moonpier: Moonbeam Chapel
 	- Moonpier: Moonstone Caves
+- Add settlement variables to:
+	- Nes'ek
+	- Oakmist Vale
 
 ### Fixed
 - Removed defunct Amia Music 2da entries

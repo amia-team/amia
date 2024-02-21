@@ -7,9 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [3.1.0 - 2024-02-18]
+
+### Added
 - New item spawner item
 - New OnSpawn script for mobs that will spawn in neutral, can be attacked without breaking all factions
-- New spell targeting area indicators added
+- New spell targeting area indicators added for all area spells
 - 1 new player portrait
 
 ### Changed
@@ -51,6 +59,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed defunct Amia Music 2da entries
 - Fixed missing EE music entries in 2da
 - Unlimited cantrip function moved to C# so it'll stop breaking randomly every update
+- Fixed and added feedback to animal companion/familiar collision bubble removal
 - Updated outdated Portal Lamp conversation
 - Traveller's Rest Festival Grounds will no longer randomly ambush you with undead when you rest
 

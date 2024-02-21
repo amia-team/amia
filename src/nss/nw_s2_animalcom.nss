@@ -26,12 +26,13 @@ void main()
 {
 
     int nEpicCompanion = GetHasFeat(1240,OBJECT_SELF);
-    effect eGhost = EffectCutsceneGhost();
-    object companion = GetAssociate( ASSOCIATE_TYPE_FAMILIAR, OBJECT_SELF );
 
     //Yep thats it
     SummonAnimalCompanion();
-    DelayCommand(2.0, ApplyEffectToObject(DURATION_TYPE_PERMANENT, eGhost, companion));
+
+    object companion = GetAssociate( ASSOCIATE_TYPE_ANIMALCOMPANION, OBJECT_SELF );
+    DelayCommand(10.0, ApplyEffectToObject(DURATION_TYPE_PERMANENT, EffectCutsceneGhost(), companion));
+    DelayCommand(10.0, SendMessageToPC(OBJECT_SELF, GetName(companion) + "'s collision bubble removed."));
 
     if(nEpicCompanion == 1)
     {

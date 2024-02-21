@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - New item spawner item
 - New OnSpawn script for mobs that will spawn in neutral, can be attacked without breaking all factions
 - New spell targeting area indicators added
+- 1 new player portrait
 
 ### Changed
 - Improved Item Spawners on backend; can now set quantity; no longer uses database, so will not break with name/login changes (will not break existing items)
@@ -50,7 +51,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed defunct Amia Music 2da entries
 - Fixed missing EE music entries in 2da
 - Unlimited cantrip function moved to C# so it'll stop breaking randomly every update
-- Fix the familiar/animal companion bubble removal
 - Updated outdated Portal Lamp conversation
 - Traveller's Rest Festival Grounds will no longer randomly ambush you with undead when you rest
 

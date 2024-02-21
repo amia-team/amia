@@ -22,11 +22,11 @@ void Buff( object oPC );
 
 void main()
 {
-    object familiar = GetAssociate( ASSOCIATE_TYPE_FAMILIAR, OBJECT_SELF );
-    effect eGhost = EffectCutsceneGhost();
     //Yep thats it
     SummonFamiliar( OBJECT_SELF );
-    DelayCommand(2.0, ApplyEffectToObject(DURATION_TYPE_PERMANENT, eGhost, familiar));
+    object familiar = GetAssociate( ASSOCIATE_TYPE_FAMILIAR, OBJECT_SELF );
+    DelayCommand(10.0, ApplyEffectToObject(DURATION_TYPE_PERMANENT, EffectCutsceneGhost(), familiar));
+    DelayCommand(10.0, SendMessageToPC(OBJECT_SELF, GetName(familiar) + "'s collision bubble removed."));
 
     DelayCommand( 1.0, Buff( OBJECT_SELF ) );
 

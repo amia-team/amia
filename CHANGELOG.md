@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-## [3.1.0 - 2024-02-18]
+## [3.1.0 - 2024-02-21]
 
 ### Added
 - New item spawner item
@@ -24,7 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Improved Item Spawners on backend; can now set quantity; no longer uses database, so will not break with name/login changes (will not break existing items)
 - Updated Faction/Settlement spawn area
 - Removed some outdated items from the palette
-- Added new itemd to the palette
+- Added new items to the palette
 - Added more functionality to PLC scaling
 - Remove ruins from Skull Peaks Trummels
 - Added cart from Moonpier to Gregory's Landing and back

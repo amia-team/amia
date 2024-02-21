@@ -17,6 +17,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added more functionality to PLC scaling
 - Remove ruins from Skull Peaks Trummels
 - Added cart from Moonpier to Gregory's Landing and back
+- Made the following items 1x1 Misc Small inventory items:
+	- Job Journal
+	- The Book of Transmutation
+	- Magical Ammo Bag
+	
 - Area Plot Updates:
 	- Moonpier
 	- Moonpier: Moonbeam Chapel

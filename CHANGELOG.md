@@ -34,6 +34,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Southport
 	- Traveller's Rest
 	- The Triumvir
+	- Zanshibon
 
 ### Fixed
 - Removed defunct Amia Music 2da entries

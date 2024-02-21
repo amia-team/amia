@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - New item spawner item
 - New OnSpawn script for mobs that will spawn in neutral, can be attacked without breaking all factions
-- New spell area of effect indicators added (partially done)
+- New spell targeting area indicators added
 
 ### Changed
 - Improved Item Spawners on backend; can now set quantity; no longer uses database, so will not break with name/login changes (will not break existing items)

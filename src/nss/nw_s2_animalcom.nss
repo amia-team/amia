@@ -27,10 +27,11 @@ void main()
 
     int nEpicCompanion = GetHasFeat(1240,OBJECT_SELF);
     effect eGhost = EffectCutsceneGhost();
+    object companion = GetAssociate( ASSOCIATE_TYPE_FAMILIAR, OBJECT_SELF );
 
     //Yep thats it
     SummonAnimalCompanion();
-    DelayCommand(1.0, ApplyEffectToObject(DURATION_TYPE_PERMANENT, eGhost, OBJECT_SELF));
+    DelayCommand(2.0, ApplyEffectToObject(DURATION_TYPE_PERMANENT, eGhost, companion));
 
     if(nEpicCompanion == 1)
     {

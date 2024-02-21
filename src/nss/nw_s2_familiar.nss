@@ -22,12 +22,14 @@ void Buff( object oPC );
 
 void main()
 {
+    object familiar = GetAssociate( ASSOCIATE_TYPE_FAMILIAR, OBJECT_SELF );
     effect eGhost = EffectCutsceneGhost();
     //Yep thats it
     SummonFamiliar( OBJECT_SELF );
+    DelayCommand(2.0, ApplyEffectToObject(DURATION_TYPE_PERMANENT, eGhost, familiar));
 
     DelayCommand( 1.0, Buff( OBJECT_SELF ) );
-    DelayCommand(1.0, ApplyEffectToObject(DURATION_TYPE_PERMANENT, eGhost, OBJECT_SELF));
+
 }
 
 void Buff( object oPC )

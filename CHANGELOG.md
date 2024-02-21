@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - New item spawner item
+- New OnSpawn script for mobs that will spawn in neutral, can be attacked without breaking all factions
+- New spell area of effect indicators added (partially done)
 
 ### Changed
 - Improved Item Spawners on backend; can now set quantity; no longer uses database, so will not break with name/login changes (will not break existing items)
@@ -17,11 +19,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added more functionality to PLC scaling
 - Remove ruins from Skull Peaks Trummels
 - Added cart from Moonpier to Gregory's Landing and back
-- Made the following items 1x1 Misc Small inventory items:
+- Changed spawns in Amia Forest to have new AI that spawns neutral
+- Turned the following items into 1x1 Misc Small inventory items:
 	- Job Journal
 	- The Book of Transmutation
 	- Magical Ammo Bag
-	
+	- Box of Hats
+	- Box of Masks
+	- Greater Tome of Mystra
 - Area Plot Updates:
 	- Moonpier
 	- Moonpier: Moonbeam Chapel
@@ -47,6 +52,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Unlimited cantrip function moved to C# so it'll stop breaking randomly every update
 - Fix the familiar/animal companion bubble removal
 - Updated outdated Portal Lamp conversation
+- Traveller's Rest Festival Grounds will no longer randomly ambush you with undead when you rest
 
 ## [3.0.1 - 2024-02-18]
 

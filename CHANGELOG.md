@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Amia Forest deer to spawn as Neutral
 
 ### Fixed
 

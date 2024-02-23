@@ -7,11 +7,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- New script that allows modular item-based creature spawning
 
 ### Changed
 - Amia Forest deer to spawn as Neutral
+- OI Calderis Name Change
+- OI Updates to Eastern Foothills
+- New Quest: Earthen Rift
+- Added functionality to us_jump_to_tag for quest requirements
+- Added functionality to ee_generic_quest for quest requirements
 
 ### Fixed
+- Fixed Shadowflame Manor placeables
+- Fixed Belenoth corridor crowding
 
 ## [3.1.0 - 2024-02-21]
 

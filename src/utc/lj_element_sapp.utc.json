@@ -10,11 +10,11 @@
   },
   "Cha": {
     "type": "byte",
-    "value": 11
+    "value": 16
   },
   "ChallengeRating": {
     "type": "float",
-    "value": 15.0
+    "value": 16.0
   },
   "ClassList": {
     "type": "list",
@@ -48,6 +48,26 @@
               "Spell": {
                 "type": "word",
                 "value": 1
+              },
+              "SpellFlags": {
+                "type": "byte",
+                "value": 1
+              },
+              "SpellMetaMagic": {
+                "type": "byte",
+                "value": 0
+              }
+            }
+          ]
+        },
+        "MemorizedList4": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 3,
+              "Spell": {
+                "type": "word",
+                "value": 31
               },
               "SpellFlags": {
                 "type": "byte",
@@ -130,10 +150,10 @@
     "type": "list",
     "value": [
       {
-        "__struct_id": 256,
+        "__struct_id": 128,
         "EquippedRes": {
           "type": "resref",
-          "value": "epx_ring_immco"
+          "value": "nep_ringcoldimm"
         }
       },
       {
@@ -241,13 +261,6 @@
         "Feat": {
           "type": "word",
           "value": 322
-        }
-      },
-      {
-        "__struct_id": 1,
-        "Feat": {
-          "type": "word",
-          "value": 294
         }
       },
       {
@@ -745,6 +758,26 @@
   "TemplateResRef": {
     "type": "resref",
     "value": "lj_element_sapp"
+  },
+  "VarTable": {
+    "type": "list",
+    "value": [
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "scale"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 2
+        },
+        "Value": {
+          "type": "float",
+          "value": 0.8
+        }
+      }
+    ]
   },
   "WalkRate": {
     "type": "int",

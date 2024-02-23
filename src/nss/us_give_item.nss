@@ -36,6 +36,10 @@ void main(){
             SendMessageToPC( oPC, "Quest completed! You would have no need for this item.");
             return;
         }
+    else if(GetLocalInt(oPCKey, sQuest) == 1 && GetItemPossessedBy(oPC, sResRef) != OBJECT_INVALID)
+        {
+            return;
+        }
     else if((nOncePerReset == 1) && (GetLocalInt(OBJECT_SELF, sPubKey) == 1))
         {
             SendMessageToPC( oPC, "Only one item per reset!");

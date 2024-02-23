@@ -39,8 +39,8 @@ void main(){
         SendMessageToPC(oPC, "Door found. Initializing.");
         if ( !GetIsPC(oPC) ){ return; }
 
-        object oLever1 = GetObjectByTag( "lj_doorlever_1" );
-        object oLever2 = GetObjectByTag( "lj_doorlever_2" );
+        object oLever1 = GetNearestObjectByTag( "lj_doorlever_1" );
+        object oLever2 = GetNearestObjectByTag( "lj_doorlever_2" );
 
         int nState1 = GetLocalInt( oLever1, "active" );
         int nState2 = GetLocalInt( oLever2, "active" );
@@ -56,7 +56,7 @@ void main(){
 
             //DelayCommand( 0.5, PlayAnimation( ANIMATION_PLACEABLE_DEACTIVATE ) );
 
-            object oDoor = GetObjectByTag( "lj_leverdoor" );
+            object oDoor = GetNearestObjectByTag( "lj_leverdoor" );
 
             AssignCommand( oDoor, ActionOpenDoor( oDoor ) );
 

@@ -2,6 +2,10 @@
 
    Maverick's Generic Quest Script
 
+
+   Changelog:
+   2/21/2024 - Lord Jyssev - Added ability to set a required quest with string "questrequired" and will speak the message, "speechquestrequired"
+
 */
 
 #include "nw_i0_plot"
@@ -60,6 +64,8 @@ void main()
   int nSkillPoints = GetLocalInt(oNPC,"skillrestrictedpoints");
   int nSkillPointsBase = GetLocalInt(oNPC,"skillrestrictedpointsbase");
   object oQuestItem = GetItemPossessedBy(oPC,questitem);
+  string sRequiredQuest = GetLocalString(oNPC,"questrequired");
+  string sSpeechRequiredQuest = GetLocalString(oNPC,"speechquestrequired");
 
   FaceNearestPC();
 
@@ -71,7 +77,17 @@ void main()
    {
     if((GetSkillRank(nSkill,oPC,nSkillPointsBase) >= nSkillPoints) || (sSkillRestriction == ""))
     {
-
+    if(sRequiredQuest != "")
+    {
+        object oPCKey = GetItemPossessedBy(oPC,"ds_pckey");
+        int nRequiredQuest = GetLocalInt(oPCKey,sRequiredQuest);
+        if( nRequiredQuest != 2)
+        {
+            AssignCommand(oNPC, ActionSpeakString(sSpeechRequiredQuest));
+            SendMessageToPC( oPC, "You must complete the <c Í >" + sRequiredQuest + "</c> quest before you may begin this one." );
+            return;
+        }
+    }
     if(nQuest == 0)
     {
       LaunchSpeech(oNPC);

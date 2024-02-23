@@ -24,6 +24,7 @@ Date        Name        Reason
 2014-10-20  Glim        Added support for racial restricted use.
 2015-09-29  PoS         Polymorphed PCs aren't screwed by this script now
 2023-10-08  Frozen      Added 2 key check option
+2024-02-21  Lord-Jyssev Added variable support for "queststarted" or "questfinished"
 ------------------------------------------------------------------
 
 */
@@ -70,6 +71,8 @@ void main(){
     string sKey     = GetLocalString( OBJECT_SELF, "ds_key" );
     string sKey2    = GetLocalString( OBJECT_SELF, "ds_key_2" );
     string sMessage = GetLocalString( OBJECT_SELF, "ds_message" );
+    string sQuestStarted   = GetLocalString( OBJECT_SELF, "queststarted");
+    string sQuestFinished  = GetLocalString( OBJECT_SELF, "questfinished");
 
 
 
@@ -88,6 +91,27 @@ void main(){
     {
         SendMessageToPC( oPC, "Only certain races may use this object." );
         return;
+    }
+
+    if( sQuestStarted != "") //Check to see if the quest fields are set
+    {
+        object oPCKey = GetItemPossessedBy(oPC,"ds_pckey");
+        int nQuestStarted  = GetLocalInt(oPCKey,sQuestStarted);
+        if( nQuestStarted < 1)
+        {
+            SendMessageToPC( oPC, "You must have started the <c Í >" + sQuestStarted + "</c> quest to use this.");
+            return;
+        }
+    }
+    else if( sQuestFinished != "") //Check to see if the quest fields are set
+    {
+        object oPCKey = GetItemPossessedBy(oPC,"ds_pckey");
+        int nQuestFinished = GetLocalInt(oPCKey,sQuestFinished);
+        if (nQuestFinished != 2)
+        {
+            SendMessageToPC( oPC, "You must have completed the <c Í >" + sQuestFinished + "</c> quest to use this.");
+            return;
+        }
     }
 
     if ( nGold ){

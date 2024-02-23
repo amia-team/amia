@@ -11,6 +11,7 @@
   - RequiredGold   (Amount of gold needed)
   - RequiredLevel  (Level of the PC in convo)
   - RequiredItem   (Tag of the item requirement)
+  - RequiredQuest  (Tag of relevant Quest)
                                                      */
 ///////////////////////////////////////////////////////
 
@@ -22,8 +23,10 @@ int StartingConditional()
     int nRequiredGold = StringToInt(GetScriptParam("RequiredGold"));
     int nRequiredLevel = StringToInt(GetScriptParam("RequiredLevel"));
     string sRequiredItem = GetScriptParam("RequiredItem");
+    string sRequiredQuest = GetScriptParam("RequiredQuest");
 
     object oPC = GetPCSpeaker();
+    object oPCKey = GetItemPossessedBy(oPC, "ds_pckey");
 
     // If gold amount isn't set we'll ignore it
     if(nRequiredGold != 0)
@@ -50,6 +53,13 @@ int StartingConditional()
     {
         // Check if they have one of the items tagged
         if(GetIsObjectValid(GetItemPossessedBy(oPC, sRequiredItem)))
+        {
+            return TRUE;
+        }
+    }
+    else if(sRequiredQuest != "")
+    {
+        if(GetLocalInt(oPCKey, sRequiredQuest) == 2)
         {
             return TRUE;
         }

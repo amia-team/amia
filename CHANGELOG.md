@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
+##Added
+- Greengarden Guard House interior 
+
 ### Added
 - New script that allows modular item-based creature spawning
 

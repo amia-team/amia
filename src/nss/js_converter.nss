@@ -8,6 +8,7 @@
   ??     Frozen: Tailor kit added
   16-april-2023 Frozen: Hair and tattoo kit added
   070523 Lord-Jyssev: Added epic loot crafting and ingredient retention option
+  Feb 23 2024 Maverick: Added in new Raid crafting support, and added in functionality so you can have two identifical ingredients and it will work. Also added in proper tracking for job system material types and requires those items of certain materials for recipes. See the Epic/Legendary sections.
 
 */
 
@@ -17,6 +18,7 @@
 #include "inc_td_itemprop"
 
 const int RESOURCE_XP = 100;
+const int REPEAT_LOOP_ON = TRUE; // Set to false if you want to turn off repeat crafting
 
 // Launches the Convo Script
 void LaunchConvo( object oBench, object oPC);
@@ -83,7 +85,10 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
 
 
 //Launches the function to take the ingredients and produce the product
-void CraftProduct(object oPC, object oBench, string sProduct, string sType, string sMaterial, string sIngredient1, string sIngredient2, string sPlaceableName, int nCost, int nStack, int nProductStackSize, int nRetainItem);
+void CraftProduct(object oPC, object oBench, string sProduct, string sType, string sMaterial, string sIngredient1, string sIngredient2, string sPlaceableName, int nCost, int nStack, int nProductStackSize, int nRetainItem, int nRepeat, string sIngredient1Type, string sIngredient2Type);
+
+// Part of the loop system for the job system
+void LoopCraftProduct(object oPC,object oBench,string sProduct,string sType,string sMaterial,string sIngredient1,string sIngredient2,string sPlaceableName,int nCost,int nStack,int nProductStackSize,int nRetainItem, string sIngredient1Type, string sIngredient2Type);
 
 //Sets the material local variables
 void SetMaterialType(object oCraftedItem, string sWeaponResRef, int nArmorMaterialPresent, int nArmorMaterial, int nWeaponMaterialPresent, int nWeaponMaterial);
@@ -261,6 +266,8 @@ void ArtificerConverter(object oPC, object oBench, int nNode)
     string sProduct;
     string sIngredient1;
     string sIngredient2;
+    string sIngredient1Type;
+    string sIngredient2Type;
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName;
@@ -296,10 +303,14 @@ void ArtificerConverter(object oPC, object oBench, int nNode)
       case 20: sProduct = "js_arca_gol_c"; sIngredient1 = "js_arca_gol_g"; sIngredient2 = "js_arca_ecore"; nCost = 2000; nStack = 1; break;
       case 21: sProduct = "js_arca_gol_h"; sIngredient1 = "js_arca_gol_c"; sIngredient2 = "js_alch_elea"; nCost = 5000; nStack = 1; break;
       case 22: sProduct = "js_arca_gmpo"; sIngredient1 = "js_bla_miin"; sIngredient2 = "js_lea_leat"; nCost = 5000; break;
+      case 23: sProduct = "raid_comp_frosty"; sIngredient1 = "raid_base_frosty"; sIngredient2 = "raid_base_frosty"; nCost = 5000; nRetainItem=1; break;
+      case 24: sProduct = "raid_comp_lich"; sIngredient1 = "raid_base_lich"; sIngredient2 = "raid_base_lich"; nCost = 5000; nRetainItem=1; break;
+      case 25: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_comp_frosty"; sIngredient2 = "js_jew_diam"; sType = "wdragonbossrewar"; sPlaceableName = "<cnÞÿ>Frostspear's Treasure</c>"; nCost = 10000; nRetainItem=1; break;
+
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);
 
 }
 
@@ -311,6 +322,8 @@ void ArchitectConverter(object oPC, object oBench, int nNode)
     string sProduct;
     string sIngredient1;
     string sIngredient2;
+    string sIngredient1Type;
+    string sIngredient2Type;
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName = "Job System Placeable";
@@ -380,7 +393,7 @@ void ArchitectConverter(object oPC, object oBench, int nNode)
       case 54: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_bla_irin"; sType = "js_bui_trsi2"; sPlaceableName = "Transportable Sign Large"; sMaterial = "plc"; nCost = 2000; break;
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);
 
 
 }
@@ -393,6 +406,8 @@ void AlchemistConverter(object oPC, object oBench, int nNode)
     string sProduct;
     string sIngredient1;
     string sIngredient2;
+    string sIngredient1Type;
+    string sIngredient2Type;
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName;
@@ -435,7 +450,7 @@ void AlchemistConverter(object oPC, object oBench, int nNode)
 
      }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);
 
 
 }
@@ -448,6 +463,8 @@ void ArtistConverter(object oPC, object oBench, int nNode)
     string sProduct;
     string sIngredient1;
     string sIngredient2;
+    string sIngredient1Type;
+    string sIngredient2Type;
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName = "Job System Placeable";
@@ -611,7 +628,7 @@ void ArtistConverter(object oPC, object oBench, int nNode)
     }
 
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);
 
 
 }
@@ -624,6 +641,8 @@ void BrewerConverter(object oPC, object oBench, int nNode)
     string sProduct;
     string sIngredient1;
     string sIngredient2;
+    string sIngredient1Type;
+    string sIngredient2Type;
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName;
@@ -654,7 +673,7 @@ void BrewerConverter(object oPC, object oBench, int nNode)
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);
 
 
 }
@@ -666,6 +685,8 @@ void ChefConverter(object oPC, object oBench, int nNode)
     string sProduct;
     string sIngredient1;
     string sIngredient2;
+    string sIngredient1Type;
+    string sIngredient2Type;
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName;
@@ -724,7 +745,7 @@ void ChefConverter(object oPC, object oBench, int nNode)
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);
 
 
 
@@ -737,6 +758,8 @@ void JewelerConverter(object oPC, object oBench, int nNode)
     string sProduct;
     string sIngredient1;
     string sIngredient2;
+    string sIngredient1Type;
+    string sIngredient2Type;
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName;
@@ -764,10 +787,12 @@ void JewelerConverter(object oPC, object oBench, int nNode)
       case 12: sProduct = "js_jew_ring"; sIngredient1 = "js_bla_goin"; sIngredient2 = "none"; sType = "ring"; sMaterial = "gold"; nCost = 1000; break;
       case 13: sProduct = "js_jew_ring"; sIngredient1 = "js_bla_plin"; sIngredient2 = "none"; sType = "ring"; sMaterial = "platinum"; nCost = 1000; break;
       case 14: sProduct = "js_gem_sivo"; sIngredient1 = "js_gem_ivor"; sIngredient2 = "none"; nCost = 2000; break;
+      case 15: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_frosty"; sIngredient2 = "js_jew_amul"; sType = "frostspear_neckl"; sPlaceableName = "<cnÞÿ>Frostchoker</c>"; nCost = 10000; nRetainItem=1; sIngredient2Type = "adamantine"; break;
+      case 16: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_lich"; sIngredient2 = "js_jew_ring"; sType = "shroudring"; sPlaceableName = "<cË z>Undeath's Eternal Servant</c>"; nCost = 10000; nRetainItem=1; sIngredient2Type = "adamantine"; break;
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);
 
 
 
@@ -780,6 +805,8 @@ void RangedCraftsmanConverter(object oPC, object oBench, int nNode)
     string sProduct;
     string sIngredient1;
     string sIngredient2;
+    string sIngredient1Type;
+    string sIngredient2Type;
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName;
@@ -852,7 +879,7 @@ void RangedCraftsmanConverter(object oPC, object oBench, int nNode)
       }
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);
 
 
 }
@@ -864,6 +891,8 @@ void ScoundrelConverter(object oPC, object oBench, int nNode)
     string sProduct;
     string sIngredient1;
     string sIngredient2;
+    string sIngredient1Type;
+    string sIngredient2Type;
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName;
@@ -888,7 +917,7 @@ void ScoundrelConverter(object oPC, object oBench, int nNode)
       case 10: sProduct = "js_arca_spiderl"; sIngredient1 = "js_hun_cspider"; sIngredient2 = "js_alch_slee"; nCost = 2000; break;
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);
 
 
 
@@ -901,6 +930,8 @@ void ScholarConverter(object oPC, object oBench, int nNode)
     string sProduct;
     string sIngredient1;
     string sIngredient2;
+    string sIngredient1Type;
+    string sIngredient2Type;
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName;
@@ -923,7 +954,7 @@ void ScholarConverter(object oPC, object oBench, int nNode)
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);
 
 
 
@@ -936,6 +967,8 @@ void SmithConverter(object oPC, object oBench, int nNode)
     string sProduct;
     string sIngredient1;
     string sIngredient2;
+    string sIngredient1Type;
+    string sIngredient2Type;
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName;
@@ -1337,7 +1370,6 @@ void SmithConverter(object oPC, object oBench, int nNode)
 
       }
     }
-
     else if(nActionNode == 9) // Sure/True/Warforged
     {
 
@@ -1379,8 +1411,23 @@ void SmithConverter(object oPC, object oBench, int nNode)
 
       }
     }
+    else if(nActionNode == 10) // Legendary Crafting
+    {
+      switch(nNode)
+      {
+        case 1: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_frosty"; sIngredient2 = "js_bla_shto"; sType = "frostspear_shiel"; sPlaceableName = "<cnÞÿ>Whitescale Aegis</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+        case 2: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_frosty"; sIngredient2 = "js_bla_wems"; sType = "frostspear_staff"; sPlaceableName = "<cnÞÿ>Wizard Staff of the Ice Queen</c>"; sIngredient2Type = "steel"; nCost = 10000; nRetainItem=1; break;
+        case 3: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_frosty"; sIngredient2 = "js_bla_wems"; sType = "frostspear_staf2"; sPlaceableName = "<cnÞÿ>Sorcerer Staff of the Ice Queen</c>"; sIngredient2Type = "steel"; nCost = 10000; nRetainItem=1; break;
+        case 4: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_frosty"; sIngredient2 = "js_bla_wems"; sType = "frostspear_staf3"; sPlaceableName = "<cnÞÿ>Cleric Staff of the Ice Queen</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+        case 5: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_frosty"; sIngredient2 = "js_bla_wems"; sType = "frostspear_staf4"; sPlaceableName = "<cnÞÿ>Druid Staff of the Ice Queen</c>"; sIngredient2Type = "ironwood"; nCost = 10000; nRetainItem=1; break;
+        case 6: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_lich"; sIngredient2 = "js_bla_arfp"; sType = "shroudarmor"; sPlaceableName = "<cË z>Shroud of Eternal Damnation</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+        case 7: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_lich"; sIngredient2 = "js_bla_shto"; sType = "shroudshield"; sPlaceableName = "<cË z>Fallen Hero's Shield</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+        case 8: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_comp_frosty"; sIngredient2 = "js_bla_wega"; sType = "frostspear_gaxe"; sPlaceableName = "<cnÞÿ>Glacial Clever</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+        case 9: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_comp_lich"; sIngredient2 = "js_bla_helm"; sType = "shroudhelm"; sPlaceableName = "<cË z>Blazing Crown of Ages Past</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+      }
+    }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);
 
 }
 
@@ -1391,6 +1438,8 @@ void TailorConverter(object oPC, object oBench, int nNode)
     string sProduct;
     string sIngredient1;
     string sIngredient2;
+    string sIngredient1Type;
+    string sIngredient2Type;
     string sType = "none";
     string sMaterial = "none";
     string sPlaceableName = "Job System Placeable";
@@ -1459,10 +1508,11 @@ void TailorConverter(object oPC, object oBench, int nNode)
       case 53: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtent"; sIngredient2 = "js_art_colred"; sType = "js_bui_tent5"; sPlaceableName = "Big Red and White Tent"; sMaterial = "plc"; nCost = 10000; break;
       case 54: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtentrdwht"; sIngredient2 = "js_art_colblk"; sType = "js_bui_tent6"; sPlaceableName = "Big Red and Black Tent"; sMaterial = "plc"; nCost = 10000; break;
       case 55: sProduct = "js_tailorkit"; sIngredient1 = "js_tai_bosi"; sIngredient2 = "js_bla_stin"; nCost = 10000; break;
+      case 56: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_lich"; sIngredient2 = "js_tai_cloa"; sType = "shroudcloak"; sPlaceableName = "<cË z>Mantle of Unlife</c>"; nCost = 10000; sIngredient2Type = "wool"; break;
 
     }
 
-    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem);
+    CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);
 
 
 
@@ -1483,6 +1533,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
         iMaterial = ItemPropertyMaterial(1);
         SetLocalInt(oCraftedItem,"armormaterial",6);
         SetLocalInt(oCraftedItem,"material",6);
+        SetLocalString(oCraftedItem,"stringMaterial","adamantine");
 
         if((sType == "weapon") || (sType == "gweapon") || (sType == "dweapon"))
         {
@@ -1507,6 +1558,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
         iMaterial = ItemPropertyMaterial(11);
         SetLocalInt(oCraftedItem,"armormaterial",4);
         SetLocalInt(oCraftedItem,"material",4);
+        SetLocalString(oCraftedItem,"stringMaterial","mithral");
 
         if((sType == "weapon") || (sType == "gweapon") || (sType == "dweapon"))
         {
@@ -1529,6 +1581,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
         iMaterial = ItemPropertyMaterial(15);
         SetLocalInt(oCraftedItem,"armormaterial",2);
         SetLocalInt(oCraftedItem,"material",2);
+        SetLocalString(oCraftedItem,"stringMaterial","steel");
 
         if((sType == "weapon") || (sType == "gweapon") || (sType == "dweapon"))
         {
@@ -1552,6 +1605,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
         iMaterial = ItemPropertyMaterial(9);
         SetLocalInt(oCraftedItem,"armormaterial",0);
         SetLocalInt(oCraftedItem,"material",0);
+        SetLocalString(oCraftedItem,"stringMaterial","iron");
 
         if((sType == "weapon") || (sType == "gweapon") || (sType == "dweapon"))
         {
@@ -1573,16 +1627,19 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
       {
         SetName(oCraftedItem,"<c~Îë>Crafted Ivory</c> " + GetName(oCraftedItem));
         iMaterial = ItemPropertyMaterial(16);
+        SetLocalString(oCraftedItem,"stringMaterial","ivory");
       }
       else if(sMaterial == "platinum")
       {
         SetName(oCraftedItem,"<c~Îë>Crafted Platinum</c> " + GetName(oCraftedItem));
         iMaterial = ItemPropertyMaterial(12);
+        SetLocalString(oCraftedItem,"stringMaterial","platinum");
       }
       else if(sMaterial == "gold")
       {
         SetName(oCraftedItem,"<c~Îë>Crafted Gold</c> " + GetName(oCraftedItem));
         iMaterial = ItemPropertyMaterial(8);
+        SetLocalString(oCraftedItem,"stringMaterial","gold");
       }
       else if(sMaterial == "silver")
       {
@@ -1590,6 +1647,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
         iMaterial = ItemPropertyMaterial(13);
         SetLocalInt(oCraftedItem,"armormaterial",3);
         SetLocalInt(oCraftedItem,"material",3);
+        SetLocalString(oCraftedItem,"stringMaterial","silver");
 
         if((sType == "weapon") || (sType == "gweapon") || (sType == "dweapon"))
         {
@@ -1613,6 +1671,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
       {
         SetName(oCraftedItem,"<c~Îë>Crafted Duskwood</c> " + GetName(oCraftedItem));
         iMaterial = ItemPropertyMaterial(37);
+        SetLocalString(oCraftedItem,"stringMaterial","duskwood");
 
         if((sType == "bow") || (sType == "crossbow") || (sType == "lightcrossbow") || (sType == "shortbow"))
         {
@@ -1626,6 +1685,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
       {
         SetName(oCraftedItem,"<c~Îë>Crafted Ironwood</c> " + GetName(oCraftedItem));
         iMaterial = ItemPropertyMaterial(37);
+        SetLocalString(oCraftedItem,"stringMaterial","ironwood");
 
         if((sType == "weapon") || (sType == "gweapon"))
         {
@@ -1650,6 +1710,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
       {
         SetName(oCraftedItem,"<c~Îë>Crafted Phandar</c> " + GetName(oCraftedItem));
         iMaterial = ItemPropertyMaterial(37);
+        SetLocalString(oCraftedItem,"stringMaterial","phandar");
 
         if((sType == "bow") || (sType == "crossbow") || (sType == "lightcrossbow") || (sType == "shortbow"))
         {
@@ -1663,6 +1724,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
       {
         SetName(oCraftedItem,"<c~Îë>Crafted Shadowtop</c> " + GetName(oCraftedItem));
         iMaterial = ItemPropertyMaterial(37);
+        SetLocalString(oCraftedItem,"stringMaterial","shadowtop");
 
         if((sType == "bow") || (sType == "crossbow") || (sType == "lightcrossbow") || (sType == "shortbow"))
         {
@@ -1676,6 +1738,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
       {
         SetName(oCraftedItem,"<c~Îë>Crafted Zurkwood</c> " + GetName(oCraftedItem));
         iMaterial = ItemPropertyMaterial(37);
+        SetLocalString(oCraftedItem,"stringMaterial","zurkwood");
 
         if((sType == "bow") || (sType == "crossbow") || (sType == "lightcrossbow") || (sType == "shortbow"))
         {
@@ -1689,6 +1752,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
       {
         SetName(oCraftedItem,"<c~Îë>Crafted Cotton</c> " + GetName(oCraftedItem));
         iMaterial = ItemPropertyMaterial(34);
+        SetLocalString(oCraftedItem,"stringMaterial","cotton");
 
         if((sType == "armor"))
         {
@@ -1710,6 +1774,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
       {
         SetName(oCraftedItem,"<c~Îë>Crafted Silk</c> " + GetName(oCraftedItem));
         iMaterial = ItemPropertyMaterial(35);
+        SetLocalString(oCraftedItem,"stringMaterial","silk");
 
         if((sType == "armor"))
         {
@@ -1731,6 +1796,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
       {
         SetName(oCraftedItem,"<c~Îë>Crafted Rothe Wool</c> " + GetName(oCraftedItem));
         iMaterial = ItemPropertyMaterial(36);
+        SetLocalString(oCraftedItem,"stringMaterial","rothewool");
 
         if((sType == "armor"))
         {
@@ -1747,6 +1813,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
       {
         SetName(oCraftedItem,"<c~Îë>Crafted Wool</c> " + GetName(oCraftedItem));
         iMaterial = ItemPropertyMaterial(36);
+        SetLocalString(oCraftedItem,"stringMaterial","wool");
 
         if((sType == "armor"))
         {
@@ -1767,6 +1834,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
       {
         SetName(oCraftedItem,"<c~Îë>Crafted Hide</c> " + GetName(oCraftedItem));
         iMaterial = ItemPropertyMaterial(17);
+        SetLocalString(oCraftedItem,"stringMaterial","hide");
 
         if((sType == "armor"))
         {
@@ -1777,6 +1845,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
       {
         SetName(oCraftedItem,"<c~Îë>Crafted Leather</c> " + GetName(oCraftedItem));
         iMaterial = ItemPropertyMaterial(31);
+        SetLocalString(oCraftedItem,"stringMaterial","leather");
 
         if((sType == "armor"))
         {
@@ -1790,6 +1859,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
       else if(sMaterial == "training")
       {
         SetName(oCraftedItem,"<c~Îë>Crafted Training</c> " + GetName(oCraftedItem));
+        SetLocalString(oCraftedItem,"stringMaterial","training");
         iMaterial = ItemPropertyMaterial(37);
         iProperty1 = ItemPropertyNoDamage();
       }
@@ -1807,7 +1877,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
 }
 
 
-void CraftProduct(object oPC, object oBench, string sProduct, string sType, string sMaterial, string sIngredient1, string sIngredient2, string sPlaceableName, int nCost, int nStack, int nProductStackSize, int nRetainItem)
+void CraftProduct(object oPC, object oBench, string sProduct, string sType, string sMaterial, string sIngredient1, string sIngredient2, string sPlaceableName, int nCost, int nStack, int nProductStackSize, int nRetainItem, int nRepeat, string sIngredient1Type, string sIngredient2Type)
 {
 
     object oItemInChest = GetFirstItemInInventory(oBench);
@@ -1860,7 +1930,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
         (GetResRef(oItemInChest) == "js_tree_shaw") || (GetResRef(oItemInChest) == "js_tree_irow") ||
         (GetResRef(oItemInChest) == "js_tree_zurw"))
         {
-           nIngredient1Found == 1;
+           nIngredient1Found = 1;
            oIngredient1 = oItemInChest;
         }
       }
@@ -1871,7 +1941,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
         (GetResRef(oItemInChest) == "js_tree_shaw") || (GetResRef(oItemInChest) == "js_tree_irow") ||
         (GetResRef(oItemInChest) == "js_tree_zurw"))
         {
-           nIngredient2Found == 1;
+           nIngredient2Found = 1;
            oIngredient2 = oItemInChest;
         }
       }
@@ -1883,7 +1953,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
         if((GetResRef(oItemInChest) == "nep_largemagical") || (GetResRef(oItemInChest) == "nep_mediummagic") ||
         (GetResRef(oItemInChest) == "nep_smallmagical"))
         {
-           nIngredient1Found == 1;
+           nIngredient1Found = 1;
            oIngredient1 = oItemInChest;
         }
       }
@@ -1892,7 +1962,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
         if((GetResRef(oItemInChest) == "nep_largemagical") || (GetResRef(oItemInChest) == "nep_mediummagic") ||
         (GetResRef(oItemInChest) == "nep_smallmagical"))
         {
-           nIngredient2Found == 1;
+           nIngredient2Found = 1;
            oIngredient2 = oItemInChest;
         }
       }
@@ -1905,7 +1975,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
         (GetResRef(oItemInChest) == "js_ran_mutt") || (GetResRef(oItemInChest) == "js_ran_peam")
         || (GetResRef(oItemInChest) == "js_hun_game"))
         {
-           nIngredient1Found == 1;
+           nIngredient1Found = 1;
            oIngredient1 = oItemInChest;
         }
       }
@@ -1917,7 +1987,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
         (GetResRef(oItemInChest) == "js_ran_mutt") || (GetResRef(oItemInChest) == "js_ran_peam")
         || (GetResRef(oItemInChest) == "js_hun_game"))
         {
-           nIngredient2Found == 1;
+           nIngredient2Found = 1;
            oIngredient2 = oItemInChest;
         }
       }
@@ -1929,7 +1999,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
         if((GetResRef(oItemInChest) == "js_ran_cami") || (GetResRef(oItemInChest) == "js_ran_romi") ||
         (GetResRef(oItemInChest) == "js_ran_shmi") || (GetResRef(oItemInChest) == "js_ran_mil"))
         {
-           nIngredient1Found == 1;
+           nIngredient1Found = 1;
            oIngredient1 = oItemInChest;
         }
       }
@@ -1939,7 +2009,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
         if((GetResRef(oItemInChest) == "js_ran_cami") || (GetResRef(oItemInChest) == "js_ran_romi") ||
         (GetResRef(oItemInChest) == "js_ran_shmi") || (GetResRef(oItemInChest) == "js_ran_mil"))
         {
-           nIngredient2Found == 1;
+           nIngredient2Found = 1;
            oIngredient2 = oItemInChest;
         }
       }
@@ -1950,7 +2020,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
       {
         if((GetResRef(oItemInChest) == "js_ran_cheg") || (GetResRef(oItemInChest) == "js_ran_peae"))
         {
-           nIngredient1Found == 1;
+           nIngredient1Found = 1;
            oIngredient1 = oItemInChest;
         }
       }
@@ -1959,7 +2029,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
       {
         if((GetResRef(oItemInChest) == "js_ran_cheg") || (GetResRef(oItemInChest) == "js_ran_peae"))
         {
-           nIngredient2Found == 1;
+           nIngredient2Found = 1;
            oIngredient2 = oItemInChest;
         }
       }
@@ -1981,7 +2051,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
         || (GetResRef(oItemInChest) == "js_bla_wesp")  || (GetResRef(oItemInChest) == "js_bla_wetr"))
         {
 
-           nIngredient1Found == 1;
+           nIngredient1Found = 1;
            oIngredient1 = oItemInChest;
            nWeaponMaterial = GetLocalInt(oItemInChest, "material");
            sWeaponResRef = GetResRef(oItemInChest);
@@ -2003,7 +2073,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
         || (GetResRef(oItemInChest) == "js_bla_wems")  || (GetResRef(oItemInChest) == "js_bla_wehb")  || (GetResRef(oItemInChest) == "js_bla_wesy")
         || (GetResRef(oItemInChest) == "js_bla_wesp")  || (GetResRef(oItemInChest) == "js_bla_wetr"))
         {
-           nIngredient2Found == 1;
+           nIngredient2Found = 1;
            oIngredient2 = oItemInChest;
            nWeaponMaterial = GetLocalInt(oItemInChest, "material");
            sWeaponResRef = GetResRef(oItemInChest);
@@ -2020,7 +2090,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
         (GetResRef(oItemInChest) == "js_art_colprp") || (GetResRef(oItemInChest) == "js_art_colred") ||
         (GetResRef(oItemInChest) == "js_art_colwht") || (GetResRef(oItemInChest) == "js_art_colyel"))
         {
-           nIngredient1Found == 1;
+           nIngredient1Found = 1;
            oIngredient1 = oItemInChest;
         }
       }
@@ -2032,7 +2102,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
         (GetResRef(oItemInChest) == "js_art_colprp") || (GetResRef(oItemInChest) == "js_art_colred") ||
         (GetResRef(oItemInChest) == "js_art_colwht") || (GetResRef(oItemInChest) == "js_art_colyel"))
         {
-           nIngredient2Found == 1;
+           nIngredient2Found = 1;
            oIngredient2 = oItemInChest;
         }
       }
@@ -2045,7 +2115,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
       {
         if((GetLocalString(oItemInChest, "plc") == "js_art_scca"))
         {
-           nIngredient1Found == 1;
+           nIngredient1Found = 1;
            oIngredient1 = oItemInChest;
         }
       }
@@ -2056,7 +2126,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
       {
         if((GetLocalString(oItemInChest, "plc") == "js_art_exca"))
         {
-           nIngredient1Found == 1;
+           nIngredient1Found = 1;
            oIngredient1 = oItemInChest;
         }
       }
@@ -2067,7 +2137,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
       {
         if((GetLocalString(oItemInChest, "plc") == "js_bui_tabl"))
         {
-           nIngredient1Found == 1;
+           nIngredient1Found = 1;
            oIngredient1 = oItemInChest;
         }
       }
@@ -2078,7 +2148,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
       {
         if((GetLocalString(oItemInChest, "plc") == "js_art_potclay1"))
         {
-           nIngredient1Found == 1;
+           nIngredient1Found = 1;
            oIngredient1 = oItemInChest;
         }
       }
@@ -2089,7 +2159,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
       {
         if((GetLocalString(oItemInChest, "plc") == "js_bui_tent3"))
         {
-           nIngredient1Found == 1;
+           nIngredient1Found = 1;
            oIngredient1 = oItemInChest;
         }
       }
@@ -2100,7 +2170,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
       {
         if((GetLocalString(oItemInChest, "plc") == "js_bui_tent5"))
         {
-           nIngredient1Found == 1;
+           nIngredient1Found = 1;
            oIngredient1 = oItemInChest;
         }
       }
@@ -2111,7 +2181,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
       {
         if((GetLocalString(oItemInChest, "plc") == "js_tai_carp"))
         {
-           nIngredient1Found == 1;
+           nIngredient1Found = 1;
            oIngredient1 = oItemInChest;
         }
       }
@@ -2122,26 +2192,32 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
       {
         if((GetLocalString(oItemInChest, "plc") == "js_art_rugbase1"))
         {
-           nIngredient1Found == 1;
+           nIngredient1Found = 1;
            oIngredient1 = oItemInChest;
         }
       }
       //
 
-
-      // If you find the first ingredient store it
-      if(GetResRef(oItemInChest) == sIngredient1)
+      // Added support so it now works properly if you have two ingredients that are identical
+      if((GetResRef(oItemInChest) == sIngredient1) && (nIngredient1Found != 1))
       {
-         nIngredient1Found == 1;
-         oIngredient1 = oItemInChest;
+         if(sIngredient1Type == GetLocalString(oItemInChest,"stringMaterial"))
+         {
+          nIngredient1Found = 1;
+          oIngredient1 = oItemInChest;
+         }
+
       }
-
-      // If you find the second ingredient store it
-      if(GetResRef(oItemInChest) == sIngredient2)
+      else if(GetResRef(oItemInChest) == sIngredient2)  // If you find the second ingredient store it
       {
-         nIngredient2Found == 1;
+        if(sIngredient2Type == GetLocalString(oItemInChest,"stringMaterial"))
+        {
+         nIngredient2Found = 1;
          oIngredient2 = oItemInChest;
+        }
+
       }
+     //
 
       // Once both ingredients are found or just the first ingredient if its a single ingredient receipe stop the loop
       if(((nIngredient1Found == 1) && (nIngredient2Found == 1)) || ((nIngredient1Found == 1) && (nSingleIngredient == 1)))
@@ -2398,7 +2474,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
         CraftProperties(oPC,oCraftedItem,sType,sMaterial,sPlaceableName);
       }
 
-      // If the type is listed as "epic", set the name to green
+      // If the type is listed as "epic", set the name to green. This is mainly used for Magical Ore / Magical Wood conversion.
       if(GetIsObjectValid(oCraftedItem) && (sType == "epic"))
       {
         string sItemName = GetName(oCraftedItem);
@@ -2408,8 +2484,23 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
         }
       }
 
-      //oItemInChest = GetNextItemInInventory( oBench );      //This is a test for looping, but it isn't working yet.
+      // If the resref is set to epiccraftingtmp it is tied into the epic resource/component crafting system.
+      if(GetIsObjectValid(oCraftedItem) && (sProduct == "epiccraftingtmp"))
+      {
+        SetName(oCraftedItem, "<cÿ×#>Unfinished</c> " + sPlaceableName);
+        SetLocalString(oCraftedItem,"finalResRef",sType);
+      }
 
+      // Repeat loop script
+      if((REPEAT_LOOP_ON==TRUE) && (nRetainItem==0))
+      {
+       DelayCommand(0.1,LoopCraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,sIngredient1Type,sIngredient2Type));
+      }
+    }
+    else if(nRepeat==1) // This is a simple catch so that it doesnt always spam people with the message in else.
+    {
+      DS_CLEAR_ALL(oPC);
+      return;
     }
     else
     {
@@ -2418,6 +2509,11 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
       return;
     }
       DS_CLEAR_ALL(oPC);
+}
+
+void LoopCraftProduct(object oPC,object oBench,string sProduct,string sType,string sMaterial,string sIngredient1,string sIngredient2,string sPlaceableName,int nCost,int nStack,int nProductStackSize,int nRetainItem,string sIngredient1Type,string sIngredient2Type)
+{
+  CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,1,sIngredient1Type,sIngredient2Type);
 }
 
 

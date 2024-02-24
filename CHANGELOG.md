@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ##Added
 - Greengarden Guard House interior 
+- Legendary Crafting System for Raids and future Epic Crafting
+- Crafting loops once again, so you can mass do job system stuff
 
 ### Added
 - New script that allows modular item-based creature spawning
@@ -19,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - New Quest: Earthen Rift
 - Added functionality to us_jump_to_tag for quest requirements
 - Added functionality to ee_generic_quest for quest requirements
+- Fixed some job system bugs
 
 ### Fixed
 - Fixed Shadowflame Manor placeables

@@ -723,19 +723,12 @@ void LootDrop(object oArea, object oWayPoint1, object oWaypoint2)
 
     if(nRandom <= 10)      //  Divine Mythal
     {
-       CreateItemOnObject("mythal7",oHorde);
+      CreateItemOnObject("mythal7",oHorde);
     }
 
-    if(nRandom2 <= 20)        // Item drops
+    if(nRandom2 <= 20)  // Item drops
     {
-      switch(nRandom3)
-      {
-        case 0: CreateItemOnObject("shroudarmor",oHorde); break;
-        case 1: CreateItemOnObject("shroudstaff",oHorde); break;
-        case 2: CreateItemOnObject("shroudcloak",oHorde); break;
-        case 3: CreateItemOnObject("shroudring",oHorde); break;
-        case 4: CreateItemOnObject("shroudhelm",oHorde); break;
-      }
+      CreateItemOnObject("raid_base_lich",oHorde);
     }
 
     GenerateEpicLoot(oHorde);

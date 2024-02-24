@@ -424,16 +424,7 @@ void LootDrop(object oArea, object oWayPoint3, object oWaypoint4)
 
     if(nRandom <= 10)      //  wdragonbossrewar - Frostspear's Treasure, and 4 more unique bin drops
     {
-
-      switch(nRandom3)
-      {
-        case 0: CreateItemOnObject("frostspear_shiel",oHorde); break;
-        case 1: CreateItemOnObject("frostspear_gaxe",oHorde); break;
-        case 2: CreateItemOnObject("frostspear_neckl",oHorde); break;
-        case 3: CreateItemOnObject("frostspear_staff",oHorde); break;
-        case 4: CreateItemOnObject("wdragonbossrewar",oHorde); break;
-      }
-
+      CreateItemOnObject("raid_base_frosty",oHorde);
     }
 
     if(nRandom2 <= 25)        // mythal5   - Flawless Mythal

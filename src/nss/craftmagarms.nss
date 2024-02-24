@@ -9,6 +9,7 @@
 // ---------- ---------------- ---------------------------------------------
 // 05/09/2012 Mathias          Initial Release.
 // 08/09/2020 Maverick00053    Made a new spell verison
+// 02/22/2024 Maverick00053    Added in a catch for Craft Wondrous Items Stuff
 #include "amia_include"
 #include "x2_inc_switches"
 #include "inc_td_itemprop"
@@ -28,6 +29,14 @@ void ActivateItem( ) {
     int             nKeen;
     int             nCost;
     string          sKeenString;
+
+    // Craft Wondrous Items Catch
+    if(GetTag(oTarget)=="cmarequired")
+    {
+     AssignCommand( oPC, ActionStartConversation( oPC, "c_cmacraft_convo", TRUE, FALSE ) );
+     SetLocalObject(oPC,"craftingObject",oTarget);
+     return;
+    }
 
     // Check if target object is valid and has item properties
     if( ( !GetIsObjectValid( oTarget ) ) ||
@@ -119,4 +128,5 @@ void main( )
             break;
     }
 }
+
 

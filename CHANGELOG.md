@@ -6,13 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
-##Added
+### Added
+- New script that allows modular item-based creature spawning
 - Greengarden Guard House interior 
 - Legendary Crafting System for Raids and future Epic Crafting
 - Crafting loops once again, so you can mass do job system stuff
-
-### Added
-- New script that allows modular item-based creature spawning
 
 ### Changed
 - Amia Forest deer to spawn as Neutral
@@ -22,10 +20,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added functionality to us_jump_to_tag for quest requirements
 - Added functionality to ee_generic_quest for quest requirements
 - Fixed some job system bugs
+- OI Port Construction update
 
 ### Fixed
 - Fixed Shadowflame Manor placeables
 - Fixed Belenoth corridor crowding
+- OI Bank Doors
 
 ## [3.1.0 - 2024-02-21]
 

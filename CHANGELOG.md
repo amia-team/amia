@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Greengarden Guard House interior 
 - Legendary Crafting System for Raids and future Epic Crafting
 - Crafting loops once again, so you can mass do job system stuff
+- CMA is now used in Epic/Raid Crafting. Every 10 levels of base Craft Weapon and Craft Armor reduces the cost of CMAing epic unfinished products by 5k to a maximum of 25k.
 
 ### Changed
 - Amia Forest deer to spawn as Neutral

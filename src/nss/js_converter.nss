@@ -787,8 +787,8 @@ void JewelerConverter(object oPC, object oBench, int nNode)
       case 12: sProduct = "js_jew_ring"; sIngredient1 = "js_bla_goin"; sIngredient2 = "none"; sType = "ring"; sMaterial = "gold"; nCost = 1000; break;
       case 13: sProduct = "js_jew_ring"; sIngredient1 = "js_bla_plin"; sIngredient2 = "none"; sType = "ring"; sMaterial = "platinum"; nCost = 1000; break;
       case 14: sProduct = "js_gem_sivo"; sIngredient1 = "js_gem_ivor"; sIngredient2 = "none"; nCost = 2000; break;
-      case 15: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_frosty"; sIngredient2 = "js_jew_amul"; sType = "frostspear_neckl"; sPlaceableName = "<cnÞÿ>Frostchoker</c>"; nCost = 10000; nRetainItem=1; sIngredient2Type = "adamantine"; break;
-      case 16: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_lich"; sIngredient2 = "js_jew_ring"; sType = "shroudring"; sPlaceableName = "<cË z>Undeath's Eternal Servant</c>"; nCost = 10000; nRetainItem=1; sIngredient2Type = "adamantine"; break;
+      case 15: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_frosty"; sIngredient2 = "js_jew_amul"; sType = "frostspear_neckl"; sPlaceableName = "<cnÞÿ>Frostchoker</c>"; nCost = 10000; nRetainItem=1; sIngredient2Type = "platinum"; break;
+      case 16: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_lich"; sIngredient2 = "js_jew_ring"; sType = "shroudring"; sPlaceableName = "<cË z>Undeath's Eternal Servant</c>"; nCost = 10000; nRetainItem=1; sIngredient2Type = "platinum"; break;
 
     }
 

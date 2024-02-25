@@ -5,8 +5,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
-## Added
-- Facelift to Duke's Estate in Greengarden
 
 ### Added
 - New script that allows modular item-based creature spawning
@@ -28,6 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Plot Updates:
 	- Moonpier
 	- Moonpier: Moonbeam Chapel
+	- Facelift to Duke's Estate in Greengarden
 
 ### Fixed
 - Fixed Shadowflame Manor placeables

@@ -22,6 +22,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added functionality to ee_generic_quest for quest requirements
 - Fixed some job system bugs
 - OI Port Construction update
+- Changed the bio of one of the Drink: Water items, since there were two identical ones on the palette
+- Plot Updates:
+	- Moonpier
+	- Moonpier: Moonbeam Chapel
 
 ### Fixed
 - Fixed Shadowflame Manor placeables

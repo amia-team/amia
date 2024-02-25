@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Plot Updates:
 	- Moonpier
 	- Moonpier: Moonbeam Chapel
+	- Facelift to Duke's Estate in Greengarden
 
 ### Fixed
 - Fixed Shadowflame Manor placeables

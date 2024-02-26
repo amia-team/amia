@@ -49,8 +49,6 @@ void main()
 }
 
 void DoTransition(object criminal, object dropoffpoint, string message){
-    object dropoffpoint;
-    location jump = GetLocation(dropoffpoint);
     if ((GetArea(criminal) == GetArea(dropoffpoint)) && (GetIsPC(criminal))){
         MoveAssociates(criminal, dropoffpoint);
         DelayCommand(1.0, AssignCommand(criminal, ClearAllActions()));
@@ -66,7 +64,6 @@ void DoTransition(object criminal, object dropoffpoint, string message){
 void MoveAssociates(object pc, object dropoffpoint){
     int i;
     object associate;
-    object dropoffpoint;
     location jump = GetLocation(dropoffpoint);
     for (i=1; i<6; ++i){
         associate = GetAssociate(i, pc);

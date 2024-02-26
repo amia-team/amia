@@ -17,14 +17,27 @@ void main()
     object oCaster = GetAreaOfEffectCreator( OBJECT_SELF );
     effect eRemove;
 
-    if( GetAssociate( ASSOCIATE_TYPE_FAMILIAR, oCaster ) == oTarget ||
-        GetAssociate( ASSOCIATE_TYPE_ANIMALCOMPANION, oCaster ) == oTarget ||
-        GetAssociate( ASSOCIATE_TYPE_SUMMONED, oCaster ) == oTarget )
+    int IsMultiplePMSummon(object oTarget)
+    {
+        if (GetSubString(GetResRef(oTarget), 0, 10) == "undead_hen") return TRUE;
+        return FALSE;
+    }
+        
+    int IsMultipleWarlockSummon(object oTarget)
+    {
+        if (GetSubString(GetResRef(oTarget), 0, 3) == "wlk") return TRUE;
+        return FALSE;
+    }
+
+    if (GetAssociate(ASSOCIATE_TYPE_FAMILIAR, oCaster) == oTarget ||
+        GetAssociate(ASSOCIATE_TYPE_ANIMALCOMPANION, oCaster) == oTarget ||
+        GetAssociate(ASSOCIATE_TYPE_SUMMONED, oCaster) == oTarget ||
+        GetAssociate(ASSOCIATE_TYPE_HENCHMAN, oCaster) == oTarget)
     {
         eRemove = GetFirstEffect( oTarget );
         while( GetIsEffectValid( eRemove ) )
         {
-            if( GetEffectCreator( eRemove ) == OBJECT_SELF )
+            if( GetEffectTag( eRemove ) == "iolite_summ_effect" )
             {
                 RemoveEffect( oTarget, eRemove );
             }

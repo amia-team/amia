@@ -15,14 +15,14 @@ void main()
 {
     object oTarget = GetEnteringObject();
     object oCaster = GetAreaOfEffectCreator( OBJECT_SELF );
-    effect eSTR = SupernaturalEffect( EffectAbilityIncrease( ABILITY_STRENGTH, 4 ) );
-    effect eCON = SupernaturalEffect( EffectAbilityIncrease( ABILITY_CONSTITUTION, 4 ) );
+    effect eIolite = SupernaturalEffect(EffectLinkEffects(EffectAbilityIncrease(ABILITY_STRENGTH, 4), EffectAbilityIncrease(ABILITY_CONSTITUTION, 4)));
+    eIolite = TagEffect(eIolite, "iolite_summ_effect");
 
-    if( GetAssociate( ASSOCIATE_TYPE_FAMILIAR, oCaster ) == oTarget ||
-        GetAssociate( ASSOCIATE_TYPE_ANIMALCOMPANION, oCaster ) == oTarget ||
-        GetAssociate( ASSOCIATE_TYPE_SUMMONED, oCaster ) == oTarget )
+    if (GetAssociate(ASSOCIATE_TYPE_FAMILIAR, oCaster) == oTarget ||
+        GetAssociate(ASSOCIATE_TYPE_ANIMALCOMPANION, oCaster) == oTarget ||
+        GetAssociate(ASSOCIATE_TYPE_SUMMONED, oCaster) == oTarget ||
+        GetAssociate(ASSOCIATE_TYPE_HENCHMAN, oCaster) == oTarget)
     {
-        ApplyEffectToObject( DURATION_TYPE_PERMANENT, eSTR, oTarget );
-        ApplyEffectToObject( DURATION_TYPE_PERMANENT, eCON, oTarget );
+        ApplyEffectToObject( DURATION_TYPE_PERMANENT, eIolite, oTarget );
     }
 }

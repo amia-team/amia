@@ -1,6 +1,6 @@
 // inc_settlements
 // Contains constants for settlement names
-
+//void main (){}
 string SettlementName(int settlement);
 
 const string SETTLEMENT_1 = "Barak Runedar";
@@ -12,7 +12,7 @@ const string SETTLEMENT_6 = "Fort Cystana";
 const string SETTLEMENT_7 = "Greengarden";
 const string SETTLEMENT_8 = "Gregory's Landing";
 const string SETTLEMENT_9 = "Whitestag";
-const string SETTLEMENT_10 = "Obsidian City";
+const string SETTLEMENT_10 = "Calderis";
 const string SETTLEMENT_11 = "Ostdur";
 const string SETTLEMENT_12 = "Osthavn";
 const string SETTLEMENT_13 = "Havskar";
@@ -59,7 +59,7 @@ string SettlementName(int settlement){
         case 7: settlementName = "Greengarden"; break;
         case 8: settlementName = "Gregory's Landing"; break;
         case 9: settlementName = "Whitestag"; break;
-        case 10: settlementName = "Obsidian City"; break;
+        case 10: settlementName = "Calderis"; break;
         case 11: settlementName = "Ostdur"; break;
         case 12: settlementName = "Osthavn"; break;
         case 13: settlementName = "Havskar"; break;

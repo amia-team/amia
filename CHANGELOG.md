@@ -27,11 +27,32 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Moonpier
 	- Moonpier: Moonbeam Chapel
 	- Facelift to Duke's Estate in Greengarden
+-Warlock's Frog Drop now has a small AoE for easier deployment.
 
 ### Fixed
 - Fixed Shadowflame Manor placeables
 - Fixed Belenoth corridor crowding
 - OI Bank Doors
+- WARLOCK
+	-Chain, Spear, and Blast no longer allow friendly targeting
+	-Chain, Spear, Blast, and Pulse no longer crit targets that are crit immune.
+	-Eldritch Blast (including all shapes) is no longer blocked by level 1 spell immune (still respects mantles and spell resistance).
+	-You can no longer cast invocations in anti-magic zones.
+	-Invocations properly ignore DMs now.
+	-Energy resist feats work properly now.
+	-Word of Changing no longer is removed when the temp HP is removed.
+	-True seeing now properly blocks Writhing Darkness.
+	-Frog Drop now properly spawns frog at the target location and subsequent frogs are spawned at the location of frog death.
+	-Primordial Gust no longer crashes the game when cast on fixtures (whooooops!)
+	-Primordial Gust properly varies damage calc for each target.
+	-Loud Decay visual and sound effect fixed.
+	-Loud Decay properly varies damage calc for each target.
+	-Warlock summons' AI is fixed. (They attack instantly on summoning and don't run away anymore.)
+	-Warlock summons now unsummon properly when the duration runs out.
+	-Warlock summons' stats are fixed; tweaking of stats made a lot easier.
+	-A visual cue for the Eldritch Mastery works now.
+	-Fiendish Resilience renamed into Otherworldly Resilience.
+	-Stale item property remover no longer incorrectly removes Armored Caster.
 
 ## [3.1.0 - 2024-02-21]
 

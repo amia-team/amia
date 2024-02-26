@@ -837,7 +837,7 @@ void f_PCName( object oPC, object oObject, string sOption, string sValue ){
 
         NWNX_Creature_SetOriginalName(oObject, sValue, FALSE);
 
-        SendMessageToPC(oObject, "BE ADVISED: BOOTING you to change your last name!");
+        SendMessageToPC(oObject, "BE ADVISED: BOOTING you to change your first name!");
 
         DelayCommand(6.0f, BootPC(oObject, "Name change."));
 
@@ -1285,7 +1285,7 @@ void f_Wings( object oPC, object oObject, string sOption, string sValue ){
 
     SetCreatureWingType( StringToInt( sValue ), oObject );
 
-    SendMessageToPC( oPC, "Setting "+GetName( oObject )+"'s tail to "+sValue+"." );
+    SendMessageToPC( oPC, "Setting "+GetName( oObject )+"'s wings to "+sValue+"." );
 }
 
 void f_Head( object oPC, object oObject, string sOption, string sValue ){

@@ -1,4 +1,4 @@
-//Settlment script to banish individuals and boot them from the area.
+//Settlement script to banish individuals and boot them from the area.
 //Can only use the banishment feature in set settlement area.
 //Can unban in any area.
 #include "inc_settlements"
@@ -51,6 +51,7 @@ void main()
 void DoTransition(object criminal, object dropoffpoint, string message){
     if ((GetArea(criminal) == GetArea(dropoffpoint)) && (GetIsPC(criminal))){
         MoveAssociates(criminal, dropoffpoint);
+        SendMessageToPC(criminal, message);
         DelayCommand(1.0, AssignCommand(criminal, ClearAllActions()));
         DelayCommand(1.1, AssignCommand(criminal, JumpToObject(dropoffpoint)));
     }
@@ -64,7 +65,6 @@ void DoTransition(object criminal, object dropoffpoint, string message){
 void MoveAssociates(object pc, object dropoffpoint){
     int i;
     object associate;
-    location jump = GetLocation(dropoffpoint);
     for (i=1; i<6; ++i){
         associate = GetAssociate(i, pc);
         if (GetIsObjectValid(associate)){

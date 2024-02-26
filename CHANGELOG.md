@@ -7,11 +7,28 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [3.2.0 - 2024-02-25]
+
+### Added
+- 4 player-use portraits
+- Robe #145 mount phenotypes
 - New script that allows modular item-based creature spawning
 - Greengarden Guard House interior 
 - Legendary Crafting System for Raids and future Epic Crafting
+- Wondrous Item Crafting Tables/NPCs added to:
+	- Traveller's Rest: Trades Hall
+	- Calderis: Havoc's Smithy
+	- Fort Cystana: Trade Hall
+	- Bloodspear Keep: Interiors
 - Crafting loops once again, so you can mass do job system stuff
 - CMA is now used in Epic/Raid Crafting. Every 10 levels of base Craft Weapon and Craft Armor reduces the cost of CMAing epic unfinished products by 5k to a maximum of 25k.
+- Fully random library book script
+- GUI foundations added in backend
 
 ### Changed
 - Amia Forest deer to spawn as Neutral
@@ -23,36 +40,43 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed some job system bugs
 - OI Port Construction update
 - Changed the bio of one of the Drink: Water items, since there were two identical ones on the palette
+- Made book items into adorable 1x1 icons
 - Plot Updates:
 	- Moonpier
 	- Moonpier: Moonbeam Chapel
+	- Moonpier: Moonweave Sanctum (New)
 	- Facelift to Duke's Estate in Greengarden
--Warlock's Frog Drop now has a small AoE for easier deployment.
+	- Greengarden: Guard House
+- Warlock's Frog Drop now has a small AoE for easier deployment.
+- Tweaked the percentages for Underkingdom DTS
 
 ### Fixed
 - Fixed Shadowflame Manor placeables
 - Fixed Belenoth corridor crowding
 - OI Bank Doors
+- Gave the Underkingdom its music back
+- Manacles will throw people out properly when they're in the same area now
+- Fixed DTS triggers in Actand (Celestials/Demons)
 - WARLOCK
-	-Chain, Spear, and Blast no longer allow friendly targeting
-	-Chain, Spear, Blast, and Pulse no longer crit targets that are crit immune.
-	-Eldritch Blast (including all shapes) is no longer blocked by level 1 spell immune (still respects mantles and spell resistance).
-	-You can no longer cast invocations in anti-magic zones.
-	-Invocations properly ignore DMs now.
-	-Energy resist feats work properly now.
-	-Word of Changing no longer is removed when the temp HP is removed.
-	-True seeing now properly blocks Writhing Darkness.
-	-Frog Drop now properly spawns frog at the target location and subsequent frogs are spawned at the location of frog death.
-	-Primordial Gust no longer crashes the game when cast on fixtures (whooooops!)
-	-Primordial Gust properly varies damage calc for each target.
-	-Loud Decay visual and sound effect fixed.
-	-Loud Decay properly varies damage calc for each target.
-	-Warlock summons' AI is fixed. (They attack instantly on summoning and don't run away anymore.)
-	-Warlock summons now unsummon properly when the duration runs out.
-	-Warlock summons' stats are fixed; tweaking of stats made a lot easier.
-	-A visual cue for the Eldritch Mastery works now.
-	-Fiendish Resilience renamed into Otherworldly Resilience.
-	-Stale item property remover no longer incorrectly removes Armored Caster.
+	- Chain, Spear, and Blast no longer allow friendly targeting
+	- Chain, Spear, Blast, and Pulse no longer crit targets that are crit immune.
+	- Eldritch Blast (including all shapes) is no longer blocked by level 1 spell immune (still respects mantles and spell resistance).
+	- You can no longer cast invocations in anti-magic zones.
+	- Invocations properly ignore DMs now.
+	- Energy resist feats work properly now.
+	- Word of Changing no longer is removed when the temp HP is removed.
+	- True seeing now properly blocks Writhing Darkness.
+	- Frog Drop now properly spawns frog at the target location and subsequent frogs are spawned at the location of frog death.
+	- Primordial Gust no longer crashes the game when cast on fixtures (whooooops!)
+	- Primordial Gust properly varies damage calc for each target.
+	- Loud Decay visual and sound effect fixed.
+	- Loud Decay properly varies damage calc for each target.
+	- Warlock summons' AI is fixed. (They attack instantly on summoning and don't run away anymore.)
+	- Warlock summons now unsummon properly when the duration runs out.
+	- Warlock summons' stats are fixed; tweaking of stats made a lot easier.
+	- A visual cue for the Eldritch Mastery works now.
+	- Fiendish Resilience renamed into Otherworldly Resilience.
+	- Stale item property remover no longer incorrectly removes Armored Caster.
 
 ## [3.1.0 - 2024-02-21]
 

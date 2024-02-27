@@ -67,7 +67,7 @@ void main()
             {
                 //Apply Effect and VFX
                 ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eCurse, oTarget, RoundsToSeconds(nCL));
-                ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eMD, oTarget, RoundsToSeconds(1));
+                ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eMD, oTarget, RoundsToSeconds(nCL));
                 ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
             }
         }

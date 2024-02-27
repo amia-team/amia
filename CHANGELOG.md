@@ -7,10 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- 1 Player Housing area
 
 ### Changed
+- Shrunk the Moonweave Sanctum area
 
 ### Fixed
+- Edited a broken character file
+- Fixed a broken dwarf NPC in Wave & Serpent
+- re-added missing amia_weapons hak from module.ifo
 
 ## [3.2.0 - 2024-02-25]
 

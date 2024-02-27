@@ -8,13 +8,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - 1 Player Housing area
+- Ball of Sound cantrip (Bard/Druid/Cleric/Sorc/Wiz: 1d3 sonic per 2 levels)
 
 ### Changed
 - Shrunk the Moonweave Sanctum area
+- Electric Jolt expanded to Bard/Druid/Cleric/Soc/Wiz cantrips
 
 ### Fixed
 - Edited a broken character file
 - Fixed a broken dwarf NPC in Wave & Serpent
+- Removed extra Wondrous Item crafting bench in Wave & Serpent - it's in the trades hall with other crafters
 - re-added missing amia_weapons hak from module.ifo
 
 ## [3.2.0 - 2024-02-25]

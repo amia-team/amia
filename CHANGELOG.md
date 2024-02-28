@@ -35,6 +35,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed a broken dwarf NPC in Wave & Serpent
 - Removed extra Wondrous Item crafting bench in Wave & Serpent - it's in the trades hall with other crafters
 - Re-added missing amia_weapons hak from module.ifo
+- WARLOCK
+	- Fixed a crash caused by a warlock logging in and out real quick.
+	- Binding of Maggots summoning circle now removes itself properly.
+	- Frog Drop targeting works now as a small AoE as intended.
+	- Unsummon vfx now plays properly for multiple summons.
 
 ## [3.2.0 - 2024-02-25]
 

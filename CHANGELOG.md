@@ -29,12 +29,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Shrunk the Moonweave Sanctum area
 - Electric Jolt expanded to Bard/Druid/Cleric/Soc/Wiz cantrips
+- Boots of the Broken Ones (+5 AC, +3 DEX) moved to epic loot selection
+- Boots of Swift Steps (+4 AC, +3 DEX) added to Abyss/Gauntlet shops
+- Changed resrefs for Magical Ore/Hemp weapons in js_converter (will have no effect on existing weapons)
 
 ### Fixed
 - Edited a broken character file
 - Fixed a broken dwarf NPC in Wave & Serpent
 - Removed extra Wondrous Item crafting bench in Wave & Serpent - it's in the trades hall with other crafters
 - Re-added missing amia_weapons hak from module.ifo
+- Removed duplicate Magical Ore/Hemp weapons from palette
+- Fixed some categories on some weapons on the palette (OCD Style)
 
 ## [3.2.0 - 2024-02-25]
 

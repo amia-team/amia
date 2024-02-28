@@ -1376,37 +1376,37 @@ void SmithConverter(object oPC, object oBench, int nNode)
       switch(nNode)
       {
 
-        case 1: sProduct = "sureforgeddagger"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 2: sProduct = "sureforgedhandax"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 3: sProduct = "sureforgedkama"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 4: sProduct = "sureforgedkukri"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 5: sProduct = "trueforgedlighth"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 6: sProduct = "sureforgedmace"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 7: sProduct = "sureforgedrapier"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 8: sProduct = "sureforgedscimit"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 9: sProduct = "sureforgedshorts"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 10: sProduct = "sureforgedsickle"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 11: sProduct = "sureforgedwhip"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 12: sProduct = "warforgedbastard"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 13: sProduct = "warforgedbattlea"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 14: sProduct = "warforgedclub"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 15: sProduct = "trueforgeddwarve"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 16: sProduct = "trueforgedkatana"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 17: sProduct = "trueforgedlightf"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 18: sProduct = "trueforgedlongsw"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 19: sProduct = "trueforgedmornin"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 20: sProduct = "trueforgedtriden"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 21: sProduct = "trueforgedwarham"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 22: sProduct = "warforgeddiremac"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 23: sProduct = "warforgeddoublea"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 24: sProduct = "warforgedgreatax"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 25: sProduct = "warforgedgreatsw"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 26: sProduct = "warforgedhalberd"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 27: sProduct = "warforgedheavyfl"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 28: sProduct = "warforgedquarter"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 29: sProduct = "warforgedscythe"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 30: sProduct = "warforgedspear"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 31: sProduct = "warforgedtwoblad"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 1: sProduct = "sure_dagger"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 2: sProduct = "sure_axe"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 3: sProduct = "sure_kama"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 4: sProduct = "sure_kukri"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 5: sProduct = "sure_hammer"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 6: sProduct = "sure_mace"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 7: sProduct = "true_rapier"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 8: sProduct = "true_scimitar"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 9: sProduct = "sure_sword"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 10: sProduct = "sure_sickle"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 11: sProduct = "sure_whip"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 12: sProduct = "true_bsword"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 13: sProduct = "true_baxe"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 14: sProduct = "true_club"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 15: sProduct = "true_daxe"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 16: sProduct = "true_katana"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 17: sProduct = "true_flail"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 18: sProduct = "true_lsword"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 19: sProduct = "true_mstar"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 20: sProduct = "true_trident"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 21: sProduct = "true_hammer"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 22: sProduct = "war_mace"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 23: sProduct = "war_daxe"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 24: sProduct = "war_gaxe"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 25: sProduct = "war_gsword"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 26: sProduct = "war_halberd"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 27: sProduct = "war_flail"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 28: sProduct = "war_staff"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 29: sProduct = "war_scythe"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 30: sProduct = "war_spear"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 31: sProduct = "war_dsword"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
         //case 32: sProduct = "warforged"; sIngredient1 = "js_bui_phpl"; sIngredient2 = "none"; sType = "weapon"; sMaterial = "training"; nCost = 1000; break;
 
       }

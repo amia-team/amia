@@ -8,7 +8,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - 1 Player Housing area
-- Ball of Sound cantrip (Bard/Druid/Cleric/Sorc/Wiz: 1d3 sonic per 2 levels)
+- New spells from the old dummy ones:
+	- Blessed Exorcism (Conjuration), Cleric 6, Range: Personal, AoE: Large, Duration: Instantaneous, Save: Special, Spell Resistance: (See Description)
+		- The cleric exorcises the influence of spirits opposed to their patron. All allies in the area of effect are freed from mind influencing maladies, fear, daze, domination, stun, or other mind effects. Any hostile undead or outsiders in the area of effect must make a will save or be turned for 1d6+1 rounds. 
+	- Ball of Sound (Evocation), Bard 0, Cleric 0, Druid 0, Sorcerer/Wizard 0, Range: Medium, AoE: Single, Duration: Instantaneous, Save: None Spell Resistance: Yes
+		- Does 1d3 cold damage per 2 caster levels to a single target creature.
+	- Color of Spring (Transmutation), Druid 6, Range: Personal, AoE: Large, Duration: Instantaneous, Save: Special, Spell Resistance: (See Description)
+		- This spell brings new beginnings to those around the caster. Centered around the caster, all natural living allies (as in not undead, constructs, outsiders, or aberrations) in a 20 foot radius will be subject to a restoration spell and be healed 1d8+caster level hit points. Any enemy undead in the radius will need to make a will save or be turned for 1d6 rounds. Any enemy aberrations in the radius will need to make a will save or be stunned for 1d6 rounds. Any enemy constructs in the radius will need to make a fortitude save or be knocked down for 1d6 rounds Any enemy outsiders in the radius will need to make a fortitude save or be dazed for 1d6 rounds. 
+	- Druid Punch (Transmutation), Druid 8, Range: Touch, AoE: Single, Duration: Instantaneous, Save: Fortitude (See Description), Spell Resistance: Yes
+		- The caster attempts a punch to utterly destroy the unnatural. The caster makes a melee touch attack. If the attack hits, the victim takes 1d8 points of divine damage per caster level. If the target is an undead, construct, outsider, or aberration, they must make a fortitude save or be slain instantly. Undead, constructs, outsiders, and aberrations take full damage even if they pass the save. If the target is any other creature type, they can make a fortitude save to halve the damage taken. 
+	- Helma's Curse (Necromancy), Cleric 2, Range: Short, AoE: Single, Duration: 1 Round/level, Save: Will Negates, Spell Resistance: Yes
+		- The cleric utters a curse upon enemies of their faith. The curse causes weariness and exhaustion, causing 2 points of strength drain, 2 points of constitution drain, and inflicts a 30% movement speed decrease for 1 round per caster level. This effect cannot be cured by a restoration, however a remove curse can remove the effect. 
+	- Myrra's Hex (Enchantment), Druid 1, Range: Medium, Duration: 1 round, 1 round/level, Save: Will negates, Spell Resistance: Yes
+		- This witch-hex will attempt to lay a curse of clumsiness upon the victim. The victim must make a will save. If the save is failed, the victim will be knocked down for 1 round, and be cursed with clumsiness, taking 1d6+1 points of dexterity damage for 1 round per caster level. The dexterity damage cannot be restored with a restoration, but a remove curse spell will remove it. 
+	- Snorri's Snowball (Evocation), Wizard/Sorcerer 6, Bard 6, Range: Long, AoE: Single/Large, Duration: Instantaneous, Save: Reflex Half (See description), Spell Resistance: Yes
+		- The caster casts a snowball at a target, and performs a ranged touch attack against a single target. If the touch attack hits, the target will take 1d6 cold damage per caster level, with no cap. The Snowball will then burst and every target in a 15 ft radius will take 1d6 cold damage per two caster levels, to a maximum of 15d6 damage at level 30. Each Spell Focus in evocation increases the burst damage by 1d6 cold damage, and epic spell focus will increase the burst damage by 3d6 cold damage. A reflex save will half the cold damage taken, evasion applies. Should the initial target be hit by the touch attack, they will not take the burst damage. However if the touch attack misses, they will be subject to the burst damage. 
+	- Vinna's Greater Globe (Transmutation), Druid 4, Range: Long, AoE: Large, Duration: 1 round/2 caster levels/Instantaneous, Save: Reflex Negates, Fortitude Partial, Spell Resistance: Yes
+		- This spell casts a globe of ravaging plants to assail their foes. Any enemies caught in the spell's radius must make a reflex save or be entangled. The victim's can make subsequent saves to escape the entanglement. However, any targets hit by the entanglement must make a fortitude save or be poisoned. The poison does 2d6 points of dexterity damage. If the target fails the reflex save but has freedom, while they won't be entangled, they will still be subject to the poison.
 
 ### Changed
 - Shrunk the Moonweave Sanctum area
@@ -18,7 +34,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Edited a broken character file
 - Fixed a broken dwarf NPC in Wave & Serpent
 - Removed extra Wondrous Item crafting bench in Wave & Serpent - it's in the trades hall with other crafters
-- re-added missing amia_weapons hak from module.ifo
+- Re-added missing amia_weapons hak from module.ifo
 
 ## [3.2.0 - 2024-02-25]
 

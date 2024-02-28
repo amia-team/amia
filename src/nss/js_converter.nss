@@ -2201,7 +2201,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
       // Added support so it now works properly if you have two ingredients that are identical
       if((GetResRef(oItemInChest) == sIngredient1) && (nIngredient1Found != 1))
       {
-         if(sIngredient1Type == GetLocalString(oItemInChest,"stringMaterial"))
+         if((sIngredient1Type == GetLocalString(oItemInChest,"stringMaterial")) || (sIngredient1Type==""))
          {
           nIngredient1Found = 1;
           oIngredient1 = oItemInChest;
@@ -2210,7 +2210,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
       }
       else if(GetResRef(oItemInChest) == sIngredient2)  // If you find the second ingredient store it
       {
-        if(sIngredient2Type == GetLocalString(oItemInChest,"stringMaterial"))
+        if((sIngredient2Type == GetLocalString(oItemInChest,"stringMaterial")) || (sIngredient2Type==""))
         {
          nIngredient2Found = 1;
          oIngredient2 = oItemInChest;

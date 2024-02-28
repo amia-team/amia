@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 ### Added
 - 1 Player Housing area
+- Hallow and Text triggers to palette
 - New spells from the old dummy ones:
 	- Blessed Exorcism (Conjuration), Cleric 6, Range: Personal, AoE: Large, Duration: Instantaneous, Save: Special, Spell Resistance: (See Description)
 		- The cleric exorcises the influence of spirits opposed to their patron. All allies in the area of effect are freed from mind influencing maladies, fear, daze, domination, stun, or other mind effects. Any hostile undead or outsiders in the area of effect must make a will save or be turned for 1d6+1 rounds. 
@@ -33,6 +34,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Boots of the Broken Ones (+5 AC, +3 DEX) moved to epic loot selection
 - Boots of Swift Steps (+4 AC, +3 DEX) added to Abyss/Gauntlet shops
 - Changed resrefs for Magical Ore/Hemp weapons in js_converter (will have no effect on existing weapons)
+- Finalize Moonpier's Moonbeam Chapel and Moonweave Sanctum
 
 ### Fixed
 - Edited a broken character file

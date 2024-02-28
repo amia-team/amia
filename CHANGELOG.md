@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+### Added
 - 1 Player Housing area
 - New spells from the old dummy ones:
 	- Blessed Exorcism (Conjuration), Cleric 6, Range: Personal, AoE: Large, Duration: Instantaneous, Save: Special, Spell Resistance: (See Description)
@@ -40,6 +41,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Re-added missing amia_weapons hak from module.ifo
 - Removed duplicate Magical Ore/Hemp weapons from palette
 - Fixed some categories on some weapons on the palette (OCD Style)
+- Warlock bugfixes:
+	- Fixed a crash caused by a warlock logging in and out real quick.
+	- Binding of Maggots summoning circle now removes itself properly.
+	- Frog Drop targeting works now as a small AoE as intended.
+	- Unsummon vfx now plays properly for multiple summons.
 
 ## [3.2.0 - 2024-02-25]
 

@@ -37,6 +37,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Changed resrefs for Magical Ore/Hemp weapons in js_converter (will have no effect on existing weapons)
 - Finalize Moonpier's Moonbeam Chapel and Moonweave Sanctum
 - Adjusted Frostspear Staffs once more
+- Warlock buffs:
+	- Flee the Scene CL is uncapped and now applies Uncanny Dodge I for the duration.
+	- Armored Caster arcane spell failure reduction applies to small shields now.
+	- Summon AC progression increased to +6 from +5; soul larvae get +5 HP and +2 AC per tier.
 
 ### Fixed
 - Edited a broken character file

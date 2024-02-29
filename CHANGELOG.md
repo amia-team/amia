@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - 1 Player Housing area
 - Hallow and Text triggers to palette
+- 7 custom summon creature templates to palette
 - New spells from the old dummy ones:
 	- Blessed Exorcism (Conjuration), Cleric 6, Range: Personal, AoE: Large, Duration: Instantaneous, Save: Special, Spell Resistance: (See Description)
 		- The cleric exorcises the influence of spirits opposed to their patron. All allies in the area of effect are freed from mind influencing maladies, fear, daze, domination, stun, or other mind effects. Any hostile undead or outsiders in the area of effect must make a will save or be turned for 1d6+1 rounds. 

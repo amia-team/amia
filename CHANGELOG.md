@@ -35,6 +35,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Boots of Swift Steps (+4 AC, +3 DEX) added to Abyss/Gauntlet shops
 - Changed resrefs for Magical Ore/Hemp weapons in js_converter (will have no effect on existing weapons)
 - Finalize Moonpier's Moonbeam Chapel and Moonweave Sanctum
+- Adjusted Frostspear Staffs once more
 
 ### Fixed
 - Edited a broken character file
@@ -48,7 +49,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Binding of Maggots summoning circle now removes itself properly.
 	- Frog Drop targeting works now as a small AoE as intended.
 	- Unsummon vfx now plays properly for multiple summons.
-
+- Fixed Job System Material Check Bug
 ## [3.2.0 - 2024-02-25]
 
 ### Added

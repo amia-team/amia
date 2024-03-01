@@ -1477,7 +1477,7 @@ void TailorConverter(object oPC, object oBench, int nNode)
       case 22: sProduct = "js_tai_cloa"; sIngredient1 = "js_tai_boco"; sIngredient2 = "none"; sType = "cloak"; sMaterial = "cotton"; nCost = 2000; break;
       case 23: sProduct = "js_tai_cloa"; sIngredient1 = "js_tai_bosi"; sIngredient2 = "none"; sType = "cloak"; sMaterial = "silk"; nCost = 2000; break;
       case 24: sProduct = "js_tai_cloa"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "none"; sType = "cloak"; sMaterial = "wool"; nCost = 2000; break;
-      case 25: sProduct = "js_tai_boot"; sIngredient1 = "js_lea_leat"; sIngredient2 = "none"; sType = "boot"; sMaterial = "leather"; nCost = 2000; break;
+      case 25: sProduct = "js_tai_boot"; sIngredient1 = "js_lea_leat"; sIngredient2 = "none"; sType = "boots"; sMaterial = "leather"; nCost = 2000; break;
       case 26: sProduct = "js_tai_belt"; sIngredient1 = "js_lea_leat"; sIngredient2 = "none"; sType = "belt"; sMaterial = "leather"; nCost = 2000; break;
       case 27: sProduct = "ds_j_masked"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "none"; sType = "cloak"; sMaterial = "wool"; nCost = 2000; break;
       case 28: sProduct = "ds_j_hooded"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "none"; sType = "cloak"; sMaterial = "wool"; nCost = 2000; break;
@@ -1509,6 +1509,27 @@ void TailorConverter(object oPC, object oBench, int nNode)
       case 54: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtentrdwht"; sIngredient2 = "js_art_colblk"; sType = "js_bui_tent6"; sPlaceableName = "Big Red and Black Tent"; sMaterial = "plc"; nCost = 10000; break;
       case 55: sProduct = "js_tailorkit"; sIngredient1 = "js_tai_bosi"; sIngredient2 = "js_bla_stin"; nCost = 10000; break;
       case 56: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_lich"; sIngredient2 = "js_tai_cloa"; sType = "shroudcloak"; sPlaceableName = "<cË z>Mantle of Unlife</c>"; nCost = 10000; sIngredient2Type = "wool"; break;
+      case 57: sProduct = "js_tai_glove"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "none"; sType = "gloves"; sMaterial = "wool"; nCost = 2000; break;
+      case 58: sProduct = "js_tai_glove"; sIngredient1 = "js_tai_boco"; sIngredient2 = "none"; sType = "gloves"; sMaterial = "cotton"; nCost = 2000; break;
+      case 59: sProduct = "js_tai_glove"; sIngredient1 = "js_tai_brwo"; sIngredient2 = "none"; sType = "gloves"; sMaterial = "rothewool"; nCost = 2000; break;
+      case 60: sProduct = "js_tai_glove"; sIngredient1 = "js_hun_hide"; sIngredient2 = "none"; sType = "gloves"; sMaterial = "hide"; nCost = 2000; break;
+      case 61: sProduct = "js_tai_glove"; sIngredient1 = "js_lea_leat"; sIngredient2 = "none"; sType = "gloves"; sMaterial = "leather"; nCost = 2000; break;
+      case 62: sProduct = "js_tai_glove"; sIngredient1 = "js_tai_bosi"; sIngredient2 = "none"; sType = "gloves"; sMaterial = "silk"; nCost = 2000; break;
+      case 63: sProduct = "js_tai_hood"; sIngredient1 = "js_tai_bosi"; sIngredient2 = "none"; sType = "hood"; sMaterial = "silk"; nCost = 2000; break;
+      case 64: sProduct = "js_tai_hood"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "none"; sType = "hood"; sMaterial = "wool"; nCost = 2000; break;
+      case 65: sProduct = "js_tai_hood"; sIngredient1 = "js_tai_boco"; sIngredient2 = "none"; sType = "hood"; sMaterial = "cotton"; nCost = 2000; break;
+      case 66: sProduct = "js_tai_hood"; sIngredient1 = "js_tai_brwo"; sIngredient2 = "none"; sType = "hood"; sMaterial = "rothewool"; nCost = 2000; break;
+      case 67: sProduct = "js_tai_boot"; sIngredient1 = "js_hun_hide"; sIngredient2 = "none"; sType = "boots"; sMaterial = "hide"; nCost = 2000; break;
+      case 68: break; // EMPTY ATM. Can fill with whatever you want. Accidently skipped.
+      case 69: sProduct = "js_tai_boot"; sIngredient1 = "js_tai_bosi"; sIngredient2 = "none"; sType = "boots"; sMaterial = "silk"; nCost = 2000; break;
+      case 70: sProduct = "js_tai_boot"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "none"; sType = "boots"; sMaterial = "wool"; nCost = 2000; break;
+      case 71: sProduct = "js_tai_boot"; sIngredient1 = "js_tai_boco"; sIngredient2 = "none"; sType = "boots"; sMaterial = "cotton"; nCost = 2000; break;
+      case 72: sProduct = "js_tai_boot"; sIngredient1 = "js_tai_brwo"; sIngredient2 = "none"; sType = "boots"; sMaterial = "rothewool"; nCost = 2000; break;
+      case 73: sProduct = "js_tai_belt"; sIngredient1 = "js_hun_hide"; sIngredient2 = "none"; sType = "belt"; sMaterial = "hide"; nCost = 2000; break;
+      case 74: sProduct = "js_tai_belt"; sIngredient1 = "js_tai_bosi"; sIngredient2 = "none"; sType = "belt"; sMaterial = "silk"; nCost = 2000; break;
+      case 75: sProduct = "js_tai_belt"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "none"; sType = "belt"; sMaterial = "wool"; nCost = 2000; break;
+      case 76: sProduct = "js_tai_belt"; sIngredient1 = "js_tai_boco"; sIngredient2 = "none"; sType = "belt"; sMaterial = "cotton"; nCost = 2000; break;
+      case 77: sProduct = "js_tai_belt"; sIngredient1 = "js_tai_brwo"; sIngredient2 = "none"; sType = "belt"; sMaterial = "rothewool"; nCost = 2000; break;
 
     }
 

@@ -31,6 +31,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Vinna's Greater Globe (Transmutation), Druid 4, Range: Long, AoE: Large, Duration: 1 round/2 caster levels/Instantaneous, Save: Reflex Negates, Fortitude Partial, Spell Resistance: Yes
 		- This spell casts a globe of ravaging plants to assail their foes. Any enemies caught in the spell's radius must make a reflex save or be entangled. The victim's can make subsequent saves to escape the entanglement. However, any targets hit by the entanglement must make a fortitude save or be poisoned. The poison does 2d6 points of dexterity damage. If the target fails the reflex save but has freedom, while they won't be entangled, they will still be subject to the poison.
 
+- Added 20 new variations of Gloves/Hoodes/Boots and Belts to job system
+
 ### Changed
 - Shrunk the Moonweave Sanctum area
 - Electric Jolt expanded to Bard/Druid/Cleric/Soc/Wiz cantrips

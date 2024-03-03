@@ -6,8 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
+
 ### Added
-### Added
+- DTS added to Lizardmen in underdark, and Den of Webs
 - 1 Player Housing area
 - Hallow and Text triggers to palette
 - 7 custom summon creature templates to palette

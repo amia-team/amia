@@ -17,6 +17,9 @@ void main()
     object oCaster = GetAreaOfEffectCreator(OBJECT_SELF);
     effect eRemove = GetFirstEffect(oTarget);
 
+    // so it doesn't remove iolite effect from other peep's summons
+    if (GetMaster(oTarget) != oCaster) return;
+
     while(GetIsEffectValid(eRemove))
     {
         if(GetEffectTag(eRemove) == "iolite_summ_effect")

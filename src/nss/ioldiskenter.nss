@@ -11,18 +11,20 @@
 // main
 //-------------------------------------------------------------------------------
 
+void ApplyIolite(object oTarget, object oCaster, effect eIolite)
+{
+    if (GetMaster(oTarget) == oCaster && GetAssociateType(oTarget) != ASSOCIATE_TYPE_DOMINATED)
+    {
+        ApplyEffectToObject(DURATION_TYPE_PERMANENT, eIolite, oTarget);
+    }
+}
+
 void main()
 {
     object oTarget = GetEnteringObject();
-    object oCaster = GetAreaOfEffectCreator( OBJECT_SELF );
+    object oCaster = GetAreaOfEffectCreator(OBJECT_SELF);
     effect eIolite = SupernaturalEffect(EffectLinkEffects(EffectAbilityIncrease(ABILITY_STRENGTH, 4), EffectAbilityIncrease(ABILITY_CONSTITUTION, 4)));
     eIolite = TagEffect(eIolite, "iolite_summ_effect");
 
-    if (GetAssociate(ASSOCIATE_TYPE_FAMILIAR, oCaster) == oTarget ||
-        GetAssociate(ASSOCIATE_TYPE_ANIMALCOMPANION, oCaster) == oTarget ||
-        GetAssociate(ASSOCIATE_TYPE_SUMMONED, oCaster) == oTarget ||
-        GetAssociate(ASSOCIATE_TYPE_HENCHMAN, oCaster) == oTarget)
-    {
-        ApplyEffectToObject( DURATION_TYPE_PERMANENT, eIolite, oTarget );
-    }
+    DelayCommand(1.0f, ApplyIolite(oTarget, oCaster, eIolite));
 }

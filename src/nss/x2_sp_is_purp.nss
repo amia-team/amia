@@ -35,7 +35,7 @@ void main()
     }
 
     //check first if it's a Labyrinth Ioun Stone
-    if( GetResRef( GetSpellCastItem() ) == "is_iol" )
+    if( GetResRef( GetSpellCastItem() ) == "epx_ioun_iolit" )
     {
         eVFX = EffectVisualEffect(693);
         eBonus1 = EffectSkillIncrease(SKILL_LORE, 5);

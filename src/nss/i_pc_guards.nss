@@ -28,7 +28,7 @@ void main (){
     int alliedArea    = AllyCheck(widget, pc);
 
     if(GetIsDM(pc)){
-        if((GetObjectType(guardNPC) == OBJECT_TYPE_CREATURE) && (GetTag(guardNPC) == "guard_template")){
+        if((GetObjectType(guardNPC) == OBJECT_TYPE_CREATURE) && (GetTag(guardNPC) == "settle_elitguard" || GetTag(guardNPC) == "settle_mageguard" || GetTag(guardNPC) == "settle_scutguard" || GetTag(guardNPC) == "settle_stndguard")){
             if(guardCount == 0){
                 json guard1  = ObjectToJson(guardNPC, TRUE);
                 string name1 = GetName(guardNPC);
@@ -97,24 +97,28 @@ void main (){
         while (i > 0){
             object henchGuard1  = JsonToObject(getGuard1, pcSpot, pc, TRUE);
             AddHenchman(pc, henchGuard1);
+            SetTag(henchGuard1, "guard_template");
             i = (i - 1);
         }
         int i2 = subGuard;
         while (i2 > 0){
             object henchGuard2 = JsonToObject(getGuard2, pcSpot, pc, TRUE);
             AddHenchman(pc, henchGuard2);
+            SetTag(henchGuard2, "guard_template");
             i2 = (i2 - 1);
         }
         int i3 = subGuard;
         while (i3 > 0){
             object henchGuard3 = JsonToObject(getGuard3, pcSpot, pc, TRUE);
             AddHenchman(pc, henchGuard3);
+            SetTag(henchGuard3, "guard_template");
             i3 = (i3 - 1);
         }
         int i4 = subGuard;
         while (i4 > 0){
             object henchGuard4 = JsonToObject(getGuard4, pcSpot, pc, TRUE);
             AddHenchman(pc, henchGuard4);
+            SetTag(henchGuard4, "guard_template");
             i4 = (i4 - 1);
         }
         SetLocalInt(pc,"guard_spawned",1);

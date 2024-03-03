@@ -62,11 +62,10 @@ void Spawner(object oCritter, object oKiller)
       DelayCommand(2.0,Spawn("elemental_raid_6", GetStepRightLocation(oCritter)));
       AssignCommand(oCritter,SpeakString("*The elemental crumbles in defeat, but quickly thereafter two halves stand up and begin to fight*"));
     }
-    else if(sResRef == "elemental_raid_6")
+    else if((sResRef == "elemental_raid_6") && (GetLocalInt(oCritter,"epicDrop")==1))
     {
-      RollLoot(lLocation, oCritter);
+      AssignCommand(oCritter,SpeakString("*The elemental crumbles in defeat and it appears that a useful object remains buried in its chest!*"));
     }
-
 }
 
 
@@ -75,50 +74,18 @@ void Spawn(string sCreature, location lLocation)
   effect eVisE = EffectVisualEffect(VFX_FNF_GAS_EXPLOSION_FIRE);
   object oCritterS1 = CreateObject(OBJECT_TYPE_CREATURE,sCreature,lLocation);
   ApplyEffectAtLocation(DURATION_TYPE_INSTANT,eVisE,lLocation);
+
+  if(sCreature=="elemental_raid_6")
+  {
+   int nRan = Random(100) + 1;
+
+   if(nRan <= 15)
+   {
+     object oEpic = GenerateEpicLootReturn(oCritterS1);
+     SetLocalInt(oCritterS1,"epicDrop",1);
+     SetDroppableFlag(oEpic,TRUE);
+   }
+  }
 }
 
-void RollLoot(location lLocation, object oCritter)
-{
-  int nRan = Random(100) + 1;
-  int nRan2 = Random(200) + 1;
-  object oChest;
 
-  if(nRan <= 10)  // 10% of Epic Loot
-  {
-     oChest = CreateObject(OBJECT_TYPE_PLACEABLE,"ele_loot",lLocation);
-     AssignCommand(oCritter,SpeakString("*There is something gleaming in the remains*"));
-     GenerateEpicLoot(oChest);
-  }
-
-  if(nRan2 == 1) // .5% of Ioun
-  {
-     if(!GetIsObjectValid(oChest))
-     {
-      oChest = CreateObject(OBJECT_TYPE_PLACEABLE,"ele_loot",lLocation);
-     }
-
-     AssignCommand(oCritter,SpeakString("*There is something gleaming in the remains*"));
-
-     int nRanStone = Random(12)+1;
-     string sStone;
-
-     switch(nRanStone)
-     {
-       case 1: sStone = "is_chryso"; break;
-       case 2: sStone = "is_iol"; break;
-       case 3: sStone = "is_lavender"; break;
-       case 4: sStone = "is_purp"; break;
-       case 5: sStone = "is_whit"; break;
-       case 6: sStone = "x2_is_blue"; break;
-       case 7: sStone = "x2_is_deepred"; break;
-       case 8: sStone = "x2_is_drose"; break;
-       case 9: sStone = "x2_is_paleblue"; break;
-       case 10: sStone = "x2_is_pink"; break;
-       case 11: sStone = "x2_is_pandgreen"; break;
-       case 12: sStone = "x2_is_sandblue"; break;
-     }
-
-     CreateItemOnObject(sStone,oChest);
-  }
-
-}

@@ -122,6 +122,9 @@ void UpdateModuleVariable2( string sVariable, int nValue );
 // Generates an Epic Item in the select Chest/container/inventory
 void GenerateEpicLoot(object oInventory);
 
+// Generates an Epic Item in the select Chest/container/inventory. It then returns that object back to you.
+object GenerateEpicLootReturn(object oInventory);
+
 // Generates an Standard Item in the select Chest/container/inventory. Will never generate epic loot.
 void GenerateStandardLoot(object oInventory, int nLevel);
 //-------------------------------------------------------------------------------
@@ -906,6 +909,29 @@ void GenerateEpicLoot(object oInventory)
 
     CopyItemVoid( oTemplate, oInventory, TRUE );
 
+
+
+}
+
+
+object GenerateEpicLootReturn(object oInventory)
+{
+
+    // Variables.
+    int nIndex              = 0;
+    string sIndex           = "";
+    object oTemplate        = OBJECT_INVALID;
+
+
+    object oContainer = GetObjectByTag( "CD_TREASURE_UBER" );
+    InitialiseLootBin( oContainer );
+
+    nIndex       = Random( GetLocalInt( oContainer, LOOTBIN_COUNT ) );
+    sIndex       = ITEM_PREFIX + IntToString( nIndex );
+    oTemplate    = GetLocalObject( oContainer, sIndex );
+
+    object oReturn = CopyItem( oTemplate, oInventory, TRUE );
+    return oReturn;
 
 }
 

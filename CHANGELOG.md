@@ -33,6 +33,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 		- This spell casts a globe of ravaging plants to assail their foes. Any enemies caught in the spell's radius must make a reflex save or be entangled. The victim's can make subsequent saves to escape the entanglement. However, any targets hit by the entanglement must make a fortitude save or be poisoned. The poison does 2d6 points of dexterity damage. If the target fails the reflex save but has freedom, while they won't be entangled, they will still be subject to the poison.
 
 - Added 20 new variations of Gloves/Hoodes/Boots and Belts to job system
+- Reworked the Elemental Boss Drops (The corpses will not stay, easier to spot, and will have the loot on them). There are 32 Tiny Ele
+at the end of the fight. 15% drop chance for an epic each. 
 
 ### Changed
 - Shrunk the Moonweave Sanctum area

@@ -28,7 +28,7 @@ void main (){
     int alliedArea    = AllyCheck(widget, pc);
 
     if(GetIsDM(pc)){
-        if((GetObjectType(guardNPC) == OBJECT_TYPE_CREATURE) && (GetTag(guardNPC) == "settle_elitguard" || GetTag(guardNPC) == "settle_mageguard" || GetTag(guardNPC) == "settle_scutguard" || GetTag(guardNPC) == "settle_stndguard")){
+        if((GetObjectType(guardNPC) == OBJECT_TYPE_CREATURE) && (GetTag(guardNPC) == "settle_elitguard" || GetTag(guardNPC) == "settle_mageguard" || GetTag(guardNPC) == "settle_scutguard" || GetTag(guardNPC) == "settle_stndguard" || GetTag(guardNPC) == "settle_cnstguard")){
             if(guardCount == 0){
                 json guard1  = ObjectToJson(guardNPC, TRUE);
                 string name1 = GetName(guardNPC);
@@ -143,7 +143,6 @@ void main (){
                     }
                 i = (i - 1);
                 }
-
             }
         DeleteLocalInt(pc,"guard_spawned");
         SendMessageToPC(pc, "Your guards have returned to their duties.");
@@ -151,7 +150,6 @@ void main (){
     else{
         SendMessageToPC(pc,"You can only summon your guards in your approved settlement areas!");
     }
-
 }
 
 int HenchCount(object pc){
@@ -165,7 +163,6 @@ int HenchCount(object pc){
 }
 
 int AllyCheck(object widget, object pc){
-    int settlement = GetLocalInt(widget, "settlement_1");
     int areaCheck  = GetLocalInt(GetArea(pc), "settlement");
     int allyCount  = GetLocalInt(widget, "ally_count");
     int alliedArea;

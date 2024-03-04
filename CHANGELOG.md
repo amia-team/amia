@@ -60,8 +60,11 @@ at the end of the fight. 15% drop chance for an epic each.
 	- Fixed a crash caused by a warlock logging in and out real quick.
 	- Binding of Maggots summoning circle now removes itself properly.
 	- Frog Drop targeting works now as a small AoE as intended.
-	- Unsummon vfx now plays properly for multiple summons.
+	- Unsummon and summon visuals now play properly for multiple summons.
+ 	- Multiple summons now unsummon properly on new summons.
+	- Summons' attack bonus now scales as intended.
 - Fixed Job System Material Check Bug
+- Iolite effect now applies to all henchmen instead of just the first one.
 ## [3.2.0 - 2024-02-25]
 
 ### Added

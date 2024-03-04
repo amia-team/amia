@@ -78,7 +78,7 @@ void main()
                     effect eEntangle = EffectVisualEffect(VFX_DUR_ENTANGLE);
                     //Link Entangle and Hold effects
                     effect eLink = EffectLinkEffects(eHold, eEntangle);
-                    //DelayCommand(fDelay, ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oTarget, RoundsToSeconds(nDur)));
+                    DelayCommand(fDelay, ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oTarget, RoundsToSeconds(nDur)));
 
                     if(!MySavingThrow(SAVING_THROW_FORT, oTarget, GetSpellSaveDC(), SAVING_THROW_TYPE_POISON)) {
                         // Apply Poison
@@ -87,7 +87,7 @@ void main()
                         effect ePoison = EffectAbilityDecrease(ABILITY_DEXTERITY, d6(2));
                         effect ePoivis = EffectVisualEffect(VFX_IMP_POISON_S);
                         effect eLink2 = EffectLinkEffects(ePoison, ePoivis);
-                        //DelayCommand(fDelay+fDelay, ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink2, oTarget);
+                        DelayCommand(fDelay+fDelay, ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink2, oTarget));
                     }
                 }
             }

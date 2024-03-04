@@ -80,7 +80,10 @@ void main()
                     effect eLink = EffectLinkEffects(eHold, eEntangle);
                     DelayCommand(fDelay, ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oTarget, RoundsToSeconds(nDur)));
 
-                    if(!MySavingThrow(SAVING_THROW_FORT, oTarget, GetSpellSaveDC(), SAVING_THROW_TYPE_POISON)) {
+                    if (GetIsImmune(oTarget, IMMUNITY_TYPE_POISON)) {
+
+                    } else if(!MySavingThrow(SAVING_THROW_FORT, oTarget, GetSpellSaveDC(), SAVING_THROW_TYPE_POISON)) {
+
                         // Apply Poison
                         //effect ePoison = EffectPoison(POISON_GIANT_WASP_POISON);
                         //DelayCommand(fDelay+fDelay,ApplyEffectToObject(DURATION_TYPE_PERMANENT, ePoison, oTarget));

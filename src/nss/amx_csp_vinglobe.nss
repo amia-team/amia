@@ -58,31 +58,36 @@ void main()
     }
 
     object oTarget = GetFirstObjectInShape(SHAPE_SPHERE, RADIUS_SIZE_LARGE, lTarget, TRUE, OBJECT_TYPE_CREATURE);
+    effect eBoom = EffectVisualEffect(VFX_IMP_STARBURST_GREEN);
+    DelayCommand(0.1f, ApplyEffectToObject(DURATION_TYPE_INSTANT, eBoom, oTarget));
 
     //Cycle through the targets within the spell shape until an invalid object is captured.
     while (GetIsObjectValid(oTarget)) {
+
         if (spellsIsTarget(oTarget, SPELL_TARGET_STANDARDHOSTILE, oCaster)) {
 
             SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, GetSpellId()));
 
             float fDelay = 1.0f;
+
             if (!MyResistSpell(OBJECT_SELF, oTarget)) {
+
                 if(!MySavingThrow(SAVING_THROW_REFLEX, oTarget, GetSpellSaveDC())) {
                     // Apply Entangle
                     effect eHold = EffectEntangle();
                     effect eEntangle = EffectVisualEffect(VFX_DUR_ENTANGLE);
                     //Link Entangle and Hold effects
-                    effect eLink = EffectLinkEffects(eHold, eEntangle)
-                    DelayCommand(fDelay, ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oTarget, RoundsToSeconds(nDur)));
+                    effect eLink = EffectLinkEffects(eHold, eEntangle);
+                    //DelayCommand(fDelay, ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oTarget, RoundsToSeconds(nDur)));
 
-                    if(!MySavingThrow(SAVING_THROW_FORTITUDE, oTarget, GetSpellSaveDC(). SAVING_THROW_TYPE_POISON)) {
+                    if(!MySavingThrow(SAVING_THROW_FORT, oTarget, GetSpellSaveDC(), SAVING_THROW_TYPE_POISON)) {
                         // Apply Poison
                         //effect ePoison = EffectPoison(POISON_GIANT_WASP_POISON);
                         //DelayCommand(fDelay+fDelay,ApplyEffectToObject(DURATION_TYPE_PERMANENT, ePoison, oTarget));
-                        effect ePoison = EffectAbilitydecrease(ABILITY_DEXTERITY, d6(2));
+                        effect ePoison = EffectAbilityDecrease(ABILITY_DEXTERITY, d6(2));
                         effect ePoivis = EffectVisualEffect(VFX_IMP_POISON_S);
                         effect eLink2 = EffectLinkEffects(ePoison, ePoivis);
-                        DelayCommand(fDelay+fDelay, ApplyEffectToOjbect(DURATION_TYPE_PERMANENT, eLink2, oTarget);
+                        //DelayCommand(fDelay+fDelay, ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink2, oTarget);
                     }
                 }
             }

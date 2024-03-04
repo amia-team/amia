@@ -43,13 +43,20 @@ void main()
     // If code within the PreSpellCastHook (i.e. UMD) reports FALSE, do not run this spell
         return;
     }
+    int nMetaMagic      = GetMetaMagicFeat();
 
     //Declare major variables
     object oTarget = GetSpellTargetObject();
     effect eVis = EffectVisualEffect(VFX_IMP_REDUCE_ABILITY_SCORE);
     effect eCurse = EffectCurse(0, d6(1)+1, 0, 0, 0, 0);
     effect eKD = EffectKnockdown();
-    int nCL = GetNewCasterLevel(OBJECT_SELF);
+    int nDur = GetNewCasterLevel(OBJECT_SELF);
+    int nKDDur = 1;
+
+    if (nMetaMagic == METAMAGIC_EXTEND) {
+        nDur = nDur + nDur;
+        //nKDDur = 2;
+    }
 
     //Make sure that curse is of type supernatural not magical
     eCurse = SupernaturalEffect(eCurse);
@@ -64,8 +71,8 @@ void main()
             if (!/*Will Save*/ MySavingThrow(SAVING_THROW_WILL, oTarget, GetSpellSaveDC()))
             {
                 //Apply Effect and VFX
-                ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eCurse, oTarget, RoundsToSeconds(nCL));
-                ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eKD, oTarget, RoundsToSeconds(1));
+                ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eCurse, oTarget, RoundsToSeconds(nDur));
+                ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eKD, oTarget, RoundsToSeconds(nKDDur));
                 ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
             }
         }

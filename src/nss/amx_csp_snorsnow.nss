@@ -103,10 +103,10 @@ void main()
             }
 
             //Fire cast spell at event for the specified target
-            SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, GetSpellId()));
+            SignalEvent(oAoE, EventSpellCastAt(OBJECT_SELF, GetSpellId()));
             //Get the distance between the explosion and the target to calculate delay
             float fDelay = GetDistanceBetweenLocations(lTarget, GetLocation(oAoE))/20;
-            if (!MyResistSpell(OBJECT_SELF, oTarget, fDelay)) {
+            if (!MyResistSpell(OBJECT_SELF, oAoE, fDelay)) {
                 //Roll damage for each target
                 int nDamage = d6((nCL / 2) + nBonusMaxDice);
                 //Resolve metamagic
@@ -121,8 +121,8 @@ void main()
                     effect eAoEDmg = EffectDamage(nDamage, nDamageType);
                     int nAoEVFX = VFX_IMP_FROST_S;
                     effect eAoEHit = EffectVisualEffect(nAoEVFX);
-                    DelayCommand(fDelay,ApplyEffectToObject(DURATION_TYPE_INSTANT,eAoEDmg,oTarget));
-                    DelayCommand(fDelay,ApplyEffectToObject(DURATION_TYPE_INSTANT,eAoEHit,oTarget));
+                    DelayCommand(fDelay,ApplyEffectToObject(DURATION_TYPE_INSTANT,eAoEDmg,oAoE));
+                    DelayCommand(fDelay,ApplyEffectToObject(DURATION_TYPE_INSTANT,eAoEHit,oAoE));
                 }
             }
        }

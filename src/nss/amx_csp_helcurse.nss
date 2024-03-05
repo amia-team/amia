@@ -50,7 +50,12 @@ void main()
     effect eVis = EffectVisualEffect(VFX_IMP_REDUCE_ABILITY_SCORE);
     effect eCurse = EffectCurse(2, 0, 2, 0, 0, 0);
     effect eMD = EffectMovementSpeedDecrease(30);
-    int nCL = GetNewCasterLevel(OBJECT_SELF);
+    int nDur = GetNewCasterLevel(OBJECT_SELF);
+
+    int nMetaMagic = GetMetaMagicFeat();
+    if (nMetaMagic == METAMAGIC_EXTEND) {
+        nDur = nDur + nDur;
+    }
 
     //Make sure that curse is of type supernatural not magical
     eCurse = SupernaturalEffect(eCurse);
@@ -66,8 +71,8 @@ void main()
             if (!/*Will Save*/ MySavingThrow(SAVING_THROW_WILL, oTarget, GetSpellSaveDC()))
             {
                 //Apply Effect and VFX
-                ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eCurse, oTarget, RoundsToSeconds(nCL));
-                ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eMD, oTarget, RoundsToSeconds(nCL));
+                ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eCurse, oTarget, RoundsToSeconds(nDur));
+                ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eMD, oTarget, RoundsToSeconds(nDur));
                 ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
             }
         }

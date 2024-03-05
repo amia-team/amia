@@ -4,7 +4,7 @@
 //:: Copyright (c) 2001 Bioware Corp.
 //:://////////////////////////////////////////////
 /*
-Druid’s Punch (Transmutation)
+Druidâ€™s Punch (Transmutation)
 Level: Druid 8
 Components: V,S
 Range: Melee
@@ -82,8 +82,18 @@ void main()
             if (isUnnatural(oTarget)) {
                 // Target is unnatural, fort save or die instantly.
                 if (!MySavingThrow(SAVING_THROW_FORT, oTarget, GetShifterDC( OBJECT_SELF, GetSpellSaveDC() ))) {
-                    effect eInstaKill = EffectDeath(TRUE);
-                    DelayCommand(2.0, ApplyEffectToObject(DURATION_TYPE_INSTANT, eInstaKill, oTarget));
+                    // Bypass Death Immunity for Undead/Construct targets
+                    int BOSS_CUTOFF_HD = 40;
+                    if ((GetRacialType(oTarget) == RACIAL_TYPE_CONSTRUCT) || (GetRacialType(oTarget) == RACIAL_TYPE_UNDEAD)) {
+                        if (GetHitDice(oTarget) < BOSS_CUTOFF_HD) {
+                            nDamage = nDamage + GetCurrentHitPoints(oTarget);
+                        } else {
+                           nDamage = nDamage + nDamage;
+                        }
+                    } else {
+                        effect eInstaKill = EffectDeath(TRUE);
+                        DelayCommand(2.0, ApplyEffectToObject(DURATION_TYPE_INSTANT, eInstaKill, oTarget));
+                    }
                 }
             } else {
                 // Target is natural, fort save for half damage.
@@ -92,7 +102,7 @@ void main()
                 }
             }
             effect eDmg = EffectDamage(nDamage, DAMAGE_TYPE_DIVINE);
-            effect eVis = EffectVisualEffect(VFX_IMP_PULSE_NATURE);
+            effect eVis = EffectVisualEffect(VFX_IMP_PULSE_HOLY);
             effect eLink = EffectLinkEffects(eVis,eDmg);
 
             DelayCommand(1.0, ApplyEffectToObject(DURATION_TYPE_INSTANT, eLink, oTarget));

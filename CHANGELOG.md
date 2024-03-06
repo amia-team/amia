@@ -7,10 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Custom creature palette file to top hak.
 
 ### Changed
+- Overhauled entire creature palette into new categories.
 
 ### Fixed
+- Removed several creature .utc files from creature hak.
 
 ## [3.3.0 - 2024-02-25]
 

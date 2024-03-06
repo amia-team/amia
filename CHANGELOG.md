@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Overhauled entire creature palette into new categories.
+- Slight adjustment to positioning of module start point.
 
 ### Fixed
 - Removed several creature .utc files from creature hak.

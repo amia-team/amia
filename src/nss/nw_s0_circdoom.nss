@@ -46,11 +46,19 @@ void main()
     effect eHeal;
     int nCasterLevel = GetCasterLevel(OBJECT_SELF);
     //Limit Caster Level
-    if(nCasterLevel > 20)
+    if(nCasterLevel > 25)
     {
-        nCasterLevel = 20;
+        nCasterLevel = 25;
     }
     int nMetaMagic = GetMetaMagicFeat();
+    int nDice = 5;
+    if (GetHasFeat (FEAT_EPIC_SPELL_FOCUS_NECROMANCY, OBJECT_SELF)) {
+        nDice = nDice + 3;
+    } else if (GetHasFeat (FEAT_GREATER_SPELL_FOCUS_NECROMANCY, OBJECT_SELF)) {
+        nDice = nDice + 2;
+    } else if (GetHasFeat (FEAT_SPELL_FOCUS_NECROMANCY, OBJECT_SELF)) {
+        nDice = nDice + 1;
+    }
     int nDamage;
     float fDelay;
     ApplyEffectAtLocation(DURATION_TYPE_INSTANT, eFNF, GetSpellTargetLocation());
@@ -60,11 +68,11 @@ void main()
     {
         fDelay = GetRandomDelay();
         //Roll damage
-        nDamage = d8() + nCasterLevel;
+        nDamage = d8(nDice) + nCasterLevel;
         //Make metamagic checks
         if (nMetaMagic == METAMAGIC_MAXIMIZE)
         {
-            nDamage = 8 + nCasterLevel;
+            nDamage = (8 * nDice) + nCasterLevel;
         }
         else if (nMetaMagic == METAMAGIC_EMPOWER)
         {
@@ -106,4 +114,3 @@ void main()
         oTarget = GetNextObjectInShape(SHAPE_SPHERE, RADIUS_SIZE_MEDIUM, GetSpellTargetLocation());
     }
 }
-

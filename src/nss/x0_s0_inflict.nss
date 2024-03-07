@@ -53,16 +53,26 @@ int nIMWBonus = 0;
 
 // End of Spell Cast Hook
 
+    int nDice = 0;
+    if (GetHasFeat (FEAT_EPIC_SPELL_FOCUS_NECROMANCY, OBJECT_SELF)) {
+        nDice = 3;
+    } else if (GetHasFeat (FEAT_GREATER_SPELL_FOCUS_NECROMANCY, OBJECT_SELF)) {
+        nDice = 2;
+    } else if (GetHasFeat (FEAT_SPELL_FOCUS_NECROMANCY, OBJECT_SELF)) {
+        nDice = 1;
+    }
 
     int nSpellID = GetSpellId();
     switch (nSpellID)
     {
 
-/*Minor*/     case 431: spellsInflictTouchAttack(1 + nIMWBonus, 0, 1 + nIMWBonus , 246, VFX_IMP_HEALING_G, nSpellID); break;
-/*Light*/     case 432: case 609: spellsInflictTouchAttack(d8(), 5, 8, 246, VFX_IMP_HEALING_G, nSpellID); break;
-/*Moderate*/  case 433: case 610: spellsInflictTouchAttack(d8(2), 10, 16, 246, VFX_IMP_HEALING_G, nSpellID); break;
-/*Serious*/   case 434: case 611: spellsInflictTouchAttack(d8(3), 15, 24, 246, VFX_IMP_HEALING_G, nSpellID); break;
-/*Critical*/  case 435: case 612: spellsInflictTouchAttack(d8(4), 20, 32, 246, VFX_IMP_HEALING_G, nSpellID); break;
+// spellsInflictTouchAttack(Damage, CLCap, MaximizeSpellDamage (idiotic coding it this way), VFX damage, VFX heal, Spell ID);
+
+/*Minor*/     case 431: spellsInflictTouchAttack(4 + nIMWBonus, 0, 4 + nIMWBonus , 246, VFX_IMP_HEALING_G, nSpellID); break;
+/*Light*/     case 432: case 609: spellsInflictTouchAttack(d8(1+nDice), 5, 8+(nDice*8), 246, VFX_IMP_HEALING_G, nSpellID); break;
+/*Moderate*/  case 433: case 610: spellsInflictTouchAttack(d8(2+nDice), 10, 16+(nDice*8), 246, VFX_IMP_HEALING_G, nSpellID); break;
+/*Serious*/   case 434: case 611: spellsInflictTouchAttack(d8(3+nDice), 15, 24+(nDice*8), 246, VFX_IMP_HEALING_G, nSpellID); break;
+/*Critical*/  case 435: case 612: spellsInflictTouchAttack(d8(4+nDice), 20, 32+(nDice*8), 246, VFX_IMP_HEALING_G, nSpellID); break;
 
     }
 }

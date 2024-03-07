@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Overhauled entire creature palette into new categories.
 - Slight adjustment to positioning of module start point.
+- Adjust Raid activation devices to tell proper lore behind them.
 
 ### Fixed
 - Removed several creature .utc files from creature hak.

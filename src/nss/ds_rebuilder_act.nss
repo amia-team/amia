@@ -182,6 +182,10 @@ void do_transfer( object oDM, object oPC, int nType ){
 
                 SendMessageToPC( oDM, "Ignoring emote wand..." );
             }
+            else if ( sResRef == "dmfi_pc_emote2" ){
+
+                SendMessageToPC( oDM, "Ignoring new emote wand..." );
+            }
             else if ( sResRef == "ds_pvp_tool" ){
 
                 SendMessageToPC( oDM, "Ignoring pvp tool..." );
@@ -189,6 +193,10 @@ void do_transfer( object oDM, object oPC, int nType ){
             else if ( sResRef == "ds_dc_recom" ){
 
                 SendMessageToPC( oDM, "Ignoring pc dc tool..." );
+            }
+            else if ( sResRef == "ds_dcrod" ){
+
+                SendMessageToPC( oDM, "Ignoring new pc dc tool..." );
             }
             else if ( sResRef == "ds_party_item" ){
 

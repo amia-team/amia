@@ -13,9 +13,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Overhauled entire creature palette into new categories.
 - Slight adjustment to positioning of module start point.
 - Adjust Raid activation devices to tell proper lore behind them.
+- Crouching Lemur area updates
 
 ### Fixed
 - Removed several creature .utc files from creature hak.
+- Updated DM Rebuilder script to factor in newer DC/Emote wands during rebuilds
 
 ## [3.3.0 - 2024-02-25]
 

@@ -8,16 +8,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Custom creature palette file to top hak.
+- Custom item palette file to top hak.
 
 ### Changed
 - Overhauled entire creature palette into new categories.
+- Overhauled a lot of the item palette into new categories.
 - Slight adjustment to positioning of module start point.
 - Adjust Raid activation devices to tell proper lore behind them.
-- Crouching Lemur area updates
+- Crouching Lemur area updates.
+- Slight modification to Thorny Chief Boss, as he's a little overtuned currently.
 
 ### Fixed
 - Removed several creature .utc files from creature hak.
-- Updated DM Rebuilder script to factor in newer DC/Emote wands during rebuilds
+- Updated DM Rebuilder script to factor in newer DC/Emote wands during rebuilds.
+- Moonweave Sanctum: angry librarian, misplaced smith station.
+- Custom summon duration is correct now and only reports the whole seconds, not a bunch of decimals.
+- Removed some areas that were gone or had wrong resrefs.
 
 ## [3.3.0 - 2024-02-25]
 

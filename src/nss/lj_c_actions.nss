@@ -8,36 +8,44 @@
   taken" and be sure to set Script Params from the
   following list of options:
 
-  - GoldCost       (Amount of gold to take from PC)
+  - TakeGold       (Amount of gold to take from PC)
   - TakeItem       (Item tag to take from PC)
+  - TakeDCs        (Amount of Dream Coins to take)
   - GiveXP         (XP to give to PC, can be negative)
   - GiveItem       (Item tag to give to PC)
+  - GiveGold       (Amount of gold to give to PC)
+  - GiveDCs        (Amount of Dream Coins to give)
                                                      */
 ///////////////////////////////////////////////////////
+
+#include "inc_dc_api"
+#include "inc_ds_records"
 
 void main()
 {
     object oPC = GetPCSpeaker();
 
-    int nGoldCost = StringToInt(GetScriptParam("GoldCost"));
+    int nTakeGold = StringToInt(GetScriptParam("TakeGold"));
+    int nTakeDCs = StringToInt(GetScriptParam("TakeDCs"));
     string sTakeItem = GetScriptParam("TakeItem");
 
     int nGiveGold = StringToInt(GetScriptParam("GiveGold"));
+    int nGiveDCs = StringToInt(GetScriptParam("GiveDCs"));
     string sGiveItem = GetScriptParam("GiveItem");
 //    int nGiveFeat = StringToInt(GetScriptParam("GiveFeat"));            //Not yet implemented
     int nGiveXP = StringToInt(GetScriptParam("GiveXP"));
 
-    if(nGoldCost != 0)
+    if(nTakeGold != 0)
     {
 
-        if(GetGold(oPC) < nGoldCost) //Failsafe for if the PC drops gold during the conversation
+        if(GetGold(oPC) < nTakeGold) //Failsafe for if the PC drops gold during the conversation
         {
             SendMessageToPC(oPC,"You don't have enough gold.");
             return;
         }
         else
         {
-            TakeGoldFromCreature(nGoldCost, oPC, TRUE);
+            TakeGoldFromCreature(nTakeGold, oPC, TRUE);
         }
     }
     if(sTakeItem != "")
@@ -52,6 +60,12 @@ void main()
             ActionTakeItem(GetItemPossessedBy(oPC, sTakeItem), oPC);
         }
     }
+    if(nTakeDCs != 0)
+    {
+        string sCDKey = GetPCPublicCDKey(oPC);
+        SetDreamCoins(sCDKey, GetDreamCoins(sCDKey)-nTakeDCs);
+        SendMessageToPC(oPC, "Dream Coins removed: <c?? >" + IntToString(nTakeDCs) + "</c>");
+    }
     if(nGiveGold != 0)
     {
         GiveGoldToCreature(oPC, nGiveGold);
@@ -63,6 +77,12 @@ void main()
     if(nGiveXP != 0)
     {
         GiveXPToCreature(oPC, nGiveXP);
+    }
+    if(nGiveDCs != 0)
+    {
+        string sCDKey = GetPCPublicCDKey(oPC);
+        SetDreamCoins(sCDKey, GetDreamCoins(sCDKey)+nGiveDCs);
+        SendMessageToPC(oPC, "You gain <c?? >" + IntToString(nGiveDCs) + "</c> Dream Coins.");
     }
     return;
 }

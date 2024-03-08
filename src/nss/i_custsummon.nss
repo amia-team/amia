@@ -41,7 +41,7 @@ void main (){
                 SetLocalJson(widget, "summon_critter", summonStored);
                 SetLocalString(widget,"summonName",name);
                 SetName(widget,"<cÿÔ¦>Summon "+ name + "</c>");
-                SetDescription(widget,"This widget will summon <cÿÔ¦>"+ name +"</c>. Use it again to unsummon.",TRUE);
+                SetDescription(widget,"This widget will summon <cÿÔ¦>"+ name +"</c>.",TRUE);
                 RemoveItemProperty(widget, uniqueRanged);
                 IPSafeAddItemProperty(widget, uniqueSelf, 0.0f, X2_IP_ADDPROP_POLICY_REPLACE_EXISTING, TRUE, TRUE);
                 FloatingTextStringOnCreature("Custom Summon set to <cÿÔ¦>"+ name +"</c>. You can give this item to the player now.", pc, TRUE);
@@ -62,7 +62,7 @@ void main (){
         location targetSpot  = GetItemActivatedTargetLocation();
         location curSumLoc   = GetLocation(currentSummon);
         int pcLevel          = GetLevelByPosition(1, pc) + GetLevelByPosition(2, pc) + GetLevelByPosition(3, pc);
-        float summonDuration = 60.0 * pcLevel;
+        float summonDuration = 3600.0 * pcLevel;
         effect summonVFX     = EffectVisualEffect(481, FALSE, 1.0);
         effect unsummon      = EffectVisualEffect(99);
         json newSum          = GetLocalJson(widget, "summon_critter");
@@ -80,7 +80,7 @@ void main (){
     else{
         location targetSpot  = GetItemActivatedTargetLocation();
         int pcLevel          = GetLevelByPosition(1, pc) + GetLevelByPosition(2, pc) + GetLevelByPosition(3, pc);
-        float summonDuration = 120.0 * pcLevel;
+        float summonDuration = 3600.0 * pcLevel;
         effect summonVFX     = EffectVisualEffect(481, FALSE, 1.0);
         json newSum          = GetLocalJson(widget, "summon_critter");
         object newSummon = JsonToObject(newSum, targetSpot, pc, TRUE);
@@ -88,7 +88,7 @@ void main (){
         AddHenchman(pc, newSummon);
         GhostSummon(pc);
         ApplyEffectAtLocation(DURATION_TYPE_INSTANT, summonVFX, targetSpot);
-        SendMessageToPC(pc, "Summon Duration: "+ FloatToString(summonDuration) +" seconds.");
+        SendMessageToPC(pc, "Summon Duration: "+ FloatToString(summonDuration, 0, 0) +" seconds.");
         DelayCommand(summonDuration, RemoveSummon(pc));
     }
 }

@@ -55,7 +55,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Double Eclipse (Double Axe): +5 Enhancement, Keen, 1d6 Bludgeoning, 1d6 Positive, Vampiric Regen +3, OnHit: Daze DC 20
 	- Frostfall (Two-Bladed Sword): +5 Enhancement, Keen, 2d6 Cold, 1d6 Massive Crit, OnHit Freeze DC 30
 
-- Epic Crafting Recipes added for all new/old Epic loot. 100+ Items
+- Epic Crafting Recipes added for all new/old Epic loot. 100+ Items.
 - Throwing Axes, Darts, and Shurikens added to crafting system. 
 
 
@@ -66,8 +66,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Adjust Raid activation devices to tell proper lore behind them.
 - Crouching Lemur area updates.
 - Slight modification to Thorny Chief Boss, as he's a little overtuned currently.
-- Scarab of Living changed to: +5 AC, +2 Regeneration, Poison Immunity, Disease Immunity
-- Bracers of the Gemstone Golem changed to: +5 Soak 5 Damage, 5/- Bludgeoning, 5/- Piercing, 5/- Slashing, +2 CON
+- Scarab of Living changed to: +5 AC, +2 Regeneration, Poison Immunity, Disease Immunity.
+- Bracers of the Gemstone Golem changed to: +5 Soak 5 Damage, 5/- Bludgeoning, 5/- Piercing, 5/- Slashing, +2 CON.
+- Added additional functionality to us_sit - can do other animations.
 
 ### Fixed
 - Removed several creature .utc files from creature hak.
@@ -75,6 +76,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Moonweave Sanctum: angry librarian, misplaced smith station.
 - Custom summon duration is correct now and only reports the whole seconds, not a bunch of decimals.
 - Removed some areas that were gone or had wrong resrefs.
+- Removed some missing resources and spawned creatures that aren't needed anymore.
 
 ## [3.3.0 - 2024-02-25]
 

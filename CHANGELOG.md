@@ -9,6 +9,51 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Custom creature palette file to top hak.
 - Custom item palette file to top hak.
+- Added new epic loot items for crafting system:
+	- Bracers of the Elemental Golem: 10/- Acid Resist, 10/- Fire Resist, 10/- Cold Resist, 10/- Electric Resist, +2 CON
+	- Dragon Armors of Chaos (+5 AC, 15/- Acid Resist, 15/- Electric Resist, +1 Regen): Half-Plate, Splint Mail, Breastplate, Chain, Hide, Leather, Padded, Cloth
+	- Dragon Armors of Tyranny (+5 AC, 15/- Fire Resist, 15/- Cold Resist, +1 Regen): Half-Plate, Splint Mail, Breastplate, Chain, Hide, Leather, Padded, Cloth
+	- Arcane Defiance Armors (+5 AC, 32 SR, +2 Saves): Half-Plate, Splint Mail, Breastplate, Hide, Padded
+	- Furtive Armors (+5 AC, +2 DEX, +5 Hide, +5 Move Silently): Hide, Leather, Padded, Cloth
+	- Gloves of the Honeyed Tongue: +30 Persuade
+	- Gloves of the Serpent's Tongue: +30 Bluff
+	- Gloves of the Challenger: +30 Taunt
+	- Gloves of the Equestrian: +30 Ride
+	- Gloves of Conspicuous Threats: +30 Intimidate
+	- Gloves of Silent Whispers: +3 DEX, +15 Hide, +15 Move Silently
+	- Gloves of Keen Senses: +15 Spot, +15 Listen, +15 Search
+	- Earblasters (Darts): +5 Enhancement, 1d8 Sonic, OnHit Deafness DC 20, Vamp Regen +2
+	- Frozen Cutters (Shuirkens): +5 Enhancement, 1d8 Slashing, 1d4 Cold, OnHit: Slow DC 20
+	- Thunderstrikers (Throwing Axes): +5 Enhancement, 1d8 Piercing, 1d4 Electric, +2 Vampiric Regen
+	- Mindreaver (Battleaxe): +5 Enhancement, Keen, 1d8 Piercing, OnHit: Confusion
+	- Soulbasher (Club): +5 Enhancement, Keen, 1d4 Magic, 1d4 Piercing, 1d8 Massive Crit
+	- Stormweaver Axe (Handaxe): +5 Enhancement, Keen, 1d3 Electric, 1d3 Magic, OnHit: Doom DC 20
+	- Etherblade (Katana): +5 Enhancement, Keen, 1d8 Negative, 1d4 Bludgeoning, OnHit: Stun DC 20
+	- Vortex Stinger (Kukri): +5 Enhancement, 1d10 Cold, Keen, 1d6 Massive Crit
+	- Skelly Smasher (Light Flail): +5 Enhancement, +6 Enhancement vs Undead, 1d10 Positive vs. Undead, 1d6 Slashing) - epx_weap_sklsm
+	- Galecaller (Light Hammer): +5 Enhancement, Keen, 1d3 Acid, 1d3 Electric, 1d3 Cold, 1d3 Fire, +2 Vampiric Regen
+	- Beauty's Redoubt (1H Magic Staff): +2 CHA, Bonus Spell Slot 9, 8, +5 Spellcraft
+	- Sage's Redoubt (1H Magic Staff): +2 INT, Bonus Spell Slots 9, 8, +5 Spellcraft
+	- Holy Redoubt (1H Magic Staff): +2 WIS, Bonus Spell Slots, 9, 8, +5 Spellcraft
+	- Eldritch Redoubt (1H Magic Staff): +2 DEX, +1 CHA, +5 Concentration
+	- Starfall (Morningstar): +5 Enhancement, Keen, 1d8 Slashing, OnHit: Silence DC 20
+	- Astral Crescent (Sickle): +5 Enhancement, Keen, 1d4 Positive, 1d4 Acid, OnHit: Blind DC 20
+	- Runic Pigsticker (Trident): +5 Enhancement, Keen, 1d8 Bludgeoning, +3 Vampiric Regen
+	- Dreamweaver (+5 Enhancement, Keen, 1d4 Sonic, 1d4 Acid, 1d4 Electric, 1d8 Massive Crit
+	- Essence Crossbow (Heavy Crossbow): +5 AB, +5 Mighty, 1d12 Massive Crits, 80$% of Weight, 1d6 Sneak Attack Blackguard
+	- Hurricane (Light Crossbow): +5 AB, +5 Mighty, 1d12 Massive Crits, Extra Damage Type Slashing
+	- Ebon Gale (Shortbow): +5 AB, +5 Mighty, Bonus Damage: Bludgeoning, 1d12 Massive Crit
+	- Dalestriker (Sling): +5 AB, +5 Mighty, Bonus Damage: Slashing, 2d12 Massive Crit
+	- Crystalwave Staff (Quarterstaff): +5 Enhancement, Keen, 2d6 Slashing, +2 Vampiric Regen, OnHit Freeze DC 30
+	- Enigma Totem (Quarterstaff): +4 WIS, Bonus Spell Slots, 9, 9, 8, 8, +10 Spellcraft
+	- Icespire (Spear): +5 Enhancement, Keen, 1d6 Cold, 1d6 Sonic, +3 Vampiric Regen, OnHit Stun DC 20
+	- Shadowmark (Greataxe): +5 Enhancement, Keen, 2d6 Piercing, 1d6 Sneak Attack Blackguard, +3 Vampiric Regen
+	- Typhoon Edge (Halberd): +5 Enhancement, Keen, 1d4 Acid, 1d4 Cold, 1d4 Fire, 1d4 Electric, OnHit: Confusion DC 20
+	- Ghostfire (Heavy Flail): +5 Enhancement, +6 Enhancement vs Undead, 1d10 Positive vs. Undead, 1d6 Slashing, OnHit Doom DC 20
+	- Starfrost (Scythe): +5 Enhancement, Keen, 2d6 Piercing, 1d6 Massive Crit, OnHit Freeze DC 30
+	- Shadow Mirage (Dice Mace): +5 Enhancement, Keen, 2d6 Slashing, +3 Vampiric Regen, 1d6 Sneak Attack Blackguard
+	- Double Eclipse (Double Axe): +5 Enhancement, Keen, 1d6 Bludgeoning, 1d6 Positive, Vampiric Regen +3, OnHit: Daze DC 20
+	- Frostfall (Two-Bladed Sword): +5 Enhancement, Keen, 2d6 Cold, 1d6 Massive Crit, OnHit Freeze DC 30
 
 ### Changed
 - Overhauled entire creature palette into new categories.
@@ -17,6 +62,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Adjust Raid activation devices to tell proper lore behind them.
 - Crouching Lemur area updates.
 - Slight modification to Thorny Chief Boss, as he's a little overtuned currently.
+- Scarab of Living changed to: +5 AC, +2 Regeneration, Poison Immunity, Disease Immunity
+- Bracers of the Gemstone Golem changed to: +5 Soak 5 Damage, 5/- Bludgeoning, 5/- Piercing, 5/- Slashing, +2 CON
 
 ### Fixed
 - Removed several creature .utc files from creature hak.

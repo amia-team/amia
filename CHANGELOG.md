@@ -55,6 +55,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Double Eclipse (Double Axe): +5 Enhancement, Keen, 1d6 Bludgeoning, 1d6 Positive, Vampiric Regen +3, OnHit: Daze DC 20
 	- Frostfall (Two-Bladed Sword): +5 Enhancement, Keen, 2d6 Cold, 1d6 Massive Crit, OnHit Freeze DC 30
 
+- Epic Crafting Recipes added for all new/old Epic loot. 100+ Items
+- Throwing Axes, Darts, and Shurikens added to crafting system. 
+
+
 ### Changed
 - Overhauled entire creature palette into new categories.
 - Overhauled a lot of the item palette into new categories.

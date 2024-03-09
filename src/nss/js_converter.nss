@@ -9,7 +9,7 @@
   16-april-2023 Frozen: Hair and tattoo kit added
   070523 Lord-Jyssev: Added epic loot crafting and ingredient retention option
   Feb 23 2024 Maverick: Added in new Raid crafting support, and added in functionality so you can have two identifical ingredients and it will work. Also added in proper tracking for job system material types and requires those items of certain materials for recipes. See the Epic/Legendary sections.
-
+  March 8th 2023 Mav - Adding Epic Crafting support.
 */
 
 #include "x2_inc_switches"
@@ -274,12 +274,15 @@ void ArtificerConverter(object oPC, object oBench, int nNode)
     int nRetainItem; //Retains ingredients on failure for epic loot
     int nIngredient1Found;
     int nIngredient2Found;
+    int nActionNode = GetLocalInt( oPC, "ds_actionnode");
     int nCost;
     int nStack = 0;
     int nProductStackSize = 1;
 
-    switch(nNode)
+    if(nActionNode == 1)
     {
+     switch(nNode)
+     {
 
       case 1: sProduct = "js_arca_mytu"; sIngredient1 = "js_bla_miin"; sIngredient2 = "js_jew_crys"; nCost = 5000; break;
       case 2: sProduct = "js_arca_bdbg"; sIngredient1 = "js_bui_shpl"; sIngredient2 = "js_bla_miin"; nCost = 5000; break;
@@ -306,8 +309,41 @@ void ArtificerConverter(object oPC, object oBench, int nNode)
       case 23: sProduct = "raid_comp_frosty"; sIngredient1 = "raid_base_frosty"; sIngredient2 = "raid_base_frosty"; nCost = 5000; nRetainItem=1; break;
       case 24: sProduct = "raid_comp_lich"; sIngredient1 = "raid_base_lich"; sIngredient2 = "raid_base_lich"; nCost = 5000; nRetainItem=1; break;
       case 25: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_comp_frosty"; sIngredient2 = "js_jew_diam"; sType = "wdragonbossrewar"; sPlaceableName = "<cnÞÿ>Frostspear's Treasure</c>"; nCost = 10000; nRetainItem=1; break;
+      case 26: sProduct = "epx_comp_wrc"; sIngredient1 = "epx_base_eqip"; sIngredient2 = "epx_base_glyp"; nCost = 5000; nRetainItem=1; break;
+      case 27: sProduct = "epx_comp_mwamc"; sIngredient1 = "epx_base_ston"; sIngredient2 = "epx_base_mats"; nCost = 5000; nRetainItem=1; break;
+      case 28: sProduct = "epx_comp_psbdc"; sIngredient1 = "epx_base_blod"; sIngredient2 = "epx_base_claw"; nCost = 5000; nRetainItem=1; break;
+      case 29: sProduct = "epx_comp_gofbc"; sIngredient1 = "epx_base_bone"; sIngredient2 = "epx_base_obsd"; nCost = 5000; nRetainItem=1; break;
+      case 30: sProduct = "epx_comp_wbc"; sIngredient1 = "epx_base_eqip"; sIngredient2 = "epx_base_blod"; nCost = 5000; nRetainItem=1; break;
+      case 31: sProduct = "epx_comp_drfc"; sIngredient1 = "epx_base_glyp"; sIngredient2 = "epx_base_claw"; nCost = 5000; nRetainItem=1; break;
+      case 32: sProduct = "epx_comp_safbc"; sIngredient1 = "epx_base_ston"; sIngredient2 = "epx_base_bone"; nCost = 5000; nRetainItem=1; break;
+      case 33: sProduct = "epx_comp_goimc"; sIngredient1 = "epx_base_mats"; sIngredient2 = "epx_base_obsd"; nCost = 5000; nRetainItem=1; break;
 
+     }
+    }
+    if(nActionNode == 2)
+    {
+     switch(nNode)
+     {
+      case 1: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ioun"; sIngredient2 = "js_alch_elea"; sType = "epx_ioun_chrys"; sPlaceableName = "<c¦ÿ©>Chrysoprase Ioun</c>"; nCost = 10000; nRetainItem=1; break;
+      case 2: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ioun"; sIngredient2 = "js_alch_elef"; sType = "epx_ioun_iolit"; sPlaceableName = "<c¦ÿ©>Iolite Ioun</c>"; nCost = 10000; nRetainItem=1; break;
+      case 3: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ioun"; sIngredient2 = "js_alch_elee"; sType = "epx_ioun_lavnd"; sPlaceableName = "<c¦ÿ©>Lavender Ioun</c>"; nCost = 10000; nRetainItem=1; break;
+      case 4: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ioun"; sIngredient2 = "js_alch_elew"; sType = "epx_ioun_prple"; sPlaceableName = "<c¦ÿ©>Purple Ioun</c>"; nCost = 10000; nRetainItem=1; break;
+      case 5: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ioun"; sIngredient2 = "js_alch_elea"; sType = "epx_ioun_white"; sPlaceableName = "<c¦ÿ©>White Ioun</c>"; nCost = 10000; nRetainItem=1; break;
+      case 6: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ioun"; sIngredient2 = "js_alch_elew"; sType = "epx_ioun_blue1"; sPlaceableName = "<c¦ÿ©>Blue Ioun</c>"; nCost = 10000; nRetainItem=1; break;
+      case 7: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ioun"; sIngredient2 = "js_alch_elee"; sType = "epx_ioun_dpred"; sPlaceableName = "<c¦ÿ©>Deep Red Ioun</c>"; nCost = 10000; nRetainItem=1; break;
+      case 8: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ioun"; sIngredient2 = "js_alch_elef"; sType = "epx_ioun_drose"; sPlaceableName = "<c¦ÿ©>Dusty Rose Ioun</c>"; nCost = 10000; nRetainItem=1; break;
+      case 9: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ioun"; sIngredient2 = "js_alch_elea"; sType = "epx_ioun_pblue"; sPlaceableName = "<c¦ÿ©>Pale Blue Ioun</c>"; nCost = 10000; nRetainItem=1; break;
+      case 10: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ioun"; sIngredient2 = "js_alch_elew"; sType = "epx_ioun_pink1"; sPlaceableName = "<c¦ÿ©>Pink Ioun</c>"; nCost = 10000; nRetainItem=1; break;
+      case 11: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ioun"; sIngredient2 = "js_alch_elef"; sType = "epx_ioun_pnkgn"; sPlaceableName = "<c¦ÿ©>Pink & Green Ioun</c>"; nCost = 10000; nRetainItem=1; break;
+      case 12: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ioun"; sIngredient2 = "js_alch_elee"; sType = "epx_ioun_sctbl"; sPlaceableName = "<c¦ÿ©>Scarlet & Blue Ioun</c>"; nCost = 10000; nRetainItem=1; break;
+      case 13: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_obsd"; sIngredient2 = "js_gem_ivor"; sType = "epx_misc_wyrms"; sPlaceableName = "<c¦ÿ©>Wyrmshadow Reliquary</c>"; nCost = 10000; nRetainItem=1; break;
+      case 14: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_glyp"; sIngredient2 = "js_bla_goin"; sType = "epx_misc_yowlr"; sPlaceableName = "<c¦ÿ©>Yowler's Eye</c>"; nCost = 10000; nRetainItem=1; break;
+      case 15: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wbc"; sIngredient2 = "js_bla_siin"; sType = "epx_misc_hntrs"; sPlaceableName = "<c¦ÿ©>Hunter's Sense</c>"; nCost = 10000; nRetainItem=1; break;
+      case 16: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_mwamc"; sIngredient2 = "js_sch_emto"; sType = "epx_misc_tmmys"; sPlaceableName = "<c¦ÿ©>Greater Tome of Mystra</c>"; nCost = 10000; nRetainItem=1; break;
+      case 17: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_psbdc"; sIngredient2 = "js_bla_goin"; sType = "epx_misc_orbus"; sPlaceableName = "<c¦ÿ©>Orb of Unlocked Secrets</c>"; nCost = 10000; nRetainItem=1; break;
+      case 18: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wrc"; sIngredient2 = "js_bla_plin"; sType = "epx_misc_hrald"; sPlaceableName = "<c¦ÿ©>Herald's Gift</c>"; nCost = 10000; nRetainItem=1; break;
 
+     }
     }
 
     CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);
@@ -330,12 +366,13 @@ void ArchitectConverter(object oPC, object oBench, int nNode)
     int nRetainItem; //Retains ingredients on failure for epic loot
     int nIngredient1Found;
     int nIngredient2Found;
+    int nActionNode = GetLocalInt( oPC, "ds_actionnode");
     int nCost;
     int nStack = 0;
     int nProductStackSize = 1;
 
-    switch(nNode)
-    {
+     switch(nNode)
+     {
 
       case 1: sProduct = "js_bui_bric"; sIngredient1 = "js_rock_gran"; sIngredient2 = "none"; nCost = 100; break;
       case 2: sProduct = "js_bui_mort"; sIngredient1 = "js_rock_gran"; sIngredient2 = "js_bui_quic"; nCost = 100; break;
@@ -391,7 +428,8 @@ void ArchitectConverter(object oPC, object oBench, int nNode)
       case 52: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_sbone"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_bonecage"; sPlaceableName = "Bone Cage"; sMaterial = "plc"; nCost = 5000; break;
       case 53: sProduct = "js_chest_kit";  sIngredient1 = "js_tree_shaw"; sIngredient2 = "js_herb_sils"; nCost = 5000; break;
       case 54: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_bla_irin"; sType = "js_bui_trsi2"; sPlaceableName = "Transportable Sign Large"; sMaterial = "plc"; nCost = 2000; break;
-    }
+     }
+
 
     CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);
 
@@ -789,6 +827,25 @@ void JewelerConverter(object oPC, object oBench, int nNode)
       case 14: sProduct = "js_gem_sivo"; sIngredient1 = "js_gem_ivor"; sIngredient2 = "none"; nCost = 2000; break;
       case 15: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_frosty"; sIngredient2 = "js_jew_amul"; sType = "frostspear_neckl"; sPlaceableName = "<cnÞÿ>Frostchoker</c>"; nCost = 10000; nRetainItem=1; sIngredient2Type = "platinum"; break;
       case 16: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_lich"; sIngredient2 = "js_jew_ring"; sType = "shroudring"; sPlaceableName = "<cË z>Undeath's Eternal Servant</c>"; nCost = 10000; nRetainItem=1; sIngredient2Type = "platinum"; break;
+      case 17: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_claw"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_immac"; sPlaceableName = "<c¦ÿ©>Ring of Elemental Acid Immunity</c>"; sIngredient2Type = "ivory"; nCost = 10000; nRetainItem=1; break;
+      case 18: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_glyp"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_immco"; sPlaceableName = "<c¦ÿ©>Ring of Elemental Cold Immunity</c>"; sIngredient2Type = "silver"; nCost = 10000; nRetainItem=1; break;
+      case 19: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_blod"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_immfi"; sPlaceableName = "<c¦ÿ©>Ring of Elemental Fire Immunity</c>"; sIngredient2Type = "gold"; nCost = 10000; nRetainItem=1; break;
+      case 20: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_obsd"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_immlt"; sPlaceableName = "<c¦ÿ©>Ring of Elemental Lightning Immunity</c>"; sIngredient2Type = "platnium"; nCost = 10000; nRetainItem=1; break;
+      case 21: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_eqip"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_prtpv"; sPlaceableName = "<c¦ÿ©>Ring of Protection and Prevention</c>"; sIngredient2Type = "silver"; nCost = 10000; nRetainItem=1; break;
+      case 22: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_bone"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_bondu"; sPlaceableName = "<c¦ÿ©>A Bond Unbroken</c>"; sIngredient2Type = "platnium"; nCost = 10000; nRetainItem=1; break;
+      case 23: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ston"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_crusd"; sPlaceableName = "<c¦ÿ©>Crusader's Band</c>"; sIngredient2Type = "gold"; nCost = 10000; nRetainItem=1; break;
+      case 24: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_obsd"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_duskf"; sPlaceableName = "<c¦ÿ©>Duskfetter</c>"; sIngredient2Type = "silver"; nCost = 10000; nRetainItem=1; break;
+      case 25: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_bone"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_heart"; sPlaceableName = "<c¦ÿ©>Heartwood Ring</c>"; sIngredient2Type = "platnium"; nCost = 10000; nRetainItem=1; break;
+      case 26: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_glyp"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_nabna"; sPlaceableName = "<c¦ÿ©>Nabessan Nail</c>"; sIngredient2Type = "ivory"; nCost = 10000; nRetainItem=1; break;
+      case 27: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_blod"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_troll"; sPlaceableName = "<c¦ÿ©>Troll Queen's Ring</c>"; sIngredient2Type = "gold"; nCost = 10000; nRetainItem=1; break;
+      case 28: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_claw"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_evasn"; sPlaceableName = "<c¦ÿ©>Lesser Ring of Evasion</c>"; sIngredient2Type = "ivory"; nCost = 10000; nRetainItem=1; break;
+      case 29: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_eqip"; sIngredient2 = "js_jew_amul"; sType = "epx_neck_scrbp"; sPlaceableName = "<c¦ÿ©>Scarab of Protection +6</c>"; sIngredient2Type = "ivory"; nCost = 10000; nRetainItem=1; break;
+      case 30: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_bone"; sIngredient2 = "js_jew_amul"; sType = "epx_neck_scrbl"; sPlaceableName = "<c¦ÿ©>Scarab of Living</c>"; sIngredient2Type = "gold"; nCost = 10000; nRetainItem=1; break;
+      case 31: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_glyp"; sIngredient2 = "js_jew_amul"; sType = "epx_neck_eledf"; sPlaceableName = "<c¦ÿ©>Elemental Defense Amulet</c>"; sIngredient2Type = "platnium"; nCost = 10000; nRetainItem=1; break;
+      case 32: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_safbc"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_regen"; sPlaceableName = "<c¦ÿ©>Ring of Regeneration</c>"; sIngredient2Type = "ivory"; nCost = 10000; nRetainItem=1; break;
+      case 33: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_drfc"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_power"; sPlaceableName = "<c¦ÿ©>Ring of Power</c>"; sIngredient2Type = "platnium"; nCost = 10000; nRetainItem=1; break;
+      case 34: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_psbdc"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_clrth"; sPlaceableName = "<c¦ÿ©>Ring of Clear Thought +5</c>"; sIngredient2Type = "gold"; nCost = 10000; nRetainItem=1; break;
+      case 35: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_mwamc"; sIngredient2 = "js_jew_amul"; sType = "epx_neck_pwisd"; sPlaceableName = "<c¦ÿ©>Periapt of Wisdom +6</c>"; sIngredient2Type = "platnium"; nCost = 10000; nRetainItem=1; break;
 
     }
 
@@ -859,10 +916,28 @@ void RangedCraftsmanConverter(object oPC, object oBench, int nNode)
           case 33: sProduct = "js_arch_sbow"; sIngredient1 = "js_bui_phpl"; sIngredient2 = "none"; sType = "shortbow"; sMaterial = "phandar"; nCost = 200; break;
           case 34: sProduct = "js_arch_sbow"; sIngredient1 = "js_bui_shpl"; sIngredient2 = "none"; sType = "shortbow"; sMaterial = "shadowtop"; nCost = 8500; break;
           case 35: sProduct = "js_arch_sbow"; sIngredient1 = "js_bui_zupl"; sIngredient2 = "none"; sType = "shortbow"; sMaterial = "zurkwood"; nCost = 2000; break;
+          case 36: sProduct = "js_arch_thax"; sIngredient1 = "js_bla_irin"; sIngredient2 = "none"; sType = "throwaxe"; sMaterial = "iron"; nCost = 100; break;
+          case 37: sProduct = "js_arch_thax"; sIngredient1 = "js_bla_stin"; sIngredient2 = "none"; sType = "throwaxe"; sMaterial = "steel"; nCost = 100; break;
+          case 38: sProduct = "js_arch_thax"; sIngredient1 = "js_bui_irpl"; sIngredient2 = "none"; sType = "throwaxe"; sMaterial = "ironwood"; nCost = 100; break;
+          case 39: sProduct = "js_arch_thax"; sIngredient1 = "js_bla_siin"; sIngredient2 = "none"; sType = "throwaxe"; sMaterial = "silver"; nCost = 100; break;
+          case 40: sProduct = "js_arch_thax"; sIngredient1 = "js_bla_adin"; sIngredient2 = "none"; sType = "throwaxe"; sMaterial = "adamantine"; nCost = 100; break;
+          case 41: sProduct = "js_arch_thax"; sIngredient1 = "js_bla_miin"; sIngredient2 = "none"; sType = "throwaxe"; sMaterial = "mithral"; nCost = 100; break;
+          case 42: sProduct = "js_arch_dart"; sIngredient1 = "js_bla_irin"; sIngredient2 = "none"; sType = "dart"; sMaterial = "iron"; nCost = 100; break;
+          case 43: sProduct = "js_arch_dart"; sIngredient1 = "js_bla_stin"; sIngredient2 = "none"; sType = "dart"; sMaterial = "steel"; nCost = 100; break;
+          case 44: sProduct = "js_arch_dart"; sIngredient1 = "js_bui_irpl"; sIngredient2 = "none"; sType = "dart"; sMaterial = "ironwood"; nCost = 100; break;
+          case 45: sProduct = "js_arch_dart"; sIngredient1 = "js_bla_siin"; sIngredient2 = "none"; sType = "dart"; sMaterial = "silver"; nCost = 100; break;
+          case 46: sProduct = "js_arch_dart"; sIngredient1 = "js_bla_adin"; sIngredient2 = "none"; sType = "dart"; sMaterial = "adamantine"; nCost = 100; break;
+          case 47: sProduct = "js_arch_dart"; sIngredient1 = "js_bla_miin"; sIngredient2 = "none"; sType = "dart"; sMaterial = "mithral"; nCost = 100; break;
+          case 48: sProduct = "js_arch_shrk"; sIngredient1 = "js_bla_irin"; sIngredient2 = "none"; sType = "shuriken"; sMaterial = "iron"; nCost = 100; break;
+          case 49: sProduct = "js_arch_shrk"; sIngredient1 = "js_bla_stin"; sIngredient2 = "none"; sType = "shuriken"; sMaterial = "steel"; nCost = 100; break;
+          case 50: sProduct = "js_arch_shrk"; sIngredient1 = "js_bui_irpl"; sIngredient2 = "none"; sType = "shuriken"; sMaterial = "ironwood"; nCost = 100; break;
+          case 51: sProduct = "js_arch_shrk"; sIngredient1 = "js_bla_siin"; sIngredient2 = "none"; sType = "shuriken"; sMaterial = "silver"; nCost = 100; break;
+          case 52: sProduct = "js_arch_shrk"; sIngredient1 = "js_bla_adin"; sIngredient2 = "none"; sType = "shuriken"; sMaterial = "adamantine"; nCost = 100; break;
+          case 53: sProduct = "js_arch_shrk"; sIngredient1 = "js_bla_miin"; sIngredient2 = "none"; sType = "shuriken"; sMaterial = "mithral"; nCost = 100; break;
 
         }
     }
-    else if(nActionNode == 2) // Epic Loot
+    else if(nActionNode == 2) // Epic Loot + Magical Wood Loot
     {
 
       switch(nNode)
@@ -875,7 +950,14 @@ void RangedCraftsmanConverter(object oPC, object oBench, int nNode)
         case 5: sProduct = "seek_lbow"; sIngredient1 = "nep_magicalhemp"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
         case 6: sProduct = "seek_sbow"; sIngredient1 = "nep_magicalhemp"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
         case 7: sProduct = "seek_sling"; sIngredient1 = "nep_magicalhemp"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-
+        case 8: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_psbdc"; sIngredient2 = "js_arch_bow"; sType = "epx_weap_bowtm"; sPlaceableName = "<c¦ÿ©>Bow of the Tempest</c>"; sIngredient2Type = "duskwood"; nCost = 10000; nRetainItem=1; break;
+        case 9: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wrc"; sIngredient2 = "js_arch_dart"; sType = "epx_weap_earbl"; sPlaceableName = "<c¦ÿ©>Earblasters</c>"; sIngredient2Type = "duskwood"; nCost = 10000; nRetainItem=1; break;
+        case 10: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_gofbc"; sIngredient2 = "js_arch_shrk"; sType = "epx_weap_frcut"; sPlaceableName = "<c¦ÿ©>Frozen Cutters</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+        case 11: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_goimc"; sIngredient2 = "js_arch_thax"; sType = "epx_weap_thstr"; sPlaceableName = "<c¦ÿ©>Thunderstrikers</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+        case 12: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_gofbc"; sIngredient2 = "js_arch_cbow"; sType = "epx_weap_esscr"; sPlaceableName = "<c¦ÿ©>Essence Crossbow</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+        case 13: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_drfc"; sIngredient2 = "js_arch_lbow"; sType = "epx_weap_hurrc"; sPlaceableName = "<c¦ÿ©>Hurricane</c>"; sIngredient2Type = "duskwood"; nCost = 10000; nRetainItem=1; break;
+        case 14: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wbc"; sIngredient2 = "js_arch_sbow"; sType = "epx_weap_ebgal"; sPlaceableName = "<c¦ÿ©>Ebon Gale</c>"; sIngredient2Type = "shadowtop"; nCost = 10000; nRetainItem=1; break;
+        case 15: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wrc"; sIngredient2 = "js_arch_sling"; sType = "epx_weap_dlstr"; sPlaceableName = "<c¦ÿ©>Dalestriker</c>"; sIngredient2Type = "silk"; nCost = 10000; nRetainItem=1; break;
       }
     }
 
@@ -1426,6 +1508,83 @@ void SmithConverter(object oPC, object oBench, int nNode)
         case 9: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_comp_lich"; sIngredient2 = "js_bla_helm"; sType = "shroudhelm"; sPlaceableName = "<cË z>Blazing Crown of Ages Past</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
       }
     }
+    else if(nActionNode == 11) // Epic Crafting
+    {
+      switch(nNode)
+      {
+       case 1: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_blod"; sIngredient2 = "js_bla_grea"; sType = "epx_boot_stald"; sPlaceableName = "<c¦ÿ©>Greaves of the Stalwart Defender</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 2: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_eqip"; sIngredient2 = "js_bla_grea"; sType = "epx_boot_phalg"; sPlaceableName = "<c¦ÿ©>Phalanx Greaves</c>"; sIngredient2Type = "steel"; nCost = 10000; nRetainItem=1; break;
+       case 3: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_claw"; sIngredient2 = "js_bla_helm"; sType = "epx_helm_myrta"; sPlaceableName = "<c¦ÿ©>Agility of the Myart</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 4: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_blod"; sIngredient2 = "js_bla_helm"; sType = "epx_helm_myrtb"; sPlaceableName = "<c¦ÿ©>Brilliance of the Myart</c>"; sIngredient2Type = "steel"; nCost = 10000; nRetainItem=1; break;
+       case 5: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_bone"; sIngredient2 = "js_bla_helm"; sType = "epx_helm_myrti"; sPlaceableName = "<c¦ÿ©>Insight of the Myart</c>"; sIngredient2Type = "ironwood"; nCost = 10000; nRetainItem=1; break;
+       case 6: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_claw"; sIngredient2 = "js_bla_helm"; sType = "epx_helm_myrtl"; sPlaceableName = "<c¦ÿ©>Leadership of the Myart</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 7: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ston"; sIngredient2 = "js_bla_helm"; sType = "epx_helm_myrtm"; sPlaceableName = "<c¦ÿ©>Might of the Myart</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 8: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_claw"; sIngredient2 = "js_bla_helm"; sType = "epx_helm_myrtv"; sPlaceableName = "<c¦ÿ©>Vitality of the Myart</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 9: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_bone"; sIngredient2 = "js_bla_brac"; sType = "epx_brac_gemgo"; sPlaceableName = "<c¦ÿ©>Bracers of the Gemstone Golem</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 10: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_obsd"; sIngredient2 = "js_bla_arfp"; sType = "epx_hevy_pltch"; sPlaceableName = "<c¦ÿ©>Dragon-Plate of Chaos</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 11: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_obsd"; sIngredient2 = "js_bla_arhp"; sType = "epx_hplt_chaos"; sPlaceableName = "<c¦ÿ©>Dragon-Half Plate of Chaos</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 12: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_obsd"; sIngredient2 = "js_bla_arsp"; sType = "epx_hspl_chaos"; sPlaceableName = "<c¦ÿ©>Dragon-Splint Mail of Chaos</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 13: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_obsd"; sIngredient2 = "js_bla_arbp"; sType = "epx_mbpt_chaos"; sPlaceableName = "<c¦ÿ©>Dragon-Breastplate of Chaos</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 14: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_obsd"; sIngredient2 = "js_bla_arcs"; sType = "epx_mchn_chaos"; sPlaceableName = "<c¦ÿ©>Dragon-Chain of Chaos</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 15: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ston"; sIngredient2 = "js_bla_arfp"; sType = "epx_hevy_pltty"; sPlaceableName = "<c¦ÿ©>Dragon-Plate of Tyranny</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 16: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ston"; sIngredient2 = "js_bla_arhp"; sType = "epx_hplt_tyrny"; sPlaceableName = "<c¦ÿ©>Dragon-Half Plate of Tyranny</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 17: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ston"; sIngredient2 = "js_bla_arsp"; sType = "epx_hspl_tyrny"; sPlaceableName = "<c¦ÿ©>Dragon-Splint Mail of Tyranny</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 18: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ston"; sIngredient2 = "js_bla_arbp"; sType = "epx_mbpt_tyrny"; sPlaceableName = "<c¦ÿ©>Dragon-Breastplate of Tyranny</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 19: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ston"; sIngredient2 = "js_bla_arcs"; sType = "epx_mchn_tyrny"; sPlaceableName = "<c¦ÿ©>Dragon-Chain of Tyranny</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 20: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_glyp"; sIngredient2 = "js_bla_arfp"; sType = "epx_hevy_arcdf"; sPlaceableName = "<c¦ÿ©>Arcane Defiance Plate</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 21: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_glyp"; sIngredient2 = "js_bla_arhp"; sType = "epx_hplt_arcdf"; sPlaceableName = "<c¦ÿ©>Arcane Defiance Half Plate</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 22: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_glyp"; sIngredient2 = "js_bla_arsp"; sType = "epx_hspl_arcdf"; sPlaceableName = "<c¦ÿ©>Arcane Defiance Splint Mail </c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 23: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_glyp"; sIngredient2 = "js_bla_arbp"; sType = "epx_mbpl_arcdf"; sPlaceableName = "<c¦ÿ©>Arcane Defiance Breastplate</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 24: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_glyp"; sIngredient2 = "js_bla_arcs"; sType = "epx_medm_arcdf"; sPlaceableName = "<c¦ÿ©>Arcane Defiance Chain</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 25: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_mats"; sIngredient2 = "js_bla_shto"; sType = "epx_shdt_eledf"; sPlaceableName = "<c¦ÿ©>Elemental Defense Scutum</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 26: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_mats"; sIngredient2 = "js_bla_shlg"; sType = "epx_shld_eledf"; sPlaceableName = "<c¦ÿ©>Elemental Defense Targe</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 27: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_mats"; sIngredient2 = "js_bla_shsm"; sType = "epx_shdb_eledf"; sPlaceableName = "<c¦ÿ©>Elemental Defense Buckler</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 28: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_eqip"; sIngredient2 = "js_bla_shto"; sType = "epx_shdt_lasdf"; sPlaceableName = "<c¦ÿ©>The Last Defense Scutum</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 29: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_eqip"; sIngredient2 = "js_bla_shlg"; sType = "epx_shld_lasdf"; sPlaceableName = "<c¦ÿ©>The Last Defense Targe</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 30: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_eqip"; sIngredient2 = "js_bla_shsm"; sType = "epx_shdb_lasdf"; sPlaceableName = "<c¦ÿ©>The Last Defense Buckler</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 31: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_gofbc"; sIngredient2 = "js_bla_brac"; sType = "epx_brac_dext6"; sPlaceableName = "<c¦ÿ©>Bracers of Dexterity +6</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 32: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_psbdc"; sIngredient2 = "js_bla_wedw"; sType = "epx_weap_btbst"; sPlaceableName = "<c¦ÿ©>Battlerager Best</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 33: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_mwamc"; sIngredient2 = "js_bla_webs"; sType = "epx_weap_purft"; sPlaceableName = "<c¦ÿ©>Purified Filth</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 34: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_gofbc"; sIngredient2 = "js_bla_weda"; sType = "epx_weap_blakf"; sPlaceableName = "<c¦ÿ©>Fang of the Black Flag</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 35: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_drfc"; sIngredient2 = "js_bla_wegs"; sType = "epx_weap_scalr"; sPlaceableName = "<c¦ÿ©>Scalerot</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 36: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wbc"; sIngredient2 = "js_bla_wels"; sType = "epx_weap_myrkl"; sPlaceableName = "<c¦ÿ©>Myrk's Lament</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 37: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_goimc"; sIngredient2 = "js_bla_wera"; sType = "epx_weap_baled"; sPlaceableName = "<c¦ÿ©>Balanced Edge of Yin and Yang</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 38: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wrc"; sIngredient2 = "js_bla_wesc"; sType = "epx_weap_wailw"; sPlaceableName = "<c¦ÿ©>Wailing Wind</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 39: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_goimc"; sIngredient2 = "js_bla_wess"; sType = "epx_weap_harlq"; sPlaceableName = "<c¦ÿ©>Harlequin's Longsword</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 40: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_gofbc"; sIngredient2 = "js_bla_wewa"; sType = "epx_weap_dornt"; sPlaceableName = "<c¦ÿ©>Dornat Murr Guard Hammer</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 41: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_mwamc"; sIngredient2 = "js_bla_wema"; sType = "epx_weap_manor"; sPlaceableName = "<c¦ÿ©>The Manor House Door Knocker</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 42: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_drfc"; sIngredient2 = "js_bla_wekm"; sType = "epx_weap_irntr"; sPlaceableName = "<c¦ÿ©>Iron Tiger's Talons (Main)</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 43: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_drfc"; sIngredient2 = "js_bla_wekm"; sType = "epx_weap_irntl"; sPlaceableName = "<c¦ÿ©>Iron Tiger's Talons (Offhand)</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 44: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wbc"; sIngredient2 = "js_bla_weba"; sType = "epx_weap_mindr"; sPlaceableName = "<c¦ÿ©>Mindreaver</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 45: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_drfc"; sIngredient2 = "js_bla_wecl"; sType = "epx_weap_slbsh"; sPlaceableName = "<c¦ÿ©>Soulbasher</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 46: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_psbdc"; sIngredient2 = "js_bla_weha"; sType = "epx_weap_strmw"; sPlaceableName = "<c¦ÿ©>Stormweaver Axe</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 47: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_gofbc"; sIngredient2 = "js_bla_weka"; sType = "epx_weap_ethbl"; sPlaceableName = "<c¦ÿ©>Etherblade</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 48: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_mwamc"; sIngredient2 = "js_bla_weku"; sType = "epx_weap_vrtst"; sPlaceableName = "<c¦ÿ©>Vortex Stinger</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 49: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wrc"; sIngredient2 = "js_bla_welf"; sType = "epx_weap_sklsm"; sPlaceableName = "<c¦ÿ©>Skelly Smasher</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 50: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_drfc"; sIngredient2 = "js_bla_welh"; sType = "epx_weap_glcal"; sPlaceableName = "<c¦ÿ©>Galecaller</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 51: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_safbc"; sIngredient2 = "js_bla_wems"; sType = "epx_weap_beaur"; sPlaceableName = "<c¦ÿ©>Beauty's Redoubt</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 52: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_goimc"; sIngredient2 = "js_bla_wems"; sType = "epx_weap_sager"; sPlaceableName = "<c¦ÿ©>Sage's Redoubt</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 53: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_psbdc"; sIngredient2 = "js_bla_wems"; sType = "epx_weap_holyr"; sPlaceableName = "<c¦ÿ©>Holy Redoubt</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 54: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_mwamc"; sIngredient2 = "js_bla_wems"; sType = "epx_weap_eldrr"; sPlaceableName = "<c¦ÿ©>Eldritch Redoubt</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 55: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wbc"; sIngredient2 = "js_bla_wemo"; sType = "epx_weap_starf"; sPlaceableName = "<c¦ÿ©>Starfall</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 56: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_safbc"; sIngredient2 = "js_bla_wesi"; sType = "epx_weap_astcr"; sPlaceableName = "<c¦ÿ©>Astral Crescent</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 57: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wrc"; sIngredient2 = "js_bla_wetr"; sType = "epx_weap_runpg"; sPlaceableName = "<c¦ÿ©>Runic Pigsticker</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 58: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_safbc"; sIngredient2 = "js_bla_wewh"; sType = "epx_weap_drmwv"; sPlaceableName = "<c¦ÿ©>Dreamweaver</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 59: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_psbdc"; sIngredient2 = "js_bla_wequ"; sType = "epx_weap_crstw"; sPlaceableName = "<c¦ÿ©>Crystalwave Staff</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 60: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wbc"; sIngredient2 = "js_bla_wequ"; sType = "epx_weap_engmt"; sPlaceableName = "<c¦ÿ©>Enigma Totem</c>"; sIngredient2Type = "ironwood"; nCost = 10000; nRetainItem=1; break;
+       case 61: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wrc"; sIngredient2 = "js_bla_wesp"; sType = "epx_weap_icesp"; sPlaceableName = "<c¦ÿ©>Icespire</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 62: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_safbc"; sIngredient2 = "js_bla_wega"; sType = "epx_weap_shdwm"; sPlaceableName = "<c¦ÿ©>Shadowmark</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 63: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_goimc"; sIngredient2 = "js_bla_wehb"; sType = "epx_weap_typhe"; sPlaceableName = "<c¦ÿ©>Typhoon Edge</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 64: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_drfc"; sIngredient2 = "js_bla_wehf"; sType = "epx_weap_ghstf"; sPlaceableName = "<c¦ÿ©>Ghostfire</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 65: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_gofbc"; sIngredient2 = "js_bla_wesy"; sType = "epx_weap_strfr"; sPlaceableName = "<c¦ÿ©>Starfrost</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+       case 66: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_mwamc"; sIngredient2 = "js_bla_wedm"; sType = "epx_weap_shmir"; sPlaceableName = "<c¦ÿ©>Shadow Mirage</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 67: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_safbc"; sIngredient2 = "js_bla_wedb"; sType = "epx_weap_dbecl"; sPlaceableName = "<c¦ÿ©>Double Eclipse</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 68: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_goimc"; sIngredient2 = "js_bla_we2b"; sType = "epx_weap_frsfl"; sPlaceableName = "<c¦ÿ©>Frostfall</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+       case 69: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_eqip"; sIngredient2 = "js_bla_brac"; sType = "epx_brac_elego"; sPlaceableName = "<c¦ÿ©>Bracers of the Elemental Golem</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
+
+
+      }
+    }
 
     CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);
 
@@ -1446,12 +1605,16 @@ void TailorConverter(object oPC, object oBench, int nNode)
     int nRetainItem; //Retains ingredients on failure for epic loot
     int nIngredient1Found;
     int nIngredient2Found;
+    int nActionNode = GetLocalInt( oPC, "ds_actionnode");
     int nCost;
     int nStack = 0;
     int nProductStackSize = 1;
 
-    switch(nNode)
+
+    if(nActionNode == 1)
     {
+     switch(nNode)
+     {
 
       case 1: sProduct = "js_lea_leat"; sIngredient1 = "js_hun_hide"; sIngredient2 = "none"; nCost = 200; break;
       case 2: sProduct = "js_tai_arle"; sIngredient1 = "js_lea_leat"; sIngredient2 = "js_tai_boco"; sType = "armor"; sMaterial = "leather"; nCost = 2000; break;
@@ -1520,7 +1683,7 @@ void TailorConverter(object oPC, object oBench, int nNode)
       case 65: sProduct = "js_tai_hood"; sIngredient1 = "js_tai_boco"; sIngredient2 = "none"; sType = "hood"; sMaterial = "cotton"; nCost = 2000; break;
       case 66: sProduct = "js_tai_hood"; sIngredient1 = "js_tai_brwo"; sIngredient2 = "none"; sType = "hood"; sMaterial = "rothewool"; nCost = 2000; break;
       case 67: sProduct = "js_tai_boot"; sIngredient1 = "js_hun_hide"; sIngredient2 = "none"; sType = "boots"; sMaterial = "hide"; nCost = 2000; break;
-      case 68: break; // EMPTY ATM. Can fill with whatever you want. Accidently skipped.
+      case 68: sProduct = "js_tai_hood"; sIngredient1 = "js_lea_leat"; sIngredient2 = "none"; sType = "hood"; sMaterial = "leather"; nCost = 2000; break;
       case 69: sProduct = "js_tai_boot"; sIngredient1 = "js_tai_bosi"; sIngredient2 = "none"; sType = "boots"; sMaterial = "silk"; nCost = 2000; break;
       case 70: sProduct = "js_tai_boot"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "none"; sType = "boots"; sMaterial = "wool"; nCost = 2000; break;
       case 71: sProduct = "js_tai_boot"; sIngredient1 = "js_tai_boco"; sIngredient2 = "none"; sType = "boots"; sMaterial = "cotton"; nCost = 2000; break;
@@ -1532,6 +1695,65 @@ void TailorConverter(object oPC, object oBench, int nNode)
       case 77: sProduct = "js_tai_belt"; sIngredient1 = "js_tai_brwo"; sIngredient2 = "none"; sType = "belt"; sMaterial = "rothewool"; nCost = 2000; break;
 
     }
+   }
+   if(nActionNode == 2) // Epics
+   {
+     switch(nNode)
+     {
+      case 1: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_obsd"; sIngredient2 = "js_tai_boot"; sType = "boots_broken5"; sPlaceableName = "<c¦ÿ©>Boots of the Broken Ones</c>"; sIngredient2Type = "leather"; nCost = 10000; nRetainItem=1; break;
+      case 2: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_mats"; sIngredient2 = "js_tai_boot"; sType = "epx_boot_cushb"; sPlaceableName = "<c¦ÿ©>Cushioning Boots of the Archmage</c>"; sIngredient2Type = "silk"; nCost = 10000; nRetainItem=1; break;
+      case 3: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_glyp"; sIngredient2 = "js_tai_boot"; sType = "epx_boot_shoin"; sPlaceableName = "<c¦ÿ©>Petite Shoes of Intuition</c>"; sIngredient2Type = "cotton"; nCost = 10000; nRetainItem=1; break;
+      case 4: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ston"; sIngredient2 = "js_tai_boot"; sType = "epx_boot_fndtr"; sPlaceableName = "<c¦ÿ©>Finder of Trails</c>"; sIngredient2Type = "leather"; nCost = 10000; nRetainItem=1; break;
+      case 5: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_mats"; sIngredient2 = "js_tai_hood"; sType = "epx_helm_archr"; sPlaceableName = "<c¦ÿ©>Hood of the Archer</c>"; sIngredient2Type = "wool"; nCost = 10000; nRetainItem=1; break;
+      case 6: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_mats"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_anmha"; sPlaceableName = "<c¦ÿ©>Epic Gloves of Animal Handling</c>"; sIngredient2Type = "wool"; nCost = 10000; nRetainItem=1; break;
+      case 7: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_blod"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_concn"; sPlaceableName = "<c¦ÿ©>Epic Gloves of Concentration</c>"; sIngredient2Type = "cotton"; nCost = 10000; nRetainItem=1; break;
+      case 8: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_eqip"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_discp"; sPlaceableName = "<c¦ÿ©>Epic Gloves of Discipline</c>"; sIngredient2Type = "leather"; nCost = 10000; nRetainItem=1; break;
+      case 9: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_bone"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_splcr"; sPlaceableName = "<c¦ÿ©>Epic Gloves of Spellcraft</c>"; sIngredient2Type = "silk"; nCost = 10000; nRetainItem=1; break;
+      case 10: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_bone"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_mnstl"; sPlaceableName = "<c¦ÿ©>Epic Gloves of Minstrel</c>"; sIngredient2Type = "rothewool"; nCost = 10000; nRetainItem=1; break;
+      case 11: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_claw"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_healg"; sPlaceableName = "<c¦ÿ©>Epic Healing Gloves</c>"; sIngredient2Type = "hide"; nCost = 10000; nRetainItem=1; break;
+      case 12: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_blod"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_ringl"; sPlaceableName = "<c¦ÿ©>Ringleader's Gloves</c>"; sIngredient2Type = "cotton"; nCost = 10000; nRetainItem=1; break;
+      case 13: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_mats"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_mastg"; sPlaceableName = "<c¦ÿ©>The Master's Gift</c>"; sIngredient2Type = "silk"; nCost = 10000; nRetainItem=1; break;
+      case 14: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ston"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_sword"; sPlaceableName = "<c¦ÿ©>Epic Gloves of Swordplay</c>"; sIngredient2Type = "leather"; nCost = 10000; nRetainItem=1; break;
+      case 15: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_mats"; sIngredient2 = "js_tai_cloa"; sType = "epx_clok_hidth"; sPlaceableName = "<c¦ÿ©>Cloak of Hidden Things</c>"; sIngredient2Type = "wool"; nCost = 10000; nRetainItem=1; break;
+      case 16: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_obsd"; sIngredient2 = "js_tai_arha"; sType = "epx_lhid_chaos"; sPlaceableName = "<c¦ÿ©>Dragon-Hide of Chaos</c>"; sIngredient2Type = "hide"; nCost = 10000; nRetainItem=1; break;
+      case 17: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_obsd"; sIngredient2 = "js_tai_arle"; sType = "epx_llet_chaos"; sPlaceableName = "<c¦ÿ©>Dragon-Leather of Chaos</c>"; sIngredient2Type = "leather"; nCost = 10000; nRetainItem=1; break;
+      case 18: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_obsd"; sIngredient2 = "js_tai_arpa"; sType = "epx_lpad_chaos"; sPlaceableName = "<c¦ÿ©>Dragon-Padding of Chaos</c>"; sIngredient2Type = "leather"; nCost = 10000; nRetainItem=1; break;
+      case 19: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_obsd"; sIngredient2 = "js_tai_arcl"; sType = "epx_cloth_chaos"; sPlaceableName = "<c¦ÿ©>Dragon-Cloth of Chaos</c>"; sIngredient2Type = "rothewool"; nCost = 10000; nRetainItem=1; break;
+      case 20: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ston"; sIngredient2 = "js_tai_arha"; sType = "epx_lhid_tyrny"; sPlaceableName = "<c¦ÿ©>Dragon-Hide of Tyranny</c>"; sIngredient2Type = "hide"; nCost = 10000; nRetainItem=1; break;
+      case 21: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ston"; sIngredient2 = "js_tai_arle"; sType = "epx_llet_tyrny"; sPlaceableName = "<c¦ÿ©>Dragon-Leather of Tyranny</c>"; sIngredient2Type = "leather"; nCost = 10000; nRetainItem=1; break;
+      case 22: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ston"; sIngredient2 = "js_tai_arpa"; sType = "epx_lpad_tyrny"; sPlaceableName = "<c¦ÿ©>Dragon-Padding of Tyranny</c>"; sIngredient2Type = "leather"; nCost = 10000; nRetainItem=1; break;
+      case 23: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ston"; sIngredient2 = "js_tai_arcl"; sType = "epx_cloth_tyrny"; sPlaceableName = "<c¦ÿ©>Dragon-Cloth of Tyranny</c>"; sIngredient2Type = "cotton"; nCost = 10000; nRetainItem=1; break;
+      case 24: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_glyp"; sIngredient2 = "js_tai_arha"; sType = "epx_lhid_arcdf"; sPlaceableName = "<c¦ÿ©>Arcane Defiance Hide</c>"; sIngredient2Type = "hide"; nCost = 10000; nRetainItem=1; break;
+      case 25: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_glyp"; sIngredient2 = "js_tai_arle"; sType = "epx_ligt_arcdf"; sPlaceableName = "<c¦ÿ©>Arcane Defiance Leather</c>"; sIngredient2Type = "leather"; nCost = 10000; nRetainItem=1; break;
+      case 26: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_glyp"; sIngredient2 = "js_tai_arpa"; sType = "epx_lpad_arcdf"; sPlaceableName = "<c¦ÿ©>Arcane Defiance Padding</c>"; sIngredient2Type = "leather"; nCost = 10000; nRetainItem=1; break;
+      case 27: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_glyp"; sIngredient2 = "js_tai_arcl"; sType = "epx_clth_arcdf"; sPlaceableName = "<c¦ÿ©>Arcane Defiance Cloth</c>"; sIngredient2Type = "silk"; nCost = 10000; nRetainItem=1; break;
+      case 28: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_claw"; sIngredient2 = "js_tai_arha"; sType = "epx_lhid_frtiv"; sPlaceableName = "<c¦ÿ©>Furtive Hide</c>"; sIngredient2Type = "hide"; nCost = 10000; nRetainItem=1; break;
+      case 29: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_claw"; sIngredient2 = "js_tai_arle"; sType = "epx_llet_frtiv"; sPlaceableName = "<c¦ÿ©>Furtive Leather</c>"; sIngredient2Type = "leather"; nCost = 10000; nRetainItem=1; break;
+      case 30: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_claw"; sIngredient2 = "js_tai_arpa"; sType = "epx_lpad_frtiv"; sPlaceableName = "<c¦ÿ©>Furtive Padding</c>"; sIngredient2Type = "leather"; nCost = 10000; nRetainItem=1; break;
+      case 31: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_claw"; sIngredient2 = "js_tai_arcl"; sType = "epx_cloth_frtiv"; sPlaceableName = "<c¦ÿ©>Furtive Regalia</c>"; sIngredient2Type = "wool"; nCost = 10000; nRetainItem=1; break;
+      case 32: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_eqip"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_hontg"; sPlaceableName = "<c¦ÿ©>Gloves of the Honeyed Tongue</c>"; sIngredient2Type = "silk"; nCost = 10000; nRetainItem=1; break;
+      case 33: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ston"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_serpt"; sPlaceableName = "<c¦ÿ©>Gloves of the Serpent's Tongue</c>"; sIngredient2Type = "cotton"; nCost = 10000; nRetainItem=1; break;
+      case 34: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_mats"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_chalg"; sPlaceableName = "<c¦ÿ©>Gloves of the Challenger</c>"; sIngredient2Type = "leather"; nCost = 10000; nRetainItem=1; break;
+      case 35: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_blod"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_cnsth"; sPlaceableName = "<c¦ÿ©>Gloves of Conspicuous Threats</c>"; sIngredient2Type = "hide"; nCost = 10000; nRetainItem=1; break;
+      case 36: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_obsd"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_eqest"; sPlaceableName = "<c¦ÿ©>Gloves of the Equestrian</c>"; sIngredient2Type = "wool"; nCost = 10000; nRetainItem=1; break;
+      case 37: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_goimc"; sIngredient2 = "js_tai_boot"; sType = "epx_boot_strid"; sPlaceableName = "<c¦ÿ©>Boots of Striding</c>"; sIngredient2Type = "rothewool"; nCost = 10000; nRetainItem=1; break;
+      case 38: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wbc"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_gldld"; sPlaceableName = "<c¦ÿ©>Gloves of the Golden Lady</c>"; sIngredient2Type = "silk"; nCost = 10000; nRetainItem=1; break;
+      case 39: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wrc"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_artfc"; sPlaceableName = "<c¦ÿ©>Epic Gloves of the Artificer</c>"; sIngredient2Type = "leather"; nCost = 10000; nRetainItem=1; break;
+      case 40: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_mwamc"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_snqag"; sPlaceableName = "<c¦ÿ©>The Sanctuary's Quagmire</c>"; sIngredient2Type = "cotton"; nCost = 10000; nRetainItem=1; break;
+      case 41: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_goimc"; sIngredient2 = "js_tai_cloa"; sType = "epx_clok_fort5"; sPlaceableName = "<c¦ÿ©>Cloak of Fortification +5</c>"; sIngredient2Type = "rothewool"; nCost = 10000; nRetainItem=1; break;
+      case 42: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wbc"; sIngredient2 = "js_tai_cloa"; sType = "epx_clok_nmph6"; sPlaceableName = "<c¦ÿ©>Nymph Cloak +6</c>"; sIngredient2Type = "silk"; nCost = 10000; nRetainItem=1; break;
+      case 43: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_gofbc"; sIngredient2 = "js_tai_cloa"; sType = "epx_clok_snclk"; sPlaceableName = "<c¦ÿ©>Sanctuary Cloak of Safety</c>"; sIngredient2Type = "cotton"; nCost = 10000; nRetainItem=1; break;
+      case 44: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_gofbc"; sIngredient2 = "js_tai_belt"; sType = "epx_belt_aglty"; sPlaceableName = "<c¦ÿ©>Belt of Agility</c>"; sIngredient2Type = "hide"; nCost = 10000; nRetainItem=1; break;
+      case 45: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_safbc"; sIngredient2 = "js_tai_belt"; sType = "epx_belt_stngi"; sPlaceableName = "<c¦ÿ©>Belt of Stone Giant Strength</c>"; sIngredient2Type = "silk"; nCost = 10000; nRetainItem=1; break;
+      case 46: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_psbdc"; sIngredient2 = "js_tai_belt"; sType = "epx_belt_hrdrd"; sPlaceableName = "<c¦ÿ©>Belt of the Hard Road</c>"; sIngredient2Type = "leather"; nCost = 10000; nRetainItem=1; break;
+      case 47: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_safbc"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_silwh"; sPlaceableName = "<c¦ÿ©>Gloves of Silent Whispers</c>"; sIngredient2Type = "rothewool"; nCost = 10000; nRetainItem=1; break;
+      case 48: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_drfc"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_ksens"; sPlaceableName = "<c¦ÿ©>Gloves of Keen Senses</c>"; sIngredient2Type = "cotton"; nCost = 10000; nRetainItem=1; break;
+      case 49: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wrc"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_hinfs"; sPlaceableName = "<c¦ÿ©>Gloves of the Hin Fist +6</c>"; sIngredient2Type = "hide"; nCost = 10000; nRetainItem=1; break;
+      case 50: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_safbc"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_longd"; sPlaceableName = "<c¦ÿ©>Gloves of the Long Death +6</c>"; sIngredient2Type = "leather"; nCost = 10000; nRetainItem=1; break;
+      case 51: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_goimc"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_yellr"; sPlaceableName = "<c¦ÿ©>Gloves of the Yellow Rose +6</c>"; sIngredient2Type = "hide"; nCost = 10000; nRetainItem=1; break;
+     }
+
+   }
 
     CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);
 

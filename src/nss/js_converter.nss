@@ -2451,7 +2451,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
          }
 
       }
-      else if(GetResRef(oItemInChest) == sIngredient2)  // If you find the second ingredient store it
+      else if((GetResRef(oItemInChest) == sIngredient2) && (nIngredient2Found != 1))  // If you find the second ingredient store it
       {
         if((sIngredient2Type == GetLocalString(oItemInChest,"stringMaterial")) || (sIngredient2Type==""))
         {

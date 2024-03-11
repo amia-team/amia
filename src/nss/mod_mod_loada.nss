@@ -653,26 +653,30 @@ void SetSkyBoxes(){
 void InitialiseColours(){
 
     SetCustomToken( 5100, "</c>" ); // CLOSE tag
-    SetCustomToken( 5101, "<c¦  >" ); // red
-    SetCustomToken( 5102, "<c ¦ >" ); // green
-    SetCustomToken( 5103, "<c  ¦>" ); // blue
-    SetCustomToken( 5104, "<c ¦¦>" ); // cyan
-    SetCustomToken( 5105, "<c¦ ¦>" ); // magenta
-    SetCustomToken( 5106, "<c¦¦ >" ); // yellow
+    SetCustomToken( 5101, "<cþ  >" ); // red
+    SetCustomToken( 5102, "<c þ >" ); // green
+    SetCustomToken( 5103, "<c  þ>" ); // blue
+    SetCustomToken( 5104, "<c þþ>" ); // cyan
+    SetCustomToken( 5105, "<cþ þ>" ); // magenta
+    SetCustomToken( 5106, "<cþþ >" ); // yellow
     SetCustomToken( 5107, "<c   >" ); // black
-    SetCustomToken( 5108, "<c?  >" ); // dark red
-    SetCustomToken( 5109, "<c ? >" ); // dark green
-    SetCustomToken( 5110, "<c  ?>" ); // dark blue
-    SetCustomToken( 5111, "<c ??>" ); // dark cyan
-    SetCustomToken( 5112, "<c? ?>" ); // dark magenta
-    SetCustomToken( 5113, "<c?? >" ); // dark yellow
-    SetCustomToken( 5114, "<c???>" ); // grey
-    SetCustomToken( 5117, "<c???>" ); // dark grey
-    SetCustomToken( 5115, "<c¦? >" ); // orange
-    SetCustomToken( 5116, "<c¦? >" ); // dark orange
-    SetCustomToken( 5117, "<c+?#>" ); // brown
-    SetCustomToken( 5118, "<c-? >" ); // dark brown
-
+    SetCustomToken( 5108, "<c¥  >" ); // dark red
+    SetCustomToken( 5109, "<c ¥ >" ); // dark green
+    SetCustomToken( 5110, "<c  ¥>" ); // dark blue
+    SetCustomToken( 5111, "<c ¥¥>" ); // dark cyan
+    SetCustomToken( 5112, "<c¥ ¥>" ); // dark magenta
+    SetCustomToken( 5113, "<c¥¥ >" ); // dark yellow
+    SetCustomToken( 5114, "<c¥¥¥>" ); // grey
+    SetCustomToken( 5115, "<c???>" ); // dark grey
+    SetCustomToken( 5116, "<cþ¥ >" ); // orange
+    SetCustomToken( 5117, "<cÔe >" ); // dark orange
+    SetCustomToken( 5118, "<cÚ¥#>" ); // brown
+    SetCustomToken( 5119, "<c¡q >" ); // dark brown
+    SetCustomToken( 5120, "<c¦ÿ©>" ); // Epic Loot green
+    SetCustomToken( 5121, "<c§iÿ>" ); // Dream Coin purple
+    SetCustomToken( 5122, "<c~Îë>" ); // Job System blue
+    SetCustomToken( 5123, "<c Í >" ); // Quest System green
+    SetCustomToken( 5124, "<cÿ×#>" ); // Epic Crafting gold
 }
 
 

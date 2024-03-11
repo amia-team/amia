@@ -53,17 +53,24 @@ void ActivateItem( )
     object oVictim = GetFirstObjectInShape( SHAPE_SPHERE, RADIUS_SIZE_COLOSSAL, GetLocation( oPC ), FALSE, OBJECT_TYPE_CREATURE );
     while( oVictim != OBJECT_INVALID && nCount < 3 ) // Cap targets to 3
     {
-        if( oVictim != oPC ) // Can't target yourself!
+        if( oVictim != oPC && !GetIsPC(oVictim)) // Can't target yourself or another player!
         {
             // Check for Archnids only.
             if( GetAppearanceType( oVictim ) >= 157 && GetAppearanceType( oVictim ) <= 162 ||
+                GetAppearanceType( oVictim ) == 520 ||
+                GetAppearanceType( oVictim ) == 521 ||
                 GetAppearanceType( oVictim ) >= 903 && GetAppearanceType( oVictim ) <= 905 ||
                 GetAppearanceType( oVictim ) == 886 ||
-				GetAppearanceType( oVictim ) >= 1172 && GetAppearanceType( oVictim ) <= 1173 ||
+                GetAppearanceType( oVictim ) >= 1172 && GetAppearanceType( oVictim ) <= 1173 ||
+                GetAppearanceType( oVictim ) >= 1741 && GetAppearanceType( oVictim ) <= 1745 ||
+                GetAppearanceType( oVictim ) >= 1947 && GetAppearanceType( oVictim ) <= 1949 ||
+                GetCreatureTailType( oVictim ) == 337 ||
+                GetCreatureTailType( oVictim ) == 338 ||
                 GetCreatureTailType( oVictim ) >= 473 && GetCreatureTailType( oVictim ) <= 478 ||
-				GetCreatureTailType( oVictim ) == 547 ||
+                GetCreatureTailType( oVictim ) == 547 ||
                 GetCreatureTailType( oVictim ) >= 564 && GetCreatureTailType( oVictim ) <= 566 ||
-                GetCreatureTailType( oVictim ) >= 822 && GetCreatureTailType( oVictim ) <= 823 )
+                GetCreatureTailType( oVictim ) >= 822 && GetCreatureTailType( oVictim ) <= 823 ||
+                GetCreatureTailType( oVictim ) >= 1667 && GetCreatureTailType( oVictim ) <= 1669 )
                 {
                     // If they're not friendly, dominate them and add them to the PC's party.
                     if( !GetIsFriend( oVictim, oPC ) && GetAssociateType( oVictim )  == ASSOCIATE_TYPE_NONE && GetRacialType( oVictim ) == RACIAL_TYPE_VERMIN && !GetIsPC( oVictim ) )

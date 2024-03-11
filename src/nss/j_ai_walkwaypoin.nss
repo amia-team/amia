@@ -93,6 +93,9 @@ void main()
         }
     }
     // Use on-spawn run/pauses.
+    if(GetLocalInt(OBJECT_SELF, "random_name") == 1){
+        AssignCommand(OBJECT_SELF, ExecuteScript("jes_randomname", OBJECT_SELF));
+    }
     WalkWayPoints(GetLocalInt(OBJECT_SELF, WAYPOINT_RUN), GetLocalFloat(OBJECT_SELF, WAYPOINT_PAUSE));
 }
 

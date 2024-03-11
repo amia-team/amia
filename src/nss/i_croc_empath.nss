@@ -53,11 +53,15 @@ void ActivateItem( )
     object oVictim = GetFirstObjectInShape( SHAPE_SPHERE, RADIUS_SIZE_COLOSSAL, GetLocation( oPC ), FALSE, OBJECT_TYPE_CREATURE );
     while( oVictim != OBJECT_INVALID && nCount < 3 ) // Cap targets to 3
     {
-        if( oVictim != oPC ) // Can't target yourself!
+        if( oVictim != oPC && !GetIsPC(oVictim)) // Can't target yourself or another player!
         {
             // Check for crocodiles only.
             if( GetAppearanceType( oVictim ) == 1280 ||
-                GetCreatureTailType( oVictim ) == 934 )
+                GetAppearanceType( oVictim ) == 1827 ||
+                GetAppearanceType( oVictim ) == 1828 ||
+                GetCreatureTailType( oVictim ) == 934 ||
+                GetCreatureTailType( oVictim ) == 1620 ||
+                GetCreatureTailType( oVictim ) == 1621 )
             {
                 // Only works on non-evil crocodiles.
                 if( GetAlignmentGoodEvil( oVictim ) != ALIGNMENT_EVIL )

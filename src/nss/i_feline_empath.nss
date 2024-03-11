@@ -53,7 +53,7 @@ void ActivateItem( )
     object oVictim = GetFirstObjectInShape( SHAPE_SPHERE, RADIUS_SIZE_COLOSSAL, GetLocation( oPC ), FALSE, OBJECT_TYPE_CREATURE );
     while( oVictim != OBJECT_INVALID && nCount < 3 ) // Cap targets to 3
     {
-        if( oVictim != oPC ) // Can't target yourself!
+        if( oVictim != oPC && !GetIsPC(oVictim)) // Can't target yourself or another player!
         {
             // Check for felines only.
             if( GetAppearanceType( oVictim ) >= 93 && GetAppearanceType( oVictim ) <= 98 ||
@@ -67,6 +67,7 @@ void ActivateItem( )
                 GetAppearanceType( oVictim ) == 1672 ||
                 GetAppearanceType( oVictim ) == 1812 ||
                 GetAppearanceType( oVictim ) >= 1839 && GetAppearanceType( oVictim ) <= 1842 ||
+                GetAppearanceType( oVictim ) == 1985 ||
                 GetCreatureTailType( oVictim ) >= 366 && GetCreatureTailType( oVictim ) <= 373 ||
                 GetCreatureTailType( oVictim ) == 549 ||
                 GetCreatureTailType( oVictim ) >= 632 && GetCreatureTailType( oVictim ) <= 634 ||
@@ -76,7 +77,8 @@ void ActivateItem( )
                 GetCreatureTailType( oVictim ) >= 1333 && GetCreatureTailType( oVictim ) <= 1338 ||
                 GetCreatureTailType( oVictim ) == 1499 ||
                 GetCreatureTailType( oVictim ) == 1591 ||
-                GetCreatureTailType( oVictim ) >= 1628 && GetCreatureTailType( oVictim ) <= 1631 )
+                GetCreatureTailType( oVictim ) >= 1628 && GetCreatureTailType( oVictim ) <= 1631 ||
+                GetCreatureTailType( oVictim ) == 1676 )
             {
                 // Only works on non-evil felines.
                 if( GetAlignmentGoodEvil( oVictim ) != ALIGNMENT_EVIL )

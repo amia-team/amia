@@ -69,6 +69,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Scarab of Living changed to: +5 AC, +2 Regeneration, Poison Immunity, Disease Immunity.
 - Bracers of the Gemstone Golem changed to: +5 Soak 5 Damage, 5/- Bludgeoning, 5/- Piercing, 5/- Slashing, +2 CON.
 - Added additional functionality to us_sit - can do other animations.
+- Area changes:
+	- Moonpier
+	- Moonpier: The Lunar Lantern (tavern)
 
 ### Fixed
 - Removed several creature .utc files from creature hak.

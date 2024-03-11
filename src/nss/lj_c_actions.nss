@@ -64,7 +64,7 @@ void main()
     {
         string sCDKey = GetPCPublicCDKey(oPC);
         SetDreamCoins(sCDKey, GetDreamCoins(sCDKey)-nTakeDCs);
-        SendMessageToPC(oPC, "Dream Coins removed: <c?? >" + IntToString(nTakeDCs) + "</c>");
+        SendMessageToPC(oPC, "Dream Coins removed: <c§iÿ>" + IntToString(nTakeDCs) + "</c>");
     }
     if(nGiveGold != 0)
     {
@@ -72,7 +72,8 @@ void main()
     }
     if(sGiveItem != "")
     {
-        CreateItemOnObject(sGiveItem, oPC, 1);
+        object oGivenItem = CreateItemOnObject(sGiveItem, oPC, 1);
+        SetIdentified(oGivenItem, 1);
     }
     if(nGiveXP != 0)
     {
@@ -82,7 +83,7 @@ void main()
     {
         string sCDKey = GetPCPublicCDKey(oPC);
         SetDreamCoins(sCDKey, GetDreamCoins(sCDKey)+nGiveDCs);
-        SendMessageToPC(oPC, "You gain <c?? >" + IntToString(nGiveDCs) + "</c> Dream Coins.");
+        SendMessageToPC(oPC, "You gain <c§iÿ>" + IntToString(nGiveDCs) + "</c> Dream Coins.");
     }
     return;
 }

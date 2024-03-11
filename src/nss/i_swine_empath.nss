@@ -53,16 +53,20 @@ void ActivateItem( )
     object oVictim = GetFirstObjectInShape( SHAPE_SPHERE, RADIUS_SIZE_COLOSSAL, GetLocation( oPC ), FALSE, OBJECT_TYPE_CREATURE );
     while( oVictim != OBJECT_INVALID && nCount < 3 ) // Cap targets to 3
     {
-        if( oVictim != oPC ) // Can't target yourself!
+        if( oVictim != oPC && !GetIsPC(oVictim)) // Can't target yourself or another player!
         {
             // Check for swine only.
             if( GetAppearanceType( oVictim ) >= 21 && GetAppearanceType( oVictim ) <= 22 ||
                 GetAppearanceType( oVictim ) == 873 ||
                 GetAppearanceType( oVictim ) >= 1497 && GetAppearanceType( oVictim ) <= 1500 ||
+                GetAppearanceType( oVictim ) >= 1813 && GetAppearanceType( oVictim ) <= 1815 ||
                 GetCreatureTailType( oVictim ) == 351 ||
                 GetCreatureTailType( oVictim ) == 356 ||
                 GetCreatureTailType( oVictim ) == 540 ||
-                GetCreatureTailType( oVictim ) >= 1326 && GetCreatureTailType( oVictim ) <= 1329 )
+                GetCreatureTailType( oVictim ) >= 1326 && GetCreatureTailType( oVictim ) <= 1329 ||
+                GetCreatureTailType( oVictim ) >= 1592 && GetCreatureTailType( oVictim ) <= 1594 ||
+                GetCreatureTailType( oVictim ) == 1636 ||
+                GetCreatureTailType( oVictim ) == 1637 )
             {
                 // Only works on non-evil swine.
                 if( GetAlignmentGoodEvil( oVictim ) != ALIGNMENT_EVIL )

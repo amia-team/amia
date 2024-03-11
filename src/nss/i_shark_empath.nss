@@ -53,11 +53,13 @@ void ActivateItem( )
     object oVictim = GetFirstObjectInShape( SHAPE_SPHERE, RADIUS_SIZE_COLOSSAL, GetLocation( oPC ), FALSE, OBJECT_TYPE_CREATURE );
     while( oVictim != OBJECT_INVALID && nCount < 3 ) // Cap targets to 3
     {
-        if( oVictim != oPC ) // Can't target yourself!
+        if( oVictim != oPC && !GetIsPC(oVictim)) // Can't target yourself or another player!
         {
             // Check for sharks only.
             if( GetAppearanceType( oVictim ) >= 447 && GetAppearanceType( oVictim ) <= 449 ||
-                GetCreatureTailType( oVictim ) >= 383 && GetCreatureTailType( oVictim ) <= 385 )
+                GetAppearanceType( oVictim ) >= 1867 && GetAppearanceType( oVictim ) <= 1872 ||
+                GetCreatureTailType( oVictim ) >= 383 && GetCreatureTailType( oVictim ) <= 385 ||
+                GetCreatureTailType( oVictim ) == 1674 )
             {
                 // Only works on non-evil sharks.
                 if( GetAlignmentGoodEvil( oVictim ) != ALIGNMENT_EVIL )

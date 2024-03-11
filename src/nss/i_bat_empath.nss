@@ -1,4 +1,4 @@
-// Item event script for Bat Empathy. Dominates hostile/neutral bats
+/// Item event script for Bat Empathy. Dominates hostile/neutral bats
 // within a howl's radius.
 //
 // Revision History
@@ -53,13 +53,13 @@ void ActivateItem( )
     object oVictim = GetFirstObjectInShape( SHAPE_SPHERE, RADIUS_SIZE_COLOSSAL, GetLocation( oPC ), FALSE, OBJECT_TYPE_CREATURE );
     while( oVictim != OBJECT_INVALID && nCount < 3 ) // Cap targets to 3
     {
-        if( oVictim != oPC ) // Can't target yourself!
+        if( oVictim != oPC && !GetIsPC(oVictim)) // Can't target yourself or another player!
         {
             // Check for bats only.
             if( GetAppearanceType( oVictim ) == 10 ||
-				            GetAppearanceType( oVictim ) == 1087 ||
+                GetAppearanceType( oVictim ) == 1087 ||
                 GetCreatureTailType( oVictim ) == 348 ||
-    				        GetCreatureTailType( oVictim ) == 747 )
+                GetCreatureTailType( oVictim ) == 747 )
             {
                 // Only works on non-evil bats.
                 if( GetAlignmentGoodEvil( oVictim ) != ALIGNMENT_EVIL )

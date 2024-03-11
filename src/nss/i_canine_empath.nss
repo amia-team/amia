@@ -53,23 +53,33 @@ void ActivateItem( )
     object oVictim = GetFirstObjectInShape( SHAPE_SPHERE, RADIUS_SIZE_COLOSSAL, GetLocation( oPC ), FALSE, OBJECT_TYPE_CREATURE );
     while( oVictim != OBJECT_INVALID && nCount < 3 ) // Cap targets to 3
     {
-        if( oVictim != oPC ) // Can't target yourself!
+        if( oVictim != oPC && !GetIsPC(oVictim)) // Can't target yourself or another player!
         {
             // Check for canines only.
             if( GetAppearanceType( oVictim ) >= 174 && GetAppearanceType( oVictim ) <= 176 ||
-				GetAppearanceType( oVictim ) >= 180 && GetAppearanceType( oVictim ) <= 181 ||
+                GetAppearanceType( oVictim ) >= 180 && GetAppearanceType( oVictim ) <= 181 ||
                 GetAppearanceType( oVictim ) >= 1219 && GetAppearanceType( oVictim ) <= 1234 ||
-				GetAppearanceType( oVictim ) == 1321 ||
-			    GetAppearanceType( oVictim ) >= 1486 && GetAppearanceType( oVictim ) <= 1487 ||
-				GetAppearanceType( oVictim ) >= 1489 && GetAppearanceType( oVictim ) <= 1490 ||
-				GetAppearanceType( oVictim ) == 1493 ||
+                GetAppearanceType( oVictim ) == 1321 ||
+                GetAppearanceType( oVictim ) >= 1486 && GetAppearanceType( oVictim ) <= 1487 ||
+                GetAppearanceType( oVictim ) >= 1489 && GetAppearanceType( oVictim ) <= 1490 ||
+                GetAppearanceType( oVictim ) == 1493 ||
+                GetAppearanceType( oVictim ) == 1577 ||
+                GetAppearanceType( oVictim ) >= 1604 && GetAppearanceType( oVictim ) <= 1619 ||
+                GetAppearanceType( oVictim ) == 1806 ||
+                GetAppearanceType( oVictim ) == 1844 ||
                 GetCreatureTailType( oVictim ) >= 386 && GetCreatureTailType( oVictim ) <= 388 ||
-				GetCreatureTailType( oVictim ) >= 391 && GetCreatureTailType( oVictim ) <= 393 ||
-				GetCreatureTailType( oVictim ) >= 873 && GetCreatureTailType( oVictim ) <= 888 ||
-				GetCreatureTailType( oVictim ) == 915 ||
-				GetCreatureTailType( oVictim ) == 1176 ||
-				GetCreatureTailType( oVictim ) >= 1315 && GetCreatureTailType( oVictim ) <= 1319 ||
-				GetCreatureTailType( oVictim ) == 1322 )
+                GetCreatureTailType( oVictim ) >= 391 && GetCreatureTailType( oVictim ) <= 393 ||
+                GetCreatureTailType( oVictim ) >= 873 && GetCreatureTailType( oVictim ) <= 888 ||
+                GetCreatureTailType( oVictim ) == 915 ||
+                GetCreatureTailType( oVictim ) == 1176 ||
+                GetCreatureTailType( oVictim ) >= 1315 && GetCreatureTailType( oVictim ) <= 1319 ||
+                GetCreatureTailType( oVictim ) == 1322 ||
+                GetCreatureTailType( oVictim ) == 1368 ||
+                GetCreatureTailType( oVictim ) >= 1399 && GetCreatureTailType( oVictim ) <= 1414 ||
+                GetCreatureTailType( oVictim ) == 1585 ||
+                GetCreatureTailType( oVictim ) == 1633 ||
+                GetCreatureTailType( oVictim ) == 1673 ||
+                GetCreatureTailType( oVictim ) == 1675 )
             {
                 // Only works on non-evil canines.
                 if( GetAlignmentGoodEvil( oVictim ) != ALIGNMENT_EVIL )

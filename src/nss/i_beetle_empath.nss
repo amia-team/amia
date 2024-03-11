@@ -53,16 +53,17 @@ void ActivateItem( )
     object oVictim = GetFirstObjectInShape( SHAPE_SPHERE, RADIUS_SIZE_COLOSSAL, GetLocation( oPC ), FALSE, OBJECT_TYPE_CREATURE );
     while( oVictim != OBJECT_INVALID && nCount < 3 ) // Cap targets to 3
     {
-        if( oVictim != oPC ) // Can't target yourself!
+        if( oVictim != oPC && !GetIsPC(oVictim)) // Can't target yourself or another player!
         {
             // Check for beetles only.
             if( GetAppearanceType( oVictim ) >= 17 && GetAppearanceType( oVictim ) <= 20 ||
-				GetAppearanceType( oVictim ) == 893 ||
-				GetAppearanceType( oVictim ) == 896 ||
-				GetCreatureTailType( oVictim ) == 403 ||
+                GetAppearanceType( oVictim ) == 893 ||
+                GetAppearanceType( oVictim ) == 896 ||
+                GetCreatureTailType( oVictim ) == 403 ||
                 GetCreatureTailType( oVictim ) >= 406 && GetCreatureTailType( oVictim ) <= 408 ||
-				GetCreatureTailType( oVictim ) == 554 ||
-				GetCreatureTailType( oVictim ) == 557 )
+                GetCreatureTailType( oVictim ) == 554 ||
+                GetCreatureTailType( oVictim ) == 557 ||
+                GetCreatureTailType( oVictim ) == 1670 )
             {
                 // Only works on non-evil beetles.
                 if( GetAlignmentGoodEvil( oVictim ) != ALIGNMENT_EVIL )

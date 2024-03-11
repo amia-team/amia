@@ -53,15 +53,21 @@ void ActivateItem( )
     object oVictim = GetFirstObjectInShape( SHAPE_SPHERE, RADIUS_SIZE_COLOSSAL, GetLocation( oPC ), FALSE, OBJECT_TYPE_CREATURE );
     while( oVictim != OBJECT_INVALID && nCount < 3 ) // Cap targets to 3
     {
-        if( oVictim != oPC ) // Can't target yourself!
+        if( oVictim != oPC && !GetIsPC(oVictim)) // Can't target yourself or another player!
         {
             // Check for ursines only.
             if( GetAppearanceType( oVictim ) >= 12 && GetAppearanceType( oVictim ) <= 15 ||
-				GetAppearanceType( oVictim ) == 204 ||
+                GetAppearanceType( oVictim ) == 204 ||
                 GetAppearanceType( oVictim ) >= 1501 && GetAppearanceType( oVictim ) <= 1502 ||
-				GetCreatureTailType( oVictim ) == 350 ||
+                GetAppearanceType( oVictim ) == 1576 ||
+                GetAppearanceType( oVictim ) == 1928 ||
+                GetCreatureTailType( oVictim ) == 350 ||
                 GetCreatureTailType( oVictim ) >= 352 && GetCreatureTailType( oVictim ) <= 356 ||
-				GetCreatureTailType( oVictim ) >= 1330 && GetCreatureTailType( oVictim ) <= 1331 )
+                GetCreatureTailType( oVictim ) >= 1330 && GetCreatureTailType( oVictim ) <= 1331 ||
+                GetCreatureTailType( oVictim ) == 1367 ||
+                GetCreatureTailType( oVictim ) == 1443 ||
+                GetCreatureTailType( oVictim ) == 1458 ||
+                GetCreatureTailType( oVictim ) == 1459 )
             {
                 // Only works on non-evil ursines.
                 if( GetAlignmentGoodEvil( oVictim ) != ALIGNMENT_EVIL )

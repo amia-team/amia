@@ -1047,14 +1047,14 @@ void InitialiseColours(){
     SetCustomToken( 5100, "</c>" ); // CLOSE tag
     SetCustomToken( 5101, "<cþ  >" ); // red
     SetCustomToken( 5102, "<c þ >" ); // green
-    SetCustomToken( 5103, "<c  þ>" ); // blue
+    SetCustomToken( 5103, "<cR¤ÿ>" ); // blue
     SetCustomToken( 5104, "<c þþ>" ); // cyan
     SetCustomToken( 5105, "<cþ þ>" ); // magenta
     SetCustomToken( 5106, "<cþþ >" ); // yellow
     SetCustomToken( 5107, "<c   >" ); // black
     SetCustomToken( 5108, "<c¥  >" ); // dark red
     SetCustomToken( 5109, "<c ¥ >" ); // dark green
-    SetCustomToken( 5110, "<c  ¥>" ); // dark blue
+    SetCustomToken( 5110, "<c |ÿ>" ); // dark blue
     SetCustomToken( 5111, "<c ¥¥>" ); // dark cyan
     SetCustomToken( 5112, "<c¥ ¥>" ); // dark magenta
     SetCustomToken( 5113, "<c¥¥ >" ); // dark yellow

@@ -70,7 +70,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Scarab of Living changed to: +5 AC, +2 Regeneration, Poison Immunity, Disease Immunity.
 - Bracers of the Gemstone Golem changed to: +5 Soak 5 Damage, 5/- Bludgeoning, 5/- Piercing, 5/- Slashing, +2 CON.
 - Added additional functionality to us_sit - can do other animations.
-- Added some functionality to spawn sitting and waypoint walking scripts.
+- Test server merchant filled out with all kinds of stuff. Secondary merchant deleted (no longer necessary).
 - Area changes (including some new music):
 	- Moonpier
 	- Moonpier: The Lunar Lantern (tavern)
@@ -84,6 +84,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed some areas that were gone or had wrong resrefs.
 - Removed some missing resources and spawned creatures that aren't needed anymore.
 - "Animal Type" Empathies will no longer try to dominate PCs.
+- Bug with random head script where NPCs would be headless.
 
 ## [3.3.0 - 2024-02-25]
 

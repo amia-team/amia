@@ -44,8 +44,8 @@ void main(){
         if(GetRacialType(oNPC) == 6 || GetRacialType(oNPC) == 4){
              if(GetGender(oNPC) == 0){
                 int headNumber = d100();
-                if(headNumber == 47 || headNumber == 48 || headNumber == 49){
-                    headNumber == 146;
+                if(headNumber >= 47 && headNumber <= 81 ){
+                    headNumber = 146;
                     SetCreatureBodyPart(20, headNumber, OBJECT_SELF);
                 }
                 else{
@@ -54,8 +54,8 @@ void main(){
             }
             if(GetGender(oNPC) == 1){
                 int headNumber = d100();
-                if(headNumber == 39 || headNumber == 40 || headNumber == 41 || headNumber == 57){
-                    headNumber == 145;
+                if(headNumber == 39 || headNumber == 40 || headNumber == 41 || headNumber == 57 || headNumber == 58 || headNumber == 78 || headNumber == 94){
+                    headNumber = 145;
                     SetCreatureBodyPart(20, headNumber, OBJECT_SELF);
                 }
                 else{

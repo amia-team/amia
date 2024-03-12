@@ -12,11 +12,20 @@ void main()
     int animation = GetLocalInt(OBJECT_SELF, "animation");
 
     if(animation > 0){
-        location bed = GetLocation(OBJECT_SELF);
         object pc    = GetLastUsedBy();
-        ActionJumpToLocation(bed);
-        AssignCommand(pc, SetFacing(1.0));
+        float facing = GetFacing(OBJECT_SELF);
+        location plc = GetLocation(OBJECT_SELF);
+
+        if(facing <= 180.0){
+            facing = facing + 180.0;
+        }
+        else{
+            facing = facing - 180.0;
+        }
+
+        AssignCommand(pc, ActionMoveToLocation(plc, FALSE));
         AssignCommand(pc, ActionPlayAnimation(animation, 1.0, 3600.0));
+        DelayCommand(2.5, AssignCommand(pc, SetFacing(facing)));
     }
     else{
         ExecuteScript("x2_plc_used_sit", OBJECT_SELF);

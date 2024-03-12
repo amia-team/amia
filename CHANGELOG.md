@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Endir's Point Hospital and School
 - Custom creature palette file to top hak.
 - Custom item palette file to top hak.
 - Added new epic loot items for crafting system:

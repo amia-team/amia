@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Endir's Point Hospital and School
+- Moved an NPC from EP to Beneloth
 - Custom creature palette file to top hak.
 - Custom item palette file to top hak.
 - Added new epic loot items for crafting system:
@@ -61,6 +62,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ### Changed
+- Promoted an Endir's Point NPC
 - Overhauled entire creature palette into new categories.
 - Overhauled a lot of the item palette into new categories.
 - Slight adjustment to positioning of module start point.

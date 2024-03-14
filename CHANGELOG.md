@@ -7,10 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-- Endir's Point Hospital and School
-- Moved an NPC from EP to Beneloth
+- Endir's Point Hospital and School.
+- Moved an NPC from EP to Beneloth.
 - Custom creature palette file to top hak.
 - Custom item palette file to top hak.
+- Some missing 10-stack potions.
+- A couple new items to Moonpier tanner shop (trimmed a lot of items out of it, too).
 - Added new epic loot items for crafting system:
 	- Bracers of the Elemental Golem: 10/- Acid Resist, 10/- Fire Resist, 10/- Cold Resist, 10/- Electric Resist, +2 CON
 	- Dragon Armors of Chaos (+5 AC, 15/- Acid Resist, 15/- Electric Resist, +1 Regen): Half-Plate, Splint Mail, Breastplate, Chain, Hide, Leather, Padded, Cloth
@@ -56,13 +58,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Shadow Mirage (Dice Mace): +5 Enhancement, Keen, 2d6 Slashing, +3 Vampiric Regen, 1d6 Sneak Attack Blackguard
 	- Double Eclipse (Double Axe): +5 Enhancement, Keen, 1d6 Bludgeoning, 1d6 Positive, Vampiric Regen +3, OnHit: Daze DC 20
 	- Frostfall (Two-Bladed Sword): +5 Enhancement, Keen, 2d6 Cold, 1d6 Massive Crit, OnHit Freeze DC 30
-
 - Epic Crafting Recipes added for all new/old Epic loot. 100+ Items.
 - Throwing Axes, Darts, and Shurikens added to crafting system. 
 
 
 ### Changed
-- Promoted an Endir's Point NPC
+- Promoted an Endir's Point NPC.
 - Overhauled entire creature palette into new categories.
 - Overhauled a lot of the item palette into new categories.
 - Slight adjustment to positioning of module start point.
@@ -73,10 +74,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Bracers of the Gemstone Golem changed to: +5 Soak 5 Damage, 5/- Bludgeoning, 5/- Piercing, 5/- Slashing, +2 CON.
 - Added additional functionality to us_sit - can do other animations.
 - Test server merchant filled out with all kinds of stuff. Secondary merchant deleted (no longer necessary).
+- Removed many items from existing Moonpier shop to make it a smaller Tanner/Tailor shop.
 - Area changes (including some new music):
 	- Moonpier
 	- Moonpier: The Lunar Lantern (tavern)
 	- Moonpier: Seer's Caves (community center/housing) initial update
+	- Moonpier: Moonlight Tradehouse (shops)
 
 ### Fixed
 - Removed several creature .utc files from creature hak.
@@ -87,6 +90,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed some missing resources and spawned creatures that aren't needed anymore.
 - "Animal Type" Empathies will no longer try to dominate PCs.
 - Bug with random head script where NPCs would be headless.
+- Re-added CWI NPC to OI's Havoc's Smithy.
+- Re-removed CWI NPC from Triumvir (shouldn't be there).
 
 ## [3.3.0 - 2024-02-25]
 

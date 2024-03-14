@@ -1069,6 +1069,8 @@ void InitialiseColours(){
     SetCustomToken( 5122, "<c~Îë>" ); // Job System blue
     SetCustomToken( 5123, "<c Í >" ); // Quest System green
     SetCustomToken( 5124, "<cÿ×#>" ); // Epic Crafting gold
+    SetCustomToken( 5125, "<c¯âÿ>" ); // Djinn blue
+    SetCustomToken( 5126, "<cüz >" ); // Dungeon DTS orange
 }
 
 

@@ -78,8 +78,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Area changes (including some new music):
 	- Moonpier
 	- Moonpier: The Lunar Lantern (tavern)
-	- Moonpier: Seer's Caves (community center/housing) initial update
+	- Moonpier: Seer's Caves (community center/housing)
 	- Moonpier: Moonlight Tradehouse (shops)
+	- Moonpier: Harbor Office (customs/jail)
 
 ### Fixed
 - Removed several creature .utc files from creature hak.

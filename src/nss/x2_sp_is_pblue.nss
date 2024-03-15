@@ -14,6 +14,7 @@
 //:://////////////////////////////////////////////
 //:: PaladinOfSune: Added new hak visual
 //:: Glim: Changed to permanent duration and Supernatural effect.
+//:: Lord-Jyssev: (3/15/24) Used TagEffect to make ioun check modular.
 
 void main()
 {
@@ -24,9 +25,7 @@ void main()
     eEffect = GetFirstEffect(OBJECT_SELF);
     while (GetIsEffectValid(eEffect) == TRUE)
     {
-        if(GetEffectSpellId(eEffect) > 553 && GetEffectSpellId(eEffect) < 561
-            || GetEffectSpellId(eEffect) == 918
-            || GetEffectSpellId(eEffect) == 919 )
+        if (GetEffectTag(eEffect) == "IounStone")
         {
             RemoveEffect(OBJECT_SELF, eEffect);
         }
@@ -38,6 +37,7 @@ void main()
     eBonus = EffectAbilityIncrease(ABILITY_STRENGTH, 2);
     eLink = EffectLinkEffects(eVFX, eBonus);
     eLink = SupernaturalEffect( eLink );
+    eLink = TagEffect( eLink, "IounStone");
     ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink, OBJECT_SELF);
 
 }

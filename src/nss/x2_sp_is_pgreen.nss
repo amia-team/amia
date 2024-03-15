@@ -15,19 +15,18 @@
 //:: PaladinOfSune: Added new hak visual
 //:: Glim: Added name check for new Ioun stone type 02/23/14
 //:: Glim: Changed to permanent duration and Supernatural effect.
+//:: Lord-Jyssev: (3/15/24) Used TagEffect to make ioun check modular.
 
 void main()
 {
     //variables
-    effect eVFX, eBonus, eBonus1, eBonus2, eBonus3, eBonus4, eLink, eEffect;
+    effect eVFX, eBonus, eBonus1, eBonus2, eLink, eEffect;
 
     //from any ioun stones (including self)
     eEffect = GetFirstEffect(OBJECT_SELF);
     while (GetIsEffectValid(eEffect) == TRUE)
     {
-        if(GetEffectSpellId(eEffect) > 553 && GetEffectSpellId(eEffect) < 561
-            || GetEffectSpellId(eEffect) == 918
-            || GetEffectSpellId(eEffect) == 919 )
+        if (GetEffectTag(eEffect) == "IounStone")
         {
             RemoveEffect(OBJECT_SELF, eEffect);
         }
@@ -35,7 +34,8 @@ void main()
     }
 
     //check first if it's a Labyrinth Ioun Stone
-    if( GetResRef( GetSpellCastItem() ) == "is_chryso" )
+    if( GetResRef( GetSpellCastItem() ) == "epx_ioun_chrys" ||
+        GetResRef( GetSpellCastItem() ) == "is_chryso")
     {
         eVFX = EffectVisualEffect(692);
         eBonus1 = EffectSkillIncrease(SKILL_HIDE, 5);
@@ -43,11 +43,13 @@ void main()
         eLink = EffectLinkEffects( eVFX, eBonus1 );
         eLink = EffectLinkEffects( eBonus2, eLink );
         eLink = SupernaturalEffect( eLink );
+        eLink = TagEffect( eLink, "IounStone");
         ApplyEffectToObject( DURATION_TYPE_PERMANENT, eLink, OBJECT_SELF );
         return;
     }
 
-    if( GetResRef( GetSpellCastItem() ) == "is_lavender" )
+    if( GetResRef( GetSpellCastItem() ) == "epx_ioun_lavnd" ||
+        GetResRef( GetSpellCastItem() ) == "is_lavender")
     {
         eVFX = EffectVisualEffect(691);
         eBonus1 = EffectSkillIncrease(SKILL_DISCIPLINE, 5);
@@ -55,6 +57,7 @@ void main()
         eLink = EffectLinkEffects( eVFX, eBonus1 );
         eLink = EffectLinkEffects( eBonus2, eLink );
         eLink = SupernaturalEffect( eLink );
+        eLink = TagEffect( eLink, "IounStone");
         ApplyEffectToObject( DURATION_TYPE_PERMANENT, eLink, OBJECT_SELF );
         return;
     }
@@ -64,6 +67,7 @@ void main()
     eBonus = EffectAbilityIncrease(ABILITY_CHARISMA, 2);
     eLink = EffectLinkEffects(eVFX, eBonus);
     eLink = SupernaturalEffect( eLink );
+    eLink = TagEffect( eLink, "IounStone");
     ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink, OBJECT_SELF);
 
 }

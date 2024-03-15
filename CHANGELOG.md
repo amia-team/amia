@@ -60,6 +60,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Frostfall (Two-Bladed Sword): +5 Enhancement, Keen, 2d6 Cold, 1d6 Massive Crit, OnHit Freeze DC 30
 - Epic Crafting Recipes added for all new/old Epic loot. 100+ Items.
 - Throwing Axes, Darts, and Shurikens added to crafting system. 
+- Added a new mini-ioun reward to Elemental Earth Dungeon
 
 
 ### Changed
@@ -81,6 +82,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Moonpier: Seer's Caves (community center/housing)
 	- Moonpier: Moonlight Tradehouse (shops)
 	- Moonpier: Harbor Office (customs/jail)
+- Ioun Stones now use a more modular system to check if a previous ioun is out
+- Added additional colors to the module load for Djinn blue and DTS orange
+
 
 ### Fixed
 - Removed several creature .utc files from creature hak.
@@ -93,6 +97,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Bug with random head script where NPCs would be headless.
 - Re-added CWI NPC to OI's Havoc's Smithy.
 - Re-removed CWI NPC from Triumvir (shouldn't be there).
+- DTS tweaks and fixes to Elemental Earth Dungeon
+- Added new epic (epx_xxxxxxxxx) item tags to two of the ioun stones
 
 ## [3.3.0 - 2024-02-25]
 

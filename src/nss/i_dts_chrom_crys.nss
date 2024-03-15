@@ -28,13 +28,13 @@ void main()
         {
             RemoveEffect(oPC, eEffect);
         }
-
+        /*
         if(GetEffectSpellId(eEffect) > 553 && GetEffectSpellId(eEffect) < 561
             || GetEffectSpellId(eEffect) == 918
             || GetEffectSpellId(eEffect) == 919 )
         {
             RemoveEffect(oPC, eEffect);
-        }
+        }                                  */
         eEffect = GetNextEffect(oPC);
     }
 

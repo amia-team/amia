@@ -76,7 +76,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added additional functionality to us_sit - can do other animations.
 - Test server merchant filled out with all kinds of stuff. Secondary merchant deleted (no longer necessary).
 - Removed many items from existing Moonpier shop to make it a smaller Tanner/Tailor shop.
-- Changed the area/battle music in Raid areas.
 - Area changes (including some new music):
 	- Moonpier
 	- Moonpier: The Lunar Lantern (tavern)

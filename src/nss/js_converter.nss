@@ -846,6 +846,15 @@ void JewelerConverter(object oPC, object oBench, int nNode)
       case 33: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_drfc"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_power"; sPlaceableName = "<c¦ÿ©>Ring of Power</c>"; sIngredient2Type = "platnium"; nCost = 10000; nRetainItem=1; break;
       case 34: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_psbdc"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_clrth"; sPlaceableName = "<c¦ÿ©>Ring of Clear Thought +5</c>"; sIngredient2Type = "gold"; nCost = 10000; nRetainItem=1; break;
       case 35: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_mwamc"; sIngredient2 = "js_jew_amul"; sType = "epx_neck_pwisd"; sPlaceableName = "<c¦ÿ©>Periapt of Wisdom +6</c>"; sIngredient2Type = "platnium"; nCost = 10000; nRetainItem=1; break;
+      case 36: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_eqip"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_bard"; sPlaceableName = "<c¦ÿ©>A Musician's Mind</c>"; sIngredient2Type = "ivory"; nCost = 10000; nRetainItem=1; break;
+      case 37: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_obsd"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_blgd"; sPlaceableName = "<c¦ÿ©>Shadow's Glance</c>"; sIngredient2Type = "silver"; nCost = 10000; nRetainItem=1; break;
+      case 38: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_blod"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_assn"; sPlaceableName = "<c¦ÿ©>Killer's Balance</c>"; sIngredient2Type = "gold"; nCost = 10000; nRetainItem=1; break;
+      case 39: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_bone"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_empw"; sPlaceableName = "<c¦ÿ©>Warlock's Empowerment</c>"; sIngredient2Type = "ivory"; nCost = 10000; nRetainItem=1; break;
+      case 40: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_obsd"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_focs"; sPlaceableName = "<c¦ÿ©>Warlock's Focus</c>"; sIngredient2Type = "silver"; nCost = 10000; nRetainItem=1; break;
+      case 41: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_mwamc"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_drud"; sPlaceableName = "<c¦ÿ©>Nature's Devotion</c>"; sIngredient2Type = "gold"; nCost = 10000; nRetainItem=1; break;
+      case 42: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wrc"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_wzrd"; sPlaceableName = "<c¦ÿ©>Band of Illumination</c>"; sIngredient2Type = "platnium"; nCost = 10000; nRetainItem=1; break;
+      case 43: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_psbdc"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_sorc"; sPlaceableName = "<c¦ÿ©>Mysterious Band</c>"; sIngredient2Type = "gold"; nCost = 10000; nRetainItem=1; break;
+      case 44: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wbc"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_cler"; sPlaceableName = "<c¦ÿ©>Divine Touch</c>"; sIngredient2Type = "platnium"; nCost = 10000; nRetainItem=1; break;
 
     }
 
@@ -1751,6 +1760,8 @@ void TailorConverter(object oPC, object oBench, int nNode)
       case 49: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wrc"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_hinfs"; sPlaceableName = "<c¦ÿ©>Gloves of the Hin Fist +6</c>"; sIngredient2Type = "hide"; nCost = 10000; nRetainItem=1; break;
       case 50: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_safbc"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_longd"; sPlaceableName = "<c¦ÿ©>Gloves of the Long Death +6</c>"; sIngredient2Type = "leather"; nCost = 10000; nRetainItem=1; break;
       case 51: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_goimc"; sIngredient2 = "js_tai_glove"; sType = "epx_glov_yellr"; sPlaceableName = "<c¦ÿ©>Gloves of the Yellow Rose +6</c>"; sIngredient2Type = "hide"; nCost = 10000; nRetainItem=1; break;
+      case 52: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_ston"; sIngredient2 = "js_tai_cloa"; sType = "epx_clok_stlt"; sPlaceableName = "<c¦ÿ©>Cape of the Panther</c>"; sIngredient2Type = "rothewool"; nCost = 10000; nRetainItem=1; break;
+      case 53: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_glyp"; sIngredient2 = "js_tai_cloa"; sType = "epx_clok_dtct"; sPlaceableName = "<c¦ÿ©>Cape of the Owl</c>"; sIngredient2Type = "rothewool"; nCost = 10000; nRetainItem=1; break;
      }
 
    }

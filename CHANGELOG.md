@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Bracers of the Elemental Golem: 10/- Acid Resist, 10/- Fire Resist, 10/- Cold Resist, 10/- Electric Resist, +2 CON
 	- Dragon Armors of Chaos (+5 AC, 15/- Acid Resist, 15/- Electric Resist, +1 Regen): Half-Plate, Splint Mail, Breastplate, Chain, Hide, Leather, Padded, Cloth
 	- Dragon Armors of Tyranny (+5 AC, 15/- Fire Resist, 15/- Cold Resist, +1 Regen): Half-Plate, Splint Mail, Breastplate, Chain, Hide, Leather, Padded, Cloth
-	- Arcane Defiance Armors (+5 AC, 32 SR, +2 Saves): Half-Plate, Splint Mail, Breastplate, Hide, Padded
+	- Arcane Defiance Armors (+5 AC, 32 SR, +2 Universal Saves): Half-Plate, Splint Mail, Breastplate, Hide, Padded
 	- Furtive Armors (+5 AC, +2 DEX, +5 Hide, +5 Move Silently): Hide, Leather, Padded, Cloth
 	- Gloves of the Honeyed Tongue: +30 Persuade
 	- Gloves of the Serpent's Tongue: +30 Bluff
@@ -59,6 +59,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Shadow Mirage (Dice Mace): +5 Enhancement, Keen, 2d6 Slashing, +3 Vampiric Regen, 1d6 Sneak Attack Blackguard
 	- Double Eclipse (Double Axe): +5 Enhancement, Keen, 1d6 Bludgeoning, 1d6 Positive, Vampiric Regen +3, OnHit: Daze DC 20
 	- Frostfall (Two-Bladed Sword): +5 Enhancement, Keen, 2d6 Cold, 1d6 Massive Crit, OnHit Freeze DC 30
+	- A Musician's Mind (Ring) Spell Slots: Bard 5/5/6, +3 CHA
+	- Shadow's Glance (Ring): Spell Slots: Blackguard 2/3/4, +3 WIS
+	- Killer's Balance (Ring): Spell Slots: Assassin 2/3/4, +3 INT
+	- Nature's Devotion (Ring): Spell Slots: Druid 8/8/9, +3 WIS
+	- Band of Illumination (Ring): Spell Slots: Wizard 8/8/9, +3 INT
+	- Mysterious Band (Ring): Spell Slots: Sorcerer 8/8/9, +3 CHA
+	- Divine Touch (Ring): Spell Slots: Cleric 8/8/9, +3 WIS
+	- Warlock's Empowerment (Ring): +3 CHA, +10 Concentration
+	- Warlock's Focus (Ring): +3 DEX, +10 Concentration
+	- Cape of the Panther (Cloak): +5 AC, +10 Hide, +10 Move Silently
+	- Cape of the Owl (Cloak): +5 AC, +10 Spot, +10 Listen
 - Epic Crafting Recipes added for all new/old Epic loot. 100+ Items.
 - Throwing Axes, Darts, and Shurikens added to crafting system. 
 - New mini-ioun reward to Elemental Earth Dungeon.
@@ -74,6 +85,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Slight modification to Thorny Chief Boss, as he's a little overtuned currently.
 - Scarab of Living changed to: +5 AC, +2 Regeneration, Poison Immunity, Disease Immunity.
 - Bracers of the Gemstone Golem changed to: +5 Soak 5 Damage, 5/- Bludgeoning, 5/- Piercing, 5/- Slashing, +2 CON.
+- Ring of Protection and Prevention changed to: +5 AC, +5 Soak 5 Damage, +2 Universal Saves
 - Added additional functionality to us_sit - can do other animations.
 - Test server merchant filled out with all kinds of stuff. Secondary merchant deleted (no longer necessary).
 - Removed many items from existing Moonpier shop to make it a smaller Tanner/Tailor shop.
@@ -84,6 +96,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Moonpier: Seer's Caves (community center/housing)
 	- Moonpier: Moonlight Tradehouse (shops)
 	- Moonpier: Harbor Office (customs/jail)
+	- Khem: Temple of the Eight Gods (permanent Djinn merchants)
 - Ioun Stones now use a more modular system to check if a previous ioun is out.
 - Added additional colors to the module load for Djinn blue and DTS orange.
 

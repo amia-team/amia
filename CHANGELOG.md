@@ -61,8 +61,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Frostfall (Two-Bladed Sword): +5 Enhancement, Keen, 2d6 Cold, 1d6 Massive Crit, OnHit Freeze DC 30
 - Epic Crafting Recipes added for all new/old Epic loot. 100+ Items.
 - Throwing Axes, Darts, and Shurikens added to crafting system. 
-- Added a new mini-ioun reward to Elemental Earth Dungeon.
-
+- New mini-ioun reward to Elemental Earth Dungeon.
+- UD Farmer triggers to Hollow Cavern and Ruins of Udos Dro'xun.
 
 ### Changed
 - Promoted an Endir's Point NPC.

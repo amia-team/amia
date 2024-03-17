@@ -65,6 +65,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Shadow Mirage (Dice Mace): +5 Enhancement, Keen, 2d6 Slashing, +3 Vampiric Regen, 1d6 Sneak Attack Blackguard
 	- Double Eclipse (Double Axe): +5 Enhancement, Keen, 1d6 Bludgeoning, 1d6 Positive, Vampiric Regen +3, OnHit: Daze DC 20
 	- Frostfall (Two-Bladed Sword): +5 Enhancement, Keen, 2d6 Cold, 1d6 Massive Crit, OnHit Freeze DC 30
+	- A Musician's Mind (Ring): Spell Slots: Bard 5/5/6, +3 CHA
+	- Shadow's Glance (Ring): Spell Slots: Blackguard 2/3/4, +3 WIS
+	- Killer's Balance (Ring): Spell Slots: Assassin 2/3/4, +3 INT
+	- Nature's Devotion (Ring): Spell Slots: Druid 8/8/9, +3 WIS
+	- Band of Illumination (Ring): Spell Slots: Wizard 8/8/9, +3 INT
+	- Mysterious Band Spell (Ring): Slots: Sorcerer 8/8/9, +3 CHA
+	- Divine Touch (Ring): Spell Slots: Cleric 8/8/9, +3 WIS
+	- Warlock's Empowerment (Ring): +3 CHA, +10 Concentration
+	- Warlock's Focus (Ring): +3 DEX, +10 Concentration
+	- Cape of the Panther (Cloak): +5 AC, +10 Hide, +10 Move Silently
+	- Cape of the Owl (Cloak): +5 AC, +10 Spot, +10 Listen
 - Epic Crafting Recipes added for all new/old Epic loot. 100+ Items.
 - Throwing Axes, Darts, and Shurikens added to Job System crafting.
 - New mini-ioun DTS reward to Elemental Earth Dungeon.

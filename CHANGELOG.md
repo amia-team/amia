@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Started work on Prancing Stallion in Gregory's Landing
 - Endir's Point Hospital and School.
 - Moved an NPC from EP to Beneloth.
 - Custom creature palette file to top hak.

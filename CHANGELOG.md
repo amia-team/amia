@@ -7,14 +7,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-- Started work on Prancing Stallion in Gregory's Landing
-- Endir's Point Hospital and School.
-- Moved an NPC from EP to Beneloth.
+
+### Changed
+
+### Fixed
+
+## [4.0.0 - 2024-02-25]
+
+### Added
+- Moved an NPC from EP to Belenoth.
 - Custom creature palette file to top hak.
 - Custom item palette file to top hak.
 - Some missing 10-stack potions.
 - A couple new items to Moonpier tanner shop (trimmed a lot of items out of it, too).
-- Added new epic loot items for crafting system:
+- Added new epic loot items for epic crafting system:
 	- Bracers of the Elemental Golem: 10/- Acid Resist, 10/- Fire Resist, 10/- Cold Resist, 10/- Electric Resist, +2 CON
 	- Dragon Armors of Chaos (+5 AC, 15/- Acid Resist, 15/- Electric Resist, +1 Regen): Half-Plate, Splint Mail, Breastplate, Chain, Hide, Leather, Padded, Cloth
 	- Dragon Armors of Tyranny (+5 AC, 15/- Fire Resist, 15/- Cold Resist, +1 Regen): Half-Plate, Splint Mail, Breastplate, Chain, Hide, Leather, Padded, Cloth
@@ -60,10 +66,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Double Eclipse (Double Axe): +5 Enhancement, Keen, 1d6 Bludgeoning, 1d6 Positive, Vampiric Regen +3, OnHit: Daze DC 20
 	- Frostfall (Two-Bladed Sword): +5 Enhancement, Keen, 2d6 Cold, 1d6 Massive Crit, OnHit Freeze DC 30
 - Epic Crafting Recipes added for all new/old Epic loot. 100+ Items.
-- Throwing Axes, Darts, and Shurikens added to crafting system. 
-- Added a new mini-ioun reward to Elemental Earth Dungeon.
-- Convos updated for Epic Crafting to include all Stats before crafting
-
+- Throwing Axes, Darts, and Shurikens added to Job System crafting.
+- New mini-ioun DTS reward to Elemental Earth Dungeon.
+- Convos for Epic Crafting, to include all Stats before crafting
 
 ### Changed
 - Promoted an Endir's Point NPC.
@@ -80,14 +85,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed many items from existing Moonpier shop to make it a smaller Tanner/Tailor shop.
 - Changed area and battle music in Raid areas.
 - Area changes (including some new music):
+	- Endir's Point
+	- Endir's Point: Hospital
+	- Endir's Point: School
 	- Moonpier
 	- Moonpier: The Lunar Lantern (tavern)
 	- Moonpier: Seer's Caves (community center/housing)
 	- Moonpier: Moonlight Tradehouse (shops)
 	- Moonpier: Harbor Office (customs/jail)
+	- Gregory's Landing (started tavern)
 - Ioun Stones now use a more modular system to check if a previous ioun is out.
 - Added additional colors to the module load for Djinn blue and DTS orange.
-
 
 ### Fixed
 - Removed several creature .utc files from creature hak.

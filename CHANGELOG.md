@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Moved an NPC from EP to Belenoth.
+- DTS added to:
+	- Marrowmaw Pass, Khem Minotaurs, Burning Crypt, Hollow Cavern
 - Custom creature palette file to top hak.
 - Custom item palette file to top hak.
 - Some missing 10-stack potions.
@@ -105,6 +107,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Moonpier: Moonlight Tradehouse (shops)
 	- Moonpier: Harbor Office (customs/jail)
 	- Gregory's Landing (started tavern)
+	- Khem: Temple of the Eight Gods (permanent Djinn merchants)
 - Ioun Stones now use a more modular system to check if a previous ioun is out.
 - Added additional colors to the module load for Djinn blue and DTS orange.
 

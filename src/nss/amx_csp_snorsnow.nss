@@ -84,12 +84,10 @@ void main()
 
     object oAoE = GetFirstObjectInShape(SHAPE_SPHERE, RADIUS_SIZE_LARGE, lTarget, TRUE, OBJECT_TYPE_CREATURE | OBJECT_TYPE_DOOR | OBJECT_TYPE_PLACEABLE);
     //Cycle through the targets within the spell shape until an invalid object is captured.
-    SendMessageToPC(oCaster, "Spell initial target: " + GetName(oAoE));
     while (GetIsObjectValid(oAoE)) {
 
-        SendMessageToPC(oCaster, "Spell loop target: " + GetName(oAoE));
         if ((oAoE == oTarget) && (nTouch >= 1)) {
-            SendMessageToPC(oCaster, "Double Dip Check: " + GetName(oAoE));
+            oAoE = GetNextObjectInShape(SHAPE_SPHERE, RADIUS_SIZE_LARGE, lTarget, TRUE, OBJECT_TYPE_CREATURE | OBJECT_TYPE_DOOR | OBJECT_TYPE_PLACEABLE);
             continue;
         }
         if (spellsIsTarget(oAoE, SPELL_TARGET_STANDARDHOSTILE, OBJECT_SELF)) {
@@ -130,8 +128,6 @@ void main()
             }
        }
        //Select the next target within the spell shape.
-       SendMessageToPC(oCaster, "Getting Prior target: " + GetName(oAoE));
        oAoE = GetNextObjectInShape(SHAPE_SPHERE, RADIUS_SIZE_LARGE, lTarget, TRUE, OBJECT_TYPE_CREATURE | OBJECT_TYPE_DOOR | OBJECT_TYPE_PLACEABLE);
-       SendMessageToPC(oCaster, "Getting Next target: " + GetName(oAoE));
     }
 }

@@ -164,7 +164,7 @@ int FallenCastCheck(object oPC) {
     }
     if (iClass == CLASS_TYPE_PALADIN) {
         if (GetAlignmentGoodEvil(oPC) != ALIGNMENT_GOOD) {
-            SendMessageToPC(oPC, "Your soul is not light enough to cast paladin spells.");
+            SendMessageToPC(oPC, "Your soul has too much evil to cast paladin spells.");
             return FALSE;
         }
         if (GetAlignmentLawChaos(oPC) != ALIGNMENT_LAWFUL) {

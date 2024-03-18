@@ -4,7 +4,7 @@
 //:: Copyright (c) 2001 Bioware Corp.
 //:://////////////////////////////////////////////
 /*
-Snorri’s Snowball (Evocation):
+Snorri's Snowball (Evocation):
 
 Level: Wizard/Sorcerer 6, Bard 6
 Components: V,S
@@ -43,6 +43,7 @@ void main()
     }
 
     object oTarget = GetSpellTargetObject();
+    location lTarget = GetLocation(oTarget);
     object oCaster = OBJECT_SELF;
     int nMetaMagic = GetMetaMagicFeat();
 
@@ -66,7 +67,7 @@ void main()
             nDmg = 6*dmgDice;
         }
         if (nMetaMagic == METAMAGIC_EMPOWER) {
-            nDmg = FloatToInt(nDmg * 1.5);
+            nDmg = nDmg + (nDmg / 2);
         }
         effect eDmg = EffectDamage(nDmg, nDamageType);
         int nVFX = VFX_IMP_FROST_L;
@@ -76,7 +77,6 @@ void main()
     }
     // Now for the AoE portion
 
-    location lTarget = GetLocation(oTarget);
 
     int nBoomVFX = VFX_IMP_PULSE_COLD;
     effect eBoom = EffectVisualEffect(nBoomVFX);
@@ -84,9 +84,12 @@ void main()
 
     object oAoE = GetFirstObjectInShape(SHAPE_SPHERE, RADIUS_SIZE_LARGE, lTarget, TRUE, OBJECT_TYPE_CREATURE | OBJECT_TYPE_DOOR | OBJECT_TYPE_PLACEABLE);
     //Cycle through the targets within the spell shape until an invalid object is captured.
-    while (GetIsObjectValid(oAoE))
-    {
+    SendMessageToPC(oCaster, "Spell initial target: " + GetName(oAoE));
+    while (GetIsObjectValid(oAoE)) {
+
+        SendMessageToPC(oCaster, "Spell loop target: " + GetName(oAoE));
         if ((oAoE == oTarget) && (nTouch >= 1)) {
+            SendMessageToPC(oCaster, "Double Dip Check: " + GetName(oAoE));
             continue;
         }
         if (spellsIsTarget(oAoE, SPELL_TARGET_STANDARDHOSTILE, OBJECT_SELF)) {
@@ -127,6 +130,8 @@ void main()
             }
        }
        //Select the next target within the spell shape.
+       SendMessageToPC(oCaster, "Getting Prior target: " + GetName(oAoE));
        oAoE = GetNextObjectInShape(SHAPE_SPHERE, RADIUS_SIZE_LARGE, lTarget, TRUE, OBJECT_TYPE_CREATURE | OBJECT_TYPE_DOOR | OBJECT_TYPE_PLACEABLE);
+       SendMessageToPC(oCaster, "Getting Next target: " + GetName(oAoE));
     }
 }

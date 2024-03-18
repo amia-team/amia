@@ -20,7 +20,7 @@ string FALL_WIDGET = "dg_fall";
 string FAVORED_WIDGET = "ds_favor";
 
 int PaladinExceptionCheck(object oPC, string sGod) {
-    if (sGod == "Sune" || sGod == "Corellon Larethian") {
+    if (sGod == "Sune" || sGod == "Corellon Larethian" || sGod == "Selune") {
         return TRUE;
     }
     return FALSE;

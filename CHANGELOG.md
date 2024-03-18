@@ -7,10 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- New script for DTS blockers that destroys them all in one interaction
 
 ### Changed
+- Howness: Changed Morgan & Sons to Vetzer Storage
+- Minor tweaks to Mylock Hills and Dragon's Junction
 
 ### Fixed
+- Fixed an issue with DTS NPCs being locked in male pronouns
 
 ## [4.0.0 - 2024-02-25]
 

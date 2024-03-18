@@ -85,7 +85,7 @@ void SetChecks(object oPC, object oNPC_PLC)
     {
      SetLocalInt(oPC,"ds_check_6",1);
      // Default convo
-     SetCustomToken(73333334,"*The individual before you appears distressed. His breathing is rapid and his eyes are unfocused* No... No... NO...");
+     SetCustomToken(73333334,"*The individual before you appears distressed. Their breathing is rapid and their eyes are unfocused* No... No... NO...");
     }
     else if(sType == "appraisepuzzle")
     {

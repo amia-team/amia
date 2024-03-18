@@ -2,7 +2,10 @@
    On damage script for blocking rocks or other objects in the dynamic dungeon tool system
 
  - Maverick00053 11/11/2023
+ - Lord-Jyssev 3/15/24: Added function to destroy all blockers at once
 */
+
+#include "dung_inc"
 
 void main()
 {
@@ -37,7 +40,7 @@ void main()
      AssignCommand(oPLC,ActionSpeakString("*The ice begins to melt down rapidly*"));
 
      ApplyEffectAtLocation(DURATION_TYPE_INSTANT,eBurn,GetLocation(oPLC));
-     DestroyObject(oPLC,0.5);
+     DestroyBlockers(oPLC);
    }
    else if(nDamageTypeFire>0 && ((sPLC == "iceblockage")))
    {
@@ -56,7 +59,7 @@ void main()
      AssignCommand(oPLC,ActionSpeakString("*The magma begins to cool and crack rapidly*"));
 
      ApplyEffectAtLocation(DURATION_TYPE_INSTANT,eCool,GetLocation(oPLC));
-     DestroyObject(oPLC,0.5);
+     DestroyBlockers(oPLC);
    }
    else if(nDamageTypeCold>0 && ((sPLC == "magmablockage")))
    {
@@ -75,7 +78,7 @@ void main()
      AssignCommand(oPLC,ActionSpeakString("*The crystals begin to overload, and then quickly explode*"));
 
      ApplyEffectAtLocation(DURATION_TYPE_INSTANT,eElec,GetLocation(oPLC));
-     DestroyObject(oPLC,0.5);
+     DestroyBlockers(oPLC);
    }
    else if(nDamageTypeElec>0 && ((sPLC == "chargedcblockage")))
    {
@@ -94,7 +97,7 @@ void main()
      AssignCommand(oPLC,ActionSpeakString("*The mushroom's regeneration slows then stops as the flesh melts away*"));
 
      ApplyEffectAtLocation(DURATION_TYPE_INSTANT,eAcid,GetLocation(oPLC));
-     DestroyObject(oPLC,1.0);
+     DestroyBlockers(oPLC);
    }
    else if(nDamageTypeAcid>0 && ((sPLC == "mushroomblockage")))
    {

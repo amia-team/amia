@@ -290,17 +290,18 @@ void SpawnBlockers(object oTrans, string sDungeon, int nLevel)
     {
       oSubWayPoint = GetWaypointByTag(sWayPoint+"Sub"+IntToString(i));
       lSubWayPoint = GetLocation(oSubWayPoint);
-      oTemp = CreateObject(OBJECT_TYPE_PLACEABLE,sBlockerType,lSubWayPoint);
+      oTemp = CreateObject(OBJECT_TYPE_PLACEABLE,sBlockerType,lSubWayPoint,FALSE,sWayPoint+"PLC");
       SetFacing(GetFacing(oSubWayPoint));  // Sets the facing the same as the waypoint
       SetLocalInt(oTemp,"level",nLevel);
-      SetTag(oTemp,"dungtool");
+      SetLocalInt(oTemp,"count",nWaypointCount);
 
     }
 
-    oTemp = CreateObject(OBJECT_TYPE_PLACEABLE,sBlockerType,lWayPoint);
-    SetTag(oTemp,"dungtool");
+    oTemp = CreateObject(OBJECT_TYPE_PLACEABLE,sBlockerType,lWayPoint,FALSE,sWayPoint+"PLC");
     SetFacing(GetFacing(oWayPoint));  // Sets the facing the same as the waypoint
     SetLocalInt(oTemp,"level",nLevel);
+    SetLocalString(oTemp, "dungeon", sDungeon);
+    SetLocalInt(oTemp,"count",nWaypointCount);
    }
   }
 }

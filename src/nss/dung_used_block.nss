@@ -2,8 +2,10 @@
    On used script for blocking rocks or other objects in the dynamic dungeon tool system
 
  - Maverick00053 11/11/2023
+ - Lord-Jyssev 3/15/24: Added function to destroy all blockers at once
 */
 
+#include "dung_inc"
 
 // Launches the Str Check Script
 void StrCheck( object oPLC, object oPC);
@@ -41,7 +43,7 @@ void StrCheck( object oPLC, object oPC)
    int nLevel = GetLocalInt(oPLC,"level");
    int nDC = nLevel + 10 + (nLevel-(nLevel/3));
    int nDiceRoll = Random(20)+1;
-   effect eVis = EffectVisualEffect(VFX_FNF_SUMMON_MONSTER_1);
+   effect eVis = EffectVisualEffect(VFX_COM_CHUNK_STONE_MEDIUM);
 
    if((nDiceRoll+nSkillRank) >= nDC)
    {
@@ -49,7 +51,7 @@ void StrCheck( object oPLC, object oPC)
      IntToString((nSkillRank+nDiceRoll)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
      AssignCommand(oPLC,ActionSpeakString("*The Boulder was pushed out of the way with pure strength and discipline*"));
      ApplyEffectAtLocation(DURATION_TYPE_INSTANT,eVis,GetLocation(oPLC));
-     DestroyObject(oPLC,0.5);
+     DestroyBlockers(oPLC);
    }
    else if((nDiceRoll+nSkillRank) < nDC)
    {
@@ -78,7 +80,7 @@ void SCraftCheck(object oPLC,object oPC)
      IntToString((nSkillRank+nDiceRoll)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
      AssignCommand(oPLC,ActionSpeakString("*The Magical Crystal hums and then shatters when magic is concentrated in a certain spot*"));
      ApplyEffectAtLocation(DURATION_TYPE_INSTANT,eVis,GetLocation(oPLC));
-     DestroyObject(oPLC,0.5);
+     DestroyBlockers(oPLC);
    }
    else if((nDiceRoll+nSkillRank) < nDC)
    {

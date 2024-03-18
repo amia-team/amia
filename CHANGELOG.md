@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Fixed an issue with DTS NPCs being locked in male pronouns
+- DTS item/bosses categorization
+- Changed epic items are actually changed now
 
 ## [4.0.0 - 2024-02-25]
 

@@ -289,7 +289,7 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
      //eVFX = EffectVisualEffect(566);
      eEffect = EffectAbilityDecrease(ABILITY_INTELLIGENCE,1);
      eEffect2 = EffectSavingThrowIncrease(SAVING_THROW_ALL,2);
-     eEffect3 = EffectAbilityIncrease(ABILITY_CONSTITUTION,1);
+     eEffect3 = EffectAbilityIncrease(ABILITY_CONSTITUTION,2);
      eLink = EffectLinkEffects(eEffect,eEffect2);
      eLink = EffectLinkEffects(eLink,eEffect3);
      //eLink = EffectLinkEffects(eVFX,eLink);
@@ -299,7 +299,7 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
      AssignCommand(oPC, ActionPlayAnimation(ANIMATION_FIREFORGET_DRINK,1.0,1.0));
    }
    else if((sItemResRef == "js_bre_tual") || (sItemResRef == "js_bre_firl")
-   || (sItemResRef == "js_bre_velv"))   //Tier 2 Drink
+   || (sItemResRef == "js_bre_velv") || (sItemResRef == "js_bre_wine") || (sItemResRef == "js_bre_cide"))   //Tier 2 Drink
    {
      if(CheckIfSpellAlreadyPresent(oPC,"brewerdrink") == 1)
      {
@@ -308,7 +308,7 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
      }
      //eVFX = EffectVisualEffect(566);
      eEffect = EffectAbilityDecrease(ABILITY_INTELLIGENCE,1);
-     eEffect2 = EffectSavingThrowIncrease(SAVING_THROW_ALL,2);
+     eEffect2 = EffectSavingThrowIncrease(SAVING_THROW_ALL,1);
      eEffect3 = EffectAbilityIncrease(ABILITY_CONSTITUTION,1);
      eLink = EffectLinkEffects(eEffect,eEffect2);
      eLink = EffectLinkEffects(eLink,eEffect3);
@@ -318,8 +318,7 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
      ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oPC, 300.0);
      AssignCommand(oPC, ActionPlayAnimation(ANIMATION_FIREFORGET_DRINK,1.0,1.0));
    }
-   else if((sItemResRef == "js_bre_wine") || (sItemResRef == "js_bre_cide")
-   || (sItemResRef == "js_bre_chju") || (sItemResRef == "js_bre_comi") ||
+   else if((sItemResRef == "js_bre_chju") || (sItemResRef == "js_bre_comi") ||
    (sItemResRef == "js_bre_grju") || (sItemResRef == "js_bre_apju"))   //Tier 1 Drink
    {
      if(CheckIfSpellAlreadyPresent(oPC,"brewerdrink") == 1)
@@ -328,8 +327,7 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
        return;
      }
      //eVFX = EffectVisualEffect(566);
-     eEffect = EffectAbilityDecrease(ABILITY_INTELLIGENCE,1);
-     eEffect2 = EffectSavingThrowIncrease(SAVING_THROW_WILL,2);
+     eEffect2 = EffectSavingThrowIncrease(SAVING_THROW_ALL,1);
      eLink = EffectLinkEffects(eEffect,eEffect2);
      //eLink = EffectLinkEffects(eVFX,eLink);
      eLink = TagEffect(eLink,"brewerdrink");

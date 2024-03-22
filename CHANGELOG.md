@@ -9,11 +9,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - New script for DTS blockers that destroys them all in one interaction
 - Added DTS system to Mylocks
-- New Mylocks and Mynocks quest
+- New Mylocks Inner Sanctum area
+- New Mylocks and Mynocks quest in Mylock Hills
 
 ### Changed
 - Howness: Changed Morgan & Sons to Vetzer Storage
-- Minor tweaks to Mylock Hills and Dragon's Junction
+- Mylock Hills, Ruins, and Living Quarters have all been adjusted to create new dungeon flow and add DTS elements
+- Minor tweaks to Dragon's Junction
+- Mylocks have had their CR increased to better reflect their difficulty
 - Increased Dungeon Door XP from DC x 2 to DC x 5 to better match DTS
 
 ### Fixed

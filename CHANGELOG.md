@@ -8,15 +8,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - New script for DTS blockers that destroys them all in one interaction
+- Added DTS system to Mylocks
+- New Mylocks and Mynocks quest
 
 ### Changed
 - Howness: Changed Morgan & Sons to Vetzer Storage
 - Minor tweaks to Mylock Hills and Dragon's Junction
+- Increased Dungeon Door XP from DC x 2 to DC x 5 to better match DTS
 
 ### Fixed
 - Fixed an issue with DTS NPCs being locked in male pronouns
 - DTS item/bosses categorization
 - Changed epic items are actually changed now
+- Fixed a few PLC descriptions
+- Replaced the bank doors in OI Bank
 
 ## [4.0.0 - 2024-02-25]
 

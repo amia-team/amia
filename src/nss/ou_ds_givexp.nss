@@ -25,7 +25,7 @@ void main(){
 
     object oPC = GetLastUnlocked();
     int nDC    = GetLockUnlockDC( OBJECT_SELF );
-    int nXP    = nDC * 2;
+    int nXP    = nDC * 5;
 
     if ( GetLocalInt( OBJECT_SELF, GetPCPublicCDKey( oPC, TRUE ) ) != 1 ){
 

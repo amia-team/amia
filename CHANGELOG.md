@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Changed epic items are actually changed now
 - Fixed a few PLC descriptions
 - Replaced the bank doors in OI Bank
+- Fixed typo in Merchant Storage Chests Convos
 
 ## [4.0.0 - 2024-02-25]
 

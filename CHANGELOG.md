@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [4.0.01 - 2024-03-24]
+
+### Added
 - New script for DTS blockers that destroys them all in one interaction
 - Added DTS system to Mylocks
 - New Mylocks Inner Sanctum area
@@ -33,7 +41,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Vassal Heartbeat script corrected
 - Removed another defunct NPC
 
-## [4.0.0 - 2024-02-25]
+## [4.0.0 - 2024-03-16]
 
 ### Added
 - Moved an NPC from EP to Belenoth.

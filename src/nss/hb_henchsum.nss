@@ -36,7 +36,7 @@ void main()
         location hench  = GetLocation(OBJECT_SELF);
 
         if(GetIsObjectValid(GetHenchman(pc, 1)) || GetIsObjectValid(GetAssociate(4, pc, 1))){
-            if(GetHenchman(pc, 1) != OBJECT_SELF && GetTag(GetHenchman(pc, 1)) != "swarm_summon"){
+            if(GetHenchman(pc, 1) != OBJECT_SELF && GetTag(GetHenchman(pc, 1)) != "swarm_summon" && GetSubString(GetTag(GetHenchman(pc, 1)),0,11) != "undead_hen_"){
                 ApplyEffectAtLocation(DURATION_TYPE_INSTANT, unsummon, hench);
                 DestroyObject(OBJECT_SELF, 0.1);
                 SendMessageToPC(pc, "You cannot use your Vassal with another summon.");

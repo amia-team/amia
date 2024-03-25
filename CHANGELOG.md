@@ -18,14 +18,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Minor tweaks to Dragon's Junction
 - Mylocks have had their CR increased to better reflect their difficulty
 - Increased Dungeon Door XP from DC x 2 to DC x 5 to better match DTS
+- Adjusted the tiers for Brewer job system drinks
+- Added PM henchmen to exception for custom summon despawning
 
 ### Fixed
-- Fixed an issue with DTS NPCs being locked in male pronouns
+- An issue with DTS NPCs being locked in male pronouns
 - DTS item/bosses categorization
 - Changed epic items are actually changed now
 - Fixed a few PLC descriptions
 - Replaced the bank doors in OI Bank
-- Fixed typo in Merchant Storage Chests Convos
+- Typos in job system recipe script (platnium > platinum)
+- Typo in Merchant Storage Chests Convos
+- Custom Summon AI corrected
+- Vassal Heartbeat script corrected
+- Removed another defunct NPC
 
 ## [4.0.0 - 2024-02-25]
 

@@ -20,14 +20,12 @@ void main(){
             SetLocalInt( OBJECT_SELF, "active", 1 );
             ActionPlayAnimation (ANIMATION_PLACEABLE_ACTIVATE);
             FloatingTextStringOnCreature("The lever creates a mechanized grinding sound.", oPC);
-            SendMessageToPC(oPC, "active="+IntToString(GetLocalInt( OBJECT_SELF, "active" )));
         }
         else
         {
             ActionPlayAnimation (ANIMATION_PLACEABLE_DEACTIVATE);
             SetLocalInt( OBJECT_SELF, "active", 0 );
             FloatingTextStringOnCreature("A mechanized grinding sound stops.", oPC);
-            SendMessageToPC(oPC, "active="+IntToString(GetLocalInt( OBJECT_SELF, "active" )));
         }
 
     }
@@ -36,7 +34,6 @@ void main(){
     {
     object oPC   = GetClickingObject( );
 
-        SendMessageToPC(oPC, "Door found. Initializing.");
         if ( !GetIsPC(oPC) ){ return; }
 
         object oLever1 = GetNearestObjectByTag( "lj_doorlever_1" );
@@ -44,9 +41,6 @@ void main(){
 
         int nState1 = GetLocalInt( oLever1, "active" );
         int nState2 = GetLocalInt( oLever2, "active" );
-
-        SendMessageToPC(oPC, "Lever 1 active="+IntToString(GetLocalInt( oLever1, "active" )));
-        SendMessageToPC(oPC, "Lever 2 active="+IntToString(GetLocalInt( oLever2, "active" )));
 
         if ( nState1 == 1 && nState2 == 1 ) {
 

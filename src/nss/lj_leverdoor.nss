@@ -56,7 +56,7 @@ void main(){
 
             //DelayCommand( 0.5, PlayAnimation( ANIMATION_PLACEABLE_DEACTIVATE ) );
 
-            object oDoor = GetNearestObjectByTag( "lj_leverdoor" );
+            object oDoor = OBJECT_SELF;//GetNearestObjectByTag( "lj_leverdoor" );
 
             AssignCommand( oDoor, ActionOpenDoor( oDoor ) );
 

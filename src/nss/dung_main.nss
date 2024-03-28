@@ -4,6 +4,7 @@
  - Maverick00053 11/12/2023
 */
 #include "ds_ai2_include"
+#include "dung_inc"
 
 // Function that clears all dungeon tool PLC and NPCs
 void ClearAllPLCnNPC(object oTrans, string sDungeon);
@@ -109,14 +110,8 @@ void ClearAllPLCnNPC(object oTrans, string sDungeon)
     oWayPoint = GetWaypointByTag(sDungeon+"Block"+IntToString(a));
     nWaypointCount = GetLocalInt(oWayPoint,"count");
     sWayPoint = GetTag(oWayPoint);
-    for(i=1;i<nWaypointCount+1;i++) // Runs through all your sub blocker waypoints for each waypoint if they exist
-    {
-      oSubWayPoint = GetWaypointByTag(sWayPoint+"Sub"+IntToString(i));
-      oTemp = GetNearestObjectByTag("dungtool",oSubWayPoint);
-      DestroyObject(oTemp);
-    }
-      oTemp = GetNearestObjectByTag("dungtool",oWayPoint);
-      DestroyObject(oTemp);
+    oTemp = GetNearestObjectByTag(sWayPoint+"PLC",oWayPoint);
+    DestroyBlockers(oTemp);
    }
    // End of Clear BLOCKER Objects
 

@@ -25,6 +25,7 @@
 
 #include "inc_lua"
 #include "nwnx_events"
+#include "webhook_announce"
 
 //-------------------------------------------------------------------------------
 // prototypes
@@ -98,6 +99,11 @@ void main( ){
         // do not repeat this stuff.
         SetLocalInt ( oModule, "server_initialize", 1 );
 
+
+    // Announcer Test
+    SetLocalString(GetModule(),"announcerMessage","Test Launch");
+    DiscordAnnouncer();
+    //
 
 
     // Rolls to see if any invasions will happen this reset. 1/6 chance so about once a day with the 4 hour reset.

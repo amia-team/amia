@@ -102,7 +102,7 @@ void main( ){
 
     // Announcer Test
     SetLocalString(GetModule(),"announcerMessage","Test Launch");
-    DiscordAnnouncer();
+    ExecuteScript("webhook_announce");
     //
 
 

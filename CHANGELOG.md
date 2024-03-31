@@ -12,6 +12,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
+## [4.0.02 - 2024-03-30]
+
+### Added
+- DTS to Sernheim Crypts
+
+### Fixed
+- Henchmen not unsummoning on player death
+- DTS blockers not despawning.
+- OI levers not working right.
+- Purple Worm bug tweaks.
+
 ## [4.0.01 - 2024-03-24]
 
 ### Added

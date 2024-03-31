@@ -29,6 +29,9 @@ void ThousandFacesUnshift( object oPC );
 // Remove Monk Effects on Death
 void RemoveMonkEffects( object oPC );
 
+// Remove Henchmen if they're there.
+int HenchCount(object oPC);
+
 
 //-----------------------------------------------------------------------------
 // main
@@ -147,6 +150,22 @@ void RemoveMonkEffects( object oPC );
 
 
 }// End for vanish
+
+    int dieQty = HenchCount(oVictim);
+    int i = (dieQty);
+    while (i > 0){
+        object henchDie = GetHenchman(oVictim,i);
+        effect unsummon = EffectVisualEffect(VFX_IMP_PDK_RALLYING_CRY);
+        location henchSpot = GetLocation(henchDie);
+
+        if(GetIsObjectValid(henchDie)){
+            ApplyEffectAtLocation(DURATION_TYPE_INSTANT,unsummon,henchSpot);
+            RemoveHenchman(oVictim,henchDie);
+            DestroyObject(henchDie,0.1);
+            i = (i - 1);
+        }
+    }
+
 }
 
 //-----------------------------------------------------------------------------
@@ -269,4 +288,14 @@ void RemoveMonkEffects(object oPC)
 
 
      DeleteLocalInt(oPC,"monkprc");
+}
+
+int HenchCount(object oPC){
+    int henchCount;
+    int h = 1;
+    while (GetIsObjectValid(GetHenchman(oPC,h))){
+        henchCount = h;
+        h = h + 1;
+    }
+    return henchCount;
 }

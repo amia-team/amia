@@ -11,6 +11,7 @@
 //:: Created On: 01/05/2003
 //:://////////////////////////////////////////////////
 #include "X0_INC_HENAI"
+#include "inc_ds_died"
 
 
 
@@ -45,6 +46,12 @@ void main()
         }
     }
 
+    if(GetLocalInt( GetMaster(OBJECT_SELF), DIED_IS_DEAD) == 1 ){
+        effect unsummon = EffectVisualEffect(99);
+        location hench  = GetLocation(OBJECT_SELF);
+        ApplyEffectAtLocation(DURATION_TYPE_INSTANT, unsummon, hench);
+        DestroyObject(OBJECT_SELF, 0.1);
+    }
     // If the henchman is in dying mode, make sure
     // they are non commandable. Sometimes they seem to
     // 'slip' out of this mode

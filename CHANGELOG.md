@@ -7,10 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- DTS to UD Glouras
+- Override2 hak to module
 
 ### Changed
+- Alchemist Elemental Resistance Potions durations extended to 10 minutes from 1 minute
 
 ### Fixed
+- Blackuard Aura of Despair has no VFX (for the caster or the affected target)
 
 ## [4.0.02 - 2024-03-30]
 

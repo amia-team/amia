@@ -80,7 +80,7 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
      eEffect = EffectDamageImmunityIncrease(DAMAGE_TYPE_ELECTRICAL, 25);
      eEffect = TagEffect(eEffect,"potionair");
      AssignCommand(oPC, ActionPlayAnimation(ANIMATION_FIREFORGET_DRINK,1.0,1.0));
-     ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eEffect, oPC, 60.0);
+     ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eEffect, oPC, 600.0);
    }
    else if(sItemResRef == "js_alch_poea")   // Potion of Elemental Resistance: Earth
    {
@@ -92,7 +92,7 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
      eEffect = EffectDamageImmunityIncrease(DAMAGE_TYPE_ACID, 25);
      eEffect = TagEffect(eEffect,"potionearth");
      AssignCommand(oPC, ActionPlayAnimation(ANIMATION_FIREFORGET_DRINK,1.0,1.0));
-     ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eEffect, oPC, 60.0);
+     ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eEffect, oPC, 600.0);
    }
    else if(sItemResRef == "js_alch_pofi")   // Potion of Elemental Resistance: Fire
    {
@@ -104,7 +104,7 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
      eEffect = EffectDamageImmunityIncrease(DAMAGE_TYPE_FIRE, 25);
      eEffect = TagEffect(eEffect,"potionfire");
      AssignCommand(oPC, ActionPlayAnimation(ANIMATION_FIREFORGET_DRINK,1.0,1.0));
-     ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eEffect, oPC, 60.0);
+     ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eEffect, oPC, 600.0);
    }
    else if(sItemResRef == "js_alch_powa")   // Potion of Elemental Resistance: Water
    {
@@ -116,7 +116,7 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
      eEffect = EffectDamageImmunityIncrease(DAMAGE_TYPE_COLD, 25);
      eEffect = TagEffect(eEffect,"potionwater");
      AssignCommand(oPC, ActionPlayAnimation(ANIMATION_FIREFORGET_DRINK,1.0,1.0));
-     ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eEffect, oPC, 60.0);
+     ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eEffect, oPC, 600.0);
    }
    else if(sItemResRef == "js_alch_slee")   // Sleeping Tea
    {

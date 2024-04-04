@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Alchemist Elemental Resistance Potions durations extended to 10 minutes from 1 minute
+- Lowered percentages for DTS objects in Hollow Cavern, lowered the overall Level
+- Custom Summon widget now stores 3 summons the PC can toggle through
 
 ### Fixed
 - Blackuard Aura of Despair has no VFX (for the caster or the affected target)

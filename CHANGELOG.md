@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Blackuard Aura of Despair has no VFX (for the caster or the affected target)
+- Fixed a Resref mismatch for Mystical Woven Material in Epic Crafting Recipes
 
 ## [4.0.02 - 2024-03-30]
 

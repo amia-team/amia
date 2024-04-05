@@ -101,7 +101,7 @@ void main( ){
 
 
     // Announcer Test
-    SetLocalString(GetModule(),"announcerMessage","Test Launch");
+    SetLocalString(GetModule(),"announcerMessage","-- Server Reset Occurred --");
     ExecuteScript("webhook_announce");
     //
 

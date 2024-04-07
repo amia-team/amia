@@ -74,11 +74,6 @@ void main()
     else if(nNode > 0)
     {
 
-
-      //Bug checking
-      SendMessageToPC(oPC,"FEAT SCRIPT LAUNCHED!");
-
-
       if( 7 >= nNode >= 1)
       {
 
@@ -170,8 +165,6 @@ void CreateBolt( object oPC, int nNode){
     int gold = GetGold(oPC);
     object bolt;
 
-    //Bug checking
-    SendMessageToPC(oPC,"CREATEBOLT SCRIPT LAUNCHED!");
     if(nNode == 1)
     {
        if(gold > 500)

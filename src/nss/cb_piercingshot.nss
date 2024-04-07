@@ -29,16 +29,16 @@ void main()
 
     SendMessageToPC(oPC,"Test4");
 
-    int nAB = nClassLevel/2;
-    int    eLoopSpellID;
-    effect eLoop                    = GetFirstEffect(oPC);
-    effect eAB = EffectAttackIncrease(nAB);
+    int nAB      = nClassLevel/2;
+    int eLoopSpellID;
+    effect eLoop = GetFirstEffect(oPC);
+    effect eAB   = EffectAttackIncrease(nAB);
     effect eDam1 = EffectDamageIncrease(nDam,DAMAGE_TYPE_DIVINE);
-    effect eFreeze = EffectForceWalk();
+    effect eIcon = EffectIcon(29);
     effect eLink = EffectLinkEffects(eAB, eDam1);
-    eLink = EffectLinkEffects(eFreeze, eLink);
-    eLink = ExtraordinaryEffect(eLink);
-    eLink = TagEffect(eLink,"piercingshot");
+    eLink        = EffectLinkEffects(eIcon, eLink);
+    eLink        = ExtraordinaryEffect(eLink);
+    eLink        = TagEffect(eLink,"piercingshot");
 
      // Check to make sure the weapon is a crossbow (light or heavy)
    if((GetBaseItemType(oItem)== BASE_ITEM_HEAVYCROSSBOW) ||(GetBaseItemType(oItem)== BASE_ITEM_LIGHTCROSSBOW))
@@ -76,7 +76,7 @@ void main()
    }
    else
    {
-      SendMessageToPC(oPC,"You can only use this feat with a light, or heavy crossbow.");
+      SendMessageToPC(oPC,"You can only use this feat with a light or heavy crossbow.");
    }
 
 

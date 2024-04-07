@@ -7,17 +7,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-- DTS to UD Glouras
+- DTS to UD Glouras, Southport Sewers
 - Override2 hak to module
+- New Area:
+	- Underdark: Bloodspear Keep Portal Chamber
 
 ### Changed
 - Alchemist Elemental Resistance Potions durations extended to 10 minutes from 1 minute
 - Lowered percentages for DTS objects in Hollow Cavern, lowered the overall Level
 - Custom Summon widget now stores 3 summons the PC can toggle through
+- Area Changes:
+	- Underdark: Bloodspear Keep
+	- Underdark: Bloodspear Keep Interiors
 
 ### Fixed
 - Blackuard Aura of Despair has no VFX (for the caster or the affected target)
 - Fixed a Resref mismatch for Mystical Woven Material in Epic Crafting Recipes
+- Infinite loop bug in henchman scripts
 
 ## [4.0.02 - 2024-03-30]
 

@@ -35,6 +35,7 @@ void main( ){
     int nClassMonk    = GetLevelByClass(5,oPC);
     int nClassDuelist = GetLevelByClass(52,oPC);
     int nClassWarlock = GetLevelByClass(57,oPC);
+    int nClassBG      = GetLevelByClass(31,oPC);
     int nXP           = GetXP( oPC );
     int nHD           = GetHitDice( oPC );
     int nPrevLevel;
@@ -46,6 +47,11 @@ void main( ){
     object oGrandfather = GetItemPossessedBy(oPC,"dd_grandfather");
     int nClassRDD = GetLevelByClass(CLASS_TYPE_DRAGON_DISCIPLE,oPC);
     string sSubrace = GetSubRace(oPC);
+
+    // BG Aura of Despair.
+    if(nClassBG >= 3){
+        ApplyEffectToObject( DURATION_TYPE_PERMANENT, ExtraordinaryEffect( EffectAreaOfEffect( 37, "bg_des_en", "****", "bg_des_ex" ) ), oPC );
+    }
 
     // Checking to make sure RDD and Outsider race cant be together
     if(((nClassRDD >= 1) && ((sSubrace == "Aasimar") || (sSubrace == "Feytouched") || (sSubrace == "Tiefling") ||

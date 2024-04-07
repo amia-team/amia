@@ -21,6 +21,7 @@
 void main(){
 
     object oPC = GetLastRespawnButtonPresser();
+    int nClassBG      = GetLevelByClass(31,oPC);
 
     if (GetLocalInt(oPC, "StasisDeath") == TRUE)
     {
@@ -32,5 +33,10 @@ void main(){
         ResolveNormalRespawn( oPC );
         ExecuteScript("race_effects", oPC);
         ExecuteScript("subrace_effects", oPC);
+    }
+
+    // BG Aura of Despair.
+    if(nClassBG >= 3){
+        ApplyEffectToObject( DURATION_TYPE_PERMANENT, ExtraordinaryEffect( EffectAreaOfEffect( 37, "bg_des_en", "****", "bg_des_ex" ) ), oPC );
     }
 }

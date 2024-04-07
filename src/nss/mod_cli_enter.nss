@@ -36,11 +36,11 @@ int FindPreviousLevel( string sVar )
 }
 
 void main(){
-    int SAVE_LOCATION = FALSE;
+    int SAVE_LOCATION           = FALSE;
     int SAVE_LOCATION_SAFE_ONLY = FALSE;
-    string LOGOUT_LOCATION = "LOGOUT_LOCATION";
-
-    object enteringPlayer = GetEnteringObject();
+    string LOGOUT_LOCATION      = "LOGOUT_LOCATION";
+    object enteringPlayer       = GetEnteringObject();
+    int nClassBG                = GetLevelByClass(31,enteringPlayer);
 
     if(GetIsPlayerBanned(GetPCPublicCDKey(enteringPlayer, TRUE)))
     {
@@ -50,6 +50,11 @@ void main(){
     if(GetIsDM(enteringPlayer))
     {
         return; // Do nothing, for now.
+    }
+
+    // BG Aura of Despair.
+    if(nClassBG >= 3){
+        ApplyEffectToObject( DURATION_TYPE_PERMANENT, ExtraordinaryEffect( EffectAreaOfEffect( 37, "bg_des_en", "****", "bg_des_ex" ) ), enteringPlayer );
     }
 
     object oPCKey = GetItemPossessedBy(enteringPlayer, "ds_pckey");

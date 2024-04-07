@@ -18,7 +18,7 @@
 
 void main()
 {
-    object oPC = GetLastPCRested();
+    object oPC   = GetLastPCRested();
 
     // Remove any lingering DD effects
     effect PCEffect = GetFirstEffect(oPC);
@@ -104,6 +104,12 @@ void main()
     }
     //RDD SR and Immunity Calculations end
 
+    // BG Aura of Despair
+    int nClassBG = GetLevelByClass(31,oPC);
+
+    if(nClassBG >= 3){
+        ApplyEffectToObject( DURATION_TYPE_PERMANENT, ExtraordinaryEffect( EffectAreaOfEffect( 37, "bg_des_en", "****", "bg_des_ex" ) ), oPC );
+    }
 
     int nRestType = GetLastRestEventType( );
 

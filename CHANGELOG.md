@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Lowered percentages for DTS objects in Hollow Cavern, lowered the overall Level
 - Custom Summon widget now stores 3 summons the PC can toggle through
 - Remove force-walk effect from Piercing Shot
+- Make BG Aura of Despair apply automatically on level up, rest, respawn, and client enter with BG level 3
 - Area Changes:
 	- Underdark: Bloodspear Keep
 	- Underdark: Bloodspear Keep Interiors

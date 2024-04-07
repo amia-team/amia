@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Alchemist Elemental Resistance Potions durations extended to 10 minutes from 1 minute
 - Lowered percentages for DTS objects in Hollow Cavern, lowered the overall Level
 - Custom Summon widget now stores 3 summons the PC can toggle through
+- Remove force-walk effect from Piercing Shot
 - Area Changes:
 	- Underdark: Bloodspear Keep
 	- Underdark: Bloodspear Keep Interiors

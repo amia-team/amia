@@ -162,8 +162,8 @@ int HenchCount(object oPC);
             ApplyEffectAtLocation(DURATION_TYPE_INSTANT,unsummon,henchSpot);
             RemoveHenchman(oVictim,henchDie);
             DestroyObject(henchDie,0.1);
-            i = (i - 1);
         }
+        i = (i - 1);
     }
 
 }

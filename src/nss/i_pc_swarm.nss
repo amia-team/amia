@@ -119,9 +119,9 @@ void main (){
                         ApplyEffectAtLocation(DURATION_TYPE_INSTANT,unsummon,swarmSpot);
                         RemoveHenchman(pc,swarmDie);
                         DestroyObject(swarmDie,0.1);
-                        i = (i - 1);
                     }
                 }
+                i = (i - 1);
             }
         SetLocalInt(pc,"swarm_spawned",0);
         SendMessageToPC(pc, "Unsummoned your swarm.");

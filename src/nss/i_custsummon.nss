@@ -186,9 +186,9 @@ void RemoveSummon(object pc){
                     ApplyEffectAtLocation(DURATION_TYPE_INSTANT,unsummon,summonSpot);
                     RemoveHenchman(pc,summonDie);
                     DestroyObject(summonDie,0.1);
-                    i = (i - 1);
                 }
             }
+            i = (i - 1);
         }
     SendMessageToPC(pc, "Unsummoned your summon.");
 }
@@ -204,8 +204,8 @@ void GhostSummon(object pc){
                 if(GetTag(summonGhost) == "cust_summon"){
                     effect ghost = EffectCutsceneGhost();
                     ApplyEffectToObject(DURATION_TYPE_PERMANENT, ghost, summonGhost);
-                    i = (i - 1);
                 }
             }
+            i = (i - 1);
         }
 }

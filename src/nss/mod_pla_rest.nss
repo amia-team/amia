@@ -108,7 +108,7 @@ void main()
     int nClassBG = GetLevelByClass(31,oPC);
 
     if(nClassBG >= 3){
-        ApplyEffectToObject( DURATION_TYPE_PERMANENT, ExtraordinaryEffect( EffectAreaOfEffect( 37, "bg_des_en", "****", "bg_des_ex" ) ), oPC );
+        ApplyEffectToObject( DURATION_TYPE_PERMANENT, ExtraordinaryEffect( EffectAreaOfEffect( 56, "bg_des_en", "****", "bg_des_ex" ) ), oPC );
     }
 
     int nRestType = GetLastRestEventType( );

@@ -37,6 +37,6 @@ void main(){
 
     // BG Aura of Despair.
     if(nClassBG >= 3){
-        ApplyEffectToObject( DURATION_TYPE_PERMANENT, ExtraordinaryEffect( EffectAreaOfEffect( 37, "bg_des_en", "****", "bg_des_ex" ) ), oPC );
+        ApplyEffectToObject( DURATION_TYPE_PERMANENT, ExtraordinaryEffect( EffectAreaOfEffect( 56, "bg_des_en", "****", "bg_des_ex" ) ), oPC );
     }
 }

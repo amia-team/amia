@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
+- Artificer epic item recipes not working
 
 ## [4.0.03 - 2024-04-8]
 

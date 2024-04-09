@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - New Area:
 	- Underdark: Bloodspear Keep Portal Chamber
 - Added in more Scoundrel doors to Southport East/West/Central and Traveller's Rest
+- Added on hit lycan to global bosses, and fluff names
 
 ### Changed
 - Alchemist Elemental Resistance Potions durations extended to 10 minutes from 1 minute

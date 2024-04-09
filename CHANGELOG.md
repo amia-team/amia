@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Override2 hak to module
 - New Area:
 	- Underdark: Bloodspear Keep Portal Chamber
+- Added in more Scoundrel doors to Southport East/West/Central and Traveller's Rest
 
 ### Changed
 - Alchemist Elemental Resistance Potions durations extended to 10 minutes from 1 minute

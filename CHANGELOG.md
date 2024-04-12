@@ -20,6 +20,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Shrine of Velsharoon moved to Calderis Mage Tower
 	- Existing great hall is largely empty and locked to the public
 - Guards have been stationed inside OI: Dragon's Eye Lighthouse
+- OI: Eastern Plains Construction beginning
+- Moved the stranded book merchant to OI: Mage Tower; his body guards are off duty
 
 ### Fixed
 - Artificer epic item recipes not working

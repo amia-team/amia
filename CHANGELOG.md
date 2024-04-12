@@ -7,11 +7,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- OI: Portal Chamber
+- OI: Ebon Wyrm Guildhall
+- OI: Homes
+- Ebon Wyrm Guild guards and equipment
 
 ### Changed
+- Obsidian Isle: Calderis, Great Hall reshuffle:
+	- Portal chamber moved to its own building outside the gates
+	- Ebon Wyrm Guildhall created near the southeastern gate of Calderis
+	- Library of the Vaunted portal moved to Calderis Mage Tower
+	- Shrine of Velsharoon moved to Calderis Mage Tower
+	- Existing great hall is largely empty and locked to the public
+- Guards have been stationed inside OI: Dragon's Eye Lighthouse
 
 ### Fixed
 - Artificer epic item recipes not working
+- OI: Calderis should now have working rental homes
+- Stinkpot Warrens granite node fixed
+- Amia Frontier: East silverbark node fixed
+- Typos in Burning Crypt Unknown area
 
 ## [4.0.03 - 2024-04-8]
 

@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - OI: Ebon Wyrm Guildhall
 - OI: Homes
 - Ebon Wyrm Guild guards and equipment
+- Global (Elyon) Bosses Deployed
 
 ### Changed
 - Obsidian Isle: Calderis, Great Hall reshuffle:

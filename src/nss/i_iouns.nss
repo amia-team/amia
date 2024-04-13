@@ -63,15 +63,12 @@ void main()
 
     if( GetResRef(oIoun) == "elyon_loot_13")
     {
-        itemproperty ipEvasion = ItemPropertyBonusFeat(226);
-        object oItem = GetItemInSlot(INVENTORY_SLOT_CHEST, oPC);
-        IPSafeAddItemProperty(oItem, ipEvasion, 900.0, X2_IP_ADDPROP_POLICY_IGNORE_EXISTING, FALSE, FALSE);
-
         eVFX = EffectVisualEffect(691);
-        eVFX = UnyieldingEffect( eVFX );
-        eVFX = TagEffect( eVFX, "IounStone");
-        ApplyEffectToObject( DURATION_TYPE_TEMPORARY, eVFX, oPC, 900.0);
-        FloatingTextStringOnCreature("*This ioun lasts 15 minutes before needing to be recharged, and refired*",oPC);
+        eBonus1 = EffectBonusFeat(FEAT_EVASION);
+        eLink = EffectLinkEffects( eVFX, eBonus1 );
+        eLink = SupernaturalEffect( eLink );
+        eLink = TagEffect( eLink, "IounStone");
+        ApplyEffectToObject( DURATION_TYPE_PERMANENT, eLink, oPC );
         return;
     }
 

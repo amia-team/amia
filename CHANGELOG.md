@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Global (Elyon) Bosses Deployed
 
 ### Changed
+- Koholingen, Gregory's Landing, Prancing Stallion updated
 - Obsidian Isle: Calderis, Great Hall reshuffle:
 	- Portal chamber moved to its own building outside the gates
 	- Ebon Wyrm Guildhall created near the southeastern gate of Calderis

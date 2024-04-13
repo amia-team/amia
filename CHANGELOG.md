@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - OI: Homes
 - Ebon Wyrm Guild guards and equipment
 - Global (Elyon) Bosses Deployed
+- New Global Loot Made (15 Total)
 
 ### Changed
 - Obsidian Isle: Calderis, Great Hall reshuffle:

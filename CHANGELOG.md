@@ -7,12 +7,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [4.1.0 - 2024-04-15]
+
+### Added
 - OI: Portal Chamber
 - OI: Ebon Wyrm Guildhall
 - OI: Homes
 - Ebon Wyrm Guild guards and equipment
 - Global (Elyon) Bosses Deployed
 - New Global Loot Made (15 Total)
+- New jungle tileset
+- 6 HD skyboxes
+- Dice roller in player tools NUI window
 
 ### Changed
 - Obsidian Isle: Calderis, Great Hall reshuffle:
@@ -24,6 +35,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Guards have been stationed inside OI: Dragon's Eye Lighthouse
 - OI: Eastern Plains Construction beginning
 - Moved the stranded book merchant to OI: Mage Tower; his body guards are off duty
+- Updates to Gregory's Landing: Prancing Stallion
 
 ### Fixed
 - Artificer epic item recipes not working
@@ -31,6 +43,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Stinkpot Warrens granite node fixed
 - Amia Frontier: East silverbark node fixed
 - Typos in Burning Crypt Unknown area
+- Some Ancient Chest DTS cooldowns and loot generation settings
 
 ## [4.0.03 - 2024-04-8]
 

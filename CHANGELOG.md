@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
+- Primary Farmers, Ranchers, and Trappers should now correctly be able to spawn 2 job nodes
 
 ## [4.1.0 - 2024-04-15]
 

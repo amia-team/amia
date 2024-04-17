@@ -12,10 +12,6 @@
 
 const int RESOURCE_XP    = 100;
 
-const int MAX_CROPS = 1; // Sets the max amount of crops one player can grow at at time
-const int MAX_ANIMALS = 1; // Sets the max amount of animals one player can grow at at time
-const int MAX_TRAPS = 1; // Sets the max amount of traps one player can have out
-
 void LaunchConvo( object oPC); // launches journal convo
 
 void DS_CHECK_SET( object oPC, object oJobJournal, object oTargeted); // Runs a check and sets the ds_check variables on PC for the dialogue
@@ -287,6 +283,11 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
     int nTempHp = nPCLevel*2;
     int eLoopSpellID;
     int sWrittenAlready;
+
+    int MAX_CROPS = 2; // Sets the max amount of crops one player can grow at at time
+    int MAX_ANIMALS = 2; // Sets the max amount of animals one player can grow at at time
+    int MAX_TRAPS = 2; // Sets the max amount of traps one player can have out
+
     string sTalkCustom;
     string sResource;
     string sPrimaryJob = GetLocalString(oJobJournal,"primaryjob");
@@ -297,6 +298,19 @@ void JobJournal( object oPC, object oJobJournal, int nNode, location lTargeted, 
     effect eSecondaryEffect;
     effect eLink;
     effect eLoop;
+
+    if(sSecondaryJob == "Farmer")
+    {
+        MAX_CROPS = 1;
+    }
+    else if(sSecondaryJob == "Rancher")
+    {
+        MAX_ANIMALS = 1;
+    }
+    else if(sSecondaryJob == "Hunter")
+    {
+        MAX_TRAPS = 1;
+    }
 
     int nXP = RESOURCE_XP;
 

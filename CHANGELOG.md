@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Obsidian Isle: Calderis, Ebon Wyrm Guild:
 	- Add Sal'dock
 	- Change Xarzith's location and dialogue
+- Adjusted locations of some of the global bosses
 
 ### Fixed
 - Primary Farmers, Ranchers, and Trappers should now correctly be able to spawn 2 job nodes

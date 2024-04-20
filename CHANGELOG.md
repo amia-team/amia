@@ -9,9 +9,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Lowered DTS percentages for Khem Sand Minotaurs
+- Obsidian Isle: Calderis, Ebon Wyrm Guild:
+	- Add Sal'dock
+	- Change Xarzith's location and dialogue
 
 ### Fixed
 - Primary Farmers, Ranchers, and Trappers should now correctly be able to spawn 2 job nodes
+- Floating PLCs in player housing
 
 ## [4.1.0 - 2024-04-15]
 

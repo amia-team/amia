@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Epic Loot Merchant Conversation (weapons outstanding)
 
 ### Changed
 - Lowered DTS percentages for Khem Sand Minotaurs
@@ -14,10 +15,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Add Sal'dock
 	- Change Xarzith's location and dialogue
 - Adjusted locations of some of the global bosses
+- Updated the Ridgewood government building for plot purposes
+- Made the Triumvir music less spooky
 
 ### Fixed
 - Primary Farmers, Ranchers, and Trappers should now correctly be able to spawn 2 job nodes
 - Floating PLCs in player housing
+- Fixed a quest item in the Skull Peaks beetle cave
+- Tweaked the generic give_item script
 
 ## [4.1.0 - 2024-04-15]
 

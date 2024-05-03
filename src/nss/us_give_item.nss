@@ -48,8 +48,8 @@ void main(){
     else if ((nOncePerReset == 1) && (GetLocalInt(OBJECT_SELF, sPubKey) == 0))
         {
             //Set a variable on this object saying that the PC has spawned this once this reset
-            SetLocalInt( OBJECT_SELF, sPubKey, 1 );
             ds_create_item( sResRef, oPC );
+            SetLocalInt( OBJECT_SELF, sPubKey, 1 );
             SendMessageToPC( oPC, "You cannot acquire any more of this item this reset!");
         }
     else

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Guards to Settlement Guard area
 - Epic Loot Merchant Conversation (weapons outstanding)
 
 ### Changed

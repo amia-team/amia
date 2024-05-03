@@ -14,6 +14,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Obsidian Isle: Calderis, Ebon Wyrm Guild:
 	- Add Sal'dock
 	- Change Xarzith's location and dialogue
+	- Music tweaks
+	- Tweak to Xarzith's description (denoting he's the guildmaster)
+	- Added Enhanced recall NPCs
+- Obsidian Isle: Eastern Plains progression, Mining trainer
+- Obsidian Isle: Kobold Warren: Mining trainer
 - Adjusted locations of some of the global bosses
 - Updated the Ridgewood government building for plot purposes
 - Made the Triumvir music less spooky
@@ -23,6 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Floating PLCs in player housing
 - Fixed a quest item in the Skull Peaks beetle cave
 - Tweaked the generic give_item script
+- Fixed OI Book Merchant's name/description/dialogue to remove mentions of being stranded
 
 ## [4.1.0 - 2024-04-15]
 

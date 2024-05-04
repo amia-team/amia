@@ -23,6 +23,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Adjusted locations of some of the global bosses
 - Updated the Ridgewood government building for plot purposes
 - Made the Triumvir music less spooky
+- Updated Gauntlet of Terror and Frozen Barrows
+	- New PLCs inside Gauntlet
+ 	- New Job system triggers
+ 	- New spawn point of creature (Maximus)
+  	- Update Maximus
+  	- Removed old spawn point and VFX  
 
 ### Fixed
 - Primary Farmers, Ranchers, and Trappers should now correctly be able to spawn 2 job nodes

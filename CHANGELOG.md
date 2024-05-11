@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Epic Loot Merchant Conversation (weapons outstanding)
 
 ### Changed
+- Replaced Crouching Lemur Guards with new Settlement Guards
+- Replaced Wiltun Guards with the new Settlement Guards
 - Lowered DTS percentages for Khem Sand Minotaurs
 - Obsidian Isle: Calderis, Ebon Wyrm Guild:
 	- Add Sal'dock

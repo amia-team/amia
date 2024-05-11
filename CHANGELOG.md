@@ -30,6 +30,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
   	- Update Maximus
   	- Removed old spawn point and VFX  
 - Duergar are now allowed in Bloodspear Keep
+- Fixed Arcane Defiance Armor crafting receipts to properly use mythal
+- Peerage summons fixed, evasion feat added
 
 ### Fixed
 - Primary Farmers, Ranchers, and Trappers should now correctly be able to spawn 2 job nodes

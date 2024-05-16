@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Added Enhanced recall NPCs
 - Obsidian Isle: Eastern Plains progression, Mining trainer
 - Obsidian Isle: Kobold Warren: Mining trainer
+- Obsidian Isle: Great Hall/Port; event decoration
 - Adjusted locations of some of the global bosses
 - Updated the Ridgewood government building for plot purposes
 - Made the Triumvir music less spooky

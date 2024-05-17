@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Guards to Settlement Guard area
 - Epic Loot Merchant Conversation (weapons outstanding)
+- Traveler's Rest Portal Building Interior
 
 ### Changed
 - Replaced Crouching Lemur Guards with new Settlement Guards

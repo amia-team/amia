@@ -952,13 +952,13 @@ void RangedCraftsmanConverter(object oPC, object oBench, int nNode)
       switch(nNode)
       {
 
-        case 1: sProduct = "isaac_hcbow"; sIngredient1 = "nep_magicalhemp"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 2: sProduct = "isaac_lcbow"; sIngredient1 = "nep_magicalhemp"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 3: sProduct = "seek_hcbow"; sIngredient1 = "nep_magicalhemp"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 4: sProduct = "seek_lcbow"; sIngredient1 = "nep_magicalhemp"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 5: sProduct = "seek_lbow"; sIngredient1 = "nep_magicalhemp"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 6: sProduct = "seek_sbow"; sIngredient1 = "nep_magicalhemp"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
-        case 7: sProduct = "seek_sling"; sIngredient1 = "nep_magicalhemp"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 1: sProduct = "isaac_hcbow"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 2: sProduct = "isaac_lcbow"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 3: sProduct = "seek_hcbow"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 4: sProduct = "seek_lcbow"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 5: sProduct = "seek_lbow"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 6: sProduct = "seek_sbow"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
+        case 7: sProduct = "seek_sling"; sIngredient1 = "epic_ore"; sIngredient2 = "none"; sType = "epic"; sMaterial = "none"; nCost = 50000; nRetainItem = 1; break;
         case 8: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_psbdc"; sIngredient2 = "js_arch_bow"; sType = "epx_weap_bowtm"; sPlaceableName = "<c¦ÿ©>Bow of the Tempest</c>"; sIngredient2Type = "duskwood"; nCost = 10000; nRetainItem=1; break;
         case 9: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wrc"; sIngredient2 = "js_arch_dart"; sType = "epx_weap_earbl"; sPlaceableName = "<c¦ÿ©>Earblasters</c>"; sIngredient2Type = "duskwood"; nCost = 10000; nRetainItem=1; break;
         case 10: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_gofbc"; sIngredient2 = "js_arch_shrk"; sType = "epx_weap_frcut"; sPlaceableName = "<c¦ÿ©>Frozen Cutters</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
@@ -2205,7 +2205,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
       if(sIngredient1 == "epic_ore")
       {
         if((GetResRef(oItemInChest) == "nep_largemagical") || (GetResRef(oItemInChest) == "nep_mediummagic") ||
-        (GetResRef(oItemInChest) == "nep_smallmagical"))
+        (GetResRef(oItemInChest) == "nep_smallmagical") || (GetResRef(oItemInChest) == "nep_magicalhemp"))
         {
            nIngredient1Found = 1;
            oIngredient1 = oItemInChest;
@@ -2214,7 +2214,7 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
       if(sIngredient2 == "epic_ore")
       {
         if((GetResRef(oItemInChest) == "nep_largemagical") || (GetResRef(oItemInChest) == "nep_mediummagic") ||
-        (GetResRef(oItemInChest) == "nep_smallmagical"))
+        (GetResRef(oItemInChest) == "nep_smallmagical") || (GetResRef(oItemInChest) == "nep_magicalhemp"))
         {
            nIngredient2Found = 1;
            oIngredient2 = oItemInChest;

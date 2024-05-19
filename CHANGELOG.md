@@ -36,6 +36,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Duergar are now allowed in Bloodspear Keep
 - Fixed Arcane Defiance Armor crafting receipts to properly use mythal
 - Peerage summons fixed, evasion feat added
+- Magical Hemp/Rope, Small Ore, Medium Ore, and Large Ore are now all one. It is now dropped as Magical Ore. These can be used to
+make any Warforged, Truestrike, and Surestrike weapon. You can also now use Small/Medium/Large Ore + Hemp/Rope to make any of the weapons.
+- Purple Worm will now drop a Magical Ore always, and a random epic resource
+- Epic Loot Bin has been reduced by 3 with the reworking of the ore/hemp drops. Meaning more of the resources should be appearing and 
+less magical ore bloat. 
 
 ### Fixed
 - Primary Farmers, Ranchers, and Trappers should now correctly be able to spawn 2 job nodes

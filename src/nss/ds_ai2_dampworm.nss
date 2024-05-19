@@ -16,6 +16,7 @@
 // includes
 //-------------------------------------------------------------------------------
 #include "ds_ai2_include"
+#include "inc_ds_ondeath"
 
 
 // These values dictate your Waypoint count for respawning Worm and Worm Mobs
@@ -358,31 +359,12 @@ void GenerateWormLoot(object oWorm)
    oLoot = CreateItemOnObject("js_gem_rsap", oWorm,nRandom1); // Raw Sapphire
    SetDroppableFlag(oLoot,TRUE);
 
-   int nRandomEpic1 = Random(4)+1;
-   int nRandomEpic2 = Random(4)+1;
-   string sEpic1;
-   string sEpic2;
+   // Epic Drops
 
-   switch(nRandomEpic1)  // Epic Loot 1
-   {
-     case 1: sEpic1 = "nep_largemagical"; break;
-     case 2: sEpic1 = "nep_magicalhemp"; break;
-     case 3: sEpic1 = "nep_mediummagic"; break;
-     case 4: sEpic1 = "nep_smallmagical"; break;
-   }
-
-   switch(nRandomEpic2)  // Epic Loot 2
-   {
-     case 1: sEpic2 = "nep_largemagical"; break;
-     case 2: sEpic2 = "nep_magicalhemp"; break;
-     case 3: sEpic2 = "nep_mediummagic"; break;
-     case 4: sEpic2 = "nep_smallmagical"; break;
-   }
-
-   oLoot = CreateItemOnObject(sEpic1, oWorm);
+   oLoot = CreateItemOnObject("nep_largemagical", oWorm);
    SetDroppableFlag(oLoot,TRUE);
 
-   oLoot = CreateItemOnObject(sEpic2, oWorm);
+   oLoot = GenerateEpicLootReturn(oWorm);
    SetDroppableFlag(oLoot,TRUE);
 
 }

@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [4.2.0 - 2024-05-20]
+
+### Added
 - Guards to Settlement Guard area
 - Epic Loot Merchant Conversation (weapons outstanding)
 - Traveler's Rest Portal Building Interior
@@ -48,6 +56,7 @@ less magical ore bloat.
 - Fixed a quest item in the Skull Peaks beetle cave
 - Tweaked the generic give_item script
 - Fixed OI Book Merchant's name/description/dialogue to remove mentions of being stranded
+- Loading Screens (hopefully)
 
 ## [4.1.0 - 2024-04-15]
 

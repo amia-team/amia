@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Area Changes:
+	- Positive Energy Plane: Unstable Rifts
+	- Skull Peaks: Trummels
+	- Traveller's Rest: Portal building
+	- Plane of Shadow: Shadowscape
+	- Barak Runedar: The Frozen Wastes, The Northern Cape
+	- Blue Lagoon
+	- Ruathym: Ostland, Ostdur
+- Updated Blue Lute Pirate Conversation
 
 ### Fixed
 

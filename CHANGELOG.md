@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- 16 creature models
+- 1 handheld mirror model (4 colors, Club)
+- 1 player portrait
 
 ### Changed
 - Area Changes:
@@ -20,6 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updated Blue Lute Pirate Conversation
 
 ### Fixed
+- Module information and palettes
 
 ## [4.2.0 - 2024-05-20]
 

@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 16 creature models
 - 1 handheld mirror model (4 colors, Club)
 - 1 player portrait
+- Epic Merchant on Palette
 
 ### Changed
 - Area Changes:
@@ -20,10 +21,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Barak Runedar: The Frozen Wastes, The Northern Cape
 	- Blue Lagoon
 	- Ruathym: Ostland, Ostdur
+	- Removed OI Event Stuff
+	- Updated OI Guard Armor
+	- Removed Belenoth/OI Portal
+	- OI Eastern Plains Progress
 - Updated Blue Lute Pirate Conversation
 
 ### Fixed
 - Module information and palettes
+- Removed floating rock in Trummels
+- Fixed naked folk in the OI Guild
 
 ## [4.2.0 - 2024-05-20]
 

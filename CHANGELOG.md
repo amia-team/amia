@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Sounds to Traveler's Rest Portal Building
 - 16 creature models
 - 1 handheld mirror model (4 colors, Club)
 - 1 player portrait
@@ -14,6 +15,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Area Changes:
+	- wiltun
+	- Traveler's Rest: Wave and Serpent
 	- Positive Energy Plane: Unstable Rifts
 	- Skull Peaks: Trummels
 	- Traveller's Rest: Portal building

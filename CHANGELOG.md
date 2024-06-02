@@ -25,9 +25,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Blue Lagoon
 	- Ruathym: Ostland, Ostdur
 	- Removed OI Event Stuff
-	- Updated OI Guard Armor
+	- Updated OI Guard Armor, various areas
 	- Removed Belenoth/OI Portal
 	- OI Eastern Plains Progress
+	- Shadowscape Portal Room
+	- Shadowscape borders expansion to allow circumventing the city
 - Updated Blue Lute Pirate Conversation
 
 ### Fixed

@@ -7,12 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Sounds to Traveler's Rest Portal Building
 - 16 creature models
 - 1 handheld mirror model (4 colors, Club)
 - 1 player portrait
+- Epic Merchant on Palette
 
 ### Changed
 - Area Changes:
+	- wiltun
+	- Traveler's Rest: Wave and Serpent
 	- Positive Energy Plane: Unstable Rifts
 	- Skull Peaks: Trummels
 	- Traveller's Rest: Portal building
@@ -20,10 +24,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Barak Runedar: The Frozen Wastes, The Northern Cape
 	- Blue Lagoon
 	- Ruathym: Ostland, Ostdur
+	- Removed OI Event Stuff
+	- Updated OI Guard Armor, various areas
+	- Removed Belenoth/OI Portal
+	- OI Eastern Plains Progress
+	- Shadowscape Portal Room
+	- Shadowscape borders expansion to allow circumventing the city
 - Updated Blue Lute Pirate Conversation
 
 ### Fixed
 - Module information and palettes
+- Removed floating rock in Trummels
+- Fixed naked folk in the OI Guild
 
 ## [4.2.0 - 2024-05-20]
 

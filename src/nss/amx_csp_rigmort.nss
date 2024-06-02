@@ -52,7 +52,7 @@ void main()
         return;
 
     float fDelay;
-    int DAMAGE_LEVEL_CAP = 20;
+    int DAMAGE_LEVEL_CAP = 15;
 
     int nCL = GetNewCasterLevel(OBJECT_SELF);
     int nDmg = nCL;

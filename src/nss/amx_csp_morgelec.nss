@@ -48,7 +48,8 @@ void main()
 
     //Set up effects
     effect eShield = EffectDamageShield(nDamage, d6(nDice), DAMAGE_TYPE_ELECTRICAL);
-    effect eResistance = EffectDamageResistance(DAMAGE_TYPE_ELECTRICAL, nResist, 0);
+    //effect eResistance = EffectDamageResistance(DAMAGE_TYPE_ELECTRICAL, nResist, 0);
+    effect eResistance = EffectDamageImmunityIncrease(DAMAGE_TYPE_ELECTRICAL, nResist);
     effect eElecDmg = EffectDamageIncrease(DAMAGE_BONUS_1d8, DAMAGE_TYPE_ELECTRICAL);
     effect eMoveInc = EffectMovementSpeedIncrease(50);
     effect eDur = EffectVisualEffect(VFX_DUR_CESSATE_POSITIVE);

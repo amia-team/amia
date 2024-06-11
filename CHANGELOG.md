@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-- Sounds to Traveler's Rest Portal Building
+- Sounds to Traveller's Rest Portal Building
 - 16 creature models
 - 1 handheld mirror model (4 colors, Club)
 - 1 player portrait
@@ -15,12 +15,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Area Changes:
-	- wiltun
-	- Traveler's Rest: Wave and Serpent
+	- Ruathym: Fortress Wiltun
+	- Traveller's Rest: The Wave and Serpent
 	- Positive Energy Plane: Unstable Rifts
 	- Skull Peaks: Trummels
 	- Traveller's Rest: Portal building
 	- Plane of Shadow: Shadowscape
+	- Skull Peaks: Trummels
 	- Barak Runedar: The Frozen Wastes, The Northern Cape
 	- Blue Lagoon
 	- Ruathym: Ostland, Ostdur

@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Area Changes:
+	- Greengarden: The Old City
+	- Malarfang: Ruins
 	- Ruathym: Fortress Wiltun
 	- Traveller's Rest: The Wave and Serpent
 	- Positive Energy Plane: Unstable Rifts

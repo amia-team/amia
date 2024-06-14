@@ -34,6 +34,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- OI Eastern Plains Progress
 	- Shadowscape Portal Room
 	- Shadowscape borders expansion to allow circumventing the city
+	- Shadowscape/OI portals
 - Updated Blue Lute Pirate Conversation
 
 ### Fixed

@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [4.3.0 - 2024-06-15]
+
+### Added
 - Other phenotypes for 3 robe models
 - Sounds to Traveller's Rest Portal Building
 - 16 creature models

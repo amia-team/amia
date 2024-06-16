@@ -17,7 +17,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Area Changes:
 	- Greengarden: The Old City
-	- Malarfang: Ruins
+	- Malarfang: Ruins (Also renamed to Malarfang: Moonpier Outpost)
+	- Moonpier
 	- Ruathym: Fortress Wiltun
 	- Traveller's Rest: The Wave and Serpent
 	- Positive Energy Plane: Unstable Rifts
@@ -36,6 +37,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Shadowscape borders expansion to allow circumventing the city
 	- Shadowscape/OI portals
 - Updated Blue Lute Pirate Conversation
+- Double XP is permanent for the time being. Happy Summer!
 
 ### Fixed
 - Module information and palettes

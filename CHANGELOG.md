@@ -8,9 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - 1 player portrait
+- Tressym portrait
 
 ### Changed
-- Gave black cat model wing compatibility (Tressym!)
+- Gave black and tabby cat models wing compatibility (Tressym!)
+- Replace white cat model with updated pretty one (with wing compatibility, too)
 
 ### Fixed
 

@@ -7,8 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- 1 player portrait
 
 ### Changed
+- Gave black cat model wing compatibility (Tressym!)
 
 ### Fixed
 

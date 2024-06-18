@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Replace white cat model with updated pretty one (with wing compatibility, too)
 
 ### Fixed
+- Bug with merchant boxes that caused a server crash
 
 ## [4.3.0 - 2024-06-15]
 

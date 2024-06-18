@@ -188,7 +188,6 @@ void MerchantBox( object oBox, object oPC, int nNode)
 
        if(!GetIsObjectValid(oInventoryItem))
        {
-         SpawnBoxAmount( oJobJournal, oBox, oPC, nChestNumber, sStoredItem, nAmount);
          SendMessageToPC(oPC, "You have removed "+IntToString(nAmount)+" resources and deleted your chest!");
          DeleteLocalInt(oJobJournal,"storagebox"+IntToString(nChestNumber)+"amount");
          DeleteLocalString(oJobJournal,"storagebox"+IntToString(nChestNumber));

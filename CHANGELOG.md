@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Tressym portrait
 
 ### Changed
+- f_voice command will now work on Henchmen, too: Use h subcommand. Will target 1st Henchman, or 2nd Henchman if your 1st is a Vassal
 - Gave black and tabby cat models wing compatibility (Tressym!)
 - Replace white cat model with updated pretty one (with wing compatibility, too)
 - Aurilite Warriors (Barak Runedar):

@@ -13,6 +13,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Gave black and tabby cat models wing compatibility (Tressym!)
 - Replace white cat model with updated pretty one (with wing compatibility, too)
+- Aurilite Warriors (Barak Runedar):
+	- Removed massive crits
+	- Made vulnerable to fire
+	- Reduced fortitude
+	- Reduced HP
+- Aurilite Mages (Barak Runedar):
+	- Removed blindness/deafness
+- Aurilite Ice Elementals (Barak Runedar):
+	- Shifted bulk of damage to cold damage (was physical)
 
 ### Fixed
 - Bug with merchant boxes that caused a server crash

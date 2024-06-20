@@ -23,6 +23,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Removed blindness/deafness
 - Aurilite Ice Elementals (Barak Runedar):
 	- Shifted bulk of damage to cold damage (was physical)
+- Adjusted Crouching Lemur guards on the Palette
+- Removed and edited some Crouching Lemur guard equipment
+- Area Changes:
+	- Skull Peaks: Crouching Lemur Monastery
+	- Skull Peaks: Place of meeting
+	- Skull Peaks: Lower Mountains
+	- Settlement Guards (OOC area)
 
 ### Fixed
 - Bug with merchant boxes that caused a server crash

@@ -42,6 +42,7 @@ const string SETTLEMENT_36 = "Traveller's Rest";
 const string SETTLEMENT_37 = "The Triumvir";
 const string SETTLEMENT_38 = "Winya Ravana";
 const string SETTLEMENT_39 = "Zanshibon";
+const string SETTLEMENT_40 = "Crouching Lemur Monastery";
 
 //void main (){}
 
@@ -89,6 +90,7 @@ string SettlementName(int settlement){
         case 37: settlementName = "The Triumvir"; break;
         case 38: settlementName = "Winya Ravana"; break;
         case 39: settlementName = "Zanshibon"; break;
+        case 40: settlementName = "Crouching Lemur Monastery"; break;
         default: settlementName = "Error: No Settlement Found!"; break;
     }
     return settlementName;

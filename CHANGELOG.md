@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - 1 player portrait
 - Tressym portrait
+- Crouching Lemur categories for Item and Creature palettes
 
 ### Changed
 - f_voice command will now work on Henchmen, too: Use h subcommand. Will target 1st Henchman, or 2nd Henchman if your 1st is a Vassal
@@ -27,12 +28,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed and edited some Crouching Lemur guard equipment
 - Area Changes:
 	- Skull Peaks: Crouching Lemur Monastery
-	- Skull Peaks: Place of meeting
+	- Skull Peaks: Place of Meeting
 	- Skull Peaks: Lower Mountains
 	- Settlement Guards (OOC area)
+- Palette categories for Crouching Lemur items/guards
 
 ### Fixed
 - Bug with merchant boxes that caused a server crash
+- Missing 'Leaves Lootable Corpse' option on 3 Global bosses
 
 ## [4.3.0 - 2024-06-15]
 

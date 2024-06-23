@@ -54,4 +54,15 @@ void main(){
      object oRaidSpawner = GetObjectByTag(sRaidSpawner);
      DeleteLocalInt(oRaidSpawner,"bossOut");
     }
+
+    // Global Announcement for Boss Death
+
+    if(GetTag(oCritter) == "GlobalBoss")
+    {
+     // Announcer Test
+     SetLocalString(GetModule(),"announcerMessage","``` *The Guilds have released an announcement that the creature of note has been slain* ```");
+     ExecuteScript("webhook_announce");
+     //
+    }
+
 }

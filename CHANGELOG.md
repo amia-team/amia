@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Tressym portrait
 - Crouching Lemur categories for Item and Creature palettes
 - Ridgewood Guard Tweak
+- Global Bosses fire an announcement once killed
 
 ### Changed
 - f_voice command will now work on Henchmen, too: Use h subcommand. Will target 1st Henchman, or 2nd Henchman if your 1st is a Vassal

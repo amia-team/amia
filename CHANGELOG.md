@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- settlement guards:kohlingen, barak, bloodspear
+- construction of shrines in greengarden
 - 1 player portrait
 - Tressym portrait
 - Crouching Lemur categories for Item and Creature palettes

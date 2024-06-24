@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+-acolytes to Greengarden for shrines
 - settlement guards:kohlingen, barak, bloodspear
 - construction of shrines in greengarden
 - 1 player portrait

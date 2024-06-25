@@ -7,7 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
--acolytes to Greengarden for shrines
+- Construction in Feylake, Feylake West, Greengarden
+- acolytes to Greengarden for shrines
 - settlement guards:kohlingen, barak, bloodspear
 - construction of shrines in greengarden
 - 1 player portrait
@@ -17,6 +18,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Global Bosses fire an announcement once killed
 
 ### Changed
+- Beneloth mage in Settlement Guard area
+- Put back original TBQS
 - f_voice command will now work on Henchmen, too: Use h subcommand. Will target 1st Henchman, or 2nd Henchman if your 1st is a Vassal
 - Gave black and tabby cat models wing compatibility (Tressym!)
 - Replace white cat model with updated pretty one (with wing compatibility, too)
@@ -39,6 +42,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Palette categories for Crouching Lemur items/guards
 
 ### Fixed
+
 - Bug with merchant boxes that caused a server crash
 - Missing 'Leaves Lootable Corpse' option on 3 Global bosses
 

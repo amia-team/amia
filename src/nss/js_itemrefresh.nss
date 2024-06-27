@@ -25,6 +25,11 @@ void main()
     {
         sItemResRef            = GetResRef(oInContainer);
 
+        if( GetBaseItemType(oInContainer) == BASE_ITEM_LARGEBOX)
+        {
+            SendMessageToPC(oPC, "<cþ  >Please remove your items from the container first.</c>");
+            break;
+        }
 
         //Replace old Artificer storage items and grab the amounts/item types stored
         if( sItemResRef == "ds_j_mythalbox" ||

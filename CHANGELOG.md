@@ -47,6 +47,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Bug with merchant boxes that caused a server crash
 - Missing 'Leaves Lootable Corpse' option on 3 Global bosses
 - Removed a spawn resref from the goblin area variables that pointed to a nonexistent creature
+- Typos in:
+	- The Dale
 
 ## [4.3.0 - 2024-06-15]
 

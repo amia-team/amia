@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Beneloth mage in Settlement Guard area
+- Connected Chult Savannah to other Chult areas so they're accessible without a DM
 - Put back original TBQS
 - f_voice command will now work on Henchmen, too: Use h subcommand. Will target 1st Henchman, or 2nd Henchman if your 1st is a Vassal
 - Gave black and tabby cat models wing compatibility (Tressym!)
@@ -45,6 +46,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Bug with merchant boxes that caused a server crash
 - Missing 'Leaves Lootable Corpse' option on 3 Global bosses
+- Removed a spawn resref from the goblin area variables that pointed to a nonexistent creature
 
 ## [4.3.0 - 2024-06-15]
 

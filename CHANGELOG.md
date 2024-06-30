@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Wild animal AI (it vanished at some point)
 - Construction in Feylake, Feylake West, Greengarden
 - acolytes to Greengarden for shrines
 - settlement guards:kohlingen, barak, bloodspear
@@ -39,16 +40,30 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Skull Peaks: Crouching Lemur Monastery
 	- Skull Peaks: Place of Meeting
 	- Skull Peaks: Lower Mountains
+	- Greengarden, The Radiant Garden
+	- Gregory's Landing
+	- Calderis: Ebon Wyrm Guild
+	- Silent Bay
+	- Crystal River: Bridge
+	- Ruathym: Ostland, Ostdur Manor
 	- Settlement Guards (OOC area)
+	- Some DM areas
 - Palette categories for Crouching Lemur items/guards
+- Most normal animal spawns will spawn neutral - separate faction
 
 ### Fixed
 
 - Bug with merchant boxes that caused a server crash
+- Client crash associated with Calderis portal room
 - Missing 'Leaves Lootable Corpse' option on 3 Global bosses
 - Removed a spawn resref from the goblin area variables that pointed to a nonexistent creature
 - Typos in:
+	- A lot of map notes
 	- The Dale
+	- Amia Frontier
+	- Malarfang Forest
+	- Purple Worm Tunnels
+	- Some palette creature bios
 
 ## [4.3.0 - 2024-06-15]
 

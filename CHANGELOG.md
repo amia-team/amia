@@ -46,6 +46,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Silent Bay
 	- Crystal River: Bridge
 	- Ruathym: Ostland, Ostdur Manor
+	- Blue Lagoon: Interior
 	- Settlement Guards (OOC area)
 	- Some DM areas
 - Palette categories for Crouching Lemur items/guards

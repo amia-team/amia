@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [4.3.1 - 2024-06-29]
+
+### Added
 - Wild animal AI (it vanished at some point)
 - Construction in Feylake, Feylake West, Greengarden
 - acolytes to Greengarden for shrines
@@ -19,7 +27,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Global Bosses fire an announcement once killed
 
 ### Changed
-- Beneloth mage in Settlement Guard area
+- Belenoth mage in Settlement Guard area
 - Connected Chult Savannah to other Chult areas so they're accessible without a DM
 - Put back original TBQS
 - f_voice command will now work on Henchmen, too: Use h subcommand. Will target 1st Henchman, or 2nd Henchman if your 1st is a Vassal

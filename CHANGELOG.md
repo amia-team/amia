@@ -11,8 +11,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added in a Frostspear delay for loot drops so it should hopefully fix Frosty not always dropping at least 1 epic resource
 
 ### Changed
+- updates to some settlement Guards
+- updates to construction in Feylake, Feylake West, Greengarden
+- The Bitch Queen's Sway renovations
 
 ### Fixed
+- Faction door in Duke's Estate, Greengarden
 
 ## [4.3.1 - 2024-06-29]
 

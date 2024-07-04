@@ -12,9 +12,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Questline added to Triumvir Mage Hall, and OI Mage Tower that will give a one time use Time Stop Scroll for memorization purposes. 
 
 ### Changed
-- updates to some settlement Guards
-- updates to construction in Feylake, Feylake West, Greengarden
+- Updates to some settlement Guards
+- Updates to construction in Feylake, Feylake West, Greengarden
 - The Bitch Queen's Sway renovations
+- Item palette categories for some Items
+- Deleted some items off the palette
 
 ### Fixed
 - Faction door in Duke's Estate, Greengarden

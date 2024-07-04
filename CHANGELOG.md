@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-
+- Add Key for TBQS' office
 - Added in a Frostspear delay for loot drops so it should hopefully fix Frosty not always dropping at least 1 epic resource
 - Questline added to Triumvir Mage Hall, and OI Mage Tower that will give a one time use Time Stop Scroll for memorization purposes. 
 
@@ -19,6 +19,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Deleted some items off the palette
 
 ### Fixed
+- Fix TBQS office access (I hope)
+- Fix TBQS chef station
+- Fix TBQS Bouncer's clothing
 - Faction door in Duke's Estate, Greengarden
 
 ## [4.3.1 - 2024-06-29]

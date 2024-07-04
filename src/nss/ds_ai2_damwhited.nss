@@ -6,6 +6,7 @@
 void IceBlast(object oArea);
 void FlyBack(object oWayPoint2, int nPhase, int nWaypointPicked);
 void LootDrop(object oArea, object oWayPoint3, object oWaypoint4);
+void CreateLoot(string sResRef, object Chest);
 
 void main()
 {
@@ -424,14 +425,19 @@ void LootDrop(object oArea, object oWayPoint3, object oWaypoint4)
 
     if(nRandom <= 10)      //  wdragonbossrewar - Frostspear's Treasure, and 4 more unique bin drops
     {
-      CreateItemOnObject("raid_base_frosty",oHorde);
+      DelayCommand(1.0,CreateLoot("raid_base_frosty",oHorde));
     }
 
     if(nRandom2 <= 25)        // mythal5   - Flawless Mythal
     {
-      CreateItemOnObject("mythal5",oHorde);
+      DelayCommand(1.0,CreateLoot("mythal5",oHorde));
     }
 
-    GenerateEpicLoot(oHorde);
+    DelayCommand(1.0,GenerateEpicLoot(oHorde));
 
+}
+
+void CreateLoot(string sResRef, object Chest)
+{
+    CreateItemOnObject(sResRef,Chest);
 }

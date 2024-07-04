@@ -1,12 +1,88 @@
 {
   "__data_type": "UTC ",
+  "Appearance_Head": {
+    "type": "byte",
+    "value": 1
+  },
   "Appearance_Type": {
     "type": "word",
-    "value": 87
+    "value": 6
+  },
+  "ArmorPart_RFoot": {
+    "type": "byte",
+    "value": 1
   },
   "BodyBag": {
     "type": "byte",
     "value": 0
+  },
+  "BodyPart_Belt": {
+    "type": "byte",
+    "value": 0
+  },
+  "BodyPart_LBicep": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_LFArm": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_LFoot": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_LHand": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_LShin": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_LShoul": {
+    "type": "byte",
+    "value": 0
+  },
+  "BodyPart_LThigh": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_Neck": {
+    "type": "byte",
+    "value": 0
+  },
+  "BodyPart_Pelvis": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_RBicep": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_RFArm": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_RHand": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_RShin": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_RShoul": {
+    "type": "byte",
+    "value": 0
+  },
+  "BodyPart_RThigh": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_Torso": {
+    "type": "byte",
+    "value": 1
   },
   "Cha": {
     "type": "byte",
@@ -14,7 +90,7 @@
   },
   "ChallengeRating": {
     "type": "float",
-    "value": 48.0
+    "value": 49.0
   },
   "ClassList": {
     "type": "list",
@@ -42,6 +118,22 @@
         }
       }
     ]
+  },
+  "Color_Hair": {
+    "type": "byte",
+    "value": 1
+  },
+  "Color_Skin": {
+    "type": "byte",
+    "value": 1
+  },
+  "Color_Tattoo1": {
+    "type": "byte",
+    "value": 1
+  },
+  "Color_Tattoo2": {
+    "type": "byte",
+    "value": 1
   },
   "Comment": {
     "type": "cexostring",
@@ -74,7 +166,7 @@
   "Description": {
     "type": "cexolocstring",
     "value": {
-      "0": "A deadly archer"
+      "0": "A deadly ranger, ready to track enemies."
     }
   },
   "Dex": {
@@ -88,6 +180,34 @@
   "Equip_ItemList": {
     "type": "list",
     "value": [
+      {
+        "__struct_id": 1,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "bene_mage_h1"
+        }
+      },
+      {
+        "__struct_id": 2,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "bene_scout_a"
+        }
+      },
+      {
+        "__struct_id": 16,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "settle_guardb001"
+        }
+      },
+      {
+        "__struct_id": 64,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "bene_mage_c1"
+        }
+      },
       {
         "__struct_id": 256,
         "EquippedRes": {
@@ -1747,7 +1867,7 @@
   "FirstName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Scout"
+      "0": "Beneloth Ranger"
     }
   },
   "fortbonus": {
@@ -1756,7 +1876,7 @@
   },
   "Gender": {
     "type": "byte",
-    "value": 0
+    "value": 1
   },
   "GoodEvil": {
     "type": "byte",
@@ -1794,6 +1914,36 @@
         "Repos_PosX": {
           "type": "word",
           "value": 0
+        },
+        "Repos_Posy": {
+          "type": "word",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 1,
+        "InventoryRes": {
+          "type": "resref",
+          "value": "bene_guard_s"
+        },
+        "Repos_PosX": {
+          "type": "word",
+          "value": 1
+        },
+        "Repos_Posy": {
+          "type": "word",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 2,
+        "InventoryRes": {
+          "type": "resref",
+          "value": "settle_guardsws"
+        },
+        "Repos_PosX": {
+          "type": "word",
+          "value": 3
         },
         "Repos_Posy": {
           "type": "word",
@@ -1846,11 +1996,11 @@
   },
   "PortraitId": {
     "type": "word",
-    "value": 223
+    "value": 1054
   },
   "Race": {
     "type": "byte",
-    "value": 12
+    "value": 6
   },
   "refbonus": {
     "type": "short",
@@ -2111,7 +2261,7 @@
   },
   "SoundSetFile": {
     "type": "word",
-    "value": 45
+    "value": 433
   },
   "SpecAbilityList": {
     "type": "list",
@@ -2311,5 +2461,81 @@
   "Wis": {
     "type": "byte",
     "value": 10
+  },
+  "xAppearance_Head": {
+    "type": "word",
+    "value": 1
+  },
+  "xArmorPart_RFoot": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_Belt": {
+    "type": "word",
+    "value": 0
+  },
+  "xBodyPart_LBicep": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_LFArm": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_LFoot": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_LHand": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_LShin": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_LShoul": {
+    "type": "word",
+    "value": 0
+  },
+  "xBodyPart_LThigh": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_Neck": {
+    "type": "word",
+    "value": 0
+  },
+  "xBodyPart_Pelvis": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_RBicep": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_RFArm": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_RHand": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_RShin": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_RShoul": {
+    "type": "word",
+    "value": 0
+  },
+  "xBodyPart_RThigh": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_Torso": {
+    "type": "word",
+    "value": 1
   }
 }

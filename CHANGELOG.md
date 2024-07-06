@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Add Key for TBQS' office
 - Added in a Frostspear delay for loot drops so it should hopefully fix Frosty not always dropping at least 1 epic resource
+- Added in new drop rates for Lich
+Divine Mythal: 10% + party count
+Lich Resource: 20% + party count
+Epic Resources:  3 Epic Drops base, and every 3 past 5 people gets an extra drop. So 8 gets 4 Epic Resources, 11 get 5 Epic Resources.
+
 - Questline added to Triumvir Mage Hall, and OI Mage Tower that will give a one time use Time Stop Scroll for memorization purposes. 
 
 ### Changed

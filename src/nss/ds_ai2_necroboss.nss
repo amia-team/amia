@@ -11,8 +11,10 @@ void SummonArmy(object oCaster, int nArmyType); // Summon skeletal army
 void DeathHealSpell(object oCaster); // Super sized wail that drains life that will heal caster to full
 void EvocationFireSpell(object oCaster); // Super sized combust/flamestrike spell
 void NegativeDeathSpell(object oCaster); // Negative energy damage / Death spell
-void LootDrop(object oArea, object oWayPoint1, object oWaypoint2); // Loot Drop
+void LootDrop(object oArea, object oWayPoint1, object oWaypoint2, object oDamager); // Loot Drop
 int  SpellDiceRoll(int nSpell, int nHalf); // Damage calculation for spells.
+void CreateLoot(string sResRef, object Chest);
+
 
 void main()
 {
@@ -166,8 +168,8 @@ void main()
           // Loot Drop and DEATH
           SpeakString("You think this is the end!? I will be reborn again and again... *The Lich's current body is destroyed*");
           ApplyEffectAtLocation(DURATION_TYPE_INSTANT, EffectVisualEffect(VFX_FNF_GAS_EXPLOSION_MIND), GetLocation(OBJECT_SELF));
-          LootDrop(oArea,oWayPoint1,oWayPoint2);
-          DestroyObject(OBJECT_SELF);
+          LootDrop(oArea,oWayPoint1,oWayPoint2,oDamager);
+          DelayCommand(1.0,DestroyObject(OBJECT_SELF));
           SetLocalInt(OBJECT_SELF,"1%AbilityFired",1);
       }
       else
@@ -708,32 +710,47 @@ void NegativeDeathSpell(object oCaster)     // Negative energy does damage and k
 
 
 
-void LootDrop(object oArea, object oWayPoint1, object oWaypoint2)
+void LootDrop(object oArea, object oWayPoint1, object oWaypoint2, object oDamager)
 {
     int nRandom  = Random(100);
     int nRandom2 = Random(100);
     int nRandom3 = Random(5);
+    int nPartySize = 0;
     object oHorde = CreateObject(OBJECT_TYPE_PLACEABLE,"lichlootchest",GetLocation(oWayPoint1));
     CreateObject(OBJECT_TYPE_PLACEABLE,"lbossexit",GetLocation(oWaypoint2));
+
+    object oPartyMember  = GetFirstFactionMember( oDamager, TRUE );
+    while(GetIsObjectValid(oPartyMember) == TRUE)
+    {
+     nPartySize++;
+     oPartyMember = GetNextFactionMember(oDamager, TRUE);
+    }
 
     // Removes the variable on the raid summoner when the boss "dies" so it can be summoned again
     object oRaidSpawner = GetObjectByTag("raidsummonerlich");
     DeleteLocalInt(oRaidSpawner,"bossOut");
     //
 
-    if(nRandom <= 10)      //  Divine Mythal
+    if(nRandom <= (10+nPartySize))      //  Divine Mythal
     {
-      CreateItemOnObject("mythal7",oHorde);
+      DelayCommand(0.5,CreateLoot("mythal7",oHorde));
     }
 
-    if(nRandom2 <= 20)  // Item drops
+    if(nRandom2 <= (20+nPartySize))  // Item drops
     {
-      CreateItemOnObject("raid_base_lich",oHorde);
+      DelayCommand(0.5,CreateLoot("raid_base_lich",oHorde));
     }
+    DelayCommand(0.5,GenerateEpicLoot(oHorde));
+    DelayCommand(0.5,GenerateEpicLoot(oHorde));
+    DelayCommand(0.5,GenerateEpicLoot(oHorde));
 
-    GenerateEpicLoot(oHorde);
-    GenerateEpicLoot(oHorde);
-    GenerateEpicLoot(oHorde);
+    // Every 3 party members past 5 will be an extra epic loot.
+    int i;
+    int p = (nPartySize - 5)/3;
+    for( i=0; i<p; i++)
+    {
+     DelayCommand(0.5,GenerateEpicLoot(oHorde));
+    }
 
 }
 
@@ -774,4 +791,9 @@ int SpellDiceRoll(int nSpell, int nHalf) // nSpell = 0 is the Fire spell calc, 1
   }
 
   return nDamage;
+}
+
+void CreateLoot(string sResRef, object Chest)
+{
+    CreateItemOnObject(sResRef,Chest);
 }

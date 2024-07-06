@@ -425,15 +425,15 @@ void LootDrop(object oArea, object oWayPoint3, object oWaypoint4)
 
     if(nRandom <= 10)      //  wdragonbossrewar - Frostspear's Treasure, and 4 more unique bin drops
     {
-      DelayCommand(1.0,CreateLoot("raid_base_frosty",oHorde));
+      DelayCommand(0.5,CreateLoot("raid_base_frosty",oHorde));
     }
 
     if(nRandom2 <= 25)        // mythal5   - Flawless Mythal
     {
-      DelayCommand(1.0,CreateLoot("mythal5",oHorde));
+      DelayCommand(0.5,CreateLoot("mythal5",oHorde));
     }
 
-    DelayCommand(1.0,GenerateEpicLoot(oHorde));
+    DelayCommand(0.5,GenerateEpicLoot(oHorde));
 
 }
 

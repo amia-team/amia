@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
+- Remove random scroll in Winya Ravana
 
 ## [4.3.2 - 2024-07-10]
 
@@ -31,6 +32,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - The Bitch Queen's Sway renovations
 - Item palette categories for some Items
 - Deleted some items off the palette
+- Beautified Winya Ravana
 
 ### Fixed
 - TBQS office access (I hope)

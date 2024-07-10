@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [4.3.2 - 2024-07-10]
+
+### Added
 - Add Key for TBQS' office
 - Added in a Frostspear delay for loot drops so it should hopefully fix Frosty not always dropping at least 1 epic resource
 - Added in new drop rates for Lich

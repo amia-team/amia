@@ -15,14 +15,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [4.3.2 - 2024-07-10]
 
 ### Added
-- Add Key for TBQS' office
-- Added in a Frostspear delay for loot drops so it should hopefully fix Frosty not always dropping at least 1 epic resource
-- Added in new drop rates for Lich
-Divine Mythal: 10% + party count
-Lich Resource: 20% + party count
-Epic Resources:  3 Epic Drops base, and every 3 past 5 people gets an extra drop. So 8 gets 4 Epic Resources, 11 get 5 Epic Resources.
+- Key for TBQS' office
+- Frostspear delay for loot drops so it should hopefully fix Frosty not always dropping at least 1 epic resource
+- New drop rates for Lich
+	- Divine Mythal: 10% + party count
+	- Lich Resource: 20% + party count
+	- Epic Resources:  3 Epic Drops base, and every 3 past 5 people gets an extra drop. So 8 gets 4 Epic Resources, 11 get 5 Epic Resources.
+- Quick bar loader in player tools
 
-- Questline added to Triumvir Mage Hall, and OI Mage Tower that will give a one time use Time Stop Scroll for memorization purposes. 
+- Questline to Triumvir Mage Hall, and OI Mage Tower that will give a one time use Time Stop Scroll for memorization purposes. 
 
 ### Changed
 - Updates to some settlement Guards
@@ -32,10 +33,11 @@ Epic Resources:  3 Epic Drops base, and every 3 past 5 people gets an extra drop
 - Deleted some items off the palette
 
 ### Fixed
-- Fix TBQS office access (I hope)
-- Fix TBQS chef station
-- Fix TBQS Bouncer's clothing
+- TBQS office access (I hope)
+- TBQS chef station
+- TBQS Bouncer's clothing
 - Faction door in Duke's Estate, Greengarden
+- Storage bug (Vetzer)
 
 ## [4.3.1 - 2024-06-29]
 

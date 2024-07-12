@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- 3 Greengarden shrines
 
 ### Fixed
 - Remove random scroll in Winya Ravana

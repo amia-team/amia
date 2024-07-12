@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Remove random scroll in Winya Ravana
+- Greengarden, duke's estate, locked door
 
 ## [4.3.2 - 2024-07-10]
 

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Construction to Havskar
 
 ### Changed
 - 3 Greengarden shrines

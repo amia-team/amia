@@ -8,9 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Construction to Havskar
+- Construction to Hangman's Cove
 
 ### Changed
 - 3 Greengarden shrines
+- Demonreach, Hangman's Cove to new tileset
 
 ### Fixed
 - Remove random scroll in Winya Ravana

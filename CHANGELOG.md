@@ -21,6 +21,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [4.3.2 - 2024-07-10]
 
 ### Added
+- Wall coverings and art to TBQS
+- A feytouched cook
 - Key for TBQS' office
 - Frostspear delay for loot drops so it should hopefully fix Frosty not always dropping at least 1 epic resource
 - New drop rates for Lich

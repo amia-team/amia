@@ -9,10 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Construction to Havskar
 - Construction to Hangman's Cove
+- 1 player portrait
 
 ### Changed
 - 3 Greengarden shrines
 - Demonreach, Hangman's Cove to new tileset
+- Moonpier Outpost in Malarfang reverted to restore earlier changes
 
 ### Fixed
 - Remove random scroll in Winya Ravana

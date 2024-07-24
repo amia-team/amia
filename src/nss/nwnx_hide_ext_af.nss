@@ -1,5 +1,6 @@
 #include "nwnx_reveal"
 
+int CheckCD(object oPC, string CDName);
 
 void main()
 {
@@ -8,12 +9,9 @@ void main()
     int nSDLevels = GetLevelByClass(CLASS_TYPE_SHADOWDANCER,oPC);
     int nDam;
 
-    if((nCooldown==0) && (GetHasFeat(FEAT_HIDE_IN_PLAIN_SIGHT,OBJECT_SELF)==TRUE))
+    if((GetHasFeat(FEAT_HIDE_IN_PLAIN_SIGHT,OBJECT_SELF)==TRUE))
     {
-      FloatingTextStringOnCreature("<cò­ÿ>You may use HIPS again in 6 seconds.</c>",oPC,FALSE);
-      SetLocalInt(oPC,"HIPSCooldown",1);
-      DelayCommand(6.0,DeleteLocalInt(oPC,"HIPSCooldown"));
-      DelayCommand(6.0,FloatingTextStringOnCreature("<cò­ÿ>You can HIPS again!</c>",oPC,FALSE));
+      DelayCommand(6.0,FloatingTextStringOnCreature("<cò­ÿ>You can hide in plain sight again.</c>",oPC,FALSE));
 
       if(nSDLevels >= 19)
       {
@@ -35,17 +33,33 @@ void main()
       if(nSDLevels >= 10)
       {
 
-         if(GetLocalInt(oPC,"EmbracingCold")==0)
+         if(CheckCD(oPC,"EmbracingCold")==0)
          {
            effect eDam = EffectDamageIncrease(nDam,DAMAGE_TYPE_COLD);
            effect eVis = EffectVisualEffect(VFX_DUR_AURA_BLUE_LIGHT);
            effect eLink = EffectLinkEffects(eVis,eDam);
            eLink = TagEffect(eLink,"EmbracingCold");
            ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oPC,12.0);
-           SetLocalInt(oPC,"EmbracingCold",1);
-           DelayCommand(12.0,DeleteLocalInt(oPC,"EmbracingCold"));
          }
 
       }
     }
+}
+
+int CheckCD(object oPC, string CDName)
+{
+  effect eEffects = GetFirstEffect(oPC);
+  int t = 0;
+  while(GetIsEffectValid(eEffects))
+  {
+    if(GetEffectTag(eEffects)==CDName)
+    {
+      t = 1;
+      break;
+    }
+
+    eEffects = GetNextEffect(oPC);
+  }
+
+  return t;
 }

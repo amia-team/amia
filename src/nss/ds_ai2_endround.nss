@@ -23,6 +23,9 @@
 //-------------------------------------------------------------------------------
 // main
 //-------------------------------------------------------------------------------
+
+int CheckCD(object oPC, string CDName);
+
 void main(){
 
     object oCritter         = OBJECT_SELF;
@@ -34,6 +37,22 @@ void main(){
     {
         SetLocalInt( oCritter, "ImpGrab", 0 );
     }
+
+   // Living Bulwart Check
+   if(CheckCD(oCurrentTarget,"guarded")==1)
+   {
+     ClearAllActions();
+     ActionAttack(GetLocalObject(oCurrentTarget,"guarded"));
+
+     if(GetLocalInt(oCritter,"guardCD")==0)
+     {
+      SpeakString("*Shifts their focus to the one guarding their current target!*");
+      SetLocalInt(oCritter,"guardCD",1);
+      DelayCommand(6.0,DeleteLocalInt(oCritter,"guardCD"));
+     }
+   }
+   else
+   {
 
     //Check for per-round random effects (limit every 6 seconds)
     if( GetLocalInt( oCritter, "Per_Round" ) != 0 && GetLocalInt( oCritter, "EnRoundUsed" ) != 1 )
@@ -91,4 +110,23 @@ void main(){
 
         SetLocalInt( OBJECT_SELF, L_INACTIVE, -1 );
     }
+   }
+}
+
+int CheckCD(object oPC, string CDName)
+{
+  effect eEffects = GetFirstEffect(oPC);
+  int t = 0;
+  while(GetIsEffectValid(eEffects))
+  {
+    if(GetEffectTag(eEffects)==CDName)
+    {
+      t = 1;
+      break;
+    }
+
+    eEffects = GetNextEffect(oPC);
+  }
+
+  return t;
 }

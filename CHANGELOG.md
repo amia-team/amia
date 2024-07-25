@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 3 Greengarden shrines
 - Demonreach, Hangman's Cove to new tileset
 - Moonpier Outpost in Malarfang reverted to restore earlier changes
+- Player Housing updated for 1 character
 
 ### Fixed
 - Remove random scroll in Winya Ravana

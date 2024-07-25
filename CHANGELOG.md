@@ -12,12 +12,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 1 player portrait
 - Defender 2.0 Changes
 - HIPs cool down adjustment via rules2da
+- Massive crit option to gloves for unarmed combat
 
 ### Changed
 - 3 Greengarden shrines
 - Demonreach, Hangman's Cove to new tileset
 - Moonpier Outpost in Malarfang reverted to restore earlier changes
 - Player Housing updated for 1 character
+- Item and creature palette updates
 
 ### Fixed
 - Remove random scroll in Winya Ravana

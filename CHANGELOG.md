@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Construction to Havskar
 - Construction to Hangman's Cove
 - 1 player portrait
+- Defender 2.0 Changes
+- HIPs cool down adjustment via rules2da
 
 ### Changed
 - 3 Greengarden shrines

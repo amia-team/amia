@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Moonpier Outpost in Malarfang reverted to restore earlier changes
 - Player Housing updated for 1 character
 - Item and creature palette updates
+- Panther model with wandering jaw changed to a new model
 
 ### Fixed
 - Remove random scroll in Winya Ravana

@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Player Housing updated for 1 character
 - Item and creature palette updates
 - Panther model with wandering jaw changed to a new model
+- Blue Lagoon Interior: Arsene's chair fixed, and Arsene added
 
 ### Fixed
 - Remove random scroll in Winya Ravana

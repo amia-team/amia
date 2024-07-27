@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Item and creature palette updates
 - Panther model with wandering jaw changed to a new model
 - Blue Lagoon Interior: Arsene's chair fixed, and Arsene added
+- Fort Cystana: Add Dragonook spot for dragon shrines
 
 ### Fixed
 - Remove random scroll in Winya Ravana

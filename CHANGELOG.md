@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [4.3.3 - 2024-07-27]
+
+### Added
 - Construction to Havskar
 - Construction to Hangman's Cove
 - 1 player portrait

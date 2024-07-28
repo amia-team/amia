@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Changed portal color in Wiltun: Keep and Caraigh: Northend
 - Moved Garick from Wave & Serpent to Moonpier
 - Moved the Obsidian Throne to the Dragon's Eye Lighthouse
+- Plot updates to OI: Emberwood East/Caves
 
 ### Fixed
 

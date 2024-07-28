@@ -7,8 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Obsidian Isle: East Plains, Chapel of Jergal
 
 ### Changed
+- Changed portal color in Wiltun: Keep and Caraigh: Northend
+- Moved Garick from Wave & Serpent to Moonpier
+- Moved the Obsidian Throne to the Dragon's Eye Lighthouse
 
 ### Fixed
 

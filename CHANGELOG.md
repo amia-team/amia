@@ -15,6 +15,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Moved the Obsidian Throne to the Dragon's Eye Lighthouse
 - Plot updates to OI: Emberwood East/Caves
 - Plot update to Fort Cystana Everguard NPCs
+- Changed sea travel script/dialogue to add Winya, Oakmist Vale, and Kampo's
+- Plot updates to:
+	- Moonpier
+	- Silent Bay
+	- Silent Bay: The Shrine of Eilistraee
+	- Amia Forest: Oakmist Vale
+	- Winya Ravana: The Falls
 
 ### Fixed
 

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Obsidian Isle: East Plains, Chapel of Jergal
+- Fortress Wiltun: Recall Chamber
 
 ### Changed
 - Changed portal color in Wiltun: Keep and Caraigh: Northend

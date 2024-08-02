@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Silent Bay
 	- Silent Bay: The Shrine of Eilistraee
 	- Amia Forest: Oakmist Vale
+	- Amia Forest: Oakmist Vale, Caves
 	- Winya Ravana: The Falls
 
 ### Fixed

@@ -1,6 +1,4 @@
-#include "x2_inc_switches"
-#include "inc_nwnx_events"
-#include "inc_lua"
+#include "nwnx_creature"
 
 //Get the level of which the pc achived monk level 3
 //returns 0 on fail
@@ -8,20 +6,16 @@ int GetMonkSpeedLevel(object oPC){
 
     if(GetLevelByClass(CLASS_TYPE_MONK,oPC)<3)
         return 0;
-
-    //If function doesnt exist then define it
-    if(RunLua("return tostring(GetMonkSpeedLevel);")=="nil"){
-        RunLua("function GetMonkSpeedLevel() local lvl;local cnt=0;for n=1,100 do lvl=nwn.GetLevelStat(OBJECT_SELF,n); if not lvl then return 0; elseif lvl.class==5 then cnt=cnt+1; end if cnt==3 then return n; end end return 0; end");
+    else{
+        return GetLevelByClass(CLASS_TYPE_MONK,oPC);
     }
-
-    return StringToInt(ExecuteLuaFunction(oPC,"GetMonkSpeedLevel",""));;
 }
 
 void ActivateItem( object oPC )
 {
     if(GetHasFeat(FEAT_MONK_ENDURANCE,oPC)){
 
-        ExecuteLuaString(oPC,"nwn.RemoveFeat(OBJECT_SELF,"+IntToString(FEAT_MONK_ENDURANCE)+");");
+        NWNX_Creature_RemoveFeat(oPC, FEAT_MONK_ENDURANCE);
         SendMessageToPC(oPC,"Removed monkspeed feat!");
         ApplyEffectToObject(DURATION_TYPE_INSTANT,EffectVisualEffect(VFX_IMP_SLOW),oPC);
     }
@@ -33,7 +27,7 @@ void ActivateItem( object oPC )
             nLevel = 1;
 
         if(nLevel > 0){
-            ExecuteLuaString(oPC,"nwn.AddFeat(OBJECT_SELF,"+IntToString(FEAT_MONK_ENDURANCE)+","+IntToString(nLevel)+");");
+            NWNX_Creature_AddFeat(oPC, FEAT_MONK_ENDURANCE);
             SendMessageToPC(oPC,"Added monkspeed to level "+IntToString(nLevel));
             ApplyEffectToObject(DURATION_TYPE_INSTANT,EffectVisualEffect(VFX_IMP_HASTE),oPC);
         }
@@ -44,15 +38,7 @@ void ActivateItem( object oPC )
 
 void main( )
 {
-    int nEvent = GetUserDefinedItemEventNumber( );
+    object oPC = GetItemActivator();
 
-    switch ( nEvent ) {
-        case X2_ITEM_EVENT_INSTANT:
-            ActivateItem( OBJECT_SELF );
-            EVENTS_Bypass();
-            break;
-        case X2_ITEM_EVENT_ACTIVATE:
-            ActivateItem( GetItemActivator() );
-            break;
-    }
+    ActivateItem(oPC);
 }

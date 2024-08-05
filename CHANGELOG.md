@@ -10,6 +10,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Obsidian Isle: East Plains, Chapel of Jergal
 - Fortress Wiltun: Recall Chamber
 - Job System tree nodes to Oakmist Vale Treetops
+- Job System recipes for Jeweler:
+	Blue Light Gem: Raw Sapphire + Water Essence
+	Green Light Gem: Raw Emerald + Earth Essence
+	Orange Light Gem: Raw Crystal + Fire Essence
+	Purple Light Gem: Raw Ruby + Water Essence
+	Red Light Gem: Raw Ruby + Fire Essence
+	White Light Gem: Raw Diamond + Air Essence
+	Yellow Light Gem: Raw Crystal + Earth Essence
 
 ### Changed
 - Changed portal color in Wiltun: Keep and Caraigh: Northend

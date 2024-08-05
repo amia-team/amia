@@ -33,6 +33,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Amia Forest: Oakmist Vale
 	- Amia Forest: Oakmist Vale, Caves
 	- Winya Ravana: The Falls
+	- Inland Hills
 
 ### Fixed
 

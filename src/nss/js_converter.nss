@@ -855,7 +855,13 @@ void JewelerConverter(object oPC, object oBench, int nNode)
       case 42: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wrc"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_wzrd"; sPlaceableName = "<c¦ÿ©>Band of Illumination</c>"; sIngredient2Type = "platinum"; nCost = 10000; nRetainItem=1; break;
       case 43: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_psbdc"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_sorc"; sPlaceableName = "<c¦ÿ©>Mysterious Band</c>"; sIngredient2Type = "gold"; nCost = 10000; nRetainItem=1; break;
       case 44: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wbc"; sIngredient2 = "js_jew_ring"; sType = "epx_ring_cler"; sPlaceableName = "<c¦ÿ©>Divine Touch</c>"; sIngredient2Type = "platinum"; nCost = 10000; nRetainItem=1; break;
-
+      case 45: sProduct = "x2_it_lightgem01"; sIngredient1 = "js_gem_rsap"; sIngredient2 = "js_alch_elew"; nCost = 200; break;
+      case 46: sProduct = "x2_it_lightgem02"; sIngredient1 = "js_gem_rcry"; sIngredient2 = "js_alch_elee"; nCost = 200; break;
+      case 47: sProduct = "x2_it_lightgem03"; sIngredient1 = "js_gem_rrub"; sIngredient2 = "js_alch_elew"; nCost = 200; break;
+      case 48: sProduct = "x2_it_lightgem04"; sIngredient1 = "js_gem_rrub"; sIngredient2 = "js_alch_elef"; nCost = 200; break;
+      case 49: sProduct = "x2_it_lightgem05"; sIngredient1 = "js_gem_reme"; sIngredient2 = "js_alch_elee"; nCost = 200; break;
+      case 50: sProduct = "x2_it_lightgem06"; sIngredient1 = "js_gem_rcry"; sIngredient2 = "js_alch_elef"; nCost = 200; break;
+      case 51: sProduct = "x2_it_lightgem07"; sIngredient1 = "js_gem_rdia"; sIngredient2 = "js_alch_elea"; nCost = 200; break;
     }
 
     CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);

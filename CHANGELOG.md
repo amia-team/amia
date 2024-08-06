@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Plot updates to OI: Emberwood East/Caves
 - Plot update to Fort Cystana Everguard NPCs
 - Changed sea travel script/dialogue to add Winya, Oakmist Vale, and Kampo's
+- Barak Runedar Citadel now has Queen Samtara
 - Plot updates to:
 	- Moonpier
 	- Silent Bay

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- TBQS: Items to the store
 - Obsidian Isle: East Plains, Chapel of Jergal
 - Fortress Wiltun: Recall Chamber
 - Job System tree nodes to Oakmist Vale Treetops
@@ -37,6 +38,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	-15 Fort Cystana areas (No Port removal)
 
 ### Fixed
+- Blockers in Beastmen Caves
 
 ## [4.3.3 - 2024-07-27]
 

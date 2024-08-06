@@ -22,7 +22,7 @@
 //const int DOMAIN_PLANT = 14;
 //const int DOMAIN_PROTECTION = 15;
 //const int DOMAIN_STRENGTH = 16;
-const int DOMAIN_SUN = 17;
+//const int DOMAIN_SUN = 17;
 //const int DOMAIN_TRAVEL = 18;
 //const int DOMAIN_TRICKERY = 19;
 //const int DOMAIN_WAR = 20;

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- 2 Player portraits
 - TBQS: Items to the store
 - Obsidian Isle: East Plains, Chapel of Jergal
 - Fortress Wiltun: Recall Chamber
@@ -35,7 +36,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Amia Forest: Oakmist Vale, Caves
 	- Winya Ravana: The Falls
 	- Inland Hills
-	-15 Fort Cystana areas (No-Porting removal)
+	- 15 Fort Cystana areas (No-Porting removal)
 
 ### Fixed
 - Blockers in Beastmen Caves

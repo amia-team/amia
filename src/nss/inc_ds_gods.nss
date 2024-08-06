@@ -4,7 +4,7 @@
 #include "inc_td_itemprop"
 #include "inc_jj_string"
 #include "cs_inc_leto"
-
+//void main (){}
 //-------------------------------------------------------------------------------
 // constants
 //-------------------------------------------------------------------------------
@@ -1118,6 +1118,8 @@ int IsValidDruidGod( object oIdol ){
 
         if ( GetLocalInt( oIdol, "dom_"+IntToString(nLoop) ) == DOMAIN_ANIMAL ||
              GetLocalInt( oIdol, "dom_"+IntToString(nLoop) ) == DOMAIN_PLANT  ||
+             GetLocalInt( oIdol, "dom_"+IntToString(nLoop) ) == DOMAIN_MOON  ||
+             GetLocalInt( oIdol, "dom_"+IntToString(nLoop) ) == DOMAIN_SUN  ||
              GetLocalInt( oIdol, "druid_deity" ) == 1 ){
              nReturn = TRUE;
              break;

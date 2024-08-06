@@ -35,10 +35,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Amia Forest: Oakmist Vale, Caves
 	- Winya Ravana: The Falls
 	- Inland Hills
-	-15 Fort Cystana areas (No Port removal)
+	-15 Fort Cystana areas (No-Porting removal)
 
 ### Fixed
 - Blockers in Beastmen Caves
+- Thoth Moon domain changed to Luck
+- Tamara now supports NN alignment
 
 ## [4.3.3 - 2024-07-27]
 

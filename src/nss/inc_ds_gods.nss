@@ -22,7 +22,7 @@
 //const int DOMAIN_PLANT = 14;
 //const int DOMAIN_PROTECTION = 15;
 //const int DOMAIN_STRENGTH = 16;
-const int DOMAIN_SUN = 17;
+//const int DOMAIN_SUN = 17;
 //const int DOMAIN_TRAVEL = 18;
 //const int DOMAIN_TRICKERY = 19;
 //const int DOMAIN_WAR = 20;
@@ -1118,8 +1118,6 @@ int IsValidDruidGod( object oIdol ){
 
         if ( GetLocalInt( oIdol, "dom_"+IntToString(nLoop) ) == DOMAIN_ANIMAL ||
              GetLocalInt( oIdol, "dom_"+IntToString(nLoop) ) == DOMAIN_PLANT  ||
-	     GetLocalInt( oIdol, "dom_"+IntToString(nLoop) ) == DOMAIN_MOON  ||  
-	     GetLocalInt( oIdol, "dom_"+IntToString(nLoop) ) == DOMAIN_SUN  ||
              GetLocalInt( oIdol, "druid_deity" ) == 1 ){
              nReturn = TRUE;
              break;

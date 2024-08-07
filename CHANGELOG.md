@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [4.3.4 - 2024-08-6]
+
+### Added
 - Hangman's Cove Warehouse interior
 - 2 Player portraits
 - TBQS: Items to the store

@@ -12,15 +12,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - TBQS: Items to the store
 - Obsidian Isle: East Plains, Chapel of Jergal
 - Fortress Wiltun: Recall Chamber
+- Fortress Wiltun settlement insignia
 - Job System tree nodes to Oakmist Vale Treetops
+- Settlement Guards: Undead template
 - Job System recipes for Jeweler:
-	Blue Light Gem: Raw Sapphire + Water Essence
-	Green Light Gem: Raw Emerald + Earth Essence
-	Orange Light Gem: Raw Crystal + Fire Essence
-	Purple Light Gem: Raw Ruby + Water Essence
-	Red Light Gem: Raw Ruby + Fire Essence
-	White Light Gem: Raw Diamond + Air Essence
-	Yellow Light Gem: Raw Crystal + Earth Essence
+	- Blue Light Gem: Raw Sapphire + Water Essence
+	- Green Light Gem: Raw Emerald + Earth Essence
+	- Orange Light Gem: Raw Crystal + Fire Essence
+	- Purple Light Gem: Raw Ruby + Water Essence
+	- Red Light Gem: Raw Ruby + Fire Essence
+	- White Light Gem: Raw Diamond + Air Essence
+	- Yellow Light Gem: Raw Crystal + Earth Essence
 
 ### Changed
 - Hangman's Cove exterior reflecting construction
@@ -31,6 +33,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Plot update to Fort Cystana Everguard NPCs
 - Changed sea travel script/dialogue to add Winya, Oakmist Vale, and Kampo's
 - Barak Runedar Citadel now has Queen Samtara
+- Settlement guard area adjustments (the henchies for the leader PCs)
 - Plot updates to:
 	- Moonpier
 	- Silent Bay

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Hangman's Cove Warehouse interior
 - 2 Player portraits
 - TBQS: Items to the store
 - Obsidian Isle: East Plains, Chapel of Jergal
@@ -22,6 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	Yellow Light Gem: Raw Crystal + Earth Essence
 
 ### Changed
+- Hangman's Cove exterior reflecting construction
 - Changed portal color in Wiltun: Keep and Caraigh: Northend
 - Moved Garick from Wave & Serpent to Moonpier
 - Moved the Obsidian Throne to the Dragon's Eye Lighthouse

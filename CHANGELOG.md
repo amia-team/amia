@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Construction for 2 Shrines in Greengarden
 
 ### Fixed
 

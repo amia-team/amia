@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- 1 Player portrait
 
 ### Changed
 - Construction for 2 Shrines in Greengarden

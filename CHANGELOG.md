@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - 1 Player portrait
-- 2 Festival games for events
+- 3 Festival games for events
+- 1 Festival game voucher
 
 ### Changed
 - Construction for 2 Shrines in Greengarden

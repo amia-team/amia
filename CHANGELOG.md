@@ -8,11 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - 1 Player portrait
+- 2 Festival games for events
 
 ### Changed
 - Construction for 2 Shrines in Greengarden
 
 ### Fixed
+- Garick in Moonpier is no longer hostile and his shop works
 
 ## [4.3.4 - 2024-08-6]
 

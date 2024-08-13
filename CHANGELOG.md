@@ -38,6 +38,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Yellow Light Gem: Raw Crystal + Earth Essence
 
 ### Changed
+- Unlocked the front door to TBQS
 - Hangman's Cove exterior reflecting construction
 - Changed portal color in Wiltun: Keep and Caraigh: Northend
 - Moved Garick from Wave & Serpent to Moonpier
@@ -62,6 +63,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Thoth Moon domain changed to Luck
 - Tamara now supports NN alignment
 
+### Removed
+ - Construction sign in front of TBQS
 ## [4.3.3 - 2024-07-27]
 
 ### Added

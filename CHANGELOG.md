@@ -10,9 +10,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 1 Player portrait
 - 3 Festival games for events
 - 1 Festival game voucher
+- Southport Redux: New quests, areas, dungeons; major rework of existing areas
+- Heist/house guards with new scripts
+- New "Guard System" & "Guard System - Ally" reputations
 
 ### Changed
 - Construction for 2 Shrines in Greengarden
+- Updates to various other settlements to support Southport quests/travels
+- Boss triggers now support quest-based spawning
+- ds_shops conversation has been made modular and customizable
+- Wiltun signage has been updated
 
 ### Fixed
 - Garick in Moonpier is no longer hostile and his shop works

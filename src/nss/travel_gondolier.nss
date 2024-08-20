@@ -31,6 +31,7 @@ void main(){
 
     }
 
+    SetLocalString(OBJECT_SELF, "WP_destination", GetScriptParam("Destination"));
     SetLocalObject( oPC, "travel_npc", OBJECT_SELF  );
     FadeToBlack( oPC );
     DelayCommand( 1.0, AssignCommand( oPC, ActionStartConversation( oPC, "travel_gondola", TRUE, FALSE) ) );

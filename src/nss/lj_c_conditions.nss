@@ -11,13 +11,22 @@
   - RequiredGold   (Amount of gold needed)
   - RequiredLevel  (Level of the PC in convo)
   - RequiredItem   (Tag of the item requirement)
-  - RequiredQuest  (Tag of relevant Quest)
+  - RequiredQuest  (Tag of relevant Quest completed)
   - RequiredDCs    (Number of Dream Coins required)
+  - Persuade       (Base ranks of Persuade required)
+  - Bluff          (Base ranks of Bluff required)
+  - Intimidate     (Base ranks of Intimidate required)
+  - CustomToken    (Checks the NPC for this variable as a numbered custom token)
+    -- TokenNumber (Needs to be set to the custom token number in the dialogue)
                                                      */
 ///////////////////////////////////////////////////////
 
 #include "inc_dc_api"
 #include "inc_ds_records"
+#include "nw_i0_tool"
+
+//Check if this param is set on the player or the NPC. If set on the player's last response, get the NPC as the last speaker
+object CheckNPC( object oNPC );
 
 int StartingConditional()
 {
@@ -25,10 +34,15 @@ int StartingConditional()
     int nRequiredGold = StringToInt(GetScriptParam("RequiredGold"));
     int nRequiredLevel = StringToInt(GetScriptParam("RequiredLevel"));
     int nRequiredDCs   =StringToInt(GetScriptParam("RequiredDCs"));
+    int nPersuade   =StringToInt(GetScriptParam("Persuade"));
+    int nBluff   =StringToInt(GetScriptParam("Bluff"));
+    int nIntimidate   =StringToInt(GetScriptParam("Intimidate"));
     string sRequiredItem = GetScriptParam("RequiredItem");
     string sRequiredQuest = GetScriptParam("RequiredQuest");
+    string sCustomToken = GetScriptParam("CustomToken");
 
     object oPC = GetPCSpeaker();
+    object oNPC = OBJECT_SELF;
     string sCDKey = GetPCPublicCDKey(oPC);
     object oPCKey = GetItemPossessedBy(oPC, "ds_pckey");
 
@@ -40,9 +54,28 @@ int StartingConditional()
     if(sRequiredItem != ""){ nRequirementsFound++; }
     if(sRequiredQuest != ""){ nRequirementsFound++; }
     if(nRequiredDCs != 0){ nRequirementsFound++; }
+    if(nPersuade != 0){ nRequirementsFound++; }
+    if(nBluff != 0){ nRequirementsFound++; }
+    if(nIntimidate != 0){ nRequirementsFound++; }
 
     // Initialize variable for number of requirements met
     int nRequirementsMet;
+
+    if(sCustomToken != "")
+    {
+        CheckNPC(oNPC);
+        sCustomToken = GetLocalString(oNPC, sCustomToken);
+        int nCustomToken = StringToInt(GetScriptParam("TokenNumber"));
+
+        if(sCustomToken != "")
+        {
+            SetCustomToken(nCustomToken, sCustomToken);
+        }
+        //If nothing's set, use the generic ones for shops
+        else if(nCustomToken == 702001) { SetCustomToken(702001, "Greetings! Would you like to see what I have for sale?"); }
+        else if(nCustomToken == 702002) { SetCustomToken(702002, "Yes, please."); }
+        else if(nCustomToken == 702003) { SetCustomToken(702003, "No, thanks."); }
+    }
 
     // If gold amount isn't set we'll ignore it
     if(nRequiredGold != 0)
@@ -87,6 +120,27 @@ int StartingConditional()
             nRequirementsMet++;
         }
     }
+    if(nPersuade != 0)
+    {
+        if(GetSkillRank(SKILL_PERSUADE, oPC, TRUE) >= nPersuade)
+        {
+            nRequirementsMet++;
+        }
+    }
+    if(nBluff != 0)
+    {
+        if(GetSkillRank(SKILL_BLUFF, oPC, TRUE) >= nBluff)
+        {
+            nRequirementsMet++;
+        }
+    }
+    if(nIntimidate != 0)
+    {
+        if(GetSkillRank(SKILL_INTIMIDATE, oPC, TRUE) >= nIntimidate)
+        {
+            nRequirementsMet++;
+        }
+    }
     if(nRequirementsFound == nRequirementsMet)
     {
         return TRUE;
@@ -96,4 +150,10 @@ int StartingConditional()
         return FALSE;
     }
 
+}
+
+object CheckNPC(object oNPC)
+{
+    if( GetIsPC(OBJECT_SELF) == 1){ oNPC = GetLastSpeaker(); }
+    return oNPC;
 }

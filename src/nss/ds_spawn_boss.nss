@@ -74,12 +74,14 @@ void main(){
     //some boss triggers have a limit of spawns per pc per reset
     int nLimit  = GetLocalInt( oTrigger, "Limit" );
     int nSpawns = GetLocalInt( oPC, sBossRef );
+    string sQuest = GetLocalString (oTrigger, "Quest");
 
     if( GetIsBlocked( oTrigger ) > 0 ){
 
         SendMessageToPC( oPC, "*There are signs of recent fighting here...*" );
         return;
     }
+
     else{
 
         if ( nLimit > 0 ){
@@ -87,6 +89,16 @@ void main(){
             if ( nSpawns >= nLimit ) {
 
                 SendMessageToPC( oPC, "Sorry. You can only spawn this boss "+IntToString(nLimit)+" times a reset." );
+                return;
+            }
+        }
+        // If the quest field isn't blank and the PC has completed the quest, don't spawn again
+        if (sQuest != "")
+        {
+            object oPCKey = GetItemPossessedBy(oPC,"ds_pckey");
+            int nQuest  = GetLocalInt(oPCKey,sQuest);
+            if( nQuest == 2)
+            {
                 return;
             }
         }
@@ -101,6 +113,7 @@ void main(){
             return;
         }
      }
+
 
     // Scan spawn trigger for spawn points.
     object oWaypoint = GetNearestObjectByTag( "CS_WP_BOSS", oTrigger );

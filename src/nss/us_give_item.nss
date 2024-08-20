@@ -14,6 +14,7 @@
 // includes
 //-------------------------------------------------------------------------------
 #include "amia_include"
+#include "nw_i0_tool"
 
 //-------------------------------------------------------------------------------
 // main
@@ -36,7 +37,11 @@ void main(){
             SendMessageToPC( oPC, "Quest completed! You would have no need for this item.");
             return;
         }
-    else if(GetLocalInt(oPCKey, sQuest) == 1 && GetItemPossessedBy(oPC, sResRef) != OBJECT_INVALID)
+    else if(sQuest != "" && HasItem(oPC, sResRef))
+        {
+            return;
+        }
+    else if(GetLocalInt(oPCKey, sQuest) == 1 && HasItem(oPC, sResRef))
         {
             return;
         }

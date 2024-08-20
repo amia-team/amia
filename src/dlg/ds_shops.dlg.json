@@ -23,7 +23,30 @@
         "__struct_id": 0,
         "ActionParams": {
           "type": "list",
-          "value": []
+          "value": [
+            {
+              "__struct_id": 0,
+              "Key": {
+                "type": "cexostring",
+                "value": "CustomToken"
+              },
+              "Value": {
+                "type": "cexostring",
+                "value": "ShopGreeting"
+              }
+            },
+            {
+              "__struct_id": 1,
+              "Key": {
+                "type": "cexostring",
+                "value": "TokenNumber"
+              },
+              "Value": {
+                "type": "cexostring",
+                "value": "702001"
+              }
+            }
+          ]
         },
         "Animation": {
           "type": "dword",
@@ -52,11 +75,34 @@
               "__struct_id": 0,
               "Active": {
                 "type": "resref",
-                "value": ""
+                "value": "lj_c_conditions"
               },
               "ConditionParams": {
                 "type": "list",
-                "value": []
+                "value": [
+                  {
+                    "__struct_id": 0,
+                    "Key": {
+                      "type": "cexostring",
+                      "value": "CustomToken"
+                    },
+                    "Value": {
+                      "type": "cexostring",
+                      "value": "ShopYes"
+                    }
+                  },
+                  {
+                    "__struct_id": 1,
+                    "Key": {
+                      "type": "cexostring",
+                      "value": "TokenNumber"
+                    },
+                    "Value": {
+                      "type": "cexostring",
+                      "value": "702002"
+                    }
+                  }
+                ]
               },
               "Index": {
                 "type": "dword",
@@ -71,11 +117,34 @@
               "__struct_id": 1,
               "Active": {
                 "type": "resref",
-                "value": ""
+                "value": "lj_c_conditions"
               },
               "ConditionParams": {
                 "type": "list",
-                "value": []
+                "value": [
+                  {
+                    "__struct_id": 0,
+                    "Key": {
+                      "type": "cexostring",
+                      "value": "CustomToken"
+                    },
+                    "Value": {
+                      "type": "cexostring",
+                      "value": "ShopNo"
+                    }
+                  },
+                  {
+                    "__struct_id": 1,
+                    "Key": {
+                      "type": "cexostring",
+                      "value": "TokenNumber"
+                    },
+                    "Value": {
+                      "type": "cexostring",
+                      "value": "702003"
+                    }
+                  }
+                ]
               },
               "Index": {
                 "type": "dword",
@@ -90,7 +159,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": ""
+          "value": "lj_c_actions"
         },
         "Sound": {
           "type": "resref",
@@ -103,7 +172,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "Greetings! Would you like to see what I have for sale?"
+            "0": "<CUSTOM702001>"
           }
         }
       }
@@ -111,7 +180,7 @@
   },
   "NumWords": {
     "type": "dword",
-    "value": 15
+    "value": 3
   },
   "PreventZoomIn": {
     "type": "byte",
@@ -161,7 +230,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "No, thanks."
+            "0": "<CUSTOM702003>"
           }
         }
       },
@@ -206,7 +275,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "Yes, please!"
+            "0": "<CUSTOM702002>"
           }
         }
       }

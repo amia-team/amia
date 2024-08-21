@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Garick in Moonpier is no longer hostile and his shop works
 - Accidental lake house in the forest
+- Bane no longer chilling in Winya
 
 ## [4.3.4 - 2024-08-6]
 

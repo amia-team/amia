@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Southport Redux: New quests, areas, dungeons; major rework of existing areas
 - Heist/house guards with new scripts
 - New "Guard System" & "Guard System - Ally" reputations
+- Associate Customizer for test launch:
+	A new tool that allows complete customization of any associate except dominated, this includes: summons, familiars, animal companions, henchmen. This tool is an improved version of summon reskins, but will not automatically replace any pre-existing reskins. If you have designs you would like to try out on the test server, please let us know, as the process will help us test it!
 
 ### Changed
 - Construction for 2 Shrines in Greengarden

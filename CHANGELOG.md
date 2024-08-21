@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-- 1 Player portrait
+- 4 Player portraits (2 for Summons)
 - 3 Festival games for events
 - 1 Festival game voucher
 - Southport Redux: New quests, areas, dungeons; major rework of existing areas

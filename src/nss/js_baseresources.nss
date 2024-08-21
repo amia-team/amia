@@ -7,6 +7,8 @@
             Lord-Jyssev - 12/1/22 Included logic to allow single-use crops/animals to be placed in-world
             Lord-Jyssev - 12/5/22 Added ability to have any number of resource variables attached to an object (previously was 3 max)
             Maverick00053 - 2/7/24 Added in functionality to give bonus resources for job primary and secondary holders on a new bonus roll
+            Lord-Jyssev - 6/22/24 Added respawning nodes; if you set a node to be respawning it will destroy self and respawn fRefresh later;
+                                  Setting a Waypoint string on the object will make it randomly choose from a number of Waypoints and respawn there instead
 
 */
 
@@ -23,7 +25,11 @@ const int RESOURCE_XP    = 100;
 
 void RefreshingNode(object oPC, string sResource, string sBonusresource, object oResourceNode, int nRank); // Refreshing Nodes
 
-void SingleUseNode(object oPC, string sResource, string sBonusresource, object oResourceNode, int nRank); // Single Use Nodes, like livestock
+void SingleUseNode(object oPC, string sResource, string sBonusresource, object oResourceNode, int nRank); // Single Use Nodes, like crops
+
+void RespawningNode(object oPC, string sResource, string sBonusresource, object oResourceNode, int nRank); // Respawning nodes, like area livestock
+
+void RespawnNode(json jResourceNode, location lNode, float fFacing); // Respawn function for the Respawning Node
 
 void main()
 {
@@ -33,6 +39,7 @@ void main()
     object oJobJournal;
     int nBlocker = GetLocalInt(oResourceNode, "blocker");
     int nSingleUse = GetLocalInt(oResourceNode, "SingleUse");
+    int nRespawning = GetLocalInt(oResourceNode, "Respawning");
     int nRank;
     int nRand;
     int nPreviousTime = GetLocalInt(oResourceNode,"PreviousHarvestTime");
@@ -112,6 +119,7 @@ void main()
      {
          int nResourceCount;
          int i = 0;
+         SendMessageToPC(oPC, "Multiple Resources found. Resource2: " + sResource2);
          for(i; i < nVariableCount; i++)
          {
             if( GetSubString( NWNX_Object_GetLocalVariable( oResourceNode, i ).key, 0, 8 ) == "resource" )
@@ -133,24 +141,14 @@ void main()
     {
         SingleUseNode(oPC,sResource,sBonusresource,oResourceNode,nRank);
     }
+    else if( nRespawning == 1) //Check if the respawning variable is set (useful for placed-down farm animals to be butchered for meat/scoundrel minigame)
+    {
+        RespawningNode(oPC,sResource,sBonusresource,oResourceNode,nRank);
+    }
     else
     {
         RefreshingNode(oPC,sResource,sBonusresource,oResourceNode,nRank);
     }
-
-    /*
-    if((sJob == "Miner") || (sJob == "Alchemist") || (sJob == "Artist") || (sJob == "Hunter") || (sJob == "Physician") ||
-    (sJob == "Scoundrel") || (sJob == "Tailor") || (sJob == "FarmerTree"))
-    {
-
-        RefreshingNode(oPC,sResource,oResourceNode,nRank);
-
-    }
-    else if((sJob == "Farmer") || (sJob == "Rancher") || (sJob == "HunterTrap"))
-    {
-        SingleUseNode(oPC,sResource,oResourceNode,nRank);
-    }
-    */
 
 }
 
@@ -370,4 +368,160 @@ void SingleUseNode(object oPC, string sResource, string sBonusresource, object o
   }
 
 
+}
+
+void RespawningNode(object oPC, string sResource, string sBonusresource, object oResourceNode, int nRank)
+{
+
+  int nRandom = Random(100)+1;
+  int nRandomBonus = Random(100)+1;
+  string nBonusSuccess = "FAILURE";
+  string sSuccessOrFailure;
+  string sResourceNodeName = GetName(oResourceNode);
+  int nPCLevel = GetClassByPosition(1,oPC) + GetClassByPosition(2,oPC) + GetClassByPosition(3,oPC);
+  int nXP = RESOURCE_XP;
+
+  json jResourceNode = ObjectToJson(oResourceNode, TRUE);
+  string sWaypoint = GetLocalString(oResourceNode, "Waypoint");
+  int nCount = 1;
+  location lNode = GetLocation(oResourceNode);
+  float fFacing = GetFacing(oResourceNode);
+  float fRefresh = GetLocalFloat(oResourceNode,"refreshrate");
+  object oArea = GetArea(oResourceNode);
+  object oPreviousWaypoint = GetNearestObjectByTag(sWaypoint, OBJECT_SELF);
+
+  if(sWaypoint != "")// Only run this if waypoint spawning is set
+  {
+    SendMessageToPC(oPC, "Waypoint = "+ sWaypoint); /////////
+
+    // Count the number of waypoints in the area by tag
+    while(GetNearestObjectByTag( sWaypoint, OBJECT_SELF, nCount) != OBJECT_INVALID)
+    {
+        nCount++;
+        SendMessageToPC(oPC, "Count = " + IntToString(nCount)); /////////
+    }
+    // Pick a random number from the variables in the area and set its new location, making sure it hasn't been used to spawn a node already
+    object oWaypoint;
+    int nWaypointBlockCount;
+    while(GetNearestObjectByTag( sWaypoint, OBJECT_SELF, nWaypointBlockCount) != OBJECT_INVALID)
+    {
+        oWaypoint = GetNearestObjectByTag(sWaypoint, OBJECT_SELF, Random(nCount));
+
+        if (GetLocalInt(oWaypoint, "RespawnBlocked") == 1)
+        {
+            SendMessageToPC(oPC, "Waypoint Blocked, trying again"); /////////
+            oWaypoint = GetNearestObjectByTag(sWaypoint, OBJECT_SELF, Random(nCount));
+        }
+        else
+        {
+            SendMessageToPC(oPC, "Suitable waypoint found"); /////////
+            break;
+        }
+        nWaypointBlockCount++;
+        SendMessageToPC(oPC, "Waypoint Spawn Check = " + IntToString(nWaypointBlockCount)); /////////
+    }
+    lNode = GetLocation(oWaypoint);
+    fFacing = GetFacing(oWaypoint) + 180.0;
+    SetLocalInt(oWaypoint, "RespawnBlocked", 1);
+    SendMessageToPC(oPC, "New waypoint RespawnBlocked = " + IntToString(GetLocalInt(oWaypoint, "RespawnBlocked"))); /////////
+  }
+
+  // Level 30 XP blocker
+  if(nPCLevel == 30)
+  {
+    nXP = 1;
+  }
+
+
+  if(nRank == 2)
+  {
+    sSuccessOrFailure = "SUCCESS";
+    GiveExactXP(oPC,nXP);
+    CreateItemOnObject(sResource,oPC);
+    CreateItemOnObject(sBonusresource,oPC);
+    SendMessageToPC(oPC,"100% SUCCESS! RESOURCE HARVESTED!");
+    SetLocalInt(oResourceNode,"blocker",1);
+    DestroyObject(oResourceNode,0.2);
+    if(nRandomBonus <= 75)
+    {
+     nBonusSuccess="SUCCESS";
+    }
+  }
+  else if(nRank == 1)
+  {
+    if(nRandom <= 80)
+    {
+     sSuccessOrFailure = "SUCCESS";
+     GiveExactXP(oPC,nXP);
+     CreateItemOnObject(sResource,oPC);
+     CreateItemOnObject(sBonusresource,oPC);
+     SetLocalInt(oResourceNode,"blocker",1);
+     DestroyObject(oResourceNode,0.2);
+     if(nRandomBonus <= 40)
+     {
+      nBonusSuccess="SUCCESS";
+     }
+    }
+    else
+    {
+     sSuccessOrFailure = "FAILURE";
+     GiveExactXP(oPC,nXP/2);
+     SetLocalInt(oResourceNode,"blocker",1);
+     DestroyObject(oResourceNode,0.2);
+    }
+    SendMessageToPC(oPC,"Rolled "+IntToString(nRandom)+" vs 80 or less. "+sSuccessOrFailure);
+
+  }
+  else
+  {
+
+    if(nRandom <= 60)
+    {
+     sSuccessOrFailure = "SUCCESS";
+     CreateItemOnObject(sResource,oPC);
+     CreateItemOnObject(sBonusresource,oPC);
+     SetLocalInt(oResourceNode,"blocker",1);
+     DestroyObject(oResourceNode,0.2);
+    }
+    else
+    {
+     sSuccessOrFailure = "FAILURE";
+     SetLocalInt(oResourceNode,"blocker",1);
+     DestroyObject(oResourceNode,0.2);
+    }
+    SendMessageToPC(oPC,"Rolled "+IntToString(nRandom)+" vs 60 or less. "+sSuccessOrFailure);
+  }
+
+  if((nRank==2) && (sSuccessOrFailure=="SUCCESS"))
+  {
+   if(nBonusSuccess=="SUCCESS")
+   {
+    CreateItemOnObject(sResource,oPC);
+    CreateItemOnObject(sBonusresource,oPC);
+   }
+   SendMessageToPC(oPC,"BONUS ROLL: Rolled "+IntToString(nRandomBonus)+" vs 75 or less. " + nBonusSuccess);
+  }
+  else if((nRank==1) && (sSuccessOrFailure=="SUCCESS"))
+  {
+   if(nBonusSuccess=="SUCCESS")
+   {
+    CreateItemOnObject(sResource,oPC);
+    CreateItemOnObject(sBonusresource,oPC);
+   }
+   SendMessageToPC(oPC,"BONUS ROLL: Rolled "+IntToString(nRandomBonus)+" vs 40 or less. " + nBonusSuccess);
+  }
+
+  // Respawn the node based on the json template taken at the beginning of the function
+  AssignCommand(oArea, DelayCommand(fRefresh, RespawnNode(jResourceNode, lNode, fFacing)));
+  if (sWaypoint != "")
+  {
+    DeleteLocalInt(oPreviousWaypoint, "RespawnBlocked");
+    SendMessageToPC(oPC, "Previous waypoint RespawnBlocked = " + IntToString(GetLocalInt(oPreviousWaypoint, "RespawnBlocked"))); /////////
+  }
+}
+
+void RespawnNode(json jResourceNode, location lNode, float fFacing)
+{
+    object oNewObject = JsonToObject(jResourceNode, lNode, OBJECT_INVALID, TRUE );
+    AssignCommand(oNewObject, SetFacing( fFacing ));
 }

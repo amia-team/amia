@@ -7,7 +7,8 @@
 //date:    apr 05 2008
 //author:  disco
 
-//Updates: 11/10/22 - Lord-Jyssev: Added optional checks for 1/reset per player and for not giving quest items after completion
+//Updates:  11/10/22 - Lord-Jyssev: Added optional checks for 1/reset per player and for not giving quest items after completion
+//          8/21/24 -  Lord-Jyssev: Added option to require quest start/completion in order to receive item
 
 
 //-------------------------------------------------------------------------------
@@ -28,11 +29,26 @@ void main(){
     string sQuest       = GetLocalString ( OBJECT_SELF, "questname");
     object oPCKey       = GetItemPossessedBy(oPC, "ds_pckey");
     string sPubKey      = GetPCPublicCDKey(oPC, TRUE);
+    string sQuestStarted   = GetLocalString( OBJECT_SELF, "queststarted");
+    string sQuestFinished  = GetLocalString( OBJECT_SELF, "questfinished");
+    int    nQuestStatus = GetLocalInt(oPCKey,sQuestFinished);
+    int    nQuestStarted = GetLocalInt(oPCKey,sQuestStarted);
+    int    nQuestFinished = GetLocalInt(oPCKey,sQuestFinished);
 
     //SendMessageToPC( oPC, "DEBUG: sQuest: "+sQuest );                                                                        ///
     //SendMessageToPC( oPC, "DEBUG: sQuest Value: "+IntToString(GetLocalInt(oPCKey, sQuest) == 2) );                                                                        ///
 
-    if(GetLocalInt(oPCKey, sQuest) == 2)
+    if( sQuestStarted != "" && nQuestStarted < 1) //Check to see if the quest fields are set
+    {
+        SendMessageToPC( oPC, "You must have started the <c Í >" + sQuestStarted + "</c> quest to use this.");
+        return;
+    }
+    if( sQuestFinished != "" && nQuestFinished != 2) //Check to see if the quest fields are set
+    {
+        SendMessageToPC( oPC, "You must have completed the <c Í >" + sQuestFinished + "</c> quest to use this.");
+        return;
+    }
+    else if(nQuestStatus == 2)
         {
             SendMessageToPC( oPC, "Quest completed! You would have no need for this item.");
             return;
@@ -41,7 +57,7 @@ void main(){
         {
             return;
         }
-    else if(GetLocalInt(oPCKey, sQuest) == 1 && HasItem(oPC, sResRef))
+    else if(nQuestStatus == 1 && HasItem(oPC, sResRef))
         {
             return;
         }

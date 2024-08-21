@@ -43,7 +43,7 @@ void main(){
         SendMessageToPC( oPC, "You must have started the <c Í >" + sQuestStarted + "</c> quest to use this.");
         return;
     }
-    if( sQuestFinished != "" && nQuestFinished != 2) //Check to see if the quest fields are set
+    else if( sQuestFinished != "" && nQuestFinished != 2) //Check to see if the quest fields are set
     {
         SendMessageToPC( oPC, "You must have completed the <c Í >" + sQuestFinished + "</c> quest to use this.");
         return;
@@ -57,10 +57,6 @@ void main(){
         {
             return;
         }
-    else if(nQuestStatus == 1 && HasItem(oPC, sResRef))
-        {
-            return;
-        }
     else if((nOncePerReset == 1) && (GetLocalInt(OBJECT_SELF, sPubKey) == 1))
         {
             SendMessageToPC( oPC, "Only one item per reset!");
@@ -69,7 +65,7 @@ void main(){
     else if ((nOncePerReset == 1) && (GetLocalInt(OBJECT_SELF, sPubKey) == 0))
         {
             //Set a variable on this object saying that the PC has spawned this once this reset
-            ds_create_item( sResRef, oPC );
+            CreateItemOnObject( sResRef, oPC, 1 );
             SetLocalInt( OBJECT_SELF, sPubKey, 1 );
             SendMessageToPC( oPC, "You cannot acquire any more of this item this reset!");
         }

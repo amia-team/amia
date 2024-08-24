@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- PLC areas to look at plcs (need port in)
 - 4 Player portraits (2 for Summons)
 - 3 Festival games for events
 - 1 Festival game voucher

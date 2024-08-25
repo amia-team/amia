@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	A new tool that allows complete customization of any associate except dominated, this includes: summons, familiars, animal companions, henchmen. This tool is an improved version of summon reskins, but will not automatically replace any pre-existing reskins. If you have designs you would like to try out on the test server, please let us know, as the process will help us test it!
 
 ### Changed
+- Shrine of Hoar in Greengarden 
 - Construction for 2 Shrines in Greengarden
 - TBQS sign from under construction to open for business
 - Updates to various other settlements to support Southport quests/travels

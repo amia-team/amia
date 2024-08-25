@@ -19,12 +19,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Construction for 2 Shrines in Greengarden
+- TBQS sign from under construction to open for business
 - Updates to various other settlements to support Southport quests/travels
 - Boss triggers now support quest-based spawning
 - ds_shops conversation has been made modular and customizable
 - Wiltun signage has been updated
 
 ### Fixed
+- All updates for TBQS in
 - Garick in Moonpier is no longer hostile and his shop works
 - Accidental lake house in the forest
 - Bane no longer chilling in Winya

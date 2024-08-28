@@ -29,4 +29,7 @@ void main()
             DelayCommand( fTimeLimit, DeleteLocalInt( oChest, "Blocker" ) );
         }
     }
+    if(GetLocalInt(oChest, "lock") == 1){
+        SetLocked(oChest, TRUE);
+    }
 }

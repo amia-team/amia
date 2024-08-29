@@ -7,7 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-
+- Item puzzle script
+- Maze items to the palette
 - PLC areas to look at plcs (need port in)
 - 4 Player portraits (2 for Summons)
 - 3 Festival games for events
@@ -26,12 +27,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Boss triggers now support quest-based spawning
 - ds_shops conversation has been made modular and customizable
 - Wiltun signage has been updated
+- Ostland: Havskar construction complete
+- Ostland: Havskar Caves is now The Malachite Maze
+- Locking functionality to oc_loot_chest
 
 ### Fixed
 - All updates for TBQS in
 - Garick in Moonpier is no longer hostile and his shop works
 - Accidental lake house in the forest
 - Bane no longer chilling in Winya
+- Daytime area music in Chult Savannah Outskirts
+- Wild Animal faction settings so they don't attack random NPCs
 
 ## [4.3.4 - 2024-08-6]
 

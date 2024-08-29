@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- 4 creature skins: Otter, Wolverine, Spotted Skunk, Hognoses Skunk
+- 16 creature portrait: Skunk, Akita, Bull, Cape Ox, Zombie Dog, Fey Wolf, Fox, Goat, German Shepherd, Male Lion, Monkey, Piglet, Sow, Rabbit, Squirrel, Tortoise
 - Item puzzle script
 - Maze items to the palette
 - PLC areas to look at plcs (need port in)
@@ -38,6 +40,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Bane no longer chilling in Winya
 - Daytime area music in Chult Savannah Outskirts
 - Wild Animal faction settings so they don't attack random NPCs
+- 33 animal skin skinmeshes so they run right, etc.
 
 ## [4.3.4 - 2024-08-6]
 

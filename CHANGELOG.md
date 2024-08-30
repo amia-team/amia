@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-- Some monster abilities to item property Cast Spell (Hurl Rocks, 13 Bolts, 5 Gazes, 7 Howls, 7 Pulses)
+- Some monster abilities to item property Cast Spell (Hurl Rocks, 7 Bolts, 5 Gazes, 7 Howls, 7 Pulses, 3 Rays)
 - 4 creature skins: Otter, Wolverine, Spotted Skunk, Hognoses Skunk
 - 16 creature portrait: Skunk, Akita, Bull, Cape Ox, Zombie Dog, Fey Wolf, Fox, Goat, German Shepherd, Male Lion, Monkey, Piglet, Sow, Rabbit, Squirrel, Tortoise
 - Item puzzle script
@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Southport Redux: New quests, areas, dungeons; major rework of existing areas
 - Heist/house guards with new scripts
 - New "Guard System" & "Guard System - Ally" reputations
+- Wildshape Widget to palette
+- Frozenfar: Barren Hills, The Preserve
 - Associate Customizer for test launch:
 	A new tool that allows complete customization of any associate except dominated, this includes: summons, familiars, animal companions, henchmen. This tool is an improved version of summon reskins, but will not automatically replace any pre-existing reskins. If you have designs you would like to try out on the test server, please let us know, as the process will help us test it!
 
@@ -33,6 +35,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Ostland: Havskar construction complete
 - Ostland: Havskar Caves is now The Malachite Maze
 - Locking functionality to oc_loot_chest
+- Sal'dock update in Ebon Wyrm Guild
+- Frozenfar: Barren Hills, The High Gates - Added transition to The Preserve
 
 ### Fixed
 - All updates for TBQS in

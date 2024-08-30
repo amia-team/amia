@@ -7,12 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Some monster abilities to item property Cast Spell (Hurl Rocks, 13 Bolts, 5 Gazes, 7 Howls, 7 Pulses)
 - 4 creature skins: Otter, Wolverine, Spotted Skunk, Hognoses Skunk
 - 16 creature portrait: Skunk, Akita, Bull, Cape Ox, Zombie Dog, Fey Wolf, Fox, Goat, German Shepherd, Male Lion, Monkey, Piglet, Sow, Rabbit, Squirrel, Tortoise
 - Item puzzle script
 - Maze items to the palette
 - PLC areas to look at plcs (need port in)
-- 4 Player portraits (2 for Summons)
+- 5 Player portraits (2 for Summons)
 - 3 Festival games for events
 - 1 Festival game voucher
 - Southport Redux: New quests, areas, dungeons; major rework of existing areas

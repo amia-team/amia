@@ -119,7 +119,7 @@ void main()
      {
          int nResourceCount;
          int i = 0;
-         SendMessageToPC(oPC, "Multiple Resources found. Resource2: " + sResource2);
+
          for(i; i < nVariableCount; i++)
          {
             if( GetSubString( NWNX_Object_GetLocalVariable( oResourceNode, i ).key, 0, 8 ) == "resource" )
@@ -392,13 +392,11 @@ void RespawningNode(object oPC, string sResource, string sBonusresource, object 
 
   if(sWaypoint != "")// Only run this if waypoint spawning is set
   {
-    SendMessageToPC(oPC, "Waypoint = "+ sWaypoint); /////////
 
     // Count the number of waypoints in the area by tag
     while(GetNearestObjectByTag( sWaypoint, OBJECT_SELF, nCount) != OBJECT_INVALID)
     {
         nCount++;
-        SendMessageToPC(oPC, "Count = " + IntToString(nCount)); /////////
     }
     // Pick a random number from the variables in the area and set its new location, making sure it hasn't been used to spawn a node already
     object oWaypoint;
@@ -409,21 +407,17 @@ void RespawningNode(object oPC, string sResource, string sBonusresource, object 
 
         if (GetLocalInt(oWaypoint, "RespawnBlocked") == 1)
         {
-            SendMessageToPC(oPC, "Waypoint Blocked, trying again"); /////////
             oWaypoint = GetNearestObjectByTag(sWaypoint, OBJECT_SELF, Random(nCount));
         }
         else
         {
-            SendMessageToPC(oPC, "Suitable waypoint found"); /////////
             break;
         }
         nWaypointBlockCount++;
-        SendMessageToPC(oPC, "Waypoint Spawn Check = " + IntToString(nWaypointBlockCount)); /////////
     }
     lNode = GetLocation(oWaypoint);
     fFacing = GetFacing(oWaypoint) + 180.0;
     SetLocalInt(oWaypoint, "RespawnBlocked", 1);
-    SendMessageToPC(oPC, "New waypoint RespawnBlocked = " + IntToString(GetLocalInt(oWaypoint, "RespawnBlocked"))); /////////
   }
 
   // Level 30 XP blocker

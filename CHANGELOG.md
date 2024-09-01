@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [4.4.0 - 2024-08-31]
+
+### Added
 - Some monster abilities to item property Cast Spell (Hurl Rocks, 7 Bolts, 5 Gazes, 7 Howls, 7 Pulses, 3 Rays)
 - 4 creature skins: Otter, Wolverine, Spotted Skunk, Hognoses Skunk
 - 16 creature portrait: Skunk, Akita, Bull, Cape Ox, Zombie Dog, Fey Wolf, Fox, Goat, German Shepherd, Male Lion, Monkey, Piglet, Sow, Rabbit, Squirrel, Tortoise
@@ -37,6 +45,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Locking functionality to oc_loot_chest
 - Sal'dock update in Ebon Wyrm Guild
 - Frozenfar: Barren Hills, The High Gates - Added transition to The Preserve
+- Plot update to Ridgewood
 
 ### Fixed
 - All updates for TBQS in

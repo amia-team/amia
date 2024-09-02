@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Shrine of Repose in Feylake West complete
 
 ### Fixed
 

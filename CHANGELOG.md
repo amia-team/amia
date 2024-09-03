@@ -11,19 +11,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Shrine of Repose in Feylake West complete
 - Hidden door ways now have bios to give you hints to what they require before clicking it
-- Nearby party members will recieve XP for completing DTS challanges. 
+- Nearby party members will recieve XP for completing DTS challanges.
 - Reduced gold income by half
-- Fixed Cryptic Door lock bug
-- Scaling "help" with DCs for DTS based on nearby party PC members. Each nearby PC member will reduce the DC by 2. 
-- Fixed DTS Animal Factions
+- Scaling "help" with DTS skill check DCs based on nearby PC party members: Each nearby PC party member will reduce the DC by 2
+- Moved furniture between two areas
 
 ### Fixed
+- DTS Animal/NPC factions
+- Cryptic Door lock bug
+- Flame Ray and Inflict Wounds Rays will do the right damage now
+- Factions/scripts on NPCs in The Preserve
 
 ## [4.4.0 - 2024-08-31]
 
 ### Added
 - Some monster abilities to item property Cast Spell (Hurl Rocks, 7 Bolts, 5 Gazes, 7 Howls, 7 Pulses, 3 Rays)
-- 4 creature skins: Otter, Wolverine, Spotted Skunk, Hognoses Skunk
+- 4 creature skins: Otter, Wolverine, Spotted Skunk, Hognosed Skunk
 - 16 creature portrait: Skunk, Akita, Bull, Cape Ox, Zombie Dog, Fey Wolf, Fox, Goat, German Shepherd, Male Lion, Monkey, Piglet, Sow, Rabbit, Squirrel, Tortoise
 - Item puzzle script
 - Maze items to the palette

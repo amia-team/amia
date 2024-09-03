@@ -426,6 +426,7 @@ void SpawnHiddenDoors(object oTrans, string sDungeon, int nLevel)
   int nDoorWPCount = GetLocalInt(oTrans,"doorwp");  // How many hidden door destination waypoints
   int nBanPLC = GetLocalInt(oTrans,"banPLC");
   int nBanNPC = GetLocalInt(oTrans,"banNPC");
+  string sHDoorBio;
 
   // Making sure there isn't any weirdness if someone messes up and sets ban to both types.
   if((nBanPLC==1) && (nBanNPC==1))
@@ -453,11 +454,11 @@ void SpawnHiddenDoors(object oTrans, string sDungeon, int nLevel)
     nRandLockDoor = Random(2) + 1;
     switch(nRandType)
     {
-     case 1: sDoorType = "dungdoorspellcra" ; nIsNPC=0; break;
-     case 2: sDoorType = "dungdoorsearch" ; nIsNPC=0; break;
-     case 3: sDoorType = "hiddendoornpc"; sRandomNPC = RandomRaceAndGender(oTrans); nIsNPC=1; break;   // Special case hidden door. NPC with map spawns.
+     case 1: sDoorType = "dungdoorspellcra" ; nIsNPC=0; sHDoorBio = "Something appears to be sealed by a magical spell of some kind."; break;
+     case 2: sDoorType = "dungdoorsearch" ; nIsNPC=0; sHDoorBio = "Something seems to be hidden here but you can't quite make it out."; break;
+     case 3: sDoorType = "hiddendoornpc"; sRandomNPC = RandomRaceAndGender(oTrans); nIsNPC=1; sHDoorBio = "This adventurer appears to be distracted and peering at a piece of paper."; break;   // Special case hidden door. NPC with map spawns.
      case 4: sDoorType = "dungdoorlore" ; nIsNPC=0; break;
-     case 5: nIsNPC=0; if(nRandLockDoor==1){sDoorType = "hiddendoorlocked";}else if(nRandLockDoor==2){sDoorType = "hiddendoorlock2";} break;
+     case 5: nIsNPC=0; if(nRandLockDoor==1){sDoorType = "hiddendoorlocked";}else if(nRandLockDoor==2){sDoorType = "hiddendoorlock2";} sHDoorBio = "The doorway before you appears to be locked tight."; break;
     }
 
     nRandom = Random(nDoorWPCount)+1;
@@ -473,6 +474,7 @@ void SpawnHiddenDoors(object oTrans, string sDungeon, int nLevel)
       SetName(oTemp,"Distracted Adventurer");
       // Add in custom convo if set
       SetLocalString(oTemp,"customConvo",GetLocalString(oTrans,sDoorType+"CustomConvo"));
+      SetDescription(oTemp,sHDoorBio);
      }
     }
     else
@@ -480,6 +482,7 @@ void SpawnHiddenDoors(object oTrans, string sDungeon, int nLevel)
      if(nBanPLC==0)
      {
       oTemp = CreateObject(OBJECT_TYPE_PLACEABLE,sDoorType,lWayPoint);
+      SetDescription(oTemp,sHDoorBio);
      }
     }
 

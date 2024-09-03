@@ -10,6 +10,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Shrine of Repose in Feylake West complete
+- Hidden door ways now have bios to give you hints to what they require before clicking it
+- Nearby party members will recieve XP for completing DTS challanges. 
+- Reduced gold income by half
+- Fixed Cryptic Door lock bug
+- Scaling "help" with DCs for DTS based on nearby party PC members. Each nearby PC member will reduce the DC by 2. 
+- Fixed DTS Animal Factions
 
 ### Fixed
 

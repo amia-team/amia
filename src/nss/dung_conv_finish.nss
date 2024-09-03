@@ -14,6 +14,12 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
 // Generates the rewards - Gold/XP/Items
 void RewardPC(object oPC, int nLevel, string sType, string sWaypoint);
 
+// Generates XP for the party in an area
+void GenerateXPForParty(object oPC, int nLevel);
+
+// Gives us a number of nearby party members
+int GetPCPartyNumberNearby(object oPC);
+
 //Clears out all the variables once done
 void ClearChecks(object oPC);
 
@@ -34,8 +40,17 @@ void main()
 
 void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, int nNode)
 {
+
+    // Checks for nearby party members and reduces the roll as a result
+    int nPartyNearbyCount = GetPCPartyNumberNearby(oPC);
+    if(nPartyNearbyCount >= 1)
+    {
+     SendMessageToPC(oPC,IntToString(nPartyNearbyCount) + " party members nearby to assist with task. Reducing DC difficulty by " + IntToString(nPartyNearbyCount*2));
+    }
+    //
+
     string sSkill;
-    int nDC = nLevel + 10 + (nLevel-(nLevel/3));
+    int nDC = nLevel + 10 + (nLevel-(nLevel/3)) - (nPartyNearbyCount*2);
     int nSkillRank1;
     int nSkillRank2;
     int nSkillRank3;
@@ -414,8 +429,8 @@ void RewardPC(object oPC, int nLevel, string sType, string sWaypoint)
 {
     object oDungeonObject = GetLocalObject(oPC,"dungobject");
     int nRandom = Random(2)+1;
-    int nRandomGold = Random(nLevel)*100 + Random(nLevel)*10 + Random(10);
-    int nGold = nLevel*900+nRandomGold;
+    int nRandomGold = Random(nLevel)*50 + Random(nLevel)*5 + Random(5);
+    int nGold = nLevel*450+nRandomGold;
     int nPCLevel = GetLevelByPosition(1,oPC)+GetLevelByPosition(2,oPC)+GetLevelByPosition(3,oPC);
 
     if(sType == "hiddendoornpc") // This is a special case where the NPC gives a map that immediately leads to a door way
@@ -440,7 +455,7 @@ void RewardPC(object oPC, int nLevel, string sType, string sWaypoint)
 
      if(nPCLevel<30)
      {
-       SetXP(oPC,(GetXP(oPC)+nLevel*100));
+       GenerateXPForParty(oPC,nLevel);
      }
 
     }
@@ -453,14 +468,54 @@ void RewardPC(object oPC, int nLevel, string sType, string sWaypoint)
       else if(nRandom==2)
       {
          GenerateStandardLoot(oPC,nLevel);
-         GenerateStandardLoot(oPC,nLevel);
       }
 
       if(nPCLevel<30)
       {
-        SetXP(oPC,(GetXP(oPC)+nLevel*100));
+       GenerateXPForParty(oPC,nLevel);
       }
     }
+
+}
+
+void GenerateXPForParty(object oPC, int nLevel)
+{
+   SetXP(oPC,(GetXP(oPC)+nLevel*100));
+
+   object oPartyMember = GetFirstFactionMember(oPC,TRUE);
+   object oArea = GetArea( oPC );
+
+   while(GetIsObjectValid(oPartyMember)==TRUE)
+   {
+    if(GetArea(oPartyMember) == oArea)
+    {
+     SetXP(oPartyMember,(GetXP(oPartyMember)+nLevel*25));
+    }
+    oPartyMember = GetNextFactionMember( oPC, TRUE );
+   }
+
+}
+
+int GetPCPartyNumberNearby(object oPC)
+{
+
+   object oPartyMember = GetFirstFactionMember(oPC,TRUE);
+   object oArea = GetArea( oPC );
+   int nCount = 0;
+
+   while(GetIsObjectValid(oPartyMember)==TRUE)
+   {
+    if(GetArea(oPartyMember) == oArea)
+    {
+      if(GetDistanceBetween(oPC,oPartyMember) < 15.0)
+      {
+        nCount++;
+      }
+    }
+    oPartyMember = GetNextFactionMember( oPC, TRUE );
+   }
+
+   return nCount;
 
 }
 

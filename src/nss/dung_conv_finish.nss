@@ -123,12 +123,12 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
         SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank3) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
        }
      }
-     else if(nNode==4)
+     else if(nNode==4)   // Pickpocket has a +50 adjustment
      {
-        sSkill = "PICK POCKET";
-        nDiceRollTotal = nDiceRoll + nSkillRank4;
+        sSkill = "PICKPOCKET";
+        nDiceRollTotal = nDiceRoll + nSkillRank4 + 50;
 
-       if(nDiceRollTotal >= nDC)
+       if((nDiceRollTotal) >= nDC)
        {
         SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank4) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
         RewardPC(oPC, nLevel, sType, sWaypoint);
@@ -203,10 +203,10 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
         SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank3) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
        }
      }
-     else if(nNode==4)
+     else if(nNode==4)    // Pickpocket has a +50 adjustment
      {
-        sSkill = "PICK POCKET";
-        nDiceRollTotal = nDiceRoll + nSkillRank4;
+        sSkill = "PICKPOCKET";
+        nDiceRollTotal = nDiceRoll + nSkillRank4 + 50;
 
        if(nDiceRollTotal >= nDC)
        {

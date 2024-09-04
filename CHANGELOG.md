@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Cryptic Door lock bug
 - Flame Ray and Inflict Wounds Rays will do the right damage now
 - Factions/scripts on NPCs in The Preserve
+- DTS Pickpocket adjusted +50 to account for Amia's negative adjustment
 
 ## [4.4.0 - 2024-08-31]
 

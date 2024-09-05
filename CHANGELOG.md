@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Flame Ray and Inflict Wounds Rays will do the right damage now
 - Factions/scripts on NPCs in The Preserve
 - DTS Pickpocket adjusted +50 to account for Amia's negative adjustment
+- Fixed Create Undead scaling
 
 ## [4.4.0 - 2024-08-31]
 

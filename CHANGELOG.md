@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Outside of the Shrine of the Dawn in Feylake
+- Club, Scimitar, Spear, Trident, Two-Bladed Sword to be affected by Weapon Finesse (all Medium-size)
 
 ### Changed
 - Lighting in the Shrine of the Dawn (waiting on final word from the duke)

@@ -57,12 +57,6 @@ void main( ){
     DelayCommand(300.0,ExecuteScript("dc_timer",GetModule()));
     NWNX_Weapon_SetDevastatingCriticalEventScript("nwnx_ev_dev");
 
-    NWNX_Weapon_SetWeaponFinesseSize(BASE_ITEM_LONGSWORD, CREATURE_SIZE_MEDIUM);
-    NWNX_Weapon_SetWeaponFinesseSize(BASE_ITEM_BASTARDSWORD, CREATURE_SIZE_MEDIUM);
-    NWNX_Weapon_SetWeaponFinesseSize(BASE_ITEM_KATANA, CREATURE_SIZE_MEDIUM);
-
-    NWNX_Weapon_SetWeaponIsMonkWeapon(BASE_ITEM_QUARTERSTAFF);
-
     NWNX_Events_SubscribeEvent("NWNX_ON_COMBAT_MODE_ON", "sub_comb_on");
     NWNX_Events_SubscribeEvent("NWNX_ON_COMBAT_MODE_OFF", "sub_comb_off");
     NWNX_Events_SubscribeEvent("NWNX_ON_UNPOLYMORPH_AFTER", "nwnx_unpoly_aftr");

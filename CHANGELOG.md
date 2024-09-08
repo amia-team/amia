@@ -7,8 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Outside of the Shrine of the Dawn in Feylake
 
 ### Changed
+- Lighting in the Shrine of the Dawn (waiting on final word from the duke)
 - Shrine of Repose in Feylake West complete
 - Hidden door ways now have bios to give you hints to what they require before clicking it
 - Nearby party members will recieve XP for completing DTS challanges.

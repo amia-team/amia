@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Reduced gold income by half
 - Scaling "help" with DTS skill check DCs based on nearby PC party members: Each nearby PC party member will reduce the DC by 2
 - Moved furniture between two areas
+- Double XP time is over!
 
 ### Fixed
 - DTS Animal/NPC factions

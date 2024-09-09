@@ -7,11 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Construction phase to Old City Kohl
 - Outside of the Shrine of the Dawn in Feylake
 - Club, Scimitar, Spear, Trident, Two-Bladed Sword to be affected by Weapon Finesse (all Medium-size)
 
 ### Changed
-- Lighting in the Shrine of the Dawn (waiting on final word from the duke)
+- Lighting in the Shrine of the Dawn complete
 - Shrine of Repose in Feylake West complete
 - Hidden door ways now have bios to give you hints to what they require before clicking it
 - Nearby party members will recieve XP for completing DTS challanges.
@@ -21,6 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Double XP time is over!
 
 ### Fixed
+- Descripton of Motarch in Shrine of Repose
 - DTS Animal/NPC factions
 - Cryptic Door lock bug
 - Flame Ray and Inflict Wounds Rays will do the right damage now

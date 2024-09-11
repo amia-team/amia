@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Ambassador Rocksport to Barak Runedar: Citadel
 - Construction phase to Old City Kohl
 - Outside of the Shrine of the Dawn in Feylake
 - Club, Scimitar, Spear, Trident, Two-Bladed Sword to be affected by Weapon Finesse (all Medium-size)
@@ -22,6 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Double XP time is over!
 
 ### Fixed
+- Entrance to racial area in Barak Runedar
 - Descripton of Motarch in Shrine of Repose
 - DTS Animal/NPC factions
 - Cryptic Door lock bug

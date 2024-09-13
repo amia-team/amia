@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Construction phase to Old City Kohl
 - Outside of the Shrine of the Dawn in Feylake
 - Club, Scimitar, Spear, Trident, Two-Bladed Sword to be affected by Weapon Finesse (all Medium-size)
+- Added a portal in OI
 
 ### Changed
 - Lighting in the Shrine of the Dawn complete
@@ -21,6 +22,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Scaling "help" with DTS skill check DCs based on nearby PC party members: Each nearby PC party member will reduce the DC by 2
 - Moved furniture between two areas
 - Double XP time is over!
+- Removed an OI NPC for plot reasons
+- Moved Obsidian Throne
+- Renamed OI Areas (Wysteria Galere, Calderis North)
 
 ### Fixed
 - Entrance to racial area in Barak Runedar

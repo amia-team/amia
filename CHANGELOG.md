@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Hangman's Cove Warehouse and key
 - Demonreach: Hangman's Cove Portal area
 - Ambassador Rocksport to Barak Runedar: Citadel
 - Construction phase to Old City Kohl

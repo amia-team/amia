@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Demonreach: Hangman's Cove Portal area
 - Ambassador Rocksport to Barak Runedar: Citadel
 - Construction phase to Old City Kohl
 - Outside of the Shrine of the Dawn in Feylake
@@ -14,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added a portal in OI
 
 ### Changed
+- Guard in Wiltun Keep now is First Knight
 - Lighting in the Shrine of the Dawn complete
 - Shrine of Repose in Feylake West complete
 - Hidden door ways now have bios to give you hints to what they require before clicking it

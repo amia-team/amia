@@ -34,6 +34,8 @@ void main(){
     int    nQuestStatus = GetLocalInt(oPCKey,sQuestFinished);
     int    nQuestStarted = GetLocalInt(oPCKey,sQuestStarted);
     int    nQuestFinished = GetLocalInt(oPCKey,sQuestFinished);
+    int    nGoldCost    = GetLocalInt( OBJECT_SELF, "Gold");
+    int    nCooldown    = GetLocalInt( OBJECT_SELF, "Cooldown");
 
     //SendMessageToPC( oPC, "DEBUG: sQuest: "+sQuest );                                                                        ///
     //SendMessageToPC( oPC, "DEBUG: sQuest Value: "+IntToString(GetLocalInt(oPCKey, sQuest) == 2) );                                                                        ///
@@ -49,28 +51,44 @@ void main(){
         return;
     }
     else if(nQuestStatus == 2)
-        {
-            SendMessageToPC( oPC, "Quest completed! You would have no need for this item.");
-            return;
-        }
+    {
+        SendMessageToPC( oPC, "Quest completed! You would have no need for this item.");
+        return;
+    }
     else if(sQuest != "" && HasItem(oPC, sResRef))
-        {
-            return;
-        }
+    {
+        return;
+    }
     else if((nOncePerReset == 1) && (GetLocalInt(OBJECT_SELF, sPubKey) == 1))
-        {
-            SendMessageToPC( oPC, "Only one item per reset!");
-            return;
-        }
+    {
+        SendMessageToPC( oPC, "Only one item per reset!");
+        return;
+    }
+    else if(nGoldCost != 0 && GetGold(oPC) < nGoldCost)
+    {
+        SendMessageToPC( oPC, IntToString(nGoldCost) + " gold is required.");
+        return;
+    }
+    else if(GetIsBlocked())
+    {
+        SendMessageToPC( oPC, "You must wait to use this again.");
+        return;
+    }
     else if ((nOncePerReset == 1) && (GetLocalInt(OBJECT_SELF, sPubKey) == 0))
-        {
-            //Set a variable on this object saying that the PC has spawned this once this reset
-            CreateItemOnObject( sResRef, oPC, 1 );
-            SetLocalInt( OBJECT_SELF, sPubKey, 1 );
-            SendMessageToPC( oPC, "You cannot acquire any more of this item this reset!");
-        }
+    {
+        //Set a variable on this object saying that the PC has spawned this once this reset
+        CreateItemOnObject( sResRef, oPC, 1 );
+        SetLocalInt( OBJECT_SELF, sPubKey, 1 );
+        SendMessageToPC( oPC, "You cannot acquire any more of this item this reset!");
+    }
     else
+    {
+        SendMessageToPC( oPC, "nGoldCost = "+IntToString(nGoldCost));
+        TakeGoldFromCreature(nGoldCost, oPC, TRUE);
+        CreateItemOnObject( sResRef, oPC, 1 );
+        if (nCooldown != 0)
         {
-            CreateItemOnObject( sResRef, oPC, 1 );
+            SetBlockTime(OBJECT_SELF, 0, nCooldown);
         }
+    }
 }

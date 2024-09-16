@@ -7,18 +7,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [4.4.1 - 2024-09-15]
+
+### Added
 - Hangman's Cove Warehouse and key
 - Demonreach: Hangman's Cove Portal area
 - Ambassador Rocksport to Barak Runedar: Citadel
-- Construction phase to Old City Kohl
-- Outside of the Shrine of the Dawn in Feylake
 - Club, Scimitar, Spear, Trident, Two-Bladed Sword to be affected by Weapon Finesse (all Medium-size)
-- Added a portal in OI
+- 1 player portrait
 
 ### Changed
 - Guard in Wiltun Keep now is First Knight
-- Lighting in the Shrine of the Dawn complete
-- Shrine of Repose in Feylake West complete
+- Lighting in the Shrine of the Dawn complete in Greengarden
+- Shrine of Repose in Greengarden: Feylake West complete
+- Construction phase to Greengarden: Old City Grounds
+- Outside of the Shrine of the Dawn in Greengarden Feylake
 - Hidden door ways now have bios to give you hints to what they require before clicking it
 - Nearby party members will recieve XP for completing DTS challanges.
 - Reduced gold income by half
@@ -28,6 +36,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed an OI NPC for plot reasons
 - Moved Obsidian Throne
 - Renamed OI Areas (Wysteria Galere, Calderis North)
+- Obsidian Isle portal
 
 ### Fixed
 - Entrance to racial area in Barak Runedar

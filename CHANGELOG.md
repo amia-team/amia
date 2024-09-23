@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Rest menu emotes will now let you sit as if in a chair wherever you're standing
 
 ### Fixed
 

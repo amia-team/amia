@@ -64,6 +64,7 @@ void main(){
         case 14: nAnimation = ANIMATION_LOOPING_SIT_CROSS;              break;
         case 15: nAnimation = ANIMATION_LOOPING_WORSHIP;                break;
         case 16: nAnimation = ANIMATION_LOOPING_PAUSE;                  break;
+        case 17: nAnimation = ANIMATION_LOOPING_SIT_CHAIR;              break;
 
         //xp block
         case 20: XPblock( oPC );                                        break;

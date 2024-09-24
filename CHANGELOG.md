@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Rest menu emotes will now let you sit as if in a chair wherever you're standing
+- Plot updates to:
+	- Amia Forest: Oakmist Vale
+	- Amia Forest: Oakmist Vale, Community Hut
+	- Chult: Ruins
 
 ### Fixed
 

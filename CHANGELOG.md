@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Amia Forest: Oakmist Vale
 	- Amia Forest: Oakmist Vale, Community Hut
 	- Chult: Ruins
+	- Ruathym: Caraigh, Mushroom Cave
 
 ### Fixed
 

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- 1 player portrait
 
 ### Changed
 - Rest menu emotes will now let you sit as if in a chair wherever you're standing

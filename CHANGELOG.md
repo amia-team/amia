@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Khem: Temple of the Eight Gods
 
 ### Fixed
+- Bugs in Amia Forest: Treetop Village and Huts
 
 ## [4.4.1 - 2024-09-15]
 

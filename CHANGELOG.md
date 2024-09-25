@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Khem: Temple of the Eight Gods
 	- Obsidian Isle: Emberwood, East - Wysteria Galere
 	- Obsidian Isle: Emberwood, East - Wysteria Galere Sanctum
+	- Final construction in Obsidian Isle: Calderis, North completed
 
 ### Fixed
 - Bugs in Amia Forest: Treetop Village and Huts

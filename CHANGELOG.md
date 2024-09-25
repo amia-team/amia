@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - 1 player portrait
+- Added an Emberwood interior
 
 ### Changed
 - Rest menu emotes will now let you sit as if in a chair wherever you're standing
@@ -17,6 +18,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Chult: Ruins
 	- Ruathym: Caraigh, Mushroom Cave
 	- Khem: Temple of the Eight Gods
+	- Obsidian Isle: Emberwood, East - Wysteria Galere
+	- Obsidian Isle: Emberwood, East - Wysteria Galere Sanctum
 
 ### Fixed
 - Bugs in Amia Forest: Treetop Village and Huts

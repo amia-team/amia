@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - 1 player portrait
 - Added an Emberwood interior
+- New Jergalite Dungeon and Quest in Obsidian Isle: Calderis, North
 
 ### Changed
 - Rest menu emotes will now let you sit as if in a chair wherever you're standing

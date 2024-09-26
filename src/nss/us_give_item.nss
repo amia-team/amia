@@ -31,7 +31,7 @@ void main(){
     string sPubKey      = GetPCPublicCDKey(oPC, TRUE);
     string sQuestStarted   = GetLocalString( OBJECT_SELF, "queststarted");
     string sQuestFinished  = GetLocalString( OBJECT_SELF, "questfinished");
-    int    nQuestStatus = GetLocalInt(oPCKey,sQuestFinished);
+    int    nQuestStatus = GetLocalInt(oPCKey,sQuest);
     int    nQuestStarted = GetLocalInt(oPCKey,sQuestStarted);
     int    nQuestFinished = GetLocalInt(oPCKey,sQuestFinished);
     int    nGoldCost    = GetLocalInt( OBJECT_SELF, "Gold");
@@ -83,7 +83,7 @@ void main(){
     }
     else
     {
-        SendMessageToPC( oPC, "nGoldCost = "+IntToString(nGoldCost));
+
         TakeGoldFromCreature(nGoldCost, oPC, TRUE);
         CreateItemOnObject( sResRef, oPC, 1 );
         if (nCooldown != 0)

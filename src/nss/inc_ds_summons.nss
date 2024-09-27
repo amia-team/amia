@@ -140,16 +140,16 @@ void sum_AnimateDead( object oPC, int nCasterLevel, location lTarget ){
     // Capped @ 14 powerpoints for non-PMs, 15 for PMs
 
     // vars
-    int nPaleMasterLevel        = 0;
+    int nPaleMasterLevel        = GetLevelByClass( CLASS_TYPE_PALEMASTER, oPC );
     int nTotalPowerPoints       = nCasterLevel;
     int nTurnResistanceBonus    = 0;
 
     // palemaster? , +2 turn resistance, palemaster bonus undead powerpoints, +1 undead powerpoint
-    if ( ( nPaleMasterLevel = GetLevelByClass( CLASS_TYPE_PALEMASTER, oPC ) > 0 ) &&
+    if ( ( nPaleMasterLevel > 0 ) &&
          ( GetLastSpellCastClass( ) != CLASS_TYPE_CLERIC ) ){
 
         // palemaster bonus undead powerpoints
-        nTotalPowerPoints += nPaleMasterLevel;
+        nTotalPowerPoints = nTotalPowerPoints+nPaleMasterLevel;
 
         // +1 undead powerpoint for being a palemaster spell-like ability
         nTotalPowerPoints++;
@@ -183,15 +183,15 @@ void sum_AnimateDead( object oPC, int nCasterLevel, location lTarget ){
 void sum_CreateUndead( object oPC, int nCap, int nCasterLevel, location lTarget ){
 
     // vars
-    int nPaleMasterLevel        = 0;
+    int nPaleMasterLevel        = GetLevelByClass( CLASS_TYPE_PALEMASTER, oPC );
     int nTotalPowerPoints       = nCasterLevel;
 
     // palemaster? , palemaster levels added to undead powerpoints
-    if ( ( nPaleMasterLevel = GetLevelByClass( CLASS_TYPE_PALEMASTER, oPC ) > 0 ) &&
+    if ( ( nPaleMasterLevel > 0 ) &&
          ( GetLastSpellCastClass( ) != CLASS_TYPE_CLERIC ) ){
 
         // palemaster bonus undead powerpoints
-        nTotalPowerPoints += nPaleMasterLevel;
+        nTotalPowerPoints = nTotalPowerPoints+nPaleMasterLevel;
     }
 
     // 22 undead powerpoint cap

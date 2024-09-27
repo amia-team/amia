@@ -509,7 +509,10 @@ int GetPCPartyNumberNearby(object oPC)
     {
       if(GetDistanceBetween(oPC,oPartyMember) < 15.0)
       {
-        nCount++;
+        if(oPC != oPartyMember)
+        {
+         nCount++;
+        }
       }
     }
     oPartyMember = GetNextFactionMember( oPC, TRUE );

@@ -25,6 +25,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Bugs in Amia Forest: Treetop Village and Huts
+- DTS party bonus wont count user now
+- Animate Undead and Create Undead Scaling fix 2.0
 
 ## [4.4.1 - 2024-09-15]
 

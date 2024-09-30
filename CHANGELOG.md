@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - New Jergalite Dungeon and Quest in Obsidian Isle: Calderis, North
 
 ### Changed
+- Finished stocking Hangman's Cove Warehouse
 - Rest menu emotes will now let you sit as if in a chair wherever you're standing
 - Plot updates to:
 	- Amia Forest: Oakmist Vale

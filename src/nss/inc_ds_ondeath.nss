@@ -907,9 +907,14 @@ void GenerateEpicLoot(object oInventory)
     sIndex       = ITEM_PREFIX + IntToString( nIndex );
     oTemplate    = GetLocalObject( oContainer, sIndex );
 
-    CopyItemVoid( oTemplate, oInventory, TRUE );
-
-
+    if(GetIsObjectValid(oTemplate))
+    {
+     CopyItemVoid( oTemplate, oInventory, TRUE );
+    }
+    else // If it isn't valid it reruns it
+    {
+      GenerateEpicLoot(oInventory);
+    }
 
 }
 
@@ -921,6 +926,7 @@ object GenerateEpicLootReturn(object oInventory)
     int nIndex              = 0;
     string sIndex           = "";
     object oTemplate        = OBJECT_INVALID;
+    object oReturn;
 
 
     object oContainer = GetObjectByTag( "CD_TREASURE_UBER" );
@@ -930,9 +936,16 @@ object GenerateEpicLootReturn(object oInventory)
     sIndex       = ITEM_PREFIX + IntToString( nIndex );
     oTemplate    = GetLocalObject( oContainer, sIndex );
 
-    object oReturn = CopyItem( oTemplate, oInventory, TRUE );
-    return oReturn;
+    if(GetIsObjectValid(oTemplate))
+    {
+     oReturn = CopyItem(oTemplate, oInventory, TRUE);
+    }
+    else // If it isn't valid it reruns it
+    {
+      GenerateEpicLootReturn(oInventory);
+    }
 
+    return oReturn;
 }
 
 
@@ -976,7 +989,13 @@ void GenerateStandardLoot(object oInventory, int nLevel)
     sIndex       = ITEM_PREFIX + IntToString( nIndex );
     oTemplate    = GetLocalObject( oContainer, sIndex );
 
-    CopyItemVoid( oTemplate, oInventory, TRUE );
-
+    if(GetIsObjectValid(oTemplate))
+    {
+     CopyItemVoid( oTemplate, oInventory, TRUE );
+    }
+    else // If it isn't valid it reruns it
+    {
+      GenerateStandardLoot(oInventory,nLevel);
+    }
 
 }

@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Obsidian Isle: Emberwood, East - Wysteria Galere Sanctum
 	- Final construction in Obsidian Isle: Calderis, North completed
 
+
 ### Fixed
 - Bugs in Amia Forest: Treetop Village and Huts
 - DTS party bonus wont count user now

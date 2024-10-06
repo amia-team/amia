@@ -8,15 +8,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - 1 player portrait
+- 1 creature portrait: gorilla
 - Added an Emberwood interior
 - New Jergalite Dungeon and Quest in Obsidian Isle: Calderis, North
 
 ### Changed
 - Finished stocking Hangman's Cove Warehouse
 - Rest menu emotes will now let you sit as if in a chair wherever you're standing
+- DTS added to:
+	- Whispering Rift
+	- Skull Peaks: Summit
 - Plot updates to:
+	- Amia Forest
 	- Amia Forest: Oakmist Vale
 	- Amia Forest: Oakmist Vale, Community Hut
+	- Amia Forest: Oakmist Vale, Treetop Village
+	- Amia Forest: Oakmist Vale, Caves
 	- Chult: Ruins
 	- Ruathym: Caraigh, Mushroom Cave
 	- Khem: Temple of the Eight Gods

@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [4.4.2 - 2024-10-05]
+
+### Added
 - 1 player portrait
 - 1 creature portrait: gorilla
 - Added an Emberwood interior

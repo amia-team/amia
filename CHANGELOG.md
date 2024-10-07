@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
+- Portal from Positive Plane
+- tiny map shows for TBQS now
 
 ## [4.4.2 - 2024-10-05]
 

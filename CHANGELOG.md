@@ -21,6 +21,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 1 creature portrait: gorilla
 - Added an Emberwood interior
 - New Jergalite Dungeon and Quest in Obsidian Isle: Calderis, North
+- Spawner has a mini boss feature now for Dev use
+- Spawns have variable sizes now when spawned on the map
 
 ### Changed
 - Finished stocking Hangman's Cove Warehouse

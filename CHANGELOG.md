@@ -7,8 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- dm_bagoffelt2
 
 ### Changed
+- Class Widgets Unplotted, Uncursed, Unstolen
 
 ### Fixed
 - Prancing Stallion

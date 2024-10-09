@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
+- Prancing Stallion
 - Portal from Positive Plane
 - tiny map shows for TBQS now
 

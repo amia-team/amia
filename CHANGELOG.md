@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - New Jergalite Dungeon and Quest in Obsidian Isle: Calderis, North
 - Spawner has a mini boss feature now for Dev use
 - Spawns have variable sizes now when spawned on the map
-- Unique Add ons to Spawns are present now. They are bigger, stronger versions of normal mobs that can spawn. They will always drop loot as well. 
+- Unique Add ons to Spawns are present now. They are bigger, stronger versions of normal mobs that can spawn. They have a 50% chance to drop loot.
 
 ### Changed
 - Finished stocking Hangman's Cove Warehouse

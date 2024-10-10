@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - dm_bagoffelt2
 
 ### Changed
-- Class Widgets Unplotted, Uncursed, Unstolen
+- Request, Old Request, Summon Widgets set to dropable
 
 ### Fixed
 - Prancing Stallion

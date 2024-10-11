@@ -94,28 +94,7 @@ void main(){
 
     if(GetTag(oCritter) == "GlobalBoss")
     {
-      int nRandom = Random(15)+1;
-      string LootDropResRef;
-
-      switch(nRandom)
-      {
-        case 1: LootDropResRef = "invasionreward"; break;
-        case 2: LootDropResRef = "elyon_loot_1"; break;
-        case 3: LootDropResRef = "elyon_loot_2"; break;
-        case 4: LootDropResRef = "elyon_loot_3"; break;
-        case 5: LootDropResRef = "elyon_loot_4"; break;
-        case 6: LootDropResRef = "elyon_loot_5"; break;
-        case 7: LootDropResRef = "elyon_loot_6"; break;
-        case 8: LootDropResRef = "elyon_loot_7"; break;
-        case 9: LootDropResRef = "elyon_loot_8"; break;
-        case 10: LootDropResRef = "elyon_loot_9"; break;
-        case 11: LootDropResRef = "elyon_loot_10"; break;
-        case 12: LootDropResRef = "elyon_loot_11"; break;
-        case 13: LootDropResRef = "elyon_loot_12"; break;
-        case 14: LootDropResRef = "elyon_loot_13"; break;
-        case 15: LootDropResRef = "elyon_loot_14"; break;
-      }
-
+      string LootDropResRef = "glob_base_res";
       object LootDrop = CreateItemOnObject(LootDropResRef,oCritter);
       SetDroppableFlag(LootDrop,TRUE);
     }

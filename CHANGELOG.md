@@ -28,6 +28,33 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Spawner has a mini boss feature now for Dev use
 - Spawns have variable sizes now when spawned on the map
 - Unique Add ons to Spawns are present now. They are bigger, stronger versions of normal mobs that can spawn. They have a 50% chance to drop loot.
+- Added in Global Boss resource drop
+- Added in Recipes for Global Bosses.
+
+Jeweler
+Ring of Fortification (+5 Universal Saves) - Mythical Sample + Platinum Ring
+Amulet of Spell Protection (+5 AC, 32 SR, +1 Universal Saves) - Mythical Sample + Platinum Amulet
+
+Tailor
+Cloak of Spell Protection (+5 AC, 32 SR, +2 Universal Saves) - Mythical Sample + Rothewool 
+Boots of Freedom (+5 AC, Freedom, +1 Universal Saves) - Mythical Sample + Silk Boots 
+Dragon Scale Belt (+3 Universal Save, +3 Regeneration) - Mythical Sample + Leather Belt
+
+Smith
+Helmet of the Clear Mind (+6 Will Save, +3 Regen) - Mythical Sample + Mithral Helmet
+
+Artificer
+Citrine Ioun (Poison Immunity, Disease Immunity) - Mythical Sample + Elemental Essence Water 
+Moonstone Ioun (Freedom) - Mythical Sample + Elemental Essence Air 
+Bloodstone Ioun (Evasion) - Mythical Sample + Elemental Essence Fire 
+Obsidian Ioun (32 SR) - Mythical Sample + Elemental Essence Earth
+
+Ancient Barrier Device
+Acid (+1 Dodge AC, +10% Acid Immunity) - Mythical Sample + Emerald
+Cold (+1 Dodge AC, +10% Cold Immunity) - Mythical Sample + Diamond
+Electrical (+1 Dodge AC, +10% Electric Immunity) - Mythical Sample + Sapphire
+Fire (+1 Dodge AC, +10% Fire Immunity) - Mythical Sample + Ruby
+Negative (+1 Dodge AC, +10% Negative Energy Immunity) - Mythical Sample + Crystal
 
 ### Changed
 - Finished stocking Hangman's Cove Warehouse

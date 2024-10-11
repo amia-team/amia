@@ -10,6 +10,7 @@
   070523 Lord-Jyssev: Added epic loot crafting and ingredient retention option
   Feb 23 2024 Maverick: Added in new Raid crafting support, and added in functionality so you can have two identifical ingredients and it will work. Also added in proper tracking for job system material types and requires those items of certain materials for recipes. See the Epic/Legendary sections.
   March 8th 2023 Mav - Adding Epic Crafting support.
+  10/10/24 - Maverick: Adding in Global Boss loot crafting support.
 */
 
 #include "x2_inc_switches"
@@ -308,7 +309,7 @@ void ArtificerConverter(object oPC, object oBench, int nNode)
       case 22: sProduct = "js_arca_gmpo"; sIngredient1 = "js_bla_miin"; sIngredient2 = "js_lea_leat"; nCost = 5000; break;
       case 23: sProduct = "raid_comp_frosty"; sIngredient1 = "raid_base_frosty"; sIngredient2 = "raid_base_frosty"; nCost = 5000; nRetainItem=1; break;
       case 24: sProduct = "raid_comp_lich"; sIngredient1 = "raid_base_lich"; sIngredient2 = "raid_base_lich"; nCost = 5000; nRetainItem=1; break;
-      case 25: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_comp_frosty"; sIngredient2 = "js_jew_diam"; sType = "wdragonbossrewar"; sPlaceableName = "<cnÞÿ>Frostspear's Treasure</c>"; nCost = 10000; nRetainItem=1; break;
+      // case 25 is now EMPTY
       case 26: sProduct = "epx_comp_wrc"; sIngredient1 = "epx_base_eqip"; sIngredient2 = "epx_base_glyp"; nCost = 5000; nRetainItem=1; break;
       case 27: sProduct = "epx_comp_mwamc"; sIngredient1 = "epx_base_ston"; sIngredient2 = "epx_base_fabr"; nCost = 5000; nRetainItem=1; break;
       case 28: sProduct = "epx_comp_psbdc"; sIngredient1 = "epx_base_blod"; sIngredient2 = "epx_base_claw"; nCost = 5000; nRetainItem=1; break;
@@ -320,7 +321,7 @@ void ArtificerConverter(object oPC, object oBench, int nNode)
 
      }
     }
-    if(nActionNode == 2)
+    if(nActionNode == 2)   // Epics/Legendaries
     {
      switch(nNode)
      {
@@ -342,6 +343,16 @@ void ArtificerConverter(object oPC, object oBench, int nNode)
       case 16: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_mwamc"; sIngredient2 = "js_sch_emto"; sType = "epx_misc_tmmys"; sPlaceableName = "<c¦ÿ©>Greater Tome of Mystra</c>"; nCost = 10000; nRetainItem=1; break;
       case 17: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_psbdc"; sIngredient2 = "js_bla_goin"; sType = "epx_misc_orbus"; sPlaceableName = "<c¦ÿ©>Orb of Unlocked Secrets</c>"; nCost = 10000; nRetainItem=1; break;
       case 18: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wrc"; sIngredient2 = "js_bla_plin"; sType = "epx_misc_hrald"; sPlaceableName = "<c¦ÿ©>Herald's Gift</c>"; nCost = 10000; nRetainItem=1; break;
+      case 19: sProduct = "epiccraftingtmp"; sIngredient1 = "glob_base_res"; sIngredient2 = "js_alch_elea"; sType = "elyon_loot_12"; sPlaceableName = "<c « >Moonstone Ioun</c>"; nCost = 10000; nRetainItem=1; break;
+      case 20: sProduct = "epiccraftingtmp"; sIngredient1 = "glob_base_res"; sIngredient2 = "js_alch_elee"; sType = "elyon_loot_14"; sPlaceableName = "<c « >Obsidian Ioun</c>"; nCost = 10000; nRetainItem=1; break;
+      case 21: sProduct = "epiccraftingtmp"; sIngredient1 = "glob_base_res"; sIngredient2 = "js_alch_elef"; sType = "elyon_loot_13"; sPlaceableName = "<c « >Bloodstone Ioun</c>"; nCost = 10000; nRetainItem=1; break;
+      case 22: sProduct = "epiccraftingtmp"; sIngredient1 = "glob_base_res"; sIngredient2 = "js_alch_elew"; sType = "elyon_loot_11"; sPlaceableName = "<c « >Citrine Ioun</c>"; nCost = 10000; nRetainItem=1; break;
+      case 23: sProduct = "epiccraftingtmp"; sIngredient1 = "glob_base_res"; sIngredient2 = "js_jew_emer"; sType = "elyon_loot_2"; sPlaceableName = "<c « >Ancient Barrier Device (Acid)</c>"; nCost = 10000; nRetainItem=1; break;
+      case 24: sProduct = "epiccraftingtmp"; sIngredient1 = "glob_base_res"; sIngredient2 = "js_jew_diam"; sType = "elyon_loot_1"; sPlaceableName = "<c « >Ancient Barrier Device (Cold)</c>"; nCost = 10000; nRetainItem=1; break;
+      case 25: sProduct = "epiccraftingtmp"; sIngredient1 = "glob_base_res"; sIngredient2 = "js_jew_sapp"; sType = "elyon_loot_4"; sPlaceableName = "<c « >Ancient Barrier Device (Electrical)</c>"; nCost = 10000; nRetainItem=1; break;
+      case 26: sProduct = "epiccraftingtmp"; sIngredient1 = "glob_base_res"; sIngredient2 = "js_jew_ruby"; sType = "invasionreward"; sPlaceableName = "<c « >Ancient Barrier Device (Fire)</c>"; nCost = 10000; nRetainItem=1; break;
+      case 27: sProduct = "epiccraftingtmp"; sIngredient1 = "glob_base_res"; sIngredient2 = "js_jew_crys"; sType = "elyon_loot_3"; sPlaceableName = "<c « >Ancient Barrier Device (Negative)</c>"; nCost = 10000; nRetainItem=1; break;
+      case 28: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_comp_frosty"; sIngredient2 = "js_jew_diam"; sType = "wdragonbossrewar"; sPlaceableName = "<cnÞÿ>Frostspear's Treasure</c>"; nCost = 10000; nRetainItem=1; break;
 
      }
     }
@@ -862,6 +873,8 @@ void JewelerConverter(object oPC, object oBench, int nNode)
       case 49: sProduct = "x2_it_lightgem05"; sIngredient1 = "js_gem_reme"; sIngredient2 = "js_alch_elee"; nCost = 200; break;
       case 50: sProduct = "x2_it_lightgem06"; sIngredient1 = "js_gem_rcry"; sIngredient2 = "js_alch_elef"; nCost = 200; break;
       case 51: sProduct = "x2_it_lightgem07"; sIngredient1 = "js_gem_rdia"; sIngredient2 = "js_alch_elea"; nCost = 200; break;
+      case 52: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wbc"; sIngredient2 = "js_jew_ring"; sType = "elyon_loot_9"; sPlaceableName = "<c « >Ring of Fortification</c>"; sIngredient2Type = "platinum"; nCost = 10000; nRetainItem=1; break;
+      case 53: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wbc"; sIngredient2 = "js_jew_amul"; sType = "elyon_loot_6"; sPlaceableName = "<c « >Amulet of Spell Protection</c>"; sIngredient2Type = "platinum"; nCost = 10000; nRetainItem=1; break;
     }
 
     CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);
@@ -1521,6 +1534,7 @@ void SmithConverter(object oPC, object oBench, int nNode)
         case 7: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_lich"; sIngredient2 = "js_bla_shto"; sType = "shroudshield"; sPlaceableName = "<cË z>Fallen Hero's Shield</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
         case 8: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_comp_frosty"; sIngredient2 = "js_bla_wega"; sType = "frostspear_gaxe"; sPlaceableName = "<cnÞÿ>Glacial Clever</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
         case 9: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_comp_lich"; sIngredient2 = "js_bla_helm"; sType = "shroudhelm"; sPlaceableName = "<cË z>Blazing Crown of Ages Past</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+        case 10: sProduct = "epiccraftingtmp"; sIngredient1 = "glob_base_res"; sIngredient2 = "js_bla_helm"; sType = "elyon_loot_10"; sPlaceableName = "<c « >Helmet of the Clear Mind</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
       }
     }
     else if(nActionNode == 11) // Epic Crafting
@@ -1686,7 +1700,7 @@ void TailorConverter(object oPC, object oBench, int nNode)
       case 53: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtent"; sIngredient2 = "js_art_colred"; sType = "js_bui_tent5"; sPlaceableName = "Big Red and White Tent"; sMaterial = "plc"; nCost = 10000; break;
       case 54: sProduct = "js_plcspawner"; sIngredient1 = "jobplc_bigtentrdwht"; sIngredient2 = "js_art_colblk"; sType = "js_bui_tent6"; sPlaceableName = "Big Red and Black Tent"; sMaterial = "plc"; nCost = 10000; break;
       case 55: sProduct = "js_tailorkit"; sIngredient1 = "js_tai_bosi"; sIngredient2 = "js_bla_stin"; nCost = 10000; break;
-      case 56: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_lich"; sIngredient2 = "js_tai_cloa"; sType = "shroudcloak"; sPlaceableName = "<cË z>Mantle of Unlife</c>"; nCost = 10000; sIngredient2Type = "wool"; break;
+      // Case 56 empty now
       case 57: sProduct = "js_tai_glove"; sIngredient1 = "js_tai_bowo"; sIngredient2 = "none"; sType = "gloves"; sMaterial = "wool"; nCost = 2000; break;
       case 58: sProduct = "js_tai_glove"; sIngredient1 = "js_tai_boco"; sIngredient2 = "none"; sType = "gloves"; sMaterial = "cotton"; nCost = 2000; break;
       case 59: sProduct = "js_tai_glove"; sIngredient1 = "js_tai_brwo"; sIngredient2 = "none"; sType = "gloves"; sMaterial = "rothewool"; nCost = 2000; break;
@@ -1770,6 +1784,16 @@ void TailorConverter(object oPC, object oBench, int nNode)
       case 53: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_base_glyp"; sIngredient2 = "js_tai_cloa"; sType = "epx_clok_dtct"; sPlaceableName = "<c¦ÿ©>Cape of the Owl</c>"; sIngredient2Type = "rothewool"; nCost = 10000; nRetainItem=1; break;
      }
 
+   }
+   if(nActionNode == 3) // Legendaries/Global
+   {
+     switch(nNode)
+     {
+      case 1: sProduct = "epiccraftingtmp"; sIngredient1 = "glob_base_res"; sIngredient2 = "js_tai_boot"; sType = "elyon_loot_7"; sPlaceableName = "<c « >Boots of Freedom</c>"; sIngredient2Type = "silk"; nCost = 10000; nRetainItem=1; break;
+      case 2: sProduct = "epiccraftingtmp"; sIngredient1 = "glob_base_res"; sIngredient2 = "js_tai_belt"; sType = "elyon_loot_5"; sPlaceableName = "<c « >Dragon Scale Belt</c>"; sIngredient2Type = "leather"; nCost = 10000; nRetainItem=1; break;
+      case 3: sProduct = "epiccraftingtmp"; sIngredient1 = "glob_base_res"; sIngredient2 = "js_tai_cloa"; sType = "elyon_loot_8"; sPlaceableName = "<c « >Cloak of Spell Protection</c>"; sIngredient2Type = "rothewool"; nCost = 10000; nRetainItem=1; break;
+      case 4: sProduct = "epiccraftingtmp"; sIngredient1 = "raid_base_lich"; sIngredient2 = "js_tai_cloa"; sType = "shroudcloak"; sPlaceableName = "<cË z>Mantle of Unlife</c>"; nCost = 10000; sIngredient2Type = "wool"; break;
+     }
    }
 
     CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);

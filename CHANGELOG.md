@@ -47,6 +47,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Prancing Stallion
 - Portal from Positive Plane
 - tiny map shows for TBQS now
+- Bugs in Oakmist Vale
 
 ## [4.4.2 - 2024-10-05]
 

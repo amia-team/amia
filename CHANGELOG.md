@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-- Bloodspear Arena
+- Bloodspear Arena (no entrance to it yet)
+- Gobbo archers Deployed
+- Escape hatch for Gobbo archers
 - dm_bagoffelt2
 - Spawner has a mini boss feature now for Dev use
 - Spawns have variable sizes now when spawned on the map

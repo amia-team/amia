@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [4.4.3 - 2024-10-12]
+
+### Added
 - Bloodspear Arena (no entrance to it yet)
 - Gobbo archers Deployed
 - Escape hatch for Gobbo archers

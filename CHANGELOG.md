@@ -10,7 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
+
 ### Fixed
+- dragon cloth of both chaos and tyranny are actually made of cloth now
 
 ## [4.4.3 - 2024-10-12]
 

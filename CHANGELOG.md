@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- kohl_city replaced with kohl_city2
+- transitions updated
 
 
 ### Fixed

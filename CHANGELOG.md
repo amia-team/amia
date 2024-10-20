@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- 
 
 ### Changed
 - kohl_city replaced with kohl_city2

@@ -16,13 +16,14 @@
 #include "ds_ai2_include"
 
 void RaiseMe(object oCritter, location eLoc);
-void RewardTrophy(object oArea);
+void Reward(object oArea, float fCR);
 //-------------------------------------------------------------------------------
 // main
 //-------------------------------------------------------------------------------
 void main(){
 
     object oCritter         = OBJECT_SELF;
+    float  fCR              = GetChallengeRating(oCritter);
     object oKiller          = GetLastKiller();
     object oArea            = GetArea(oCritter);
     string sCritterRes      = GetResRef(oCritter);
@@ -48,27 +49,23 @@ void main(){
       DelayCommand(29.0,ApplyEffectAtLocation(DURATION_TYPE_INSTANT, eVis, eLoc));
       DelayCommand(29.5,RaiseMe(oCritter, eLoc));
     }
-
+    //
 
     if(sCritterRes == "ds_yellowfang_6")
     {
-      DeleteLocalInt(GetModule(),"invasiongobstime");
-      RewardTrophy(oArea);
+      Reward(oArea, fCR);
     }
     else if(sCritterRes == "chosenofkilma002")
     {
-      DeleteLocalInt(GetModule(),"invasionorcstime");
-      RewardTrophy(oArea);
+      Reward(oArea, fCR);
     }
     else if(sCritterRes == "invasiontrollbs")
     {
-      DeleteLocalInt(GetModule(),"invasiontrollstime");
-      RewardTrophy(oArea);
+      Reward(oArea, fCR);
     }
     else if(sCritterRes == "invasionbeastbs")
     {
-      DeleteLocalInt(GetModule(),"invasionbeastmentime");
-      RewardTrophy(oArea);
+      Reward(oArea, fCR);
     }
 
     // Invasion Emotes
@@ -135,10 +132,11 @@ void RaiseMe(object oCritter, location eLoc)
 }
 
 
-void RewardTrophy(object oArea)
+void Reward(object oArea, float fCR)
 {
-   int nRandom;
-
+   int nXP;
+   int nCR = FloatToInt(fCR);
+   int nLevel;
 
    object oPC = GetFirstPC();
 
@@ -147,26 +145,25 @@ void RewardTrophy(object oArea)
 
      if(GetArea(oPC) == oArea)
      {
-        nRandom = Random(2) + 1;
-        if(GetLocalInt(oPC, "gottrophyreward") == 0)// Check to make sure this launches once per person
+        if(GetLocalInt(oPC, "gotinvasionreward") == 0)// Check to make sure this launches once per person
         {
-
-        if(nRandom == 1)
-        {
-
-
           CreateItemOnObject("trophytoken", oPC, 1);
-          FloatingTextStringOnCreature("-You have recieved a trophy for helping stop the invasion-",oPC);
-          SetLocalInt(oPC,"gottrophyreward",1);
+          nLevel = GetLevelByPosition(1,oPC) + GetLevelByPosition(2,oPC) + GetLevelByPosition(3,oPC);
+          nXP = GetXP(oPC);
+          if(nLevel != 30)
+          {
+            SetXP(oPC,nXP+(100*nCR));
+          }
+          else
+          {
+            SetXP(oPC,nXP+1);
+          }
+          GiveGoldToCreature(oPC,(1000*nCR));
+          FloatingTextStringOnCreature("-You have been issued a reward from the Guild for helping-",oPC);
+          SetLocalInt(oPC,"gotinvasionreward",1);
           DelayCommand(30.0,DeleteLocalInt(oPC,"gottrophyreward"));
-
-        }
         }
      }
-
      oPC = GetNextPC();
    }
-
-
-
 }

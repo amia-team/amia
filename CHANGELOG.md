@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - kohl_city replaced with kohl_city2
 - transitions updated
+- Moved Owlbear spawn location
 
 
 ### Fixed

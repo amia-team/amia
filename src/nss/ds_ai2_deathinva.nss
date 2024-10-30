@@ -147,7 +147,6 @@ void Reward(object oArea, float fCR)
      {
         if(GetLocalInt(oPC, "gotinvasionreward") == 0)// Check to make sure this launches once per person
         {
-          CreateItemOnObject("trophytoken", oPC, 1);
           nLevel = GetLevelByPosition(1,oPC) + GetLevelByPosition(2,oPC) + GetLevelByPosition(3,oPC);
           nXP = GetXP(oPC);
           if(nLevel != 30)

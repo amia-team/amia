@@ -157,7 +157,12 @@ void Reward(object oArea, float fCR)
           {
             SetXP(oPC,nXP+1);
           }
-          GiveGoldToCreature(oPC,(3500*nCR));
+          int temp =(1500*nCR);
+          if(temp > 100000)
+          {
+            temp = 100000;
+          }
+          GiveGoldToCreature(oPC,temp);
           FloatingTextStringOnCreature("-You have been issued a reward from the Guild for helping-",oPC);
           SetLocalInt(oPC,"gotinvasionreward",1);
           DelayCommand(30.0,DeleteLocalInt(oPC,"gottrophyreward"));

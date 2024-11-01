@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ### Fixed
+- Gobbo escape hatch
 - Redirected a transition to its proper place in UD 
 - dragon cloth of both chaos and tyranny are actually made of cloth now
 - Fix to a broken Southport quest

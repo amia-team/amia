@@ -11,6 +11,7 @@
   Feb 23 2024 Maverick: Added in new Raid crafting support, and added in functionality so you can have two identifical ingredients and it will work. Also added in proper tracking for job system material types and requires those items of certain materials for recipes. See the Epic/Legendary sections.
   March 8th 2023 Mav - Adding Epic Crafting support.
   10/10/24 - Maverick: Adding in Global Boss loot crafting support.
+  11/1/24  - Mav: Added in a catch all for all wooden planks
 */
 
 #include "x2_inc_switches"
@@ -439,6 +440,7 @@ void ArchitectConverter(object oPC, object oBench, int nNode)
       case 52: sProduct = "js_plcspawner"; sIngredient1 = "js_hun_sbone"; sIngredient2 = "js_hun_mbone"; sType = "js_bui_bonecage"; sPlaceableName = "Bone Cage"; sMaterial = "plc"; nCost = 5000; break;
       case 53: sProduct = "js_chest_kit";  sIngredient1 = "js_tree_shaw"; sIngredient2 = "js_herb_sils"; nCost = 5000; break;
       case 54: sProduct = "js_plcspawner"; sIngredient1 = "js_bui_dupl"; sIngredient2 = "js_bla_irin"; sType = "js_bui_trsi2"; sPlaceableName = "Transportable Sign Large"; sMaterial = "plc"; nCost = 2000; break;
+      case 55: sProduct = "js_bui_crate";  sIngredient1 = "jobsystemplank"; sIngredient2 = "jobsystemplank"; nCost = 5000; break;
      }
 
 
@@ -494,6 +496,10 @@ void AlchemistConverter(object oPC, object oBench, int nNode)
       case 22: sProduct = "js_dryaddom"; sIngredient1 = "js_hun_dryad"; sIngredient2 = "js_alch_pure"; nCost = 3000; nProductStackSize = 10; break;
       case 23: sProduct = "js_grickcompound"; sIngredient1 = "js_hun_grick"; sIngredient2 = "js_alch_pure"; nCost = 3000;  nStack = 1; nProductStackSize = 10; break;
       case 24: sProduct = "js_hydracompound"; sIngredient1 = "js_hun_hydra"; sIngredient2 = "js_alch_pure"; nCost = 3000; break;
+      case 25: sProduct = "js_alch_incfang"; sIngredient1 = "js_sold_fang"; sIngredient2 = "js_sold_claw"; nCost = 2000; break;
+      case 26: sProduct = "js_alch_comfang"; sIngredient1 = "js_alch_incfang"; sIngredient2 = "js_hun_lbone"; nCost = 3000; break;
+      case 27: sProduct = "js_alch_earthcor"; sIngredient1 = "js_jew_emer"; sIngredient2 = "js_alch_elee"; nCost = 3000; break;
+      case 28: sProduct = "js_alch_fangglm"; sIngredient1 = "js_alch_comfang"; sIngredient2 = "js_alch_earthcor"; nCost = 3000; break;
 
 
 
@@ -1025,6 +1031,8 @@ void ScoundrelConverter(object oPC, object oBench, int nNode)
       case 8: sProduct = "js_lvenomgland"; sIngredient1 = "js_hun_lvgland"; sIngredient2 = "none"; nCost = 1600; break;
       case 9: sProduct = "js_wyverngland"; sIngredient1 = "js_hun_wyvern"; sIngredient2 = "none"; nCost = 2000; break;
       case 10: sProduct = "js_arca_spiderl"; sIngredient1 = "js_hun_cspider"; sIngredient2 = "js_alch_slee"; nCost = 2000; break;
+      case 11: sProduct = "js_sco_supply"; sIngredient1 = "jobsystemmeat"; sIngredient2 = "jobsystemweapon"; nCost = 4000; break;
+      case 12: sProduct = "js_sco_supplycrt"; sIngredient1 = "js_sco_supply"; sIngredient2 = "js_bui_crate"; nCost = 4000; break;
     }
 
     CraftProduct(oPC,oBench,sProduct,sType,sMaterial,sIngredient1,sIngredient2,sPlaceableName,nCost,nStack,nProductStackSize,nRetainItem,0,sIngredient1Type,sIngredient2Type);
@@ -2224,6 +2232,30 @@ void CraftProduct(object oPC, object oBench, string sProduct, string sType, stri
         if((GetResRef(oItemInChest) == "js_tree_phaw") || (GetResRef(oItemInChest) == "js_tree_dusw") ||
         (GetResRef(oItemInChest) == "js_tree_shaw") || (GetResRef(oItemInChest) == "js_tree_irow") ||
         (GetResRef(oItemInChest) == "js_tree_zurw"))
+        {
+           nIngredient2Found = 1;
+           oIngredient2 = oItemInChest;
+        }
+      }
+      //
+
+      // Catch all for planks so any work with jobs
+      if(sIngredient1 == "jobsystemplank")
+      {
+        if((GetResRef(oItemInChest) == "js_bui_dupl") || (GetResRef(oItemInChest) == "js_bui_irpl") ||
+        (GetResRef(oItemInChest) == "js_bui_phpl") || (GetResRef(oItemInChest) == "js_bui_shpl") ||
+        (GetResRef(oItemInChest) == "js_bui_zupl"))
+        {
+           nIngredient1Found = 1;
+           oIngredient1 = oItemInChest;
+        }
+      }
+
+      if(sIngredient2 == "jobsystemplank")
+      {
+        if((GetResRef(oItemInChest) == "js_bui_dupl") || (GetResRef(oItemInChest) == "js_bui_irpl") ||
+        (GetResRef(oItemInChest) == "js_bui_phpl") || (GetResRef(oItemInChest) == "js_bui_shpl") ||
+        (GetResRef(oItemInChest) == "js_bui_zupl"))
         {
            nIngredient2Found = 1;
            oIngredient2 = oItemInChest;

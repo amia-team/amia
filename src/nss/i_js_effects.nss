@@ -422,6 +422,14 @@ void JobSystemItemEffects(object oPC, object oWidget, location lTarget, object o
       AddHenchman(oPC,oHenchmen);
 
    }
+   else if(sItemResRef == "js_alch_fangglm") // Fang Golem
+   {
+      effect eVFX = EffectVisualEffect(VFX_FNF_SUMMON_UNDEAD);
+      object oHenchmen = CreateObject(OBJECT_TYPE_CREATURE,"js_golem_fang",lTarget,FALSE);
+      ApplyEffectAtLocation(DURATION_TYPE_INSTANT,eVFX,lTarget);
+      SetObjectVisualTransform(oHenchmen,OBJECT_VISUAL_TRANSFORM_SCALE,1.25);
+      AddHenchman(oPC,oHenchmen);
+   }
    else if(sItemResRef == "js_arca_spiderl") // Spawns Spider Egg Sacks
    {
      object oEgg = CreateObject(OBJECT_TYPE_PLACEABLE,"js_hun_eggsack",lTarget);

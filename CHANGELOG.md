@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - DTS to Manor of Mourn
 - TBQS 2nd floor
 - Deity interaction with Hoar statue, Greengarden
+- Invasions Added
+- New Recipes Added: Fang Golem, Supply Crates
+- Patrol Feature Added
 
 ### Changed
 - kohl_city replaced with kohl_city2

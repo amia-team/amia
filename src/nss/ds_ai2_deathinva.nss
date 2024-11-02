@@ -7,7 +7,10 @@
 //date:    dec 23 2007
 //author:  disco
 // Edited: Maverick00053, August 19th 2019
-// Created an invasion version
+// Edited: Mav, 11/1/2024 - Retooled it for new Invasion Bosses
+// Created an invasion version for invasion bosses
+
+
 
 //-------------------------------------------------------------------------------
 // includes
@@ -16,7 +19,7 @@
 #include "ds_ai2_include"
 
 void RaiseMe(object oCritter, location eLoc);
-void Reward(object oArea, float fCR, object oCritter);
+void Reward(object oArea, float fCR, string npcResRef);
 //-------------------------------------------------------------------------------
 // main
 //-------------------------------------------------------------------------------
@@ -30,6 +33,7 @@ void main(){
     effect eVFX             = EffectVisualEffect(VFX_FNF_GAS_EXPLOSION_FIRE);
     effect eVis             = EffectVisualEffect(VFX_IMP_RAISE_DEAD);
     location eLoc           = GetLocation(oCritter);
+    string npcResRef        = GetResRef(oCritter);
 
 
     // Undead invasion auto raise mechanics
@@ -51,51 +55,9 @@ void main(){
     }
     //
 
-    if(sCritterRes == "ds_yellowfang_6")
-    {
-      Reward(oArea, fCR, oCritter);
-    }
-    else if(sCritterRes == "chosenofkilma002")
-    {
-      Reward(oArea, fCR, oCritter);
-    }
-    else if(sCritterRes == "invasiontrollbs")
-    {
-      Reward(oArea, fCR, oCritter);
-    }
-    else if(sCritterRes == "invasionbeastbs")
-    {
-      Reward(oArea, fCR, oCritter);
-    }
+    // Invasion Reward
+    Reward(oArea, fCR, npcResRef);
 
-    // Invasion Emotes
-
-    if(sCritterRes == "invasioncreat003")
-    {
-      AssignCommand(OBJECT_SELF, SpeakString("*The demon crumbles to the ground leaving behind something of interest*",TALKVOLUME_TALK));
-    }
-    else if(sCritterRes == "invasioncreat004")
-    {
-       AssignCommand(OBJECT_SELF, SpeakString("*The demon explodes in a fiery death. A damaged, but functional artifact remains behind*",TALKVOLUME_TALK));
-       //Invasion clean up
-       DeleteLocalInt(oArea,"invasion_area");
-       ApplyEffectToObject(DURATION_TYPE_INSTANT,eVFX,OBJECT_SELF);
-    }
-    else if(sCritterRes == "invasiondead004")
-    {
-       AssignCommand(OBJECT_SELF, SpeakString("*The massive skeletal dragon crumbles to the ground. The bones continue to tremble as they begin to reform*",TALKVOLUME_TALK));
-    }
-    else if(sCritterRes == "invasiondead006")
-    {
-       AssignCommand(OBJECT_SELF, SpeakString("*The necromancer finally falls! It's corpse crumbling to the ground and slowly turned to ash as its remains blew away*",TALKVOLUME_TALK));
-       //Invasion clean up
-       DeleteLocalInt(oArea,"invasion_area");
-    }
-    else
-    {
-       //Invasion clean up
-       DeleteLocalInt(oArea,"invasion_area");
-    }
 
     //OnDeath custom ability usage
     string sDE = GetLocalString( oCritter, "DeathEffect" );
@@ -132,7 +94,7 @@ void RaiseMe(object oCritter, location eLoc)
 }
 
 
-void Reward(object oArea, float fCR, object oCritter)
+void Reward(object oArea, float fCR, string npcResRef)
 {
    int nXP;
    int nCR = FloatToInt(fCR);
@@ -167,7 +129,7 @@ void Reward(object oArea, float fCR, object oCritter)
           SetLocalInt(oPC,"gotinvasionreward",1);
           DelayCommand(30.0,DeleteLocalInt(oPC,"gottrophyreward"));
 
-          if(GetResRef(oCritter)=="demoninvaboss")
+          if(npcResRef=="demoninvaboss")
           {
            CreateItemOnObject("demon_token",oPC);
           }

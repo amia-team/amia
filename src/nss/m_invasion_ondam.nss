@@ -28,7 +28,7 @@ void main()
     // This enables the invuln mechanics
     if(GetLocalInt(OBJECT_SELF,"abyssalboss")==1)
     {
-      lieutentant = GetObjectByTag(GetLocalString(OBJECT_SELF,"lieutentant"));
+      lieutentant = GetObjectByTag(GetLocalString(OBJECT_SELF,"lieutenant"));
       if(!GetIsObjectValid(lieutentant))
       {
        SetPlotFlag(OBJECT_SELF,FALSE);

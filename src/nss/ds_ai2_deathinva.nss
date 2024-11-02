@@ -16,7 +16,7 @@
 #include "ds_ai2_include"
 
 void RaiseMe(object oCritter, location eLoc);
-void Reward(object oArea, float fCR);
+void Reward(object oArea, float fCR, object oCritter);
 //-------------------------------------------------------------------------------
 // main
 //-------------------------------------------------------------------------------
@@ -53,19 +53,19 @@ void main(){
 
     if(sCritterRes == "ds_yellowfang_6")
     {
-      Reward(oArea, fCR);
+      Reward(oArea, fCR, oCritter);
     }
     else if(sCritterRes == "chosenofkilma002")
     {
-      Reward(oArea, fCR);
+      Reward(oArea, fCR, oCritter);
     }
     else if(sCritterRes == "invasiontrollbs")
     {
-      Reward(oArea, fCR);
+      Reward(oArea, fCR, oCritter);
     }
     else if(sCritterRes == "invasionbeastbs")
     {
-      Reward(oArea, fCR);
+      Reward(oArea, fCR, oCritter);
     }
 
     // Invasion Emotes
@@ -132,7 +132,7 @@ void RaiseMe(object oCritter, location eLoc)
 }
 
 
-void Reward(object oArea, float fCR)
+void Reward(object oArea, float fCR, object oCritter)
 {
    int nXP;
    int nCR = FloatToInt(fCR);
@@ -166,6 +166,11 @@ void Reward(object oArea, float fCR)
           FloatingTextStringOnCreature("-You have been issued a reward from the Guild for helping-",oPC);
           SetLocalInt(oPC,"gotinvasionreward",1);
           DelayCommand(30.0,DeleteLocalInt(oPC,"gottrophyreward"));
+
+          if(GetResRef(oCritter)=="demoninvaboss")
+          {
+           CreateItemOnObject("demon_token",oPC);
+          }
         }
      }
      oPC = GetNextPC();

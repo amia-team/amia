@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- DTS to Manor of Mourn
 - TBQS 2nd floor
 - Deity interaction with Hoar statue, Greengarden
 

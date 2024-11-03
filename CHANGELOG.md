@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Redirected a transition to its proper place in UD 
 - dragon cloth of both chaos and tyranny are actually made of cloth now
 - Fix to a broken Southport quest
+- Head Changer in character maintenance will let you choose elf female 60 to 70 now
 
 ## [4.4.3 - 2024-10-12]
 

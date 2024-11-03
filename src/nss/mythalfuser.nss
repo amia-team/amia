@@ -110,6 +110,7 @@ void LaunchFuser(object oPC, object oFuser, int nNode)
    int nRatio;
    int nItemCount;
    int nNewCount;
+   int m;
 
    // Figures out their selection
    switch(nNode)
@@ -144,7 +145,11 @@ void LaunchFuser(object oPC, object oFuser, int nNode)
    {
      DestroyMythals(oFuser,nRatio);
      SendMessageToPC(oPC, "Mythal modification successful!");
-     CreateItemOnObject(sResRefProduct,oFuser,nNewCount);
+     while(m>0){
+        m = nNewCount;
+        CreateItemOnObject(sResRefProduct,oFuser);
+        m = m - 1;
+     }
      ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectVisualEffect( VFX_FNF_MYSTICAL_EXPLOSION ), oPC );
    }
    else

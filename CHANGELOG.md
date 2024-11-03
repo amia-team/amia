@@ -13,12 +13,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Invasions Added (Check the forums link for a full break down)
 - New Recipes Added: Fang Golem, Supply Crates
 - Patrol Feature Added
+- 2 wing models (black angel/unarmored angel)
 
 ### Changed
 - kohl_city replaced with kohl_city2
 - transitions updated
 - Moved Owlbear spawn location
-
+- Mythal fuser will now also split mythals
 
 ### Fixed
 - Gobbo escape hatch

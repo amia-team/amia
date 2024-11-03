@@ -89,7 +89,10 @@ int validateHead( object oPC, int newHead ) {
         else if( iGender == GENDER_MALE && iBaseRace == 2 ) {
                 if( newHead == 33 ) return FALSE;
                 if( newHead == 34 ) return FALSE;
-                if( newHead == 37 ) return FALSE;
+                if( newHead == 42 ) return FALSE;
+                if( newHead == 43 ) return FALSE;
+                if( newHead == 44 ) return FALSE;
+                if( newHead == 45 ) return FALSE;
                 if( newHead == 72 ) return FALSE;
                 if( newHead == 87 ) return FALSE;
                 if( newHead == 88 ) return FALSE;
@@ -103,6 +106,9 @@ int validateHead( object oPC, int newHead ) {
                 if( newHead == 97 ) return FALSE;
                 if( newHead == 99 ) return FALSE;
                 if( newHead == 100 ) return FALSE;
+                if( newHead == 101 ) return FALSE;
+                if( newHead == 102 ) return FALSE;
+                if( newHead == 103 ) return FALSE;
                 if( newHead == 104 ) return FALSE;
                 if( newHead == 130 ) return FALSE;
                 if( newHead == 155 ) return FALSE;
@@ -120,7 +126,10 @@ int validateHead( object oPC, int newHead ) {
         else if( iGender == GENDER_MALE && iBaseRace == 3 ) {
                 if( newHead == 33 ) return FALSE;
                 if( newHead == 34 ) return FALSE;
-                if( newHead == 37 ) return FALSE;
+                if( newHead == 42 ) return FALSE;
+                if( newHead == 43 ) return FALSE;
+                if( newHead == 44 ) return FALSE;
+                if( newHead == 45 ) return FALSE;
                 if( newHead == 72 ) return FALSE;
                 if( newHead == 87 ) return FALSE;
                 if( newHead == 88 ) return FALSE;
@@ -134,6 +143,9 @@ int validateHead( object oPC, int newHead ) {
                 if( newHead == 97 ) return FALSE;
                 if( newHead == 99 ) return FALSE;
                 if( newHead == 100 ) return FALSE;
+                if( newHead == 101 ) return FALSE;
+                if( newHead == 102 ) return FALSE;
+                if( newHead == 103 ) return FALSE;
                 if( newHead == 104 ) return FALSE;
                 if( newHead == 130 ) return FALSE;
                 if( newHead == 155 ) return FALSE;
@@ -482,7 +494,7 @@ int emptyHead( object oPC, int newHead ) {
 }
         //Elf female
         else if( iGender == GENDER_FEMALE && iBaseRace == 1 ) {
-                if( ( newHead > 58 ) && ( newHead < 100 ) ) return FALSE;
+                if( ( newHead > 70 ) && ( newHead < 100 ) ) return FALSE;
                 if( newHead == 114 ) return FALSE;
                 if( newHead == 123 ) return FALSE;
                 if( newHead == 137 ) return FALSE;

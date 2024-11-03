@@ -145,8 +145,8 @@ void LaunchFuser(object oPC, object oFuser, int nNode)
    {
      DestroyMythals(oFuser,nRatio);
      SendMessageToPC(oPC, "Mythal modification successful!");
+     m = nNewCount;
      while(m>0){
-        m = nNewCount;
         CreateItemOnObject(sResRefProduct,oFuser);
         m = m - 1;
      }

@@ -25,6 +25,7 @@ int nIntermToGreater = 4;
 int nGreaterToFlawless = 12;
 int nFlawlessToPerfect = 6;
 int nPerfectToDivine = 6;
+int nSplitMythal = 1;
 
 // Global resref strings for the mythal types
 string sMinor = "mythal1";
@@ -108,16 +109,23 @@ void LaunchFuser(object oPC, object oFuser, int nNode)
    string sResRef;
    int nRatio;
    int nItemCount;
+   int nNewCount;
 
    // Figures out their selection
    switch(nNode)
    {
-      case 1:  sResRefRecipe = sMinor; sResRefProduct = sLesser; nRatio = nMinorToLesser; break; // Mythal Reagent, Minor => Lesser
-      case 2:  sResRefRecipe = sLesser; sResRefProduct = sInterm; nRatio = nLesserToInterm; break; // Mythal Reagent, Lesser  => Intermediate
-      case 3:  sResRefRecipe = sInterm; sResRefProduct = sGreater; nRatio = nIntermToGreater; break; // Mythal Reagent, Intermediate  => Greater
-      case 4:  sResRefRecipe = sGreater; sResRefProduct = sFlawless; nRatio = nGreaterToFlawless; break; // Mythal Reagent, Greater  => Flawess
-      case 5:  sResRefRecipe = sFlawless; sResRefProduct = sPerfect; nRatio = nFlawlessToPerfect; break; // Mythal Reagent, Flawess  => Perfect
-      case 6:  sResRefRecipe = sPerfect; sResRefProduct = sDivine; nRatio = nPerfectToDivine; break; // Mythal Reagent, Perfect  => Divine
+      case 1:  sResRefRecipe = sMinor; sResRefProduct = sLesser; nRatio = nMinorToLesser; nNewCount = 1; break; // Mythal Reagent, Minor => Lesser
+      case 2:  sResRefRecipe = sLesser; sResRefProduct = sInterm; nRatio = nLesserToInterm; nNewCount = 1; break; // Mythal Reagent, Lesser  => Intermediate
+      case 3:  sResRefRecipe = sInterm; sResRefProduct = sGreater; nRatio = nIntermToGreater; nNewCount = 1; break; // Mythal Reagent, Intermediate  => Greater
+      case 4:  sResRefRecipe = sGreater; sResRefProduct = sFlawless; nRatio = nGreaterToFlawless; nNewCount = 1; break; // Mythal Reagent, Greater  => Flawess
+      case 5:  sResRefRecipe = sFlawless; sResRefProduct = sPerfect; nRatio = nFlawlessToPerfect; nNewCount = 1; break; // Mythal Reagent, Flawess  => Perfect
+      case 6:  sResRefRecipe = sPerfect; sResRefProduct = sDivine; nRatio = nPerfectToDivine; nNewCount = 1; break; // Mythal Reagent, Perfect  => Divine
+      case 7:  sResRefRecipe = sDivine; sResRefProduct = sPerfect; nRatio = nSplitMythal; nNewCount = nPerfectToDivine; break; // Mythal Reagent, Divine => Perfect
+      case 8:  sResRefRecipe = sPerfect; sResRefProduct = sFlawless; nRatio = nSplitMythal; nNewCount = nFlawlessToPerfect; break; // Mythal Reagent, Perfect => Flawless
+      case 9:  sResRefRecipe = sFlawless; sResRefProduct = sGreater; nRatio = nSplitMythal; nNewCount = nGreaterToFlawless; break; // Mythal Reagent, Flawless => Greater
+      case 10:  sResRefRecipe = sGreater; sResRefProduct = sInterm; nRatio = nSplitMythal; nNewCount = nIntermToGreater; break; // Mythal Reagent, Greater => Intermediate
+      case 11:  sResRefRecipe = sInterm; sResRefProduct = sLesser; nRatio = nSplitMythal; nNewCount = nLesserToInterm; break; // Mythal Reagent, Intermediate => Lesser
+      case 12:  sResRefRecipe = sLesser; sResRefProduct = sMinor; nRatio = nSplitMythal; nNewCount = nMinorToLesser; break; // Mythal Reagent, Lesser => Minor
    }
 
    while ( GetIsObjectValid(oItem) )
@@ -135,8 +143,8 @@ void LaunchFuser(object oPC, object oFuser, int nNode)
    if(nItemCount>=nRatio)
    {
      DestroyMythals(oFuser,nRatio);
-     SendMessageToPC(oPC, "Mythal fusion successful!");
-     CreateItemOnObject(sResRefProduct,oFuser);
+     SendMessageToPC(oPC, "Mythal modification successful!");
+     CreateItemOnObject(sResRefProduct,oFuser,nNewCount);
      ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectVisualEffect( VFX_FNF_MYSTICAL_EXPLOSION ), oPC );
    }
    else

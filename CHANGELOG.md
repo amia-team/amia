@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
+- Fixed Invasion Bosses by removing Trophy in inventory
 
 ## [4.5.0 - 2024-11-02]
 

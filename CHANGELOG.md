@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Old Kohl Construction 1.2, Water wheels and Memorial Wall
 
 ### Fixed
 - Fixed door, transition and chair in TBQS

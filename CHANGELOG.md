@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed door, transition and chair in TBQS
 - Fixed Invasion Bosses by removing Trophy in inventory
 - Fixed, Added in missing Fang Golem blueprint
+- Southport quest fixes
 
 ## [4.5.0 - 2024-11-02]
 

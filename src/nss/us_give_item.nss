@@ -40,7 +40,7 @@ void main(){
     //SendMessageToPC( oPC, "DEBUG: sQuest: "+sQuest );                                                                        ///
     //SendMessageToPC( oPC, "DEBUG: sQuest Value: "+IntToString(GetLocalInt(oPCKey, sQuest) == 2) );                                                                        ///
 
-    if( sQuestStarted != "" && nQuestStarted < 1) //Check to see if the quest fields are set
+    if( sQuestStarted != "" && nQuestStarted == 0) //Check to see if the quest fields are set
     {
         SendMessageToPC( oPC, "You must have started the <c Í >" + sQuestStarted + "</c> quest to use this.");
         return;
@@ -80,10 +80,10 @@ void main(){
         CreateItemOnObject( sResRef, oPC, 1 );
         SetLocalInt( OBJECT_SELF, sPubKey, 1 );
         SendMessageToPC( oPC, "You cannot acquire any more of this item this reset!");
+        return;
     }
     else
     {
-
         TakeGoldFromCreature(nGoldCost, oPC, TRUE);
         CreateItemOnObject( sResRef, oPC, 1 );
         if (nCooldown != 0)
@@ -91,4 +91,5 @@ void main(){
             SetBlockTime(OBJECT_SELF, 0, nCooldown);
         }
     }
+
 }

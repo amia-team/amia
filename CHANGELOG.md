@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Wiltun Invasion Added
 
 ### Changed
 - Old Kohl Construction 1.2, Water wheels and Memorial Wall

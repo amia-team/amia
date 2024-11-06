@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Wiltun Invasion Added
+- Brog Invasion Added
 
 ### Changed
 - Old Kohl Construction 1.2, Water wheels and Memorial Wall

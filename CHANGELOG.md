@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Wiltun Invasion Added
 - Brog Invasion Added
+- Two Obsidian Invasions Added 
 
 ### Changed
 - Old Kohl Construction 1.2, Water wheels and Memorial Wall
@@ -19,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed, Added in missing Fang Golem blueprint
 - Southport quest fixes
 - Fixed Invasion messages
+- Fixed Obsidian Isle Calderis North map pin
 
 ## [4.5.0 - 2024-11-02]
 

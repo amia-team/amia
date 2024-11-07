@@ -57,6 +57,10 @@ void main(){
 
     // Invasion Reward
     Reward(oArea, fCR, npcResRef);
+    // Announcer Test
+    SetLocalString(GetModule(),"announcerMessage","```*The creature leading the pack of invading creature was defeated*```");
+    ExecuteScript("webhook_announce");
+    //
 
 
     //OnDeath custom ability usage

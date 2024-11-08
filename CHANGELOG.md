@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Wiltun Invasion Added
 - Brog Invasion Added
 - Two Obsidian Invasions Added 
+- Silent Bay Shrine Invasion Added
 
 ### Changed
 - Old Kohl Construction 1.2, Water wheels and Memorial Wall

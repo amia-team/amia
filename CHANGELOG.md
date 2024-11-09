@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updated Wharftown references in Moonpier conversation
 - Bugs in Bloodspear quests
 - Ancient Barrier Device (Negative Energy) typo fix
+- Job Journal tag check bug in invasion patrols
 
 ## [4.5.0 - 2024-11-02]
 

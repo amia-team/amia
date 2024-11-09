@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Thud in Bloodspear updated to be accurate
 - Removed Grundi's metagaming
 - Ancient Barrier Devices will have different VFX for the different types
+- Putting a Supply Crate down in an area where invasions don't happen will create a new item to pick up, rather than wasting it
 
 ### Fixed
 - Fixed door, transition and chair in TBQS

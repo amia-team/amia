@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Old Kohl Construction 1.2, Water wheels and Memorial Wall
+- Removed class restrictions on some old shops that don't need them
+- Thud in Bloodspear updated to be accurate
+- Removed Grundi's metagaming
 
 ### Fixed
 - Fixed door, transition and chair in TBQS
@@ -22,6 +25,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Southport quest fixes
 - Fixed Invasion messages
 - Fixed Obsidian Isle Calderis North map pin
+- Boat routes between Wiltun/Moonpier Re-added
+- Updated Wharftown references in Moonpier conversation
+- Bugs in Bloodspear quests
+- Ancient Barrier Device (Negative Energy) typo fix
 
 ## [4.5.0 - 2024-11-02]
 

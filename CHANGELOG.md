@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed class restrictions on some old shops that don't need them
 - Thud in Bloodspear updated to be accurate
 - Removed Grundi's metagaming
+- Ancient Barrier Devices will have different VFX for the different types
 
 ### Fixed
 - Fixed door, transition and chair in TBQS

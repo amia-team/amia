@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Brog Invasion Added
 - Two Obsidian Invasions Added 
 - Silent Bay Shrine Invasion Added
+- 6 PLCs to the PLC palette
 
 ### Changed
 - Old Kohl Construction 1.2, Water wheels and Memorial Wall

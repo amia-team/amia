@@ -1,15 +1,6 @@
 # Introduction
 This is a guide on how to pull, pack, develop, and unpack the mod so that your changes can be pushed to version control. Familiarity with how git and docker work are not required to be able to complete this guide. If there are any questions, do not hesitate to ask them on the forums or on the discord.
 
-## Contribution Guidelines
-There are some things that should be kept in mind for potential contributors:
-- Do not add binary files. These include .utc, .uti, .ncs, .gff, .are, etc. 
-- Use descriptive, concise messages to describe commits.
-- Do not abuse your access to the module and its resources to add cheats (i.e: hide gold, epics, etc in areas you're working on).
-- Do not distribute, copy, or leak the contents of the repository to any outside parties. Only staff (developers, testers, dms, admins) should be privy to the contents of the module.
-- Do not deliberately sabotage the work of others.
-- Commit sizes must be reasonable, with some exceptions, or they will be reverted. This can be avoided by committing work in small batches.
-
 ## Requirements
 - [Docker Desktop](https://www.docker.com/products/docker-desktop). For instructions on how to install this, [refer to this documentation](https://docs.docker.com/desktop/windows/install/). You will need to enable Windows Subsystem for Linux (WSL) and Virtualization. Enabling virtualization may require you to go into your BIOS and enable it from there.
 - Git. You will either need to install [Git Bash](https://git-scm.com/downloads), a program like [MobaXterm](https://mobaxterm.mobatek.net/), or a GUI based program like [Github Desktop](https://desktop.github.com/). Recommendations are that absolute beginners start with Github Desktop. MobaXterm doubles as both a graphical FTP/SSH/SFTP client and a shell.

@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [4.5.1 - 2024-11-09]
+
+### Added
 - Wiltun Invasion Added
 - Brog Invasion Added
 - Two Obsidian Invasions Added 

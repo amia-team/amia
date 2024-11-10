@@ -510,7 +510,6 @@ void RespawningNode(object oPC, string sResource, string sBonusresource, object 
   if (sWaypoint != "")
   {
     DeleteLocalInt(oPreviousWaypoint, "RespawnBlocked");
-    SendMessageToPC(oPC, "Previous waypoint RespawnBlocked = " + IntToString(GetLocalInt(oPreviousWaypoint, "RespawnBlocked"))); /////////
   }
 }
 

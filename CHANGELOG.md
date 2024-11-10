@@ -7,10 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Travel flag for Southport to Travel Agency
 
 ### Changed
 
 ### Fixed
+- Southport quest fixes
+- Misc Southport scoundrel resource fixes
+- Removed a debug message from job system harvesting
 
 ## [4.5.1 - 2024-11-09]
 

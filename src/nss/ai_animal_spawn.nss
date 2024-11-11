@@ -38,7 +38,11 @@ void main(){
 
 
     object wild = GetObjectByTag("wild_animal_setter");
+    object area = GetArea(OBJECT_SELF);
+
+    if(GetLocalInt(area,"peaceful") == 1){
     DelayCommand(0.5, ChangeFaction(OBJECT_SELF, wild));
+    }
     //Check if creature has an on-spawn effect.
     if (spawnEffect == TRUE)
     {

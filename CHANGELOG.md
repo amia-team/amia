@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [4.5.2 - 2024-11-10]
+
+### Added
 - Travel flag for Southport to Travel Agency
 - Mizfit shop/residence
 - Mizfit key

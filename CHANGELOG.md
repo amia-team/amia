@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
+- Southport quest reward fixed
+- Faction doors updated
 
 ## [4.5.2 - 2024-11-10]
 

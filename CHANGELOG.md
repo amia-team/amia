@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 2 starter quests in the Wave and Traveller's Rest
 
 ### Changed
-- removal of webs and rubble that are blocking challenges in burningcrypt
+- Removal of webs and rubble that are blocking challenges in burningcrypt
 - Animals that spawned neutral won't anymore unless an area has a check to allow it (currently only Amia Forest)
 - Removed a couple Farmer nodes in Djedet and added one Papyrus (there were way too many Farmer nodes in one area)
 - Removed NoPorting area variables in Gauntlet of Terror and Abyss Forgotten Temple
@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Silverbark tree in Sandy Beach Cliffs reachable now
 - Removed duplicate items from a potion shop
 - Removed some rubble that blocked a DTS challenge in Darkhold
+- Gauntlet store will buy ammo/projectiles now
 
 ## [4.5.1 - 2024-11-09]
 

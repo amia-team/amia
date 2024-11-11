@@ -8,13 +8,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Travel flag for Southport to Travel Agency
+- Mizfit shop/residence
+- Mizfit key
 
 ### Changed
+- removal of webs and rubble that are blocking challenges in burningcrypt
 
 ### Fixed
 - Southport quest fixes
 - Misc Southport scoundrel resource fixes
 - Removed a debug message from job system harvesting
+- fixes in burning crypt
+-  removal of dev crit from bezerker of baghtru
 
 ## [4.5.1 - 2024-11-09]
 

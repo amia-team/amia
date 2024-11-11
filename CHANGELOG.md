@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Animals that spawned neutral won't anymore unless an area has a check to allow it (currently only Amia Forest)
 - Removed a couple Farmer nodes in Djedet and added one Papyrus (there were way too many Farmer nodes in one area)
 - Removed NoPorting area variables in Gauntlet of Terror and Abyss Forgotten Temple
+- Mishnaeglen's quest in the W&S is now a proper EE quest
 
 ### Fixed
 - Southport quest fixes

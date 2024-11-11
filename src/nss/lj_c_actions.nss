@@ -19,9 +19,7 @@
     -- DestinationParty (A trigger tagged "partytrigger" needs to be placed)
   - Hostile        (Setting to 1 makes the NPC hostile and attack)
   - Exit           (Setting to 1 makes the NPC destroy self after 1.5 seconds)
-  - CustomToken    (Checks the NPC for this variable as a numbered custom token)
-    -- TokenNumber (Needs to be set to the custom token number in the dialogue)
-  - RunScript      (Runs the script name set in the Value field)
+  - RunScript      (Runs the script name set in the Value field) //NEEDS MORE TESTING
                                                      */
 ///////////////////////////////////////////////////////
 
@@ -123,24 +121,9 @@ void main()
         CheckNPC(oNPC);
         DestroyObject(oNPC, 1.5);
     }
-    if(sCustomToken != "")
-    {
-        CheckNPC(oNPC);
-        sCustomToken = GetLocalString(oNPC, sCustomToken);
-        int nCustomToken = StringToInt(GetScriptParam("TokenNumber"));
-
-        if(sCustomToken != "")
-        {
-            SetCustomToken(nCustomToken, sCustomToken);
-        }
-        //If nothing's set, use the generic ones for shops
-        else if(nCustomToken == 702001) { SetCustomToken(702001, "Greetings! Would you like to see what I have for sale?"); }
-        else if(nCustomToken == 702002) { SetCustomToken(702002, "Yes, please."); }
-        else if(nCustomToken == 702003) { SetCustomToken(702003, "No, thanks."); }
-    }
     if(sRunScript != "")
     {
-        ExecuteScript(sRunScript, oPC);
+        ExecuteScript(sRunScript, oNPC);
     }
     return;
 }

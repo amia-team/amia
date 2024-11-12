@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Southport quest reward fixed
 - Faction doors updated
+- Repositioned some JS nodes in Southport's warehouse
 
 ## [4.5.2 - 2024-11-10]
 

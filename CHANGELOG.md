@@ -9,8 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- transitions from oldkohl to grngard, feylake, radiant
 
 ### Fixed
+- some Mizfit Tailor's plcs
 - Southport quest reward fixed
 - Faction doors updated
 - Repositioned some JS nodes in Southport's warehouse

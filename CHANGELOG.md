@@ -7,15 +7,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Added in 1% chance to find a lost animal on patrol (30 new animal companions added)
 
 ### Changed
 - transitions from oldkohl to grngard, feylake, radiant
+- Adjusted patrols to reduce invasion percent by 4 instead of 5. 
+- Adjusted invasion percent increase per reset check, there are two a reset, to 6 from 5.
 
 ### Fixed
 - some Mizfit Tailor's plcs
 - Southport quest reward fixed
 - Faction doors updated
 - Repositioned some JS nodes in Southport's warehouse
+- Fixed soldier patrol not getting proper reward bonus if it was set to secondary
 
 ## [4.5.2 - 2024-11-10]
 

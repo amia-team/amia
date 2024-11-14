@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - transitions from oldkohl to grngard, feylake, radiant
 - Adjusted patrols to reduce invasion percent by 4 instead of 5. 
 - Adjusted invasion percent increase per reset check, there are two a reset, to 6 from 5.
+- Blackmoor Keep interiors no longer no-rest areas
 
 ### Fixed
 - some Mizfit Tailor's plcs
@@ -20,6 +21,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Faction doors updated
 - Repositioned some JS nodes in Southport's warehouse
 - Fixed soldier patrol not getting proper reward bonus if it was set to secondary
+- Racial trigger in Ruathym: Caraigh, Cloudfen Grove
+- Various js PLC adjustments (Cystana South, Grumdek Murr EIP, Caraigh, L'Obsul, Forrstakkr, Amia Forest)
+- Rats drop ears for rat ear peddlers again
+- DTS adjustment, UD - Illuminated Caverns areas
+- re-added js_farmland trigger to Eili Shrine
+- Howness, Temple of Helm metal plates under Bahamut identified by default, now
+- rau_seer convo edited for clarification + typos
+
+### Removed
+- Blackmoor plot spawn triggers from Caraigh
+- Crystal Node map note from Amia Forest: Northwest
+- Ruathym: Caraigh, Dark Hills boulders; taken by Grove as material for Ubtao shrine
 
 ## [4.5.2 - 2024-11-10]
 

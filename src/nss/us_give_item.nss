@@ -34,6 +34,7 @@ void main(){
     int    nQuestStatus = GetLocalInt(oPCKey,sQuest);
     int    nQuestStarted = GetLocalInt(oPCKey,sQuestStarted);
     int    nQuestFinished = GetLocalInt(oPCKey,sQuestFinished);
+    int    nGiveAfterQuest = GetLocalInt( OBJECT_SELF, "giveafterquest");
     int    nGoldCost    = GetLocalInt( OBJECT_SELF, "Gold");
     int    nCooldown    = GetLocalInt( OBJECT_SELF, "Cooldown");
 
@@ -50,7 +51,7 @@ void main(){
         SendMessageToPC( oPC, "You must have completed the <c Í >" + sQuestFinished + "</c> quest to use this.");
         return;
     }
-    else if(nQuestStatus == 2)
+    else if(nQuestStatus == 2 && nGiveAfterQuest == 0)
     {
         SendMessageToPC( oPC, "Quest completed! You would have no need for this item.");
         return;

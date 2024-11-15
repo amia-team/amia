@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Added in 1% chance to find a lost animal on patrol (30 new animal companions added)
+- New Quest NPC Faction so NPCs aren't attacked in hostile zones
 
 ### Changed
 - transitions from oldkohl to grngard, feylake, radiant
@@ -18,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - some Mizfit Tailor's plcs
 - Southport quest reward fixed
+- Southport quest keys fix
 - Faction doors updated
 - Repositioned some JS nodes in Southport's warehouse
 - Fixed soldier patrol not getting proper reward bonus if it was set to secondary

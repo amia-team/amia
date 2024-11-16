@@ -64,7 +64,7 @@ void main(){
      // Announcer Test
      SetLocalString(GetModule(),"announcerMessage","``` *The Guilds have released an announcement that the creature of note has been slain* ```");
      ExecuteScript("webhook_announce");
-     SetLocalString(GetModule(),"staffMessage","Raid Boss Summoned: " + AreaName + " by " + GetName(oKiller));
+     SetLocalString(GetModule(),"staffMessage","Global Boss Slain: " + AreaName + " by " + GetName(oKiller));
      ExecuteScript("webhook_staff");
      //
     }

@@ -58,7 +58,7 @@ void main(){
     // Invasion Reward
     Reward(oArea, fCR, npcResRef);
     // Announcer Test
-    SetLocalString(GetModule(),"announcerMessage","```*The creature leading the pack of invading creature was defeated*```");
+    SetLocalString(GetModule(),"announcerMessage","```*The creature leading the pack of invading creatures was defeated*```");
     ExecuteScript("webhook_announce");
     //
 

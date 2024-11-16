@@ -36,6 +36,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Positive Energy Plane exit portal, for real this time
 - Rebilith typo (world boss)
 - 15 broken animal portraits
+- DTS waypoints in all "Unknown" areas now spawn characters facing away from the doors
+- Edited some DTS area names for typos or consistency
 
 ### Removed
 - Blackmoor plot spawn triggers from Caraigh

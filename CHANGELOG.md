@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - re-added js_farmland trigger to Eili Shrine
 - Howness, Temple of Helm metal plates under Bahamut identified by default, now
 - rau_seer convo edited for clarification + typos
+- restored car_hound triggers for Father Darian's quest
 
 ### Removed
 - Blackmoor plot spawn triggers from Caraigh

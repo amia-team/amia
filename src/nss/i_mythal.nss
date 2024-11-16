@@ -46,6 +46,8 @@ void main( ){
 
             // Variables
             object oPC          = GetItemActivator( );
+            object oArea        = GetArea(oPC);
+            string AreaName     = GetName(oArea);
             object oMythal      = GetNearestObjectByTag( MYTHAL_FORGE, oPC );
             object oReagent     = GetItemActivated( );
             object oItem        = GetItemActivatedTarget( );
@@ -104,6 +106,9 @@ void main( ){
                 }
                 DestroyObject(oReagent);
                 SpawnBoss(oItem);
+                SetLocalString(GetModule(),"staffMessage","Raid Boss Summoned: " + AreaName + " by " + GetName(oPC));
+                ExecuteScript("webhook_staff");
+
               }
               else if((nCharge+1)<nPlayerMin) // Add to charge counter of the raidsummoner
               {

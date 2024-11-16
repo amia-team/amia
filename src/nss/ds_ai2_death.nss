@@ -23,6 +23,8 @@
 void main(){
 
     object oCritter         = OBJECT_SELF;
+    object oArea            = GetArea(oCritter);
+    string AreaName         = GetName(oArea);
     object oKiller          = GetLastKiller();
 
 
@@ -62,6 +64,8 @@ void main(){
      // Announcer Test
      SetLocalString(GetModule(),"announcerMessage","``` *The Guilds have released an announcement that the creature of note has been slain* ```");
      ExecuteScript("webhook_announce");
+     SetLocalString(GetModule(),"staffMessage","Raid Boss Summoned: " + AreaName + " by " + GetName(oKiller));
+     ExecuteScript("webhook_staff");
      //
     }
 

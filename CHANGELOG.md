@@ -7,15 +7,42 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- 1% chance to find a lost animal on patrol (36 animals added as bottled companions)
+- New Quest NPC Faction so NPCs aren't attacked in hostile zones
+- 6 new animal portraits (crab, scorpion, toad, bobcat, hawk, moose)
 
 ### Changed
-- transitions from oldkohl to grngard, feylake, radiant
+- Transitions from oldkohl to grngard, feylake, radiant
+- Patrols reduce invasion percent by 4 instead of 5. 
+- Increase Invasion percent per reset check, there are two a reset, to 6 from 5.
+- Blackmoor Keep interiors no longer no-rest areas
 
 ### Fixed
-- some Mizfit Tailor's plcs
-- Southport quest reward fixed
-- Faction doors updated
-- Repositioned some JS nodes in Southport's warehouse
+- Mizfit Tailor's plcs
+- Southport quest reward
+- Southport quest keys
+- Faction doors
+- Reposition some JS nodes in Southport's warehouse
+- Soldier patrol not getting proper reward bonus if it was set to secondary
+- Racial trigger in Ruathym: Caraigh, Cloudfen Grove
+- Various js PLC adjustments (Cystana South, Grumdek Murr EIP, Caraigh, L'Obsul, Forrstakkr, Amia Forest)
+- Rats drop ears for rat ear peddlers again
+- DTS adjustment, UD - Illuminated Caverns areas
+- Re-add js_farmland trigger to Eilistraeen Shrine
+- Howness, Temple of Helm metal plates under Bahamut now identified by default
+- Typos and clarity in rau_seer convo
+- Restore car_hound triggers for Father Darian's quest
+- 55 Hunter creatures (portraits, voicesets, bios, skins)
+- Positive Energy Plane exit portal, for real this time
+- Rebilith typo (world boss)
+- 15 broken animal portraits
+- DTS waypoints in all "Unknown" areas now spawn characters facing away from the doors
+- Edited some DTS area names for typos or consistency
+
+### Removed
+- Blackmoor plot spawn triggers from Caraigh
+- Crystal Node map note from Amia Forest: Northwest
+- Ruathym: Caraigh, Dark Hills boulders; taken by Grove as material for Ubtao shrine
 
 ## [4.5.2 - 2024-11-10]
 

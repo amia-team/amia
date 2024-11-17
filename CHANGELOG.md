@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 1% chance to find a lost animal on patrol (36 animals added as bottled companions)
 - New Quest NPC Faction so NPCs aren't attacked in hostile zones
 - 6 new animal portraits (crab, scorpion, toad, bobcat, hawk, moose)
+- Robe 232 to other phenotypes
 
 ### Changed
 - Transitions from oldkohl to grngard, feylake, radiant

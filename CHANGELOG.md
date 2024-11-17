@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - New Quest NPC Faction so NPCs aren't attacked in hostile zones
 - 6 new animal portraits (crab, scorpion, toad, bobcat, hawk, moose)
 - Robe 232 to other phenotypes
+- Moonpier Invasion
+- Moonpier Outpost Invasion
 
 ### Changed
 - Transitions from oldkohl to grngard, feylake, radiant

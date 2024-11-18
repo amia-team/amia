@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Robe 232 to other phenotypes
 - Moonpier Invasion
 - Moonpier Outpost Invasion
+- Bauphtar DTS, new amulet Archmages Secret, new boss Bauphitar Archmage, new area Bauphitar Hidden Depths
 
 ### Changed
 - Transitions from oldkohl to grngard, feylake, radiant
@@ -41,6 +42,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 15 broken animal portraits
 - DTS waypoints in all "Unknown" areas now spawn characters facing away from the doors
 - Edited some DTS area names for typos or consistency
+- Manor of Mourn DTS fix
 
 ### Removed
 - Blackmoor plot spawn triggers from Caraigh

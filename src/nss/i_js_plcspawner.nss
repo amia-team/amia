@@ -6,26 +6,42 @@
 
 
 */
+
+
+#include "x2_inc_switches"
+#include "x2_inc_itemprop"
+#include "inc_ds_porting"
+
 void main()
 {
    object oPC = GetItemActivator();
    object oWidget = GetItemActivated();
+   object oPCKEY = GetPCKEY(oPC);
+   object oTarget = GetItemActivatedTarget();
    location lTargeted = GetItemActivatedTargetLocation();
    string sPLC = GetLocalString(oWidget,"plc");
    int sActivePLC = GetLocalInt(oWidget,"active");
    location lPLC = GetLocalLocation(oWidget, "spawnedplclocation");
+   string sPCKEYName = GetName(oPCKEY);
+   string sPCKEYNameSub = GetSubString(sPCKEYName,0,8);
 
-
-   if(sActivePLC == 1)
+   if((sActivePLC == 1) && (GetIsObjectValid(oTarget)) && (GetLocalString(oTarget,"pcowner")==sPCKEYNameSub))
    {
-      object oPLC = GetNearestObjectToLocation(OBJECT_TYPE_PLACEABLE, lPLC);
-      string sPLCRes = GetResRef(oPLC);
-     if(sPLCRes == sPLC)
+     SetLocalObject(oPC,"pcplc",oTarget);
+     AssignCommand(oPC, ActionStartConversation(oPC, "js_plc_persist", TRUE, FALSE));
+   }
+   else if(sActivePLC == 1)
+   {
+     object oPLC = GetNearestObjectToLocation(OBJECT_TYPE_PLACEABLE, lPLC);
+     string sPLCRes = GetResRef(oPLC);
+     if((sPLCRes == sPLC) && (GetLocalString(oPLC,"pcowner")==sPCKEYNameSub))
      {
       DestroyObject(oPLC);
      }
-      FloatingTextStringOnCreature("*Removing PLC*",oPC);
-      DeleteLocalInt(oWidget,"active");
+     FloatingTextStringOnCreature("*Removing PLC*",oPC);
+     DeleteLocalInt(oWidget,"active");
+
+
    }
    else
    {
@@ -37,6 +53,7 @@ void main()
      SetDescription(oPlacedPLC,GetDescription(oWidget));
      SetLocalInt(oWidget,"active",1);
      SetLocalLocation(oWidget, "spawnedplclocation",lTargeted);
+     SetLocalString(oPlacedPLC, "pcowner",sPCKEYNameSub);
    }
 
 

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- 3 new character portraits
 - 1% chance to find a lost animal on patrol (36 animals added as bottled companions)
 - New Quest NPC Faction so NPCs aren't attacked in hostile zones
 - 6 new animal portraits (crab, scorpion, toad, bobcat, hawk, moose)
@@ -20,6 +21,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Patrols reduce invasion percent by 4 instead of 5. 
 - Increase Invasion percent per reset check, there are two a reset, to 6 from 5.
 - Blackmoor Keep interiors no longer no-rest areas
+- Blackmoor plot spawn triggers from Caraigh
+- Crystal Node map note from Amia Forest: Northwest
+- Ruathym: Caraigh, Dark Hills boulders; taken by Grove as material for Ubtao shrine
 
 ### Fixed
 - Mizfit Tailor's plcs
@@ -43,11 +47,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - DTS waypoints in all "Unknown" areas now spawn characters facing away from the doors
 - Edited some DTS area names for typos or consistency
 - Manor of Mourn DTS fix
-
-### Removed
-- Blackmoor plot spawn triggers from Caraigh
-- Crystal Node map note from Amia Forest: Northwest
-- Ruathym: Caraigh, Dark Hills boulders; taken by Grove as material for Ubtao shrine
 
 ## [4.5.2 - 2024-11-10]
 

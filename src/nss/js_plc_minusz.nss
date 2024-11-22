@@ -11,6 +11,7 @@
 #include "x2_inc_switches"
 #include "x2_inc_itemprop"
 #include "inc_ds_porting"
+#include "nwnx_object"
 
 void main()
 {
@@ -22,8 +23,6 @@ void main()
   float x = vPLC.x;
   float y = vPLC.y;
   float z = vPLC.z;
-  vector newVector = Vector(x,y,z-1.0);
-  location newLoc = Location(GetArea(oPLC),newVector,fFacing);
-
-  AssignCommand(oPLC, JumpToLocation(newLoc));
+  vector newVector = Vector(x,y,z-0.1);
+  NWNX_Object_SetPosition(oPLC,newVector);
 }

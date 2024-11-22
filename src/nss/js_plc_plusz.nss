@@ -23,6 +23,6 @@ void main()
   float x = vPLC.x;
   float y = vPLC.y;
   float z = vPLC.z;
-  vector newVector = Vector(x,y,z+1.0);
+  vector newVector = Vector(x,y,z+0.1);
   NWNX_Object_SetPosition(oPLC,newVector);
 }

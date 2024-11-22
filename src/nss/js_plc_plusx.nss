@@ -23,7 +23,6 @@ void main()
   float x = vPLC.x;
   float y = vPLC.y;
   float z = vPLC.z;
-  vector newVector = Vector(x+1.0,y,z);
+  vector newVector = Vector(x+0.1,y,z);
   NWNX_Object_SetPosition(oPLC,newVector);
-  SendMessageToPC(oPC,FloatToString(x+1.0));
 }

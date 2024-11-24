@@ -57,6 +57,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Manor of Mourn DTS fix
 - Various misplaced PLCs (fire giant mines, Ceyren's Mill, Caraigh - Cloudfen Grove & Plateau)
 - Floating/misplaced/missing doors in Gregory's Landing
+-Quick-fix to typo, missing ds_speak line on new NPC, putting start point back in the entry
 
 ## [4.5.2 - 2024-11-10]
 

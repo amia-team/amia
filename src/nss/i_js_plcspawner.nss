@@ -29,6 +29,7 @@ void main()
    {
      SetLocalObject(oPC,"pcplc",oTarget);
      SetLocalObject(oPC,"plcwidget",oWidget);
+     SetLocalFloat(oTarget,"basesize",GetObjectVisualTransform(oTarget,OBJECT_VISUAL_TRANSFORM_SCALE));
      AssignCommand(oPC, ActionStartConversation(oPC, "js_plc_persist", TRUE, FALSE));
    }
    else if(sActivePLC == 1)

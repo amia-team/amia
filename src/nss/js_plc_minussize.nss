@@ -18,12 +18,12 @@ void main()
   float fSize = GetObjectVisualTransform(oPLC,OBJECT_VISUAL_TRANSFORM_SCALE);
   float fBaseSize = GetLocalFloat(oPLC,"basesize");
 
-  if(fSize < (fBaseSize+.20))
+  if(fSize > (fBaseSize-.20))
   {
    SetObjectVisualTransform(oPLC,OBJECT_VISUAL_TRANSFORM_SCALE,fSize-.01);
   }
   else
   {
-   SendMessageToPC(oPC,"You cannot size up this PLC anymore.");
+   SendMessageToPC(oPC,"You cannot size down this PLC anymore.");
   }
 }

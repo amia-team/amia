@@ -28,7 +28,7 @@ void main()
    if((sActivePLC == 1) && (GetIsObjectValid(oTarget)) && (GetLocalString(oTarget,"pcowner")==sPCKEYNameSub))
    {
      SetLocalObject(oPC,"pcplc",oTarget);
-     SetLocalFloat(oTarget,"basesize",GetObjectVisualTransform(oTarget,OBJECT_VISUAL_TRANSFORM_SCALE));
+     SetLocalObject(oPC,"plcwidget",oWidget);
      AssignCommand(oPC, ActionStartConversation(oPC, "js_plc_persist", TRUE, FALSE));
    }
    else if(sActivePLC == 1)

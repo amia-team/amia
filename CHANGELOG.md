@@ -35,6 +35,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Gregory's Landing racial gates now match Fort Cystana's
 - First Knight Card of Wiltun moved from Wiltun Keep to Gregory's Landing Destrier Stables
 - First Knight Card's bio for grammar/syntax/etc
+- "Card" quest NPC renamed "Cary", given new bio to reflect relationship to First Knight Card
 
 ### Fixed
 - Mizfit Tailor's plcs

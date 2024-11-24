@@ -16,16 +16,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Moonpier Outpost Invasion
 - Bauphtar DTS, new amulet Archmages Secret, new boss Bauphitar Archmage, new area Bauphitar Hidden Depths
 - Complete Job PLC Spawner QOL Update: Modify x, y, z, rotation, size, and usuablity now on all PLC. 
-- Establish a Job System PLC as permanent aka persists between resets. Job Spawner Widget is sacrified in exchange. 
+- Establish a Job System PLC as permanent aka persists between resets. Job Spawner Widget is sacrified in exchange.
+- 2 new NPCs in Destrier Stables
 
 ### Changed
 - Transitions from oldkohl to grngard, feylake, radiant
 - Patrols reduce invasion percent by 4 instead of 5. 
 - Increase Invasion percent per reset check, there are two a reset, to 6 from 5.
 - Blackmoor Keep interiors no longer no-rest areas
-- Blackmoor plot spawn triggers from Caraigh
+- Blackmoor plot spawn triggers removed from Caraigh
 - Crystal Node map note from Amia Forest: Northwest
 - Ruathym: Caraigh, Dark Hills boulders; taken by Grove as material for Ubtao shrine
+- Cleaned up DM Archive: Khylaria (removed old request items, PLCs, horses, changed 2 NOCs from hostile to defender faction)
+- Gregory's Landing: Destrier Stables finished, pending final check/approval
+- "No Porting" variable removed from Gregory's Landing & Destrier Stables
+- Gregory's Landing racial gates now match Fort Cystana's
+- First Knight Card of Wiltun moved from Wiltun Keep to Gregory's Landing Destrier Stables
 
 ### Fixed
 - Mizfit Tailor's plcs
@@ -49,6 +55,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - DTS waypoints in all "Unknown" areas now spawn characters facing away from the doors
 - Edited some DTS area names for typos or consistency
 - Manor of Mourn DTS fix
+- Various misplaced PLCs (fire giant mines, Ceyren's Mill, Caraigh - Cloudfen Grove & Plateau)
+- Floating/misplaced/missing doors in Gregory's Landing
 
 ## [4.5.2 - 2024-11-10]
 

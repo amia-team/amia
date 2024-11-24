@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Moonpier Invasion
 - Moonpier Outpost Invasion
 - Bauphtar DTS, new amulet Archmages Secret, new boss Bauphitar Archmage, new area Bauphitar Hidden Depths
+- Complete Job PLC Spawner QOL Update: Modify x, y, z, rotation, size, and usuablity now on all PLC. 
+- Establish a Job System PLC as permanent aka persists between resets. Job Spawner Widget is sacrified in exchange. 
 
 ### Changed
 - Transitions from oldkohl to grngard, feylake, radiant

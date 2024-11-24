@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Complete Job PLC Spawner QOL Update: Modify x, y, z, rotation, size, and usuablity now on all PLC. 
 - Establish a Job System PLC as permanent aka persists between resets. Job Spawner Widget is sacrified in exchange.
 - 2 new NPCs in Destrier Stables
+- Path blockers to Destrier Stable back room; minor PLC tweaks
+- Bio to Zachary Addams
 
 ### Changed
 - Transitions from oldkohl to grngard, feylake, radiant
@@ -32,6 +34,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - "No Porting" variable removed from Gregory's Landing & Destrier Stables
 - Gregory's Landing racial gates now match Fort Cystana's
 - First Knight Card of Wiltun moved from Wiltun Keep to Gregory's Landing Destrier Stables
+- First Knight Card's bio for grammar/syntax/etc
 
 ### Fixed
 - Mizfit Tailor's plcs
@@ -57,7 +60,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Manor of Mourn DTS fix
 - Various misplaced PLCs (fire giant mines, Ceyren's Mill, Caraigh - Cloudfen Grove & Plateau)
 - Floating/misplaced/missing doors in Gregory's Landing
--Quick-fix to typo, missing ds_speak line on new NPC, putting start point back in the entry
+- Quick-fix to typo, missing ds_speak line on new NPC, putting start point back in the entry
+- Missing ds_speak line on Zachary Addams
 
 ## [4.5.2 - 2024-11-10]
 

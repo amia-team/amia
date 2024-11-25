@@ -7,10 +7,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [4.5.2 - 2024-11-10]
+
+### Added
 - 3 new character portraits
 - 1% chance to find a lost animal on patrol (36 animals added as bottled companions)
 - New Quest NPC Faction so NPCs aren't attacked in hostile zones
-- 6 new animal portraits (crab, scorpion, toad, bobcat, hawk, moose)
+- 6 new animal portraits
+	- 1533 crab_
+	- 1534 scorp_
+	- 1535 toad_
+	- 1536 bobcat_
+	- 1537 hawk_
+	- 1538 moose_ 
 - Robe 232 to other phenotypes
 - Moonpier Invasion
 - Moonpier Outpost Invasion

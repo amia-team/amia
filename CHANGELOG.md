@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-## [4.5.2 - 2024-11-10]
+## [4.6.0 - 2024-11-25]
 
 ### Added
 - 3 new character portraits

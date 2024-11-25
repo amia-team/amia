@@ -14,13 +14,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Robe 232 to other phenotypes
 - Moonpier Invasion
 - Moonpier Outpost Invasion
-- Bauphtar DTS, new amulet Archmages Secret, new boss Bauphitar Archmage, new area Bauphitar Hidden Depths
+- Baphitaur DTS, new amulet Archmages Secret, new boss Baphitaur Archmage, new area Baphitaur Hidden Depths
 - Complete Job PLC Spawner QOL Update: Modify x, y, z, rotation, size, and usuablity now on all PLC. 
 - Establish a Job System PLC as permanent aka persists between resets. Job Spawner Widget is sacrified in exchange.
 - 2 new NPCs in Destrier Stables
 - Path blockers to Destrier Stable back room; minor PLC tweaks
 - Bio to Zachary Addams
-- Coffee
+- Coffee item to palette
+- Stacks of 10 items for shops: Flame Weapon scrolls, Ironguts/Rogue's Cunning Potions
+- Crossbow merchant in Frozenfar: Endir's Point, Shops
+- 1 shop to Underdark: Bloodspear Keep, Interiors
 
 ### Changed
 - Transitions from oldkohl to grngard, feylake, radiant
@@ -30,7 +33,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Blackmoor plot spawn triggers removed from Caraigh
 - Crystal Node map note from Amia Forest: Northwest
 - Ruathym: Caraigh, Dark Hills boulders; taken by Grove as material for Ubtao shrine
-- Cleaned up DM Archive: Khylaria (removed old request items, PLCs, horses, changed 2 NOCs from hostile to defender faction)
+- Cleaned up DM Archive: Khylaria (removed old request items, PLCs, horses, changed 2 NPCs from hostile to defender faction)
 - Gregory's Landing: Destrier Stables finished, pending final check/approval
 - "No Porting" variable removed from Gregory's Landing & Destrier Stables
 - Gregory's Landing racial gates now match Fort Cystana's
@@ -38,6 +41,27 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - First Knight Card's bio for grammar/syntax/etc
 - "Card" quest NPC renamed "Cary", given new bio to reflect relationship to First Knight Card
 - Updated the W&S Guide NPC dialogue to reflect recent IC changes
+- Added 10-stack Flame Weapon scrolls to many shops that had singles
+- Gave each of the following settlements a 25,000 gp sell merchant:
+	- Barak Runedar: Grundi
+	- Setersborg: Ulfar Scarfoot
+	- Howness: Olaf Feilan
+	- Osthavn: Blacksmith
+	- Fort Wiltun: Magister Yeagan
+	- Ceyren's Mill: Uralia
+	- Calderis: Havoc
+	- The Dale: Muck Magus
+	- Eilistraeen Shrine: Thrar
+	- Endir's Point: Thorgrun
+	- Nes'ek: Jaya Undt
+	- Oakmist Vale: Naerth
+	- Ridgewood: Figan Holdord
+	- Salandran Temple: Temple Quartermaster
+	- Shadowscape: Karisa
+	- Southport: Jewelry Merchant
+	- The Triumvir: Wilson Yadgerson
+	- Winya Ravana: Thraldurin Chedrille
+	- Zanshibon: Haji
 
 ### Fixed
 - Mizfit Tailor's plcs
@@ -67,6 +91,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Missing ds_speak line on Zachary Addams
 - Some color tags on items in the Palette
 - Removed some Plot flags for quest items that don't need them
+- Removed some duplicate items from the item palette
+- Patrol xp for soldiers correctly multiplies now
 
 ## [4.5.2 - 2024-11-10]
 

@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 2 new NPCs in Destrier Stables
 - Path blockers to Destrier Stable back room; minor PLC tweaks
 - Bio to Zachary Addams
+- Coffee
 
 ### Changed
 - Transitions from oldkohl to grngard, feylake, radiant
@@ -36,6 +37,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - First Knight Card of Wiltun moved from Wiltun Keep to Gregory's Landing Destrier Stables
 - First Knight Card's bio for grammar/syntax/etc
 - "Card" quest NPC renamed "Cary", given new bio to reflect relationship to First Knight Card
+- Updated the W&S Guide NPC dialogue to reflect recent IC changes
 
 ### Fixed
 - Mizfit Tailor's plcs
@@ -63,6 +65,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Floating/misplaced/missing doors in Gregory's Landing
 - Quick-fix to typo, missing ds_speak line on new NPC, putting start point back in the entry
 - Missing ds_speak line on Zachary Addams
+- Some color tags on items in the Palette
+- Removed some Plot flags for quest items that don't need them
 
 ## [4.5.2 - 2024-11-10]
 

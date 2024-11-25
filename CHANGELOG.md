@@ -42,6 +42,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - "Card" quest NPC renamed "Cary", given new bio to reflect relationship to First Knight Card
 - Updated the W&S Guide NPC dialogue to reflect recent IC changes
 - Added 10-stack Flame Weapon scrolls to many shops that had singles
+- Darkness epic boss has a different skin now
 - Gave each of the following settlements a 25,000 gp sell merchant:
 	- Barak Runedar: Grundi
 	- Setersborg: Ulfar Scarfoot
@@ -93,6 +94,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed some Plot flags for quest items that don't need them
 - Removed some duplicate items from the item palette
 - Patrol xp for soldiers correctly multiplies now
+- Some palette creature categories
+- Baphitaur name typo
 
 ## [4.5.2 - 2024-11-10]
 

@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
-
+- Old Kohl now has more walls and the temple in construction
 ### Fixed
 
 ## [4.6.0 - 2024-11-25]

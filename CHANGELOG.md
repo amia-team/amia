@@ -10,7 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Old Kohl now has more walls and the temple in construction
+
+
 ### Fixed
+- Removed redundant gate transitions from Shadowscape's gates, ensured existing transitions outside gates are linked properly.
 
 ## [4.6.0 - 2024-11-25]
 

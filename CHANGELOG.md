@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Rest Menu option to toggle on/off usable for job system PLCs
+- Added in persist PLC restrictions based on faction specific keys
 
 ### Changed
 - Old Kohl now has more walls and the temple in construction

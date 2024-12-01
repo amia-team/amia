@@ -10,10 +10,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Old Kohl now has more walls and the temple in construction
+- Gregory's Landing stables cat Patches skin changed to tabby (non-triangle head) as per Ama's wishes.
+- rua_bergrin, rua_wiltun_convs and wil_pjotr_guide convos no longer refer to a long-dead Jarl Arsant Wiltun V
+- wil_pjotr_guide Card changed to Cary to reflect plot changes
 
 
 ### Fixed
 - Removed redundant gate transitions from Shadowscape's gates, ensured existing transitions outside gates are linked properly.
+- Caraigh Coast Road buildings now have doors.
 
 ## [4.6.0 - 2024-11-25]
 

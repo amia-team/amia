@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Gregory's Landing stables cat Patches skin changed to tabby (non-triangle head) as per Ama's wishes.
 - rua_bergrin, rua_wiltun_convs and wil_pjotr_guide convos no longer refer to a long-dead Jarl Arsant Wiltun V
 - wil_pjotr_guide Card changed to Cary to reflect plot changes
-
+- Renamed cart driver in the Dale (Frontier's to Traveller's)
 
 ### Fixed
 - Removed redundant gate transitions from Shadowscape's gates, ensured existing transitions outside gates are linked properly.

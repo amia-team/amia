@@ -56,6 +56,14 @@ void main()
      SetLocalInt(oWidget,"active",1);
      SetLocalLocation(oWidget, "spawnedplclocation",lTargeted);
      SetLocalString(oPlacedPLC, "pcowner",sPCKEYNameSub);
+     if(GetLocalInt(oPC,"plctoggle")==1)
+     {
+       SetUseableFlag(oPlacedPLC,0);
+     }
+     else
+     {
+       SetUseableFlag(oPlacedPLC,1);
+     }
    }
 
 

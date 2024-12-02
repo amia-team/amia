@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - rua_bergrin, rua_wiltun_convs and wil_pjotr_guide convos no longer refer to a long-dead Jarl Arsant Wiltun V
 - wil_pjotr_guide Card changed to Cary to reflect plot changes
 - Renamed cart driver in the Dale (Frontier's to Traveller's)
+- Lost Kid has a scale variable now
+- Magically Supressed Spider Eggs (Job System item) has a correct bio now
 
 ### Fixed
 - Removed redundant gate transitions from Shadowscape's gates, ensured existing transitions outside gates are linked properly.

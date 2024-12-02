@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### changed
+
+### Fixed
+
+## [4.6.1 - 2024-12-01]
+
+### Added
 - Rest Menu option to toggle on/off usable for job system PLCs
 - Added in persist PLC restrictions based on faction specific keys
 

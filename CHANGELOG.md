@@ -8,9 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-### changed
+### Changed
 
 ### Fixed
+
+- baseitems.2da appearance range for amulets expanded to 250 to allow more visible options
 
 ## [4.6.1 - 2024-12-01]
 

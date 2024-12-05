@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 
 - baseitems.2da appearance range for amulets expanded to 250 to allow more visible options
+- Lost Animals (invasion patrol items) are unlimited/day now
 
 ## [4.6.1 - 2024-12-01]
 

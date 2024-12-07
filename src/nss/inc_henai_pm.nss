@@ -890,7 +890,7 @@ void bkRespondToHenchmenShout(object oShouter, int nShoutIndex, object oIntruder
                     else
                     {
                      ClearAllActions();
-                     AssignCommand(oHench,ActionSpeakString("You all take care! *Quickly takes off*"));
+                     AssignCommand(oHench,ActionSpeakString("You take care! *Quickly takes off*"));
                      ApplyEffectToObject(DURATION_TYPE_INSTANT,eHeal,oHench);
                      DelayCommand(1.0,AssignCommand(oHench,ActionJumpToObject(oWP)));
                     }

@@ -88,7 +88,7 @@ void main(){
 
             // Spawn.
             DelayCommand( 6.0, HordeCount( oWaypoint, oTrigger, oPC ) );
-            AssignCommand( oPC, SpeakString( "<c¥  >*As you encroach upon the central nest, a veritable horde begins to dig up from the very ground beneath your feet! Prepare yourself! It looks like it's going to be a long, hard fight!*</c>" ) );
+            AssignCommand( oPC, SpeakString( "<c¥  >**As you encroach upon the central nest, a veritable horde begins to dig up from the very ground beneath your feet! Prepare yourself! It looks like it's going to be a long, hard fight!**</c>" ) );
 
             if ( GetLocalInt( OBJECT_SELF, "trace" ) == 1 ){
 
@@ -115,15 +115,15 @@ void HordeCount( object oWaypoint, object oTrigger, object oPC )
 
     if( nCount == 6 )
     {
-        AssignCommand( oPC, SpeakString( "<c¥  >*There seems to be no end to the horde of Gibberlings rushing towards you!*</c>" ) );
+        AssignCommand( oPC, SpeakString( "<c¥  >**There seems to be no end to the horde of Gibberlings rushing towards you!**</c>" ) );
     }
     if( nCount == 4 )
     {
-        AssignCommand( oPC, SpeakString( "<c¥  >*The horde seems to reach its peak, a writhing mass of teeth, claws and fur*</c>" ) );
+        AssignCommand( oPC, SpeakString( "<c¥  >**The horde seems to reach its peak, a writhing mass of teeth, claws and fur!**</c>" ) );
     }
     if( nCount == 2 )
     {
-        AssignCommand( oPC, SpeakString( "<c¥  >*It seems as though the horde is beginning to thin! The end is in sight!*</c>" ) );
+        AssignCommand( oPC, SpeakString( "<c¥  >**It seems as though the horde is beginning to thin! The end is in sight!**</c>" ) );
     }
     if( nCount == 0 )
     {
@@ -135,7 +135,7 @@ void HordeCount( object oWaypoint, object oTrigger, object oPC )
 
         DestroyObject( oPLC, TurnsToSeconds( 15 ) );
 
-        AssignCommand( oPC, SpeakString( "<c¥  >*In the wake of the horde you spot a tunnel opening, larger than the others, that seems to lead further down...*</c>" ) );
+        AssignCommand( oPC, SpeakString( "<c¥  >**In the wake of the horde you spot a tunnel opening, larger than the others, that seems to lead further down...**</c>" ) );
 
         SetLocalInt( oTrigger, "Counter", 15 );
     }

@@ -19,7 +19,7 @@ void main()
 
   if(!GetIsObjectValid(oHench))
   {
-    AssignCommand( oPC, SpeakString( "<c¥  >*As you approach your destination the smell of gibberling and mouthers is strong here. Just over the boulders ahead and your fight will begin. You instinctively know to prepare now before climbing over*</c>" ) );
+    AssignCommand( oPC, SpeakString( "<c¥  >**As you approach your destination the smell of gibberling and mouthers is strong here. Just over the boulders ahead and your fight will begin. You instinctively know to prepare now before climbing over**</c>" ) );
   }
   else
   {

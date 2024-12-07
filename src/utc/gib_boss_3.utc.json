@@ -2,19 +2,19 @@
   "__data_type": "UTC ",
   "Appearance_Type": {
     "type": "word",
-    "value": 1733
+    "value": 333
   },
   "BodyBag": {
     "type": "byte",
-    "value": 5
+    "value": 0
   },
   "Cha": {
     "type": "byte",
-    "value": 3
+    "value": 5
   },
   "ChallengeRating": {
     "type": "float",
-    "value": 7.0
+    "value": 10.0
   },
   "ClassList": {
     "type": "list",
@@ -27,7 +27,18 @@
         },
         "ClassLevel": {
           "type": "short",
-          "value": 4
+          "value": 1
+        }
+      },
+      {
+        "__struct_id": 2,
+        "Class": {
+          "type": "int",
+          "value": 57
+        },
+        "ClassLevel": {
+          "type": "short",
+          "value": 5
         }
       }
     ]
@@ -38,7 +49,7 @@
   },
   "Con": {
     "type": "byte",
-    "value": 12
+    "value": 11
   },
   "Conversation": {
     "type": "resref",
@@ -46,11 +57,11 @@
   },
   "CRAdjust": {
     "type": "int",
-    "value": 3
+    "value": 5
   },
   "CurrentHitPoints": {
     "type": "short",
-    "value": 26
+    "value": 50
   },
   "DecayTime": {
     "type": "dword",
@@ -63,12 +74,12 @@
   "Description": {
     "type": "cexolocstring",
     "value": {
-      "0": "The pandemonium before you is actually a mass of pale, hunchbacked humanoids, with pointed ears, black manes and grinning faces. Their eyes are black, and shine with a maniacal gleam."
+      "0": "Remains of clothes, and trinkets still linger on this creatures body. This malformed, twisted creature was once something or someone else."
     }
   },
   "Dex": {
     "type": "byte",
-    "value": 12
+    "value": 20
   },
   "Disarmable": {
     "type": "byte",
@@ -77,6 +88,13 @@
   "Equip_ItemList": {
     "type": "list",
     "value": [
+      {
+        "__struct_id": 16,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "gibber_throw"
+        }
+      },
       {
         "__struct_id": 65536,
         "EquippedRes": {
@@ -88,7 +106,7 @@
         "__struct_id": 131072,
         "EquippedRes": {
           "type": "resref",
-          "value": "gbbrlng_nrmlhd"
+          "value": "gib_boss_hide"
         }
       }
     ]
@@ -104,7 +122,21 @@
         "__struct_id": 1,
         "Feat": {
           "type": "word",
-          "value": 291
+          "value": 408
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 196
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 27
         }
       },
       {
@@ -113,13 +145,20 @@
           "type": "word",
           "value": 289
         }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 45
+        }
       }
     ]
   },
   "FirstName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Gibberling"
+      "0": "Malformed Adventurer"
     }
   },
   "fortbonus": {
@@ -128,23 +167,23 @@
   },
   "Gender": {
     "type": "byte",
-    "value": 4
+    "value": 0
   },
   "GoodEvil": {
     "type": "byte",
-    "value": 50
+    "value": 0
   },
   "HitPoints": {
     "type": "short",
-    "value": 26
+    "value": 50
   },
   "Int": {
     "type": "byte",
-    "value": 5
+    "value": 3
   },
   "Interruptable": {
     "type": "byte",
-    "value": 1
+    "value": 0
   },
   "IsImmortal": {
     "type": "byte",
@@ -153,6 +192,64 @@
   "IsPC": {
     "type": "byte",
     "value": 0
+  },
+  "ItemList": {
+    "type": "list",
+    "value": [
+      {
+        "__struct_id": 0,
+        "Dropable": {
+          "type": "byte",
+          "value": 1
+        },
+        "InventoryRes": {
+          "type": "resref",
+          "value": "qst_gibbers"
+        },
+        "Repos_PosX": {
+          "type": "word",
+          "value": 0
+        },
+        "Repos_Posy": {
+          "type": "word",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 1,
+        "InventoryRes": {
+          "type": "resref",
+          "value": "gibber_throw"
+        },
+        "Repos_PosX": {
+          "type": "word",
+          "value": 1
+        },
+        "Repos_Posy": {
+          "type": "word",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 2,
+        "Dropable": {
+          "type": "byte",
+          "value": 1
+        },
+        "InventoryRes": {
+          "type": "resref",
+          "value": "gib_loot_3"
+        },
+        "Repos_PosX": {
+          "type": "word",
+          "value": 2
+        },
+        "Repos_Posy": {
+          "type": "word",
+          "value": 0
+        }
+      }
+    ]
   },
   "LastName": {
     "type": "cexolocstring",
@@ -170,23 +267,23 @@
   },
   "MaxHitPoints": {
     "type": "short",
-    "value": 30
+    "value": 50
   },
   "NaturalAC": {
     "type": "byte",
-    "value": 1
+    "value": 2
   },
   "NoPermDeath": {
     "type": "byte",
-    "value": 1
+    "value": 0
   },
   "PaletteID": {
     "type": "byte",
-    "value": 8
+    "value": 64
   },
   "PerceptionRange": {
     "type": "byte",
-    "value": 9
+    "value": 11
   },
   "Phenotype": {
     "type": "int",
@@ -198,7 +295,7 @@
   },
   "PortraitId": {
     "type": "word",
-    "value": 1354
+    "value": 1420
   },
   "Race": {
     "type": "byte",
@@ -206,7 +303,7 @@
   },
   "refbonus": {
     "type": "short",
-    "value": 2
+    "value": 0
   },
   "ScriptAttacked": {
     "type": "resref",
@@ -214,11 +311,11 @@
   },
   "ScriptDamaged": {
     "type": "resref",
-    "value": "ds_ai2_damaged"
+    "value": "ds_ai2_gibboss"
   },
   "ScriptDeath": {
     "type": "resref",
-    "value": "gbbrng_ondeath"
+    "value": "ds_ai2_gibdeath"
   },
   "ScriptDialogue": {
     "type": "resref",
@@ -288,56 +385,7 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 2
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Rank": {
-          "type": "byte",
-          "value": 0
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Rank": {
-          "type": "byte",
-          "value": 0
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Rank": {
-          "type": "byte",
-          "value": 0
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Rank": {
-          "type": "byte",
-          "value": 0
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Rank": {
-          "type": "byte",
-          "value": 0
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Rank": {
-          "type": "byte",
-          "value": 0
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Rank": {
-          "type": "byte",
-          "value": 0
+          "value": 10
         }
       },
       {
@@ -387,6 +435,55 @@
         "Rank": {
           "type": "byte",
           "value": 2
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
         }
       },
       {
@@ -463,7 +560,7 @@
   },
   "SoundSetFile": {
     "type": "word",
-    "value": 254
+    "value": 25
   },
   "SpecAbilityList": {
     "type": "list",
@@ -483,7 +580,7 @@
   },
   "Tag": {
     "type": "cexostring",
-    "value": "gibberling_brood"
+    "value": "gib_boss_3"
   },
   "Tail_New": {
     "type": "dword",
@@ -495,42 +592,7 @@
   },
   "TemplateResRef": {
     "type": "resref",
-    "value": "gibberling_brood"
-  },
-  "VarTable": {
-    "type": "list",
-    "value": [
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
-          "value": "CustLootBin"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 3
-        },
-        "Value": {
-          "type": "cexostring",
-          "value": "Gibbering"
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
-          "value": "scale"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 2
-        },
-        "Value": {
-          "type": "float",
-          "value": 0.6
-        }
-      }
-    ]
+    "value": "gib_boss_3"
   },
   "WalkRate": {
     "type": "int",
@@ -546,6 +608,6 @@
   },
   "Wis": {
     "type": "byte",
-    "value": 7
+    "value": 14
   }
 }

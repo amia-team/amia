@@ -48,7 +48,7 @@ void main(){
     //Identify creature using the script to know how to act
     string sIdentity = GetResRef(oCritter);
 
-    if(sIdentity == "gibberling_brood")
+    if((sIdentity == "gibberling_brood") || (sIdentity == "gib_boss_2"))
     {
         effect eAura = EffectAreaOfEffect(AOE_MOB_MENACE, "", "", "");
         eAura = SupernaturalEffect(eAura);

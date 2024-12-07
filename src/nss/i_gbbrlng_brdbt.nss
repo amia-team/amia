@@ -50,7 +50,7 @@ void DoInjectGibberslug(object oVictim)
     {
         effect eVFX = EffectVisualEffect(VFX_IMP_DISEASE_S);
         string sName = GetName(oVictim, FALSE);
-        string sInfect = "<c¥  >**As the Gibberling bites "+sName+", it injects something under their skin!**</c>";
+        string sInfect = "<c¥  >*As the Gibberling bites "+sName+", it injects something under their skin!*</c>";
 
         ApplyEffectToObject(DURATION_TYPE_INSTANT, eVFX, oVictim);
         SpeakString(sInfect, TALKVOLUME_TALK);
@@ -74,7 +74,7 @@ void DoGibberslugHatch(object oVictim)
     effect eBlood = EffectVisualEffect(VFX_COM_BLOOD_LRG_RED);
     effect eDamage = EffectDamage(d4(1), DAMAGE_TYPE_PIERCING, DAMAGE_POWER_NORMAL);
     location lVictim = GetLocation(oVictim);
-    string sBurst = "<c¥  >**A Gibberslug bursts from your body and starts to slither away, growing...**</c>";
+    string sBurst = "<c¥  >*A Gibberslug bursts from your body and starts to slither away, growing...*</c>";
 
     ApplyEffectToObject(DURATION_TYPE_INSTANT, eBlood, oVictim);
     ApplyEffectToObject(DURATION_TYPE_INSTANT, eDamage, oVictim);

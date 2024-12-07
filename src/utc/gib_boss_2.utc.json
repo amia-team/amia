@@ -14,7 +14,7 @@
   },
   "ChallengeRating": {
     "type": "float",
-    "value": 7.0
+    "value": 14.0
   },
   "ClassList": {
     "type": "list",
@@ -27,7 +27,7 @@
         },
         "ClassLevel": {
           "type": "short",
-          "value": 4
+          "value": 8
         }
       }
     ]
@@ -38,7 +38,7 @@
   },
   "Con": {
     "type": "byte",
-    "value": 12
+    "value": 14
   },
   "Conversation": {
     "type": "resref",
@@ -46,11 +46,11 @@
   },
   "CRAdjust": {
     "type": "int",
-    "value": 3
+    "value": 6
   },
   "CurrentHitPoints": {
     "type": "short",
-    "value": 26
+    "value": 59
   },
   "DecayTime": {
     "type": "dword",
@@ -104,6 +104,13 @@
         "__struct_id": 1,
         "Feat": {
           "type": "word",
+          "value": 196
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
           "value": 291
         }
       },
@@ -119,7 +126,7 @@
   "FirstName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Gibberling"
+      "0": "Greater Gibberling"
     }
   },
   "fortbonus": {
@@ -136,7 +143,7 @@
   },
   "HitPoints": {
     "type": "short",
-    "value": 26
+    "value": 59
   },
   "Int": {
     "type": "byte",
@@ -154,6 +161,49 @@
     "type": "byte",
     "value": 0
   },
+  "ItemList": {
+    "type": "list",
+    "value": [
+      {
+        "__struct_id": 0,
+        "Dropable": {
+          "type": "byte",
+          "value": 1
+        },
+        "InventoryRes": {
+          "type": "resref",
+          "value": "qst_gibbers"
+        },
+        "Repos_PosX": {
+          "type": "word",
+          "value": 0
+        },
+        "Repos_Posy": {
+          "type": "word",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Dropable": {
+          "type": "byte",
+          "value": 1
+        },
+        "InventoryRes": {
+          "type": "resref",
+          "value": "gib_loot_1"
+        },
+        "Repos_PosX": {
+          "type": "word",
+          "value": 1
+        },
+        "Repos_Posy": {
+          "type": "word",
+          "value": 0
+        }
+      }
+    ]
+  },
   "LastName": {
     "type": "cexolocstring",
     "value": {
@@ -170,11 +220,11 @@
   },
   "MaxHitPoints": {
     "type": "short",
-    "value": 30
+    "value": 75
   },
   "NaturalAC": {
     "type": "byte",
-    "value": 1
+    "value": 3
   },
   "NoPermDeath": {
     "type": "byte",
@@ -182,7 +232,7 @@
   },
   "PaletteID": {
     "type": "byte",
-    "value": 8
+    "value": 64
   },
   "PerceptionRange": {
     "type": "byte",
@@ -214,11 +264,11 @@
   },
   "ScriptDamaged": {
     "type": "resref",
-    "value": "ds_ai2_damaged"
+    "value": "ds_ai2_gibboss"
   },
   "ScriptDeath": {
     "type": "resref",
-    "value": "gbbrng_ondeath"
+    "value": "ds_ai2_gibdeath"
   },
   "ScriptDialogue": {
     "type": "resref",
@@ -475,7 +525,7 @@
   },
   "Str": {
     "type": "byte",
-    "value": 12
+    "value": 14
   },
   "Subrace": {
     "type": "cexostring",
@@ -495,7 +545,7 @@
   },
   "TemplateResRef": {
     "type": "resref",
-    "value": "gibberling_brood"
+    "value": "gib_boss_2"
   },
   "VarTable": {
     "type": "list",
@@ -519,7 +569,7 @@
         "__struct_id": 0,
         "Name": {
           "type": "cexostring",
-          "value": "scale"
+          "value": "size"
         },
         "Type": {
           "type": "dword",
@@ -527,7 +577,7 @@
         },
         "Value": {
           "type": "float",
-          "value": 0.6
+          "value": 0.75
         }
       }
     ]

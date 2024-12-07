@@ -43,7 +43,7 @@ void DoGibberingSave( object oCritter, object oTarget )
         ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eConfuse, oTarget, fDur );
         ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVis, oTarget, fDur );
 
-        AssignCommand( oCritter, SpeakString( "<c¥  >**The sound of the Mouther's costant whispering and muttering of chaotic gibberish momentarily drives "+sName+" insane!**</c>" ) );
+        AssignCommand( oCritter, SpeakString( "<c¥  >*The sound of the Mouther's costant whispering and muttering of chaotic gibberish momentarily drives "+sName+" insane!*</c>" ) );
     }
     SetLocalObject( oTarget, "Gibber", oCritter );
 }

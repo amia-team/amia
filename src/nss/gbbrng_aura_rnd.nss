@@ -150,7 +150,7 @@ void DoGrappleSwallow( object oCritter, object oTarget, string sTarget )
         DelayCommand( 6.1, ApplyEffectToObject(DURATION_TYPE_INSTANT, eConHit, oTarget ) );
 
         string sName = GetName( oTarget );
-        string sSwallow = "<c¥  >**Wraps an appendange around "+sName+", pulling them inside itself, draining their blood!**</c>";
+        string sSwallow = "<c¥  >*Wraps an appendange around "+sName+", pulling them inside itself, draining their blood!*</c>";
         SpeakString( sSwallow, TALKVOLUME_TALK );
         FloatingTextStringOnCreature( sSwallow, oCritter, FALSE );
 

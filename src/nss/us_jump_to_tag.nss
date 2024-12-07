@@ -25,6 +25,7 @@ Date        Name        Reason
 2015-09-29  PoS         Polymorphed PCs aren't screwed by this script now
 2023-10-08  Frozen      Added 2 key check option
 2024-02-21  Lord-Jyssev Added variable support for "queststarted" or "questfinished"
+2024-12-7   Maverick0053 Added in Merc movement limitation, also reduced movement delay
 ------------------------------------------------------------------
 
 */
@@ -45,6 +46,8 @@ void MoveAssociates( object oPC, object oTarget );
 void ClimbCheck( object oPC, object oTarget, string sMessage, int nOpen, object oPLC );
 
 int IsBanned( object oPC, object oObject );
+
+void CheckHenchmen(object oPC, object oTarget); // Check to see if they are restricted movement wise
 
 
 //-------------------------------------------------------------------------------
@@ -127,6 +130,11 @@ void main(){
         }
     }
 
+    // Hench Check
+
+    CheckHenchmen(oPC,oTarget);
+
+
     //check if we do a climb check or just jump straight to target
     if( GetLocalString( OBJECT_SELF, "fall_target" ) != "" )
     {
@@ -165,9 +173,10 @@ void main(){
 
         DoTransition( oPC, oTarget, sMessage, nOpen );
     }
-    else if ( nSecret == 1 ){
+    else if ( nSecret == 1 )
+    {
 
-        ;
+
     }
     else{
 
@@ -216,8 +225,8 @@ void DoTransition( object oPC, object oTarget, string sMessage, int nOpen ){
     }
     else{
 
-        DelayCommand( 1.0, AssignCommand( oPC, ClearAllActions() ) );
-        DelayCommand( 1.1, AssignCommand( oPC, JumpToObject( oTarget, 0 ) ) );
+        DelayCommand( 0.1, AssignCommand( oPC, ClearAllActions() ) );
+        DelayCommand( 0.2, AssignCommand( oPC, JumpToObject( oTarget, 0 ) ) );
     }
 }
 
@@ -232,7 +241,7 @@ void MoveAssociates( object oPC, object oTarget ){
 
         if ( GetIsObjectValid( oAssociate ) ){
 
-            AssignCommand( oAssociate, JumpToObject( oTarget ) );
+             AssignCommand( oAssociate, JumpToObject( oTarget ) );
         }
     }
 }
@@ -318,4 +327,22 @@ int IsBanned( object oPC, object oObject ){
     }
 
     return FALSE;
+}
+
+void CheckHenchmen(object oPC, object oTarget)
+{
+   int i=1;
+   object oHench = GetHenchman(oPC,i);
+   int nMax = GetMaxHenchmen();
+
+   while(GetIsObjectValid(oHench))
+   {
+
+    if((GetLocalInt(oHench,"LimitMovement")==1) && (GetArea(oPC)!=GetArea(oTarget)))  // By default it will allow in area movement
+    {
+      RemoveHenchman(oPC,oHench);
+    }
+    i++;
+    oHench = GetHenchman(oPC,i);
+   }
 }

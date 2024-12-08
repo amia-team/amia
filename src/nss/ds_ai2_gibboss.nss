@@ -64,42 +64,42 @@ void main(){
     {
       if((nHP<=90) && (GetLocalInt(oCritter,"90%")!=1))
       {
-        AssignCommand(oCritter, SpeakString( "<c¥  >*Wet, moist, gurgling noises erupt from the massive mouther and smaller mouther's begin to split off as you strike it*</c>" ) );
+        AssignCommand(oCritter, SpeakString( "<c¥  >**Wet, moist, gurgling noises erupt from the massive mouther and smaller mouther's begin to split off as you strike it**</c>" ) );
         CreateObject(OBJECT_TYPE_CREATURE,"gibberingmouthc",lLoc2);
         CreateObject(OBJECT_TYPE_CREATURE,"gibberingmouthc",lLoc3);
         SetLocalInt(oCritter,"90%",1);
       }
       else if((nHP<=75) && (GetLocalInt(oCritter,"75%")!=1))
       {
-        AssignCommand(oCritter, SpeakString( "<c¥  >*Wet, moist, gurgling noises erupt again as more smaller mouther's begin to split off!*</c>" ) );
+        AssignCommand(oCritter, SpeakString( "<c¥  >**Wet, moist, gurgling noises erupt again as more smaller mouther's begin to split off!**</c>" ) );
         CreateObject(OBJECT_TYPE_CREATURE,"gibberingmouthc",lLoc2);
         CreateObject(OBJECT_TYPE_CREATURE,"gibberingmouthc",lLoc3);
         SetLocalInt(oCritter,"75%",1);
       }
       else if((nHP<=55) && (GetLocalInt(oCritter,"55%")!=1))
       {
-        AssignCommand(oCritter, SpeakString( "<c¥  >*Wet, moist, gurgling noises erupt again as more smaller mouther's begin to split off!*</c>" ) );
+        AssignCommand(oCritter, SpeakString( "<c¥  >**Wet, moist, gurgling noises erupt again as more smaller mouther's begin to split off!**</c>" ) );
         CreateObject(OBJECT_TYPE_CREATURE,"gibberingmouthc",lLoc2);
         CreateObject(OBJECT_TYPE_CREATURE,"gibberingmouthc",lLoc3);
         SetLocalInt(oCritter,"55%",1);
       }
       else if((nHP<=45) && (GetLocalInt(oCritter,"45%")!=1))
       {
-        AssignCommand(oCritter, SpeakString( "<c¥  >*Wet, moist, gurgling noises erupt again as more smaller mouther's begin to split off!*</c>" ) );
+        AssignCommand(oCritter, SpeakString( "<c¥  >**Wet, moist, gurgling noises erupt again as more smaller mouther's begin to split off!**</c>" ) );
         CreateObject(OBJECT_TYPE_CREATURE,"gibberingmouthc",lLoc2);
         CreateObject(OBJECT_TYPE_CREATURE,"gibberingmouthc",lLoc3);
         SetLocalInt(oCritter,"45%",1);
       }
       else if((nHP<=30) && (GetLocalInt(oCritter,"30%")!=1))
       {
-        AssignCommand(oCritter, SpeakString( "<c¥  >*Wet, moist, gurgling noises erupt again as more smaller mouther's begin to split off!**</c>" ) );
+        AssignCommand(oCritter, SpeakString( "<c¥  >**Wet, moist, gurgling noises erupt again as more smaller mouther's begin to split off!**</c>" ) );
         CreateObject(OBJECT_TYPE_CREATURE,"gibberingmouthc",lLoc2);
         CreateObject(OBJECT_TYPE_CREATURE,"gibberingmouthc",lLoc3);
         SetLocalInt(oCritter,"30%",1);
       }
       else if((nHP<=15) && (GetLocalInt(oCritter,"15%")!=1))
       {
-        AssignCommand(oCritter, SpeakString( "<c¥  >*Wet, moist, gurgling noises erupt again as more smaller mouther's begin to split off!*</c>" ) );
+        AssignCommand(oCritter, SpeakString( "<c¥  >**Wet, moist, gurgling noises erupt again as more smaller mouther's begin to split off!**</c>" ) );
         CreateObject(OBJECT_TYPE_CREATURE,"gibberingmouthc",lLoc2);
         CreateObject(OBJECT_TYPE_CREATURE,"gibberingmouthc",lLoc3);
         SetLocalInt(oCritter,"15%",1);
@@ -109,13 +109,13 @@ void main(){
     {
       if((nHP<=95) && (GetLocalInt(oCritter,"95%")!=1))
       {
-        AssignCommand(oCritter, SpeakString( "<c¥  >*Gibberlings clinging to the larger Gibberling's hide leap off!*</c>" ) );
+        AssignCommand(oCritter, SpeakString( "<c¥  >**Gibberlings clinging to the larger Gibberling's hide leap off!**</c>" ) );
         CreateObject(OBJECT_TYPE_CREATURE,"gibberling_norml",lLoc1);
         SetLocalInt(oCritter,"95%",1);
       }
       else if((nHP<=50) && (GetLocalInt(oCritter,"50%")!=1))
       {
-        AssignCommand(oCritter, SpeakString( "<c¥  >*More Gibberlings clinging to the larger Gibberling's hide leap off!*</c>" ) );
+        AssignCommand(oCritter, SpeakString( "<c¥  >**More Gibberlings clinging to the larger Gibberling's hide leap off!**</c>" ) );
         CreateObject(OBJECT_TYPE_CREATURE,"gibberling_norml",lLoc2);
         CreateObject(OBJECT_TYPE_CREATURE,"gibberling_norml",lLoc3);
         SetLocalInt(oCritter,"50%",1);
@@ -125,7 +125,7 @@ void main(){
     {
       if((nHP<=95) && (GetLocalInt(oCritter,"80%")!=1))
       {
-        AssignCommand(oCritter, SpeakString( "<c¥  >*Hisses, flails and then suddenly shimmers away!*</c>" ) );
+        AssignCommand(oCritter, SpeakString( "<c¥  >**Hisses, flails and then suddenly shimmers away!**</c>" ) );
         ApplyEffectAtLocation(DURATION_TYPE_INSTANT,EffectVisualEffect(VFX_FNF_SOUND_BURST),GetLocation(oCritter));
         CreateObject(OBJECT_TYPE_CREATURE,"gibberingmouther",lLoc1);
         AssignCommand( oCritter, ClearAllActions() );
@@ -135,7 +135,7 @@ void main(){
       }
       else if((nHP<=75) && (GetLocalInt(oCritter,"60%")!=1))
       {
-        AssignCommand(oCritter, SpeakString( "<c¥  >*Staggers and then suddenly howls!*</c>" ) );
+        AssignCommand(oCritter, SpeakString( "<c¥  >**Staggers and then suddenly howls!**</c>" ) );
         ApplyEffectAtLocation(DURATION_TYPE_INSTANT,EffectVisualEffect(VFX_FNF_HOWL_MIND),GetLocation(oCritter));
         CreateObject(OBJECT_TYPE_CREATURE,"gibberling_brood",lLoc2);
         CreateObject(OBJECT_TYPE_CREATURE,"gibberling_brood",lLoc3);
@@ -143,7 +143,7 @@ void main(){
       }
       else if((nHP<=50) && (GetLocalInt(oCritter,"30%")!=1))
       {
-        AssignCommand(oCritter, SpeakString( "<c¥  >*Hisses, flails and then suddenly shimmers away again!*</c>" ) );
+        AssignCommand(oCritter, SpeakString( "<c¥  >**Hisses, flails and then suddenly shimmers away again!**</c>" ) );
         ApplyEffectAtLocation(DURATION_TYPE_INSTANT,EffectVisualEffect(VFX_FNF_SOUND_BURST),GetLocation(oCritter));
         CreateObject(OBJECT_TYPE_CREATURE,"gibberingmouther",lLoc1);
         CreateObject(OBJECT_TYPE_CREATURE,"gibberling_brood",lLoc2);

@@ -113,15 +113,15 @@ void HordeCount( object oWaypoint, object oTrigger, object oPC )
     nCount = nCount - 1;
     SetLocalInt( oTrigger, "Counter", nCount);
 
-    if( nCount == 6 )
+    if( nCount == 5 )
     {
         AssignCommand( oPC, SpeakString( "<c¥  >**There seems to be no end to the horde of Gibberlings rushing towards you!**</c>" ) );
     }
-    if( nCount == 4 )
+    if( nCount == 3 )
     {
         AssignCommand( oPC, SpeakString( "<c¥  >**The horde seems to reach its peak, a writhing mass of teeth, claws and fur!**</c>" ) );
     }
-    if( nCount == 2 )
+    if( nCount == 1 )
     {
         AssignCommand( oPC, SpeakString( "<c¥  >**It seems as though the horde is beginning to thin! The end is in sight!**</c>" ) );
     }
@@ -172,5 +172,5 @@ void SpawnHorde( object oWaypoint, object oTrigger, object oPC )
     }
     ApplyEffectAtLocation( DURATION_TYPE_INSTANT, eShake, lSpawn );
 
-    DelayCommand( 18.0, HordeCount( oWaypoint, oTrigger, oPC ) );
+    DelayCommand( 24.0, HordeCount( oWaypoint, oTrigger, oPC ) );
 }

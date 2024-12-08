@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Sand Minotaur DTS numbers and chests
 
 ### Fixed
-
+- Old Kohl has transitions to it again
 - baseitems.2da appearance range for amulets expanded to 250 to allow more visible options
 - Lost Animals (invasion patrol items) are unlimited/day now
 

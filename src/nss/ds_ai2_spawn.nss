@@ -24,6 +24,7 @@ void main(){
 
     object oCritter         = OBJECT_SELF;
     float scale             = GetLocalFloat(oCritter, "scale");
+    float zAdjust           = GetLocalFloat(oCritter, "z_adjust");
     int spawnEffect         = GetLocalInt( oCritter, "spawn_effect" );
     int effect1             = GetLocalInt( oCritter, "effect1" );
     int effect2             = GetLocalInt( oCritter, "effect2" );
@@ -50,9 +51,13 @@ void main(){
     }
 
     //Accounting for floating point error.
-    if(scale > 0.1f)
+    if(scale > 0.05f)
     {
         SetObjectVisualTransform(oCritter, 10, scale);
+    }
+
+    if(zAdjust > 0.05f || zAdjust < -0.05){
+        SetObjectVisualTransform(oCritter, 33, zAdjust);
     }
 
     if(collision == 1){

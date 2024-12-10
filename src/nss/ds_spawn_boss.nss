@@ -51,7 +51,11 @@ void main(){
         return;
     }
 
-    if (GetIsDay()){
+    int time  = GetTimeHour();
+    int day   = GetLocalInt(OBJECT_SELF,"Day");
+    int night = GetLocalInt(OBJECT_SELF,"Night");
+
+    if((time < 6 || time >= 18) && night == 1){
         if(bossMsg == ""){
             SendMessageToPC( oPC, "*It looks like something was here during the previous day.*" );
             return;
@@ -62,7 +66,7 @@ void main(){
         }
     }
 
-    if (GetIsNight()){
+    if((time >= 6 && time < 18) && day == 1){
         if(bossMsg == ""){
             SendMessageToPC( oPC, "*It looks like something was here during the previous night.*" );
             return;

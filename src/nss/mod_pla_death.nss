@@ -32,6 +32,9 @@ void RemoveMonkEffects( object oPC );
 // Remove Henchmen if they're there.
 int HenchCount(object oPC);
 
+// Checks for Merc and removes it
+void CheckMerc(object oPC);
+
 
 //-----------------------------------------------------------------------------
 // main
@@ -112,6 +115,9 @@ int HenchCount(object oPC);
     // hack for Master Scout
     DeleteLocalInt( oVictim, "SCOUT_DASH_SET" );
     DeleteLocalInt( oVictim, "SCOUT_STRIDE_SET" );
+
+    //Remove any Mercs
+    CheckMerc(oVictim);
 
     //Check for Retribution prayer effects
     int nRetribution = GetLocalInt( oVictim, "jj_retribution_domain" );
@@ -298,4 +304,22 @@ int HenchCount(object oPC){
         h = h + 1;
     }
     return henchCount;
+}
+
+void CheckMerc(object oPC)
+{
+   int i=1;
+   object oHench = GetHenchman(oPC,i);
+   int nMax = GetMaxHenchmen();
+
+   while(GetIsObjectValid(oHench))
+   {
+
+    if((GetLocalInt(oHench,"IsMerc")==1))
+    {
+      RemoveHenchman(oPC,oHench);
+    }
+    i++;
+    oHench = GetHenchman(oPC,i);
+   }
 }

@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - DTS to Gibbering Maw
 - Gibbering Maw complete rework
 - Head Changer item for druid/shifter types
+- Invasion areas added:
+	- Forrstakkr: Mt Firth
+	- Forrstakkr: Howness South Road
+- Invasion Overflow added:
+	- Forrstakkr: Howness
 
 ### Changed
 - Ancient Mound Trogs dungeon changed up a bit

@@ -10,9 +10,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - DTS to Ancient Mound Trogs
 - DTS to Gibbering Maw
 - Gibbering Maw complete rework
+- Head Changer item for druid/shifter types
 
 ### Changed
+- Ancient Mound Trogs dungeon changed up a bit
 - Sand Minotaur DTS numbers and chests
+- Lowland Swamp spawns (trogs only show at night now)
 
 ### Fixed
 - Old Kohl has transitions to it again

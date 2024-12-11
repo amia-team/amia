@@ -13,13 +13,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Head Changer item for druid/shifter types
 - Quests:
 	- Endir's Point: Fernor Troll Quest
+	- Djedet: Asabi Quest
 - Invasion areas:
 	- Forrstakkr: Mt Firth
 	- Forrstakkr: Howness South Road
 	- Frozenfar: Fernor Road, Coast
+	- Khem: Anara Oasis
+	- Khem: The Seven Sisters of Hoet
 - Invasion Overflow:
 	- Forrstakkr: Howness
 	- Frozenfar: Endir's Point
+	- Khem: Djedet
 
 ### Changed
 - Ancient Mound Trogs dungeon changed up a bit

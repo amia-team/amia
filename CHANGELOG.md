@@ -11,11 +11,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - DTS to Gibbering Maw
 - Gibbering Maw complete rework
 - Head Changer item for druid/shifter types
-- Invasion areas added:
+- Quests:
+	- Endir's Point: Fernor Troll Quest
+- Invasion areas:
 	- Forrstakkr: Mt Firth
 	- Forrstakkr: Howness South Road
-- Invasion Overflow added:
+	- Frozenfar: Fernor Road, Coast
+- Invasion Overflow:
 	- Forrstakkr: Howness
+	- Frozenfar: Endir's Point
 
 ### Changed
 - Ancient Mound Trogs dungeon changed up a bit

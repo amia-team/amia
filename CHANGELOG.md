@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Associate Customization, read here for more: https://www.amiaworld.com/phpbb/viewtopic.php?p=1231#p1231
 - DTS to Ancient Mound Trogs
 - DTS to Gibbering Maw
 - Gibbering Maw complete rework
@@ -24,6 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Forrstakkr: Howness
 	- Frozenfar: Endir's Point
 	- Khem: Djedet
+- DM commands added: createvfx, getvfx, removevfx, setsoundset
 
 ### Changed
 - Ancient Mound Trogs dungeon changed up a bit

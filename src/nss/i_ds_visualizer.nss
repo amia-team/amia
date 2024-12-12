@@ -116,17 +116,17 @@ void add_visuals( object oPC, object oTarget, object oItem ){
 
         if( nVisualDur1 > 0 )
         {
-            ApplyEffectToObject( DURATION_TYPE_PERMANENT, SupernaturalEffect( EffectVisualEffect( nVisualDur1 ) ), oTarget );
+            ApplyEffectToObject( DURATION_TYPE_PERMANENT, UnyieldingEffect( EffectVisualEffect( nVisualDur1 ) ), oTarget );
             FloatingTextStringOnCreature( "Perma Visual 1: " + IntToString( nVisualDur1 ), oPC, FALSE );
         }
         if( nVisualDur2 > 0 )
         {
-            ApplyEffectToObject( DURATION_TYPE_PERMANENT, SupernaturalEffect( EffectVisualEffect( nVisualDur2 ) ), oTarget );
+            ApplyEffectToObject( DURATION_TYPE_PERMANENT, UnyieldingEffect( EffectVisualEffect( nVisualDur2 ) ), oTarget );
             FloatingTextStringOnCreature( "Perma Visual 2: " + IntToString( nVisualDur2 ), oPC, FALSE );
         }
         if( nVisualDur3 > 0 )
         {
-            ApplyEffectToObject( DURATION_TYPE_PERMANENT, SupernaturalEffect( EffectVisualEffect( nVisualDur3 ) ), oTarget );
+            ApplyEffectToObject( DURATION_TYPE_PERMANENT, UnyieldingEffect( EffectVisualEffect( nVisualDur3 ) ), oTarget );
             FloatingTextStringOnCreature( "Perma Visual 3: " + IntToString( nVisualDur3 ), oPC, FALSE );
         }
 

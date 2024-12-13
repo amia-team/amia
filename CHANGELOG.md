@@ -7,10 +7,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- 3 New half-orc heads (#42, #43, #44)
+- Creature appearances:
+	- Dragon: Hellfire Wyrm
+	- Dragon: Red, Realistic
+	- Dragon: Bronze, Realistic
+	- Hamster, Giant Space
+- Portraits:
+	- Hellfire Wyrm
+	- Hamster
+- 72 building PLCs
+- Holdable hamster (torch appearance)
 - Associate Customization, read here for more: https://www.amiaworld.com/phpbb/viewtopic.php?p=1231#p1231
 - DTS to Ancient Mound Trogs
 - DTS to Gibbering Maw
-- Gibbering Maw complete rework
 - Head Changer item for druid/shifter types
 - Quests:
 	- Endir's Point: Fernor Troll Quest
@@ -28,15 +38,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - DM commands added: createvfx, getvfx, removevfx, setsoundset
 
 ### Changed
+- Gibbering Maw complete rework
 - Ancient Mound Trogs dungeon changed up a bit
 - Sand Minotaur DTS numbers and chests
 - Lowland Swamp spawns (trogs only show at night now)
+- Default portraits for base 10 chromatic/metallic dragons (they look better now)
+- Default raven model looks like a raven now
 
 ### Fixed
 - Old Kohl has transitions to it again
 - baseitems.2da appearance range for amulets expanded to 250 to allow more visible options
 - Lost Animals (invasion patrol items) are unlimited/day now
 - Moonpier Frostblessed Maul has properties now
+- Several accidentally hidden heads for male halfling (qty 17) and male half-orc (qty 4)
 
 ## [4.6.1 - 2024-12-01]
 

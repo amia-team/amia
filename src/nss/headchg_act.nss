@@ -55,8 +55,7 @@ int emptyHead(object oPC, int newHead) {
 }
         //Gnome male
         else if(iGender == GENDER_MALE && iBaseRace == 2) {
-                if((newHead > 37) && (newHead < 41)) return FALSE;
-                if((newHead > 72) && (newHead < 87)) return FALSE;
+                if(newHead == 78) return FALSE;
                 if(newHead == 111) return FALSE;
                 if((newHead > 112) && (newHead < 130)) return FALSE;
                 if(newHead == 131) return FALSE;
@@ -70,8 +69,7 @@ int emptyHead(object oPC, int newHead) {
 }
         //Halfling male
         else if(iGender == GENDER_MALE && iBaseRace == 3) {
-                if((newHead > 37) && (newHead < 41)) return FALSE;
-                if((newHead > 72) && (newHead < 87)) return FALSE;
+                if(newHead == 78) return FALSE;
                 if(newHead == 111) return FALSE;
                 if((newHead > 112) && (newHead < 130)) return FALSE;
                 if(newHead == 131) return FALSE;
@@ -95,7 +93,7 @@ int emptyHead(object oPC, int newHead) {
 }
         //Half-orc male
         else if(iGender == GENDER_MALE && iBaseRace == 5) {
-                if((newHead > 38) && (newHead < 101)) return FALSE;
+                if((newHead > 44) && (newHead < 101)) return FALSE;
                 if((newHead > 101) && (newHead < 130)) return FALSE;
                 if((newHead > 135) && (newHead < 138)) return FALSE;
                 if((newHead > 138) && (newHead < 149)) return FALSE;

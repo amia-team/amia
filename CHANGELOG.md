@@ -45,6 +45,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Default portraits for base 10 chromatic/metallic dragons (they look better now)
 - Default raven model looks like a raven now
 - Headchanger blocker updated for new/un-hidden heads
+- Continued updates to Mizfit and Moonlight
 
 ### Fixed
 - Old Kohl has transitions to it again

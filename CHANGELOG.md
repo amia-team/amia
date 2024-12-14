@@ -46,6 +46,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Default raven model looks like a raven now
 - Headchanger blocker updated for new/un-hidden heads
 - Continued updates to Mizfit and Moonlight
+- Visualizer-made visual effects now persist after death (server reset persistence upcoming)
 
 ### Fixed
 - Old Kohl has transitions to it again

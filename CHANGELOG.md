@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
+- Essence Crossbow recipe (Now asks for Zurkhwood heavy crossbow instead of Adamantine, lol)
+- Zurkhwood spelling in Zurkhwood crafted items
 
 ## [4.7.0 - 2024-12-15]
 

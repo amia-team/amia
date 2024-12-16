@@ -341,6 +341,7 @@ void CheckHenchmen(object oPC, object oTarget)
     if((GetLocalInt(oHench,"LimitMovement")==1) && (GetArea(oPC)!=GetArea(oTarget)))  // By default it will allow in area movement
     {
       RemoveHenchman(oPC,oHench);
+      DelayCommand(0.3,AssignCommand(oHench,ClearAllActions()));
     }
     i++;
     oHench = GetHenchman(oPC,i);

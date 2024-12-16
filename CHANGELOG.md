@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [4.7.0 - 2024-12-15]
+
+### Added
 - 3 New half-orc heads (#42, #43, #44)
 - Creature appearances:
 	- Dragon: Hellfire Wyrm

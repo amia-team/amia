@@ -988,7 +988,7 @@ void RangedCraftsmanConverter(object oPC, object oBench, int nNode)
         case 9: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wrc"; sIngredient2 = "js_arch_dart"; sType = "epx_weap_earbl"; sPlaceableName = "<c¦ÿ©>Earblasters</c>"; sIngredient2Type = "duskwood"; nCost = 10000; nRetainItem=1; break;
         case 10: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_gofbc"; sIngredient2 = "js_arch_shrk"; sType = "epx_weap_frcut"; sPlaceableName = "<c¦ÿ©>Frozen Cutters</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
         case 11: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_goimc"; sIngredient2 = "js_arch_thax"; sType = "epx_weap_thstr"; sPlaceableName = "<c¦ÿ©>Thunderstrikers</c>"; sIngredient2Type = "mithral"; nCost = 10000; nRetainItem=1; break;
-        case 12: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_gofbc"; sIngredient2 = "js_arch_cbow"; sType = "epx_weap_esscr"; sPlaceableName = "<c¦ÿ©>Essence Crossbow</c>"; sIngredient2Type = "adamantine"; nCost = 10000; nRetainItem=1; break;
+        case 12: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_gofbc"; sIngredient2 = "js_arch_cbow"; sType = "epx_weap_esscr"; sPlaceableName = "<c¦ÿ©>Essence Crossbow</c>"; sIngredient2Type = "zurkhwood"; nCost = 10000; nRetainItem=1; break;
         case 13: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_drfc"; sIngredient2 = "js_arch_lbow"; sType = "epx_weap_hurrc"; sPlaceableName = "<c¦ÿ©>Hurricane</c>"; sIngredient2Type = "duskwood"; nCost = 10000; nRetainItem=1; break;
         case 14: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wbc"; sIngredient2 = "js_arch_sbow"; sType = "epx_weap_ebgal"; sPlaceableName = "<c¦ÿ©>Ebon Gale</c>"; sIngredient2Type = "shadowtop"; nCost = 10000; nRetainItem=1; break;
         case 15: sProduct = "epiccraftingtmp"; sIngredient1 = "epx_comp_wrc"; sIngredient2 = "js_arch_sling"; sType = "epx_weap_dlstr"; sPlaceableName = "<c¦ÿ©>Dalestriker</c>"; sIngredient2Type = "silk"; nCost = 10000; nRetainItem=1; break;
@@ -2028,7 +2028,7 @@ void CraftProperties(object oPC, object oCraftedItem, string sType, string sMate
       }
       else if(sMaterial == "zurkwood")
       {
-        SetName(oCraftedItem,"<c~Îë>Crafted Zurkwood</c> " + GetName(oCraftedItem));
+        SetName(oCraftedItem,"<c~Îë>Crafted Zurkhwood</c> " + GetName(oCraftedItem));
         iMaterial = ItemPropertyMaterial(37);
         SetLocalString(oCraftedItem,"stringMaterial","zurkwood");
 

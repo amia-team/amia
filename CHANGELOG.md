@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Removed Summon Creature III from troglodyte cleric
 
 ### Fixed
 - Essence Crossbow recipe (Now asks for Zurkhwood heavy crossbow instead of Adamantine, lol)

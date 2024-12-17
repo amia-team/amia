@@ -20,13 +20,17 @@ void CheckHenchmen(object oPC, object oTarget)
    int i=1;
    object oHench = GetHenchman(oPC,i);
    int nMax = GetMaxHenchmen();
+   object oWP;
 
    while(GetIsObjectValid(oHench))
    {
 
     if((GetLocalInt(oHench,"LimitMovement")==1) && (GetArea(oPC)!=GetArea(oTarget)))  // By default it will allow in area movement
     {
+      oWP = GetWaypointByTag(GetLocalString(oHench,"respawnWP"));
       RemoveHenchman(oPC,oHench);
+      DelayCommand(0.3,AssignCommand(oHench,ClearAllActions()));
+      DelayCommand(1.0,AssignCommand(oHench,ActionJumpToObject(oWP)));
     }
     i++;
     oHench = GetHenchman(oPC,i);

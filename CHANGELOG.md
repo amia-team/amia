@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Old Kohl Update has a temple/keep now
 - Removed Summon Creature III from troglodyte cleric
 
 ### Fixed

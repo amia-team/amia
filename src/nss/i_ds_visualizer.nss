@@ -142,13 +142,10 @@ void add_visuals( object oPC, object oTarget, object oItem ){
 
         effect eEffect = GetFirstEffect( oTarget );
         while ( GetIsEffectValid(eEffect) ) {
-
+            
+            if ( GetEffectTag ( eEffect ) == "dm_persistentvfx") continue;
             if ( GetEffectType( eEffect ) == EFFECT_TYPE_VISUALEFFECT && GetEffectSubType( eEffect ) == SUBTYPE_UNYIELDING )
             {
-                if (GetEffectSpellId(eEffect) != SPELL_IOUN_STONE_BLUE && GetEffectSpellId(eEffect) && SPELL_IOUN_STONE_DEEP_RED &&
-                    GetEffectSpellId(eEffect) != SPELL_IOUN_STONE_DUSTY_ROSE && GetEffectSpellId(eEffect) != SPELL_IOUN_STONE_PALE_BLUE &&
-                    GetEffectSpellId(eEffect) != SPELL_IOUN_STONE_PINK && GetEffectSpellId(eEffect) !=SPELL_IOUN_STONE_PINK_GREEN &&
-                    GetEffectSpellId(eEffect) != SPELL_IOUN_STONE_SCARLET_BLUE)
                 {
                     i++;
                     RemoveEffect( oTarget, eEffect );

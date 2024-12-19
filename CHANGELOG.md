@@ -11,10 +11,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Old Kohl Update has a temple/keep now
 - Removed Summon Creature III from troglodyte cleric
+- Edited the bios of some of the bard song items for clarity
 
 ### Fixed
 - Essence Crossbow recipe (Now asks for Zurkhwood heavy crossbow instead of Adamantine, lol)
 - Zurkhwood spelling in Zurkhwood crafted items
+- Bloated Basilisk will drop its quest item now
 
 ## [4.7.0 - 2024-12-15]
 

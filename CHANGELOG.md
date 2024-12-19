@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Construction started in Old Kohl Tempus Temple
 
 ### Changed
 - Old Kohl Update has a temple/keep now

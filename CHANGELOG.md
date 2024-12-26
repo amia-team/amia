@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Essence Crossbow recipe (Now asks for Zurkhwood heavy crossbow instead of Adamantine, lol)
 - Zurkhwood spelling in Zurkhwood crafted items
 - Bloated Basilisk will drop its quest item now
+- Gibberling Camp Transition
 
 ## [4.7.0 - 2024-12-15]
 

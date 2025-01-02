@@ -292,10 +292,8 @@ void SafeRemoveAllEffects( object oPC ){
     effect eEffect = GetFirstEffect( oPC );
 
     while ( GetIsEffectValid(eEffect) ) {
-        // Skip unyielding effects
-        if ( GetEffectSubType ( eEffect ) == SUBTYPE_UNYIELDING ) continue;
-        if ( GetEffectSubType( eEffect ) != SUBTYPE_SUPERNATURAL )
-        {
+
+        if ( GetEffectSubType( eEffect ) != SUBTYPE_SUPERNATURAL){
 
             //remove if it isn't a custom spell effect
             if ( GetName( GetEffectCreator( eEffect ) ) != "ds_norestore" ){

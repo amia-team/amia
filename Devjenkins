@@ -13,7 +13,7 @@ pipeline {
         stage('Deploy Dev Module') {
             when {
                 expression {
-                    return params.DEPLOY == 'Yes'
+                    return params.Deploy == 'Yes'
                 }
             }
             steps {
@@ -25,7 +25,7 @@ pipeline {
         stage('Restart Dev Server') {
             when {
                 expression {
-                    return params.RESTART == 'Yes'
+                    return params.Restart == 'Yes'
                 }
             }
             steps {

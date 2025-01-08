@@ -10,7 +10,7 @@ pipeline {
                 }
             }
         }
-        stage('Deploy Dev') {
+        stage('Deploy Dev Module') {
             when {
                 expression {
                     return params.DEPLOY == 'Yes'
@@ -18,6 +18,17 @@ pipeline {
             }
             steps {
                 sh 'sudo cp AmiaDev.mod /home/amia/dev_server/server/modules;'
+                sh 'chmod +x deploy-dev.sh'
+                sh './deploy-dev.sh'
+            }
+        }
+        stage('Restart Dev Server') {
+            when {
+                expression {
+                    return params.RESTART == 'Yes'
+                }
+            }
+            steps {
                 sh 'chmod +x deploy-dev.sh'
                 sh './deploy-dev.sh'
             }

@@ -11,6 +11,9 @@ pipeline {
             }
         }
         stage('Deploy Dev') {
+            when {
+                return params.DEPLOY == 'Yes'
+            }
             steps {
                 sh 'sudo cp Amia.mod /home/amia/dev_server/server/modules;'
                 sh 'chmod +x deploy-dev.sh'

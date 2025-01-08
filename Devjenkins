@@ -3,6 +3,11 @@ pipeline {
 
     stages {
         stage('Build') {
+            when {
+                expression {
+                    return params.Build == 'Yes'
+                }
+            }
             steps {
                 echo 'Building..'
                  script {
@@ -18,8 +23,6 @@ pipeline {
             }
             steps {
                 sh 'sudo cp AmiaDev.mod /home/amia/dev_server/server/modules;'
-                sh 'chmod +x deploy-dev.sh'
-                sh './deploy-dev.sh'
             }
         }
         stage('Restart Dev Server') {

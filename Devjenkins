@@ -12,7 +12,9 @@ pipeline {
         }
         stage('Deploy Dev') {
             when {
-                return params.DEPLOY == 'Yes'
+                expression {
+                    return params.DEPLOY == 'Yes'
+                }
             }
             steps {
                 sh 'sudo cp AmiaDev.mod /home/amia/dev_server/server/modules;'

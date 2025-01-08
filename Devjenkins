@@ -43,8 +43,10 @@ pipeline {
         }
         success {
             echo 'Build success'
-            archiveArtifacts artifacts: 'AmiaDev.mod', followSymlinks: false
-            sh "sudo rm -rf AmiaDev.mod"
+            if(params.Build == 'Yes') {
+                archiveArtifacts artifacts: 'AmiaDev.mod', followSymlinks: false
+                sh "sudo rm -rf AmiaDev.mod"
+            }
         }
     }
 }

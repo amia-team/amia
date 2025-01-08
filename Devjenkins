@@ -12,6 +12,8 @@ pipeline {
                 echo 'Building..'
                  script {
                     sh "docker run --rm -t -u \$(id -u):\$(id -g) -e NWN_HOME=\$(pwd) -v \$(pwd):\$(pwd) -v \$(pwd):/nasher cltalmadge/nasher:1.1.1 pack dev --clean --verbose --yes"
+                    archiveArtifacts artifacts: 'AmiaDev.mod', followSymlinks: false
+                    sh "sudo rm -rf AmiaDev.mod"
                 }
             }
         }
@@ -40,13 +42,6 @@ pipeline {
     post {
         always {
              discordSend description: "Builder for Amia Dev module finished.", footer: "Build results for Amia Dev module", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discord.com/api/webhooks/957814431704842270/2A6zZ4x7fsWULXnfrLLyRvgqexcnAvreXr6fbym8IoHdAHGpEoQgXjLn1XKry75uN_Zg"
-        }
-        success {
-            echo 'Build success'
-            if(params.Build == 'Yes') {
-                archiveArtifacts artifacts: 'AmiaDev.mod', followSymlinks: false
-                sh "sudo rm -rf AmiaDev.mod"
-            }
         }
     }
 }

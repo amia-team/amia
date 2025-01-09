@@ -453,10 +453,9 @@ void RewardPC(object oPC, int nLevel, string sType, string sWaypoint)
      SetLocalString(oTemp,"waypoint",sWaypoint);
      SetLocalInt(oTemp,"active",1);
 
-     if(nPCLevel<30)
-     {
-       GenerateXPForParty(oPC,nLevel);
-     }
+
+     GenerateXPForParty(oPC,nLevel);
+
 
     }
     else
@@ -470,30 +469,33 @@ void RewardPC(object oPC, int nLevel, string sType, string sWaypoint)
          GenerateStandardLoot(oPC,nLevel);
       }
 
-      if(nPCLevel<30)
-      {
-       GenerateXPForParty(oPC,nLevel);
-      }
+
+      GenerateXPForParty(oPC,nLevel);
+
     }
 
 }
 
 void GenerateXPForParty(object oPC, int nLevel)
 {
-   SetXP(oPC,(GetXP(oPC)+nLevel*100));
+   SetXP(oPC,(GetXP(oPC)+nLevel*75));
 
    object oPartyMember = GetFirstFactionMember(oPC,TRUE);
    object oArea = GetArea( oPC );
+   int nPCLevel;
 
    while(GetIsObjectValid(oPartyMember)==TRUE)
    {
-    if(GetArea(oPartyMember) == oArea)
+    if((GetArea(oPartyMember) == oArea) && (oPartyMember != oPC))
     {
-     SetXP(oPartyMember,(GetXP(oPartyMember)+nLevel*25));
+     nPCLevel = GetLevelByPosition(1,oPartyMember)+GetLevelByPosition(2,oPartyMember)+GetLevelByPosition(3,oPartyMember);
+     if(nPCLevel < 30)
+     {
+      SetXP(oPartyMember,(GetXP(oPartyMember)+nLevel*25));
+     }
     }
     oPartyMember = GetNextFactionMember( oPC, TRUE );
    }
-
 }
 
 int GetPCPartyNumberNearby(object oPC)
@@ -511,7 +513,10 @@ int GetPCPartyNumberNearby(object oPC)
       {
         if(oPC != oPartyMember)
         {
-         nCount++;
+         if(GetIsPC(oPartyMember))
+         {
+          nCount++;
+         }
         }
       }
     }

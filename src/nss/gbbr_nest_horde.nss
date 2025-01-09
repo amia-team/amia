@@ -1,20 +1,6 @@
-/* ds_spawn_boss
+/* gbbr_nest_horde
 
---------
-Verbatim
---------
-Spawns a single boss at the nearest boss waypoint
-
----------
-Changelog
----------
-
-Date        Name        Reason
-------------------------------------------------------------------
-2007-02-09  Disco       Start of header
-2007-11-16  Disco       Added ds_ai support
-2007-11-19  disco       Moved cleanup scripts to amia_include
-------------------------------------------------------------------
+Rescripted it to feel better - Maverick00053, 12/3/24
 
 */
 
@@ -102,7 +88,7 @@ void main(){
 
             // Spawn.
             DelayCommand( 6.0, HordeCount( oWaypoint, oTrigger, oPC ) );
-            AssignCommand( oPC, SpeakString( "<c¥  >**as you encroach upon the central nest, a veritable horde begins to dig up from the very ground beneath your feet! Prepare yourself! It looks like it's going to be a long, hard fight!**</c>" ) );
+            AssignCommand( oPC, SpeakString( "<c¥  >**As you encroach upon the central nest, a veritable horde begins to dig up from the very ground beneath your feet! Prepare yourself! It looks like it's going to be a long, hard fight!**</c>" ) );
 
             if ( GetLocalInt( OBJECT_SELF, "trace" ) == 1 ){
 
@@ -127,17 +113,17 @@ void HordeCount( object oWaypoint, object oTrigger, object oPC )
     nCount = nCount - 1;
     SetLocalInt( oTrigger, "Counter", nCount);
 
-    if( nCount == 10 )
+    if( nCount == 5 )
     {
-        AssignCommand( oPC, SpeakString( "<c¥  >**there seems to be no end to the horde of Gibberlings rushing towards you!**</c>" ) );
+        AssignCommand( oPC, SpeakString( "<c¥  >**There seems to be no end to the horde of Gibberlings rushing towards you!**</c>" ) );
     }
-    if( nCount == 6 )
+    if( nCount == 3 )
     {
-        AssignCommand( oPC, SpeakString( "<c¥  >**the horde seems to reach its peak, a writhing mass of teeth, claws and fur**</c>" ) );
+        AssignCommand( oPC, SpeakString( "<c¥  >**The horde seems to reach its peak, a writhing mass of teeth, claws and fur!**</c>" ) );
     }
-    if( nCount == 2 )
+    if( nCount == 1 )
     {
-        AssignCommand( oPC, SpeakString( "<c¥  >**it seems as though the horde is beginning to thin! The end is in sight!**</c>" ) );
+        AssignCommand( oPC, SpeakString( "<c¥  >**It seems as though the horde is beginning to thin! The end is in sight!**</c>" ) );
     }
     if( nCount == 0 )
     {
@@ -149,7 +135,7 @@ void HordeCount( object oWaypoint, object oTrigger, object oPC )
 
         DestroyObject( oPLC, TurnsToSeconds( 15 ) );
 
-        AssignCommand( oPC, SpeakString( "<c¥  >**in the wake of the horde you spot a tunnel opening, larger than the others, that seems to lead further down...**</c>" ) );
+        AssignCommand( oPC, SpeakString( "<c¥  >**In the wake of the horde you spot a tunnel opening, larger than the others, that seems to lead further down...**</c>" ) );
 
         SetLocalInt( oTrigger, "Counter", 15 );
     }
@@ -171,13 +157,11 @@ void SpawnHorde( object oWaypoint, object oTrigger, object oPC )
         CreateObject( OBJECT_TYPE_CREATURE, "gibberling_norml", lSpawn );
         CreateObject( OBJECT_TYPE_CREATURE, "gibberling_norml", lSpawn );
         CreateObject( OBJECT_TYPE_CREATURE, "gibberling_norml", lSpawn );
-        CreateObject( OBJECT_TYPE_CREATURE, "gibberling_norml", lSpawn );
     }
     else if( nRandom == 2 )
     {
         CreateObject( OBJECT_TYPE_CREATURE, "gibberling_norml", lSpawn );
         CreateObject( OBJECT_TYPE_CREATURE, "gibberling_brood", lSpawn );
-        CreateObject( OBJECT_TYPE_CREATURE, "gibberling_norml", lSpawn );
         CreateObject( OBJECT_TYPE_CREATURE, "gibberling_norml", lSpawn );
     }
     else if( nRandom == 3 )
@@ -188,5 +172,5 @@ void SpawnHorde( object oWaypoint, object oTrigger, object oPC )
     }
     ApplyEffectAtLocation( DURATION_TYPE_INSTANT, eShake, lSpawn );
 
-    DelayCommand( 36.0, HordeCount( oWaypoint, oTrigger, oPC ) );
+    DelayCommand( 24.0, HordeCount( oWaypoint, oTrigger, oPC ) );
 }

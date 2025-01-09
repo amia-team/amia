@@ -116,17 +116,17 @@ void add_visuals( object oPC, object oTarget, object oItem ){
 
         if( nVisualDur1 > 0 )
         {
-            ApplyEffectToObject( DURATION_TYPE_PERMANENT, SupernaturalEffect( EffectVisualEffect( nVisualDur1 ) ), oTarget );
+            ApplyEffectToObject( DURATION_TYPE_PERMANENT, UnyieldingEffect( EffectVisualEffect( nVisualDur1 ) ), oTarget );
             FloatingTextStringOnCreature( "Perma Visual 1: " + IntToString( nVisualDur1 ), oPC, FALSE );
         }
         if( nVisualDur2 > 0 )
         {
-            ApplyEffectToObject( DURATION_TYPE_PERMANENT, SupernaturalEffect( EffectVisualEffect( nVisualDur2 ) ), oTarget );
+            ApplyEffectToObject( DURATION_TYPE_PERMANENT, UnyieldingEffect( EffectVisualEffect( nVisualDur2 ) ), oTarget );
             FloatingTextStringOnCreature( "Perma Visual 2: " + IntToString( nVisualDur2 ), oPC, FALSE );
         }
         if( nVisualDur3 > 0 )
         {
-            ApplyEffectToObject( DURATION_TYPE_PERMANENT, SupernaturalEffect( EffectVisualEffect( nVisualDur3 ) ), oTarget );
+            ApplyEffectToObject( DURATION_TYPE_PERMANENT, UnyieldingEffect( EffectVisualEffect( nVisualDur3 ) ), oTarget );
             FloatingTextStringOnCreature( "Perma Visual 3: " + IntToString( nVisualDur3 ), oPC, FALSE );
         }
 
@@ -142,13 +142,10 @@ void add_visuals( object oPC, object oTarget, object oItem ){
 
         effect eEffect = GetFirstEffect( oTarget );
         while ( GetIsEffectValid(eEffect) ) {
-
-            if ( GetEffectType( eEffect ) == EFFECT_TYPE_VISUALEFFECT && GetEffectSubType( eEffect ) == SUBTYPE_SUPERNATURAL )
+            
+            if ( GetEffectTag ( eEffect ) == "dm_persistentvfx") continue;
+            if ( GetEffectType( eEffect ) == EFFECT_TYPE_VISUALEFFECT && GetEffectSubType( eEffect ) == SUBTYPE_UNYIELDING )
             {
-                if (GetEffectSpellId(eEffect) != SPELL_IOUN_STONE_BLUE && GetEffectSpellId(eEffect) && SPELL_IOUN_STONE_DEEP_RED &&
-                    GetEffectSpellId(eEffect) != SPELL_IOUN_STONE_DUSTY_ROSE && GetEffectSpellId(eEffect) != SPELL_IOUN_STONE_PALE_BLUE &&
-                    GetEffectSpellId(eEffect) != SPELL_IOUN_STONE_PINK && GetEffectSpellId(eEffect) !=SPELL_IOUN_STONE_PINK_GREEN &&
-                    GetEffectSpellId(eEffect) != SPELL_IOUN_STONE_SCARLET_BLUE)
                 {
                     i++;
                     RemoveEffect( oTarget, eEffect );

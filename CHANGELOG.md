@@ -7,10 +7,71 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Construction started in Old Kohl Tempus Temple
 
-### changed
+### Changed
+- Old Kohl Update has a temple/keep now
+- Removed Summon Creature III from troglodyte cleric
+- Edited the bios of some of the bard song items for clarity
 
 ### Fixed
+- Sonicx fixes for Manor or Mourn, Electric Castle, Frost Giants, Bloodspear Arena
+- Essence Crossbow recipe (Now asks for Zurkhwood heavy crossbow instead of Adamantine, lol)
+- Zurkhwood spelling in Zurkhwood crafted items
+- Bloated Basilisk will drop its quest item now
+- Gibberling Camp Transition
+
+## [4.7.0 - 2024-12-15]
+
+### Added
+- 3 New half-orc heads (#42, #43, #44)
+- Creature appearances:
+	- Dragon: Hellfire Wyrm
+	- Dragon: Red, Realistic
+	- Dragon: Bronze, Realistic
+	- Hamster, Giant Space
+- Portraits:
+	- Hellfire Wyrm
+	- Hamster
+- 72 building PLCs
+- Holdable hamster (torch appearance)
+- Associate Customization, read here for more: https://www.amiaworld.com/phpbb/viewtopic.php?p=1231#p1231
+- DTS to Ancient Mound Trogs
+- DTS to Gibbering Maw
+- Head Changer item for druid/shifter types
+- Quests:
+	- Endir's Point: Fernor Troll Quest
+	- Djedet: Asabi Quest
+- Invasion areas:
+	- Forrstakkr: Mt Firth
+	- Forrstakkr: Howness South Road
+	- Frozenfar: Fernor Road, Coast
+	- Khem: Anara Oasis
+	- Khem: The Seven Sisters of Hoet
+- Invasion Overflow:
+	- Forrstakkr: Howness
+	- Frozenfar: Endir's Point
+	- Khem: Djedet
+- DM commands added: createvfx, getvfx, removevfx, setsoundset
+
+### Changed
+- Gibbering Maw complete rework
+- Ancient Mound Trogs dungeon changed up a bit
+- Sand Minotaur DTS numbers and chests
+- Lowland Swamp spawns (trogs only show at night now)
+- Default portraits for base 10 chromatic/metallic dragons (they look better now)
+- Default raven model looks like a raven now
+- Headchanger blocker updated for new/un-hidden heads
+- Continued updates to Mizfit and Moonlight
+- Visualizer-made visual effects now persist after death and reset (can be removed with Visualizer, normally)
+	- If you notice instances of the visuals yeeting, please let us know so we can fix it!
+
+### Fixed
+- Old Kohl has transitions to it again
+- baseitems.2da appearance range for amulets expanded to 250 to allow more visible options
+- Lost Animals (invasion patrol items) are unlimited/day now
+- Moonpier Frostblessed Maul has properties now
+- Several accidentally hidden heads for male halfling (qty 17) and male half-orc (qty 4)
 
 ## [4.6.1 - 2024-12-01]
 

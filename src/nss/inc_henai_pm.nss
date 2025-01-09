@@ -862,6 +862,8 @@ void bkRespondToHenchmenShout(object oShouter, int nShoutIndex, object oIntruder
     case ASSOCIATE_COMMAND_LEAVEPARTY:
         {
             oMaster = GetMaster();
+            object oHench = OBJECT_SELF;
+            effect eHeal = EffectHeal(GetMaxHitPoints(oHench));
 
             string sTag = GetTag(GetArea(oMaster));
             // * henchman cannot be kicked out in the reaper realm
@@ -877,12 +879,21 @@ void bkRespondToHenchmenShout(object oShouter, int nShoutIndex, object oIntruder
                     FireHenchman(GetMaster(), OBJECT_SELF);
                     // Mav Edit
                     effect eVFX = EffectVisualEffect(VFX_IMP_UNSUMMON);
-                    object oHench = OBJECT_SELF;
+                    object oWP = GetWaypointByTag(GetLocalString(oHench,"respawnWP"));
                     location lLocation = GetLocation(oHench);
-                    ApplyEffectAtLocation(DURATION_TYPE_INSTANT,eVFX,lLocation);
-                    SetLocalInt(oHench,"respawnoff",1);
-                    DestroyObject(oHench,0.1);
-
+                    if(GetLocalInt(oHench,"IsMerc")==0)
+                    {
+                     ApplyEffectAtLocation(DURATION_TYPE_INSTANT,eVFX,lLocation);
+                     SetLocalInt(oHench,"respawnoff",1);
+                     DestroyObject(oHench,0.1);
+                    }
+                    else
+                    {
+                     ClearAllActions();
+                     AssignCommand(oHench,ActionSpeakString("You take care! *Quickly takes off*"));
+                     ApplyEffectToObject(DURATION_TYPE_INSTANT,eHeal,oHench);
+                     DelayCommand(1.0,AssignCommand(oHench,ActionJumpToObject(oWP)));
+                    }
                 }
             }
             break;

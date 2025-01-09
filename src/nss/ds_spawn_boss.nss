@@ -34,6 +34,8 @@ void main(){
     object oTrigger    = OBJECT_SELF;
     object oPC         = GetEnteringObject( );
     string sBossRef    = GetTag( OBJECT_SELF );
+    string bossMsg     = GetLocalString(OBJECT_SELF,"boss_message");
+
 
     // Player characters only.
     if( !GetIsPC( oPC ) && !GetIsPossessedFamiliar( oPC ) ){
@@ -49,24 +51,28 @@ void main(){
         return;
     }
 
-    int nDay    = GetLocalInt( oTrigger, "Day" );
-    int nNight  = GetLocalInt( oTrigger, "Night" );
-    int nHour   = GetTimeHour();
+    int time  = GetTimeHour();
+    int day   = GetLocalInt(OBJECT_SELF,"Day");
+    int night = GetLocalInt(OBJECT_SELF,"Night");
 
-    if ( nDay && !nNight ){
-
-        if ( nHour >= 18 && nHour < 6 ){
-
+    if((time < 6 || time >= 18) && night == 1){
+        if(bossMsg == ""){
             SendMessageToPC( oPC, "*It looks like something was here during the previous day.*" );
+            return;
+        }
+        else{
+            SendMessageToPC(oPC, bossMsg);
             return;
         }
     }
 
-    if ( !nDay && nNight ){
-
-        if ( nHour <= 18 && nHour >= 6 ){
-
+    if((time >= 6 && time < 18) && day == 1){
+        if(bossMsg == ""){
             SendMessageToPC( oPC, "*It looks like something was here during the previous night.*" );
+            return;
+        }
+        else{
+            SendMessageToPC(oPC, bossMsg);
             return;
         }
     }

@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Edited the bios of some of the bard song items for clarity
 
 ### Fixed
-- Sonicx fixes for Manor or Mourn, Electric Castle, Frost Giants, Bloodspear Arena
+- Sonicx fixes for Manor or Mourn, Electric Castle, Frost Giants, Bloodspear Arena, Bloodmoon Orcs, Actand non-epic
 - Essence Crossbow recipe (Now asks for Zurkhwood heavy crossbow instead of Adamantine, lol)
 - Zurkhwood spelling in Zurkhwood crafted items
 - Bloated Basilisk will drop its quest item now

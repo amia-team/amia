@@ -2,14 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-                 script {
-                    sh "docker run --rm -t -u \$(id -u):\$(id -g) -e NWN_HOME=\$(pwd) -v \$(pwd):\$(pwd) -v \$(pwd):/nasher cltalmadge/nasher:1.1.1 pack --clean --verbose --yes"
-                }
-            }
-        }
         stage('Deploy Test') {
             when {
                 expression {
@@ -17,7 +9,12 @@ pipeline {
                 }
             }
             steps {
-                echo 'Deploying....'
+                script {
+                    def tag = sh(script: "git tag -l 'test-release*' --sort=-v:refname | head -n 1", returnStdout: true).trim()
+                    echo "Deploying tag: ${tag}"
+                    sh "git checkout ${tag}"
+                }
+                sh "docker run --rm -t -u \$(id -u):\$(id -g) -e NWN_HOME=\$(pwd) -v \$(pwd):\$(pwd) -v \$(pwd):/nasher cltalmadge/nasher:1.1.1 pack --clean --verbose --yes"
                 sh 'sudo cp Amia.mod /home/amia/amia_server/test_server/modules;'
                 sh 'chmod +x deploy-test.sh'
                 sh './deploy-test.sh'
@@ -30,6 +27,12 @@ pipeline {
                 }
             }
             steps {
+                script {
+                    def tag = sh(script: "git tag -l 'release*' --sort=-v:refname | head -n 1", returnStdout: true).trim()
+                    echo "Deploying tag: ${tag}"
+                    sh "git checkout ${tag}"
+                }
+                sh "docker run --rm -t -u \$(id -u):\$(id -g) -e NWN_HOME=\$(pwd) -v \$(pwd):\$(pwd) -v \$(pwd):/nasher cltalmadge/nasher:1.1.1 pack --clean --verbose --yes"
                 sh 'sudo cp Amia.mod /home/amia/amia_server/server/modules;'
                 sh 'chmod +x deploy-live.sh'
                 sh './deploy-live.sh'

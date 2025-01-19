@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Old Kohl Update has a temple/keep now
 - Removed Summon Creature III from troglodyte cleric
 - Edited the bios of some of the bard song items for clarity
+- Removed sneak attack immunity from various Abyss mobs
+- Removed death spell immunity from certain Abyss mobs
 
 ### Fixed
 - Sonicx fixes for Manor or Mourn, Electric Castle, Frost Giants, Bloodspear Arena, Bloodmoon Orcs, Actand non-epic

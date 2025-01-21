@@ -7,7 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+
+### Changed
+
+### Fixed
+
+
+## [4.8.1 - 2025-01-21]
+
+### Added
 - Construction started in Old Kohl Tempus Temple
+- Whalebones areas (plot only at the moment)
 
 ### Changed
 - Old Kohl Update has a temple/keep now

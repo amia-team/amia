@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ### Changed
+- mushroom node + prettying up cave mouth around Barrow Lake
 
 ### Fixed
 

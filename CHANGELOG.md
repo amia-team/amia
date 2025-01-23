@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ### Changed
+- Warlock's Unflee the Scene no longer gives Uncanny Dodge for the spell duration.
 
 ### Fixed
 

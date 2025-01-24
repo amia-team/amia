@@ -19,7 +19,7 @@
 #include "ds_ai2_include"
 
 void RaiseMe(object oCritter, location eLoc);
-void Reward(object oArea, float fCR, string npcResRef);
+void Reward(object oArea, float fCR, string npcResRef, object oCritter);
 //-------------------------------------------------------------------------------
 // main
 //-------------------------------------------------------------------------------
@@ -56,7 +56,7 @@ void main(){
     //
 
     // Invasion Reward
-    Reward(oArea, fCR, npcResRef);
+    Reward(oArea, fCR, npcResRef, oCritter);
     // Announcer Test
     SetLocalString(GetModule(),"announcerMessage","```*The creature leading the pack of invading creatures was defeated*```");
     ExecuteScript("webhook_announce");
@@ -98,7 +98,7 @@ void RaiseMe(object oCritter, location eLoc)
 }
 
 
-void Reward(object oArea, float fCR, string npcResRef)
+void Reward(object oArea, float fCR, string npcResRef, object oCritter)
 {
    int nXP;
    int nCR = FloatToInt(fCR);
@@ -136,6 +136,7 @@ void Reward(object oArea, float fCR, string npcResRef)
           if(npcResRef=="demoninvaboss")
           {
            CreateItemOnObject("demon_token",oPC);
+           ExecuteScript("chaos_reset",oCritter);
           }
         }
      }

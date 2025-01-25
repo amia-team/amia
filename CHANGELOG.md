@@ -8,11 +8,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
+### Changed
+
+
+### Fixed
+
+## [4.9.0]
+
+### Added
+- Traps for dungeons and DM use
 
 ### Changed
 - Warlock's Unflee the Scene no longer gives Uncanny Dodge for the spell duration. Also only applies the sanctuary effect if the warlock is in combat so as not unnecessarily flood the combat log when just hasting about.
 
 ### Fixed
+
 
 
 ## [4.8.1 - 2025-01-21]

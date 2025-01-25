@@ -7,10 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-
+- Greater Mythal drops will always occur for normal epic bosses 
 
 ### Changed
+- mushroom node + prettying up cave mouth around Barrow Lake
+- Demon Invasions: Chaos rises a bit higher now, and demon invasions will continue to come back till taken care of
 - Warlock's Unflee the Scene no longer gives Uncanny Dodge for the spell duration. Also only applies the sanctuary effect if the warlock is in combat so as not unnecessarily flood the combat log when just hasting about.
+- Khem Anara Oasis and Khem: Djedet Invasion numbers adjusted
 
 ### Fixed
 

@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - mushroom node + prettying up cave mouth around Barrow Lake
 - Demon Invasions: Chaos rises a bit higher now, and demon invasions will continue to come back till taken care of
 
+
 ### Fixed
 
 

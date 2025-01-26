@@ -7,16 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-- Hangman's Cove Settlement Guards to core
+
 ### Changed
-- Hangman's Cove Guards deployed
+
 ### Fixed
 
-## [4.9.0 - 2025-01-25]
+## [4.8.2 - 2025-01-25]
 
 ### Added
 - Greater Mythal drops will always occur for normal epic bosses 
-- Traps for dungeons and DM use
 
 ### Changed
 - mushroom node + prettying up cave mouth around Barrow Lake

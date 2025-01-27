@@ -84,7 +84,7 @@ void main()
         if( nRequiredQuest != 2)
         {
             AssignCommand(oNPC, ActionSpeakString(sSpeechRequiredQuest));
-            SendMessageToPC( oPC, "You must complete the <c Í >" + sRequiredQuest + "</c> quest before you may begin this one." );
+            SendMessageToPC( oPC, "You must complete the <c ï¿½ >" + sRequiredQuest + "</c> quest before you may begin this one." );
             return;
         }
     }
@@ -168,35 +168,22 @@ void main()
 
 void LaunchSpeech(object oNPC)
 {
-  string speech1 = GetLocalString(oNPC,"speech1");
-  string speech2 = GetLocalString(oNPC,"speech2");
-  string speech3 = GetLocalString(oNPC,"speech3");
-  string speech4 = GetLocalString(oNPC,"speech4");
-  string speech5 = GetLocalString(oNPC,"speech5");
+  string speech;
   float fDelay = GetLocalFloat(oNPC,"delay");
   float fBlockDelay = 1.0;
 
-  AssignCommand(oNPC, ActionSpeakString(speech1));
-
-  if(speech2 != "")
+  int i;
+  for (i = 1;;i++)
   {
-    DelayCommand(fDelay,AssignCommand(oNPC, ActionSpeakString(speech2)));
-    fBlockDelay = fDelay;
-  }
-  if(speech3 != "")
-  {
-    DelayCommand(fDelay*2,AssignCommand(oNPC, ActionSpeakString(speech3)));
-    fBlockDelay = fDelay*2;
-  }
-  if(speech4 != "")
-  {
-    DelayCommand(fDelay*3,AssignCommand(oNPC, ActionSpeakString(speech4)));
-    fBlockDelay = fDelay*3;
-  }
-  if(speech5 != "")
-  {
-    DelayCommand(fDelay*4,AssignCommand(oNPC, ActionSpeakString(speech5)));
-    fBlockDelay = fDelay*4;
+    speech = GetLocalString(oNPC,"speech"+IntToString(speechIndex));
+    
+    if (speech == 0) break;
+    
+    if (i > 1) 
+    {
+      DelayCommand((i - 1) * fDelay, AssignCommand(oNPC, ActionSpeakString(speech)));
+      fBlockDelay = (i - 1) * fDelay;
+    } 
   }
 
    DelayCommand(fBlockDelay,SetLocalInt(oNPC,"nblocker",0));

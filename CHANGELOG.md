@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-
+- Hangman's Cove Settlement Guards to core
 ### Changed
 
 ### Fixed

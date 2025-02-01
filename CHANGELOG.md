@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Hangman's Cove Settlement Guards to core
 ### Changed
-
+- Hangman's Cove Guards deployed
 ### Fixed
 
 ## [4.9.0 - 2025-01-25]

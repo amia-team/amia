@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Southport, Central Shop tweaks
 - Ancient Devices VFX updated
+- Ancient Devices effects will override eachother instead of blocking now
 
 ### Fixed
 - Ice Giants DTS Fixed

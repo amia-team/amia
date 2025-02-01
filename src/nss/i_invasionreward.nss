@@ -27,8 +27,8 @@ void ActivateItem()
     {
         if (GetEffectTag(eFirstEffect) == "ancientdevice")
         {
-          FloatingTextStringOnCreature("*Another Ancient Barrier Device is already active*",oUser,FALSE);
-          return;
+          FloatingTextStringOnCreature("*Another Ancient Barrier's effects overwritten*",oUser,FALSE);
+          RemoveEffect(oUser,eFirstEffect);
         }
         eFirstEffect = GetNextEffect(oUser);
     }

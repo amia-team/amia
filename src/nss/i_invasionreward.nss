@@ -33,7 +33,7 @@ void ActivateItem()
         eFirstEffect = GetNextEffect(oUser);
     }
 
-    effect eVFX1   = EffectVisualEffect(VFX_DUR_AURA_PULSE_RED_ORANGE);
+    effect eVFX1   = EffectVisualEffect(VFX_DUR_AURA_PULSE_RED_YELLOW);
     effect eVFX2   = EffectVisualEffect(VFX_DUR_GLOW_RED);
     effect eVFX3   = EffectVisualEffect(VFX_IMP_PULSE_FIRE);
     effect eAC     = EffectACIncrease(1, AC_DODGE_BONUS);
@@ -42,14 +42,14 @@ void ActivateItem()
     if(GetLocalString(oDevice,"element")=="cold")
     {
      eNega = EffectDamageImmunityIncrease(DAMAGE_TYPE_COLD, 10);
-     effect eVFX1   = EffectVisualEffect(VFX_DUR_AURA_PULSE_GREY_WHITE);
+     effect eVFX1   = EffectVisualEffect(VFX_DUR_AURA_PULSE_CYAN_WHITE);
      effect eVFX2   = EffectVisualEffect(VFX_DUR_GLOW_WHITE);
      effect eVFX3   = EffectVisualEffect(VFX_IMP_PULSE_COLD);
     }
     else if(GetLocalString(oDevice,"element")=="electrical")
     {
      eNega = EffectDamageImmunityIncrease(DAMAGE_TYPE_ELECTRICAL, 10);
-     effect eVFX1   = EffectVisualEffect(VFX_DUR_AURA_PULSE_CYAN_BLUE);
+     effect eVFX1   = EffectVisualEffect(VFX_DUR_AURA_PULSE_BLUE_WHITE);
      effect eVFX2   = EffectVisualEffect(VFX_DUR_GLOW_BLUE);
      effect eVFX3   = EffectVisualEffect(VFX_IMP_PULSE_WIND);
     }
@@ -63,7 +63,7 @@ void ActivateItem()
     else if(GetLocalString(oDevice,"element")=="acid")
     {
      eNega = EffectDamageImmunityIncrease(DAMAGE_TYPE_ACID, 10);
-     effect eVFX1   = EffectVisualEffect(VFX_DUR_AURA_PULSE_GREEN_YELLOW);
+     effect eVFX1   = EffectVisualEffect(VFX_DUR_AURA_PULSE_GREEN_BLACK);
      effect eVFX2   = EffectVisualEffect(VFX_DUR_GLOW_GREEN);
      effect eVFX3   = EffectVisualEffect(VFX_IMP_PULSE_NATURE);
     }

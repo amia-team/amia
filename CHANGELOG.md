@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Southport, Central Shop tweaks
+- Ancient Devices VFX updated
 
 ### Fixed
 - Ice Giants DTS Fixed

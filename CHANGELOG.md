@@ -7,13 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-- Faction Pen created for Dev work
 
 ### Changed
-- Southport Central, Shops tweaked
 
 ### Fixed
-- Ice Giants DTS issue fixed
 
 ## [4.9.0 - 2025-01-25]
 

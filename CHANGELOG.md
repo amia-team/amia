@@ -8,11 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Faction Pen created for Dev use
+- Hangman's Cove Settlement Guards to core
 
 ### Changed
 - Southport, Central Shop tweaks
 - Ancient Devices VFX updated
 - Ancient Devices effects will override eachother instead of blocking now
+- Hangman's Cove Guards deployed
 
 ### Fixed
 - Ice Giants DTS Fixed

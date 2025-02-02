@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Faction Pen created for Dev use
 - Hangman's Cove Settlement Guards to core
+- Barak Runedar Standard Guards deployed
 
 ### Changed
 - Southport, Central Shop tweaks

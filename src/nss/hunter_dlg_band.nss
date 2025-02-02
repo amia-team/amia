@@ -2,5 +2,5 @@ void main()
 {
    object oPC = GetPCSpeaker();
    object oWidget = GetItemPossessedBy(oPC, "ds_pckey");
-   SetLocalInt(oWidget,"BGHAreaSelected",7);
+   SetLocalInt(oWidget,"BGHAreaSelected",6);
 }

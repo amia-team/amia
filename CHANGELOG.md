@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Hangman's Cove Guards deployed
 - Big Game Hunter (BGH) bosses will now always drop their special loot
 - BGH Moose will now drop large bones
-- BGH Polar Bear will not drop large and medium bones
+- BGH Polar Bear will now drop large and medium bones
 - Reduced Hide/MS on a multitude of BGH critters to make them easier to spot in areas.
 - Heavily reduced chance to run into a bandit camp during BGH based on feed back
 

@@ -60,7 +60,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 16
+                "value": 19
               },
               "IsChild": {
                 "type": "byte",
@@ -79,7 +79,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 13
+                "value": 16
               },
               "IsChild": {
                 "type": "byte",
@@ -98,7 +98,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 10
+                "value": 13
               },
               "IsChild": {
                 "type": "byte",
@@ -117,7 +117,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 7
+                "value": 10
               },
               "IsChild": {
                 "type": "byte",
@@ -136,7 +136,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 4
+                "value": 7
               },
               "IsChild": {
                 "type": "byte",
@@ -155,7 +155,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 1
+                "value": 4
               },
               "IsChild": {
                 "type": "byte",
@@ -164,6 +164,25 @@
             },
             {
               "__struct_id": 6,
+              "Active": {
+                "type": "resref",
+                "value": ""
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 1
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 7,
               "Active": {
                 "type": "resref",
                 "value": ""
@@ -729,12 +748,100 @@
             "0": "You begin to hike to your destination, searching for tracks and prey to hunt..."
           }
         }
+      },
+      {
+        "__struct_id": 7,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "RepliesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": ""
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 21
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 1,
+              "Active": {
+                "type": "resref",
+                "value": ""
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 20
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            }
+          ]
+        },
+        "Script": {
+          "type": "resref",
+          "value": ""
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Speaker": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "You begin to hike to your destination, searching for tracks and prey to hunt..."
+          }
+        }
       }
     ]
   },
   "NumWords": {
     "type": "dword",
-    "value": 206
+    "value": 234
   },
   "PreventZoomIn": {
     "type": "byte",
@@ -840,7 +947,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "hunter_dlg_wood"
+          "value": "hunter_dlg_band"
         },
         "Sound": {
           "type": "resref",
@@ -849,7 +956,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "Let's go stalk the deep forests..."
+            "0": "Let's go search for some bandits..."
           }
         }
       },
@@ -995,7 +1102,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "hunter_dlg_under"
+          "value": "hunter_dlg_wood"
         },
         "Sound": {
           "type": "resref",
@@ -1004,7 +1111,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "Let's search the depths of the Underdark..."
+            "0": "Let's go search the deep forests..."
           }
         }
       },
@@ -1150,7 +1257,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "hunter_dlg_snow"
+          "value": "hunter_dlg_under"
         },
         "Sound": {
           "type": "resref",
@@ -1159,7 +1266,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "Let's go search the peaks of snowy mountains..."
+            "0": "Let's go dive the depths of the Underdark..."
           }
         }
       },
@@ -1305,7 +1412,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "hunter_dlg_dese"
+          "value": "hunter_dlg_snow"
         },
         "Sound": {
           "type": "resref",
@@ -1314,7 +1421,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "Let's go search the vast deserts..."
+            "0": "Let's go search the peaks of snowy mountains..."
           }
         }
       },
@@ -1460,7 +1567,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "hunter_dlg_cave"
+          "value": "hunter_dlg_dese"
         },
         "Sound": {
           "type": "resref",
@@ -1469,7 +1576,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "Let's go search some caves... "
+            "0": "Let's go search the vast deserts..."
           }
         }
       },
@@ -1615,7 +1722,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "hunter_dlg_rando"
+          "value": "hunter_dlg_cave"
         },
         "Sound": {
           "type": "resref",
@@ -1624,7 +1731,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "I don't care where I go..."
+            "0": "Let's go search some caves... "
           }
         }
       },
@@ -1675,6 +1782,161 @@
       },
       {
         "__struct_id": 18,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": []
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "hunter_dlg_close"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "Press forward!"
+          }
+        }
+      },
+      {
+        "__struct_id": 19,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": ""
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 7
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "hunter_dlg_rando"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "I don't care where I go..."
+          }
+        }
+      },
+      {
+        "__struct_id": 20,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": []
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "hunter_dlg_clear"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "Turn back and head home"
+          }
+        }
+      },
+      {
+        "__struct_id": 21,
         "ActionParams": {
           "type": "list",
           "value": []

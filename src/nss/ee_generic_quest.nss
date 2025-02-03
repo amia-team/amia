@@ -263,7 +263,7 @@ void LaunchQuest(object oPC,object oNPC, string sQuest)
           // Check to see if there is skill restrictions
           if ((GetSkillRank(nSkill,oPartyMember,nSkillPointsBase) >= nSkillPoints) || (sSkillRestriction == ""))
           {
-            SendMessageToPC(oPartyMember, "You received this quest.");
+            SendMessageToPC(oPartyMember, "You received <c � >" + sQuest + "</c>.");
             SetLocalInt(oPCKey,sQuest,1);
             
             // Quest note
@@ -321,7 +321,7 @@ void LaunchQuestZeroFinish(object oPC, object oQuestItem, object oNPC, string sQ
   GiveGoldToCreature(oPC,nGold);
 
   object oPCKey = GetItemPossessedBy(oPC, "ds_pckey");
-  SendMessageToPC(oPC, "You received "+IntToString(nXPReward)+" experience points completing this quest.");
+  SendMessageToPC(oPC, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>.");
 
   SetLocalInt(oPCKey, sQuest, 2);
 
@@ -352,7 +352,7 @@ void LaunchQuestZeroFinish(object oPC, object oQuestItem, object oNPC, string sQ
           
           SetQuestXP(oPartyMember,nXPReward);
           GiveGoldToCreature(oPartyMember,nGold);
-          SendMessageToPC(oPartyMember, "You received "+IntToString(nXPReward)+" experience points completing this quest.");
+          SendMessageToPC(oPartyMember, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>.");
           SetLocalInt(oPCKey,sQuest,2);
         }
 
@@ -388,7 +388,7 @@ void LaunchQuestOneFinish(object oPC, object oQuestItem, object oNPC, string sQu
     GiveGoldToCreature(oPC,nGold);
 
     object oPCKey = GetItemPossessedBy(oPC, "ds_pckey");
-    SendMessageToPC(oPC, "You received "+IntToString(nXPReward)+" experience points completing this quest.");
+    SendMessageToPC(oPC, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>.");
 
     SetLocalInt(oPCKey,sQuest,2);
 
@@ -415,7 +415,7 @@ void LaunchQuestOneFinish(object oPC, object oQuestItem, object oNPC, string sQu
              }
              SetQuestXP(oPartyMember,nXPReward);
              GiveGoldToCreature(oPartyMember,nGold);
-             SendMessageToPC(oPartyMember, "You received "+IntToString(nXPReward)+" experience points completing this quest.");
+             SendMessageToPC(oPartyMember, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>.");
              SetLocalInt(oPCKey,sQuest,2);
             }
 
@@ -453,7 +453,7 @@ void LaunchQuestTwoFinish(object oPC, object oQuestItem, object oNPC, string sQu
     GiveGoldToCreature(oPC,nGold);
 
     object oPCKey = GetItemPossessedBy(oPC, "ds_pckey");
-    SendMessageToPC(oPC, "You received "+IntToString(nXPReward)+" experience points completing this quest.");
+    SendMessageToPC(oPC, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>.");
 
     SetLocalInt(oPCKey,sQuest,2);
 
@@ -480,7 +480,7 @@ void LaunchQuestTwoFinish(object oPC, object oQuestItem, object oNPC, string sQu
               }
               SetQuestXP(oPartyMember,nXPReward);
               GiveGoldToCreature(oPartyMember,nGold);
-              SendMessageToPC(oPartyMember, "You received "+IntToString(nXPReward)+" experience points completing this quest.");
+              SendMessageToPC(oPartyMember, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>.");
               SetLocalInt(oPCKey,sQuest,2);
             }
           }
@@ -516,7 +516,7 @@ void LaunchQuestThreeFinish(object oPC, object oQuestItem, object oNPC, string s
     GiveGoldToCreature(oPC,nGold);
 
     object oPCKey = GetItemPossessedBy(oPC, "ds_pckey");
-    SendMessageToPC(oPC, "You received "+IntToString(nXPReward)+" experience points completing this quest.");
+    SendMessageToPC(oPC, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>.");
 
     SetLocalInt(oPCKey,sQuest,2);
 
@@ -544,7 +544,7 @@ void LaunchQuestThreeFinish(object oPC, object oQuestItem, object oNPC, string s
               }
               SetQuestXP(oPartyMember,nXPReward);
               GiveGoldToCreature(oPartyMember,nGold);
-              SendMessageToPC(oPartyMember, "You received "+IntToString(nXPReward)+" experience points completing this quest.");
+              SendMessageToPC(oPartyMember, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>.");
               SetLocalInt(oPCKey,sQuest,2);
             }
           }

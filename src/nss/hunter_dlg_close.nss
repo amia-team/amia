@@ -51,9 +51,9 @@ void main()
    }
    }
 
-   if(nAreaSelected == 6) // This is the hunter picking "random" hunt. Will randomly select a zone.
+   if(nAreaSelected == 7) // This is the hunter picking "random" hunt. Will randomly select a zone.
    {
-     int nRanTemp = Random(5)+1;
+     int nRanTemp = Random(6)+1;
      nAreaSelected = nRanTemp;
    }
 
@@ -63,14 +63,34 @@ void main()
      if(nPCLevel >= 25)
      {
         nRandom = Random(13)+1;
+
+        // Special catch to reduce the likely chance of the non hunter, hostile humanoid spawns
+        if((nRandom==10) || (nRandom==9)  || (nRandom==3))
+        {
+          nRandom = Random(13)+1;
+        }
+
      }
      else if(nPCLevel >= 15)
      {
         nRandom = Random(9)+1;
+
+        // Special catch to reduce the likely chance of the non hunter, hostile humanoid spawns
+        if((nRandom==9) || (nRandom==3))
+        {
+          nRandom = Random(9)+1;
+        }
      }
      else if(nPCLevel >= 5)
      {
         nRandom = Random(5)+1;
+
+        // Special catch to reduce the likely chance of the non hunter, hostile humanoid spawns
+        if((nRandom==3))
+        {
+          nRandom = Random(5)+1;
+        }
+
      }
      oWaypoint = GetWaypointByTag("hunter_cave_s"+IntToString(nRandom));
      sArea = "cave";
@@ -80,10 +100,22 @@ void main()
      if(nPCLevel >= 25)
      {
         nRandom = Random(14)+1;
+
+        // Special catch to reduce the likely chance of the non hunter, hostile humanoid spawns
+        if((nRandom==7))
+        {
+          nRandom = Random(14)+1;
+        }
      }
      else if(nPCLevel >= 15)
      {
         nRandom = Random(10)+1;
+
+        // Special catch to reduce the likely chance of the non hunter, hostile humanoid spawns
+        if((nRandom==7))
+        {
+          nRandom = Random(10)+1;
+        }
      }
      else if(nPCLevel >= 5)
      {
@@ -92,19 +124,37 @@ void main()
      oWaypoint = GetWaypointByTag("hunter_dese_s"+IntToString(nRandom));
      sArea = "dese";
    }
-   else if(nAreaSelected == 3) // Mountains - 15 Waypoints - 1-5, 5-10, 10-15
+   else if(nAreaSelected == 3) // Snow Mountains - 15 Waypoints - 1-5, 5-10, 10-15
    {
      if(nPCLevel >= 25)
      {
         nRandom = Random(15)+1;
+
+        // Special catch to reduce the likely chance of the non hunter, hostile humanoid spawns
+        if((nRandom==14) || (nRandom==3))
+        {
+          nRandom = Random(15)+1;
+        }
      }
      else if(nPCLevel >= 15)
      {
         nRandom = Random(10)+1;
+
+        // Special catch to reduce the likely chance of the non hunter, hostile humanoid spawns
+        if((nRandom==3))
+        {
+          nRandom = Random(10)+1;
+        }
      }
      else if(nPCLevel >= 5)
      {
         nRandom = Random(5)+1;
+
+        // Special catch to reduce the likely chance of the non hunter, hostile humanoid spawns
+        if((nRandom==3))
+        {
+          nRandom = Random(5)+1;
+        }
      }
      oWaypoint = GetWaypointByTag("hunter_snow_s"+IntToString(nRandom));
      sArea = "snow";
@@ -114,14 +164,32 @@ void main()
      if(nPCLevel >= 25)
      {
         nRandom = Random(12)+1;
+
+        // Special catch to reduce the likely chance of the non hunter, hostile humanoid spawns
+        if((nRandom==10) || (nRandom==6) || (nRandom==4))
+        {
+          nRandom = Random(12)+1;
+        }
      }
      else if(nPCLevel >= 15)
      {
         nRandom = Random(8)+1;
+
+        // Special catch to reduce the likely chance of the non hunter, hostile humanoid spawns
+        if((nRandom==6) || (nRandom==4))
+        {
+          nRandom = Random(8)+1;
+        }
      }
      else if(nPCLevel >= 5)
      {
         nRandom = Random(4)+1;
+
+        // Special catch to reduce the likely chance of the non hunter, hostile humanoid spawns
+        if((nRandom==4))
+        {
+          nRandom = Random(4)+1;
+        }
      }
      oWaypoint = GetWaypointByTag("hunter_under_s"+IntToString(nRandom));
      sArea = "under";
@@ -131,17 +199,86 @@ void main()
      if(nPCLevel >= 25)
      {
         nRandom = Random(12)+1;
+
+        // Special catch to reduce the likely chance of the non hunter, hostile humanoid spawns
+        if((nRandom==11) || (nRandom==7) || (nRandom==3))
+        {
+          nRandom = Random(12)+1;
+        }
      }
      else if(nPCLevel >= 15)
      {
         nRandom = Random(8)+1;
+
+        // Special catch to reduce the likely chance of the non hunter, hostile humanoid spawns
+        if((nRandom==7) || (nRandom==3))
+        {
+          nRandom = Random(8)+1;
+        }
      }
      else if(nPCLevel >= 5)
      {
         nRandom = Random(4)+1;
+
+        // Special catch to reduce the likely chance of the non hunter, hostile humanoid spawns
+        if((nRandom==3))
+        {
+          nRandom = Random(4)+1;
+        }
      }
      oWaypoint = GetWaypointByTag("hunter_wood_s"+IntToString(nRandom));
      sArea = "wood";
+   }
+   else if(nAreaSelected == 6) // Randomly visit one of the bandit areas
+   {
+     if(nPCLevel >= 25)
+     {
+        nRandom = Random(12)+1;
+        switch(nRandom)
+        {
+          case 1: oWaypoint = GetWaypointByTag("hunter_cave_s3"); sArea = "cave"; break;
+          case 2: oWaypoint = GetWaypointByTag("hunter_cave_s9"); sArea = "cave";  break;
+          case 3: oWaypoint = GetWaypointByTag("hunter_cave_s10"); sArea = "cave";  break;
+          case 4: oWaypoint = GetWaypointByTag("hunter_dese_s7"); sArea = "dese";  break;
+          case 5: oWaypoint = GetWaypointByTag("hunter_snow_s3"); sArea = "snow";  break;
+          case 6: oWaypoint = GetWaypointByTag("hunter_snow_s14"); sArea = "snow";  break;
+          case 7: oWaypoint = GetWaypointByTag("hunter_under_s4"); sArea = "under";  break;
+          case 8: oWaypoint = GetWaypointByTag("hunter_under_s6"); sArea = "under";  break;
+          case 9: oWaypoint = GetWaypointByTag("hunter_under_s10"); sArea = "under";  break;
+          case 10: oWaypoint = GetWaypointByTag("hunter_wood_s3"); sArea = "wood";  break;
+          case 11: oWaypoint = GetWaypointByTag("hunter_wood_s7"); sArea = "wood";  break;
+          case 12: oWaypoint = GetWaypointByTag("hunter_wood_s11"); sArea = "wood";  break;
+        }
+
+     }
+     else if(nPCLevel >= 15)
+     {
+        nRandom = Random(8)+1;
+        switch(nRandom)
+        {
+          case 1: oWaypoint = GetWaypointByTag("hunter_cave_s3"); sArea = "cave"; break;
+          case 2: oWaypoint = GetWaypointByTag("hunter_cave_s9"); sArea = "cave";  break;
+          case 3: oWaypoint = GetWaypointByTag("hunter_dese_s7"); sArea = "dese";  break;
+          case 4: oWaypoint = GetWaypointByTag("hunter_snow_s3"); sArea = "snow";  break;
+          case 5: oWaypoint = GetWaypointByTag("hunter_under_s4"); sArea = "under";  break;
+          case 6: oWaypoint = GetWaypointByTag("hunter_under_s6"); sArea = "under";  break;
+          case 7: oWaypoint = GetWaypointByTag("hunter_wood_s3"); sArea = "wood";  break;
+          case 8: oWaypoint = GetWaypointByTag("hunter_wood_s7"); sArea = "wood";  break;
+        }
+
+     }
+     else if(nPCLevel >= 5)
+     {
+        nRandom = Random(4)+1;
+        switch(nRandom)
+        {
+          case 1: oWaypoint = GetWaypointByTag("hunter_cave_s3"); sArea = "cave"; break;
+          case 2: oWaypoint = GetWaypointByTag("hunter_snow_s3"); sArea = "snow";  break;
+          case 3: oWaypoint = GetWaypointByTag("hunter_under_s4"); sArea = "under";  break;
+          case 4: oWaypoint = GetWaypointByTag("hunter_wood_s3"); sArea = "wood";  break;
+        }
+
+     }
    }
 
 
@@ -154,13 +291,13 @@ void main()
    int nRandomCount = Random(nCount)+1;
 
    // Check for if the instance is occupied
-   if((GetLocalInt(oWidget,"IsOccupied") == 1) && (GetTag(OBJECT_SELF) == "hunter_guide"))
+   if((GetLocalInt(oWaypoint,"IsOccupied") == 1) && (GetTag(OBJECT_SELF) == "hunter_guide"))
    {
      AssignCommand(OBJECT_SELF,ActionSpeakString("Seems the area we headed to was already occupied by another hunter. Here is your money back. We can try somewhere else right away if you wish."));
      GiveGoldToCreature(oPC,10000);
      return;
    }
-   else if(GetLocalInt(oWidget,"IsOccupied") == 1)
+   else if(GetLocalInt(oWaypoint,"IsOccupied") == 1)
    {
      AssignCommand(oPC,ActionSpeakString("<c~Îë>*You quickly realize that the area you have picked is occupied by another hunter. You head back for the moment, but can leave on another trip immediately*</c>"));
      return;

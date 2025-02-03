@@ -75,10 +75,11 @@ void spawnJobSystemItems(object oCritter)
    int nRandom1 = Random(10);
    int nRandom2 = Random(10);
    int nRandom3 = Random(10);
+   int nBoss = GetLocalInt(oCritter,"boss");
 
    if(sBone != "")
    {
-      if(Random(10) <= 5)
+      if((Random(10) <= 5))
       {
          object bTemp = CreateItemOnObject(sBone,oCritter);
          SetDroppableFlag(bTemp,TRUE);
@@ -87,7 +88,7 @@ void spawnJobSystemItems(object oCritter)
 
    if(sHide != "")
    {
-      if(Random(10) <= 5)
+      if((Random(10) <= 5))
       {
          object hTemp = CreateItemOnObject(sHide,oCritter);
          SetDroppableFlag(hTemp,TRUE);
@@ -96,7 +97,7 @@ void spawnJobSystemItems(object oCritter)
 
    if(sFur != "")
    {
-      if(Random(10) <= 5)
+      if((Random(10) <= 5))
       {
          object fTemp = CreateItemOnObject(sFur,oCritter);
          SetDroppableFlag(fTemp,TRUE);
@@ -105,7 +106,7 @@ void spawnJobSystemItems(object oCritter)
 
    if(sMeat != "")
    {
-      if(Random(10) <= 5)
+      if((Random(10) <= 5))
       {
          object mTemp = CreateItemOnObject(sMeat,oCritter);
          SetDroppableFlag(mTemp,TRUE);
@@ -114,7 +115,7 @@ void spawnJobSystemItems(object oCritter)
 
    if(sVenom != "")
    {
-      if(Random(10) <= 5)
+      if((Random(10) <= 5))
       {
          object vTemp = CreateItemOnObject(sVenom,oCritter);
          SetDroppableFlag(vTemp,TRUE);
@@ -123,7 +124,7 @@ void spawnJobSystemItems(object oCritter)
 
    if(sSpecial1 != "")
    {
-      if(Random(10) <= 7)
+      if((Random(10) <= 7) || (nBoss==1))
       {
          object s1Temp = CreateItemOnObject(sSpecial1,oCritter);
          SetDroppableFlag(s1Temp,TRUE);
@@ -132,7 +133,7 @@ void spawnJobSystemItems(object oCritter)
 
    if(sSpecial2 != "")
    {
-      if(Random(10) <= 7)
+      if((Random(10) <= 7) || (nBoss==1))
       {
          object s2Temp = CreateItemOnObject(sSpecial2,oCritter);
          SetDroppableFlag(s2Temp,TRUE);
@@ -141,7 +142,7 @@ void spawnJobSystemItems(object oCritter)
 
    if(sSpecial3 != "")
    {
-      if(Random(10) <= 7)
+      if((Random(10) <= 7) || (nBoss==1))
       {
          object s3Temp = CreateItemOnObject(sSpecial3,oCritter);
          SetDroppableFlag(s3Temp,TRUE);

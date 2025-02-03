@@ -13,7 +13,7 @@
 
 void FaceNearestPC();
 
-//Launches strings speech1-5 with the set delay
+//Launches speech strings with the set delay
 void LaunchSpeech(object oNPC);
 
 //Launches the script to add the quest entry to their pckey and any party members nearby
@@ -84,7 +84,7 @@ void main()
         if( nRequiredQuest != 2)
         {
             AssignCommand(oNPC, ActionSpeakString(sSpeechRequiredQuest));
-            SendMessageToPC( oPC, "You must complete the <c Í >" + sRequiredQuest + "</c> quest before you may begin this one." );
+            SendMessageToPC( oPC, "You must complete the <c ï¿½ >" + sRequiredQuest + "</c> quest before you may begin this one." );
             return;
         }
     }
@@ -168,188 +168,196 @@ void main()
 
 void LaunchSpeech(object oNPC)
 {
-  string speech1 = GetLocalString(oNPC,"speech1");
-  string speech2 = GetLocalString(oNPC,"speech2");
-  string speech3 = GetLocalString(oNPC,"speech3");
-  string speech4 = GetLocalString(oNPC,"speech4");
-  string speech5 = GetLocalString(oNPC,"speech5");
+  string speech;
   float fDelay = GetLocalFloat(oNPC,"delay");
   float fBlockDelay = 1.0;
 
-  AssignCommand(oNPC, ActionSpeakString(speech1));
+  int i = 1;
+  for (i;;i++)
+  {
+    speech = GetLocalString(oNPC,"speech"+IntToString(i));
+    
+    if (speech == 0) break;
 
-  if(speech2 != "")
-  {
-    DelayCommand(fDelay,AssignCommand(oNPC, ActionSpeakString(speech2)));
-    fBlockDelay = fDelay;
-  }
-  if(speech3 != "")
-  {
-    DelayCommand(fDelay*2,AssignCommand(oNPC, ActionSpeakString(speech3)));
-    fBlockDelay = fDelay*2;
-  }
-  if(speech4 != "")
-  {
-    DelayCommand(fDelay*3,AssignCommand(oNPC, ActionSpeakString(speech4)));
-    fBlockDelay = fDelay*3;
-  }
-  if(speech5 != "")
-  {
-    DelayCommand(fDelay*4,AssignCommand(oNPC, ActionSpeakString(speech5)));
-    fBlockDelay = fDelay*4;
+    if (i == 1) 
+      AssignCommand(oNPC, ActionSpeakString(speech));
+
+    if (i > 1) 
+    {
+      DelayCommand((i - 1) * fDelay, AssignCommand(oNPC, ActionSpeakString(speech)));
+      fBlockDelay = (i - 1) * fDelay;
+    }
+    
   }
 
-   DelayCommand(fBlockDelay,SetLocalInt(oNPC,"nblocker",0));
+   DelayCommand(fBlockDelay, SetLocalInt(oNPC, "nblocker", 0));
 
 }
 
 
 void LaunchQuest(object oPC,object oNPC, string sQuest)
 {
-    int nQuest;
-    int nSkill = GetLocalInt(oNPC,"skillrestricted");
-    int nSkillPoints = GetLocalInt(oNPC,"skillrestrictedpoints");
-    int nSkillPointsBase = GetLocalInt(oNPC,"skillrestrictedpointsbase");
-    int nClassRestriction = GetLocalInt(oNPC,"classrestricted");
-    int nDeliveryAmount = GetLocalInt(oNPC,"deliveryamount");
-    object oPCKey = GetItemPossessedBy(oPC,"ds_pckey");
-    SendMessageToPC(oPC,"*You received this quest*");
-    SetLocalInt(oPCKey,sQuest,1);
+  int nQuest;
+  int nSkill = GetLocalInt(oNPC,"skillrestricted");
+  int nSkillPoints = GetLocalInt(oNPC,"skillrestrictedpoints");
+  int nSkillPointsBase = GetLocalInt(oNPC,"skillrestrictedpointsbase");
+  int nClassRestriction = GetLocalInt(oNPC,"classrestricted");
+  int nDeliveryAmount = GetLocalInt(oNPC,"deliveryamount");
+  object oPCKey = GetItemPossessedBy(oPC,"ds_pckey");
+  SendMessageToPC(oPC,"*You received this quest*");
+  SetLocalInt(oPCKey,sQuest,1);
 
-    string sSkillRestriction = GetLocalString(oNPC,"skillrestrictedon");
-    string sClassRestriction = GetLocalString(oNPC,"classrestrictedon");
-    string speech1 = GetLocalString(oNPC,"speech1");
-    string speech2 = GetLocalString(oNPC,"speech2");
-    string speech3 = GetLocalString(oNPC,"speech3");
-    string speech4 = GetLocalString(oNPC,"speech4");
-    string speech5 = GetLocalString(oNPC,"speech5");
-    string sQuest = GetLocalString(oNPC,"questname");
+  string sSkillRestriction = GetLocalString(oNPC,"skillrestrictedon");
+  string sClassRestriction = GetLocalString(oNPC,"classrestrictedon");
+  string sQuest = GetLocalString(oNPC,"questname");
+  string speech;
 
 
+  // Gives them a note with the quest info
+  object oNote = CreateItemOnObject("questnote",oPC);
+  
+  int i = 1;
+  for (i;;i++)
+  {
+    speech = GetLocalString(oNPC,"speech"+IntToString(i));
+    if (speech == 0) break;
 
-    // Gives them a note with the quest info
-    object oNote = CreateItemOnObject("questnote",oPC);
-    SetDescription(oNote,speech1+" "+speech2+" "+speech3+" "+speech4+" "+speech5,TRUE);
-    SetName(oNote,sQuest);
+    if (i == 1) 
+      SetDescription(oNote, speech);
 
-    // Gives items to the PC for the Quest type 3 if present
-    if(nDeliveryAmount != 0)
+    if (i > 1)
+      SetDescription(oNote, GetDescription(oNote)+" "+speech);
+  }
+
+  SetName(oNote,sQuest);
+
+  // Gives items to the PC for the Quest type 3 if present
+  if(nDeliveryAmount != 0)
+  {
+    int i;
+    for(i=1;i<=nDeliveryAmount;i++)
     {
-     int i;
-     for(i=1;i<=nDeliveryAmount;i++)
-     {
-       CreateItemOnObject(GetLocalString(oNPC,"deliveryitem"+IntToString(i)),oPC);
-     }
+      CreateItemOnObject(GetLocalString(oNPC,"deliveryitem"+IntToString(i)),oPC);
     }
+  }
 
-    // Get the first PC party member
-    object oPartyMember = GetFirstFactionMember(oPC, TRUE);
-    // We stop when there are no more valid PC's in the party.
-    while(GetIsObjectValid(oPartyMember) == TRUE)
+  // Get the first PC party member
+  object oPartyMember = GetFirstFactionMember(oPC, TRUE);
+  // We stop when there are no more valid PC's in the party.
+  while(GetIsObjectValid(oPartyMember) == TRUE)
+  {
+    // Get only nearby party members
+    if((GetDistanceBetween(oPC,oPartyMember) <= 20.0) && (GetArea(oPC) == GetArea(oPartyMember)))
     {
-        // Get only nearby party members
-        if((GetDistanceBetween(oPC,oPartyMember) <= 20.0) && (GetArea(oPC) == GetArea(oPartyMember)))
+      oPCKey = GetItemPossessedBy(oPartyMember,"ds_pckey");
+      
+      if( GetLocalInt(oPCKey,sQuest) == 0 )
+      {
+        // Check to see if there is class restrictions
+        if(((GetClassByPosition(1,oPartyMember) == nClassRestriction) || (GetClassByPosition(2,oPartyMember) == nClassRestriction) || (GetClassByPosition(3,oPartyMember) == nClassRestriction)) || (sClassRestriction == ""))
         {
-           oPCKey = GetItemPossessedBy(oPartyMember,"ds_pckey");
-           if( GetLocalInt(oPCKey,sQuest) == 0 )
-           {
-            // Check to see if there is class restrictions
-            if(((GetClassByPosition(1,oPartyMember) == nClassRestriction) || (GetClassByPosition(2,oPartyMember) == nClassRestriction) || (GetClassByPosition(3,oPartyMember) == nClassRestriction)) || (sClassRestriction == ""))
+          // Check to see if there is skill restrictions
+          if((GetSkillRank(nSkill,oPartyMember,nSkillPointsBase) >= nSkillPoints) || (sSkillRestriction == ""))
+          {
+            SendMessageToPC(oPartyMember,"*You received this quest*");
+            SetLocalInt(oPCKey,sQuest,1);
+            
+            // Quest note
+            oNote = CreateItemOnObject("questnote",oPartyMember);
+            
+            int i = 1;
+            for (i;;i++)
             {
-             // Check to see if there is skill restrictions
-             if((GetSkillRank(nSkill,oPartyMember,nSkillPointsBase) >= nSkillPoints) || (sSkillRestriction == ""))
-             {
-             SendMessageToPC(oPartyMember,"*You received this quest*");
-             SetLocalInt(oPCKey,sQuest,1);
-             // Quest note
-             oNote = CreateItemOnObject("questnote",oPartyMember);
-             SetDescription(oNote,speech1+" "+speech2+" "+speech3+" "+speech4+" "+speech5,TRUE);
-             SetName(oNote,sQuest);
+              speech = GetLocalString(oNPC,"speech"+IntToString(i));
+              if (speech == 0) break;
 
-             // Gives items to the PC for the Quest type 3 if present
-             if(nDeliveryAmount > 0)
-             {
+              if (i == 1) 
+                SetDescription(oNote, speech);
+
+              if (i > 1)
+                SetDescription(oNote, GetDescription(oNote)+" "+speech);
+            }
+
+            SetName(oNote,sQuest);
+
+            // Gives items to the PC for the Quest type 3 if present
+            if(nDeliveryAmount > 0)
+            {
               int e;
               for(e=1;e<=nDeliveryAmount;e++)
               {
-               CreateItemOnObject(GetLocalString(oNPC,"deliveryitem"+IntToString(e)),oPartyMember);
+              CreateItemOnObject(GetLocalString(oNPC,"deliveryitem"+IntToString(e)),oPartyMember);
               }
-             }
-
-             }
             }
-           }
-
+          }
         }
-
-        oPartyMember = GetNextFactionMember(oPC, TRUE);
+      }
     }
 
-
+    oPartyMember = GetNextFactionMember(oPC, TRUE);
+  }
 }
 
 
 void LaunchQuestZeroFinish(object oPC, object oQuestItem, object oNPC, string sQuest)
 {
+  string speechdone = GetLocalString(oNPC,"speechdone");
+  string itemreward = GetLocalString(oNPC,"itemreward");
+  int nXPReward = GetLocalInt(oNPC,"xpreward");
+  int nTakeQuestItem = GetLocalInt(oNPC,"takeitem");
+  int ngold = GetLocalInt(oNPC,"goldreward");
 
 
-    string speechdone = GetLocalString(oNPC,"speechdone");
-    string itemreward = GetLocalString(oNPC,"itemreward");
-    int nXPReward = GetLocalInt(oNPC,"xpreward");
-    int nTakeQuestItem = GetLocalInt(oNPC,"takeitem");
-    int ngold = GetLocalInt(oNPC,"goldreward");
+  if(itemreward != "")
+  {
+  CreateItemOnObject(itemreward,oPC);
+  }
+  SetQuestXP(oPC,nXPReward);
+  GiveGoldToCreature(oPC,ngold);
 
+  object oPCKey = GetItemPossessedBy(oPC,"ds_pckey");
+  SendMessageToPC(oPC,"*You received "+IntToString(nXPReward)+" xp for completing this quest*");
 
-    if(itemreward != "")
-    {
-    CreateItemOnObject(itemreward,oPC);
-    }
-    SetQuestXP(oPC,nXPReward);
-    GiveGoldToCreature(oPC,ngold);
+  SetLocalInt(oPCKey,sQuest,2);
 
-    object oPCKey = GetItemPossessedBy(oPC,"ds_pckey");
-    SendMessageToPC(oPC,"*You received "+IntToString(nXPReward)+" xp for completing this quest*");
+  // If the quest item is marked to be destroyed, destroy it
+  if( nTakeQuestItem == 1 )
+  {
+      if(GetIsObjectValid(oQuestItem))
+      {
+        DestroyObject(oQuestItem);
+      }
+  }
 
-    SetLocalInt(oPCKey,sQuest,2);
+  // Get the first PC party member
+  object oPartyMember = GetFirstFactionMember(oPC, TRUE);
+  // We stop when there are no more valid PC's in the party.
+  while(GetIsObjectValid(oPartyMember) == TRUE)
+  {
+      // Get only nearby party members
+      if((GetDistanceBetween(oPC,oPartyMember) <= 20.0) && (GetArea(oPC) == GetArea(oPartyMember)))
+      {
+          oPCKey = GetItemPossessedBy(oPartyMember,"ds_pckey");
+          if( GetLocalInt(oPCKey,sQuest) == 1 )
+          {
+            if(itemreward != "")
+            {
+            CreateItemOnObject(itemreward,oPartyMember);
+            }
+            SetQuestXP(oPartyMember,nXPReward);
+            GiveGoldToCreature(oPartyMember,ngold);
+            SendMessageToPC(oPartyMember,"*You received "+IntToString(nXPReward)+" xp for completing this quest*");
+            SetLocalInt(oPCKey,sQuest,2);
+          }
 
-    // If the quest item is marked to be destroyed, destroy it
-    if( nTakeQuestItem == 1 )
-    {
-       if(GetIsObjectValid(oQuestItem))
-       {
-         DestroyObject(oQuestItem);
-       }
-    }
+      }
 
-    // Get the first PC party member
-    object oPartyMember = GetFirstFactionMember(oPC, TRUE);
-    // We stop when there are no more valid PC's in the party.
-    while(GetIsObjectValid(oPartyMember) == TRUE)
-    {
-        // Get only nearby party members
-        if((GetDistanceBetween(oPC,oPartyMember) <= 20.0) && (GetArea(oPC) == GetArea(oPartyMember)))
-        {
-           oPCKey = GetItemPossessedBy(oPartyMember,"ds_pckey");
-           if( GetLocalInt(oPCKey,sQuest) == 1 )
-           {
-             if(itemreward != "")
-             {
-             CreateItemOnObject(itemreward,oPartyMember);
-             }
-             SetQuestXP(oPartyMember,nXPReward);
-             GiveGoldToCreature(oPartyMember,ngold);
-             SendMessageToPC(oPartyMember,"*You received "+IntToString(nXPReward)+" xp for completing this quest*");
-             SetLocalInt(oPCKey,sQuest,2);
-           }
-
-        }
-
-        oPartyMember = GetNextFactionMember(oPC, TRUE);
-    }
+      oPartyMember = GetNextFactionMember(oPC, TRUE);
+  }
 
 
 
-    AssignCommand(oNPC, ActionSpeakString(speechdone));
+  AssignCommand(oNPC, ActionSpeakString(speechdone));
 
 }
 

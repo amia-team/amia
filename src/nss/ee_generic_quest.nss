@@ -13,10 +13,10 @@
 
 void FaceNearestPC();
 
-//Launches speech strings with the set delay
+// Launches speech strings with the set delay
 void LaunchSpeech(object oNPC);
 
-//Launches the script to add the quest entry to their pckey and any party members nearby
+// Launches the script to add the quest entry to their pckey and any party members nearby
 void LaunchQuest(object oPC,object oNPC,string sQuest);
 
 
@@ -28,18 +28,18 @@ void LaunchQuestZeroFinish(object oPC, object oQuestItem, object oNPC, string sQ
 // visit multiple areas or talk to multiple NPCs in a specific quest chain order
 void LaunchQuestOneFinish(object oPC, object oQuestItem, object oNPC, string sQuest);
 
-//Marks the quest type 2 as done, does a speech ending the quest, and gives xp/rewards
+// Marks the quest type 2 as done, does a speech ending the quest, and gives xp/rewards
 // visit multiple areas or talk to multiple NPCs in any order
 void LaunchQuestTwoFinish(object oPC, object oQuestItem, object oNPC, string sQuest);
 
-//Marks the quest type 3 as done, does a speech ending the quest, and gives xp/rewards
+// Marks the quest type 3 as done, does a speech ending the quest, and gives xp/rewards
 // delivery quest with single or multiple deliveries
 void LaunchQuestThreeFinish(object oPC, object oQuestItem, object oNPC, string sQuest);
 
-//Checks to make sure that the conditions for quest type 2 are complete
+// Checks to make sure that the conditions for quest type 2 are complete
 int CheckQuestTwoFinished(object oPC,object oNPC);
 
-//Checks to make sure that the conditions for quest type 2 are complete
+// Checks to make sure that the conditions for quest type 2 are complete
 int CheckQuestThreeFinished(object oPC,object oNPC);
 
 // Sets the Quest XP with level 30 in consideration
@@ -177,8 +177,8 @@ void LaunchSpeech(object oNPC)
   float fDelay = GetLocalFloat(oNPC, "delay");
   float fBlockDelay = 1.0;
 
-  int i = 1;
-  for (i;;i++)
+  int i;
+  for (i = 1;;i++)
   {
     speech = GetLocalString(oNPC, "speech"+IntToString(i));
     
@@ -220,8 +220,8 @@ void LaunchQuest(object oPC,object oNPC, string sQuest)
   // Gives them a note with the quest info
   object oNote = CreateItemOnObject("questnote",oPC);
   
-  int i = 1;
-  for (i;;i++)
+  int i;
+  for (i = 1;;i++)
   {
     speech = GetLocalString(oNPC, "speech"+IntToString(i));
     if (speech == 0) break;
@@ -269,8 +269,8 @@ void LaunchQuest(object oPC,object oNPC, string sQuest)
             // Quest note
             oNote = CreateItemOnObject("questnote",oPartyMember);
             
-            int i = 1;
-            for (i;;i++)
+            int i;
+            for (i = 1;;i++)
             {
               speech = GetLocalString(oNPC, "speech"+IntToString(i));
               if (speech == 0) break;

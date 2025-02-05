@@ -68,7 +68,7 @@ void main()
   int nSkill = GetLocalInt(oNPC, "skillrestricted");
   int nSkillPoints = GetLocalInt(oNPC, "skillrestrictedpoints");
   int nSkillPointsBase = GetLocalInt(oNPC, "skillrestrictedpointsbase");
-  object oQuestItem = GetItemPossessedBy(oPC,questitem);
+  object oQuestItem = GetItemPossessedBy(oPC, questitem);
   string sRequiredQuest = GetLocalString(oNPC, "questrequired");
   string sSpeechRequiredQuest = GetLocalString(oNPC, "speechquestrequired");
 
@@ -76,98 +76,105 @@ void main()
 
 
   // Speaking blocker, stops people spamming while the quest giver is talking
-  if (nBlocker != 1)
+  if (nBlocker != 1) return;
+  
+  // Class checker, if PC doesn't have the required class level, plays the rejection message
+  if (nClassRestriction == TRUE && (GetLevelByClass(nClassRestriction, oPC) < nClassRestrictionLvl))
   {
-   if ((((GetClassByPosition(1,oPC) == nClassRestriction) || (GetClassByPosition(2,oPC) == nClassRestriction) || (GetClassByPosition(3,oPC) == nClassRestriction)) || (sClassRestriction == "")) && (GetLevelByClass(nClassRestriction,oPC) >= nClassRestrictionLvl))
-   {
-    if ((GetSkillRank(nSkill,oPC,nSkillPointsBase) >= nSkillPoints) || (sSkillRestriction == ""))
-    {
-    if (sRequiredQuest != "")
-    {
-        object oPCKey = GetItemPossessedBy(oPC, "ds_pckey");
-        int nRequiredQuest = GetLocalInt(oPCKey,sRequiredQuest);
-        if (nRequiredQuest != 2)
-        {
-            AssignCommand(oNPC, ActionSpeakString(sSpeechRequiredQuest));
-            SendMessageToPC(oPC, "You must complete the <c � >" + sRequiredQuest + "</c> quest before you may begin this one.");
-            return;
-        }
-    }
-    if (nQuest == 0)
-    {
-      LaunchSpeech(oNPC);
-      LaunchQuest(oPC,oNPC,sQuest);
-      SetLocalInt(oNPC, "nblocker",1);
-    }
-    else if (nQuest == 1)
-    {
-     //Quest 0 is the item retreival quest, the default.
-     if (nQuestType == 0)
-     {
-      if (GetIsObjectValid(oQuestItem))
-      {
-        LaunchQuestZeroFinish(oPC,oQuestItem,oNPC,sQuest);
-      }
-      else
-      {
-        AssignCommand(oNPC, ActionSpeakString(speechwithquest));
-      }
-     }
-     else if (nQuestType == 1) // Quest 1 is the multi visit people or places quest but in an order
-     {
-      if (nQuestChain == nQuestProgress)
-      {
-        LaunchQuestOneFinish(oPC,oQuestItem,oNPC,sQuest);
-      }
-      else
-      {
-        AssignCommand(oNPC, ActionSpeakString(speechwithquest));
-      }
-     }
-     else if (nQuestType == 2) // Quest 2 is the multi visit people or places quest but in any order
-     {
-      if (CheckQuestTwoFinished(oPC,oNPC))
-      {
-        LaunchQuestTwoFinish(oPC,oQuestItem,oNPC,sQuest);
-      }
-      else
-      {
-        AssignCommand(oNPC, ActionSpeakString(speechwithquest));
-      }
-     }
-     else if (nQuestType == 3) // Quest 3 is the delivery questline
-     {
-      if (CheckQuestThreeFinished(oPC,oNPC))
-      {
-        LaunchQuestThreeFinish(oPC,oQuestItem,oNPC,sQuest);
-      }
-      else
-      {
-        AssignCommand(oNPC, ActionSpeakString(speechwithquest));
-      }
-     }
+    AssignCommand(oNPC, ActionSpeakString(sRejectionMessage));
+    return;
+  }
+  
+  // Skill checker, if PC doesn't have the required skill rank, plays the rejection message
+  if (sSkillRestriction == TRUE && (GetSkillRank(nSkill,oPC,nSkillPointsBase) < nSkillPoints))
+  {
+    AssignCommand(oNPC, ActionSpeakString(sRejectionMessage));
+    return;
+  }
 
-    }
-    else if (nQuest == 2)
+  // Check if this quest requires the completion of another for it
+  if (sRequiredQuest != "")
+  {
+    object oPCKey = GetItemPossessedBy(oPC, "ds_pckey");
+    int nRequiredQuest = GetLocalInt(oPCKey,sRequiredQuest);
+    if (nRequiredQuest != 2)
     {
-        AssignCommand(oNPC, ActionSpeakString(speechquestdone));
+      AssignCommand(oNPC, ActionSpeakString(sSpeechRequiredQuest));
+      SendMessageToPC(oPC, "You must complete the <c � >" + sRequiredQuest + "</c> quest before you may begin this one.");
+      return;
     }
+  }
+  
+  // If the PC doesn't have the quest, launch the opening speech and quest
+  if (nQuest == 0)
+  {
+    LaunchSpeech(oNPC);
+    LaunchQuest(oPC,oNPC,sQuest);
+    SetLocalInt(oNPC, "nblocker", 1);
+    return;
+  }
 
-    }// End of Skill checker
+  // RETRIEVAL QUEST if the quest type is unspecified or specified as zero
+  if (nQuestType == FALSE)
+  {
+    if (GetIsObjectValid(oQuestItem))
+    {
+      LaunchQuestZeroFinish(oPC, oQuestItem, oNPC, sQuest);
+    }
     else
     {
-      AssignCommand(oNPC, ActionSpeakString(sRejectionMessage));
+      AssignCommand(oNPC, ActionSpeakString(speechwithquest));
+    }
+  }
+  
+  // If the PC has completed the quest, plays the quest done speech
+  if (nQuest == 2)
+  {
+    AssignCommand(oNPC, ActionSpeakString(speechquestdone));
+    return;
+  }
+  
+  // If the PC has already taken the quest and hasn't completed it yet
+  if (nQuest == 1)
+  {
+    // If quest type isn't specified or is specified as zero, runs the normie retrieval quest return
+    
+    else if (nQuestType == 1) // Quest 1 is the multi visit people or places quest but in an order
+    {
+    if (nQuestChain == nQuestProgress)
+    {
+      LaunchQuestOneFinish(oPC,oQuestItem,oNPC,sQuest);
+    }
+    else
+    {
+      AssignCommand(oNPC, ActionSpeakString(speechwithquest));
+    }
+    }
+    else if (nQuestType == 2) // Quest 2 is the multi visit people or places quest but in any order
+    {
+    if (CheckQuestTwoFinished(oPC,oNPC))
+    {
+      LaunchQuestTwoFinish(oPC,oQuestItem,oNPC,sQuest);
+    }
+    else
+    {
+      AssignCommand(oNPC, ActionSpeakString(speechwithquest));
+    }
+    }
+    else if (nQuestType == 3) // Quest 3 is the delivery questline
+    {
+    if (CheckQuestThreeFinished(oPC,oNPC))
+    {
+      LaunchQuestThreeFinish(oPC,oQuestItem,oNPC,sQuest);
+    }
+    else
+    {
+      AssignCommand(oNPC, ActionSpeakString(speechwithquest));
+    }
     }
 
-   }// End of Class Restricted Check
-   else
-   {
-     AssignCommand(oNPC, ActionSpeakString(sRejectionMessage));
-   }
-
-  }// End of Blocker
-
-
+  }
+  
 }
 
 
@@ -182,7 +189,7 @@ void LaunchSpeech(object oNPC)
   {
     speech = GetLocalString(oNPC, "speech"+IntToString(i));
     
-    if (speech == 0) break;
+    if (speech == "") break;
 
     if (i == 1) 
       AssignCommand(oNPC, ActionSpeakString(speech));
@@ -214,7 +221,7 @@ void LaunchQuest(object oPC,object oNPC, string sQuest)
   string sQuest = GetLocalString(oNPC, "questname");
   string speech;
 
-  SendMessageToPC(oPC, "You received <c � >" + sQuest + "</c>.");
+  SendMessageToPC(oPC, "You received <c � >" + sQuest + "</c>");
   SetLocalInt(oPCKey,sQuest,1);
 
   // Gives them a note with the quest info
@@ -224,7 +231,7 @@ void LaunchQuest(object oPC,object oNPC, string sQuest)
   for (i = 1;;i++)
   {
     speech = GetLocalString(oNPC, "speech"+IntToString(i));
-    if (speech == 0) break;
+    if (speech == "") break;
 
     if (i == 1) 
       SetDescription(oNote, speech);
@@ -263,7 +270,7 @@ void LaunchQuest(object oPC,object oNPC, string sQuest)
           // Check to see if there is skill restrictions
           if ((GetSkillRank(nSkill,oPartyMember,nSkillPointsBase) >= nSkillPoints) || (sSkillRestriction == ""))
           {
-            SendMessageToPC(oPartyMember, "You received <c � >" + sQuest + "</c>.");
+            SendMessageToPC(oPartyMember, "You received <c � >" + sQuest + "</c>");
             SetLocalInt(oPCKey,sQuest,1);
             
             // Quest note
@@ -273,7 +280,7 @@ void LaunchQuest(object oPC,object oNPC, string sQuest)
             for (i = 1;;i++)
             {
               speech = GetLocalString(oNPC, "speech"+IntToString(i));
-              if (speech == 0) break;
+              if (speech == "") break;
 
               if (i == 1) 
                 SetDescription(oNote, speech);
@@ -305,12 +312,11 @@ void LaunchQuest(object oPC,object oNPC, string sQuest)
 
 void LaunchQuestZeroFinish(object oPC, object oQuestItem, object oNPC, string sQuest)
 {
-  string speechdone = GetLocalString(oNPC, "speechdone");
-  string itemreward = GetLocalString(oNPC, "itemreward");
-  int nXPReward = GetLocalInt(oNPC, "xpreward");
-  int nTakeQuestItem = GetLocalInt(oNPC, "takeitem");
-  int nGold = GetLocalInt(oNPC, "goldreward");
-
+  string speechdone = GetLocalString(oNPC,"speechdone");
+  string itemreward = GetLocalString(oNPC,"itemreward");
+  int nXPReward = GetLocalInt(oNPC,"xpreward");
+  int nTakeQuestItem = GetLocalInt(oNPC,"takeitem");
+  int ngold = GetLocalInt(oNPC,"goldreward");
 
   if (itemreward != "")
   {
@@ -321,17 +327,17 @@ void LaunchQuestZeroFinish(object oPC, object oQuestItem, object oNPC, string sQ
   GiveGoldToCreature(oPC,nGold);
 
   object oPCKey = GetItemPossessedBy(oPC, "ds_pckey");
-  SendMessageToPC(oPC, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>.");
+  SendMessageToPC(oPC, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>");
 
   SetLocalInt(oPCKey, sQuest, 2);
 
   // If the quest item is marked to be destroyed, destroy it
   if (nTakeQuestItem == 1)
   {
-      if (GetIsObjectValid(oQuestItem))
-      {
-        DestroyObject(oQuestItem);
-      }
+    if (GetIsObjectValid(oQuestItem))
+    {
+      DestroyObject(oQuestItem);
+    }
   }
 
   // Get the first PC party member
@@ -352,7 +358,7 @@ void LaunchQuestZeroFinish(object oPC, object oQuestItem, object oNPC, string sQ
           
           SetQuestXP(oPartyMember,nXPReward);
           GiveGoldToCreature(oPartyMember,nGold);
-          SendMessageToPC(oPartyMember, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>.");
+          SendMessageToPC(oPartyMember, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>");
           SetLocalInt(oPCKey,sQuest,2);
         }
 
@@ -361,10 +367,7 @@ void LaunchQuestZeroFinish(object oPC, object oQuestItem, object oNPC, string sQ
       oPartyMember = GetNextFactionMember(oPC, TRUE);
   }
 
-
-
   AssignCommand(oNPC, ActionSpeakString(speechdone));
-
 }
 
 
@@ -388,7 +391,7 @@ void LaunchQuestOneFinish(object oPC, object oQuestItem, object oNPC, string sQu
     GiveGoldToCreature(oPC,nGold);
 
     object oPCKey = GetItemPossessedBy(oPC, "ds_pckey");
-    SendMessageToPC(oPC, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>.");
+    SendMessageToPC(oPC, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>");
 
     SetLocalInt(oPCKey,sQuest,2);
 
@@ -415,7 +418,7 @@ void LaunchQuestOneFinish(object oPC, object oQuestItem, object oNPC, string sQu
              }
              SetQuestXP(oPartyMember,nXPReward);
              GiveGoldToCreature(oPartyMember,nGold);
-             SendMessageToPC(oPartyMember, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>.");
+             SendMessageToPC(oPartyMember, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>");
              SetLocalInt(oPCKey,sQuest,2);
             }
 
@@ -453,7 +456,7 @@ void LaunchQuestTwoFinish(object oPC, object oQuestItem, object oNPC, string sQu
     GiveGoldToCreature(oPC,nGold);
 
     object oPCKey = GetItemPossessedBy(oPC, "ds_pckey");
-    SendMessageToPC(oPC, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>.");
+    SendMessageToPC(oPC, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>");
 
     SetLocalInt(oPCKey,sQuest,2);
 
@@ -480,7 +483,7 @@ void LaunchQuestTwoFinish(object oPC, object oQuestItem, object oNPC, string sQu
               }
               SetQuestXP(oPartyMember,nXPReward);
               GiveGoldToCreature(oPartyMember,nGold);
-              SendMessageToPC(oPartyMember, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>.");
+              SendMessageToPC(oPartyMember, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>");
               SetLocalInt(oPCKey,sQuest,2);
             }
           }
@@ -516,7 +519,7 @@ void LaunchQuestThreeFinish(object oPC, object oQuestItem, object oNPC, string s
     GiveGoldToCreature(oPC,nGold);
 
     object oPCKey = GetItemPossessedBy(oPC, "ds_pckey");
-    SendMessageToPC(oPC, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>.");
+    SendMessageToPC(oPC, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>");
 
     SetLocalInt(oPCKey,sQuest,2);
 
@@ -544,7 +547,7 @@ void LaunchQuestThreeFinish(object oPC, object oQuestItem, object oNPC, string s
               }
               SetQuestXP(oPartyMember,nXPReward);
               GiveGoldToCreature(oPartyMember,nGold);
-              SendMessageToPC(oPartyMember, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>.");
+              SendMessageToPC(oPartyMember, "You received "+IntToString(nXPReward)+" experience points completing <c � >" + sQuest + "</c>");
               SetLocalInt(oPCKey,sQuest,2);
             }
           }

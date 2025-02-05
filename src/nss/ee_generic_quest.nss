@@ -114,19 +114,6 @@ void main()
     return;
   }
 
-  // RETRIEVAL QUEST if the quest type is unspecified or specified as zero
-  if (nQuestType == FALSE)
-  {
-    if (GetIsObjectValid(oQuestItem))
-    {
-      LaunchQuestZeroFinish(oPC, oQuestItem, oNPC, sQuest);
-    }
-    else
-    {
-      AssignCommand(oNPC, ActionSpeakString(speechwithquest));
-    }
-  }
-
   // If the PC has completed the quest, plays the quest done speech
   if (nQuest == 2)
   {
@@ -137,40 +124,50 @@ void main()
   // If the PC has already taken the quest and hasn't completed it yet
   if (nQuest == 1)
   {
-    // If quest type isn't specified or is specified as zero, runs the normie retrieval quest return
-
+    // RETRIEVAL QUEST if the quest type is unspecified or specified as zero
+    if (nQuestType == FALSE)
+    {
+      if (GetIsObjectValid(oQuestItem))
+      {
+        LaunchQuestZeroFinish(oPC, oQuestItem, oNPC, sQuest);
+      }
+      else
+      {
+        AssignCommand(oNPC, ActionSpeakString(speechwithquest));
+      }
+    }
     if (nQuestType == 1) // Quest 1 is the multi visit people or places quest but in an order
     {
-    if (nQuestChain == nQuestProgress)
-    {
-      LaunchQuestOneFinish(oPC,oQuestItem,oNPC,sQuest);
-    }
-    else
-    {
-      AssignCommand(oNPC, ActionSpeakString(speechwithquest));
-    }
+      if (nQuestChain == nQuestProgress)
+      {
+        LaunchQuestOneFinish(oPC,oQuestItem,oNPC,sQuest);
+      }
+      else
+      {
+        AssignCommand(oNPC, ActionSpeakString(speechwithquest));
+      }
     }
     else if (nQuestType == 2) // Quest 2 is the multi visit people or places quest but in any order
     {
-    if (CheckQuestTwoFinished(oPC,oNPC))
-    {
-      LaunchQuestTwoFinish(oPC,oQuestItem,oNPC,sQuest);
-    }
-    else
-    {
-      AssignCommand(oNPC, ActionSpeakString(speechwithquest));
-    }
+      if (CheckQuestTwoFinished(oPC,oNPC))
+      {
+        LaunchQuestTwoFinish(oPC,oQuestItem,oNPC,sQuest);
+      }
+      else
+      {
+        AssignCommand(oNPC, ActionSpeakString(speechwithquest));
+      }
     }
     else if (nQuestType == 3) // Quest 3 is the delivery questline
     {
-    if (CheckQuestThreeFinished(oPC,oNPC))
-    {
-      LaunchQuestThreeFinish(oPC,oQuestItem,oNPC,sQuest);
-    }
-    else
-    {
-      AssignCommand(oNPC, ActionSpeakString(speechwithquest));
-    }
+      if (CheckQuestThreeFinished(oPC,oNPC))
+      {
+        LaunchQuestThreeFinish(oPC,oQuestItem,oNPC,sQuest);
+      }
+      else
+      {
+        AssignCommand(oNPC, ActionSpeakString(speechwithquest));
+      }
     }
 
   }

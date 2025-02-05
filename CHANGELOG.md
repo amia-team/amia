@@ -21,7 +21,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Big Game Hunter (BGH) additional option to hunt just bandits 
 - Missing hawk for BGH deployed
 - Faction standing are now reset when leaving BGH hunting zone for neutral critters like rabbits, etc
-- Interior of Tempus temple in Old City
 
 ### Changed
 - Southport, Central Shop tweaks
@@ -33,7 +32,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - BGH Polar Bear will now drop large and medium bones
 - Reduced Hide/MS on a multitude of BGH critters to make them easier to spot in areas.
 - Heavily reduced chance to run into a bandit camp during BGH based on feed back
-- Old City construction updated
 
 ### Fixed
 - Ice Giants DTS Fixed

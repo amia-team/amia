@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-## [4.9.1 2025-02-05]
+## [4.10.0 2025-02-05]
 
 ### Added
 - Faction Pen created for Dev use

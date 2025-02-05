@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [4.9.1 2025-02-05]
+
+### Added
 - Faction Pen created for Dev use
 - Hangman's Cove Settlement Guards to core
 - Barak Runedar Standard Guards deployed
@@ -30,7 +38,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Big Game Hunter (BGH) Vicious spiders and cobra will now drop loot
 - Resolved a few BGH areas that were empty on spawn in
 - BGH issue where you could go into an occupied hunting zone resolved
-
+- Fixed bug with defender where defensive stance would activate and subsequently delete the effects of the stance.
 
 ## [4.9.0 - 2025-01-25]
 

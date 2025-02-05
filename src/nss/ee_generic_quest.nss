@@ -111,7 +111,6 @@ void main()
     LaunchSpeech(oNPC);
     LaunchQuest(oPC,oNPC,sQuest);
     SetLocalInt(oNPC, "nblocker", 1);
-    return;
   }
 
   // RETRIEVAL QUEST if the quest type is unspecified or specified as zero

@@ -58,6 +58,27 @@ void main( ){
     int    mounted                  = GetLocalInt(oWidget,"mounted");
     int    nCrossDamageAndAB;
 
+    // Monk Meditation Focus
+    if((GetBaseItemType(oOffHand)==222) && ((GetBaseItemType(oItem)==BASE_ITEM_BASTARDSWORD)||(GetBaseItemType(oItem)==BASE_ITEM_BATTLEAXE)||
+    (GetBaseItemType(oItem)==BASE_ITEM_DAGGER)||(GetBaseItemType(oItem)==BASE_ITEM_DWARVENWARAXE)
+    ||(GetBaseItemType(oItem)==BASE_ITEM_HANDAXE)||(GetBaseItemType(oItem)==BASE_ITEM_KAMA)||(GetBaseItemType(oItem)==BASE_ITEM_KATANA)
+    ||(GetBaseItemType(oItem)==BASE_ITEM_CLUB)||(GetBaseItemType(oItem)==BASE_ITEM_KUKRI)||(GetBaseItemType(oItem)==BASE_ITEM_LIGHTCROSSBOW)
+    ||(GetBaseItemType(oItem)==BASE_ITEM_LIGHTFLAIL)||(GetBaseItemType(oItem)==BASE_ITEM_LIGHTHAMMER)||(GetBaseItemType(oItem)==BASE_ITEM_LIGHTMACE)
+    ||(GetBaseItemType(oItem)==BASE_ITEM_LONGSWORD)||(GetBaseItemType(oItem)==BASE_ITEM_MAGICROD)||(GetBaseItemType(oItem)==BASE_ITEM_MAGICSTAFF)
+    ||(GetBaseItemType(oItem)==BASE_ITEM_MAGICWAND)||(GetBaseItemType(oItem)==BASE_ITEM_MORNINGSTAR)||(GetBaseItemType(oItem)==BASE_ITEM_RAPIER)
+    ||(GetBaseItemType(oItem)==BASE_ITEM_SCIMITAR)||(GetBaseItemType(oItem)==BASE_ITEM_SHORTBOW)||(GetBaseItemType(oItem)==BASE_ITEM_SHORTSPEAR)
+    ||(GetBaseItemType(oItem)==BASE_ITEM_SHORTSWORD)||(GetBaseItemType(oItem)==BASE_ITEM_SHURIKEN)||(GetBaseItemType(oItem)==BASE_ITEM_SICKLE)
+    ||(GetBaseItemType(oItem)==BASE_ITEM_SLING)||(GetBaseItemType(oItem)==BASE_ITEM_THROWINGAXE)||(GetBaseItemType(oItem)==BASE_ITEM_TRIDENT)
+    ||(GetBaseItemType(oItem)==BASE_ITEM_WARHAMMER)||(GetBaseItemType(oItem)==BASE_ITEM_WHIP)))
+    {
+      AssignCommand(oPC, ActionUnequipItem(oOffHand));
+    }
+    else if((GetBaseItemType(oItem)==222) && (GetIsObjectValid(oPrimaryHand)))
+    {
+      AssignCommand(oPC, ActionUnequipItem(oPrimaryHand));
+    }
+
+
     // Curse Item Script
     if((GetResRef(oItem) == "shroudarmor") || (GetResRef(oItem) == "shroudhelm")  || (GetResRef(oItem) == "shroudcloak"))
     {

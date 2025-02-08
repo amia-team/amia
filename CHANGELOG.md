@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+<<<<<<< Updated upstream
+=======
+
+### Changed
+
+### Fixed
+- Fixed BGH desert area bug
+
+[4.10.1 2025-02-05]
+
+### Added
+>>>>>>> Stashed changes
 - Faction Pen created for Dev use
 - Hangman's Cove Settlement Guards to core
 - Barak Runedar Standard Guards deployed

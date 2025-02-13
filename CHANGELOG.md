@@ -12,6 +12,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
+## [4.10.1 2025-02-05]
+
+### Fixed
+- Fixed broken quests
+
 ## [4.10.0 2025-02-05]
 
 ### Added

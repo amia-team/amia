@@ -1100,20 +1100,42 @@ void sum_BG_SummonFiend( object oPC, location lTarget ){
         szBlackguardFiend += "ce";
     }
 
+    object oPCKey = GetItemPossessedBy(oPC,"ds_pckey");
+    int nChoice = GetLocalInt(oPCKey, "BgChoice");
+
+    if(nChoice==0)
+    {
     // Blackguard has the Epic Fiendish Servant feat ?
-    if ( GetHasFeat( FEAT_EPIC_EPIC_FIEND, oPC ) == TRUE ){
+    if ( (GetHasFeat( FEAT_EPIC_EPIC_FIEND, oPC ) == TRUE) && (nChoice==0) ){
 
         switch( nLawChaos ){
 
             case ALIGNMENT_CHAOTIC: szBlackguardFiend  =  "contractedkelvez";  break;
             case ALIGNMENT_LAWFUL:  szBlackguardFiend  =  "summonedamnizubo";  break;
-            default:                szBlackguardFiend  =  "arcanaloth";        break;
+            default:                szBlackguardFiend  =  "bg_ne";        break;
         }
 
         fDuration = NewHoursToSeconds( 24 );
 
         // delay bonus buff until the fiend has actually spawned, else it'll miss!
         DelayCommand( 4.0, FindSummonAndDoFiendBonuses( oPC, szBlackguardFiend ) );
+    }
+    }
+    else
+    {
+        switch( nChoice ){
+
+            case 1: szBlackguardFiend  =  "contractedkelvez";  break;
+            case 2: szBlackguardFiend  =  "summonedamnizubo";  break;
+            case 3: szBlackguardFiend  =  "bg_ne";  break;
+        }
+
+        fDuration = NewHoursToSeconds( 24 );
+
+        // delay bonus buff until the fiend has actually spawned, else it'll miss!
+        DelayCommand( 4.0, FindSummonAndDoFiendBonuses( oPC, szBlackguardFiend ) );
+
+
     }
 
     // summon the fiend

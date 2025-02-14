@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Blackguard Epic Fiendish Rest Menu selection added
+- RA and Beans DM areas added
+
 
 ### Changed
 - Lesser Planar Binding, Evil: Canoloth [Neutral] adjusted to be in line with other summons
@@ -16,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Gate 22 - 26, Evil: Nycaloth [Neutral] moved up from Gate 17-21, power adjusted
 - Gate 27+, Evil: Yagnaloth [Neutral] moved up from Gate 22-26, power adjusted
 - Vampiric regen scaling added to gate, feat adjustments, and claw fixes
+- Blackguard NE summon reworked into Ultroloth, utility CC summon
 
 ### Fixed
 - Fixed BGH desert area bug

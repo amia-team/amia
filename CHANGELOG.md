@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Lesser Planar Binding, Evil: Canoloth [Neutral] adjusted to be in line with other summons
+- Greater Planar Binding, Evil: Mezzeloth [Neutral] moved UP from planar binding, adjusted power
+- Planar Binding & Planar Ally, Evil: Skereloth [Neutral] new skin to replace Mezzeloth, adjusted to be in line with other summons
+- Gate 17 - 21, Evil: Sword Battleloth [Neutral] moved up from greater planar binding, adjusted power
+- Gate 22 - 26, Evil: Nycaloth [Neutral] moved up from Gate 17-21, power adjusted
+- Gate 27+, Evil: Yagnaloth [Neutral] moved up from Gate 22-26, power adjusted
+- Vampiric regen scaling added to gate, feat adjustments, and claw fixes
 
 ### Fixed
 - Fixed BGH desert area bug

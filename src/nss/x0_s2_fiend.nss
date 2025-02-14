@@ -17,6 +17,7 @@
 //-------------------------------------------------------------------------------
 void main(){
 
+     /// /
     //Trigger spellhook
     if (!X2PreSpellCastCode())
         return;

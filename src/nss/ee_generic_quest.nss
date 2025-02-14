@@ -84,7 +84,7 @@ void main()
         if( nRequiredQuest != 2)
         {
             AssignCommand(oNPC, ActionSpeakString(sSpeechRequiredQuest));
-            SendMessageToPC( oPC, "You must complete the <c � >" + sRequiredQuest + "</c> quest before you may begin this one." );
+            SendMessageToPC( oPC, "You must complete the <c Í >" + sRequiredQuest + "</c> quest before you may begin this one." );
             return;
         }
     }

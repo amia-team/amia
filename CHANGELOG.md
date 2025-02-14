@@ -7,19 +7,27 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Blackguard Epic Fiendish Rest Menu selection added
+- RA and Beans DM areas added
+
 
 ### Changed
+- Lesser Planar Binding, Evil: Canoloth [Neutral] adjusted to be in line with other summons
+- Greater Planar Binding, Evil: Mezzeloth [Neutral] moved UP from planar binding, adjusted power
+- Planar Binding & Planar Ally, Evil: Skereloth [Neutral] new skin to replace Mezzeloth, adjusted to be in line with other summons
+- Gate 17 - 21, Evil: Sword Battleloth [Neutral] moved up from greater planar binding, adjusted power
+- Gate 22 - 26, Evil: Nycaloth [Neutral] moved up from Gate 17-21, power adjusted
+- Gate 27+, Evil: Yagnaloth [Neutral] moved up from Gate 22-26, power adjusted
+- Vampiric regen scaling added to gate, feat adjustments, and claw fixes
+- Blackguard NE summon reworked into Ultroloth, utility CC summon
 
 ### Fixed
+- Fixed BGH desert area bug
 
-## [4.10.1 2025-02-05]
-
-### Fixed
-- Fixed broken quests
-
-## [4.10.0 2025-02-05]
+[4.10.1 2025-02-05]
 
 ### Added
+>>>>>>> Stashed changes
 - Faction Pen created for Dev use
 - Hangman's Cove Settlement Guards to core
 - Barak Runedar Standard Guards deployed
@@ -43,7 +51,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Big Game Hunter (BGH) Vicious spiders and cobra will now drop loot
 - Resolved a few BGH areas that were empty on spawn in
 - BGH issue where you could go into an occupied hunting zone resolved
-- Fixed bug with defender where defensive stance would activate and subsequently delete the effects of the stance.
+
 
 ## [4.9.0 - 2025-01-25]
 

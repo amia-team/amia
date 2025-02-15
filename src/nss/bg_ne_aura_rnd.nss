@@ -35,19 +35,19 @@ void main()
 
     object oNearestEnemy = GetNearestCreature(CREATURE_TYPE_IS_ALIVE,1,oCritter,1,CREATURE_TYPE_REPUTATION, REPUTATION_TYPE_ENEMY);
 
-    if((GetDistanceBetween(oCritter,oNearestEnemy) <= 5.0) && (GetLocalInt(oCritter, "spellcd") <= 0))
+    if((GetDistanceBetween(oCritter,oNearestEnemy) <= 5.0) && (GetLocalInt(oCritter, "spellcd") <= 0) && GetIsEnemy(oNearestEnemy,oCritter))
     {
       int nSwitch  = d6(1);
       string sSpeak;
 
       switch(nSwitch)
       {
-         case 1:   sSpeak = "<cûü >*Flicks its fingers towards the nearest enemy casting a Mass Blindess*</c>"; MassBlindDeaf(oCritter,oNearestEnemy); break;
-         case 2:   sSpeak = "<cûü >*Summons down a Fire Storm spell around him*</c>"; FireStorm(oCritter); break;
-         case 3:   sSpeak = "<cûü >*Flicks its fingers towards the nearest enemy casting a Mass Blindess*</c>"; MassBlindDeaf(oCritter,oNearestEnemy); break;
-         case 4:   sSpeak = "<cûü >*Flicks its fingers towards the nearest enemy casting a Mass Blindess*</c>"; MassBlindDeaf(oCritter,oNearestEnemy); break;
-         case 5:   sSpeak = "<cûü >*Summons down a Fire Storm spell around him*</c>"; FireStorm(oCritter); break;
-         case 6:   sSpeak = "<cûü >*Flicks its fingers towards the nearest enemy casting a Mass Blindess*</c>"; MassBlindDeaf(oCritter,oNearestEnemy); break;
+         case 1:   sSpeak = "<cûü >**Flicks its fingers towards the nearest enemy casting a Mass Blindess**</c>"; MassBlindDeaf(oCritter,oNearestEnemy); break;
+         case 2:   sSpeak = "<cûü >**Summons down a Fire Storm spell around him**</c>"; FireStorm(oCritter); break;
+         case 3:   sSpeak = "<cûü >**Flicks its fingers towards the nearest enemy casting a Mass Blindess**</c>"; MassBlindDeaf(oCritter,oNearestEnemy); break;
+         case 4:   sSpeak = "<cûü >**Flicks its fingers towards the nearest enemy casting a Mass Blindess**</c>"; MassBlindDeaf(oCritter,oNearestEnemy); break;
+         case 5:   sSpeak = "<cûü >**Summons down a Fire Storm spell around him**</c>"; FireStorm(oCritter); break;
+         case 6:   sSpeak = "<cûü >**Flicks its fingers towards the nearest enemy casting a Mass Blindess**</c>"; MassBlindDeaf(oCritter,oNearestEnemy); break;
          default:  break;
       }
 
@@ -94,7 +94,7 @@ void MassBlindDeaf( object oCritter, object oTarget )
             if (!MyResistSpell(OBJECT_SELF, oTargetFirst))
             {
                 //Make Fort save
-                if (!/*Fort Save*/ MySavingThrow(SAVING_THROW_FORT, oTarget, 30))
+                if (!/*Fort Save*/ MySavingThrow(SAVING_THROW_FORT, oTarget, 38))
                 {
                     //Apply the linked effects and the VFX impact
                     if( GetLocalInt( oTarget, "blind_immune" ) != 1 )

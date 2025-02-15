@@ -42,12 +42,12 @@ void main()
 
       switch(nSwitch)
       {
-         case 1:   sSpeak = "<cûü >**Flicks its fingers towards the nearest enemy casting a Mass Blindess**</c>"; MassBlindDeaf(oCritter,oNearestEnemy); break;
+         case 1:   sSpeak = "<cûü >**Flicks its fingers towards the nearest enemy casting Mass Blindness**</c>"; MassBlindDeaf(oCritter,oNearestEnemy); break;
          case 2:   sSpeak = "<cûü >**Summons down a Fire Storm spell around him**</c>"; FireStorm(oCritter); break;
-         case 3:   sSpeak = "<cûü >**Flicks its fingers towards the nearest enemy casting a Mass Blindess**</c>"; MassBlindDeaf(oCritter,oNearestEnemy); break;
-         case 4:   sSpeak = "<cûü >**Flicks its fingers towards the nearest enemy casting a Mass Blindess**</c>"; MassBlindDeaf(oCritter,oNearestEnemy); break;
+         case 3:   sSpeak = "<cûü >**Flicks its fingers towards the nearest enemy casting Mass Blindness**</c>"; MassBlindDeaf(oCritter,oNearestEnemy); break;
+         case 4:   sSpeak = "<cûü >**Flicks its fingers towards the nearest enemy casting Mass Blindness**</c>"; MassBlindDeaf(oCritter,oNearestEnemy); break;
          case 5:   sSpeak = "<cûü >**Summons down a Fire Storm spell around him**</c>"; FireStorm(oCritter); break;
-         case 6:   sSpeak = "<cûü >**Flicks its fingers towards the nearest enemy casting a Mass Blindess**</c>"; MassBlindDeaf(oCritter,oNearestEnemy); break;
+         case 6:   sSpeak = "<cûü >**Flicks its fingers towards the nearest enemy casting Mass Blindness**</c>"; MassBlindDeaf(oCritter,oNearestEnemy); break;
          default:  break;
       }
 

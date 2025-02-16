@@ -10,7 +10,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Blackguard Epic Fiendish Rest Menu selection added
 - RA and Beans DM areas added
 
-
 ### Changed
 - Lesser Planar Binding, Evil: Canoloth [Neutral] adjusted to be in line with other summons
 - Greater Planar Binding, Evil: Mezzeloth [Neutral] moved UP from planar binding, adjusted power
@@ -20,9 +19,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Gate 27+, Evil: Yagnaloth [Neutral] moved up from Gate 22-26, power adjusted
 - Vampiric regen scaling added to gate, feat adjustments, and claw fixes
 - Blackguard NE summon reworked into Ultroloth, utility CC summon
+- Trissa's name removed from sign in Wiltun's portal chamber
 
 ### Fixed
 - Fixed BGH desert area bug
+- Party trigger back in Underriver
+- Fix for Mishaeglan's quest in Caraigh's Old Shrine, cleaning up plcs/flags
 
 [4.10.1 2025-02-05]
 

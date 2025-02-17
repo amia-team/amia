@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Blackguard NE summon reworked into Ultroloth, utility CC summon
 - Trissa's name removed from sign in Wiltun's portal chamber
 - Blackguard CE summon buffed: 2 more AC, Self Conceal 3, and Acid damage on daggers instead of negative energy
+- Asabi, Bloated Basilisk boss nerfed to level appropriate
 
 ### Fixed
 - Fixed BGH desert area bug

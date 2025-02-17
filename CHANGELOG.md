@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Trissa's name removed from sign in Wiltun's portal chamber
 - Blackguard CE summon buffed: 2 more AC, Self Conceal 3, and Acid damage on daggers instead of negative energy
 - Asabi, Bloated Basilisk boss nerfed to level appropriate
+- Renamed 'Moonpier: Seer's Caves' > 'Moonpier: Community Center' (area refactor)
 
 ### Fixed
 - Fixed BGH desert area bug

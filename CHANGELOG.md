@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+
+### Changed
+
+
+### Fixed
+
+
+[4.11.0 2025-02-17]
+
+### Added
 - Blackguard Epic Fiendish Rest Menu selection added
 - RA and Beans DM areas added
 - Robe model 32 (Male Human Assassin phenotype)

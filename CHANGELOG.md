@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Blackguard Epic Fiendish Rest Menu selection added
 - RA and Beans DM areas added
 - Robe model 32 (Male Human Assassin phenotype)
+- Added player tools feat that gets added on login
+- Added beta preview of new associate chat tool (Bottled companions currently excluded)
+- Dev Feature: First pass at a new way to define and manage spells in C#
 
 ### Changed
 - Lesser Planar Binding, Evil: Canoloth [Neutral] adjusted to be in line with other summons
@@ -24,11 +27,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Blackguard CE summon buffed: 2 more AC, Self Conceal 3, and Acid damage on daggers instead of negative energy
 - Asabi, Bloated Basilisk boss nerfed to level appropriate
 - Renamed 'Moonpier: Seer's Caves' > 'Moonpier: Community Center' (area refactor)
+- Darkness now applies a blindness effect to monsters that are not protected via true seeing or ultravision
+- Removed playertools command
 
 ### Fixed
 - Fixed BGH desert area bug
 - Party trigger back in Underriver
 - Fix for Mishaeglan's quest in Caraigh's Old Shrine, cleaning up plcs/flags
+- Fixed saving throws in Player Tools
 
 [4.10.1 2025-02-05]
 

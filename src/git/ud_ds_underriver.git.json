@@ -1292,6 +1292,36 @@
                 "type": "cexostring",
                 "value": "travel_ud_trolls"
               }
+            },
+            {
+              "__struct_id": 0,
+              "Name": {
+                "type": "cexostring",
+                "value": "destination_rr"
+              },
+              "Type": {
+                "type": "dword",
+                "value": 3
+              },
+              "Value": {
+                "type": "cexostring",
+                "value": "travel_ud_trolls"
+              }
+            },
+            {
+              "__struct_id": 0,
+              "Name": {
+                "type": "cexostring",
+                "value": "destination_type"
+              },
+              "Type": {
+                "type": "dword",
+                "value": 1
+              },
+              "Value": {
+                "type": "int",
+                "value": 2
+              }
             }
           ]
         },
@@ -2785,7 +2815,7 @@
         },
         "XPosition": {
           "type": "float",
-          "value": 4.0708
+          "value": 4.0406
         },
         "YOrientation": {
           "type": "float",
@@ -2793,7 +2823,7 @@
         },
         "YPosition": {
           "type": "float",
-          "value": 20.4025
+          "value": 20.3805
         },
         "ZPosition": {
           "type": "float",
@@ -23259,7 +23289,7 @@
         },
         "DisarmDC": {
           "type": "byte",
-          "value": 10
+          "value": 0
         },
         "Faction": {
           "type": "dword",
@@ -23272,45 +23302,45 @@
               "__struct_id": 3,
               "PointX": {
                 "type": "float",
-                "value": -3.201
+                "value": -0.2115
               },
               "PointY": {
                 "type": "float",
-                "value": 2.3622
+                "value": -5.8569
               },
               "PointZ": {
                 "type": "float",
-                "value": 1.4333
+                "value": 0.025
               }
             },
             {
               "__struct_id": 3,
               "PointX": {
                 "type": "float",
-                "value": -3.2
+                "value": 5.9022
               },
               "PointY": {
                 "type": "float",
-                "value": 1.4233
+                "value": -5.7601
               },
               "PointZ": {
                 "type": "float",
-                "value": 1.4071
+                "value": 0.025
               }
             },
             {
               "__struct_id": 3,
               "PointX": {
                 "type": "float",
-                "value": -2.9803
+                "value": 5.5931
               },
               "PointY": {
                 "type": "float",
-                "value": 0.2833
+                "value": -0.0442
               },
               "PointZ": {
                 "type": "float",
-                "value": 1.4815
+                "value": 0.025
               }
             },
             {
@@ -23332,52 +23362,22 @@
               "__struct_id": 3,
               "PointX": {
                 "type": "float",
-                "value": 0.1745
+                "value": -0.1143
               },
               "PointY": {
                 "type": "float",
-                "value": 1.7727
+                "value": -5.7792
               },
               "PointZ": {
                 "type": "float",
-                "value": 0.1962
-              }
-            },
-            {
-              "__struct_id": 3,
-              "PointX": {
-                "type": "float",
-                "value": -0.5042
-              },
-              "PointY": {
-                "type": "float",
-                "value": 2.7729
-              },
-              "PointZ": {
-                "type": "float",
-                "value": 0.3644
-              }
-            },
-            {
-              "__struct_id": 3,
-              "PointX": {
-                "type": "float",
-                "value": -2.1377
-              },
-              "PointY": {
-                "type": "float",
-                "value": 2.904
-              },
-              "PointZ": {
-                "type": "float",
-                "value": 1.2424
+                "value": 0.025
               }
             }
           ]
         },
         "HighlightHeight": {
           "type": "float",
-          "value": 3.0
+          "value": 0.0
         },
         "KeyName": {
           "type": "cexostring",
@@ -23398,7 +23398,8 @@
         "LocalizedName": {
           "type": "cexolocstring",
           "value": {
-            "0": "Dungeon Tool System Master Trigger"
+            "0": "party_trigger",
+            "id": 14759
           }
         },
         "OnClick": {
@@ -23423,7 +23424,7 @@
         },
         "ScriptOnEnter": {
           "type": "resref",
-          "value": "dung_main"
+          "value": ""
         },
         "ScriptOnExit": {
           "type": "resref",
@@ -23435,11 +23436,11 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "swamptrogsDTS"
+          "value": "party_trigger"
         },
         "TemplateResRef": {
           "type": "resref",
-          "value": "dtsmastertrigger"
+          "value": "ds_party_trigger"
         },
         "TrapDetectable": {
           "type": "byte",
@@ -23447,7 +23448,7 @@
         },
         "TrapDetectDC": {
           "type": "byte",
-          "value": 10
+          "value": 0
         },
         "TrapDisarmable": {
           "type": "byte",
@@ -23469,273 +23470,13 @@
           "type": "int",
           "value": 0
         },
-        "VarTable": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Name": {
-                "type": "cexostring",
-                "value": "blockerCount"
-              },
-              "Type": {
-                "type": "dword",
-                "value": 1
-              },
-              "Value": {
-                "type": "int",
-                "value": 8
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Name": {
-                "type": "cexostring",
-                "value": "banBlocker2"
-              },
-              "Type": {
-                "type": "dword",
-                "value": 1
-              },
-              "Value": {
-                "type": "int",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Name": {
-                "type": "cexostring",
-                "value": "challengeCount"
-              },
-              "Type": {
-                "type": "dword",
-                "value": 1
-              },
-              "Value": {
-                "type": "int",
-                "value": 20
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Name": {
-                "type": "cexostring",
-                "value": "challengePercentage"
-              },
-              "Type": {
-                "type": "dword",
-                "value": 1
-              },
-              "Value": {
-                "type": "int",
-                "value": 15
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Name": {
-                "type": "cexostring",
-                "value": "doorwp"
-              },
-              "Type": {
-                "type": "dword",
-                "value": 1
-              },
-              "Value": {
-                "type": "int",
-                "value": 9
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Name": {
-                "type": "cexostring",
-                "value": "dungeon"
-              },
-              "Type": {
-                "type": "dword",
-                "value": 3
-              },
-              "Value": {
-                "type": "cexostring",
-                "value": "swamptrogs"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Name": {
-                "type": "cexostring",
-                "value": "hdoorCount"
-              },
-              "Type": {
-                "type": "dword",
-                "value": 1
-              },
-              "Value": {
-                "type": "int",
-                "value": 20
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Name": {
-                "type": "cexostring",
-                "value": "hdoorPercentage"
-              },
-              "Type": {
-                "type": "dword",
-                "value": 1
-              },
-              "Value": {
-                "type": "int",
-                "value": 15
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Name": {
-                "type": "cexostring",
-                "value": "level"
-              },
-              "Type": {
-                "type": "dword",
-                "value": 1
-              },
-              "Value": {
-                "type": "int",
-                "value": 6
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Name": {
-                "type": "cexostring",
-                "value": "trapCount"
-              },
-              "Type": {
-                "type": "dword",
-                "value": 1
-              },
-              "Value": {
-                "type": "int",
-                "value": 40
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Name": {
-                "type": "cexostring",
-                "value": "trapPercentage"
-              },
-              "Type": {
-                "type": "dword",
-                "value": 1
-              },
-              "Value": {
-                "type": "int",
-                "value": 30
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Name": {
-                "type": "cexostring",
-                "value": "triggerCount"
-              },
-              "Type": {
-                "type": "dword",
-                "value": 1
-              },
-              "Value": {
-                "type": "int",
-                "value": 2
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Name": {
-                "type": "cexostring",
-                "value": "banBlocker1"
-              },
-              "Type": {
-                "type": "dword",
-                "value": 1
-              },
-              "Value": {
-                "type": "int",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Name": {
-                "type": "cexostring",
-                "value": "blockerPercentage"
-              },
-              "Type": {
-                "type": "dword",
-                "value": 1
-              },
-              "Value": {
-                "type": "int",
-                "value": 100
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Name": {
-                "type": "cexostring",
-                "value": "banPLC"
-              },
-              "Type": {
-                "type": "dword",
-                "value": 1
-              },
-              "Value": {
-                "type": "int",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Name": {
-                "type": "cexostring",
-                "value": "banNPC"
-              },
-              "Type": {
-                "type": "dword",
-                "value": 1
-              },
-              "Value": {
-                "type": "int",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 0,
-              "Name": {
-                "type": "cexostring",
-                "value": "underdark"
-              },
-              "Type": {
-                "type": "dword",
-                "value": 1
-              },
-              "Value": {
-                "type": "int",
-                "value": 0
-              }
-            }
-          ]
-        },
         "XOrientation": {
           "type": "float",
           "value": 0.0
         },
         "XPosition": {
           "type": "float",
-          "value": 8.989100000000001
+          "value": 112.3122
         },
         "YOrientation": {
           "type": "float",
@@ -23743,7 +23484,7 @@
         },
         "YPosition": {
           "type": "float",
-          "value": 3.2907
+          "value": 100.9629
         },
         "ZOrientation": {
           "type": "float",

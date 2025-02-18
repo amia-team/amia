@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Blackguard Epic Fiendish Rest Menu selection added
 - RA and Beans DM areas added
+- Robe model 32 (Male Human Assassin phenotype)
 
 ### Changed
 - Lesser Planar Binding, Evil: Canoloth [Neutral] adjusted to be in line with other summons

@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Portal in Obsidian Isle: Calderis, North
+- Fredoc's (quest in Glinulan's Hold) speechwithquest string variable
 
 [4.11.0 2025-02-17]
 

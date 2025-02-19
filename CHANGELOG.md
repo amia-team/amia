@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Plot changes to
 	- Obsidian Isle: Volcano, Redwood Tribe Warren
+	- Moonper: Community Center
 
 ### Fixed
 - Portal in Obsidian Isle: Calderis, North

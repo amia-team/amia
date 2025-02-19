@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Hidden area in Obsidian Isle
+
+### Changed
+- Plot changes to
+	- Obsidian Isle: Volcano, Redwood Tribe Warren
+
+### Fixed
+- Portal in Obsidian Isle: Calderis, North
+
+[4.11.0 2025-02-17]
+
+### Added
 - Blackguard Epic Fiendish Rest Menu selection added
 - RA and Beans DM areas added
 - Robe model 32 (Male Human Assassin phenotype)

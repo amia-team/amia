@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+- Adjusted job nodes in:
+	- Traveller's Rest
+	- Kingdom of Kohlingen: Fort Cystana, Western Beach
+	- Skull Peaks: Trummels
+	- Obsidian Isle: Southeastern bay
+- Removed spawns from Kingdom of Kohlingen: Greengarden, Manor Grounds
+
+### Fixed
+
+[4.12.0 2025-02-20]
+
+### Fixed
+- Portal in Obsidian Isle: Calderis, North
 - Hidden area in Obsidian Isle
 
 ### Changed
@@ -25,6 +40,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Purple Worm's racial type (should be magical beast)
 - Favored Enemy for all racial types
 - Huge Leech faction to Hostile
+- Portal in Obsidian Isle: Calderis, North
+- Hidden area in Obsidian Isle
 
 [4.11.0 2025-02-17]
 

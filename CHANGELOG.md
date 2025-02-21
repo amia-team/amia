@@ -12,8 +12,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Plot changes to
 	- Obsidian Isle: Volcano, Redwood Tribe Warren
+	- Moonpier
 	- Moonper: Community Center
+	- Malarfang Forest: Northwest
+	- Malarfang Forest: Moonpier Outpost
 	- Ruathym: Ostland, Frygtmere North
+	- Ruathym: Ostland, Ostdur
 
 ### Fixed
 - Portal in Obsidian Isle: Calderis, North

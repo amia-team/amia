@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Portal in Obsidian Isle: Calderis, North
 - Fredoc's (quest in Glinulan's Hold) speechwithquest string variable
 - Purple Worm's racial type (should be magical beast)
+- Favored Enemy for all racial types
 
 [4.11.0 2025-02-17]
 

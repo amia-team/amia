@@ -13,12 +13,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Plot changes to
 	- Obsidian Isle: Volcano, Redwood Tribe Warren
 	- Moonper: Community Center
+	- Ruathym: Ostland, Frygtmere North
 
 ### Fixed
 - Portal in Obsidian Isle: Calderis, North
 - Fredoc's (quest in Glinulan's Hold) speechwithquest string variable
 - Purple Worm's racial type (should be magical beast)
 - Favored Enemy for all racial types
+- Huge Leech faction to Hostile
 
 [4.11.0 2025-02-17]
 

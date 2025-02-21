@@ -8,9 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-
 ### Changed
 
+### Fixed
+
+[4.12.0 2025-02-20]
 
 ### Fixed
 - Portal in Obsidian Isle: Calderis, North
@@ -32,6 +34,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Purple Worm's racial type (should be magical beast)
 - Favored Enemy for all racial types
 - Huge Leech faction to Hostile
+- Portal in Obsidian Isle: Calderis, North
+- Hidden area in Obsidian Isle
 
 [4.11.0 2025-02-17]
 

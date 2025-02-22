@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 Plot updates to:
 	- Kingdom of Kohlingen: Greengarden, Manor Grounds (spawn removal)
 	- East Coast: Sandy Beach (add guards/broken idol of Mystra)
+	- Underdark: Hollow Cavern (add guards)
 
 ### Fixed
 

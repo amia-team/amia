@@ -16,13 +16,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Kingdom of Kohlingen: Fort Cystana, Western Beach
 	- Skull Peaks: Trummels
 	- Obsidian Isle: Southeastern bay
-Plot updates to:
+- Plot updates to:
 	- Kingdom of Kohlingen: Greengarden, Manor Grounds (spawn removal)
 	- East Coast: Sandy Beach (add guards/broken idol of Mystra)
 	- Underdark: Hollow Cavern (add guards)
 	- Skull Peaks: Crouching Lemur Monastery
+	- Kingdom of Kohlingen: Gregory's Landing
 
 ### Fixed
+- Missing invasion variables in
+	- Forest of Despair: Northwest
+	- Forest of Despair: Moonpier Outpost
+	- Moonpier
 
 [4.12.0 2025-02-20]
 

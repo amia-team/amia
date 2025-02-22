@@ -14,7 +14,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Kingdom of Kohlingen: Fort Cystana, Western Beach
 	- Skull Peaks: Trummels
 	- Obsidian Isle: Southeastern bay
-- Removed spawns from Kingdom of Kohlingen: Greengarden, Manor Grounds
+Plot updates to:
+	- Kingdom of Kohlingen: Greengarden, Manor Grounds (spawn removal)
+	- East Coast: Sandy Beach (add guards/broken idol of Mystra)
 
 ### Fixed
 

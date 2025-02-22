@@ -97,6 +97,18 @@ void main()
             SetLocalString(activator, "settlementFull", "<cp|ÿ>Winya Ravana</c>");
             SetVariables(activator);
         }
+        if (settlement == 8){
+            SetLocalString(activator, "plcSet", "plc_solpurple");
+            SetLocalString(activator, "beaconColor", "<c¥¥¥>grey</c>");
+            SetLocalString(activator, "settlementFull", "<c¥¥¥>Gregory's Landing</c>");
+            SetVariables(activator);
+        }
+        else if (settlement == 40){
+            SetLocalString(activator, "plcSet", "plc_solorange");
+            SetLocalString(activator, "beaconColor", "<cÿÅy>gold</c>");
+            SetLocalString(activator, "settlementFull", "<cÿÅy>The Crouching Lemur Monastery</c>");
+            SetVariables(activator);
+        }
         else {
             SendMessageToAllDMs("Settlement name not entered correctly. Check the Beacon Activator's description for exact spelling and capitalization for the SetVarString command.");
         }

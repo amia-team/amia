@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Crouching Lemur and Gregory's Landing settlements to the Beacon script
+- Crouching Lemur beacon waypoint to the Beacon Activator item
 
 ### Changed
 - Adjusted job nodes in:
@@ -18,6 +20,7 @@ Plot updates to:
 	- Kingdom of Kohlingen: Greengarden, Manor Grounds (spawn removal)
 	- East Coast: Sandy Beach (add guards/broken idol of Mystra)
 	- Underdark: Hollow Cavern (add guards)
+	- Skull Peaks: Crouching Lemur Monastery
 
 ### Fixed
 

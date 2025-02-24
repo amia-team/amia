@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Underdark: Hollow Cavern (add guards)
 	- Skull Peaks: Crouching Lemur Monastery
 	- Kingdom of Kohlingen: Gregory's Landing
+	- Kingdom of Kohlingen: Gregory's Landing, Elaraliel Estate
 
 ### Fixed
 - Missing invasion variables in

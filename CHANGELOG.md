@@ -23,12 +23,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Skull Peaks: Crouching Lemur Monastery
 	- Kingdom of Kohlingen: Gregory's Landing
 	- Kingdom of Kohlingen: Gregory's Landing, Elaraliel Estate
+- Moved the Sandy Beach world boss to Troll Wall area
 
 ### Fixed
 - Missing invasion variables in
 	- Forest of Despair: Northwest
 	- Forest of Despair: Moonpier Outpost
 	- Moonpier
+	- Underdark: Bloodspear Keep
+- Floating sign in Moonpier: Community Center
 
 [4.12.0 2025-02-20]
 

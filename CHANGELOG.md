@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Moonpier
 	- Underdark: Bloodspear Keep
 - Floating sign in Moonpier: Community Center
+- Argent Keep adjustment: Lord Commander's Quarters > Regent's Quarters
 
 [4.12.0 2025-02-20]
 

@@ -7,10 +7,32 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Crouching Lemur and Gregory's Landing settlements to the Beacon script
+- Crouching Lemur beacon waypoint to the Beacon Activator item
 
 ### Changed
+- Adjusted job nodes in:
+	- Traveller's Rest
+	- Kingdom of Kohlingen: Fort Cystana, Western Beach
+	- Skull Peaks: Trummels
+	- Obsidian Isle: Southeastern bay
+- Plot updates to:
+	- Kingdom of Kohlingen: Greengarden, Manor Grounds (spawn removal)
+	- East Coast: Sandy Beach (add guards/broken idol of Mystra)
+	- Underdark: Hollow Cavern (add guards)
+	- Skull Peaks: Crouching Lemur Monastery
+	- Kingdom of Kohlingen: Gregory's Landing
+	- Kingdom of Kohlingen: Gregory's Landing, Elaraliel Estate
+- Moved the Sandy Beach world boss to Troll Wall area
 
 ### Fixed
+- Missing invasion variables in
+	- Forest of Despair: Northwest
+	- Forest of Despair: Moonpier Outpost
+	- Moonpier
+	- Underdark: Bloodspear Keep
+- Floating sign in Moonpier: Community Center
+- Argent Keep adjustment: Lord Commander's Quarters > Regent's Quarters
 
 [4.12.0 2025-02-20]
 

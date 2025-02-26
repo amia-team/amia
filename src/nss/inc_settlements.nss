@@ -42,7 +42,7 @@ const string SETTLEMENT_36 = "Traveller's Rest";
 const string SETTLEMENT_37 = "The Triumvir";
 const string SETTLEMENT_38 = "Winya Ravana";
 const string SETTLEMENT_39 = "Zanshibon";
-const string SETTLEMENT_40 = "Crouching Lemur Monastery";
+const string SETTLEMENT_40 = "The Crouching Lemur Monastery";
 
 //void main (){}
 

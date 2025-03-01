@@ -23,7 +23,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Skull Peaks: Crouching Lemur Monastery
 	- Kingdom of Kohlingen: Gregory's Landing
 	- Kingdom of Kohlingen: Gregory's Landing, Elaraliel Estate
+	- Amia Forest
 - Moved the Sandy Beach world boss to Troll Wall area
+- Updated some player housing
 
 ### Fixed
 - Missing invasion variables in

@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+[4.13.0 2025-03-02]
+### Added
 - Crouching Lemur and Gregory's Landing settlements to the Beacon script
 - Crouching Lemur beacon waypoint to the Beacon Activator item
 

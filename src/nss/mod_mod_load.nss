@@ -57,8 +57,6 @@ void main( ){
     DelayCommand(300.0,ExecuteScript("dc_timer",GetModule()));
     NWNX_Weapon_SetDevastatingCriticalEventScript("nwnx_ev_dev");
 
-    NWNX_Events_SubscribeEvent("NWNX_ON_COMBAT_MODE_ON", "sub_comb_on");
-    NWNX_Events_SubscribeEvent("NWNX_ON_COMBAT_MODE_OFF", "sub_comb_off");
     NWNX_Events_SubscribeEvent("NWNX_ON_UNPOLYMORPH_AFTER", "nwnx_unpoly_aftr");
     NWNX_Events_SubscribeEvent("NWNX_ON_POLYMORPH_BEFORE", "nwnx_poly_before");
     NWNX_Events_SubscribeEvent("NWNX_ON_STEALTH_ENTER_AFTER", "nwnx_hide_ent_af");
@@ -1045,32 +1043,32 @@ void SetSkyBoxes(){
 void InitialiseColours(){
 
     SetCustomToken( 5100, "</c>" ); // CLOSE tag
-    SetCustomToken( 5101, "<cþ  >" ); // red
-    SetCustomToken( 5102, "<c þ >" ); // green
-    SetCustomToken( 5103, "<cR¤ÿ>" ); // blue
-    SetCustomToken( 5104, "<c þþ>" ); // cyan
-    SetCustomToken( 5105, "<cþ þ>" ); // magenta
-    SetCustomToken( 5106, "<cþþ >" ); // yellow
+    SetCustomToken( 5101, "<cï¿½  >" ); // red
+    SetCustomToken( 5102, "<c ï¿½ >" ); // green
+    SetCustomToken( 5103, "<cRï¿½ï¿½>" ); // blue
+    SetCustomToken( 5104, "<c ï¿½ï¿½>" ); // cyan
+    SetCustomToken( 5105, "<cï¿½ ï¿½>" ); // magenta
+    SetCustomToken( 5106, "<cï¿½ï¿½ >" ); // yellow
     SetCustomToken( 5107, "<c   >" ); // black
-    SetCustomToken( 5108, "<c¥  >" ); // dark red
-    SetCustomToken( 5109, "<c ¥ >" ); // dark green
-    SetCustomToken( 5110, "<c |ÿ>" ); // dark blue
-    SetCustomToken( 5111, "<c ¥¥>" ); // dark cyan
-    SetCustomToken( 5112, "<c¥ ¥>" ); // dark magenta
-    SetCustomToken( 5113, "<c¥¥ >" ); // dark yellow
-    SetCustomToken( 5114, "<c¥¥¥>" ); // grey
+    SetCustomToken( 5108, "<cï¿½  >" ); // dark red
+    SetCustomToken( 5109, "<c ï¿½ >" ); // dark green
+    SetCustomToken( 5110, "<c |ï¿½>" ); // dark blue
+    SetCustomToken( 5111, "<c ï¿½ï¿½>" ); // dark cyan
+    SetCustomToken( 5112, "<cï¿½ ï¿½>" ); // dark magenta
+    SetCustomToken( 5113, "<cï¿½ï¿½ >" ); // dark yellow
+    SetCustomToken( 5114, "<cï¿½ï¿½ï¿½>" ); // grey
     SetCustomToken( 5115, "<c???>" ); // dark grey
-    SetCustomToken( 5116, "<cþ¥ >" ); // orange
-    SetCustomToken( 5117, "<cÔe >" ); // dark orange
+    SetCustomToken( 5116, "<cï¿½ï¿½ >" ); // orange
+    SetCustomToken( 5117, "<cï¿½e >" ); // dark orange
     SetCustomToken( 5118, "<cÚ¥#>" ); // brown
-    SetCustomToken( 5119, "<c¡q >" ); // dark brown
-    SetCustomToken( 5120, "<c¦ÿ©>" ); // Epic Loot green
-    SetCustomToken( 5121, "<c§iÿ>" ); // Dream Coin purple
-    SetCustomToken( 5122, "<c~Îë>" ); // Job System blue
-    SetCustomToken( 5123, "<c Í >" ); // Quest System green
-    SetCustomToken( 5124, "<cÿ×#>" ); // Epic Crafting gold
-    SetCustomToken( 5125, "<c¯âÿ>" ); // Djinn blue
-    SetCustomToken( 5126, "<cüz >" ); // Dungeon DTS orange
+    SetCustomToken( 5119, "<cï¿½q >" ); // dark brown
+    SetCustomToken( 5120, "<cï¿½ï¿½ï¿½>" ); // Epic Loot green
+    SetCustomToken( 5121, "<cï¿½iï¿½>" ); // Dream Coin purple
+    SetCustomToken( 5122, "<c~ï¿½ï¿½>" ); // Job System blue
+    SetCustomToken( 5123, "<c ï¿½ >" ); // Quest System green
+    SetCustomToken( 5124, "<cï¿½ï¿½#>" ); // Epic Crafting gold
+    SetCustomToken( 5125, "<cï¿½ï¿½ï¿½>" ); // Djinn blue
+    SetCustomToken( 5126, "<cï¿½z >" ); // Dungeon DTS orange
 }
 
 

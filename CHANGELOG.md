@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed some obsolete DM areas
 
 ### Fixed
+- Aura versus Alingment no longer stacks with itself for a bajillion SR.
 
 [4.13.0 2025-03-02]
 ### Added

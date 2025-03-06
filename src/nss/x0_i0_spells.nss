@@ -1486,6 +1486,23 @@ void doAura(int nAlign, int nVis1, int nVis2, int nDamageType)
     eLink = EffectLinkEffects(eLink, eDur2);
     eLink = EffectLinkEffects(eLink, eEvil);
 
+    // Tag effect
+    eLink = TagEffect(eLink, "auravsalignment");
+
+    // Loop and remove duplicates before reapplying
+    effect eLoop = GetFirstEffect(oPC);
+    
+    while (GetIsEffectValid(eLoop))
+    {
+        if(GetEffectTag(eLoop) == "auravsalignment")
+        {
+            RemoveEffect(oPC, eLoop);
+            break;
+        }
+            
+        eEffect = GetNextEffect(oPC);
+    }
+
     //Fire cast spell at event for the specified target
     SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, GetSpellId(), FALSE));
 

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- 1 Portrait
 
 ### Changed
 - Removed some obsolete DM areas
@@ -15,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Aura versus Alingment no longer stacks with itself for a bajillion SR
 - Exploding cat in Destrier Stables
+- Aeolosh's portrait (hopefully)
 
 [4.13.0 2025-03-02]
 ### Added

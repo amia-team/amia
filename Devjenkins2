@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            when {
+                expression {
+                    return params.Build == 'Yes' || params.Deploy == 'Yes'
+                }
+            }
+            steps {
+                echo 'Building..'
+                 script {
+                    sh "docker run --rm -t -u \$(id -u):\$(id -g) -e NWN_HOME=\$(pwd) -v \$(pwd):\$(pwd) -v \$(pwd):/nasher cltalmadge/nasher:1.1.1 pack dev --clean --verbose --yes"
+                    archiveArtifacts artifacts: 'AmiaDev.mod', followSymlinks: false
+                    sh 'sudo mv AmiaDev.mod /home/amia/dev_server/server2/modules;'
+                }
+            }
+        }
+        stage('Restart Dev Server') {
+            when {
+                expression {
+                    return params.Restart == 'Yes'
+                }
+            }
+            steps {
+                sh 'chmod +x deploy-dev2.sh'
+                sh './deploy-dev2.sh'
+            }
+        }
+    }
+    post {
+        always {
+             discordSend description: "Builder for Amia Dev module finished.", footer: "Build results for Amia Dev module", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: params.webhookURL
+        }
+    }
+}

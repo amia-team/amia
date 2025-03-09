@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Aura versus Alingment no longer stacks with itself for a bajillion SR
 - Exploding cat in Destrier Stables
 - Aeolosh's portrait (hopefully)
+- Removed excessive Farmer nodes from Khem: Khalem
 
 [4.13.0 2025-03-02]
 ### Added

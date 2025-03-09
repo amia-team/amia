@@ -9,6 +9,7 @@
 
 //2009-05-15 Added scale down option
 //11-06-2017 Added in code to handle grappling hooks
+//March 1 2025 - Mav - Added in code for the post you rope to, to break
 
 
 //-------------------------------------------------------------------------------
@@ -90,7 +91,11 @@ int nCheckTargetLocationGrapplingHook( object oPC, location lTarget ){
     return TRUE;
 }
 
-
+void BreakTarget(object oTarget)
+{
+  AssignCommand( oTarget, SpeakString( "*breaks just as you finish roping over*" ) );
+  DestroyObject(oTarget,0.2);
+}
 //-------------------------------------------------------------------------------
 // main
 //-------------------------------------------------------------------------------
@@ -128,6 +133,10 @@ void main(){
                 AssignCommand( oPC, SpeakString( "*uses rope to get to "+GetStringLowerCase( GetName( oTarget ) )+"*" ) );
                 DelayCommand( 1.0, AssignCommand( oPC, JumpToObject( oTarget ) ) );
                 DelayCommand( 1.0, MoveAssociates( oPC, oTarget ) );
+                if(GetLocalInt(oTarget,"ds_break")==1)
+                {
+                 DelayCommand( 1.2, BreakTarget(oTarget));
+                }
             }
             else if ( GetIsPC( oTarget ) ){
 

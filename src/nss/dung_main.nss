@@ -169,7 +169,19 @@ void SpawnTraps(object oTrans, string sDungeon, int nLevel)
     string sWayPoint = GetTag(oWayPoint);
     location lWayPoint = GetLocation(oWayPoint);
 
-    if(nLevel>=25)
+    if(nLevel>=30)
+    {
+     nTrapType1=TRAP_BASE_TYPE_DEADLY_ACID;
+     nTrapType2=TRAP_BASE_TYPE_DEADLY_FIRE;
+     nTrapType3=TRAP_BASE_TYPE_DEADLY_ELECTRICAL;
+     nTrapType4=TRAP_BASE_TYPE_DEADLY_FIRE;
+     nTrapType5=TRAP_BASE_TYPE_EPIC_FROST;
+     nTrapType6=TRAP_BASE_TYPE_DEADLY_TANGLE;
+     nTrapType7=TRAP_BASE_TYPE_EPIC_SONIC;
+     nTrapType8=TRAP_BASE_TYPE_DEADLY_SPIKE;
+     nTrapType9=TRAP_BASE_TYPE_EPIC_SONIC;
+    }
+    else if(nLevel>=25)
     {
      nTrapType1=TRAP_BASE_TYPE_DEADLY_ACID;
      nTrapType2=TRAP_BASE_TYPE_DEADLY_ACID_SPLASH;

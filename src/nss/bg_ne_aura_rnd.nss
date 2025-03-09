@@ -1,11 +1,11 @@
 //-----------------------------------------------------------------------------
 // header
 //-----------------------------------------------------------------------------
-//script:  gbbrng_aura_rnd
-//group:   gbbrng
-//used as: OnHeartbeat Aura script for Gibbering Mouther
-//date:    sept 21 2012
-//author:  Glim
+//script:  bg_ne_aura_rnd
+//group:   bg
+//used as: OnHeartbeat Aura script for NE BG Summon
+//date:    Feb 2025
+//author:  Maverick
 
 //-------------------------------------------------------------------------------
 // includes
@@ -28,8 +28,6 @@ void main()
 {
     object oCritter = GetAreaOfEffectCreator( OBJECT_SELF );
     location lCritter = GetLocation( oCritter );
-    int nAttacks = 1;
-    int nTargets = 1;
     object oTarget;
 
 

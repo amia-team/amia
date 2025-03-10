@@ -8,13 +8,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - 1 Portrait
-- 9 PLCs
+- 51 PLCs
 - 136 Door models
 - 27 Creature appearances (Human NPCs, horses)
 
 ### Changed
 - Removed some obsolete DM areas
 - Added an NPC to the Prancing Stallion in Gregory's Landing
+- Player housing update
+- Plot update to Fort Cystana: South
 
 ### Fixed
 - Aura versus Alingment no longer stacks with itself for a bajillion SR

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - 1 Portrait
+- 9 PLCs
 
 ### Changed
 - Removed some obsolete DM areas

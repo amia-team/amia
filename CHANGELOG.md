@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 1 Portrait
 - 9 PLCs
 - 136 Door models
+- 21 Creature appearances (Human NPCs)
 
 ### Changed
 - Removed some obsolete DM areas

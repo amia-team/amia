@@ -7,10 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-- 3 Portraits
+- 15 Portraits
 - 51 PLCs
 - 136 Door models
-- 66 Creature appearances (Human NPCs, horses, worms, aboleths, kobolds)
+- 76 Creature appearances (Witcher NPCs, horses, worms, kobolds, beetles, wild animals, Tiamat)
 
 ### Changed
 - Removed some obsolete DM areas
@@ -19,10 +19,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Plot update to Fort Cystana: South
 
 ### Fixed
-- Aura versus Alingment no longer stacks with itself for a bajillion SR
+- Aura versus Alignment no longer stacks with itself for a bajillion SR
 - Exploding cat in Destrier Stables
 - Aeolosh's portrait (hopefully)
 - Removed excessive Farmer nodes from Khem: Khalem
+- Emerald Dragon and Hellfire Wyrm portraits
 
 [4.13.0 2025-03-02]
 ### Added

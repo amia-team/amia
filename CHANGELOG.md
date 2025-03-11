@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-- 17 Portraits
+- 19 Portraits
 - 51 PLCs
 - 136 Door models
 - 77 Creature appearances (Witcher NPCs, horses, worms, kobolds, beetles, wild animals, Tiamat, Cat)
@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Aeolosh's portrait (hopefully)
 - Removed excessive Farmer nodes from Khem: Khalem
 - Emerald Dragon and Hellfire Wyrm portraits
+- Cat names in appearance.2da so they're alphabetical in Toolset for real
 
 [4.13.0 2025-03-02]
 ### Added

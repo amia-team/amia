@@ -7,10 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-- 1 Portrait
+- 3 Portraits
 - 51 PLCs
 - 136 Door models
-- 27 Creature appearances (Human NPCs, horses)
+- 66 Creature appearances (Human NPCs, horses, worms, aboleths, kobolds)
 
 ### Changed
 - Removed some obsolete DM areas

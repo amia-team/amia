@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 19 Portraits
 - 51 PLCs
 - 136 Door models
-- 77 Creature appearances (Witcher NPCs, horses, worms, kobolds, beetles, wild animals, Tiamat, Cat)
+- 82 Creature appearances (Witcher NPCs, horses, worms, kobolds, beetles, lots of animals, Tiamat)
 
 ### Changed
 - Removed some obsolete DM areas

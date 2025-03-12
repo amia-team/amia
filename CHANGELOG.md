@@ -7,10 +7,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- 19 Portraits
+- 51 PLCs
+- 136 Door models
+- 94 Creature appearances (Witcher NPCs, horses, worms, kobolds, beetles, lots of animals, Tiamat)
+- 14 VFX
 
 ### Changed
+- Removed some obsolete DM areas
+- Added an NPC to the Prancing Stallion in Gregory's Landing
+- Player housing update
+- Plot update to Fort Cystana: South
 
 ### Fixed
+- Aura versus Alignment no longer stacks with itself for a bajillion SR
+- Exploding cat in Destrier Stables
+- Aeolosh's portrait (hopefully)
+- Removed excessive Farmer nodes from Khem: Khalem
+- Emerald Dragon and Hellfire Wyrm portraits
+- Cat names in appearance.2da so they're alphabetical in Toolset for real
 
 [4.13.0 2025-03-02]
 ### Added

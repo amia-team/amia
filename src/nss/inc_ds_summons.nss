@@ -1218,6 +1218,7 @@ void sum_SD_Shadow( object oPC, location lTarget )
     SetModuleOverrideSpellScriptFinished();
 }
 
+
 // Function to apply SD summon buffs
 void sd_sum_skinchange(object oPC, float fDuration)
 {
@@ -1256,7 +1257,7 @@ void sd_sum_skinchange(object oPC, float fDuration)
     else
     {
       SetCreatureAppearanceType(oAssociate,nAppearance);
-      NWNX_Creature_SetGender(oAssociate,nGender);
+      SetGender(oAssociate,nGender);
       SetCreatureWingType(nWings,oAssociate);
       SetCreatureTailType(nTail,oAssociate);
       SetCreatureBodyPart(CREATURE_PART_RIGHT_FOOT,nRFoot,oAssociate);

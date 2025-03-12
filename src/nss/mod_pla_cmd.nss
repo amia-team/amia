@@ -711,7 +711,7 @@ void f_Gender(object oPC, string sOption, string sValue){
 
         oObj = GetNearestCreature( CREATURE_TYPE_PLAYER_CHAR, PLAYER_CHAR_NOT_PC, oPC );
     }
-        NWNX_Creature_SetGender ( oObj, gender );
+        SetGender ( oObj, gender );
 }
 
 void f_file( object oPC ){

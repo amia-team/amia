@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+[4.14.0 2025-03-11]
+### Added
 - 19 Portraits
 - 51 PLCs
 - 136 Door models

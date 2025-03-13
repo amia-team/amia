@@ -32,7 +32,7 @@ void main()
     string sType = GetLocalString(oCritter,"type");
 
 
-    if((GetLocalInt(oCritter, "shutdown") <= 0))
+    if((GetLocalInt(oCritter, "shutdown") <= 0) || (GetLocalInt(oTarget, "djinnihit") == 0))
     {
      ApplyEleEffect(oTarget,sType);
     }

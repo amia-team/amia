@@ -152,18 +152,18 @@ void RelockDoor(object oDoor, object oSourcePLC)
   object oOrb1 = GetObjectByTag("floatingorb1");
   object oOrb2 = GetObjectByTag("floatingorb2");
 
-  RemoveEffectVFX(oStatue1);
+  DelayCommand(0.1,RemoveEffectVFX(oStatue1));
   DeleteVariables(oStatue1);
-  RemoveEffectVFX(oStatue15);
+  DelayCommand(0.2,RemoveEffectVFX(oStatue15));
   DeleteVariables(oStatue15);
-  DelayCommand(0.5,ExecuteScript("laser_puz_remove",oStatue1));
-  DelayCommand(1.0,ExecuteScript("laser_puz_remove",oStatue15));
-  RemoveEffectVFX(oStart1);
-  RemoveEffectVFX(oStart2);
-  RemoveEffectVFX(oEnd1);
-  RemoveEffectVFX(oEnd2);
-  RemoveEffectVFX(oOrb1);
-  RemoveEffectVFX(oOrb2);
+  DelayCommand(0.3,RemoveEffectVFX(oStart1));
+  DelayCommand(0.4,RemoveEffectVFX(oStart2));
+  DelayCommand(0.5,RemoveEffectVFX(oEnd1));
+  DelayCommand(0.6,RemoveEffectVFX(oEnd2));
+  DelayCommand(0.7,RemoveEffectVFX(oOrb1));
+  DelayCommand(0.8,RemoveEffectVFX(oOrb2));
+  DelayCommand(0.9,ExecuteScript("laser_puz_remove",oStatue1));
+  DelayCommand(1.5,ExecuteScript("laser_puz_remove",oStatue15));
 
   DelayCommand(6.0,ResetFacing(oStatue1,oStatue2,oStatue3,oStatue4,oStatue5,oStatue6,oStatue7,oStatue8,oStatue9,oStatue10,
   oStatue11,oStatue12,oStatue13,oStatue14,oStatue15,oStatue16));

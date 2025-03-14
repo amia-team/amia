@@ -26,7 +26,7 @@ void ApplyEleEffect(object oTarget, string sType);
 
 void main()
 {
-    object oCritter = GetAreaOfEffectCreator();
+    object oCritter = GetAreaOfEffectCreator(OBJECT_SELF);
     location lCritter = GetLocation( oCritter );
     object oTarget = GetEnteringObject();
     string sType = GetLocalString(oCritter,"type");

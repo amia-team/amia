@@ -12,7 +12,6 @@ void main()
   string sTag = GetLocalString(oPLC,"target");
   string sTagSource = GetTag(oPLC);
   object oTarget = GetObjectByTag(sTag);
-  //string sLaserTag = "lp"+sTagSource+sTag;
   string sTargetSource = GetLocalString(oTarget,"source");
 
   if(sTag == "")
@@ -30,7 +29,6 @@ void main()
      {
       DeleteLocalString(oTarget,"source");
       DeleteLocalInt(oTarget,"active");
-      //ExecuteScript("laser_puz_remove",oTarget);
      }
      DeleteLocalString(oPLC,"target");
 

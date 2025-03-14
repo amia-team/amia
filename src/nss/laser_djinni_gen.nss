@@ -10,6 +10,11 @@ void UnLockDoor(object oDoor, object oSourcePLC);
 
 void RelockDoor(object oDoor, object oSourcePLC);
 
+void ResetFacing(object oStatue1, object oStatue2, object oStatue3, object oStatue4, object oStatue5, object oStatue6, object oStatue7, object oStatue8, object oStatue9,
+object oStatue10, object oStatue11, object oStatue12, object oStatue13, object oStatue14, object oStatue15,  object oStatue16);
+
+
+void ResetAreaVariables(object oDoor, object oArea, object oSourcePLC);
 void DeleteVariables(object oTarget);
 
 void RemoveEffectVFX(object oTarget);
@@ -122,8 +127,6 @@ void UnLockDoor(object oDoor, object oSourcePLC)
 void RelockDoor(object oDoor, object oSourcePLC)
 {
   object oArea = GetArea(oDoor);
-  string sID1 = GetLocalString(oSourcePLC,"puzzleid1");
-  string sID2 = GetLocalString(oSourcePLC,"puzzleid2");
 
   object oStatue1 = GetObjectByTag("laser1");
   object oStatue2 = GetObjectByTag("laser2");
@@ -162,6 +165,16 @@ void RelockDoor(object oDoor, object oSourcePLC)
   RemoveEffectVFX(oOrb1);
   RemoveEffectVFX(oOrb2);
 
+  DelayCommand(6.0,ResetFacing(oStatue1,oStatue2,oStatue3,oStatue4,oStatue5,oStatue6,oStatue7,oStatue8,oStatue9,oStatue10,
+  oStatue11,oStatue12,oStatue13,oStatue14,oStatue15,oStatue16));
+
+  DelayCommand(12.0,ResetAreaVariables(oDoor,oArea,oSourcePLC));
+
+}
+
+void ResetFacing(object oStatue1, object oStatue2, object oStatue3, object oStatue4, object oStatue5, object oStatue6, object oStatue7, object oStatue8, object oStatue9,
+object oStatue10, object oStatue11, object oStatue12, object oStatue13, object oStatue14, object oStatue15,  object oStatue16)
+{
   SetFacing(0.0,oStatue1);
   SetFacing(0.0,oStatue2);
   SetFacing(0.0,oStatue3);
@@ -179,7 +192,12 @@ void RelockDoor(object oDoor, object oSourcePLC)
   SetFacing(180.0,oStatue14);
   SetFacing(180.0,oStatue15);
   SetFacing(180.0,oStatue16);
+}
 
+void ResetAreaVariables(object oDoor, object oArea, object oSourcePLC)
+{
+  string sID1 = GetLocalString(oSourcePLC,"puzzleid1");
+  string sID2 = GetLocalString(oSourcePLC,"puzzleid2");
 
   SetLocked(oDoor,TRUE);
   AssignCommand(oDoor,ActionSpeakString("<c ¿ >**The door relocks and the barrier appears again**</c>"));
@@ -189,7 +207,6 @@ void RelockDoor(object oDoor, object oSourcePLC)
   DeleteLocalInt(oArea,sID2);
   DeleteLocalInt(oSourcePLC,"active");
   DeleteLocalInt(oSourcePLC,"finished");
-
 }
 
 void DeleteVariables(object oTarget)

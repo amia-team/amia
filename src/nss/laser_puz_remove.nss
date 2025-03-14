@@ -28,10 +28,9 @@ void main()
      // If the source for the target you are moving off us is from you, delete it
      if(sTargetSource==GetTag(oPLC))
      {
-      //AssignCommand(oPLC,SpeakString("Source erase "+GetTag(oTarget)));
       DeleteLocalString(oTarget,"source");
       DeleteLocalInt(oTarget,"active");
-      ExecuteScript("laser_puz_remove",oTarget);
+      //ExecuteScript("laser_puz_remove",oTarget);
      }
      DeleteLocalString(oPLC,"target");
 
@@ -51,11 +50,7 @@ void RemoveEffectVFX(object oTarget)
   effect eLoop = GetFirstEffect(oTarget);
   while(GetIsEffectValid(eLoop))
   {
-     //if(GetEffectTag(eLoop)==sLaserTag)
-     //{
-      RemoveEffect(oTarget,eLoop);
-    //}
-
-   eLoop = GetNextEffect(oTarget);
+    RemoveEffect(oTarget,eLoop);
+    eLoop = GetNextEffect(oTarget);
   }
 }

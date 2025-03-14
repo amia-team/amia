@@ -163,12 +163,12 @@ void RelockDoor(object oDoor, object oSourcePLC)
   DelayCommand(0.7,RemoveEffectVFX(oOrb1));
   DelayCommand(0.8,RemoveEffectVFX(oOrb2));
   DelayCommand(0.9,ExecuteScript("laser_puz_remove",oStatue1));
-  DelayCommand(1.5,ExecuteScript("laser_puz_remove",oStatue15));
+ // DelayCommand(1.5,ExecuteScript("laser_puz_remove",oStatue15));
 
-  DelayCommand(6.0,ResetFacing(oStatue1,oStatue2,oStatue3,oStatue4,oStatue5,oStatue6,oStatue7,oStatue8,oStatue9,oStatue10,
-  oStatue11,oStatue12,oStatue13,oStatue14,oStatue15,oStatue16));
+ // DelayCommand(3.0,ResetFacing(oStatue1,oStatue2,oStatue3,oStatue4,oStatue5,oStatue6,oStatue7,oStatue8,oStatue9,oStatue10,
+ // oStatue11,oStatue12,oStatue13,oStatue14,oStatue15,oStatue16));
 
-  DelayCommand(9.0,ResetAreaVariables(oDoor,oArea,oSourcePLC));
+ // DelayCommand(4.0,ResetAreaVariables(oDoor,oArea,oSourcePLC));
 
 }
 

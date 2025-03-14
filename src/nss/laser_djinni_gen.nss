@@ -156,8 +156,8 @@ void RelockDoor(object oDoor, object oSourcePLC)
   DeleteVariables(oStatue1);
   RemoveEffectVFX(oStatue15);
   DeleteVariables(oStatue15);
-  ExecuteScript("laser_puz_remove",oStatue1);
-  ExecuteScript("laser_puz_remove",oStatue15);
+  DelayCommand(0.5,ExecuteScript("laser_puz_remove",oStatue1));
+  DelayCommand(1.0,ExecuteScript("laser_puz_remove",oStatue15));
   RemoveEffectVFX(oStart1);
   RemoveEffectVFX(oStart2);
   RemoveEffectVFX(oEnd1);
@@ -168,30 +168,31 @@ void RelockDoor(object oDoor, object oSourcePLC)
   DelayCommand(6.0,ResetFacing(oStatue1,oStatue2,oStatue3,oStatue4,oStatue5,oStatue6,oStatue7,oStatue8,oStatue9,oStatue10,
   oStatue11,oStatue12,oStatue13,oStatue14,oStatue15,oStatue16));
 
-  DelayCommand(12.0,ResetAreaVariables(oDoor,oArea,oSourcePLC));
+  DelayCommand(9.0,ResetAreaVariables(oDoor,oArea,oSourcePLC));
 
 }
 
 void ResetFacing(object oStatue1, object oStatue2, object oStatue3, object oStatue4, object oStatue5, object oStatue6, object oStatue7, object oStatue8, object oStatue9,
 object oStatue10, object oStatue11, object oStatue12, object oStatue13, object oStatue14, object oStatue15,  object oStatue16)
 {
-  SetFacing(0.0,oStatue1);
-  SetFacing(0.0,oStatue2);
-  SetFacing(0.0,oStatue3);
-  SetFacing(0.0,oStatue4);
-  SetFacing(0.0,oStatue9);
-  SetFacing(0.0,oStatue10);
-  SetFacing(0.0,oStatue11);
-  SetFacing(0.0,oStatue12);
 
-  SetFacing(180.0,oStatue5);
-  SetFacing(180.0,oStatue6);
-  SetFacing(180.0,oStatue7);
-  SetFacing(180.0,oStatue8);
-  SetFacing(180.0,oStatue13);
-  SetFacing(180.0,oStatue14);
-  SetFacing(180.0,oStatue15);
-  SetFacing(180.0,oStatue16);
+  DelayCommand(0.1,SetFacing(0.0,oStatue1));
+  DelayCommand(0.2,SetFacing(0.0,oStatue2));
+  DelayCommand(0.3,SetFacing(0.0,oStatue3));
+  DelayCommand(0.4,SetFacing(0.0,oStatue4));
+  DelayCommand(0.5,SetFacing(0.0,oStatue9));
+  DelayCommand(0.6,SetFacing(0.0,oStatue10));
+  DelayCommand(0.7,SetFacing(0.0,oStatue11));
+  DelayCommand(0.8,SetFacing(0.0,oStatue12));
+
+  DelayCommand(0.9,SetFacing(180.0,oStatue5));
+  DelayCommand(1.0,SetFacing(180.0,oStatue6));
+  DelayCommand(1.1,SetFacing(180.0,oStatue7));
+  DelayCommand(1.2,SetFacing(180.0,oStatue8));
+  DelayCommand(1.3,SetFacing(180.0,oStatue13));
+  DelayCommand(1.4,SetFacing(180.0,oStatue14));
+  DelayCommand(1.5,SetFacing(180.0,oStatue15));
+  DelayCommand(1.6,SetFacing(180.0,oStatue16));
 }
 
 void ResetAreaVariables(object oDoor, object oArea, object oSourcePLC)

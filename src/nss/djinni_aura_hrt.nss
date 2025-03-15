@@ -36,7 +36,7 @@ void main()
     while(GetIsObjectValid(oTarget))
     {
 
-      if((GetLocalInt(oCritter, "shutdown") <= 0) || (GetLocalInt(oTarget, "djinnihit") == 0))
+      if((GetLocalInt(oCritter, "shutdown") == 0) && (GetLocalInt(oTarget, "djinnihit") == 0))
       {
        ApplyEleEffect(oTarget,sType);
        SetLocalInt(oTarget, "djinnihit",1);

@@ -121,7 +121,7 @@ object HasKeyTwo(object oPC, object oSourcePLC)
 void UnLockDoor(object oDoor, object oSourcePLC)
 {
  SetLocked(oDoor,FALSE);
- DelayCommand(30.0,RelockDoor(oDoor,oSourcePLC));
+ DelayCommand(300.0,RelockDoor(oDoor,oSourcePLC));
 }
 
 void RelockDoor(object oDoor, object oSourcePLC)

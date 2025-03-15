@@ -7,8 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- New phenotypes for robes 33 and 216
 
 ### Changed
+- DM dummy area names 1-9 > 01-09
 
 ### Fixed
 

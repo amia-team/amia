@@ -62,7 +62,6 @@ void main( ){
     NWNX_Events_SubscribeEvent("NWNX_ON_STEALTH_ENTER_AFTER", "nwnx_hide_ent_af");
     NWNX_Events_SubscribeEvent("NWNX_ON_STEALTH_EXIT_AFTER", "nwnx_hide_ext_af");
     NWNX_Events_SubscribeEvent("NWNX_ON_CAST_SPELL_BEFORE", "sub_cast_before");
-    NWNX_Events_SubscribeEvent("NWNX_ON_HEALER_KIT_AFTER", "sub_healkit_af");
 
     // Variables
     object oModule = GetModule( );

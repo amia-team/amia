@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - DM dummy area names 1-9 > 01-09
+- Plot updates to
+	- Obsidian Isle: Calderis, Great Hall
+	- Obsidian Isle: Calderis, The Midnight Rose
+	- Obsidian Isle: Calderis, Thunderstrike's Demise
 
 ### Fixed
 

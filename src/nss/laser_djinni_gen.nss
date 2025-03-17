@@ -55,7 +55,7 @@ void main()
   else if(GetIsObjectValid(oKey1) && GetIsObjectValid(oKey2))
   {
     SetLocalInt(oSourcePLC,"active",1);
-    AssignCommand(oSourcePLC,ActionSpeakString("<c ¿ >**The statue shimmers and magic echos through the hall as beams of power are activated on either side of the statue. The keys lock into place.**</c>"));
+    AssignCommand(oSourcePLC,ActionSpeakString("<c ¿ >**The statue shimmers and magic echos through the hall as beams of power are activated on either side of the statue. The keys lock into place. You must complete each puzzle then return to the statue.**</c>"));
     DestroyObject(oKey1);
     DestroyObject(oKey2);
     StartPuzzle(oSourcePLC);

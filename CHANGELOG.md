@@ -8,9 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - New phenotypes for robes 33 and 216
+- New Djinni Temple (Puzzle centric dungeon)
 
 ### Changed
 - DM dummy area names 1-9 > 01-09
+- Removed Stoneshield Armors, Helmet of Seafolk, and Elemental Mastery Gloves (Will add to Epic Bin or another method in future)
+- Moved all Blistering Weapons to Abyss shop
 
 ### Fixed
 

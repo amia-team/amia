@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Obsidian Isle: Calderis, Thunderstrike's Demise
 
 ### Fixed
+- Hostile cantrips now correctly signal the target and remove caster's invis/sanctuary
 
 [4.14.0 2025-03-11]
 ### Added

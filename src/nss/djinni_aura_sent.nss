@@ -35,7 +35,7 @@ void main()
      return;
     }
 
-    if((GetSkillRank(SKILL_HIDE,oTarget)<60) && (GetSkillRank(SKILL_MOVE_SILENTLY,oTarget)<60) && (GetStealthMode(oTarget)==STEALTH_MODE_DISABLED))
+    if((GetSkillRank(SKILL_HIDE,oTarget)<60) || (GetSkillRank(SKILL_MOVE_SILENTLY,oTarget)<60) || (GetStealthMode(oTarget)==STEALTH_MODE_DISABLED))
     {
      if((GetLocalInt(oCritter, "shutdown") <= 0))
      {

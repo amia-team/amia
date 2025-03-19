@@ -14,7 +14,11 @@ void main()
     SetLocalObject(oPC,"laser",oPLC);
     float fFacing = GetFacing(oPLC);
 
-    if(fFacing <= 270.0)
+    if((fFacing == 0.0) || (fFacing == 360.0))
+    {
+     SetFacing(45.0,oPLC);
+    }
+    else if(fFacing <= 270.0)
     {
      SetFacing(fFacing+45.0,oPLC);
     }

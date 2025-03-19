@@ -10,6 +10,11 @@ void UnLockDoor(object oDoor, object oSourcePLC);
 
 void RelockDoor(object oDoor, object oSourcePLC);
 
+void ResetFacing(object oStatue1, object oStatue2, object oStatue3, object oStatue4, object oStatue5, object oStatue6, object oStatue7, object oStatue8, object oStatue9,
+object oStatue10, object oStatue11, object oStatue12, object oStatue13, object oStatue14, object oStatue15,  object oStatue16);
+
+
+void ResetAreaVariables(object oDoor, object oArea, object oSourcePLC);
 void DeleteVariables(object oTarget);
 
 void RemoveEffectVFX(object oTarget);
@@ -50,7 +55,7 @@ void main()
   else if(GetIsObjectValid(oKey1) && GetIsObjectValid(oKey2))
   {
     SetLocalInt(oSourcePLC,"active",1);
-    AssignCommand(oSourcePLC,ActionSpeakString("<c ¿ >**The statue shimmers and magic echos through the hall as beams of power are activated on either side of the statue. The keys lock into place.**</c>"));
+    AssignCommand(oSourcePLC,ActionSpeakString("<c ¿ >**The statue shimmers and magic echos through the hall as beams of power are activated on either side of the statue. The keys lock into place. You must complete each puzzle then return to the statue.**</c>"));
     DestroyObject(oKey1);
     DestroyObject(oKey2);
     StartPuzzle(oSourcePLC);
@@ -116,14 +121,12 @@ object HasKeyTwo(object oPC, object oSourcePLC)
 void UnLockDoor(object oDoor, object oSourcePLC)
 {
  SetLocked(oDoor,FALSE);
- DelayCommand(30.0,RelockDoor(oDoor,oSourcePLC));
+ DelayCommand(300.0,RelockDoor(oDoor,oSourcePLC));
 }
 
 void RelockDoor(object oDoor, object oSourcePLC)
 {
   object oArea = GetArea(oDoor);
-  string sID1 = GetLocalString(oSourcePLC,"puzzleid1");
-  string sID2 = GetLocalString(oSourcePLC,"puzzleid2");
 
   object oStatue1 = GetObjectByTag("laser1");
   object oStatue2 = GetObjectByTag("laser2");
@@ -149,18 +152,28 @@ void RelockDoor(object oDoor, object oSourcePLC)
   object oOrb1 = GetObjectByTag("floatingorb1");
   object oOrb2 = GetObjectByTag("floatingorb2");
 
-  RemoveEffectVFX(oStatue1);
+  DelayCommand(0.1,RemoveEffectVFX(oStatue1));
   DeleteVariables(oStatue1);
-  RemoveEffectVFX(oStatue15);
+  DelayCommand(0.2,RemoveEffectVFX(oStatue15));
   DeleteVariables(oStatue15);
-  ExecuteScript("laser_puz_remove",oStatue1);
-  ExecuteScript("laser_puz_remove",oStatue15);
-  RemoveEffectVFX(oStart1);
-  RemoveEffectVFX(oStart2);
-  RemoveEffectVFX(oEnd1);
-  RemoveEffectVFX(oEnd2);
-  RemoveEffectVFX(oOrb1);
-  RemoveEffectVFX(oOrb2);
+  DelayCommand(0.3,RemoveEffectVFX(oStart1));
+  DelayCommand(0.4,RemoveEffectVFX(oStart2));
+  DelayCommand(0.5,RemoveEffectVFX(oEnd1));
+  DelayCommand(0.6,RemoveEffectVFX(oEnd2));
+  DelayCommand(0.7,RemoveEffectVFX(oOrb1));
+  DelayCommand(0.8,RemoveEffectVFX(oOrb2));
+  DelayCommand(0.9,ExecuteScript("laser_puz_remove",oStatue1));
+  DelayCommand(1.5,ExecuteScript("laser_puz_remove",oStatue15));
+
+  DelayCommand(2.0,ResetFacing(oStatue1,oStatue2,oStatue3,oStatue4,oStatue5,oStatue6,oStatue7,oStatue8,oStatue9,oStatue10,oStatue11,oStatue12,oStatue13,oStatue14,oStatue15,oStatue16));
+
+  DelayCommand(3.0,ResetAreaVariables(oDoor,oArea,oSourcePLC));
+
+}
+
+void ResetFacing(object oStatue1, object oStatue2, object oStatue3, object oStatue4, object oStatue5, object oStatue6, object oStatue7, object oStatue8, object oStatue9,
+object oStatue10, object oStatue11, object oStatue12, object oStatue13, object oStatue14, object oStatue15,  object oStatue16)
+{
 
   SetFacing(0.0,oStatue1);
   SetFacing(0.0,oStatue2);
@@ -179,7 +192,12 @@ void RelockDoor(object oDoor, object oSourcePLC)
   SetFacing(180.0,oStatue14);
   SetFacing(180.0,oStatue15);
   SetFacing(180.0,oStatue16);
+}
 
+void ResetAreaVariables(object oDoor, object oArea, object oSourcePLC)
+{
+  string sID1 = GetLocalString(oSourcePLC,"puzzleid1");
+  string sID2 = GetLocalString(oSourcePLC,"puzzleid2");
 
   SetLocked(oDoor,TRUE);
   AssignCommand(oDoor,ActionSpeakString("<c ¿ >**The door relocks and the barrier appears again**</c>"));
@@ -189,7 +207,6 @@ void RelockDoor(object oDoor, object oSourcePLC)
   DeleteLocalInt(oArea,sID2);
   DeleteLocalInt(oSourcePLC,"active");
   DeleteLocalInt(oSourcePLC,"finished");
-
 }
 
 void DeleteVariables(object oTarget)

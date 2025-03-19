@@ -27,7 +27,7 @@ void ApplyEleEffect(object oTarget, string sType);
 void main()
 {
 
-    object oCritter = GetAreaOfEffectCreator( OBJECT_SELF );
+    object oCritter = GetAreaOfEffectCreator(OBJECT_SELF);
     location lCritter = GetLocation( oCritter );
     string sType = GetLocalString(oCritter,"type");
 
@@ -36,9 +36,11 @@ void main()
     while(GetIsObjectValid(oTarget))
     {
 
-      if((GetLocalInt(oCritter, "shutdown") <= 0))
+      if((GetLocalInt(oCritter, "shutdown") == 0) && (GetLocalInt(oTarget, "djinnihit") == 0))
       {
        ApplyEleEffect(oTarget,sType);
+       SetLocalInt(oTarget, "djinnihit",1);
+       DelayCommand(6.0,DeleteLocalInt(oTarget,"djinnihit"));
       }
       //Get next target in the AOE
       oTarget = GetNextInPersistentObject();

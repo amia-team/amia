@@ -1,4 +1,5 @@
-# Change Log
+
+=# Change Log
 All notable changes to this project will be documented in this file.
  
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
@@ -8,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - New phenotypes for robes 33 and 216
+- New Djinni Temple (Puzzle centric dungeon)
 
 ### Changed
 - DM dummy area names 1-9 > 01-09
@@ -15,13 +17,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Obsidian Isle: Calderis, Great Hall
 	- Obsidian Isle: Calderis, The Midnight Rose
 	- Obsidian Isle: Calderis, Thunderstrike's Demise
-<<<<<<< Updated upstream
-=======
 - Removed Stoneshield Armors, Helmet of Seafolk, and Elemental Mastery Gloves (Will add to Epic Bin or another method in future)
 - Moved all Blistering Weapons to Abyss shop
 - Reduced Sandy Beach invasion density
 - Removed archers from Demon Invasion, lower spawn density
->>>>>>> Stashed changes
 
 ### Fixed
 - Bane spell and hostile cantrips now correctly signal the target and remove caster's invis/sanctuary

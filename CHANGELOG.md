@@ -15,6 +15,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Obsidian Isle: Calderis, Great Hall
 	- Obsidian Isle: Calderis, The Midnight Rose
 	- Obsidian Isle: Calderis, Thunderstrike's Demise
+<<<<<<< Updated upstream
+=======
+- Removed Stoneshield Armors, Helmet of Seafolk, and Elemental Mastery Gloves (Will add to Epic Bin or another method in future)
+- Moved all Blistering Weapons to Abyss shop
+- Reduced Sandy Beach invasion density
+- Removed archers from Demon Invasion, lower spawn density
+>>>>>>> Stashed changes
 
 ### Fixed
 - Bane spell and hostile cantrips now correctly signal the target and remove caster's invis/sanctuary

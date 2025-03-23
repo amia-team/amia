@@ -24,6 +24,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Bane spell and hostile cantrips now correctly signal the target and remove caster's invis/sanctuary
+- DTS pickpocket fixed. Checks to see if you have the skill before giving you +50. 
+- DTS doesnt give XP if you are level 30 once more 
+- Cav Horse Widget now displays the name of custom mount's names in the conversation window
+- Ancient Barrier Devices now use the proper VFX for their type
 
 [4.14.0 2025-03-11]
 ### Added

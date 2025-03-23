@@ -9,12 +9,15 @@ Edit: August 15th 2019 - Did a bug fix.
 #include "inc_ds_records"
 
 void LaunchConvo( object oPC);
+void SetCustomHorseTokens( object oPC);
 void SetCheck( object oPC, object oWidget);
 void AdjustHorse( object oPC, int nNode);
 
 void LaunchConvo( object oPC){
     SetLocalString(oPC,"ds_action","i_r_mountwidget");
+    SetCustomHorseTokens(oPC);
     AssignCommand(oPC, ActionStartConversation(oPC, "c_mountwidget", TRUE, FALSE));
+
 }
 
 
@@ -63,6 +66,20 @@ void main()
 
 }
 
+void SetCustomHorseTokens( object oPC)
+{
+  object oWidget = GetItemPossessedBy(oPC, "r_mountwidget");
+  SetCustomToken(696969101,GetLocalString(oWidget,"custom1Name"));
+  SetCustomToken(696969102,GetLocalString(oWidget,"custom2Name"));
+  SetCustomToken(696969103,GetLocalString(oWidget,"custom3Name"));
+  SetCustomToken(696969104,GetLocalString(oWidget,"custom4Name"));
+  SetCustomToken(696969105,GetLocalString(oWidget,"custom5Name"));
+  SetCustomToken(696969106,GetLocalString(oWidget,"custom6Name"));
+  SetCustomToken(696969107,GetLocalString(oWidget,"custom7Name"));
+  SetCustomToken(696969108,GetLocalString(oWidget,"custom8Name"));
+  SetCustomToken(696969109,GetLocalString(oWidget,"custom9Name"));
+  SetCustomToken(696969110,GetLocalString(oWidget,"custom10Name"));
+}
 
 void SetCheck( object oPC, object oWidget)
 {

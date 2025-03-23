@@ -123,10 +123,15 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
         SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank3) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
        }
      }
-     else if(nNode==4)   // Pickpocket has a +50 adjustment
+     else if(nNode==4)   // Pickpocket has a +50 adjustment if they have the skill
      {
         sSkill = "PICKPOCKET";
-        nDiceRollTotal = nDiceRoll + nSkillRank4 + 50;
+
+        nDiceRollTotal = nDiceRoll + nSkillRank4;
+        if(GetSkillRank(SKILL_PICK_POCKET,oPC,TRUE)>0)
+        {
+         nDiceRollTotal = nDiceRoll + nSkillRank4 + 50;
+        }
 
        if((nDiceRollTotal) >= nDC)
        {
@@ -203,10 +208,14 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
         SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank3) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
        }
      }
-     else if(nNode==4)    // Pickpocket has a +50 adjustment
+     else if(nNode==4)    // Pickpocket has a +50 adjustment if they have the skill
      {
         sSkill = "PICKPOCKET";
-        nDiceRollTotal = nDiceRoll + nSkillRank4 + 50;
+        nDiceRollTotal = nDiceRoll + nSkillRank4;
+        if(GetSkillRank(SKILL_PICK_POCKET,oPC,TRUE)>0)
+        {
+         nDiceRollTotal = nDiceRoll + nSkillRank4 + 50;
+        }
 
        if(nDiceRollTotal >= nDC)
        {
@@ -478,11 +487,15 @@ void RewardPC(object oPC, int nLevel, string sType, string sWaypoint)
 
 void GenerateXPForParty(object oPC, int nLevel)
 {
-   SetXP(oPC,(GetXP(oPC)+nLevel*75));
 
    object oPartyMember = GetFirstFactionMember(oPC,TRUE);
    object oArea = GetArea( oPC );
-   int nPCLevel;
+   int nPCLevel  = GetLevelByPosition(1,oPC)+GetLevelByPosition(2,oPC)+GetLevelByPosition(3,oPC);
+
+   if(nPCLevel < 30)
+   {
+    SetXP(oPC,(GetXP(oPC)+nLevel*75));
+   }
 
    while(GetIsObjectValid(oPartyMember)==TRUE)
    {

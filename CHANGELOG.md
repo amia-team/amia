@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Moved all Blistering Weapons to Abyss shop
 - Reduced Sandy Beach invasion density
 - Removed archers from Demon Invasion, lower spawn density
+- Ghoul Touch AOE now decreases 2 physical damage instead of 2 magical damage.
 
 ### Fixed
 - Bane spell and hostile cantrips now correctly signal the target and remove caster's invis/sanctuary
@@ -28,6 +29,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - DTS doesnt give XP if you are level 30 once more 
 - Cav Horse Widget now displays the name of custom mount's names in the conversation window
 - Ancient Barrier Devices now use the proper VFX for their type
+- Ghoul Touch AOE now correctly applies -2 AB.
 
 [4.14.0 2025-03-11]
 ### Added

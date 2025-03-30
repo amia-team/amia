@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Ancient Barrier Devices now use the proper VFX for their type
 - Ghoul Touch AOE now correctly applies -2 AB
 - Magic Missile and Shadow Magic Missile, if the caster has epic spell focus, now correctly check for an additional target
+- Infestation of Maggots no longer auto-succeeds against disease immune targets (apparently this was a thing all along!)
 
 [4.14.0 2025-03-11]
 ### Added

@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Reduced Sandy Beach invasion density
 - Removed archers from Demon Invasion, lower spawn density
 - Ghoul Touch AOE now decreases 2 physical damage instead of 2 magical damage
+- Shadow Conjuration, Greater Shadow Conjuration, and Shades now have the same metamagic options as the base spells
 
 ### Fixed
 - Bane spell and hostile cantrips now correctly signal the target and remove caster's invis/sanctuary

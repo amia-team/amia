@@ -1,4 +1,5 @@
-# Change Log
+
+=# Change Log
 All notable changes to this project will be documented in this file.
  
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
@@ -12,10 +13,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - DM dummy area names 1-9 > 01-09
+- Plot updates to
+	- Obsidian Isle: Calderis, Great Hall
+	- Obsidian Isle: Calderis, The Midnight Rose
+	- Obsidian Isle: Calderis, Thunderstrike's Demise
 - Removed Stoneshield Armors, Helmet of Seafolk, and Elemental Mastery Gloves (Will add to Epic Bin or another method in future)
 - Moved all Blistering Weapons to Abyss shop
+- Reduced Sandy Beach invasion density
+- Removed archers from Demon Invasion, lower spawn density
+- Ghoul Touch AOE now decreases 2 physical damage instead of 2 magical damage
+- Shadow Conjuration, Greater Shadow Conjuration, and Shades now have the same metamagic options as the base spells
 
 ### Fixed
+- Bane spell and hostile cantrips now correctly signal the target and remove caster's invis/sanctuary
+- DTS pickpocket fixed. Checks to see if you have the skill before giving you +50. 
+- DTS doesnt give XP if you are level 30 once more 
+- Cav Horse Widget now displays the name of custom mount's names in the conversation window
+- Ancient Barrier Devices now use the proper VFX for their type
+- Ghoul Touch AOE now correctly applies -2 AB
+- Magic Missile and Shadow Magic Missile, if the caster has epic spell focus, now correctly check for an additional target
+- Infestation of Maggots no longer auto-succeeds against disease immune targets (apparently this was a thing all along!)
 
 [4.14.0 2025-03-11]
 ### Added

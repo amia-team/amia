@@ -42,30 +42,30 @@ void ActivateItem()
     if(GetLocalString(oDevice,"element")=="cold")
     {
      eNega = EffectDamageImmunityIncrease(DAMAGE_TYPE_COLD, 10);
-     effect eVFX1   = EffectVisualEffect(VFX_DUR_AURA_PULSE_CYAN_WHITE);
-     effect eVFX2   = EffectVisualEffect(VFX_DUR_GLOW_WHITE);
-     effect eVFX3   = EffectVisualEffect(VFX_IMP_PULSE_COLD);
+     eVFX1   = EffectVisualEffect(VFX_DUR_AURA_PULSE_CYAN_WHITE);
+     eVFX2   = EffectVisualEffect(VFX_DUR_GLOW_WHITE);
+     eVFX3   = EffectVisualEffect(VFX_IMP_PULSE_COLD);
     }
     else if(GetLocalString(oDevice,"element")=="electrical")
     {
      eNega = EffectDamageImmunityIncrease(DAMAGE_TYPE_ELECTRICAL, 10);
-     effect eVFX1   = EffectVisualEffect(VFX_DUR_AURA_PULSE_BLUE_WHITE);
-     effect eVFX2   = EffectVisualEffect(VFX_DUR_GLOW_BLUE);
-     effect eVFX3   = EffectVisualEffect(VFX_IMP_PULSE_WIND);
+     eVFX1   = EffectVisualEffect(VFX_DUR_AURA_PULSE_BLUE_WHITE);
+     eVFX2   = EffectVisualEffect(VFX_DUR_GLOW_BLUE);
+     eVFX3   = EffectVisualEffect(VFX_IMP_PULSE_WIND);
     }
     else if(GetLocalString(oDevice,"element")=="negative")
     {
      eNega = EffectDamageImmunityIncrease(DAMAGE_TYPE_NEGATIVE, 10);
-     effect eVFX1   = EffectVisualEffect(VFX_DUR_AURA_PULSE_PURPLE_BLACK);
-     effect eVFX2   = EffectVisualEffect(VFX_DUR_GLOW_PURPLE);
-     effect eVFX3   = EffectVisualEffect(VFX_IMP_PULSE_NEGATIVE);
+     eVFX1   = EffectVisualEffect(VFX_DUR_AURA_PULSE_PURPLE_BLACK);
+     eVFX2   = EffectVisualEffect(VFX_DUR_GLOW_PURPLE);
+     eVFX3   = EffectVisualEffect(VFX_IMP_PULSE_NEGATIVE);
     }
     else if(GetLocalString(oDevice,"element")=="acid")
     {
      eNega = EffectDamageImmunityIncrease(DAMAGE_TYPE_ACID, 10);
-     effect eVFX1   = EffectVisualEffect(VFX_DUR_AURA_PULSE_GREEN_BLACK);
-     effect eVFX2   = EffectVisualEffect(VFX_DUR_GLOW_GREEN);
-     effect eVFX3   = EffectVisualEffect(VFX_IMP_PULSE_NATURE);
+     eVFX1   = EffectVisualEffect(VFX_DUR_AURA_PULSE_GREEN_BLACK);
+     eVFX2   = EffectVisualEffect(VFX_DUR_GLOW_GREEN);
+     eVFX3   = EffectVisualEffect(VFX_IMP_PULSE_NATURE);
     }
     else if(GetLocalString(oDevice,"element")=="fire")
     {

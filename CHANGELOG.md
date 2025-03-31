@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+[4.15.0 2025-03-30]
+### Added
 - New phenotypes for robes 33 and 216
 - New Djinni Temple (Puzzle centric dungeon)
 

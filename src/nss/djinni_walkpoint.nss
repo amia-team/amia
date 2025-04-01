@@ -42,6 +42,7 @@ void main()
     eVis = TagEffect(eVis,"orbele");
     ApplyEffectToObject(DURATION_TYPE_PERMANENT,eVis,OBJECT_SELF);
 
+
     // Add in aura stuff
     effect eAura = EffectAreaOfEffect(AOE_MOB_SILENCE, "djinni_aura_ent","djinni_aura_hrt", "****");
     eAura = SupernaturalEffect(eAura);

@@ -32,8 +32,11 @@ void main()
     string sType = GetLocalString(oCritter,"type");
 
 
-    if((GetLocalInt(oCritter, "shutdown") == 0) && (GetLocalInt(oTarget, "djinnihit") == 0))
+    if((GetLocalInt(oCritter, "shutdown") == 0) && (GetLocalInt(oTarget, "djinnihitent") == 0))
     {
+     SetLocalInt(oTarget, "djinnihit",1);
+     SetLocalInt(oTarget, "djinnihitent",1);
+     DelayCommand(6.0,DeleteLocalInt(oTarget,"djinnihit"));
      ApplyEleEffect(oTarget,sType);
     }
 
@@ -85,5 +88,5 @@ void ApplyEleEffect(object oTarget, string sType)
 
    effect eDamage = EffectDamage(nDamage,nDamageType);
    ApplyEffectToObject(DURATION_TYPE_INSTANT,eDamage,oTarget);
-
+   DelayCommand(1.0,DeleteLocalInt(oTarget,"djinnihitent"));
 }

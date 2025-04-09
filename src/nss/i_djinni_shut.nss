@@ -25,7 +25,7 @@ void main()
   }
   else
   {
-    AssignCommand(GetItemActivator(),SpeakString("*Nothing happens*"));
+    FloatingTextStringOnCreature("*Nothing happens*", GetItemActivator(), FALSE, FALSE);
   }
 }
 

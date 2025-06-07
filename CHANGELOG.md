@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Made tridents affected by Weapon Finesse for Small characters (2-handed) just like Spear for Medium characters
+- Finished 1 player housing
 
 ### Fixed
 

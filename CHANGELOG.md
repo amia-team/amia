@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Some PLC positioning in a player house (OCD edition)
+- Changed a painting in a different player house
 
 [4.16.0 2025-06-07]
 ### Added

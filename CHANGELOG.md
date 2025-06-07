@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Trog lizards are slightly bigger
 
 ### Fixed
+- Some PLC positioning in a player house (OCD edition)
 
 [4.16.0 2025-06-07]
 ### Added

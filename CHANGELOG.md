@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - (Creature Type) Empathy widgets are all 3/Day now
+- Trog lizards are slightly bigger
 
 ### Fixed
 

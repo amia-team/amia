@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Finished 1 player housing
 
 ### Fixed
+- Put missing clothes back on a nanny
 
 [4.15.0 2025-03-30]
 ### Added

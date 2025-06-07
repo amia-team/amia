@@ -24,6 +24,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed a spell from all settlement mages, spawned and in-game
 - Ogrillon in Sandy Beach isn't T-posing anymore
 - Removed a buggy robe mounted pheno
+- Remove the No-PvP flag in Fortress Wiltun
+- Chromatic Crystal node in Plane of Elemental Earth: Glittering Cavern
 
 [4.15.0 2025-03-30]
 ### Added

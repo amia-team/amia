@@ -26,6 +26,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed a buggy robe mounted pheno
 - Remove the No-PvP flag in Fortress Wiltun
 - Chromatic Crystal node in Plane of Elemental Earth: Glittering Cavern
+- Fix the cost of a 10-stack of Rogue's Cunning potions
+- Removed Khem option from Sailor Ernods' dialogue in Fort Cystana: South
+- Mishnaeglen's Flower quest
 
 [4.15.0 2025-03-30]
 ### Added

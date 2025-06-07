@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+[4.16.0 2025-06-07]
+### Added
 - Undead guard for Bloodspear to palette
 
 ### Changed

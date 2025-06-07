@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Put missing clothes back on a nanny
+- Shifter Goblin Voodoo Stick appearance
 
 [4.15.0 2025-03-30]
 ### Added

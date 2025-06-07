@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Put missing clothes back on a nanny
 - Shifter Goblin Voodoo Stick appearance
+- Bloodspear monster NPCs are now evil monsters, and not CG humans
+- Corruptor of Fate (EMD Summon) is no longer naked
+- Removed a spell from some settlement mages
+- Ogrillon in Sandy Beach isn't T-posing anymore
 
 [4.15.0 2025-03-30]
 ### Added

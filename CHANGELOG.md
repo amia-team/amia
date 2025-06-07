@@ -16,6 +16,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Some PLC positioning in a player house (OCD edition)
 - Changed a painting in a different player house
+- Hunter Frog and Desert Beetle Matriarch voicesets
+- Maximus's bio no longer says it's on Amia
+- Khem: Anara Oasis secret door spawns correctly now
+- Hidden transition in Serpent Isle: Library is bigger now
+- Southport East medium rental home will go inside now
 
 [4.16.0 2025-06-07]
 ### Added

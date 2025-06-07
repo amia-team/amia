@@ -8,18 +8,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Undead guard for Bloodspear to palette
 
 ### Changed
 - Made tridents affected by Weapon Finesse for Small characters (2-handed) just like Spear for Medium characters
 - Finished 1 player housing
+- Bloodspear guards in the guard summoner area are updated and ready for leader use now
+- Invasions for all areas have been disabled
 
 ### Fixed
 - Put missing clothes back on a nanny
 - Shifter Goblin Voodoo Stick appearance
-- Bloodspear monster NPCs are now evil monsters, and not CG humans
+- Bloodspear monster NPCs (in-game and on palette) are now evil monsters, and not CG humans
 - Corruptor of Fate (EMD Summon) is no longer naked
-- Removed a spell from some settlement mages
+- Removed a spell from all settlement mages, spawned and in-game
 - Ogrillon in Sandy Beach isn't T-posing anymore
+- Removed a buggy robe mounted pheno
 
 [4.15.0 2025-03-30]
 ### Added

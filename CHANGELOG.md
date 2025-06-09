@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - 1 Player portrait
+- Monkey Grip feat (general feat, requires 13+ STR and +3 Base Attack Bonus)
 
 ### Changed
 - (Creature Type) Empathy widgets are all 3/Day now

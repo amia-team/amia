@@ -8,10 +8,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- 1 Player portrait
+- Monkey Grip feat (general feat, requires 13+ STR and +3 Base Attack Bonus)
 
 ### Changed
+- (Creature Type) Empathy widgets are all 3/Day now
+- Trog lizards are slightly bigger
+- Item/Creature/PLC palettes updated in-game
 
 ### Fixed
+- Some PLC positioning in a player house (OCD edition)
+- Changed a painting in a different player house
+- Hunter Frog and Desert Beetle Matriarch voicesets
+- Maximus's bio no longer says it's on Amia
+- Khem: Anara Oasis secret door spawns correctly now
+- Hidden transition in Serpent Isle: Library is bigger now
+- Southport East medium rental home will go inside now
+- Bloodspear Badge has a bio now
+- Removed an incorrectly locked door in Bloodspear Keep Interior
 
 [4.16.0 2025-06-07]
 ### Added

@@ -1464,7 +1464,7 @@ void doAura(int nAlign, int nVis1, int nVis2, int nDamageType)
     effect eSR = EffectSpellResistanceIncrease(13 + GetCasterLevel(OBJECT_SELF) + nFocusBonus); //Check if this is a bonus or a setting.
     effect eDur = EffectVisualEffect(nVis2);
     effect eDur2 = EffectVisualEffect(VFX_DUR_CESSATE_POSITIVE);
-    effect eEvil = EffectDamageShield((nDuration/2), DAMAGE_BONUS_1d6, nDamageType);
+    effect eEvil = EffectDamageShield((GetCasterLevel(OBJECT_SELF)/2), DAMAGE_BONUS_1d6, nDamageType);
 
 
     // * make them versus the alignment

@@ -28,6 +28,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed an incorrectly locked door in Bloodspear Keep Interior
 - Eldritch Spear no longer applies damage and effect to the main target twice
 - Eldritch Blast now crits instead of misses on rolling a 20 with touch attack
+- Warlock multisummoning is now less silly and uses actual summons instead of henchmen
+- (Let us know if other multisummoning is behaving poorly so we can update it to the new method!)
+- Aura of Alignment was mistakenly doubling on SR and damage shield when cast as extended - no more! 
 
 
 [4.16.0 2025-06-07]

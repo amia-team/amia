@@ -76,6 +76,62 @@ void main( ){
        }
     }
 
+    // Two hander bonus removal for small races
+    if(GetCreatureSize(oPC) == CREATURE_SIZE_SMALL)
+    {
+
+
+    if((oItemType == BASE_ITEM_BASTARDSWORD) || (oItemType == BASE_ITEM_BATTLEAXE) ||
+    (oItemType == BASE_ITEM_SCIMITAR) || (oItemType == BASE_ITEM_LONGSWORD) || (oItemType == BASE_ITEM_KATANA)
+    || (oItemType == BASE_ITEM_DWARVENWARAXE) || (oItemType == BASE_ITEM_MAGICSTAFF) || (oItemType == BASE_ITEM_CLUB)
+    || (oItemType == BASE_ITEM_LIGHTFLAIL) || (oItemType == BASE_ITEM_WARHAMMER) || (oItemType == BASE_ITEM_MORNINGSTAR)
+    || (oItemType == BASE_ITEM_RAPIER))
+    {
+
+         while(GetIsEffectValid(eLoop))
+         {
+          eLoopSpellID = GetEffectSpellId(eLoop);
+
+            if ((GetEffectTag(eLoop) == "twohanderbuff"))
+            {
+                 RemoveEffect(oPC, eLoop);
+            }
+
+                eLoop=GetNextEffect(oPC);
+         }
+
+
+    }
+
+    }
+    else
+    {
+
+
+    // Two hander bonus removal for medium races
+    if(((oItemType == BASE_ITEM_GREATAXE) || (oItemType == BASE_ITEM_GREATSWORD) ||
+    (oItemType == BASE_ITEM_HALBERD) || (oItemType == BASE_ITEM_SCYTHE) || (oItemType == BASE_ITEM_HEAVYFLAIL)
+     || (oItemType == BASE_ITEM_SHORTSPEAR)))  // Slashing
+    {
+
+         while(GetIsEffectValid(eLoop))
+         {
+          eLoopSpellID = GetEffectSpellId(eLoop);
+
+            if ((GetEffectTag(eLoop) == "twohanderbuff"))
+            {
+                 RemoveEffect(oPC, eLoop);
+            }
+
+                eLoop=GetNextEffect(oPC);
+         }
+
+    }
+
+    }
+
+
+
 
    // Crossbow PRC check - If crossbow is removed while feat is active strip effect
    if(((GetBaseItemType(oItem)== BASE_ITEM_HEAVYCROSSBOW) ||(GetBaseItemType(oItem)== BASE_ITEM_LIGHTCROSSBOW)) && (nClassCross >= 1))

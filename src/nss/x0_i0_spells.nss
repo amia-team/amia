@@ -1461,19 +1461,17 @@ void doAura(int nAlign, int nVis1, int nVis2, int nDamageType)
     {
         nFocusBonus = 6;
     }
-    effect eSR = EffectSpellResistanceIncrease(13+nDuration+nFocusBonus); //Check if this is a bonus or a setting.
+    effect eSR = EffectSpellResistanceIncrease(13 + GetCasterLevel(OBJECT_SELF) + nFocusBonus); //Check if this is a bonus or a setting.
     effect eDur = EffectVisualEffect(nVis2);
     effect eDur2 = EffectVisualEffect(VFX_DUR_CESSATE_POSITIVE);
-    effect eEvil = EffectDamageShield((nDuration/2), DAMAGE_BONUS_1d6, nDamageType);
+    effect eDamageShield = EffectDamageShield((GetCasterLevel(OBJECT_SELF)/2), DAMAGE_BONUS_1d6, nDamageType);
 
 
     // * make them versus the alignment
 
     eImmune = VersusAlignmentEffect(eImmune, ALIGNMENT_ALL, nAlign);
-    eSR = VersusAlignmentEffect(eSR,ALIGNMENT_ALL, nAlign);
     eAC =  VersusAlignmentEffect(eAC,ALIGNMENT_ALL, nAlign);
     eSave = VersusAlignmentEffect(eSave,ALIGNMENT_ALL, nAlign);
-    eEvil = VersusAlignmentEffect(eEvil,ALIGNMENT_ALL, nAlign);
 
     int DebugSpellResistance = GetSpellResistance (oTarget);
     SendMessageToPC (oTarget, "DEBUG: Spell Resistance is now - " +IntToString (DebugSpellResistance));
@@ -1484,7 +1482,7 @@ void doAura(int nAlign, int nVis1, int nVis2, int nDamageType)
     eLink = EffectLinkEffects(eLink, eSR);
     eLink = EffectLinkEffects(eLink, eDur);
     eLink = EffectLinkEffects(eLink, eDur2);
-    eLink = EffectLinkEffects(eLink, eEvil);
+    eLink = EffectLinkEffects(eLink, eDamageShield);
 
     // Tag effect
     eLink = TagEffect(eLink, "auravsalignment");

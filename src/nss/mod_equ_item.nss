@@ -14,6 +14,7 @@
 // 2022/09/11   Opustus     Fixed TWF AB bonus from +4 to +2 as intended
 // 2022/09/15   Opustus     Fixed Indomitable removed by (Lesser) Restoration
 // 2023/05/13   Opustus     Fixed light crossbow not working with Cav
+// 2025/06/16   Jes         Removed 2-Hander bonus and Indomitable
 
 //-------------------------------------------------------------------------------
 // includes
@@ -49,7 +50,6 @@ void main( ){
     effect eAB;
     effect eABOff;
     effect eDamage;
-    effect twoHanderBonus;
     effect eAC;
     effect eLink;
     effect eLoop                    = GetFirstEffect(oPC);
@@ -211,16 +211,9 @@ void main( ){
 
   }
 
-
-
-
-
-
-
     // Arbalest Check Bonuses
    if(((GetBaseItemType(oItem)== BASE_ITEM_HEAVYCROSSBOW) || (GetBaseItemType(oItem)== BASE_ITEM_LIGHTCROSSBOW)) && (nClassCross >= 1))
    {
-
            if(nClassCross >= 20)
            {
              nCrossDamageAndAB = 4;
@@ -269,7 +262,6 @@ void main( ){
      DeleteLocalInt(oPC,"monkprc");
 
     }
-
 
 
     // Two weapon fighter addition
@@ -356,8 +348,6 @@ void main( ){
 
     }
 
-    //
-
 
     // Cavalry bow additions - do not let them equip a bow unless they have the mounted archery feat and it is a shortbow or light crossbow.
     if((mounted == 1) && ((oItemType == BASE_ITEM_LONGBOW) || (oItemType == BASE_ITEM_THROWINGAXE) || (oItemType == BASE_ITEM_DART) || (oItemType == BASE_ITEM_SHURIKEN) || (oItemType == BASE_ITEM_HEAVYCROSSBOW)))
@@ -391,250 +381,6 @@ void main( ){
     int nAppearance = GetItemAppearance(armorInSlot, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_TORSO);
     int armorValue = StringToInt(Get2DAString("parts_chest", "ACBONUS", nAppearance));
     int isWearingHeavyArmor = armorValue >= 6;
-
-    // Two hander bonus for hins/small races + making sure there is no shield from MG
-    if(GetCreatureSize(oPC) == CREATURE_SIZE_SMALL  && !GetIsPolymorphed(oPC))
-    {
-
-    // Slashing
-    if(((oItemType == BASE_ITEM_BASTARDSWORD) || (oItemType == BASE_ITEM_BATTLEAXE) ||
-    (oItemType == BASE_ITEM_SCIMITAR) || (oItemType == BASE_ITEM_LONGSWORD) || (oItemType == BASE_ITEM_KATANA)
-    || (oItemType == BASE_ITEM_DWARVENWARAXE)) && (oOffItemType != BASE_ITEM_TOWERSHIELD) && (oOffItemType != BASE_ITEM_SMALLSHIELD)
-    && (oOffItemType != BASE_ITEM_LARGESHIELD))
-    {
-        eAB     = EffectAttackIncrease(2,ATTACK_BONUS_MISC);
-        eDamage;
-        if(!GetHasFeat(1246,oPC))
-        {
-          eDamage = EffectDamageIncrease(iDamage,DAMAGE_TYPE_SLASHING);
-        }
-
-        twoHanderBonus = EffectLinkEffects(eDamage, eAB);
-
-        // Indomitable, check for feat 1246
-        if(GetHasFeat(1246, oPC) && isWearingHeavyArmor)
-        {
-            effect acIncrease = EffectACIncrease(4, AC_SHIELD_ENCHANTMENT_BONUS);
-            effect reflexDecrease = EffectSavingThrowDecrease(SAVING_THROW_REFLEX, 3);
-
-            twoHanderBonus = EffectLinkEffects(twoHanderBonus, acIncrease);
-
-            reflexDecrease = SupernaturalEffect(reflexDecrease);
-            reflexDecrease = TagEffect(reflexDecrease, "twohanderbuff");
-            ApplyEffectToObject(DURATION_TYPE_PERMANENT, reflexDecrease, oPC);
-        }
-
-        twoHanderBonus = SupernaturalEffect(twoHanderBonus);
-        twoHanderBonus = TagEffect(twoHanderBonus,"twohanderbuff");
-        ApplyEffectToObject(DURATION_TYPE_PERMANENT, twoHanderBonus, oPC);
-
-    }// Bludgeoning
-    else if(((oItemType == BASE_ITEM_MAGICSTAFF) || (oItemType == BASE_ITEM_CLUB)
-    || (oItemType == BASE_ITEM_LIGHTFLAIL) || (oItemType == BASE_ITEM_WARHAMMER)) && (oOffItemType != BASE_ITEM_TOWERSHIELD)
-    && (oOffItemType != BASE_ITEM_SMALLSHIELD) && (oOffItemType != BASE_ITEM_LARGESHIELD))
-    {
-       eAB     = EffectAttackIncrease(2,ATTACK_BONUS_MISC);
-       eDamage;
-       if(!GetHasFeat(1246,oPC))
-       {
-         eDamage = EffectDamageIncrease(iDamage,DAMAGE_TYPE_BLUDGEONING);
-       }
-       twoHanderBonus = EffectLinkEffects(eDamage, eAB);
-
-        if(GetHasFeat(1246, oPC) && isWearingHeavyArmor)
-        {
-            effect acIncrease = EffectACIncrease(4, AC_SHIELD_ENCHANTMENT_BONUS);
-            effect reflexDecrease = EffectSavingThrowDecrease(SAVING_THROW_REFLEX, 3);
-
-            twoHanderBonus = EffectLinkEffects(twoHanderBonus, acIncrease);
-
-            reflexDecrease = SupernaturalEffect(reflexDecrease);
-            reflexDecrease = TagEffect(reflexDecrease, "twohanderbuff");
-            ApplyEffectToObject(DURATION_TYPE_PERMANENT, reflexDecrease, oPC);
-        }
-
-       twoHanderBonus = SupernaturalEffect(twoHanderBonus);
-       twoHanderBonus = TagEffect(twoHanderBonus,"twohanderbuff");
-       ApplyEffectToObject(DURATION_TYPE_PERMANENT, twoHanderBonus, oPC);
-
-
-    }// Blud/Pierc
-    else if(((oItemType == BASE_ITEM_MORNINGSTAR)) && (oOffItemType != BASE_ITEM_TOWERSHIELD) && (oOffItemType != BASE_ITEM_SMALLSHIELD)
-    && (oOffItemType != BASE_ITEM_LARGESHIELD))
-    {
-       eAB     = EffectAttackIncrease(2,ATTACK_BONUS_MISC);
-       eDamage;
-       if(!GetHasFeat(1246,oPC))
-       {
-         eDamage = EffectDamageIncrease(iDamage,DAMAGE_TYPE_PIERCING);
-       }
-       twoHanderBonus = EffectLinkEffects(eDamage, eAB);
-
-        if(GetHasFeat(1246, oPC) && isWearingHeavyArmor)
-        {
-            effect acIncrease = EffectACIncrease(4, AC_SHIELD_ENCHANTMENT_BONUS);
-            effect reflexDecrease = EffectSavingThrowDecrease(SAVING_THROW_REFLEX, 3);
-
-            twoHanderBonus = EffectLinkEffects(twoHanderBonus, acIncrease);
-
-            reflexDecrease = SupernaturalEffect(reflexDecrease);
-            reflexDecrease = TagEffect(reflexDecrease, "twohanderbuff");
-            ApplyEffectToObject(DURATION_TYPE_PERMANENT, reflexDecrease, oPC);
-        }
-       twoHanderBonus = SupernaturalEffect(twoHanderBonus);
-       twoHanderBonus = TagEffect(twoHanderBonus,"twohanderbuff");
-       ApplyEffectToObject(DURATION_TYPE_PERMANENT, twoHanderBonus, oPC);
-
-    } // Pierc
-    else if(((oItemType == BASE_ITEM_RAPIER)) && (oOffItemType != BASE_ITEM_TOWERSHIELD) && (oOffItemType != BASE_ITEM_SMALLSHIELD)
-    && (oOffItemType != BASE_ITEM_LARGESHIELD))
-    {
-       eAB     = EffectAttackIncrease(2,ATTACK_BONUS_MISC);
-       eDamage;
-       if(!GetHasFeat(1246,oPC))
-       {
-         eDamage = EffectDamageIncrease(iDamage,DAMAGE_TYPE_PIERCING);
-       }
-       twoHanderBonus = EffectLinkEffects(eDamage, eAB);
-
-        if(GetHasFeat(1246, oPC) && isWearingHeavyArmor)
-        {
-            effect acIncrease = EffectACIncrease(4, AC_SHIELD_ENCHANTMENT_BONUS);
-            effect reflexDecrease = EffectSavingThrowDecrease(SAVING_THROW_REFLEX, 3);
-
-            twoHanderBonus = EffectLinkEffects(twoHanderBonus, acIncrease);
-
-            reflexDecrease = SupernaturalEffect(reflexDecrease);
-            reflexDecrease = TagEffect(reflexDecrease, "twohanderbuff");
-            ApplyEffectToObject(DURATION_TYPE_PERMANENT, reflexDecrease, oPC);
-        }
-       twoHanderBonus = SupernaturalEffect(twoHanderBonus);
-       twoHanderBonus = TagEffect(twoHanderBonus,"twohanderbuff");
-       ApplyEffectToObject(DURATION_TYPE_PERMANENT, twoHanderBonus, oPC);
-    }
-
-
-
-
-
-
-    }
-    else if(!GetIsPolymorphed(oPC))
-    {
-    // Two hander bonus for normal pcs + making sure there is no shield from MG
-    if(((oItemType == BASE_ITEM_GREATAXE) || (oItemType == BASE_ITEM_GREATSWORD))
-    && (oOffItemType != BASE_ITEM_TOWERSHIELD) && (oOffItemType != BASE_ITEM_SMALLSHIELD)
-    && (oOffItemType != BASE_ITEM_LARGESHIELD))  // Slashing
-    {
-
-       eAB     = EffectAttackIncrease(2,ATTACK_BONUS_MISC);
-       eDamage;
-       if(!GetHasFeat(1246,oPC))
-       {
-         eDamage = EffectDamageIncrease(iDamage,DAMAGE_TYPE_SLASHING);
-       }
-       twoHanderBonus = EffectLinkEffects(eDamage, eAB);
-
-        if(GetHasFeat(1246, oPC) && isWearingHeavyArmor)
-        {
-            effect acIncrease = EffectACIncrease(4, AC_SHIELD_ENCHANTMENT_BONUS);
-            effect reflexDecrease = EffectSavingThrowDecrease(SAVING_THROW_REFLEX, 3);
-
-            twoHanderBonus = EffectLinkEffects(twoHanderBonus, acIncrease);
-
-            reflexDecrease = SupernaturalEffect(reflexDecrease);
-            reflexDecrease = TagEffect(reflexDecrease, "twohanderbuff");
-            ApplyEffectToObject(DURATION_TYPE_PERMANENT, reflexDecrease, oPC);
-        }
-        twoHanderBonus = SupernaturalEffect(twoHanderBonus);
-        twoHanderBonus = TagEffect(twoHanderBonus,"twohanderbuff");
-        ApplyEffectToObject(DURATION_TYPE_PERMANENT, twoHanderBonus, oPC);
-
-    }
-    else if(((oItemType == BASE_ITEM_SCYTHE) || (oItemType == BASE_ITEM_HALBERD))
-    && (oOffItemType != BASE_ITEM_TOWERSHIELD) && (oOffItemType != BASE_ITEM_SMALLSHIELD)
-    && (oOffItemType != BASE_ITEM_LARGESHIELD)) // Slashing + Pierce
-    {
-       eAB     = EffectAttackIncrease(2,ATTACK_BONUS_MISC);
-       eDamage;
-       if(!GetHasFeat(1246,oPC))
-       {
-         eDamage = EffectDamageIncrease(iDamage,DAMAGE_TYPE_PIERCING);
-       }
-       twoHanderBonus = EffectLinkEffects(eDamage, eAB);
-
-       twoHanderBonus = SupernaturalEffect(twoHanderBonus);
-        if(GetHasFeat(1246, oPC) && isWearingHeavyArmor)
-        {
-            effect acIncrease = EffectACIncrease(4, AC_SHIELD_ENCHANTMENT_BONUS);
-            effect reflexDecrease = EffectSavingThrowDecrease(SAVING_THROW_REFLEX, 3);
-
-            twoHanderBonus = EffectLinkEffects(twoHanderBonus, acIncrease);
-
-            reflexDecrease = SupernaturalEffect(reflexDecrease);
-            reflexDecrease = TagEffect(reflexDecrease, "twohanderbuff");
-            ApplyEffectToObject(DURATION_TYPE_PERMANENT, reflexDecrease, oPC);
-        }
-
-       twoHanderBonus = TagEffect(twoHanderBonus,"twohanderbuff");
-       ApplyEffectToObject(DURATION_TYPE_PERMANENT, twoHanderBonus, oPC);
-    }
-    else if((oItemType == BASE_ITEM_HEAVYFLAIL) && (oOffItemType != BASE_ITEM_TOWERSHIELD)
-    && (oOffItemType != BASE_ITEM_SMALLSHIELD) && (oOffItemType != BASE_ITEM_LARGESHIELD)) // Bludg
-    {
-       eAB     = EffectAttackIncrease(2,ATTACK_BONUS_MISC);
-       eDamage;
-       if(!GetHasFeat(1246,oPC))
-       {
-         eDamage = EffectDamageIncrease(iDamage,DAMAGE_TYPE_BLUDGEONING);
-       }
-       twoHanderBonus = EffectLinkEffects(eDamage, eAB);
-
-        if(GetHasFeat(1246, oPC) && isWearingHeavyArmor)
-        {
-            effect acIncrease = EffectACIncrease(4, AC_SHIELD_ENCHANTMENT_BONUS);
-            effect reflexDecrease = EffectSavingThrowDecrease(SAVING_THROW_REFLEX, 3);
-
-            twoHanderBonus = EffectLinkEffects(twoHanderBonus, acIncrease);
-
-            reflexDecrease = SupernaturalEffect(reflexDecrease);
-            reflexDecrease = TagEffect(reflexDecrease, "twohanderbuff");
-            ApplyEffectToObject(DURATION_TYPE_PERMANENT, reflexDecrease, oPC);
-        }
-        twoHanderBonus = SupernaturalEffect(twoHanderBonus);
-       twoHanderBonus = TagEffect(twoHanderBonus,"twohanderbuff");
-       ApplyEffectToObject(DURATION_TYPE_PERMANENT, twoHanderBonus, oPC);
-    }
-    else if((oItemType == BASE_ITEM_SHORTSPEAR) && (oOffItemType != BASE_ITEM_TOWERSHIELD)
-    && (oOffItemType != BASE_ITEM_SMALLSHIELD)
-    && (oOffItemType != BASE_ITEM_LARGESHIELD)) // Pierce
-    {
-       eAB     = EffectAttackIncrease(2,ATTACK_BONUS_MISC);
-       eDamage;
-       if(!GetHasFeat(1246,oPC))
-       {
-         eDamage = EffectDamageIncrease(iDamage,DAMAGE_TYPE_PIERCING);
-       }
-       twoHanderBonus = EffectLinkEffects(eDamage, eAB);
-
-        if(GetHasFeat(1246, oPC) && isWearingHeavyArmor)
-        {
-            effect acIncrease = EffectACIncrease(4, AC_SHIELD_ENCHANTMENT_BONUS);
-            effect reflexDecrease = EffectSavingThrowDecrease(SAVING_THROW_REFLEX, 3);
-
-            twoHanderBonus = EffectLinkEffects(twoHanderBonus, acIncrease);
-
-            reflexDecrease = SupernaturalEffect(reflexDecrease);
-            reflexDecrease = TagEffect(reflexDecrease, "twohanderbuff");
-            ApplyEffectToObject(DURATION_TYPE_PERMANENT, reflexDecrease, oPC);
-        }
-       twoHanderBonus = SupernaturalEffect(twoHanderBonus);
-       twoHanderBonus = TagEffect(twoHanderBonus,"twohanderbuff");
-       ApplyEffectToObject(DURATION_TYPE_PERMANENT, twoHanderBonus, oPC);
-    }
-    }
-
-
 
 
     if( GetIsDM( oPC ) ) WriteTimestampedLogEntry( GetPCPlayerName( oPC )+ " - mod_equ_item 32: OnEquip started for DM..." );

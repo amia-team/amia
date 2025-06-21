@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - (Creature Type) Empathy widgets are all 3/Day now
 - Trog lizards are slightly bigger
 - Item/Creature/PLC palettes updated in-game
+- Two-handed weapon bonus now works with polymorph effects (only affects Risen Lord)
+- Risen Lord strength decreased from 24 to 20 to counterbalance the two-handed bonus 
 
 ### Fixed
 - Some PLC positioning in a player house (OCD edition)
@@ -30,7 +32,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Eldritch Blast now crits instead of misses on rolling a 20 with touch attack
 - Warlock multisummoning is now less silly and uses actual summons instead of henchmen
 - (Let us know if other multisummoning is behaving poorly so we can update it to the new method!)
-- Aura of Alignment was mistakenly doubling on SR and damage shield when cast as extended - no more! 
+- Aura of Alignment no longer doubles SR and damage shield when cast as extended
+- Amia's two-handed bonus no longer has a rounding error that resulted in a slight loss of damage
+- Two-handed bonus now updates on strength loss and gain
 
 
 [4.16.0 2025-06-07]

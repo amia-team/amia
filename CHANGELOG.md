@@ -35,6 +35,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Aura of Alignment no longer doubles SR and damage shield when cast as extended
 - Amia's two-handed bonus no longer has a rounding error that resulted in a slight loss of damage
 - Two-handed bonus now updates on strength loss and gain
+- Owl's Wisdom is now applied while polymorphed (apparently this was a thing the whole time)
 
 
 [4.16.0 2025-06-07]

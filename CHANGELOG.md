@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
+[4.19.0 2025-06-07]
 ### Added
 - 1 Player portrait
 - Monkey Grip feat (general feat, requires 13+ STR and +3 Base Attack Bonus)
@@ -36,7 +37,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Amia's two-handed bonus no longer has a rounding error that resulted in a slight loss of damage
 - Two-handed bonus now updates on strength loss and gain
 - Owl's Wisdom is now applied while polymorphed (apparently this was a thing the whole time)
-
 
 [4.16.0 2025-06-07]
 ### Added

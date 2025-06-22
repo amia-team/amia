@@ -34,11 +34,10 @@ void AoE( int nAbility, object oTarget, float fDur, int nMeta, int nSpell ){
     while( GetIsObjectValid( oAOE ) ){
 
         if( GetIsReactionTypeFriendly( oAOE ) && !GetHasSpellEffect( nSpell, oAOE ) ){
-
-            if( !GetIsPolymorphed( oAOE ) ){
-                SignalEvent( oAOE, EventSpellCastAt( OBJECT_SELF, nSpell, FALSE ) );
-                ApplyEffectToObject( DURATION_TYPE_TEMPORARY, eLink, oAOE, fDur );
-            }
+        {
+            SignalEvent( oAOE, EventSpellCastAt( OBJECT_SELF, nSpell, FALSE ) );
+            ApplyEffectToObject( DURATION_TYPE_TEMPORARY, eLink, oAOE, fDur );
+        }
 
             ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectVisualEffect( VFX_IMP_IMPROVE_ABILITY_SCORE ), oAOE );
         }
@@ -82,16 +81,7 @@ void main()
         nTransmutation = 1;
     }
 
-    if( nTransmutation <= 1 ){
-        //Deny wisdom buffing on polymorphed people due to monkac neg ac
-        if( GetIsPolymorphed( oTarget ) ){
-            //Do dummy vfx instead, PHUN!
-            ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
-            return;
-        }
-
-    }
-    else if( nTransmutation == 2 ){
+    if( nTransmutation == 2 ){
         AoE( ABILITY_WISDOM, oTarget, NewHoursToSeconds( nDuration ), nMetaMagic, SPELL_OWLS_WISDOM );
         return;
     }

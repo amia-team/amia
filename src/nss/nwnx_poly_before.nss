@@ -28,7 +28,5 @@ void main( ){
      }
     
     SetLocalFloat(oPCKey, "presize", fPolySizePre);
-
-
 }
 

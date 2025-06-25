@@ -10,7 +10,6 @@ void main( ){
     object oPCKey       = GetItemPossessedBy(oPC, "ds_pckey");
     float fResize       = GetLocalFloat(oPCKey, "presize");
 
-    DelayCommand( 0.5, RestoreSpellState( oPC ) );
     SetObjectVisualTransform(oPC, OBJECT_VISUAL_TRANSFORM_SCALE, fResize);
 
     if(GetPCKEYValue(OBJECT_SELF,"lycanTailTransform")==1)

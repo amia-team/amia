@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+- Defensive Stance's effects are no longer removed when you lose the temporary HP
+
+
+[?????]
+### Added
 - 1 Player portrait
 - Monkey Grip feat (general feat, requires 13+ STR and +3 Base Attack Bonus)
 

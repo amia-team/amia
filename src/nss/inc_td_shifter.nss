@@ -46,7 +46,7 @@ effect EffectShifterProgressionACEffect( object oPC, effect eEffect ){
 
     int nShifterLevels = GetLevelByClass( CLASS_TYPE_SHIFTER ,oPC );
 
-    SendMessageToPC( oPC, "<c ï¿½ >Bonus AC:" );
+    SendMessageToPC( oPC, "<c þ >Bonus AC:" );
 
     int nWisdom = GetAbilityModifier( ABILITY_WISDOM, oPC );
     int nMonkLevel = GetLevelByClass( CLASS_TYPE_MONK, oPC );
@@ -55,115 +55,115 @@ effect EffectShifterProgressionACEffect( object oPC, effect eEffect ){
         if( nWisdom > nMonkLevel ) {
             nWisdom = nMonkLevel;
         }
-        SendMessageToPC( oPC, "<c ï¿½ >Monk AC: -"+IntToString( nWisdom ) );
+        SendMessageToPC( oPC, "<c þ >Monk AC: -"+IntToString( nWisdom ) );
         eEffect = EffectLinkEffects( EffectACDecrease( nWisdom, AC_SHIELD_ENCHANTMENT_BONUS ), eEffect );
     }
     if( nShifterLevels >= 17 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Natural: "+IntToString( 5 ) );
+        SendMessageToPC( oPC, "<c þ >Natural: "+IntToString( 5 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 5, AC_NATURAL_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 13 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Natural: "+IntToString( 4 ) );
+        SendMessageToPC( oPC, "<c þ >Natural: "+IntToString( 4 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 4, AC_NATURAL_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 9 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Natural: "+IntToString( 3 ) );
+        SendMessageToPC( oPC, "<c þ >Natural: "+IntToString( 3 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 3, AC_NATURAL_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 5 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Natural: "+IntToString( 2 ) );
+        SendMessageToPC( oPC, "<c þ >Natural: "+IntToString( 2 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 2, AC_NATURAL_BONUS ), eEffect );
     }
     else{
-        SendMessageToPC( oPC, "<c ï¿½ >Natural: "+IntToString( 1 ) );
+        SendMessageToPC( oPC, "<c þ >Natural: "+IntToString( 1 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 1, AC_NATURAL_BONUS ), eEffect );
     }
 
     if( nShifterLevels >= 18 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Deflection: "+IntToString( 5 ) );
+        SendMessageToPC( oPC, "<c þ >Deflection: "+IntToString( 5 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 5, AC_DEFLECTION_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 14 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Deflection: "+IntToString( 4 ) );
+        SendMessageToPC( oPC, "<c þ >Deflection: "+IntToString( 4 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 4, AC_DEFLECTION_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 10 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Deflection: "+IntToString( 3 ) );
+        SendMessageToPC( oPC, "<c þ >Deflection: "+IntToString( 3 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 3, AC_DEFLECTION_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 6 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Deflection: "+IntToString( 2 ) );
+        SendMessageToPC( oPC, "<c þ >Deflection: "+IntToString( 2 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 2, AC_DEFLECTION_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 2 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Deflection: "+IntToString( 1 ) );
+        SendMessageToPC( oPC, "<c þ >Deflection: "+IntToString( 1 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 1, AC_DEFLECTION_BONUS ), eEffect );
     }
 
     if( nShifterLevels >= 19 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Dodge: "+IntToString( 5 ) );
+        SendMessageToPC( oPC, "<c þ >Dodge: "+IntToString( 5 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 5, AC_DODGE_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 15 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Dodge: "+IntToString( 4 ) );
+        SendMessageToPC( oPC, "<c þ >Dodge: "+IntToString( 4 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 4, AC_DODGE_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 11 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Dodge: "+IntToString( 3 ) );
+        SendMessageToPC( oPC, "<c þ >Dodge: "+IntToString( 3 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 3, AC_DODGE_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 7 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Dodge: "+IntToString( 2 ) );
+        SendMessageToPC( oPC, "<c þ >Dodge: "+IntToString( 2 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 2, AC_DODGE_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 3 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Dodge: "+IntToString( 1 ) );
+        SendMessageToPC( oPC, "<c þ >Dodge: "+IntToString( 1 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 1, AC_DODGE_BONUS ), eEffect );
     }
 
     if( nShifterLevels >= 20 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Armor: "+IntToString( 5 ) );
+        SendMessageToPC( oPC, "<c þ >Armor: "+IntToString( 5 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 5, AC_ARMOUR_ENCHANTMENT_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 16 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Armor: "+IntToString( 4 ) );
+        SendMessageToPC( oPC, "<c þ >Armor: "+IntToString( 4 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 4, AC_ARMOUR_ENCHANTMENT_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 12 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Armor: "+IntToString( 3 ) );
+        SendMessageToPC( oPC, "<c þ >Armor: "+IntToString( 3 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 3, AC_ARMOUR_ENCHANTMENT_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 8 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Armor: "+IntToString( 2 ) );
+        SendMessageToPC( oPC, "<c þ >Armor: "+IntToString( 2 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 2, AC_ARMOUR_ENCHANTMENT_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 4 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Armor: "+IntToString( 1 ) );
+        SendMessageToPC( oPC, "<c þ >Armor: "+IntToString( 1 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 1, AC_ARMOUR_ENCHANTMENT_BONUS ), eEffect );
     }
 
     if( nShifterLevels >= 15 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Shield: "+IntToString( 8 ) );
+        SendMessageToPC( oPC, "<c þ >Shield: "+IntToString( 8 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 8, AC_SHIELD_ENCHANTMENT_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 12 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Shield: "+IntToString( 7 ) );
+        SendMessageToPC( oPC, "<c þ >Shield: "+IntToString( 7 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 7, AC_SHIELD_ENCHANTMENT_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 9 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Shield: "+IntToString( 6 ) );
+        SendMessageToPC( oPC, "<c þ >Shield: "+IntToString( 6 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 6, AC_SHIELD_ENCHANTMENT_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 6 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Shield: "+IntToString( 5 ) );
+        SendMessageToPC( oPC, "<c þ >Shield: "+IntToString( 5 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 5, AC_SHIELD_ENCHANTMENT_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 3 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Shield: "+IntToString( 4 ) );
+        SendMessageToPC( oPC, "<c þ >Shield: "+IntToString( 4 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 4, AC_SHIELD_ENCHANTMENT_BONUS ), eEffect );
     }
     else if( nShifterLevels >= 1 ){
-        SendMessageToPC( oPC, "<c ï¿½ >Shield: "+IntToString( 3 ) );
+        SendMessageToPC( oPC, "<c þ >Shield: "+IntToString( 3 ) );
         eEffect = EffectLinkEffects( EffectACIncrease( 3, AC_SHIELD_ENCHANTMENT_BONUS ), eEffect );
     }
 
@@ -244,7 +244,7 @@ effect EffectGearToAC( effect eReturn, object oPC ){
     nNatural    += nArmor;
     nSheild     += nBaseSheild;
 
-    SendMessageToPC( oPC, "<c ï¿½ >AC Merge: " );
+    SendMessageToPC( oPC, "<c þ >AC Merge: " );
 
     if( nWisdom > nMonkLevel ) {
         nWisdom = nMonkLevel;
@@ -252,38 +252,38 @@ effect EffectGearToAC( effect eReturn, object oPC ){
 
     if( nMonkAC && nWisdom > 0 ){
         eReturn = EffectLinkEffects( EffectACDecrease( nWisdom, AC_SHIELD_ENCHANTMENT_BONUS ), eReturn );
-        SendMessageToPC( oPC, "<c ï¿½ >Monk AC penalty: "+IntToString( nWisdom ) );
+        SendMessageToPC( oPC, "<c þ >Monk AC penalty: "+IntToString( nWisdom ) );
     }
 
     if( nDeflection > 0 ){
 
         eReturn = EffectLinkEffects( EffectACIncrease( nDeflection, AC_DEFLECTION_BONUS ), eReturn );
-        SendMessageToPC( oPC, "<c ï¿½ >Deflection: "+IntToString( nDeflection ) );
+        SendMessageToPC( oPC, "<c þ >Deflection: "+IntToString( nDeflection ) );
     }
 
     if( nNatural > 0 ){
 
         eReturn = EffectLinkEffects( EffectACIncrease( nNatural, AC_NATURAL_BONUS ), eReturn );
-        SendMessageToPC( oPC, "<c ï¿½ >Natural: "+IntToString( nNatural ) );
+        SendMessageToPC( oPC, "<c þ >Natural: "+IntToString( nNatural ) );
     }
 
     if( nDodge > 0 ){
 
         eReturn = EffectLinkEffects( EffectACIncrease( nDodge, AC_DODGE_BONUS ), eReturn );
-        SendMessageToPC( oPC, "<c ï¿½ >Dodge: "+IntToString( nDodge ) );
+        SendMessageToPC( oPC, "<c þ >Dodge: "+IntToString( nDodge ) );
     }
 
     if( nSheild > 0 ){
 
         eReturn = EffectLinkEffects( EffectACIncrease( nSheild, AC_SHIELD_ENCHANTMENT_BONUS ), eReturn );
-        SendMessageToPC( oPC, "<c ï¿½ >Shield: "+IntToString( nSheild ) );
+        SendMessageToPC( oPC, "<c þ >Shield: "+IntToString( nSheild ) );
     }
 
 
-    /*SendMessageToPC( oPC, "<c ï¿½ >Deflection: "+IntToString( nDeflection ) );
-    SendMessageToPC( oPC, "<c ï¿½ >Dodge: "+IntToString( nDodge ) );
-    SendMessageToPC( oPC, "<c ï¿½ >Sheild: "+IntToString( nSheild + nBaseSheild ) );
-    SendMessageToPC( oPC, "<c ï¿½ >Armor: "+IntToString( nBaseArmor + nArmor ) );*/
+    /*SendMessageToPC( oPC, "<c þ >Deflection: "+IntToString( nDeflection ) );
+    SendMessageToPC( oPC, "<c þ >Dodge: "+IntToString( nDodge ) );
+    SendMessageToPC( oPC, "<c þ >Sheild: "+IntToString( nSheild + nBaseSheild ) );
+    SendMessageToPC( oPC, "<c þ >Armor: "+IntToString( nBaseArmor + nArmor ) );*/
 
     return eReturn;
 }
@@ -323,22 +323,22 @@ void ShifterMerge( object oPC, object oOldWeapon, object oArmor, object oRing1, 
 
     if( GetIsObjectValid( oWeaponNew ) && GetIsObjectValid( oOldWeapon ) ){
 
-        SendMessageToPC( oPC, "<c ï¿½ >Merging "+GetName( oOldWeapon )+" with "+GetName( oWeaponNew )+"!" );
+        SendMessageToPC( oPC, "<c þ >Merging "+GetName( oOldWeapon )+" with "+GetName( oWeaponNew )+"!" );
         SetIdentified( oWeaponNew, TRUE );
         MergeItemProperties( oPC, oOldWeapon, oWeaponNew );
     }
     else if( ( GetIsObjectValid( oRClaw ) || GetIsObjectValid( oBite ) || GetIsObjectValid( oLClaw ) ) && GetIsObjectValid( oOldWeapon ) ){
 
         if( GetIsObjectValid( oRClaw ) ){
-            SendMessageToPC( oPC, "<c ï¿½ >Merging "+GetName( oOldWeapon )+" with right claw!" );
+            SendMessageToPC( oPC, "<c þ >Merging "+GetName( oOldWeapon )+" with right claw!" );
             MergeItemProperties( oPC, oOldWeapon, oRClaw );
         }
         if( GetIsObjectValid( oBite ) ){
-            SendMessageToPC( oPC, "<c ï¿½ >Merging "+GetName( oOldWeapon )+" with bite!" );
+            SendMessageToPC( oPC, "<c þ >Merging "+GetName( oOldWeapon )+" with bite!" );
             MergeItemProperties( oPC, oOldWeapon, oBite );
         }
         if( GetIsObjectValid( oLClaw ) ){
-            SendMessageToPC( oPC, "<c ï¿½ >Merging "+GetName( oOldWeapon )+" with left claw!" );
+            SendMessageToPC( oPC, "<c þ >Merging "+GetName( oOldWeapon )+" with left claw!" );
             MergeItemProperties( oPC, oOldWeapon, oLClaw );
         }
 
@@ -352,17 +352,17 @@ void ShifterMerge( object oPC, object oOldWeapon, object oArmor, object oRing1, 
             SetIdentified( oArmorNew, TRUE );
 
             if( GetIsObjectValid( oArmor ) ){
-                SendMessageToPC( oPC, "<c ï¿½ >Merging "+GetName( oArmor )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oArmor )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
                 MergeItemProperties( oPC, oArmor, oArmorNew );
             }
 
             if( GetIsObjectValid( oSheild ) ){
-                SendMessageToPC( oPC, "<c ï¿½ >Merging "+GetName( oSheild )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oSheild )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
                 MergeItemProperties( oPC, oSheild, oArmorNew );
             }
 
             if( GetIsObjectValid( oHelm ) ){
-                SendMessageToPC( oPC, "<c ï¿½ >Merging "+GetName( oHelm )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oHelm )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
                 MergeItemProperties( oPC, oHelm, oArmorNew );
             }
         }
@@ -374,37 +374,37 @@ void ShifterMerge( object oPC, object oOldWeapon, object oArmor, object oRing1, 
             SetIdentified( oArmorNew, TRUE );
 
             if( GetIsObjectValid( oRing1 ) ){
-                SendMessageToPC( oPC, "<c ï¿½ >Merging "+GetName( oRing1 )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oRing1 )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
                 MergeItemProperties( oPC, oRing1, oArmorNew );
             }
 
             if( GetIsObjectValid( oRing2 ) ){
-                SendMessageToPC( oPC, "<c ï¿½ >Merging "+GetName( oRing2 )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oRing2 )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
                 MergeItemProperties( oPC, oRing2, oArmorNew );
             }
 
             if( GetIsObjectValid( oAmulet ) ){
-                SendMessageToPC( oPC, "<c ï¿½ >Merging "+GetName( oAmulet )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oAmulet )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
                 MergeItemProperties( oPC, oAmulet, oArmorNew );
             }
 
             if( GetIsObjectValid( oCloak ) ){
-                SendMessageToPC( oPC, "<c ï¿½ >Merging "+GetName( oCloak )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oCloak )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
                 MergeItemProperties( oPC, oCloak, oArmorNew );
             }
 
             if( GetIsObjectValid( oBoots ) ){
-                SendMessageToPC( oPC, "<c ï¿½ >Merging "+GetName( oBoots )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oBoots )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
                 MergeItemProperties( oPC, oBoots, oArmorNew );
             }
 
             if( GetIsObjectValid( oBelt ) ){
-                SendMessageToPC( oPC, "<c ï¿½ >Merging "+GetName( oBelt )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oBelt )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
                 MergeItemProperties( oPC, oBelt, oArmorNew );
             }
 
             if( GetIsObjectValid( oHands ) ){
-                SendMessageToPC( oPC, "<c ï¿½ >Merging "+GetName( oHands )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
+                SendMessageToPC( oPC, "<c þ >Merging "+GetName( oHands )+" with "+GetInventorySlotName( INVENTORY_SLOT_CARMOUR )+"!" );
                 MergeItemProperties( oPC, oHands, oArmorNew );
             }
         }
@@ -416,6 +416,7 @@ effect EffectShifterEffect( effect eEffect, object oPC)
     object oSkin = GetItemInSlot(INVENTORY_SLOT_CARMOUR, OBJECT_SELF);
     int iCL = GetLevelByClass(CLASS_TYPE_DRUID, oPC) + GetLevelByClass(CLASS_TYPE_SHIFTER, oPC);
     if(iCL==0) iCL = -1; //Shouldn't be like this, but for now we don't want to mess with non-shifters
-    effect eReturn = SetEffectCasterLevel( eReturn, iCL);
+    effect eReturn = SetEffectCreator( eEffect, oSkin);
+    eReturn = SetEffectCasterLevel( eReturn, iCL);
     return eReturn;
 }

@@ -416,7 +416,6 @@ effect EffectShifterEffect( effect eEffect, object oPC)
     object oSkin = GetItemInSlot(INVENTORY_SLOT_CARMOUR, OBJECT_SELF);
     int iCL = GetLevelByClass(CLASS_TYPE_DRUID, oPC) + GetLevelByClass(CLASS_TYPE_SHIFTER, oPC);
     if(iCL==0) iCL = -1; //Shouldn't be like this, but for now we don't want to mess with non-shifters
-    effect eReturn;
-    eReturn = SetEffectCasterLevel( eReturn, iCL);
+    effect eReturn = SetEffectCasterLevel( eReturn, iCL);
     return eReturn;
 }

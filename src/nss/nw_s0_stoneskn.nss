@@ -63,8 +63,7 @@ void main()
         nAmount = 100;
     }
     //Meta Magic
-    if(GetIsPolymorphed(OBJECT_SELF)) {/* Disable metamagic if shifted */}
-    else if((GetMetaMagicFeat() == METAMAGIC_EXTEND))
+    if(GetMetaMagicFeat() == METAMAGIC_EXTEND)
     {
         nDuration *= 2;
     }
@@ -103,14 +102,7 @@ void main()
 
     RemoveEffectsFromSpell(oTarget, SPELL_STONESKIN);
 
-    //BH: If polymorphed, whatever they cast is created by their skin
-    if(GetIsPolymorphed( OBJECT_SELF )&&
-       !GetIsObjectValid(oCasterItem))
-    {
-        eLink = EffectShifterEffect( eLink, OBJECT_SELF);
-    }
-
     //Apply the linked effects.
     ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis2, oTarget);
-    ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oTarget, NewHoursToSeconds(nDuration));
+    ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oTarget, HoursToSeconds(nDuration));
 }

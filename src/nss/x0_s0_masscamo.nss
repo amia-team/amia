@@ -70,17 +70,10 @@ void NewDoCamoflage(object oTarget)
     effect eDur = EffectVisualEffect(VFX_DUR_CESSATE_POSITIVE);
     effect eLink = EffectLinkEffects(eHide, eDur);
 
-    //BH: If polymorphed, whatever they cast is created by their skin
-    if(GetIsPolymorphed( OBJECT_SELF )&&
-       !GetIsObjectValid(oCasterItem))
-    {
-        eLink = EffectShifterEffect( eLink, OBJECT_SELF);
-    }
-
     int nDuration = iCL;
     nDuration = 10 * nDuration; // * Duration 10 turn/level
-    if (GetIsPolymorphed(OBJECT_SELF)){/*Disable metamagic if shifted*/}
-    else if (nMetaMagic == METAMAGIC_EXTEND)    //Duration is +100%
+
+    if (nMetaMagic == METAMAGIC_EXTEND)    //Duration is +100%
     {
          nDuration = nDuration * 2;
     }

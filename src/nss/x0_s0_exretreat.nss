@@ -57,21 +57,14 @@ void main()
     int nMetaMagic = GetMetaMagicFeat();
     int iCL = GetIsObjectValid(oCasterItem)?GetCasterLevel(OBJECT_SELF):GetNewCasterLevel(OBJECT_SELF);
     int nDuration = iCL;
-    if (GetIsPolymorphed(OBJECT_SELF)){/*Disable metamagic if shifted*/}
-    else if (nMetaMagic == METAMAGIC_EXTEND)
+    
+    if (nMetaMagic == METAMAGIC_EXTEND)
     {
         nDuration = nDuration *2; //Duration is +100%
     }
 
     //Fire cast spell at event for the specified target
-    SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, 455, FALSE));
-
-    //BH: If polymorphed, whatever they cast is created by their skin
-    if(GetIsPolymorphed( OBJECT_SELF )&&
-       !GetIsObjectValid(oCasterItem))
-    {
-        eLink = EffectShifterEffect( eLink, OBJECT_SELF);
-    }
+    SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, SPELL_EXPEDITIOUS_RETREAT, FALSE));
 
     //Apply the VFX impact and effects
     ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oTarget, RoundsToSeconds(nDuration));

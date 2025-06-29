@@ -68,8 +68,7 @@ void main()
     nAbsorb = nAbsorb + nAbsorbBonus;
 
     //Enter Metamagic conditions
-    if (GetIsPolymorphed(OBJECT_SELF)){/*Disable metamagic if shifted*/}
-    else if (nMetaMagic == METAMAGIC_MAXIMIZE)
+    if (nMetaMagic == METAMAGIC_MAXIMIZE)
     {
         nAbsorb = 10 + nAbsorbBonus;//Damage is at max
     }
@@ -86,12 +85,6 @@ void main()
     effect eLink = EffectLinkEffects(eVis, eAbsob);
     eLink = EffectLinkEffects(eLink, eDur);
 
-    //BH: If polymorphed, whatever they cast is created by their skin
-    if(GetIsPolymorphed( OBJECT_SELF )&&
-       !GetIsObjectValid(oCasterItem))
-    {
-        eLink = EffectShifterEffect( eLink, OBJECT_SELF);
-    }
     //Fire cast spell at event for the specified target
     SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, SPELL_LESSER_SPELL_MANTLE, FALSE));
     RemoveEffectsFromSpell(oTarget, GetSpellId());

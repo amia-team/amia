@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Shifters no longer lose shape-casted spells upon unshifting
+- While polymorphed, Intensity, Rage and Ferocity monster abilities now buff two abilities as per the base spell
+- Polymorphing no longer has a cooldown
 
 ### Fixed
 - Defensive Stance's effects are no longer removed when you lose the temporary HP

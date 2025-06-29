@@ -37,12 +37,6 @@ void main()
     int nDuration   = nDruid;
     effect eSpeed = ExtraordinaryEffect(EffectMovementSpeedIncrease(20));
 
-    if(GetLocalInt(OBJECT_SELF,"POLY_COOLDOWN") == 1)
-    {
-      SendMessageToPC(OBJECT_SELF,"You must wait for the cool down to expire to shift again!");
-      return;
-    }
-
 
     int nElderAt = 12;
     if( nShifter > nDruid ){

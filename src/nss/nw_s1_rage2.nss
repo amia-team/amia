@@ -14,16 +14,7 @@
 
 #include "x2_i0_spells"
 #include "inc_td_shifter"
-int ShifterAbilityMod( ){
 
-    int nCon = GetAbilityModifier(ABILITY_CONSTITUTION);
-    int nStr = GetAbilityModifier(ABILITY_STRENGTH);
-
-    if( GetIsPolymorphed( OBJECT_SELF ) ){
-        return nCon > nStr ? nCon : nStr;
-    }
-    return nCon;
-}
 void main()
 {
     // Expertise/Improved Expertise disabling for Shifters
@@ -34,34 +25,23 @@ void main()
 
     //Declare major variables
     int nIncrease = 6;
-    //Determine the duration by getting the con modifier after being modified
-    int nCon = ShifterAbilityMod( );
-    nCon = (((GetAbilityScore(OBJECT_SELF, ABILITY_CONSTITUTION) - 10) + nIncrease )/2) + nCon;
+
     effect eDex = EffectAbilityIncrease(ABILITY_CONSTITUTION, nIncrease);
     effect eCon = EffectAbilityIncrease(ABILITY_STRENGTH, nIncrease);
     effect eDur = EffectVisualEffect(VFX_DUR_CESSATE_POSITIVE);
 
     effect eLink = EffectLinkEffects(eCon, eDex);
     eLink = EffectLinkEffects(eLink, eDur);
-
-    //BH: If polymorphed, whatever they cast is created by their skin
-    if(GetIsPolymorphed( OBJECT_SELF ))
-    {
-        eLink = EffectShifterEffect( eLink, OBJECT_SELF);
-    }
-
-    //Make effect extraordinary
     eLink = ExtraordinaryEffect(eLink);
-    //effect eVis = EffectVisualEffect(VFX_IMP_IMPROVE_ABILITY_SCORE);
-    SignalEvent(OBJECT_SELF, EventSpellCastAt(OBJECT_SELF, SPELLABILITY_RAGE_4, FALSE));
-    if (nCon > 0)
-    {
-        //Apply the VFX impact and effects
-        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, OBJECT_SELF, RoundsToSeconds(nCon));
-        //ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, OBJECT_SELF) ;
 
-        // 2003-07-08, Georg: Rage Epic Feat Handling
-        if( !GetIsPolymorphed( OBJECT_SELF ) )
-            CheckAndApplyEpicRageFeats(nCon);
-    }
+    int nCon = GetAbilityModifier(ABILITY_CONSTITUTION, OBJECT_SELF);
+    float fDuration = nCon > 1 ? RoundsToSeconds(nCon) : RoundsToSeconds(1);
+
+    SignalEvent(OBJECT_SELF, EventSpellCastAt(OBJECT_SELF, SPELLABILITY_RAGE_4, FALSE));
+    
+    ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, OBJECT_SELF, fDuration);
+
+    // 2003-07-08, Georg: Rage Epic Feat Handling
+    if( !GetIsPolymorphed( OBJECT_SELF ) )
+        CheckAndApplyEpicRageFeats(nCon);
 }

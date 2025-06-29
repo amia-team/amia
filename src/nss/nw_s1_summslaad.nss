@@ -24,20 +24,16 @@ void main()
         SetActionMode( OBJECT_SELF, ACTION_MODE_IMPROVED_EXPERTISE, FALSE );
 
     //Declare major variables
-    float fDuration;
     effect eSummon;
 
     if( GetIsPolymorphed( OBJECT_SELF ) )
     {
         eSummon = EffectSummonCreature("planar_1_n",VFX_FNF_SUMMON_MONSTER_3);
-        fDuration = RoundsToSeconds( GetNewCasterLevel( OBJECT_SELF ) );
-        eSummon = EffectShifterEffect( eSummon, OBJECT_SELF);
     }
     else
     {
         eSummon = EffectSummonCreature("NW_S_SLAADRED",VFX_FNF_SUMMON_MONSTER_3);
-        fDuration = NewHoursToSeconds(24);
     }
 
-    ApplyEffectAtLocation(DURATION_TYPE_TEMPORARY, eSummon, GetSpellTargetLocation(), fDuration );
+    ApplyEffectAtLocation(DURATION_TYPE_TEMPORARY, eSummon, GetSpellTargetLocation(), HoursToSeconds(24));
 }

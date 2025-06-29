@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [4.19.0 2025-06-07]
 ### Added
+
+### Changed
+- Shifters no longer lose shape-casted spells upon unshifting
+- While polymorphed, Intensity, Rage and Ferocity monster abilities now buff two abilities as per the base spell
+- Polymorphing no longer has a cooldown
+
+### Fixed
+- Defensive Stance's effects are no longer removed when you lose the temporary HP
+
+
+[?????]
+### Added
 - 1 Player portrait
 - Monkey Grip feat (general feat, requires 13+ STR and +3 Base Attack Bonus)
 

@@ -52,29 +52,21 @@ void main()
     effect eLink = EffectLinkEffects(eSkillAnimal, eMove);
     eLink = EffectLinkEffects(eLink, eHide);
     eLink = EffectLinkEffects(eLink, eSearch);
-
     eLink = EffectLinkEffects(eLink, eDur);
 
     int nDuration = GetIsObjectValid(oCasterItem)?GetCasterLevel(OBJECT_SELF):GetNewCasterLevel(OBJECT_SELF); // * Duration 1 hour/level
-    if (GetIsPolymorphed(OBJECT_SELF)){/*Disable metamagic if shifted*/}
-    else if (nMetaMagic == METAMAGIC_EXTEND)    //Duration is +100%
+    
+    if (nMetaMagic == METAMAGIC_EXTEND)    //Duration is +100%
     {
          nDuration = nDuration * 2;
     }
 
     //Fire spell cast at event for target
-    SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, 420, FALSE));
-
-        //BH: If polymorphed, whatever they cast is created by their skin
-    if(GetIsPolymorphed( OBJECT_SELF )&&
-       !GetIsObjectValid(oCasterItem))
-    {
-        eLink = EffectShifterEffect( eLink, OBJECT_SELF);
-    }
+    SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, SPELL_ONE_WITH_THE_LAND, FALSE));
 
     //Apply VFX impact and bonus effects
     ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
-    ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oTarget, NewHoursToSeconds(nDuration));
+    ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oTarget, HoursToSeconds(nDuration));
 
 }
 

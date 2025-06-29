@@ -47,24 +47,18 @@ void main()
     effect eImpact = EffectVisualEffect(VFX_FNF_LOS_NORMAL_30);
     int nMetaMagic = GetMetaMagicFeat();
     float fDelay;
-    int iCL = GetIsObjectValid(oCasterItem)?GetCasterLevel(OBJECT_SELF):GetNewCasterLevel(OBJECT_SELF);
+    
     //Determine spell duration as an integer for later conversion to Rounds, Turns or Hours.
+    int iCL = GetIsObjectValid(oCasterItem)?GetCasterLevel(OBJECT_SELF):GetNewCasterLevel(OBJECT_SELF);
     int nDuration = iCL;
+
     int nCount;
     location lSpell = GetSpellTargetLocation();
 
     //Meta Magic check for extend
-    if (GetIsPolymorphed(OBJECT_SELF)){/*Disable metamagic if shifted*/}
     if (nMetaMagic == METAMAGIC_EXTEND)
     {
         nDuration = nDuration *2;   //Duration is +100%
-    }
-
-    //BH: If polymorphed, whatever they cast is created by their skin
-    if(GetIsPolymorphed( OBJECT_SELF )&&
-       !GetIsObjectValid(oCasterItem))
-    {
-        eLink = EffectShifterEffect( eLink, OBJECT_SELF);
     }
 
     ApplyEffectAtLocation(DURATION_TYPE_INSTANT, eImpact, GetSpellTargetLocation());

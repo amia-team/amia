@@ -55,19 +55,11 @@ void main()
     int iCL = GetIsObjectValid(oCasterItem)?GetCasterLevel(OBJECT_SELF):GetNewCasterLevel(OBJECT_SELF);
     int nDuration = iCL;
     int nMetaMagic = GetMetaMagicFeat();
+    
     //Enter Metamagic conditions
-    if (GetIsPolymorphed(OBJECT_SELF)){/*Disable metamagic if shifted*/}
-    else if (nMetaMagic == METAMAGIC_EXTEND || GetHasFeat( FEAT_ILLUSION_DOMAIN_POWER, OBJECT_SELF) == TRUE || GetHasFeat( FEAT_GNOME_DOMAIN_POWER, OBJECT_SELF) == TRUE)
+    if (nMetaMagic == METAMAGIC_EXTEND || GetHasFeat( FEAT_ILLUSION_DOMAIN_POWER, OBJECT_SELF) == TRUE || GetHasFeat( FEAT_GNOME_DOMAIN_POWER, OBJECT_SELF) == TRUE)
     {
         nDuration = nDuration *2; //Duration is +100%
-    }
-
-    //BH: If polymorphed, whatever they cast is created by their skin
-    if(GetIsPolymorphed( OBJECT_SELF )&&
-       !GetIsObjectValid(oCasterItem))
-    {
-        eLink = EffectShifterEffect( eLink, OBJECT_SELF);
-        eInvis = EffectShifterEffect( eInvis, OBJECT_SELF);
     }
 
     //Apply the VFX impact and effects

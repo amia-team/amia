@@ -39,7 +39,7 @@ void main()
     if (!GetIsPC(OBJECT_SELF))
     {
         nDuration = GetHitDice(OBJECT_SELF);
-        nDamagePower =   DAMAGE_POWER_PLUS_TWENTY;
+        nDamagePower = DAMAGE_POWER_PLUS_TWENTY;
     }
     else // shifter
     {
@@ -59,14 +59,8 @@ void main()
     effect eDur = EffectVisualEffect(VFX_DUR_CESSATE_POSITIVE);
     effect eLink = EffectLinkEffects(eDam, eVis);
     eLink = EffectLinkEffects(eLink, eDur);
-
-    //BH: If polymorphed, whatever they cast is created by their skin
-    if(GetIsPolymorphed( OBJECT_SELF ))
-    {
-        eLink = EffectShifterEffect( eLink, OBJECT_SELF);
-    }
-
     eLink = ExtraordinaryEffect(eLink); // Is psionics, not affected by dispel magic
+    
     //Fire cast spell at event for the specified target
     SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, GetSpellId(), FALSE));
     effect eImpact = EffectVisualEffect(VFX_IMP_AC_BONUS);

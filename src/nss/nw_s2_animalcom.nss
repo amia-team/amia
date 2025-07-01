@@ -103,7 +103,7 @@ void Buff( object oPC )
     effect eGhost = EffectCutsceneGhost();
     ApplyEffectToObject(DURATION_TYPE_PERMANENT, eGhost, oAnimalCompanion);
 
-    SendMessageToPC( oPC, "<cþ þ>Bonuses added to companion:\n "      +
+    SendMessageToPC( oPC, "<cï¿½ ï¿½>Bonuses added to companion:\n "      +
     "+ "+IntToString( nCasterLevel / 2 ) + " Neutral AC.\n"           +
     "+ "+IntToString( nEnhancement ) + " Regeneration.\n"             +
     "+ "+IntToString( nEnhancement * 2 ) + " Attack.\n"               +
@@ -145,89 +145,57 @@ void EpicBuff( object oPC )
     eFreedom = EffectLinkEffects(eFreedom, eSlow);
     eFreedom = EffectLinkEffects(eFreedom, eMove);
 
+    // Do the buffs
     switch( nCompanionType )
     {
 
     // Badger = 0, Wolf = 1, Bear = 2, Boar = 3, Hawk = 4, Panther = 5, Spider = 6
     // Dire Wolf = 7, Dire Rat = 8, None = 255
 
-        case 0:
-        SetDescription(oAnimalCompanion,"Wyverns are vicious and deadly predators. Only an exceptional Druid or Ranger would be able to befriend one.");
-        SetCreatureAppearanceType(oAnimalCompanion,834); // Wyvern
-        SetCreatureTailType(490,oAnimalCompanion);
-        SetPortraitId(oAnimalCompanion,1040);
-        SetObjectVisualTransform(oAnimalCompanion,OBJECT_VISUAL_TRANSFORM_SCALE,0.7f,OBJECT_VISUAL_TRANSFORM_LERP_NONE);
-        nStr = 6; nCon = 6; nDex = 6; nHP = 200;
-        eBonus1 = EffectSkillIncrease(SKILL_DISCIPLINE,40);
-        break;
-        case 1:
-        SetDescription(oAnimalCompanion,"Displacer Beasts are evil creatures that most don't live long enough to tell about. It would take a terrifyingly skilled and special individual to claim one as their companion.");
-        SetCreatureAppearanceType(oAnimalCompanion,835);  // Displacer Beast   SPELLABILITY_HOWL_FEAR
-        SetCreatureTailType(595,oAnimalCompanion);
-        SetPortraitId(oAnimalCompanion,1052);
-        SetObjectVisualTransform(oAnimalCompanion,OBJECT_VISUAL_TRANSFORM_SCALE,0.8f,OBJECT_VISUAL_TRANSFORM_LERP_NONE);
-        nStr = 6; nCon = 6; nDex = 6; nHP = 200;
-        eBonus1 = EffectConcealment(50);
-        eBonus2 = EffectUltravision();
-        eBonus3 = EffectDamageIncrease(DAMAGE_BONUS_6,DAMAGE_TYPE_BLUDGEONING);
-        break;
-        case 2:
-        SetDescription(oAnimalCompanion,"Dire Bears are larger, more vicious versions of their common cousins. They are often found in the company of powerful rangers or druids.");
-        SetCreatureAppearanceType(oAnimalCompanion,1174); // Uber Dire Bear  1746
-        SetPortraitResRef(oAnimalCompanion, "po_phod_klar_");
-        nStr = 6; nCon = 12; nDex = 6; nHP = 300;
-        eBonus1 = EffectDamageIncrease(DAMAGE_BONUS_10,DAMAGE_TYPE_BLUDGEONING);
-        eBonus2 = EffectSkillIncrease(SKILL_DISCIPLINE,50);
-        break;
-        case 3:
-        SetDescription(oAnimalCompanion,"Quick, vicious and smart, Raptors make excellent companions as they do enjoy to hunt in company.");
-        SetCreatureAppearanceType(oAnimalCompanion,570); // Dinosaur - Small T-Rex skin
-        SetCreatureTailType(665,oAnimalCompanion);
-        SetPortraitId(oAnimalCompanion,1040);
-        nStr = 6; nCon = 6; nDex = 6; nHP = 200;
-        eBonus1 = EffectDamageIncrease(DAMAGE_BONUS_10,DAMAGE_TYPE_BLUDGEONING);
-        break;
-        case 4:
-        SetDescription(oAnimalCompanion,"Giant Eagles are terrifying raptors that can lift a full grown deer off the ground with ease. They are smart, fast, and have talons the size of human forearms.");
-        SetCreatureAppearanceType(oAnimalCompanion,914); // Giant Eagle
-        SetPortraitId(oAnimalCompanion,206);
-        nStr = 10; nCon = 6; nDex = 4; nHP = 200;
-        eBonus1 = EffectSkillIncrease(SKILL_SPOT,13);
-        eBonus2 = eFreedom;
-        eBonus3 = EffectDamageIncrease(DAMAGE_BONUS_5,DAMAGE_TYPE_PIERCING);
-        break;
-        case 5:
-        SetDescription(oAnimalCompanion,"Lions are one of the few social cats. Once their trust is earned they make excellent partners in hunts, and other coordinated activities.");
-        SetCreatureAppearanceType(oAnimalCompanion,967); // Male Lion
-        SetPortraitId(oAnimalCompanion,167);
-        nStr = 6; nCon = 8; nDex = 6; nHP = 200;
-        eBonus1 = EffectDamageImmunityIncrease(DAMAGE_TYPE_BLUDGEONING,10);
-        eBonus1 = EffectDamageImmunityIncrease(DAMAGE_TYPE_PIERCING,10);
-        eBonus1 = EffectDamageImmunityIncrease(DAMAGE_TYPE_SLASHING,10);
-        break;
-        case 6:
-        SetDescription(oAnimalCompanion,"Large, hungry, and venomous, beware the Gargantuan Spider and the one skilled enough to tame it.");
-        SetCreatureAppearanceType(oAnimalCompanion,856); // Giant Spider
-        SetCreatureTailType(590,oAnimalCompanion);
-        SetPortraitId(oAnimalCompanion,718);
-        nStr = 9; nCon = 6; nDex = 6; nHP = 200;
-        eBonus1 = EffectDamageIncrease(DAMAGE_BONUS_5,DAMAGE_TYPE_PIERCING);
-        eBonus2 = EffectDamageIncrease(DAMAGE_BONUS_2d6,DAMAGE_TYPE_ACID);
-        break;
-        case 7:
-        SetDescription(oAnimalCompanion,"Guardian Wolves are rare, massive, and intelligent super predators. They make indispensable lifelong companions.");
-        SetCreatureAppearanceType(oAnimalCompanion,1140); // Fenrir Wolf - Model being weird
-        SetPortraitId(oAnimalCompanion,321);
-        nStr = 10; nCon = 10; nDex = 10; nHP = 200;
-        eBonus1 = EffectDamageIncrease(DAMAGE_BONUS_10,DAMAGE_TYPE_BLUDGEONING);
-        break;
-        case 8:
-        SetDescription(oAnimalCompanion,"Giant Scorpions are armored beasts that kill, eat and do whatever they please. Stay away unless you are prepared to fight an almost unstoppable mass of armor, pincers, and stinger.");
-        SetCreatureAppearanceType(oAnimalCompanion,338); // Giant Scorpion
-        SetPortraitId(oAnimalCompanion,1040);
-        nStr = 8; nCon = 8; nDex = 8; nHP = 200;
-        eBonus1 = EffectDamageResistance(DAMAGE_TYPE_FIRE,10);
-        break;
+        case ANIMAL_COMPANION_CREATURE_TYPE_BADGER:
+            nStr = 6; nCon = 6; nDex = 6; nHP = 200;
+            eBonus1 = EffectSkillIncrease(SKILL_DISCIPLINE,40);
+            break;
+        case ANIMAL_COMPANION_CREATURE_TYPE_WOLF:
+            nStr = 6; nCon = 6; nDex = 6; nHP = 200;
+            eBonus1 = EffectConcealment(50);
+            eBonus2 = EffectUltravision();
+            eBonus3 = EffectDamageIncrease(DAMAGE_BONUS_6,DAMAGE_TYPE_BLUDGEONING);
+            break;
+        case ANIMAL_COMPANION_CREATURE_TYPE_BEAR:
+            nStr = 6; nCon = 12; nDex = 6; nHP = 300;
+            eBonus1 = EffectDamageIncrease(DAMAGE_BONUS_10,DAMAGE_TYPE_BLUDGEONING);
+            eBonus2 = EffectSkillIncrease(SKILL_DISCIPLINE,50);
+            break;
+        case ANIMAL_COMPANION_CREATURE_TYPE_BOAR:
+            nStr = 6; nCon = 6; nDex = 6; nHP = 200;
+            eBonus1 = EffectDamageIncrease(DAMAGE_BONUS_10,DAMAGE_TYPE_BLUDGEONING);
+            break;
+        case ANIMAL_COMPANION_CREATURE_TYPE_HAWK:
+            nStr = 10; nCon = 6; nDex = 4; nHP = 200;
+            eBonus1 = EffectSkillIncrease(SKILL_SPOT,13);
+            eBonus2 = eFreedom;
+            eBonus3 = EffectDamageIncrease(DAMAGE_BONUS_5,DAMAGE_TYPE_PIERCING);
+            break;
+        case ANIMAL_COMPANION_CREATURE_TYPE_PANTHER:
+            nStr = 6; nCon = 8; nDex = 6; nHP = 200;
+            eBonus1 = EffectDamageImmunityIncrease(DAMAGE_TYPE_BLUDGEONING,10);
+            eBonus1 = EffectDamageImmunityIncrease(DAMAGE_TYPE_PIERCING,10);
+            eBonus1 = EffectDamageImmunityIncrease(DAMAGE_TYPE_SLASHING,10);
+            break;
+        case ANIMAL_COMPANION_CREATURE_TYPE_SPIDER:
+            nStr = 9; nCon = 6; nDex = 6; nHP = 200;
+            eBonus1 = EffectDamageIncrease(DAMAGE_BONUS_5,DAMAGE_TYPE_PIERCING);
+            eBonus2 = EffectDamageIncrease(DAMAGE_BONUS_2d6,DAMAGE_TYPE_ACID);
+            break;
+        case ANIMAL_COMPANION_CREATURE_TYPE_DIREWOLF:
+            nStr = 10; nCon = 10; nDex = 10; nHP = 200;
+            eBonus1 = EffectDamageIncrease(DAMAGE_BONUS_10,DAMAGE_TYPE_BLUDGEONING);
+            break;
+        case ANIMAL_COMPANION_CREATURE_TYPE_DIRERAT:
+            nStr = 8; nCon = 8; nDex = 8; nHP = 200;
+            eBonus1 = EffectDamageResistance(DAMAGE_TYPE_FIRE,10);
+            break;
     }
 
     RemovePowerAttack(oAnimalCompanion);
@@ -245,13 +213,75 @@ void EpicBuff( object oPC )
     ApplyEffectToObject( DURATION_TYPE_PERMANENT, eHP, oAnimalCompanion, 0.0 );
     ApplyEffectToObject( DURATION_TYPE_PERMANENT, eBuff, oAnimalCompanion, 0.0 );
 
-    SendMessageToPC( oPC, "<cþ þ>Epic Feat Bonuses added to companion:\n "      +
+    SendMessageToPC( oPC, "<cï¿½ ï¿½>Epic Feat Bonuses added to companion:\n "      +
     "+ "+IntToString( nStr ) + " Strength Attribute.\n"           +
     "+ "+IntToString( nCon ) + " Constitution Attribute.\n"             +
     "+ "+IntToString( nDex ) + " Dexterity Attribute.\n"               +
-    "+ " + " Companion Specific Buffs.\n"   +
+    "+ " + "Companion Specific Buffs.\n"   +
     "+ "+IntToString( nHP ) + " Temporary HP.\n" );
 
+
+    // Lastly, check if the player has opted out of the Epic Companion appearance, this is controlled by EpicCompanionHandler in AmiaReforged.Classes.Ranger
+    object oPCKey = GetItemPossessedBy(oPC,"ds_pckey");
+    int nEpicCompanionAppearance = GetLocalInt(oPCKey, "epic_companion_appearance");
+    
+    // If epic companion appearance is untoggled, don't apply the custom appearance
+    if (nEpicCompanionAppearance == FALSE) return;
+
+    switch( nCompanionType )
+    {
+        case ANIMAL_COMPANION_CREATURE_TYPE_BADGER:
+            SetDescription(oAnimalCompanion,"Wyverns are vicious and deadly predators. Only an exceptional Druid or Ranger would be able to befriend one.");
+            SetCreatureAppearanceType(oAnimalCompanion,834); // Wyvern
+            SetCreatureTailType(490,oAnimalCompanion);
+            SetPortraitId(oAnimalCompanion,1040);
+            SetObjectVisualTransform(oAnimalCompanion, OBJECT_VISUAL_TRANSFORM_SCALE, 0.7f);
+            break;
+        case ANIMAL_COMPANION_CREATURE_TYPE_WOLF:
+            SetDescription(oAnimalCompanion, "Displacer Beasts are evil creatures that most don't live long enough to tell about. It would take a terrifyingly skilled and special individual to claim one as their companion.");
+            SetCreatureAppearanceType(oAnimalCompanion,835);  // Displacer Beast   SPELLABILITY_HOWL_FEAR
+            SetCreatureTailType(595,oAnimalCompanion);
+            SetPortraitId(oAnimalCompanion,1052);
+            SetObjectVisualTransform(oAnimalCompanion,OBJECT_VISUAL_TRANSFORM_SCALE, 0.8f);
+            break;
+        case ANIMAL_COMPANION_CREATURE_TYPE_BEAR:
+            SetDescription(oAnimalCompanion,"Dire Bears are larger, more vicious versions of their common cousins. They are often found in the company of powerful rangers or druids.");
+            SetCreatureAppearanceType(oAnimalCompanion,1174); // Uber Dire Bear  1746
+            SetPortraitResRef(oAnimalCompanion, "po_phod_klar_");
+            break;
+        case ANIMAL_COMPANION_CREATURE_TYPE_BOAR:
+            SetDescription(oAnimalCompanion,"Quick, vicious and smart, Raptors make excellent companions as they do enjoy to hunt in company.");
+            SetCreatureAppearanceType(oAnimalCompanion,570); // Dinosaur - Small T-Rex skin
+            SetCreatureTailType(665,oAnimalCompanion);
+            SetPortraitId(oAnimalCompanion,1040);
+            break;
+        case ANIMAL_COMPANION_CREATURE_TYPE_HAWK:
+            SetDescription(oAnimalCompanion,"Giant Eagles are terrifying raptors that can lift a full grown deer off the ground with ease. They are smart, fast, and have talons the size of human forearms.");
+            SetCreatureAppearanceType(oAnimalCompanion,914); // Giant Eagle
+            SetPortraitId(oAnimalCompanion,206);
+            break;
+        case ANIMAL_COMPANION_CREATURE_TYPE_PANTHER:
+            SetDescription(oAnimalCompanion,"Lions are one of the few social cats. Once their trust is earned they make excellent partners in hunts, and other coordinated activities.");
+            SetCreatureAppearanceType(oAnimalCompanion,967); // Male Lion
+            SetPortraitId(oAnimalCompanion,167);
+            break;
+        case ANIMAL_COMPANION_CREATURE_TYPE_SPIDER:
+            SetDescription(oAnimalCompanion,"Large, hungry, and venomous, beware the Gargantuan Spider and the one skilled enough to tame it.");
+            SetCreatureAppearanceType(oAnimalCompanion,856); // Giant Spider
+            SetCreatureTailType(590,oAnimalCompanion);
+            SetPortraitId(oAnimalCompanion,718);
+            break;
+        case ANIMAL_COMPANION_CREATURE_TYPE_DIREWOLF:
+            SetDescription(oAnimalCompanion,"Guardian Wolves are rare, massive, and intelligent super predators. They make indispensable lifelong companions.");
+            SetCreatureAppearanceType(oAnimalCompanion,1140); // Fenrir Wolf - Model being weird
+            SetPortraitId(oAnimalCompanion,321);
+            break;
+        case ANIMAL_COMPANION_CREATURE_TYPE_DIRERAT:
+            SetDescription(oAnimalCompanion,"Giant Scorpions are armored beasts that kill, eat and do whatever they please. Stay away unless you are prepared to fight an almost unstoppable mass of armor, pincers, and stinger.");
+            SetCreatureAppearanceType(oAnimalCompanion,338); // Giant Scorpion
+            SetPortraitId(oAnimalCompanion,1040);
+            break;
+    }
 }
 
 

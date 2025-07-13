@@ -1,12 +1,88 @@
 {
   "__data_type": "UTC ",
+  "Appearance_Head": {
+    "type": "byte",
+    "value": 3
+  },
   "Appearance_Type": {
     "type": "word",
-    "value": 87
+    "value": 3
+  },
+  "ArmorPart_RFoot": {
+    "type": "byte",
+    "value": 1
   },
   "BodyBag": {
     "type": "byte",
     "value": 0
+  },
+  "BodyPart_Belt": {
+    "type": "byte",
+    "value": 0
+  },
+  "BodyPart_LBicep": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_LFArm": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_LFoot": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_LHand": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_LShin": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_LShoul": {
+    "type": "byte",
+    "value": 0
+  },
+  "BodyPart_LThigh": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_Neck": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_Pelvis": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_RBicep": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_RFArm": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_RHand": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_RShin": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_RShoul": {
+    "type": "byte",
+    "value": 0
+  },
+  "BodyPart_RThigh": {
+    "type": "byte",
+    "value": 1
+  },
+  "BodyPart_Torso": {
+    "type": "byte",
+    "value": 1
   },
   "Cha": {
     "type": "byte",
@@ -43,6 +119,22 @@
       }
     ]
   },
+  "Color_Hair": {
+    "type": "byte",
+    "value": 7
+  },
+  "Color_Skin": {
+    "type": "byte",
+    "value": 2
+  },
+  "Color_Tattoo1": {
+    "type": "byte",
+    "value": 24
+  },
+  "Color_Tattoo2": {
+    "type": "byte",
+    "value": 24
+  },
   "Comment": {
     "type": "cexostring",
     "value": ""
@@ -74,7 +166,7 @@
   "Description": {
     "type": "cexolocstring",
     "value": {
-      "0": "A deadly archer"
+      "0": "The militia of The Dale are hardy and quick on their feet. Especially trained in defensive tactics, they are known for their tenacity in protecting their village."
     }
   },
   "Dex": {
@@ -89,10 +181,52 @@
     "type": "list",
     "value": [
       {
+        "__struct_id": 1,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "dale_hood"
+        }
+      },
+      {
+        "__struct_id": 2,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "dale_cloth"
+        }
+      },
+      {
+        "__struct_id": 16,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "dale_sling"
+        }
+      },
+      {
+        "__struct_id": 32,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "dale_guard_s"
+        }
+      },
+      {
+        "__struct_id": 64,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "dale_cloak"
+        }
+      },
+      {
         "__struct_id": 256,
         "EquippedRes": {
           "type": "resref",
           "value": "settle_guardring"
+        }
+      },
+      {
+        "__struct_id": 4096,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "settle_bullet"
         }
       }
     ]
@@ -1747,7 +1881,7 @@
   "FirstName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Scout"
+      "0": "Dale Warslinger"
     }
   },
   "fortbonus": {
@@ -1756,7 +1890,7 @@
   },
   "Gender": {
     "type": "byte",
-    "value": 0
+    "value": 1
   },
   "GoodEvil": {
     "type": "byte",
@@ -1799,6 +1933,21 @@
           "type": "word",
           "value": 0
         }
+      },
+      {
+        "__struct_id": 1,
+        "InventoryRes": {
+          "type": "resref",
+          "value": "dale_stdswrd"
+        },
+        "Repos_PosX": {
+          "type": "word",
+          "value": 1
+        },
+        "Repos_Posy": {
+          "type": "word",
+          "value": 0
+        }
       }
     ]
   },
@@ -1810,7 +1959,7 @@
   },
   "LawfulChaotic": {
     "type": "byte",
-    "value": 0
+    "value": 50
   },
   "Lootable": {
     "type": "byte",
@@ -1846,11 +1995,11 @@
   },
   "PortraitId": {
     "type": "word",
-    "value": 223
+    "value": 58
   },
   "Race": {
     "type": "byte",
-    "value": 12
+    "value": 3
   },
   "refbonus": {
     "type": "short",
@@ -1870,7 +2019,7 @@
   },
   "ScriptDialogue": {
     "type": "resref",
-    "value": ""
+    "value": "ds_speak"
   },
   "ScriptDisturbed": {
     "type": "resref",
@@ -2013,7 +2162,7 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 50
+          "value": 80
         }
       },
       {
@@ -2111,7 +2260,7 @@
   },
   "SoundSetFile": {
     "type": "word",
-    "value": 45
+    "value": 162
   },
   "SpecAbilityList": {
     "type": "list",
@@ -2311,5 +2460,81 @@
   "Wis": {
     "type": "byte",
     "value": 10
+  },
+  "xAppearance_Head": {
+    "type": "word",
+    "value": 3
+  },
+  "xArmorPart_RFoot": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_Belt": {
+    "type": "word",
+    "value": 0
+  },
+  "xBodyPart_LBicep": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_LFArm": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_LFoot": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_LHand": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_LShin": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_LShoul": {
+    "type": "word",
+    "value": 0
+  },
+  "xBodyPart_LThigh": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_Neck": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_Pelvis": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_RBicep": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_RFArm": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_RHand": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_RShin": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_RShoul": {
+    "type": "word",
+    "value": 0
+  },
+  "xBodyPart_RThigh": {
+    "type": "word",
+    "value": 1
+  },
+  "xBodyPart_Torso": {
+    "type": "word",
+    "value": 1
   }
 }

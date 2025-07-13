@@ -72,8 +72,9 @@ void main(){
 
         if(isGuard == "guard_template"){
             int areaCheck    = GetLocalInt(OBJECT_SELF,"settlement");
+            int warCheck     = GetLocalInt(OBJECT_SELF, "war");
             int messageBlock = GetLocalInt(master, "guard_leave");
-            if(areaCheck == 0){
+            if(areaCheck == 0 && warCheck == 0){
                 DestroyObject(oPC);
                 DeleteLocalInt(master, "guard_spawned");
                 SetLocalInt(master, "guard_leave", 1);

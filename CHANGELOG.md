@@ -8,11 +8,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Guard equipment items to the palette
+- Kohlingen, Winya, Dale, Barak Runedar settlement guards
+- War troops widget for war events
+- War troops script
 
 ### Changed
 - Shifters no longer lose shape-casted spells upon unshifting
 - While polymorphed, Intensity, Rage and Ferocity monster abilities now buff two abilities as per the base spell
 - Polymorphing no longer has a cooldown
+- Adjusted a few existing scripts to account for war troops
+- Fixed some more Bloodspear settlement guards on the palette
+- East Coast: Sandy Beach plot update
 
 ### Fixed
 - Defensive Stance's effects are no longer removed when you lose the temporary HP

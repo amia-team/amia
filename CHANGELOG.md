@@ -8,6 +8,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Barrier PLC to the palette
+
+### Changed
+- PLC palette
+- Plot updates to
+	- Underdark: Bloodspear Keep
+	- Underdark: Hollow Cavern
+	- East Coast: Sandy Beach
+
+### Fixed
+
+[4.20.1 2025-07-13]
+### Added
 - Guard equipment items to the palette
 - Kohlingen, Winya, Dale, Barak Runedar settlement guards
 - War troops widget for war events
@@ -25,7 +38,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Defensive Stance's effects are no longer removed when you lose the temporary HP
 
 
-[?????]
+[4.19.0 2025-06-22]
 ### Added
 - 1 Player portrait
 - Monkey Grip feat (general feat, requires 13+ STR and +3 Base Attack Bonus)

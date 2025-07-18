@@ -46,6 +46,10 @@ int nSpell = GetSpellId();
 // prototypes
 //-------------------------------------------------------------------------------
 
+//Crafts a item if a spell was used on a item returns TRUE if the spell was
+//used to craft a item reguardless of the outcome
+int CraftSpell();
+
 //Returns TRUE if nSpell is blocked from scrollscribing
 //Go to the implemention to modify the list
 int BlockedFromScribing(int nSpell);
@@ -79,7 +83,11 @@ void main( ){
     // Cast Raise or Resurrection irrespective of PvP settings
     if( (nSpell==SPELL_RAISE_DEAD)      ||
         (nSpell==SPELL_RESURRECTION)    ){
-        return;
+        if ( CraftSpell() && !BlockedFromScribing( nSpell ) ){
+            SetModuleOverrideSpellScriptFinished();
+            return;
+        }
+        else return;
     }
 
     /* Check if this is a no-casting zone.
@@ -166,6 +174,17 @@ void main( ){
         return;
     }
 
+    //Scribe Scroll Routines
+    //Craft a scroll and end the code if the spell was used to craft a scroll
+    if( !BlockedFromScribing( nSpell ) )
+    {
+
+        if( CraftSpell() )
+        {
+        SetModuleOverrideSpellScriptFinished();
+        return;
+        }
+    }
 
 
     switch( nSpell ){
@@ -252,6 +271,96 @@ void main( ){
 
 
 //-------------------------------------------------------------------------------
+
+int CraftSpell(){
+
+    // Declare variables
+    object oTarget = GetSpellTargetObject();
+    // Is it a item?
+    if ( GetObjectType( oTarget ) == OBJECT_TYPE_ITEM )
+    {
+        // if it was a item is it a scroll?
+        // otherwise let the funtion return false
+        // or it'll mess up flameweapon and such
+        if ( GetResRef( oTarget ) == "x2_it_cfm_bscrl" )
+        {
+            if( GetIsObjectValid( GetSpellCastItem( ) ) )
+            {
+            SendMessageToPC(OBJECT_SELF, "<cþ  >Cannot craft items with items!");
+            return TRUE;
+            }
+            if(GetItemPossessor(oTarget)!= OBJECT_SELF)
+            {
+            SendMessageToPC(OBJECT_SELF, "<cþ  >Cannot craft items that isnt in your inventory!");
+            return TRUE;
+            }
+            if(CICraftCheckScribeScroll(oTarget,OBJECT_SELF))return TRUE;
+        }
+
+        else if( GetResRef( oTarget ) == "x2_it_cfm_pbottl" ||
+                 GetResRef( oTarget ) == "it_cfm_pbten" ) {
+            if( GetIsObjectValid( GetSpellCastItem( ) ) )
+            {
+            SendMessageToPC(OBJECT_SELF, "<cþ  >Cannot craft items with items!");
+            return TRUE;
+            }
+            if(GetItemPossessor(oTarget)!= OBJECT_SELF)
+            {
+            SendMessageToPC(OBJECT_SELF, "<cþ  >Cannot craft items that isnt in your inventory!");
+            return TRUE;
+            }
+            if(CICraftCheckBrewPotion(oTarget, OBJECT_SELF))return TRUE;
+        }
+        else if( GetResRef( oTarget ) == "x2_it_pcpotion" ){
+
+            if( GetIsObjectValid( GetSpellCastItem( ) ) ){
+                SendMessageToPC(OBJECT_SELF, "<cþ  >Cannot craft items with items!");
+                return TRUE;
+            }
+            if( GetItemPossessor( oTarget ) != OBJECT_SELF ){
+                SendMessageToPC(OBJECT_SELF, "<cþ  >Cannot craft items that isnt in your inventory!");
+                return TRUE;
+            }
+            int nStackMax = StringToInt( Get2DAString( "baseitems", "Stacking", GetBaseItemType( oTarget ) ) );
+            if ( GetItemStackSize( oTarget ) >= nStackMax ){
+                SendMessageToPC(OBJECT_SELF, "<cþ  >Can't add any more potions to this stack!");
+                return TRUE;
+            }
+
+            if( CICraftCheckBrewPotion( oTarget, OBJECT_SELF ) ) return TRUE;
+        }
+
+        else if( GetResRef( oTarget ) == "x2_it_cfm_wand" )
+        {
+            if( GetIsObjectValid( GetSpellCastItem( ) ) )
+            {
+            SendMessageToPC(OBJECT_SELF, "<cþ  >Cannot craft items with items!");
+            return TRUE;
+            }
+            if(GetItemPossessor(oTarget)!= OBJECT_SELF)
+            {
+            SendMessageToPC(OBJECT_SELF, "<cþ  >Cannot craft items that isnt in your inventory!");
+            return TRUE;
+            }
+            if(CICraftCheckCraftWand(oTarget, OBJECT_SELF))return TRUE;
+        }
+    }
+    return FALSE;
+}
+//-----
+int BlockedFromScribing(int nSpell)
+{
+    switch(nSpell)
+    {
+
+    //Time stop is blocked from scribing
+    case SPELL_TIME_STOP: return TRUE;
+
+    default: return FALSE;
+    }
+return FALSE;
+}            '
+//-----
 int AllowedToCastEpicSpell( int nSpell, object oPC ){
 
     switch( nSpell ){

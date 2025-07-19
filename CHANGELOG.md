@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Barrier PLC to the palette
+- Dale food/drinks (Fendel's new shop) to the palette
+- New merchant file (Hinn Inn)
 
 ### Changed
 - PLC palette
@@ -16,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Underdark: Bloodspear Keep
 	- Underdark: Hollow Cavern
 	- East Coast: Sandy Beach
+- Settlement System guard update to The Dale
 
 ### Fixed
 

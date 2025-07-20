@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Underdark: Bloodspear Keep
 	- Underdark: Hollow Cavern
 	- East Coast: Sandy Beach
+	- Kingdom of Kohlingen: Greengarden, The Old City
 - Settlement System guard update to The Dale
 
 ### Fixed

@@ -20,8 +20,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- East Coast: Sandy Beach
 	- Kingdom of Kohlingen: Greengarden, The Old City
 - Settlement System guard update to The Dale
+- Ranger's Epic Companion feat's special appearance is now an opt-in. 
+	- See your ranger class radial and use the feat to opt in for the appearance.
+- Craft Wand always gives 20 + caster level charges.
+- Craft Wand and Brew Potion have unique appearances based on spell school.
 
 ### Fixed
+- Blinding Speed and Divine Wrath no longer get stuck on cooldown.
+- Spells can be normally crafted into potions, wands, and scrolls again.
+- Spell crafting accounts for new caster classes when the spell is in their spellbook.
+	- E.g., Bull's Strength wand can be used by Blackguard, Assassin, and Dragon Disciple.
+- Warlock ranged touch attacks no longer bypass critical immunity (this was bugged as of two updates ago)
+
 
 [4.20.1 2025-07-13]
 ### Added

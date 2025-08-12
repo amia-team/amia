@@ -25,6 +25,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- See your ranger class radial and use the feat to opt in for the appearance.
 - Craft Wand always gives 20 + caster level charges.
 - Craft Wand and Brew Potion have unique appearances based on spell school.
+- Barak Runedar Changes as per Bag of Felt's requests:
+	- Barak Runedar: Citadel
+	- Barak Runedar: Citadel, Rothe Pen
 
 ### Fixed
 - Blinding Speed and Divine Wrath no longer get stuck on cooldown.

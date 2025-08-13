@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Barak Runedar Changes as per Bag of Felt's requests:
 	- Barak Runedar: Citadel
 	- Barak Runedar: Citadel, Rothe Pen
+- L'Obsul, new shop added - Gonkan's Shop (Module request by Azazel)
 
 ### Fixed
 - Blinding Speed and Divine Wrath no longer get stuck on cooldown.

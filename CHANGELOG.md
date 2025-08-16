@@ -30,7 +30,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Spells can be normally crafted into potions, wands, and scrolls again.
 - Spell crafting accounts for new caster classes when the spell is in their spellbook.
 	- E.g., Bull's Strength wand can be used by Blackguard, Assassin, and Dragon Disciple.
-- Warlock ranged touch attacks no longer bypass critical immunity (this was bugged as of two updates ago)
+- Warlock ranged touch attacks no longer bypass critical immunity (this was bugged as of two updates ago).
+- Item properties from spells like Flame Weapon and Greater Magic Weapon no longer stick after reset.
 
 
 [4.20.1 2025-07-13]

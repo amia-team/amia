@@ -24,6 +24,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- See your ranger class radial and use the feat to opt in for the appearance.
 - Craft Wand always gives 20 + caster level charges.
 - Craft Wand and Brew Potion have unique appearances based on spell school.
+- Monkey Grip now checks for inventory space and that offhand is unequipped successfully before deactivating.
+ 	- Means your shield no longer drops on the ground!
 
 ### Fixed
 - Blinding Speed and Divine Wrath no longer get stuck on cooldown.
@@ -32,6 +34,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- E.g., Bull's Strength wand can be used by Blackguard, Assassin, and Dragon Disciple.
 - Warlock ranged touch attacks no longer bypass critical immunity (this was bugged as of two updates ago).
 - Item properties from spells like Flame Weapon and Greater Magic Weapon no longer stick after reset.
+- Monkey Grip no longer unequips offhand on relog and potentially eats up your shield.
 
 
 [4.20.1 2025-07-13]

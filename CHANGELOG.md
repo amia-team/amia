@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Craft Wand and Brew Potion have unique appearances based on spell school.
 - Monkey Grip now checks for inventory space and that offhand is unequipped successfully before deactivating.
  	- Means your shield no longer drops on the ground!
+- Polymorph cooldown removed from elemental shape (this was left in by mistake)
 
 ### Fixed
 - Blinding Speed and Divine Wrath no longer get stuck on cooldown.

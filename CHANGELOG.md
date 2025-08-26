@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Monkey Grip now checks for inventory space and that offhand is unequipped successfully before deactivating.
  	- Means your shield no longer drops on the ground!
 - Polymorph cooldown removed from elemental shape (this was left in by mistake)
+- Legacied Summon Changers now apply reskins and visuals instantly.
 
 ### Fixed
 - Blinding Speed and Divine Wrath no longer get stuck on cooldown.
@@ -39,7 +40,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Warlock ranged touch attacks no longer bypass critical immunity (this was bugged as of two updates ago).
 - Item properties from spells like Flame Weapon and Greater Magic Weapon no longer stick after reset.
 - Monkey Grip no longer unequips offhand on relog and potentially eats up your shield.
-- Associate Customizer should now correctly update the portrait.
+- Associate Customizer now properly updates the portrait.
+- Associate Customizer now properly updates equipment visual transform.
+	- Notably scale if you want to change weapon or shield size.
 
 
 [4.20.1 2025-07-13]

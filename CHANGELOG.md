@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Barrier PLC to the palette
 - Dale food/drinks (Fendel's new shop) to the palette
 - New merchant file (Hinn Inn)
+- New player commands for the test server! DMs can use these on live, too.
+	- ./listvfx (list available visual effects by type; this works for players on live, too)
+	- ./createvfx (create any kind of visual effect; DMs can create a permanent visual effect on a player character that persists through reset)
+	- ./getvfx (get visual effects on a target)
+	- ./removevfx (remove a specific or all visual effects on a target)
 
 ### Changed
 - PLC palette

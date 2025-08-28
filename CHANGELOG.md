@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- ./createvfx (create any kind of visual effect; DMs can create a permanent visual effect on a player character that persists through reset)
 	- ./getvfx (get visual effects on a target)
 	- ./removevfx (remove a specific or all visual effects on a target)
+- New player command for the live server! ./labelitem, lets you label items, duh. Has a color parameter.
 
 ### Changed
 - PLC palette

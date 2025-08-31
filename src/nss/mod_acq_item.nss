@@ -79,8 +79,6 @@ void main( ){
     //count items
     SetLocalInt( oPC, "items", GetLocalInt( oPC, "items" ) + 1 );
 
-    DeleteLocalInt( oItem, "ds_uneq" );
-
     //remove or change item properties
     if (GetIsPC (oPC))
     {

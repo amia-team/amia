@@ -331,8 +331,6 @@ void main( ){
     itemproperty ipLoop = GetFirstItemProperty( oItem );
     int nResult;
 
-    SetLocalInt( oItem, "ds_uneq", 1 );
-
     if ( GetStringLeft( GetTag( oItem ), 9 ) == "ds_j_res_"  ){
 
         // job system needs unique tags for pricing etc

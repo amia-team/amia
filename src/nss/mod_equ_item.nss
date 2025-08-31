@@ -392,16 +392,6 @@ void main( ){
         DelayCommand( 2.0, AddShadowdancerHiPS( oPC, oItem ) );
     }
 
-
-    if ( GetLocalInt( oItem, "ds_uneq" ) == 0 && GetName( GetArea( oPC ) ) != "" && GetLocalInt( oPC, "is_crafting" ) != 1 ){
-
-        IPRemoveAllItemProperties( oItem, DURATION_TYPE_TEMPORARY );
-
-        SendMessageToPC( oPC, "<c? ?>Stale temporary properties detected, cleaning item.</c>" );
-
-        SetLocalInt( oItem, "ds_uneq", 0 );
-    }
-
     if ( GetStringLeft( GetTag( oItem ), 9 ) == "ds_j_res_"  ){
 
         // job system needs unique tags for pricing etc

@@ -7,11 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
-[4.19.0 2025-06-07]
 ### Added
 - Barrier PLC to the palette
 - Dale food/drinks (Fendel's new shop) to the palette
 - New merchant file (Hinn Inn)
+- New player commands for the test server! DMs can use these on live, too.
+	- ./listvfx (list available visual effects by type; this works for players on live, too)
+	- ./createvfx (create any kind of visual effect; DMs can create a permanent visual effect on a player character that persists through reset)
+	- ./getvfx (get visual effects on a target)
+	- ./removevfx (remove a specific or all visual effects on a target)
+- New player command for the live server! ./labelitem, lets you label items, duh. Has a color parameter.
 
 ### Changed
 - PLC palette
@@ -25,17 +30,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- See your ranger class radial and use the feat to opt in for the appearance.
 - Craft Wand always gives 20 + caster level charges.
 - Craft Wand and Brew Potion have unique appearances based on spell school.
-- Barak Runedar Changes as per Bag of Felt's requests:
-	- Barak Runedar: Citadel
-	- Barak Runedar: Citadel, Rothe Pen
-- L'Obsul, new shop added - Gonkan's Shop (Module request by Azazel)
+- Craft Wand and Brew Potion now always use the highest CL available for the spell property.
+	- Eg, Flame Weapon potion and wand get CL 17 instead of CL 5 as before
+	- If this results in some exorbitant rates, we can adjust the cost calculation. Player-made stuff should be preferable to store bought.
+- Monkey Grip now checks for inventory space and that offhand is unequipped successfully before deactivating.
+ 	- Means your shield no longer drops on the ground!
+- Polymorph cooldown removed from elemental shape (this was left in by mistake)
+- Legacied Summon Changers now apply reskins and visuals instantly.
 
 ### Fixed
 - Blinding Speed and Divine Wrath no longer get stuck on cooldown.
 - Spells can be normally crafted into potions, wands, and scrolls again.
 - Spell crafting accounts for new caster classes when the spell is in their spellbook.
 	- E.g., Bull's Strength wand can be used by Blackguard, Assassin, and Dragon Disciple.
-- Warlock ranged touch attacks no longer bypass critical immunity (this was bugged as of two updates ago)
+- Warlock ranged touch attacks no longer bypass critical immunity (this was bugged as of two updates ago).
+- Item properties from spells like Flame Weapon and Greater Magic Weapon no longer stick after reset.
+- Monkey Grip no longer unequips offhand on relog and potentially eats up your shield.
+- Associate Customizer now properly updates the portrait.
+- Associate Customizer now properly updates equipment visual transform.
+	- Notably scale if you want to change weapon or shield size.
 
 
 [4.20.1 2025-07-13]
@@ -87,6 +100,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Amia's two-handed bonus no longer has a rounding error that resulted in a slight loss of damage
 - Two-handed bonus now updates on strength loss and gain
 - Owl's Wisdom is now applied while polymorphed (apparently this was a thing the whole time)
+
 
 [4.16.0 2025-06-07]
 ### Added

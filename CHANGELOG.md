@@ -42,7 +42,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  	- Means your shield no longer drops on the ground!
 - Polymorph cooldown removed from elemental shape (this was left in by mistake)
 - Legacied Summon Changers now apply reskins and visuals instantly.
-- Chain Lightning: Arcs of electricity fork from the caster, striking up to three different targets. Each evocation focus generates an additional arc. Each arc deals 1d6 points of electrical damage per caster level, to a maximum of 20d6 damage, further dealing secondary damage to nearby enemies for half the damage. The amount of enemies this spell can hit is capped to the caster level.
+- Chain Lightning: Arcs of electricity fork from the caster, striking up to three enemies. Each evocation focus generates an additional arc. Each arc deals 1d6 points of electrical damage per caster level, to a maximum of 20d6 damage, further dealing secondary damage to nearby enemies for half the damage. The amount of enemies this spell can hit is capped to the caster level.
 	- amount of bounces for the main and secondary arcs is capped to CL
 	- the main arcs now fork to different targets
 	- a messy vfx bug cleaned up

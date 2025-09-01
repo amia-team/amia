@@ -47,6 +47,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- the main arcs now fork to different targets
 	- a messy vfx bug cleaned up
 
+#### Frostspear Raid
+- Downgraded non-boss mobs' AB bonuses from +5 to +4 to respect Premonition, Stoneskin, et al.
+- Debloated non-boss mobs' saves, HP to be more in line with what a real D&D encounter at that particular level might have
+
+#### Lich Raid
+- Downgraded non-boss mobs' AB bonuses from +5 to +4 to respect Premonition, Stoneskin, et al.
+- Debloated non-boss mobs' saves, HP to be more in line with what a real D&D encounter at that particular level might have
+- Removed blanket 10/- magic resistances (shouldn't do anything other than let people use IGMS, which is capped up to a max of 10 missiles per target anyway)
+
+
 ### Fixed
 - Blinding Speed and Divine Wrath no longer get stuck on cooldown.
 - Spells can be normally crafted into potions, wands, and scrolls again.

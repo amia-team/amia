@@ -57,8 +57,6 @@ void main( ){
     DelayCommand(300.0,ExecuteScript("dc_timer",GetModule()));
     NWNX_Weapon_SetDevastatingCriticalEventScript("nwnx_ev_dev");
 
-    NWNX_Events_SubscribeEvent("NWNX_ON_UNPOLYMORPH_AFTER", "nwnx_unpoly_aftr");
-    NWNX_Events_SubscribeEvent("NWNX_ON_POLYMORPH_BEFORE", "nwnx_poly_before");
     NWNX_Events_SubscribeEvent("NWNX_ON_STEALTH_ENTER_AFTER", "nwnx_hide_ent_af");
     NWNX_Events_SubscribeEvent("NWNX_ON_STEALTH_EXIT_AFTER", "nwnx_hide_ext_af");
     NWNX_Events_SubscribeEvent("NWNX_ON_CAST_SPELL_BEFORE", "sub_cast_before");

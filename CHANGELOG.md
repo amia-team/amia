@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
+[4.22.0 2025-09-01]
+
 ### Added
 - Barrier PLC to the palette
 - Dale food/drinks (Fendel's new shop) to the palette

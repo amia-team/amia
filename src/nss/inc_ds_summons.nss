@@ -78,13 +78,6 @@ void sum_BG_CreateUndead( object oPC, location lTarget );
 //Black Guard's Summon Fiend ability
 void sum_BG_SummonFiend( object oPC, location lTarget );
 
-//Shadow Dancer's Summon Shadow ability
-void sum_SD_Shadow( object oPC, location lTarget );
-// Function to apply SD summon buffs
-void sd_sum_skinchange(object oPC, float fDuration);
-void sd_sum_buff(object oPC, effect eLink, float fDuration);
-effect sd_calc_buffs(int nShadowRank, object oPC);
-
 //used in x2_s2_sumundead ( nCap = 1, turnbonus = 4, powerbonus = 2 )
 //used in x2_s2_sumgrund ( nCap = 0, turnbonus = 6, powerbonus = 3 )
 void sum_SummonUndead( object oPC, int nCap, int nTurnResistanceBonus, int nPowerPointBonus );

@@ -58,11 +58,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Craft Wand and Brew Potion have unique appearances based on spell school.
 - Craft Wand and Brew Potion now always use the highest CL available for the spell property.
 	- Eg, Flame Weapon potion and wand get CL 17 instead of CL 5 as before
-	- If this results in some exorbitant rates, we can adjust the cost calculation. Player-made stuff should be preferable to store bought.
+- Craft Wand and Brew Potion now share a cost progression of 25 gp x 2^spell level per potion or wand charge.
+	- Level 0 = 25 gp
+	- Level 1 = 50 gp
+	- Level 2 = 100 gp
+	- Level 3 = 200 gp
+	- Level 4 = 400 gp
 - Monkey Grip now checks for inventory space and that offhand is unequipped successfully before deactivating.
  	- Means your shield no longer drops on the ground!
 - Polymorph cooldown removed from elemental shape (this was left in by mistake)
 - Legacied Summon Changers now apply reskins and visuals instantly.
+- Chain Lightning: Arcs of electricity fork from the caster, striking up to three enemies. Each evocation focus generates an additional arc. Each arc deals 1d6 points of electrical damage per caster level, to a maximum of 20d6 damage, further dealing secondary damage to nearby enemies for half the damage. The amount of enemies this spell can hit is capped to the caster level.
+	- amount of bounces for the main and secondary arcs is capped to CL
+	- the main arcs now fork to different targets
+	- a messy vfx bug cleaned up
 
 #### Frostspear Raid
 - Downgraded non-boss mobs' AB bonuses from +5 to +4 to respect Premonition, Stoneskin, et al.

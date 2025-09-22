@@ -39,14 +39,12 @@ void main( ){
     int    oPrimaryType             = GetBaseItemType(oPrimaryHand);
     int    oItemType                = GetBaseItemType(oItem);
     int    oOffItemType             = GetBaseItemType(oOffHand);
-    int    strMod                   = GetAbilityModifier(ABILITY_STRENGTH,oPC);
     effect eLoop                    = GetFirstEffect(oPC);
     effect eDamage;
     effect eAB;
     effect eLink;
     effect eAC;
     int    eLoopSpellID;
-    int    nClass                   = GetLevelByClass(46, oPC);
     int    nClassCross              = GetLevelByClass(51, oPC);
     int    nClassDuel               = GetLevelByClass(52, oPC);
 
@@ -106,27 +104,6 @@ void main( ){
        DeleteLocalInt(oPC,"PiercingShotToggled");
 
     }
-
-
-    // Two Weapon Fighter bonus removal
-    if(nClass >= 1 && (oItemType == BASE_ITEM_DOUBLEAXE || oItemType == BASE_ITEM_DIREMACE || oItemType == BASE_ITEM_DIREMACE ||
-    BASE_ITEM_TWOBLADEDSWORD || oItemType == BASE_ITEM_BASTARDSWORD || oItemType == BASE_ITEM_CLUB || oItemType == BASE_ITEM_DAGGER ||
-    oItemType == BASE_ITEM_DWARVENWARAXE || oItemType == BASE_ITEM_HANDAXE || oItemType == BASE_ITEM_KAMA || oItemType == BASE_ITEM_KATANA ||
-    oItemType == BASE_ITEM_KUKRI || oItemType == BASE_ITEM_LIGHTFLAIL || oItemType == BASE_ITEM_LIGHTHAMMER || oItemType == BASE_ITEM_LIGHTMACE
-    || oItemType == BASE_ITEM_LONGSWORD || oItemType == BASE_ITEM_MORNINGSTAR || oItemType == BASE_ITEM_RAPIER || oItemType == BASE_ITEM_SCIMITAR
-    || oItemType == BASE_ITEM_SICKLE || oItemType == BASE_ITEM_TORCH|| oItemType == BASE_ITEM_TRIDENT|| oItemType == BASE_ITEM_WARHAMMER||
-    oItemType == BASE_ITEM_WHIP ))
-    {
-       while(GetIsEffectValid(eLoop))
-         {
-            if (GetEffectTag(eLoop) == "twfbuff")
-            RemoveEffect(oPC, eLoop);
-            eLoop=GetNextEffect(oPC);
-         }
-
-    }
-
-
 
 
    // PRC Duelist Buffs Below
@@ -295,37 +272,6 @@ void main( ){
 
     // End of Duelist PRC Scripts
 
-
-
-
-
-
-    // If an SD is unequipping a creature hide, tell the OnEquip routine
-    // to copy HiPS onto the new hide.
-    // Note that this also runs when polymorph is ended, restoring HiPS to the
-    // standard SD hide if it was on cooldown when polymorphing.
-    if ( GetLevelByClass( CLASS_TYPE_SHADOWDANCER, oPC ) >= 6 ){
-
-        if ( GetItemInSlot( INVENTORY_SLOT_CARMOUR, oPC ) == oItem ){
-
-            SetLocalInt( oPC, "copy_HIPS_to_poly", 1 );
-
-        }
-
-    }
-
-    // If it's a weapon, cancel the PC's action queue to prevent weapon change exploit.
- //   if ( GetItemInSlot( INVENTORY_SLOT_LEFTHAND, oPC ) == oItem ||
-   //      GetItemInSlot( INVENTORY_SLOT_RIGHTHAND, oPC ) == oItem ){
-
-    //    if ( GetLocalInt( oPC, "is_crafting" ) != 1  &&
-     //        GetLocalInt( oPC, "rest_start" ) == 0 ) {
-
-      //       AssignCommand( oPC, ClearAllActions() );
-
-     //   }
-
-   // }
 
     //Get the first itemproperty on the helmet
     itemproperty ipLoop = GetFirstItemProperty( oItem );

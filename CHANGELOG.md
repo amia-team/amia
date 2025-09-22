@@ -7,7 +7,31 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
-[4.22.0 2025-09-01]
+### Added
+
+
+
+### Changed
+- Fire Weapon and Darkfire no longer overwrite less powerful effects of the same elemental type. Eg, 1d6 fire doesn't overwrite 1d8 fire, but 1d6 cold overwrites 1d8 fire.
+- Quillfire: The caster throws a poisonous quill at a target, dealing 4d6 piercing damage and inflicting large scorpion venom on a failed fortitude save. A successful reflex save halves the damage. Every 6 caster levels adds an extra quill.
+- Quillfire's poison DC now uses the spell DC instead of DC 18.
+
+
+#### Bard Song and Curse Song
+- AC scaling nerfed to +1 at level 10, +2 at level 15, +3 at level 20, +5 at level 25, +7 at level 30. Level 20 bard's song is nerfed by 2 AC.
+- Every bard level after 10 now increases the song duration by 1 round. Eg, level 15 bard's song duration is 1.5 turns.
+- Lingering Song increases song duration by 1 turn instead of 5 rounds. Eg, level 15 bard's song duration with Lingering is 2.5 turns.
+- Lasting Inspiration increases song duration by 8 turns instead of tenfolding it. Eg, level 20 bard's song duration is 10 turns, while level 30 bard's song duration is 11 turns.
+- More powerful song now overwrites a less powerful song. Eg, a level 15 bard's song gets overwritten by a level 16 bard's song.
+- An equally powerful song now refreshes the song duration, same as any other effect. 
+- Song usage gives feedback if the bard doesn't have enough Perform for the highest level song.
+- Bard Song has a new visual effect.
+- Curse Song has new visual and sound effects.
+
+
+### Fixed
+- Wanded Fire Weapon and Darkfire no longer work with Book of Transmutation.
+
 
 ### Added
 - Barrier PLC to the palette

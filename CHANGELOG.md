@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fire Weapon and Darkfire no longer overwrite less powerful effects of the same elemental type. Eg, 1d6 fire doesn't overwrite 1d8 fire, but 1d6 cold overwrites 1d8 fire.
 - Quillfire: The caster throws a poisonous quill at a target, dealing 4d6 piercing damage and inflicting large scorpion venom on a failed fortitude save. A successful reflex save halves the damage. Every 6 caster levels adds an extra quill.
 - Quillfire's poison DC now uses the spell DC instead of DC 18.
+- SD summon can now be fully customized with Associate Customizer (a delay-based appearance change used to prevent this)
 
 
 #### Bard Song and Curse Song
@@ -31,8 +32,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Wanded Fire Weapon and Darkfire no longer work with Book of Transmutation.
+- SD Shade Lord's on-hit ability drain now correctly uses the saving throw result and an undocumented underlying melee touch attack has been removed. (Basically, the saving throw was never used even though it got logged, and there was a random melee touch attack roll that needed to pass first.)
 
-
+[4.22.0 2025-09-01]
 ### Added
 - Barrier PLC to the palette
 - Dale food/drinks (Fendel's new shop) to the palette

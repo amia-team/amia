@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Quillfire's poison DC now uses the spell DC instead of DC 18.
 - SD summon can now be fully customized with Associate Customizer (a delay-based appearance change used to prevent this)
 - Spell crafting Greater Magic Weapon CL reduced from 15 to 10 CL
+- Plot changes to [redacted]
 
 #### Bard Song and Curse Song
 - AC scaling nerfed to +1 at level 10, +2 at level 15, +3 at level 20, +5 at level 25, +7 at level 30. Level 20 bard's song is nerfed by 2 AC.

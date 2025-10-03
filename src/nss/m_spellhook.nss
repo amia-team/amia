@@ -89,21 +89,6 @@ void main( ){
     */
     object oArea = GetArea( oCaster );
 
-    /*else if( !GetIsObjectValid(GetSpellCastItem( )) && GetIsPolymorphed(oCaster)){
-
-        int nShape = GetLocalInt( oCaster, "poly_shape");
-        int ok = nSpell != StringToInt(Catch2DAString("polymorph","SPELL1",nShape));
-        ok = ok && (nSpell != StringToInt(Catch2DAString("polymorph","SPELL2",nShape)));
-        ok = ok && (nSpell != StringToInt(Catch2DAString("polymorph","SPELL3",nShape)));
-
-        if(!ok){
-
-            SetModuleOverrideSpellScriptFinished( );
-            SendMessageToPC( oCaster, "Nope." );
-            return;
-        }
-    }*/
-
     if( !AllowedToCastEpicSpell( nSpell, oCaster ) ){
 
         SetModuleOverrideSpellScriptFinished( );

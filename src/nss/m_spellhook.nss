@@ -208,9 +208,6 @@ void main( ){
         case SPELL_GREATER_SHADOW_CONJURATION_SUMMON_SHADOW:    sum_Shadow( oCaster, nSpell, nCasterLevel, lTarget ); break;
         case SPELL_SHADES_SUMMON_SHADOW:                        sum_Shadow( oCaster, nSpell, nCasterLevel, lTarget ); break;
 
-        // SD Shadow
-        case 476:                                               sum_SD_Shadow( oCaster, lTarget );break;
-
         // Gate
         case SPELL_GATE:                                        sum_Gate( oCaster, nCasterLevel, lTarget ); break;
 

@@ -46,10 +46,6 @@ int nSpell = GetSpellId();
 // prototypes
 //-------------------------------------------------------------------------------
 
-//Returns TRUE if nSpell is blocked from scrollscribing
-//Go to the implemention to modify the list
-int BlockedFromScribing(int nSpell);
-
 //Is the PC allowed to cast epic spells?
 int AllowedToCastEpicSpell( int nSpell, object oPC );
 

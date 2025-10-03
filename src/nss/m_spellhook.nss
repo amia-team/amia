@@ -89,17 +89,6 @@ void main( ){
     */
     object oArea = GetArea( oCaster );
 
-    if ( GetLocalInt( oArea, "NoCasting" ) == 1  &&
-         GetIsDM( oCaster ) == FALSE &&
-         GetIsDMPossessed( oCaster ) == FALSE &&
-         GetLocalInt( GetModule(), "singleplayer" ) != 1 ){
-
-        SetModuleOverrideSpellScriptFinished();
-
-        SendMessageToPC( oCaster, "- You cannot cast magic in this area! -" );
-
-        return;
-    }
     /*else if( !GetIsObjectValid(GetSpellCastItem( )) && GetIsPolymorphed(oCaster)){
 
         int nShape = GetLocalInt( oCaster, "poly_shape");

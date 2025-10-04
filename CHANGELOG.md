@@ -20,13 +20,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Plot changes to [redacted]
 
 #### Bard Song and Curse Song
-- AC scaling nerfed to +1 at level 10, +2 at level 15, +3 at level 20, +5 at level 25, +7 at level 30. Level 20 bard's song is nerfed by 2 AC.
 - Every bard level after 10 now increases the song duration by 1 round. Eg, level 15 bard's song duration is 1.5 turns.
 - Lingering Song increases song duration by 1 turn instead of 5 rounds. Eg, level 15 bard's song duration with Lingering is 2.5 turns.
 - Lasting Inspiration increases song duration by 8 turns instead of tenfolding it. Eg, level 20 bard's song duration is 10 turns, while level 30 bard's song duration is 11 turns.
 - More powerful song now overwrites a less powerful song. Eg, a level 15 bard's song gets overwritten by a level 16 bard's song.
-- An equally powerful song now refreshes the song duration, same as any other effect. 
-- Song usage gives feedback if the bard doesn't have enough Perform for the highest level song.
+- An equally powerful song now refreshes the song duration, same as any other effect.
+- Songs are capped to the level of the highest circle of magic, meaning that base charisma limits the highest song level bards can use. Eg, level 16 bard with base charisma 15 can only cast up to level 15 song, or level 14 bard with base charisma 14 can only cast up to level 12 song. Base charisma 16 is required for songs from level 16 and upwards. 
+- Song usage gives feedback if the bard doesn't have enough perform skill or base charisma for their highest level song.
 - Bard Song has a new visual effect.
 - Curse Song has new visual and sound effects.
 

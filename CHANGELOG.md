@@ -8,8 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-
-
+- Puzzle scripts for devs and DMs to play with
+- A few settlement items to the item palette
 
 ### Changed
 - Fire Weapon and Darkfire no longer overwrite less powerful effects of the same elemental type. Eg, 1d6 fire doesn't overwrite 1d8 fire, but 1d6 cold overwrites 1d8 fire.
@@ -17,7 +17,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Quillfire's poison DC now uses the spell DC instead of DC 18.
 - SD summon can now be fully customized with Associate Customizer (a delay-based appearance change used to prevent this)
 - Spell crafting Greater Magic Weapon CL reduced from 15 to 10 CL
-- Plot changes to [redacted]
+- Plot changes to:
+  - Redacted
+- Update some areas for pending Travel Agency changes
+- Fix the Malachite Maze ending puzzle
 
 #### Bard Song and Curse Song
 - Every bard level after 10 now increases the song duration by 1 round. Eg, level 15 bard's song duration is 1.5 turns.

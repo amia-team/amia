@@ -46,10 +46,6 @@ int nSpell = GetSpellId();
 // prototypes
 //-------------------------------------------------------------------------------
 
-//Returns TRUE if nSpell is blocked from scrollscribing
-//Go to the implemention to modify the list
-int BlockedFromScribing(int nSpell);
-
 //Is the PC allowed to cast epic spells?
 int AllowedToCastEpicSpell( int nSpell, object oPC );
 
@@ -88,32 +84,6 @@ void main( ){
 
     */
     object oArea = GetArea( oCaster );
-
-    if ( GetLocalInt( oArea, "NoCasting" ) == 1  &&
-         GetIsDM( oCaster ) == FALSE &&
-         GetIsDMPossessed( oCaster ) == FALSE &&
-         GetLocalInt( GetModule(), "singleplayer" ) != 1 ){
-
-        SetModuleOverrideSpellScriptFinished();
-
-        SendMessageToPC( oCaster, "- You cannot cast magic in this area! -" );
-
-        return;
-    }
-    /*else if( !GetIsObjectValid(GetSpellCastItem( )) && GetIsPolymorphed(oCaster)){
-
-        int nShape = GetLocalInt( oCaster, "poly_shape");
-        int ok = nSpell != StringToInt(Catch2DAString("polymorph","SPELL1",nShape));
-        ok = ok && (nSpell != StringToInt(Catch2DAString("polymorph","SPELL2",nShape)));
-        ok = ok && (nSpell != StringToInt(Catch2DAString("polymorph","SPELL3",nShape)));
-
-        if(!ok){
-
-            SetModuleOverrideSpellScriptFinished( );
-            SendMessageToPC( oCaster, "Nope." );
-            return;
-        }
-    }*/
 
     if( !AllowedToCastEpicSpell( nSpell, oCaster ) ){
 
@@ -207,9 +177,6 @@ void main( ){
         case SPELL_SHADOW_CONJURATION_SUMMON_SHADOW:            sum_Shadow( oCaster, nSpell, nCasterLevel, lTarget ); break;
         case SPELL_GREATER_SHADOW_CONJURATION_SUMMON_SHADOW:    sum_Shadow( oCaster, nSpell, nCasterLevel, lTarget ); break;
         case SPELL_SHADES_SUMMON_SHADOW:                        sum_Shadow( oCaster, nSpell, nCasterLevel, lTarget ); break;
-
-        // SD Shadow
-        case 476:                                               sum_SD_Shadow( oCaster, lTarget );break;
 
         // Gate
         case SPELL_GATE:                                        sum_Gate( oCaster, nCasterLevel, lTarget ); break;

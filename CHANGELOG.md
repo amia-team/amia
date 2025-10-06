@@ -8,31 +8,42 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-
-
+- Puzzle scripts for devs and DMs to play with
+- A few settlement items to the item palette
+- Permanent event areas for:
+  - Mulhorand (outside Emeht)
+  - Waterdeep
+  - Beluir
 
 ### Changed
 - Fire Weapon and Darkfire no longer overwrite less powerful effects of the same elemental type. Eg, 1d6 fire doesn't overwrite 1d8 fire, but 1d6 cold overwrites 1d8 fire.
 - Quillfire: The caster throws a poisonous quill at a target, dealing 4d6 piercing damage and inflicting large scorpion venom on a failed fortitude save. A successful reflex save halves the damage. Every 6 caster levels adds an extra quill.
 - Quillfire's poison DC now uses the spell DC instead of DC 18.
-
+- SD summon can now be fully customized with Associate Customizer (a delay-based appearance change used to prevent this)
+- Spell crafting Greater Magic Weapon CL reduced from 15 to 10 CL
+- Plot changes to:
+  - Redacted
+- Some areas have new waypoints for Travel Agency changes
+- Overhaul the Travel Agency and Settlements and Factions area
 
 #### Bard Song and Curse Song
-- AC scaling nerfed to +1 at level 10, +2 at level 15, +3 at level 20, +5 at level 25, +7 at level 30. Level 20 bard's song is nerfed by 2 AC.
 - Every bard level after 10 now increases the song duration by 1 round. Eg, level 15 bard's song duration is 1.5 turns.
 - Lingering Song increases song duration by 1 turn instead of 5 rounds. Eg, level 15 bard's song duration with Lingering is 2.5 turns.
 - Lasting Inspiration increases song duration by 8 turns instead of tenfolding it. Eg, level 20 bard's song duration is 10 turns, while level 30 bard's song duration is 11 turns.
 - More powerful song now overwrites a less powerful song. Eg, a level 15 bard's song gets overwritten by a level 16 bard's song.
-- An equally powerful song now refreshes the song duration, same as any other effect. 
-- Song usage gives feedback if the bard doesn't have enough Perform for the highest level song.
+- An equally powerful song now refreshes the song duration, same as any other effect.
+- Songs are capped to the level of the highest circle of magic, meaning that base charisma limits the highest song level bards can use. Eg, level 16 bard with base charisma 15 can only cast up to level 15 song, or level 14 bard with base charisma 14 can only cast up to level 12 song. Base charisma 16 is required for songs from level 16 and upwards. 
+- Song usage gives feedback if the bard doesn't have enough perform skill or base charisma for their highest level song.
 - Bard Song has a new visual effect.
 - Curse Song has new visual and sound effects.
 
 
 ### Fixed
 - Wanded Fire Weapon and Darkfire no longer work with Book of Transmutation.
+- SD Shade Lord's on-hit ability drain now correctly uses the saving throw result and an undocumented underlying melee touch attack has been removed. (Basically, the saving throw was never used even though it got logged, and there was a random melee touch attack roll that needed to pass first.)
+- Fixed the Malachite Maze ending puzzle
 
-
+[4.22.0 2025-09-01]
 ### Added
 - Barrier PLC to the palette
 - Dale food/drinks (Fendel's new shop) to the palette

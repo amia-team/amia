@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Puzzle scripts for devs and DMs to play with
 - A few settlement items to the item palette
+- Permanent event areas for:
+  - Mulhorand (outside Emeht)
+  - Waterdeep
+  - Beluir
 
 ### Changed
 - Fire Weapon and Darkfire no longer overwrite less powerful effects of the same elemental type. Eg, 1d6 fire doesn't overwrite 1d8 fire, but 1d6 cold overwrites 1d8 fire.

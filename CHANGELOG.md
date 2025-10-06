@@ -19,8 +19,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Spell crafting Greater Magic Weapon CL reduced from 15 to 10 CL
 - Plot changes to:
   - Redacted
-- Update some areas for pending Travel Agency changes
-- Fix the Malachite Maze ending puzzle
+- Some areas have new waypoints for Travel Agency changes
+- Overhaul the Travel Agency and Settlements and Factions area
 
 #### Bard Song and Curse Song
 - Every bard level after 10 now increases the song duration by 1 round. Eg, level 15 bard's song duration is 1.5 turns.
@@ -37,6 +37,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Wanded Fire Weapon and Darkfire no longer work with Book of Transmutation.
 - SD Shade Lord's on-hit ability drain now correctly uses the saving throw result and an undocumented underlying melee touch attack has been removed. (Basically, the saving throw was never used even though it got logged, and there was a random melee touch attack roll that needed to pass first.)
+- Fixed the Malachite Maze ending puzzle
 
 [4.22.0 2025-09-01]
 ### Added

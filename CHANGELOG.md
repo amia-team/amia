@@ -8,8 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-
-
+- Puzzle opener script that supports the dynamic puzzle script
+- 11 permanent DM event Areas:
+ - Luiren (3)
+ - Waterdeep (5)
+ - Emeht (3)
+- 4 items to the palette for settlement stuff
 
 ### Changed
 - Fire Weapon and Darkfire no longer overwrite less powerful effects of the same elemental type. Eg, 1d6 fire doesn't overwrite 1d8 fire, but 1d6 cold overwrites 1d8 fire.
@@ -18,6 +22,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - SD summon can now be fully customized with Associate Customizer (a delay-based appearance change used to prevent this)
 - Spell crafting Greater Magic Weapon CL reduced from 15 to 10 CL
 - Plot changes to [redacted]
+- Made the puzzle script way more dynamic so it can be used for other types of puzzles
+- Overhaul the Travel Agency and Factions/Settlement room
+- Update 10 areas to support new Travel Agency/Faction entries
 
 #### Bard Song and Curse Song
 - Every bard level after 10 now increases the song duration by 1 round. Eg, level 15 bard's song duration is 1.5 turns.
@@ -30,10 +37,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Bard Song has a new visual effect.
 - Curse Song has new visual and sound effects.
 
-
 ### Fixed
 - Wanded Fire Weapon and Darkfire no longer work with Book of Transmutation.
 - SD Shade Lord's on-hit ability drain now correctly uses the saving throw result and an undocumented underlying melee touch attack has been removed. (Basically, the saving throw was never used even though it got logged, and there was a random melee touch attack roll that needed to pass first.)
+- Malachite Maze end Puzzle (and related script)
+- Gonkan's shop in L'Obsul
 
 [4.22.0 2025-09-01]
 ### Added

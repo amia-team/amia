@@ -9,11 +9,6 @@ pipeline {
                 }
             }
             steps {
-                script {
-                    def tag = sh(script: "git tag -l 'test-release*' --sort=-v:refname | head -n 1", returnStdout: true).trim()
-                    echo "Deploying tag: ${tag}"
-                    sh "git checkout ${tag}"
-                }
                 sh "docker run --rm -t -u \$(id -u):\$(id -g) -e NWN_HOME=\$(pwd) -v \$(pwd):\$(pwd) -v \$(pwd):/nasher cltalmadge/nasher:amia pack --clean --verbose --yes"
                 sh 'sudo cp Amia.mod /home/amia/amia_server/test_server/modules;'
                 sh 'chmod +x deploy-test.sh'

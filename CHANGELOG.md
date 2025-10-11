@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Made the puzzle script way more dynamic so it can be used for other types of puzzles
 - Overhaul the Travel Agency and Factions/Settlement room
 - Update 10 areas to support new Travel Agency/Faction entries
+- Update the module entry area
 
 #### Bard Song and Curse Song
 - Every bard level after 10 now increases the song duration by 1 round. Eg, level 15 bard's song duration is 1.5 turns.

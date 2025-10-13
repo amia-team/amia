@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Quillfire's poison DC now uses the spell DC instead of DC 18.
 - SD summon can now be fully customized with Associate Customizer (a delay-based appearance change used to prevent this)
 - Spell crafting Greater Magic Weapon CL reduced from 15 to 10 CL
+- Spell crafting Bless Weapon CL reduced from 15 to 10 CL
 - Plot changes to [redacted]
 - Made the puzzle script way more dynamic so it can be used for other types of puzzles
 - Overhaul the Travel Agency and Factions/Settlement room
@@ -43,6 +44,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - SD Shade Lord's on-hit ability drain now correctly uses the saving throw result and an undocumented underlying melee touch attack has been removed. (Basically, the saving throw was never used even though it got logged, and there was a random melee touch attack roll that needed to pass first.)
 - Malachite Maze end Puzzle (and related script)
 - Gonkan's shop in L'Obsul
+- Spell crafting radial spells now correctly uses the master spell level. Eg, Shadow Conjuration can't be potioned because it's innate level 4 spell, but can be wanded.
+- Spell crafted items can no longer be sold to merchants, same as before the spell crafting tweaks.
 
 [4.22.0 2025-09-01]
 ### Added

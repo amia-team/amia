@@ -22,11 +22,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - SD summon can now be fully customized with Associate Customizer (a delay-based appearance change used to prevent this)
 - Spell crafting Greater Magic Weapon CL reduced from 15 to 10 CL
 - Spell crafting Bless Weapon CL reduced from 15 to 10 CL
-- Plot changes to [redacted]
+- Plot changes to
+ - [redacted]
+ - Kingdom of Kohlingen: Greengarden, The Radiant Garden
 - Made the puzzle script way more dynamic so it can be used for other types of puzzles
 - Overhaul the Travel Agency and Factions/Settlement room
 - Update 10 areas to support new Travel Agency/Faction entries
 - Update the module entry area
+- Update Greengarden settlement guards
+- Fix a dialogue in Greengarden
 
 #### Bard Song and Curse Song
 - Every bard level after 10 now increases the song duration by 1 round. Eg, level 15 bard's song duration is 1.5 turns.

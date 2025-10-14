@@ -13,7 +13,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Luiren (3)
  - Waterdeep (5)
  - Emeht (3)
-- 4 items to the palette for settlement stuff
+- 5 items to the palette for settlement stuff
+- 11 player portraits (some updates, some new)
 
 ### Changed
 - Fire Weapon and Darkfire no longer overwrite less powerful effects of the same elemental type. Eg, 1d6 fire doesn't overwrite 1d8 fire, but 1d6 cold overwrites 1d8 fire.
@@ -25,12 +26,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Plot changes to
  - [redacted]
  - Kingdom of Kohlingen: Greengarden, The Radiant Garden
+ - Kingdom of Kohlingen: Greengarden, Temple of Tempus
+ - Kingdom of Kohlingen: Greengarden, Old City Grounds > Dragonstone Port
+ - Kingdom of Kohlingen: Greengarden, Guard house
+ - Kingdom of Kohlingen: Greengarden, House of Amethyst Healing
+ - Kingdom of Kohlingen: Greengarden, Manor grounds
+ - Kingdom of Kohlingen: Greengarden, Preparatory School
+ - Kingdom of Kohlingen: Greengarden, School Stables
+ - Kingdom of Kohlingen: Greengarden, Shrine of Repose
+ - Kingdom of Kohlingen: Greengarden, Temple of Creative Prosperity
 - Made the puzzle script way more dynamic so it can be used for other types of puzzles
 - Overhaul the Travel Agency and Factions/Settlement room
 - Update 10 areas to support new Travel Agency/Faction entries
 - Update the module entry area
-- Update Greengarden settlement guards
-- Fix a dialogue in Greengarden
+- Update Greengarden settlement guards and resrefs
+- Remove a dialogue in Greengarden
 
 #### Bard Song and Curse Song
 - Every bard level after 10 now increases the song duration by 1 round. Eg, level 15 bard's song duration is 1.5 turns.

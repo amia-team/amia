@@ -73,10 +73,8 @@ void ResolvePrereqFeats( object oPC ){
 
     // Variables.
     int nRDDLevel               = GetLevelByClass( CLASS_TYPE_DRAGON_DISCIPLE, oPC );
-    int nMonkLevel              = GetLevelByClass( CLASS_TYPE_MONK, oPC );
     int nBGLevel                = GetLevelByClass( CLASS_TYPE_BLACKGUARD, oPC );
     int nBGAura                 = GetLocalInt( oPC, "AuraOfDespair" );
-    int nHasMonkACFeat          = GetHasFeat( FEAT_MONK_AC_BONUS, oPC );
     int nShadowdancerLevel      = GetLevelByClass( CLASS_TYPE_SHADOWDANCER, oPC );
     int nHasHideInPlainSight    = GetHasFeat( FEAT_HIDE_IN_PLAIN_SIGHT, oPC );
     int nHasHotPants            = GetHasFeat( FEAT_DRAGON_IMMUNE_FIRE, oPC );
@@ -94,20 +92,6 @@ void ResolvePrereqFeats( object oPC ){
 
         // rdd customizer
         SetLocalInt( oPC, "ds_RDD", GetPCKEYValue( oPC, "ds_RDD" ) );
-    }
-
-    /*  Monk AC Prerequisite    */
-    // Remove Feat: The character has the Monk AC feat but her Monk Class Level is less than 3
-    // Grant Feat:  The character hasn't got the Monk AC feat but
-    //              she has her Monk Class Level equal to or greater than 3
-
-    if ( nHasMonkACFeat && nMonkLevel < 3 ){
-
-        NWNX_Creature_RemoveFeat(oPC, 260);
-    }
-    else if( !nHasMonkACFeat && nMonkLevel > 2 ){
-
-        NWNX_Creature_AddFeat(oPC, 260);
     }
 
     /*  Hide in Plain Sight Prerequisite

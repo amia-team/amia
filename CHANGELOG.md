@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+[4.24.0 2025-10-14]
+### Added
 - Puzzle opener script that supports the dynamic puzzle script
 - 11 permanent DM event Areas:
  - Luiren (3)

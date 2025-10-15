@@ -7,7 +7,7 @@ void main()
 {
     object player = GetLastUsedBy();
     string waypointTag = GetLocalString(OBJECT_SELF, LVAR_RECALL_WP);
-    object portalDestination = GetObjectByTag(waypointTag);
+    object portalDestination = GetWaypointByTag(waypointTag);
 
     CheckHenchmen(player,portalDestination);
 

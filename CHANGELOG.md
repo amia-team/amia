@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
+- Make the Travel Agency No-PvP
 
 [4.24.0 2025-10-14]
 ### Added

@@ -22,6 +22,11 @@ void main(){
 
     object oPC = GetLastRespawnButtonPresser();
     int nClassBG      = GetLevelByClass(31,oPC);
+    object area = GetArea(oPC);
+    string areaTag = GetTag(area);
+    int rescueZone = GetLocalInt(area, "FreeRespawn");
+    object rescueWP = GetWaypointByTag(areaTag + "_wp");
+    string rescueMessage = GetLocalString(area, "rescue_message");
 
     if (GetLocalInt(oPC, "StasisDeath") == TRUE)
     {
@@ -38,5 +43,12 @@ void main(){
     // BG Aura of Despair.
     if(nClassBG >= 3){
         ApplyEffectToObject( DURATION_TYPE_PERMANENT, ExtraordinaryEffect( EffectAreaOfEffect( 56, "bg_des_en", "****", "bg_des_ex" ) ), oPC );
+    }
+    // Free Respawn areas with rescue waypoints
+    if(rescueZone == 1 && GetIsObjectValid(rescueWP)){
+        DelayCommand( 1.1, AssignCommand(oPC, JumpToObject(rescueWP, 0)));
+        if(rescueMessage != ""){
+            FloatingTextStringOnCreature(rescueMessage, oPC, TRUE, TRUE);
+        }
     }
 }

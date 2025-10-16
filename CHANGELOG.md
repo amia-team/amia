@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Respawn script now allows for rescues for special areas
 - If you die while doing the Djinn's puzzle (in Khem: Temple of the Eight Gods), you will be teleported to the start of the area with a free respawn
+- Darkhills Tileset Change
 
 ### Fixed
 - Make the Travel Agency No-PvP

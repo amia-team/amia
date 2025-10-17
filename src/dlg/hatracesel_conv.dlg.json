@@ -56,7 +56,19 @@
               },
               "ConditionParams": {
                 "type": "list",
-                "value": []
+                "value": [
+                  {
+                    "__struct_id": 0,
+                    "Key": {
+                      "type": "cexostring",
+                      "value": "race"
+                    },
+                    "Value": {
+                      "type": "cexostring",
+                      "value": "0"
+                    }
+                  }
+                ]
               },
               "Index": {
                 "type": "dword",
@@ -75,7 +87,19 @@
               },
               "ConditionParams": {
                 "type": "list",
-                "value": []
+                "value": [
+                  {
+                    "__struct_id": 0,
+                    "Key": {
+                      "type": "cexostring",
+                      "value": "race"
+                    },
+                    "Value": {
+                      "type": "cexostring",
+                      "value": "1"
+                    }
+                  }
+                ]
               },
               "Index": {
                 "type": "dword",
@@ -94,7 +118,19 @@
               },
               "ConditionParams": {
                 "type": "list",
-                "value": []
+                "value": [
+                  {
+                    "__struct_id": 0,
+                    "Key": {
+                      "type": "cexostring",
+                      "value": "race"
+                    },
+                    "Value": {
+                      "type": "cexostring",
+                      "value": "2"
+                    }
+                  }
+                ]
               },
               "Index": {
                 "type": "dword",
@@ -113,7 +149,19 @@
               },
               "ConditionParams": {
                 "type": "list",
-                "value": []
+                "value": [
+                  {
+                    "__struct_id": 0,
+                    "Key": {
+                      "type": "cexostring",
+                      "value": "race"
+                    },
+                    "Value": {
+                      "type": "cexostring",
+                      "value": "3"
+                    }
+                  }
+                ]
               },
               "Index": {
                 "type": "dword",
@@ -132,7 +180,19 @@
               },
               "ConditionParams": {
                 "type": "list",
-                "value": []
+                "value": [
+                  {
+                    "__struct_id": 0,
+                    "Key": {
+                      "type": "cexostring",
+                      "value": "race"
+                    },
+                    "Value": {
+                      "type": "cexostring",
+                      "value": "4"
+                    }
+                  }
+                ]
               },
               "Index": {
                 "type": "dword",
@@ -151,7 +211,19 @@
               },
               "ConditionParams": {
                 "type": "list",
-                "value": []
+                "value": [
+                  {
+                    "__struct_id": 0,
+                    "Key": {
+                      "type": "cexostring",
+                      "value": "race"
+                    },
+                    "Value": {
+                      "type": "cexostring",
+                      "value": "5"
+                    }
+                  }
+                ]
               },
               "Index": {
                 "type": "dword",
@@ -170,7 +242,19 @@
               },
               "ConditionParams": {
                 "type": "list",
-                "value": []
+                "value": [
+                  {
+                    "__struct_id": 0,
+                    "Key": {
+                      "type": "cexostring",
+                      "value": "race"
+                    },
+                    "Value": {
+                      "type": "cexostring",
+                      "value": "6"
+                    }
+                  }
+                ]
               },
               "Index": {
                 "type": "dword",
@@ -217,7 +301,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "The magical hat box opens before you, but before you can behold and wear it's wonders. You feel it's magic flow through your body. Choosing your size for it's headwear. The race which best describes what you are is..?\n(Please note that this cannot be changed later, you will need to select your base appearance for the hats to line up properly)"
+            "0": "<StartAction>The magical hat box opens, but before you can behold and wear its wonders, you feel its magic flow through your body. You must choose a size for your headwear. This selection cannot be changed. You will need additional boxes for different racial sizes.\n\nThe race which best describes you is...?</Start>\n\n((Note: Choose your race based on the model appearance your character uses. Example: If you are a half-elf with an elven model, choose Elf, not Half-Elf, because Half-Elf defaults to the human appearance and thus will not align with your character's model.))"
           }
         }
       }
@@ -225,7 +309,7 @@
   },
   "NumWords": {
     "type": "dword",
-    "value": 88
+    "value": 101
   },
   "PreventZoomIn": {
     "type": "byte",
@@ -275,7 +359,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "Cancel"
+            "0": "Nevermind"
           }
         }
       },
@@ -283,7 +367,19 @@
         "__struct_id": 1,
         "ActionParams": {
           "type": "list",
-          "value": []
+          "value": [
+            {
+              "__struct_id": 0,
+              "Key": {
+                "type": "cexostring",
+                "value": "race"
+              },
+              "Value": {
+                "type": "cexostring",
+                "value": "6"
+              }
+            }
+          ]
         },
         "Animation": {
           "type": "dword",
@@ -311,7 +407,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "ds_action_7"
+          "value": "hat_race_select"
         },
         "Sound": {
           "type": "resref",
@@ -320,7 +416,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "A Human"
+            "0": "Human"
           }
         }
       },
@@ -328,7 +424,19 @@
         "__struct_id": 2,
         "ActionParams": {
           "type": "list",
-          "value": []
+          "value": [
+            {
+              "__struct_id": 0,
+              "Key": {
+                "type": "cexostring",
+                "value": "race"
+              },
+              "Value": {
+                "type": "cexostring",
+                "value": "5"
+              }
+            }
+          ]
         },
         "Animation": {
           "type": "dword",
@@ -356,7 +464,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "ds_action_6"
+          "value": "hat_race_select"
         },
         "Sound": {
           "type": "resref",
@@ -365,7 +473,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "A Half Orc"
+            "0": "Half-Orc"
           }
         }
       },
@@ -373,7 +481,19 @@
         "__struct_id": 3,
         "ActionParams": {
           "type": "list",
-          "value": []
+          "value": [
+            {
+              "__struct_id": 0,
+              "Key": {
+                "type": "cexostring",
+                "value": "race"
+              },
+              "Value": {
+                "type": "cexostring",
+                "value": "4"
+              }
+            }
+          ]
         },
         "Animation": {
           "type": "dword",
@@ -401,7 +521,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "ds_action_5"
+          "value": "hat_race_select"
         },
         "Sound": {
           "type": "resref",
@@ -410,7 +530,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "A Half-Elf - (Please note, this might not work for all hats)"
+            "0": "Half-Elf"
           }
         }
       },
@@ -418,7 +538,19 @@
         "__struct_id": 4,
         "ActionParams": {
           "type": "list",
-          "value": []
+          "value": [
+            {
+              "__struct_id": 0,
+              "Key": {
+                "type": "cexostring",
+                "value": "race"
+              },
+              "Value": {
+                "type": "cexostring",
+                "value": "3"
+              }
+            }
+          ]
         },
         "Animation": {
           "type": "dword",
@@ -446,7 +578,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "ds_action_4"
+          "value": "hat_race_select"
         },
         "Sound": {
           "type": "resref",
@@ -455,7 +587,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "A Halfling"
+            "0": "Halfling"
           }
         }
       },
@@ -463,7 +595,19 @@
         "__struct_id": 5,
         "ActionParams": {
           "type": "list",
-          "value": []
+          "value": [
+            {
+              "__struct_id": 0,
+              "Key": {
+                "type": "cexostring",
+                "value": "race"
+              },
+              "Value": {
+                "type": "cexostring",
+                "value": "2"
+              }
+            }
+          ]
         },
         "Animation": {
           "type": "dword",
@@ -491,7 +635,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "ds_action_3"
+          "value": "hat_race_select"
         },
         "Sound": {
           "type": "resref",
@@ -500,7 +644,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "A Gnome"
+            "0": "Gnome"
           }
         }
       },
@@ -508,7 +652,19 @@
         "__struct_id": 6,
         "ActionParams": {
           "type": "list",
-          "value": []
+          "value": [
+            {
+              "__struct_id": 0,
+              "Key": {
+                "type": "cexostring",
+                "value": "race"
+              },
+              "Value": {
+                "type": "cexostring",
+                "value": "1"
+              }
+            }
+          ]
         },
         "Animation": {
           "type": "dword",
@@ -536,7 +692,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "ds_action_2"
+          "value": "hat_race_select"
         },
         "Sound": {
           "type": "resref",
@@ -545,7 +701,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "An Elf"
+            "0": "Elf"
           }
         }
       },
@@ -553,7 +709,19 @@
         "__struct_id": 7,
         "ActionParams": {
           "type": "list",
-          "value": []
+          "value": [
+            {
+              "__struct_id": 0,
+              "Key": {
+                "type": "cexostring",
+                "value": "race"
+              },
+              "Value": {
+                "type": "cexostring",
+                "value": "0"
+              }
+            }
+          ]
         },
         "Animation": {
           "type": "dword",
@@ -581,7 +749,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "ds_action_1"
+          "value": "hat_race_select"
         },
         "Sound": {
           "type": "resref",
@@ -590,7 +758,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "A Dwarf"
+            "0": "Dwarf"
           }
         }
       }

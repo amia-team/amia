@@ -4,5 +4,5 @@ void main()
     object pc = GetPCSpeaker();
 
     SetLocalInt(pc, "mask", param);
-    ExecuteScript("mask_select", pc);
+    ExecuteScript("mask_race_select", pc);
 }

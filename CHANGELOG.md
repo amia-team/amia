@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Weapon Finesse is now a free feat that everyone gets. No more DEX tax.
 
 ### Changed
 - Respawn script now allows for rescues for special areas

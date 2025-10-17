@@ -14,9 +14,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - If you die while doing the Djinn's puzzle (in Khem: Temple of the Eight Gods), you will be teleported to the start of the area with a free respawn
 - Darkhills Tileset Change
 - Unlocked the doors in Calderis Great Hall
+- Removed Box of Hats and Box of Masks from Djinn Merchant
+- Merchants that carry the Box of Hats and Box of Masks:
+ - Aluvard in Traveller's Rest: Trades Hall
+ - Violet in Kingdom of Kohlingen: Fort Cystana, Trade Hall
+ - Lucy in Obsidian Isle: Calderis, Workshop
+ - Tailor in Underdark: L'Obsul
+ - Wilson Yadgerson in The Triumvir: Courtyard
+ - Haji's Instruments in The 363rd Abyssal Layer: Zanshibon
+ - There may be more from duplicate shops located throughout the module
 
 ### Fixed
 - Make the Travel Agency No-PvP
+- Box of Hats and Box of Masks work again!
 
 [4.24.0 2025-10-14]
 ### Added

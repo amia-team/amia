@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ### Changed
-
+Changed travel_coaches script to remove unecessary destination dialogue
 
 ### Fixed
 

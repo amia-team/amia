@@ -57,12 +57,12 @@ void main(){
     // lets try to spawn the area, if it doesn't exist.
     //fw_spawnInstance(OBJECT_SELF);
     //ambush along the route
-    string sAmbush      = GetLocalString( OBJECT_SELF, "WP_ambush" );
-    object oAmbush      = GetWaypointByTag( sAmbush );
-    object oAmbushArea  = GetArea( oAmbush );
-    int nPlayerCount    = GetLocalInt( oAmbushArea, "PlayerCount" );
+   // string sAmbush      = GetLocalString( OBJECT_SELF, "WP_ambush" );
+    //object oAmbush      = GetWaypointByTag( sAmbush );
+    //object oAmbushArea  = GetArea( oAmbush );
+    //int nPlayerCount    = GetLocalInt( oAmbushArea, "PlayerCount" );
     //Disabling the Ambushed Mechanic for now
-    int nAmbushed = 10;
+    //int nAmbushed = 10;
     //int nAmbushed       = d10();
 
 
@@ -122,19 +122,11 @@ void main(){
                     SendMessageToPC( oPC,  GetName( oPC )+" selected for transport." );
                 }
 
-                if(  nPlayerCount == 0 && nAmbushed == 1 && oAmbush != OBJECT_INVALID ){
-
-                    //start ambush convo
-                    FadeToBlack( oObject );
-                    DelayCommand( 1.0, AssignCommand( oObject, ActionStartConversation( oObject, "travel_ambush", TRUE, FALSE ) ) );
-                    SetLocalObject( oObject, "ds_target", OBJECT_SELF );
-                }
-                else{
                     //start transport convo
                     FadeToBlack( oObject );
-                    DelayCommand( 1.0, AssignCommand( oObject, ActionStartConversation( oObject, "travel_normal", TRUE, FALSE ) ) );
+                    //DelayCommand( 1.0, AssignCommand( oObject, ActionStartConversation( oObject, "travel_normal", TRUE, FALSE ) ) );
+                    DelayCommand( 1.0, AssignCommand( oObject, ExecuteScript("travel_normal", oObject) ) );
                     SetLocalObject( oObject, "ds_target", OBJECT_SELF );
-                }
             }
 
             oObject = GetNextInPersistentObject( oTrigger );

@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Weapon Finesse is now a free feat that everyone gets. No more DEX tax.
+- VFX Quiver item that sets your quiver's color and arrow color
+- VFX quiver item (Magical Quiver) to Ranged Weapon Crafter's recipes
 
 ### Changed
 - Respawn script now allows for rescues for special areas

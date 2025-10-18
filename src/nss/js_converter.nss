@@ -968,7 +968,7 @@ void RangedCraftsmanConverter(object oPC, object oBench, int nNode)
           case 51: sProduct = "js_arch_shrk"; sIngredient1 = "js_bla_siin"; sIngredient2 = "none"; sType = "shuriken"; sMaterial = "silver"; nCost = 100; break;
           case 52: sProduct = "js_arch_shrk"; sIngredient1 = "js_bla_adin"; sIngredient2 = "none"; sType = "shuriken"; sMaterial = "adamantine"; nCost = 100; break;
           case 53: sProduct = "js_arch_shrk"; sIngredient1 = "js_bla_miin"; sIngredient2 = "none"; sType = "shuriken"; sMaterial = "mithral"; nCost = 100; break;
-          case 54: sProduct = "magical_quiver"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_alch_elea"; nCost = 100; break;
+          case 54: sProduct = "magical_quiver"; sIngredient1 = "js_hun_hide"; sIngredient2 = "js_alch_elee"; nCost = 100; break;
 
         }
     }

@@ -13,19 +13,7 @@ pipeline {
                  script {
                     sh "docker run --rm -t -u \$(id -u):\$(id -g) -e NWN_HOME=\$(pwd) -v \$(pwd):\$(pwd) -v \$(pwd):/nasher cltalmadge/nasher:amia pack dev --clean --verbose --yes"
                     archiveArtifacts artifacts: 'AmiaDev.mod', followSymlinks: false
-                    sh 'sudo mv AmiaDev.mod /home/amia/dev_server/server/modules;'
                 }
-            }
-        }
-        stage('Restart Dev Server') {
-            when {
-                expression {
-                    return params.Restart == 'Yes'
-                }
-            }
-            steps {
-                sh 'chmod +x deploy-dev.sh'
-                sh './deploy-dev.sh'
             }
         }
     }

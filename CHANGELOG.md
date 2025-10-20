@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-
+Added alignment changer NPC for test server
 
 ### Changed
 Changed travel_coaches script to remove unecessary destination dialogue

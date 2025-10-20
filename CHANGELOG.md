@@ -9,12 +9,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-
 ### Changed
-Changed travel_coaches script to remove unecessary destination dialogue
+- Changed travel_coaches script to remove unecessary destination dialogue
 
 ### Fixed
-
+- Magical Quiver dialogue: Arrows now link back to the correct list, lol
 
 [4.25.0 2025-10-18]
 
@@ -23,19 +22,18 @@ Changed travel_coaches script to remove unecessary destination dialogue
 - VFX Quiver item that sets your quiver's color and arrow color
 - VFX quiver item (Magical Quiver) to Ranged Weapon Crafter's recipes
 
-Dwarven Defender:
+- Dwarven Defender:
  - Defensive Stance now applies a 90% movement speed penalty(freedom does not prevent this) and is no longer a combat stance. 
  - Can now be used with power attack, parry, expertise
  
-Warlock... Tweaks were made to the following:
-- Eldritch blast: Damage added from charisma modifier is now +1% extra damage per charisma modifier, to a maximum of 15, except at level 30 (Capstone), where 
+- Warlock... Tweaks were made to the following:
+ - Eldritch blast: Damage added from charisma modifier is now +1% extra damage per charisma modifier, to a maximum of 15, except at level 30 (Capstone), where 
 it is uncapped and the extra damage is a percentage equal to the charisma modifier * 1.5 (meaning damage parity pnp/NWN2 warlocks with Eldritch Mastery)
-- Dark Foresight: Phyiscal Damage resisted is equal to 10 + Charisma modifier. 
-- Bound One's Own Luck's saving throw cap is increased to +10 saves at level 30 warlock. N.B.: This spell will probably be changed such that it only boosts a save chosen at the time of casting vis-à-vis PnP.
-- Otherworldly Whispers: Now confers a skill bonus equal to 10 + 1/2 Warlock Level + Charisma Modifier
-- Repel the Hail: Percent chance to evade from Concealement vs. a ranged attack is now 25 + warlock level + charisma modifier (Does not stack with other sources of concealment)
-
-Potential To-Do: Change visual effects, tweak invocations slightly depending on pact choice
+ - Dark Foresight: Phyiscal Damage resisted is equal to 10 + Charisma modifier. 
+ - Bound One's Own Luck's saving throw cap is increased to +10 saves at level 30 warlock. N.B.: This spell will probably be changed such that it only boosts a save chosen at the time of casting vis-à-vis PnP.
+ - Otherworldly Whispers: Now confers a skill bonus equal to 10 + 1/2 Warlock Level + Charisma Modifier
+ - Repel the Hail: Percent chance to evade from Concealement vs. a ranged attack is now 25 + warlock level + charisma modifier (Does not stack with other sources of concealment)
+ - Potential To-Do: Change visual effects, tweak invocations slightly depending on pact choice
 
 ### Changed
 - Respawn script now allows for rescues for special areas

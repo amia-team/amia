@@ -8,10 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-Added alignment changer NPC for test server
+- Added alignment changer NPC for test server
 
 ### Changed
-Changed travel_coaches script to remove unecessary destination dialogue
+- Changed travel_coaches script to remove unecessary destination dialogue
+- DTS challenges now allow for Take 20 skill rolls if you are not in combat
 
 ### Fixed
 

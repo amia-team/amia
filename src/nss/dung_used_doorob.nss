@@ -36,6 +36,7 @@ void main()
 
 void SkillCheck( object oObject, object oPC, string sWaypoint, int nSkill, string sSkill, int nAdjustment)
 {
+   int combat = GetIsInCombat(oPC);
    int nSkillRank = GetSkillRank(nSkill,oPC);
    int nLevel = GetLocalInt(oObject,"level");
    int nDC = nLevel + 10 + (nLevel-(nLevel/3)+nAdjustment);
@@ -57,10 +58,19 @@ void SkillCheck( object oObject, object oPC, string sWaypoint, int nSkill, strin
    SetLocalInt(oObject,"blocker",1);
    DelayCommand(60.0,DeleteLocalInt(oObject,"blocker"));
 
+   if(combat != 1){
+     nDiceRoll = 20;
+   }
    if((nDiceRoll+nSkillRank) >= nDC)
    {
-     SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank) + " + " + IntToString(nDiceRoll) + " = " +
+     if(combat != 1){
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank) + " + " + IntToString(nDiceRoll) + " = " +
      IntToString((nSkillRank+nDiceRoll)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
+     }
+     else{
+        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank) + " + " + IntToString(nDiceRoll) + " = " +
+     IntToString((nSkillRank+nDiceRoll)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
+     }
 
      nPCLevel = GetLevelByPosition(1,oPC)+GetLevelByPosition(2,oPC)+GetLevelByPosition(3,oPC);
      if(nPCLevel<30)
@@ -90,7 +100,13 @@ void SkillCheck( object oObject, object oPC, string sWaypoint, int nSkill, strin
    }
    else
    {
-     SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank) + " + " + IntToString(nDiceRoll) + " = " +
+     if(combat != 1){
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank) + " + " + IntToString(nDiceRoll) + " = " +
      IntToString((nSkillRank+nDiceRoll)) + " Vs " + IntToString(nDC) + " !FAILURE!");
+     }
+     else{
+        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank) + " + " + IntToString(nDiceRoll) + " = " +
+     IntToString((nSkillRank+nDiceRoll)) + " Vs " + IntToString(nDC) + " !FAILURE!");
+     }
    }
 }

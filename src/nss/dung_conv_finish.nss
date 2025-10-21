@@ -55,7 +55,7 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
     int nSkillRank2;
     int nSkillRank3;
     int nSkillRank4;
-    int nDiceRoll = Random(20)+1;
+    int nDiceRoll = 20;
     int nDiceRollTotal;
     object oDungeonObject = GetLocalObject(oPC,"dungobject");
 
@@ -77,14 +77,14 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
 
        if(nDiceRollTotal >= nDC)
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
         RewardPC(oPC, nLevel, sType, sWaypoint);
         AssignCommand(oDungeonObject,ActionSpeakString("Hmm. Fine. It is here... *Reveals the location of the hidden doorway* Let me go get some supplies. *Disappears afterwards*"));
         DelayCommand(0.5,DestroyObject(oDungeonObject));
        }
        else
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
        }
 
       }
@@ -96,14 +96,14 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
 
        if(nDiceRollTotal >= nDC)
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank2) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank2) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
         RewardPC(oPC, nLevel, sType, sWaypoint);
         AssignCommand(oDungeonObject,ActionSpeakString("I see. I don't want to get in trouble... its right here *Reveals the location of the hidden doorway and disappears shortly after*"));
         DelayCommand(0.5,DestroyObject(oDungeonObject));
        }
        else
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank2) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank2) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
        }
      }
      else if(nNode==3)
@@ -113,14 +113,14 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
 
        if(nDiceRollTotal >= nDC)
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank3) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank3) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
         RewardPC(oPC, nLevel, sType, sWaypoint);
         AssignCommand(oDungeonObject,ActionSpeakString("Fine! Its just here look! *Reveals the location of the hidden doorway before running off*"));
         DelayCommand(0.5,DestroyObject(oDungeonObject));
        }
        else
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank3) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank3) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
        }
      }
      else if(nNode==4)   // Pickpocket has a +50 adjustment if they have the skill
@@ -135,14 +135,14 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
 
        if((nDiceRollTotal) >= nDC)
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank4) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank4) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
         RewardPC(oPC, nLevel, sType, sWaypoint);
         AssignCommand(oDungeonObject,ActionSpeakString("No! I am busy! Shoo! *As they are distracted shooing you off you successfully pick pocket the map, and location off of them. Revealing the door way after they take off*"));
         DelayCommand(0.5,DestroyObject(oDungeonObject));
        }
        else
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank4) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank4) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
        }
      }
 
@@ -162,14 +162,14 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
 
        if(nDiceRollTotal >= nDC)
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
         RewardPC(oPC, nLevel, sType, sWaypoint);
         AssignCommand(oDungeonObject,ActionSpeakString("Alright. Here *Hands you a heavy bag* this is your share to keep this spot quiet? *Nods before taking off*"));
         DelayCommand(0.5,DestroyObject(oDungeonObject));
        }
        else
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
        }
 
      }
@@ -181,14 +181,14 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
 
        if(nDiceRollTotal >= nDC)
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank2) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank2) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
         RewardPC(oPC, nLevel, sType, sWaypoint);
         AssignCommand(oDungeonObject,ActionSpeakString("Oh. I... didn't mean to steal from anyone. Look here. *Hands you a heavy bag and quickly takes off*"));
         DelayCommand(0.5,DestroyObject(oDungeonObject));
        }
        else
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank2) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank2) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
        }
      }
      else if(nNode==3)
@@ -198,14 +198,14 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
 
        if(nDiceRollTotal >= nDC)
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank3) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank3) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
         RewardPC(oPC, nLevel, sType, sWaypoint);
         AssignCommand(oDungeonObject,ActionSpeakString("By the gods don't hurt me! Here! *Tosses a heavy bag at you and runs off*"));
         DelayCommand(0.5,DestroyObject(oDungeonObject));
        }
        else
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank3) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank3) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
        }
      }
      else if(nNode==4)    // Pickpocket has a +50 adjustment if they have the skill
@@ -219,14 +219,14 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
 
        if(nDiceRollTotal >= nDC)
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank4) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank4) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
         RewardPC(oPC, nLevel, sType, sWaypoint);
         AssignCommand(oDungeonObject,ActionSpeakString("I said pike off! *As they grumble and take off you quickly picket pocket them successfully and recover a bag of something*"));
         DelayCommand(0.5,DestroyObject(oDungeonObject));
        }
        else
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank4) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank4) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
        }
      }
     }
@@ -240,14 +240,14 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
      {
       if(nDiceRollTotal >= nDC)
       {
-       SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
+       SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
         RewardPC(oPC, nLevel, sType, sWaypoint);
         AssignCommand(oDungeonObject,ActionSpeakString("I won't forget your kindness. This is the least I can do. *Passes over a heavy sack before taking their leave*"));
         DelayCommand(0.5,DestroyObject(oDungeonObject));
       }
       else
       {
-       SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
+       SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
       }
      }
 
@@ -263,14 +263,14 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
      {
       if(nDiceRollTotal >= nDC)
       {
-       SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
+       SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
         RewardPC(oPC, nLevel, sType, sWaypoint);
         AssignCommand(oDungeonObject,ActionSpeakString("*The puzzle clicks and cracks open revealing a small hidden treasure*"));
         DelayCommand(0.5,DestroyObject(oDungeonObject));
       }
       else
       {
-       SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
+       SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
       }
      }
 
@@ -296,14 +296,14 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
 
        if(nDiceRollTotal >= nDC)
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
         RewardPC(oPC, nLevel, sType, sWaypoint);
         AssignCommand(oDungeonObject,ActionSpeakString("*The puzzle cracks open as the magic is released revealing a small hidden treasure*"));
         DelayCommand(0.5,DestroyObject(oDungeonObject));
        }
        else
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
        }
 
       }
@@ -321,14 +321,14 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
 
        if(nDiceRollTotal >= nDC)
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
         RewardPC(oPC, nLevel, sType, sWaypoint);
         AssignCommand(oDungeonObject,ActionSpeakString("You are really quite talented! *Smiles* Thank you. I should get going. I have some friends I need to bury. Take this. *Hands you a bag before taking off*"));
         DelayCommand(0.5,DestroyObject(oDungeonObject));
        }
        else
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
        }
 
       }
@@ -340,14 +340,14 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
 
        if(nDiceRollTotal >= nDC)
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank2) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank2) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
         RewardPC(oPC, nLevel, sType, sWaypoint);
         AssignCommand(oDungeonObject,ActionSpeakString("You... are right. I need to survive and get out of here. I can't let my friends death be in vain. Thank you. *Hands you a bundle of stuff before taking off*"));
         DelayCommand(0.5,DestroyObject(oDungeonObject));
        }
        else
        {
-        SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank2) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
+        SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank2) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
        }
      }
     }
@@ -362,14 +362,14 @@ void ResolveChallenge(object oPC, string sType, string sWaypoint, int nLevel, in
      {
       if(nDiceRollTotal >= nDC)
       {
-       SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
+       SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !SUCCESS!");
         RewardPC(oPC, nLevel, sType, sWaypoint);
         AssignCommand(oDungeonObject,ActionSpeakString("*The pile of junk before you is in fact something a lot more valuable afterall*"));
         DelayCommand(0.5,DestroyObject(oDungeonObject));
       }
       else
       {
-       SendMessageToPC(oPC,"Skill Check ("+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
+       SendMessageToPC(oPC,"Skill Check (Take 20: "+sSkill+"): " + IntToString(nSkillRank1) + " + " + IntToString(nDiceRoll) + " = " + IntToString((nDiceRollTotal)) + " Vs " + IntToString(nDC) + " !FAILURE!");
       }
      }
 

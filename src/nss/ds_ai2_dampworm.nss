@@ -367,4 +367,8 @@ void GenerateWormLoot(object oWorm)
    oLoot = GenerateEpicLootReturn(oWorm);
    SetDroppableFlag(oLoot,TRUE);
 
+   // Quest Drop
+   oLoot = CreateItemOnObject("qst_purpleworm", oWorm);
+   SetDroppableFlag(oLoot,TRUE);
+
 }

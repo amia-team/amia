@@ -9,13 +9,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Added alignment changer NPC for test server
+- Purple Worm raid quest to Khem: Temple of the Eight Gods (by the entrance, not past the puzzles)
+- New reward item for Purple Worm quest: Freezing Sphere Summoner
 
 ### Changed
 - Changed travel_coaches script to remove unecessary destination dialogue
 - DTS challenges now allow for Take 20 skill rolls if you are not in combat
+- Increased the Lich Raid quest gold/xp reward by 10,000 each
 
 ### Fixed
 - Typos on items in a dynamic merchant
+- Removed a buggy duplicate merchant
+- 2 buggy merchants that had missing resources
 
 [4.25.0 2025-10-18]
 

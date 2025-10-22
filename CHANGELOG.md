@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Changed travel_coaches script to remove unecessary destination dialogue
 - DTS challenges now allow for Take 20 skill rolls if you are not in combat
 - Increased the Lich Raid quest gold/xp reward by 10,000 each
+- Plot updates to:
+ - Amia Forest: The Green Lake
+ - Silent Bay: Crystal Bridge
+ - Silent Bay: Crystal Bridge, Animal Shelter
 
 ### Fixed
 - Typos on items in a dynamic merchant

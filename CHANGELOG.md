@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Increased the Lich Raid quest gold/xp reward by 10,000 each
 - Plot updates to:
  - Amia Forest: The Green Lake
+ - Amia Forest: Oakmist Vale, Treetop Village
+ - Amia Forest: Oakmist Vale, Treetop Hut
  - Silent Bay: Crystal Bridge
  - Silent Bay: Crystal Bridge, Animal Shelter
  - Winya Ravana

@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - DTS challenges now allow for Take 20 skill rolls if you are not in combat
 
 ### Fixed
-
+- Typos on items in a dynamic merchant
 
 [4.25.0 2025-10-18]
 

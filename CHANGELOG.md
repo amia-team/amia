@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Amia Forest: The Green Lake
  - Silent Bay: Crystal Bridge
  - Silent Bay: Crystal Bridge, Animal Shelter
+ - Winya Ravana
 
 ### Fixed
 - Typos on items in a dynamic merchant

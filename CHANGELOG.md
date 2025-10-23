@@ -24,6 +24,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Silent Bay: Crystal Bridge, Animal Shelter
  - Winya Ravana
  - Amia Forest: Mysterious Ruins > Amia Forest: Moonvale Elven Outpost
+ - Southport: West Coast
+ - Southport: West Coast, Portal Chamber
 
 ### Fixed
 - Typos on items in a dynamic merchant

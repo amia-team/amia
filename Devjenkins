@@ -3,11 +3,7 @@ pipeline {
 
     stages {
         stage('Build') {
-            when {
-                expression {
-                    return params.Build == 'Yes' || params.Deploy == 'Yes'
-                }
-            }
+
             steps {
                 echo 'Building..'
                  script {

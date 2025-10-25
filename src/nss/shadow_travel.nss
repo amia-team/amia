@@ -5,19 +5,34 @@
     players to places via the shadowplane.
 */
 
-#include "x0_i0_position"
 #include "amia_include"
+
+//Canibalized the amia include party travel script to do whacky cool effects shit
+void shadowTransportParty( object oPC, string sWaypoint ){
+
+    object oDest    = GetWaypointByTag( sWaypoint );
+    object oTrigger = GetNearestObjectByTag( "party_trigger" );
+    object oObject  = GetFirstInPersistentObject( oTrigger );
+
+    effect teleSmoke = EffectVisualEffect(VFX_FNF_SUMMON_MONSTER_1);
+
+    while ( GetIsObjectValid( oObject ) ) {
+
+        if ( ds_check_partymember( oPC, oObject ) ) {
+
+            AssignCommand( oObject, ClearAllActions( TRUE ) );
+            ApplyEffectToObject(DURATION_TYPE_INSTANT,teleSmoke, oObject);
+            DelayCommand(2.0f,AssignCommand( oObject, ActionJumpToObject( oDest, FALSE ) ) );
+        }
+
+        oObject = GetNextInPersistentObject( oTrigger );
+    }
+}
 
 void main() {
     string tDestination = GetScriptParam("destination");
     object tWaypoint = GetObjectByTag(tDestination);
-
-    // Grab the first players location for teleporting
-    location playerLoc = GetLocation(GetLastSpeaker());
-    float teleportRadius = 7.0;
-    effect teleSmoke = EffectVisualEffect(VFX_FNF_SUMMON_MONSTER_1);
     object leadPlayer = GetLastSpeaker();
-    object partyMember = GetFirstFactionMember(leadPlayer, TRUE);
 
       if ( GetIsDM( leadPlayer ) ){
 
@@ -25,28 +40,6 @@ void main() {
 
         return;
     }
-    //ApplyEffectToObject(DURATION_TYPE_INSTANT, teleSmoke,leadPlayer);
-    //ds_transport_party( leadPlayer, GetTag( tWaypoint ) );
+    shadowTransportParty( leadPlayer, GetTag( tWaypoint ) );
 
-    //unfade PC and set switch
-    //FadeFromBlack( oPC );
-
-    //Teleport the first player then worry about the others
-    if (tWaypoint != OBJECT_INVALID) {
-    ApplyEffectToObject(DURATION_TYPE_INSTANT, teleSmoke,leadPlayer);
-    DelayCommand(2.0f,AssignCommand(leadPlayer,JumpToObject(tWaypoint)));
-
-    object objectsInSphere = GetFirstObjectInShape(SHAPE_SPHERE,teleportRadius,playerLoc,FALSE,OBJECT_TYPE_CREATURE);
-
-    while(GetIsObjectValid(objectsInSphere) == TRUE) {
-        while(GetIsObjectValid(partyMember) == TRUE) {
-            if (GetIsPC(objectsInSphere) == TRUE && objectsInSphere == partyMember) {
-                    //ApplyEffectToObject(DURATION_TYPE_INSTANT, teleSmoke,partyMember);
-                    AssignCommand(partyMember,JumpToObject(tWaypoint));
-            }
-            partyMember = GetNextFactionMember(leadPlayer, TRUE);
-        }
-    objectsInSphere = GetNextObjectInShape(SHAPE_SPHERE,teleportRadius,playerLoc,FALSE,OBJECT_TYPE_CREATURE);
-    }
-    }
 }

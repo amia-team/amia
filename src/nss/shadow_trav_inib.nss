@@ -9,7 +9,7 @@
 void main()
 {
     object player = GetLastUsedBy();
-    object tTrigger = GetNearestObjectByTag( "party_trigger" );
+    object tTrigger = GetNearestObjectByTag( "shadow_party_trigger" );
     object nextPlayer  = GetFirstInPersistentObject( tTrigger );
 
      while ( GetIsObjectValid( nextPlayer ) ) {

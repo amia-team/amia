@@ -11,7 +11,7 @@
 void shadowTransportParty( object oPC, string sWaypoint ){
 
     object oDest    = GetWaypointByTag( sWaypoint );
-    object oTrigger = GetNearestObjectByTag( "party_trigger" );
+    object oTrigger = GetNearestObjectByTag( "shadow_party_trigger" );
     object oObject  = GetFirstInPersistentObject( oTrigger );
 
     effect teleSmoke = EffectVisualEffect(VFX_FNF_SUMMON_MONSTER_1);

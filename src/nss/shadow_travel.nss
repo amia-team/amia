@@ -5,6 +5,9 @@
     players to places via the shadowplane.
 */
 
+#include "x0_i0_position"
+#include "amia_include"
+
 void main() {
     string tDestination = GetScriptParam("destination");
     object tWaypoint = GetObjectByTag(tDestination);
@@ -16,7 +19,19 @@ void main() {
     object leadPlayer = GetLastSpeaker();
     object partyMember = GetFirstFactionMember(leadPlayer, TRUE);
 
-    // Teleport the first player then worry about the others
+      if ( GetIsDM( leadPlayer ) ){
+
+        AssignCommand( leadPlayer, JumpToObject( tWaypoint ) );
+
+        return;
+    }
+    //ApplyEffectToObject(DURATION_TYPE_INSTANT, teleSmoke,leadPlayer);
+    //ds_transport_party( leadPlayer, GetTag( tWaypoint ) );
+
+    //unfade PC and set switch
+    //FadeFromBlack( oPC );
+
+    //Teleport the first player then worry about the others
     if (tWaypoint != OBJECT_INVALID) {
     ApplyEffectToObject(DURATION_TYPE_INSTANT, teleSmoke,leadPlayer);
     DelayCommand(2.0f,AssignCommand(leadPlayer,JumpToObject(tWaypoint)));
@@ -26,13 +41,12 @@ void main() {
     while(GetIsObjectValid(objectsInSphere) == TRUE) {
         while(GetIsObjectValid(partyMember) == TRUE) {
             if (GetIsPC(objectsInSphere) == TRUE && objectsInSphere == partyMember) {
-                    ApplyEffectToObject(DURATION_TYPE_INSTANT, teleSmoke,partyMember);
-                    DelayCommand(2.0f,AssignCommand(partyMember,JumpToObject(tWaypoint)));
+                    //ApplyEffectToObject(DURATION_TYPE_INSTANT, teleSmoke,partyMember);
+                    AssignCommand(partyMember,JumpToObject(tWaypoint));
             }
             partyMember = GetNextFactionMember(leadPlayer, TRUE);
         }
     objectsInSphere = GetNextObjectInShape(SHAPE_SPHERE,teleportRadius,playerLoc,FALSE,OBJECT_TYPE_CREATURE);
     }
     }
-
 }

@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added alignment changer NPC for test server
 - Purple Worm raid quest to Khem: Temple of the Eight Gods (by the entrance, not past the puzzles)
 - New reward item for Purple Worm quest: Freezing Sphere Summoner
+- New area, Plane of Shadow: Obsidian Isle, Emberwood, East - Wysteria Galere Sanctum
+- Added shadowplane Brazier to Obsidian Isle: calderis
 
 ### Changed
 - Changed travel_coaches script to remove unecessary destination dialogue

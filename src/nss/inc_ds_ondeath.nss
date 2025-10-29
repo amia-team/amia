@@ -1038,7 +1038,16 @@ float GetLootChanceCurve(int nPartyMembers, int bEpic)
         fChance = 52.0 + 0.2 * IntToFloat(nPartyMembers - 16);
     }
 
-    if (bEpic) fChance *= 0.75; // adjusted so epic = 15% at n=6
+    if (bEpic)
+    {
+        float fBase = 5.0;
+        fChance = fBase + (fChance - fBase) * 0.6666667;
+    }
+
+    if (fChance < 5.0)
+    {
+        fChance = 5.0;
+    }
 
     return fChance;
 }

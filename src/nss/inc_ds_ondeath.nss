@@ -127,6 +127,19 @@ object GenerateEpicLootReturn(object oInventory);
 
 // Generates an Standard Item in the select Chest/container/inventory. Will never generate epic loot.
 void GenerateStandardLoot(object oInventory, int nLevel);
+
+
+//-------------------------------------------------------------------------------
+// Helper Functions
+//-------------------------------------------------------------------------------
+
+// Clamps a value between some range, inclusive.
+int ClampInt(int nValue, int nLow, int nHigh);
+
+// Generates a curve based on the number of party members.
+float GetLootChanceCurve(int nPartyMembers, int bEpic);
+
+
 //-------------------------------------------------------------------------------
 // functions
 //-------------------------------------------------------------------------------
@@ -419,20 +432,16 @@ void GenerateLoot( object oCritter, int nXPResult, int nIsChest=0 ){
         return;
     }
 
-    //uber loot drops are 5% per party member, up to 50%
     if ( GetChallengeRating( oCritter ) > 40.0 ){
 
-        nPercent = 5 * nXPResult;
-
-        if (nPercent >= 51){
-            nPercent == 50;
-        }
+        nPercent = FloatToInt( GetLootChanceCurve( nXPResult, TRUE ) + 0.5 );
     }
     else if ( nPercent == 0 ){
 
-        nPercent = 4 + nXPResult;
+        nPercent = FloatToInt( GetLootChanceCurve( nXPResult, FALSE ) + 0.5 );
     }
 
+    
     //loot roll needs to go right creature
     object oMaster = GetMaster( oKiller );
 
@@ -515,7 +524,7 @@ void GenerateLoot( object oCritter, int nXPResult, int nIsChest=0 ){
 
     if ( nLoot ){
 
-        FloatingTextStringOnCreature( "<c¥  >Your defeated foe drops some loot!</c>", oKiller );
+        FloatingTextStringOnCreature( "<cï¿½  >Your defeated foe drops some loot!</c>", oKiller );
     }
 }
 
@@ -999,3 +1008,36 @@ void GenerateStandardLoot(object oInventory, int nLevel)
     }
 
 }
+
+int ClampInt(int nValue, int nLow, int nHigh)
+{
+    if (nValue < nLow) return nLow;
+    if (nValue > nHigh) return nHigh;
+    return nValue;
+}
+
+float GetLootChanceCurve(int nPartyMembers, int bEpic)
+{
+    if (nPartyMembers < 1) nPartyMembers = 1;
+    int nPrimary = ClampInt(nPartyMembers - 1, 0, 5);
+    float fPrimary = 5.0 + 3.0 * IntToFloat(nPrimary);
+
+    int nAbove = nPartyMembers - 6;
+    float fDecay = 1.0;
+    if (nAbove > 0)
+    {
+        int i = 0;
+        for (i = 0; i < nAbove; ++i)
+        {
+            fDecay *= 0.75; // diminishing returns toward 30%
+        }
+    }
+    float fTail = (nAbove > 0) ? 10.0 * (1.0 - fDecay) : 0.0;
+
+    float fChance = fPrimary + fTail;
+    if (fChance > 30.0) fChance = 30.0;
+    if (bEpic) fChance *= 0.6; // epic uses the same curve, scaled down
+
+    return fChance;
+}
+

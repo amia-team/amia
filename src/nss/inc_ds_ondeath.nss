@@ -441,7 +441,7 @@ void GenerateLoot( object oCritter, int nXPResult, int nIsChest=0 ){
         nPercent = FloatToInt( GetLootChanceCurve( nXPResult, FALSE ) + 0.5 );
     }
 
-    
+
     //loot roll needs to go right creature
     object oMaster = GetMaster( oKiller );
 
@@ -1019,25 +1019,26 @@ int ClampInt(int nValue, int nLow, int nHigh)
 float GetLootChanceCurve(int nPartyMembers, int bEpic)
 {
     if (nPartyMembers < 1) nPartyMembers = 1;
-    int nPrimary = ClampInt(nPartyMembers - 1, 0, 5);
-    float fPrimary = 5.0 + 3.0 * IntToFloat(nPrimary);
 
-    int nAbove = nPartyMembers - 6;
-    float fDecay = 1.0;
-    if (nAbove > 0)
+    float fChance;
+    if (nPartyMembers <= 6)
     {
-        int i = 0;
-        for (i = 0; i < nAbove; ++i)
-        {
-            fDecay *= 0.75; // diminishing returns toward 30%
-        }
+        fChance = 5.0 + 3.0 * IntToFloat(nPartyMembers - 1);
     }
-    float fTail = (nAbove > 0) ? 10.0 * (1.0 - fDecay) : 0.0;
+    else if (nPartyMembers <= 12)
+    {
+        fChance = 20.0 + 5.0 * IntToFloat(nPartyMembers - 6);
+    }
+    else if (nPartyMembers <= 16)
+    {
+        fChance = 50.0 + 0.5 * IntToFloat(nPartyMembers - 12);
+    }
+    else
+    {
+        fChance = 52.0 + 0.2 * IntToFloat(nPartyMembers - 16);
+    }
 
-    float fChance = fPrimary + fTail;
-    if (fChance > 30.0) fChance = 30.0;
-    if (bEpic) fChance *= 0.6; // epic uses the same curve, scaled down
+    if (bEpic) fChance *= 0.75; // adjusted so epic = 15% at n=6
 
     return fChance;
 }
-

@@ -8,14 +8,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-- Added alignment changer NPC for test server
+- 1 player portrait
+- Alignment changer NPC for test server
 - Purple Worm raid quest to Khem: Temple of the Eight Gods (by the entrance, not past the puzzles)
 - New reward item for Purple Worm quest: Freezing Sphere Summoner
 - New area, Plane of Shadow: Obsidian Isle, Emberwood, East - Wysteria Galere Sanctum
-- Added shadowplane Brazier to Obsidian Isle: calderis
+- Shadowplane Brazier to Obsidian Isle: Calderis
+- Monthly Rental house for testing in Amia Forest: Oakmist Vale, Treetop Village
+- NUI option to the default crafting menu
+- Settlement guard NPCs and equipment to the palettes
+- Roadwarden and equipment to the palettes
+- Bank Note to the palette
+- A new hak: amia_nui.hak
+- A lot of NUI images to the new amia_nui.hak
+- A new NUI crafting window for per-part coloring
+- A new NUI player tool for editing items
+- A new NUI DM tool for editing items
 
 ### Changed
-- Changed travel_coaches script to remove unecessary destination dialogue
+- Travel_coaches: remove unecessary destination dialogue
 - DTS challenges now allow for Take 20 skill rolls if you are not in combat
 - Increased the Lich Raid quest gold/xp reward by 10,000 each
 - Plot updates to:
@@ -28,11 +39,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Amia Forest: Mysterious Ruins > Amia Forest: Moonvale Elven Outpost
  - Southport: West Coast
  - Southport: West Coast, Portal Chamber
+ - Winya Ravana: Guard House
+- jes_randomname supports random commoner first names (amia_npc_commoner tag)
+- All Winya areas have new settlement-system guards (and now have consistent resrefs)
+- Removed access to an old player house and edited it for recycling
+
 
 ### Fixed
+- Box of Hats, Box of Masks, and Quiver VFX will now persist between resets
+- Quiver dialogue links (choosing an arrow color would link you to choosing a quiver color, lol)
 - Typos on items in a dynamic merchant
 - Removed a buggy duplicate merchant
 - 2 buggy merchants that had missing resources
+- Brought Whitestag back to life
+- Deleted a lot of unused/unnecessary files
+- Renamed Elemental Resistance Potions in the Alchemist converter dialogue
+- Removed a few duplicate misc medium appearances
+- Fixed some misspelled misc medium appearances so they'll show up
+- A derpy helmet model (courtesy of Mahtan)
 
 [4.25.0 2025-10-18]
 

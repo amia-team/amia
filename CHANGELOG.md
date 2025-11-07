@@ -21,14 +21,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Bank Note to the palette
 - A new hak: amia_nui.hak
 - A lot of NUI images to the new amia_nui.hak
-- A new NUI crafting window for per-part coloring
-- A new NUI player tool for editing items
-- A new NUI DM tool for editing items
+- New NUI windows:
+ - Crafting: Armor with per-part coloring, includes copy feature
+ - Crafting: Main Hand, Boots, Helmet, and Cloak, includes copy feature
+ - Crafting: Head, PC Scale, Voiceset, Portrait, Tattoos, Colors (Hair, Tattoo1, Tattoo2)
+ - Player Tool for editing items
+ - DM Tool for editing items
+ - 1000 Faces (replaces current item functionality)
+ - Temporary Name Changer (replaces current item functionality - you will only need one item from now on)
 
 ### Changed
 - Travel_coaches: remove unecessary destination dialogue
 - DTS challenges now allow for Take 20 skill rolls if you are not in combat
 - Increased the Lich Raid quest gold/xp reward by 10,000 each
+- We now have a use for appearance.2da's RACIALTYPE row, and all appearances have had their entry updated to be accurate
 - Plot updates to:
  - Amia Forest: The Green Lake
  - Amia Forest: Oakmist Vale, Treetop Village
@@ -44,7 +50,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - All Winya areas have new settlement-system guards (and now have consistent resrefs)
 - Removed access to an old player house and edited it for recycling
 
-
 ### Fixed
 - Box of Hats, Box of Masks, and Quiver VFX will now persist between resets
 - Quiver dialogue links (choosing an arrow color would link you to choosing a quiver color, lol)
@@ -57,6 +62,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed a few duplicate misc medium appearances
 - Fixed some misspelled misc medium appearances so they'll show up
 - A derpy helmet model (courtesy of Mahtan)
+- A few bobble hin heads are smaller and situated better
+- Removed a robe model that causes a client crash when Mounted
+- Removed a male human head that causes a client crash
 
 [4.25.0 2025-10-18]
 

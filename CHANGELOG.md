@@ -46,9 +46,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Southport: West Coast
  - Southport: West Coast, Portal Chamber
  - Winya Ravana: Guard House
+ - Moonpier: Harbor Office
 - jes_randomname supports random commoner first names (amia_npc_commoner tag)
 - All Winya areas have new settlement-system guards (and now have consistent resrefs)
 - Removed access to an old player house and edited it for recycling
+- Styled a bunch of existing NUI windows
 
 ### Fixed
 - Box of Hats, Box of Masks, and Quiver VFX will now persist between resets

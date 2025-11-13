@@ -51,6 +51,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Winya Ravana: Council Tower
  - Moonpier: Harbor Office
  - The Dale
+ - Traveller's Rest: Festival Grounds
 - jes_randomname supports random commoner first names (amia_npc_commoner tag)
 - All Winya areas have new settlement-system guards (and now have consistent resrefs)
 - All Oakmist Vale areas have new settlement-system guards (and with the Amia Forest areas now have consistent resrefs)
@@ -75,6 +76,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed a male human head that causes a client crash
 - Removed some unlimited arrow properties from bows so their drops don't crash the server
 - PC Guard summoner bug check for misplaced variables
+- Broken DTS in Tall Tree Beach
 
 [4.25.0 2025-10-18]
 

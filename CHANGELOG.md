@@ -43,12 +43,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Silent Bay: Crystal Bridge, Animal Shelter
  - Winya Ravana
  - Amia Forest: Mysterious Ruins > Amia Forest: Moonvale Elven Outpost
+ - Southport: West
  - Southport: West Coast
  - Southport: West Coast, Portal Chamber
  - Winya Ravana: Guard House
  - Moonpier: Harbor Office
 - jes_randomname supports random commoner first names (amia_npc_commoner tag)
 - All Winya areas have new settlement-system guards (and now have consistent resrefs)
+- All Oakmist Vale areas have new settlement-system guards (and with the Amia Forest areas now have consistent resrefs)
 - Removed access to an old player house and edited it for recycling
 - Styled a bunch of existing NUI windows
 
@@ -67,6 +69,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - A few bobble hin heads are smaller and situated better
 - Removed a robe model that causes a client crash when Mounted
 - Removed a male human head that causes a client crash
+- Removed some unlimited arrow properties from bows so their drops don't crash the server
+- PC Guard summoner bug check for misplaced variables
 
 [4.25.0 2025-10-18]
 

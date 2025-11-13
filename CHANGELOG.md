@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Bank Note to the palette
 - A new hak: amia_nui.hak
 - A lot of NUI images to the new amia_nui.hak
+- The Dale: Temple of the Cornucopia (New Area)
 - New NUI windows:
  - Crafting: Armor with per-part coloring, includes copy feature
  - Crafting: Main Hand, Boots, Helmet, and Cloak, includes copy feature
@@ -49,9 +50,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Winya Ravana: Guard House
  - Winya Ravana: Council Tower
  - Moonpier: Harbor Office
+ - The Dale
 - jes_randomname supports random commoner first names (amia_npc_commoner tag)
 - All Winya areas have new settlement-system guards (and now have consistent resrefs)
 - All Oakmist Vale areas have new settlement-system guards (and with the Amia Forest areas now have consistent resrefs)
+- All Dale areas now have consistent resrefs
 - Removed access to an old player house and edited it for recycling
 - Styled a bunch of existing NUI windows
 

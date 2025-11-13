@@ -47,6 +47,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Southport: West Coast
  - Southport: West Coast, Portal Chamber
  - Winya Ravana: Guard House
+ - Winya Ravana: Council Tower
  - Moonpier: Harbor Office
 - jes_randomname supports random commoner first names (amia_npc_commoner tag)
 - All Winya areas have new settlement-system guards (and now have consistent resrefs)

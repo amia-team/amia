@@ -23,8 +23,9 @@ void main()
     int bDying     = GetIsHenchmanDying();
     object area    = GetArea(OBJECT_SELF);
     string areaTag = GetResRef(area);
+    int allowed    = GetLocalInt(area, "war");
 
-    if (GetIsObjectValid(GetMaster(OBJECT_SELF)) == FALSE && areaTag != "core_guards"){
+    if (GetIsObjectValid(GetMaster(OBJECT_SELF)) == FALSE && (areaTag != "core_guards" || allowed != 1)){
         DestroyObject(OBJECT_SELF);
     }
 

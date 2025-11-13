@@ -82,7 +82,7 @@ void main (){
             FloatingTextStringOnCreature("Use this item on a guard NPC to set the guard object, or finalize it by targeting itself.", pc, TRUE);
         }
     }
-    else if((GetLocalInt(pc,"guard_spawned") != 1) && (alliedArea == 1) && (GetLocalInt(pc, "swarm_spawned") != 1)){
+    else if((GetLocalInt(pc,"guard_spawned") != 1) && (alliedArea == 1 || GetLocalInt(widget, "settlement") == areaCheck) && (GetLocalInt(pc, "swarm_spawned") != 1)){
         int guardQty      = GetLocalInt(widget, "qty");
         int guardTypes    = GetLocalInt(widget,"guardCount");
         int subGuard      = (guardQty / guardTypes);

@@ -56,6 +56,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Ruathym: Fortress Wiltun
  - Ruathym: Fortress Wiltun, Keep
  - Ruathym: Fortress Wiltun, Recall Chamber > Shadowflame Bridge
+ - Moonpier, Moonbeam Chapel
 - jes_randomname supports random commoner first names (amia_npc_commoner tag)
 - All Winya areas have new settlement-system guards (and now have consistent resrefs)
 - All Oakmist Vale areas have new settlement-system guards (and with the Amia Forest areas now have consistent resrefs)

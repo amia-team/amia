@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - A new hak: amia_nui.hak
 - A lot of NUI images to the new amia_nui.hak
 - The Dale: Temple of the Cornucopia (New Area)
+- Ruathym: Fortress Wiltun, Portal Chamber (New Area)
 - New NUI windows:
  - Crafting: Armor with per-part coloring, includes copy feature
  - Crafting: Main Hand, Boots, Helmet, and Cloak, includes copy feature
@@ -52,12 +53,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Moonpier: Harbor Office
  - The Dale
  - Traveller's Rest: Festival Grounds
+ - Ruathym: Fortress Wiltun
+ - Ruathym: Fortress Wiltun, Keep
+ - Ruathym: Fortress Wiltun, Recall Chamber > Shadowflame Bridge
 - jes_randomname supports random commoner first names (amia_npc_commoner tag)
 - All Winya areas have new settlement-system guards (and now have consistent resrefs)
 - All Oakmist Vale areas have new settlement-system guards (and with the Amia Forest areas now have consistent resrefs)
 - All Dale areas now have consistent resrefs
 - Removed access to an old player house and edited it for recycling
 - Styled a bunch of existing NUI windows
+- Change a Wiltun Key
 
 ### Fixed
 - Box of Hats, Box of Masks, and Quiver VFX will now persist between resets
@@ -69,7 +74,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Deleted a lot of unused/unnecessary files
 - Renamed Elemental Resistance Potions in the Alchemist converter dialogue
 - Removed a few duplicate misc medium appearances
-- Fixed some misspelled misc medium appearances so they'll show up
+- Some misspelled misc medium appearances so they'll show up
 - A derpy helmet model (courtesy of Mahtan)
 - A few bobble hin heads are smaller and situated better
 - Removed a robe model that causes a client crash when Mounted
@@ -77,6 +82,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed some unlimited arrow properties from bows so their drops don't crash the server
 - PC Guard summoner bug check for misplaced variables
 - Broken DTS in Tall Tree Beach
+- A settlement NPC mage
 
 [4.25.0 2025-10-18]
 

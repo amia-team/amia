@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-- 1 player portrait
+- 3 player portraits
+- 1 tail model (1691 "Tail: Spinogon")
 - Alignment changer NPC for test server
 - Purple Worm raid quest to Khem: Temple of the Eight Gods (by the entrance, not past the puzzles)
 - New reward item for Purple Worm quest: Freezing Sphere Summoner

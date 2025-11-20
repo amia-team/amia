@@ -86,6 +86,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - PC Guard summoner bug check for misplaced variables
 - Broken DTS in Tall Tree Beach
 - A settlement NPC mage
+- Locked doors in the Undercity
+- Racial Gates in Winya
 
 [4.25.0 2025-10-18]
 

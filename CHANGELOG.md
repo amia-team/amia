@@ -62,6 +62,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - jes_randomname supports random commoner first names (amia_npc_commoner tag)
 - All Winya areas have new settlement-system guards (and now have consistent resrefs)
 - All Oakmist Vale areas have new settlement-system guards (and with the Amia Forest areas now have consistent resrefs)
+- 50 areas were changed to have a Moonvale regional identifier (new Nation formed)
 - All Dale areas now have consistent resrefs
 - Removed access to an old player house and edited it for recycling
 - Styled a bunch of existing NUI windows
@@ -88,6 +89,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - A settlement NPC mage
 - Locked doors in the Undercity
 - Racial Gates in Winya
+- Changed some other area names and resrefs (minor)
+- Removed some areas that were not used
 
 [4.25.0 2025-10-18]
 

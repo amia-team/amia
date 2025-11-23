@@ -19,7 +19,7 @@
       },
       "AmbientSndNitVol": {
         "type": "int",
-        "value": 66
+        "value": 32
       },
       "EnvAudio": {
         "type": "int",
@@ -31,7 +31,7 @@
       },
       "MusicDay": {
         "type": "int",
-        "value": 122
+        "value": 25
       },
       "MusicDelay": {
         "type": "int",
@@ -39,7 +39,7 @@
       },
       "MusicNight": {
         "type": "int",
-        "value": 122
+        "value": 25
       }
     }
   },
@@ -100,7 +100,7 @@
         },
         "GenericType_New": {
           "type": "dword",
-          "value": 198
+          "value": 0
         },
         "Hardness": {
           "type": "byte",
@@ -120,11 +120,11 @@
         },
         "KeyRequired": {
           "type": "byte",
-          "value": 1
+          "value": 0
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": "sp_east_house1_enter"
+          "value": "sp_w_house2_enter"
         },
         "LinkedToFlags": {
           "type": "byte",
@@ -145,7 +145,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
-            "0": "Door"
+            "0": "Closing Wooden Door"
           }
         },
         "OnClick": {
@@ -186,7 +186,7 @@
         },
         "OnOpen": {
           "type": "resref",
-          "value": ""
+          "value": "op_autoclose20"
         },
         "OnSpellCastAt": {
           "type": "resref",
@@ -222,11 +222,11 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "sp_e_house1_exit"
+          "value": "sp_w_house2_exit"
         },
         "TemplateResRef": {
           "type": "resref",
-          "value": "plotdoor"
+          "value": "closingdoor1"
         },
         "TrapDetectable": {
           "type": "byte",
@@ -258,11 +258,11 @@
         },
         "X": {
           "type": "float",
-          "value": 17.69
+          "value": 27.69
         },
         "Y": {
           "type": "float",
-          "value": 6.2
+          "value": 16.2
         },
         "Z": {
           "type": "float",
@@ -500,15 +500,15 @@
         },
         "X": {
           "type": "float",
-          "value": 5.9344
+          "value": 15.3522
         },
         "Y": {
           "type": "float",
-          "value": 3.2223
+          "value": 13.3267
         },
         "Z": {
           "type": "float",
-          "value": -0.0
+          "value": 0.1
         }
       },
       {
@@ -747,11 +747,11 @@
         },
         "X": {
           "type": "float",
-          "value": 5.4796
+          "value": 14.9259
         },
         "Y": {
           "type": "float",
-          "value": 4.0501
+          "value": 14.2182
         },
         "Z": {
           "type": "float",
@@ -976,15 +976,15 @@
         },
         "X": {
           "type": "float",
-          "value": 5.38
+          "value": 14.7978
         },
         "Y": {
           "type": "float",
-          "value": 3.25
+          "value": 13.3544
         },
         "Z": {
           "type": "float",
-          "value": -0.1
+          "value": -0.0
         }
       }
     ]
@@ -1004,6 +1004,51 @@
   "VarTable": {
     "type": "list",
     "value": [
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "CS_MAP_REVEAL"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 1
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "FreeRest"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 1
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "settlement"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 35
+        }
+      },
       {
         "__struct_id": 0,
         "Name": {
@@ -1069,23 +1114,23 @@
         },
         "XOrientation": {
           "type": "float",
-          "value": 0.0
+          "value": -1.0
         },
         "XPosition": {
           "type": "float",
-          "value": 15.3025
+          "value": 25.99
         },
         "YOrientation": {
           "type": "float",
-          "value": 1.0
+          "value": 0.0
         },
         "YPosition": {
           "type": "float",
-          "value": 5.5328
+          "value": 16.3827
         },
         "ZPosition": {
           "type": "float",
-          "value": 0.0
+          "value": -0.0
         }
       },
       {
@@ -1134,7 +1179,7 @@
         },
         "XPosition": {
           "type": "float",
-          "value": 8.7955
+          "value": 18.1896
         },
         "YOrientation": {
           "type": "float",
@@ -1142,7 +1187,7 @@
         },
         "YPosition": {
           "type": "float",
-          "value": 9.0249
+          "value": 18.9803
         },
         "ZPosition": {
           "type": "float",

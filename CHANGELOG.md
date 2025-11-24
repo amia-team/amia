@@ -67,6 +67,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed access to an old player house and edited it for recycling
 - Styled a bunch of existing NUI windows
 - Change a Wiltun Key
+- Changed the Tendriculos World Boss to not be OP
 
 ### Fixed
 - Box of Hats, Box of Masks, and Quiver VFX will now persist between resets

@@ -91,6 +91,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Racial Gates in Winya
 - Changed some other area names and resrefs (minor)
 - Removed some areas that were not used
+- Some doors on the palette
 
 [4.25.0 2025-10-18]
 

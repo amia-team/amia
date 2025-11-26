@@ -15,7 +15,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - New reward item for Purple Worm quest: Freezing Sphere Summoner
 - New area, Plane of Shadow: Obsidian Isle, Emberwood, East - Wysteria Galere Sanctum
 - Shadowplane Brazier to Obsidian Isle: Calderis
-- Monthly Rental house for testing in Amia Forest: Oakmist Vale, Treetop Village
+- Monthly rental houses and persistent player shops in:
+ - Oakmist Vale, Treetop Village
+ - Moonpier
+ - The Dale
+ - Southport: East
+ - Southport: Central
+ - Southport: West
+ - Traveller's Rest
 - NUI option to the default crafting menu
 - Settlement guard NPCs and equipment to the palettes
 - Roadwarden and equipment to the palettes

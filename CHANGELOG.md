@@ -44,6 +44,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Travel_coaches: remove unecessary destination dialogue
 - DTS challenges now allow for Take 20 skill rolls if you are not in combat
 - Increased the Lich Raid quest gold/xp reward by 10,000 each
+- jes_randomname script now has dynamic commoner generation
 - We now have a use for appearance.2da's RACIALTYPE row, and all appearances have had their entry updated to be accurate
 - Plot updates to:
  - Amia Forest: The Green Lake

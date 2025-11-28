@@ -32,9 +32,9 @@ void main(){
 
         switch(randomRace){
             case 0: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_DWARF); SetCreatureAppearanceType(oNPC, 0); break;
-            case 1: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_GNOME); SetCreatureAppearanceType(oNPC, 1); break;
-            case 2: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_HALFLING); SetCreatureAppearanceType(oNPC, 2); break;
-            case 3: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_ELF); SetCreatureAppearanceType(oNPC, 3); break;
+            case 1: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_ELF); SetCreatureAppearanceType(oNPC, 1); break;
+            case 2: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_GNOME); SetCreatureAppearanceType(oNPC, 2); break;
+            case 3: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_HALFLING); SetCreatureAppearanceType(oNPC, 3); break;
             case 4: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_HALFELF); SetCreatureAppearanceType(oNPC, 4); break;
             case 5: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_HALFORC); SetCreatureAppearanceType(oNPC, 5); break;
             case 6: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_HUMAN); SetCreatureAppearanceType(oNPC, 6); break;

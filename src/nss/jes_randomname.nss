@@ -17,11 +17,17 @@ void main(){
         int randomGender = Random(2);
         int randomRace   = Random(7);
         int randomRobe   = Random(10);
+        int randomHair   = Random(5);
+        int randomSkin   = Random(5);
+        int randomColor  = Random(7);
+        int randomColor2 = 0;
         object npcArmor  = GetItemInSlot(INVENTORY_SLOT_CHEST, oNPC);
 
+        SetSoundset(oNPC, 9999);
+
         switch(randomGender){
-            case 0: SetGender(oNPC, GENDER_MALE); break;
-            case 1: SetGender(oNPC, GENDER_FEMALE); break;
+            case 0: SetGender(oNPC, GENDER_MALE); SetPortraitResRef(oNPC, "po_clsrogue_"); break;
+            case 1: SetGender(oNPC, GENDER_FEMALE); SetPortraitResRef(oNPC, "po_clsroguef_"); break;
         }
 
         switch(randomRace){
@@ -34,7 +40,50 @@ void main(){
             case 6: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_HUMAN); SetCreatureAppearanceType(oNPC, 6); break;
         }
 
+        switch(randomHair){
+            case 0: SetColor(oNPC, COLOR_CHANNEL_HAIR, 15); break; //Brown
+            case 1: SetColor(oNPC, COLOR_CHANNEL_HAIR, 23); break; //Black
+            case 2: SetColor(oNPC, COLOR_CHANNEL_HAIR, 17); break; //White
+            case 3: SetColor(oNPC, COLOR_CHANNEL_HAIR, 10); break; //Blonde
+            case 4: SetColor(oNPC, COLOR_CHANNEL_HAIR, 7); break; //Red
+        }
+
+        switch(randomSkin){
+            case 0: SetColor(oNPC, COLOR_CHANNEL_SKIN, 0); break;
+            case 1: SetColor(oNPC, COLOR_CHANNEL_SKIN, 2); break;
+            case 2: SetColor(oNPC, COLOR_CHANNEL_SKIN, 4); break;
+            case 3: SetColor(oNPC, COLOR_CHANNEL_SKIN, 7); break;
+            case 4: SetColor(oNPC, COLOR_CHANNEL_SKIN, 12); break;
+        }
+
+        switch(randomRobe){
+            case 0: randomRobe = 3; break;
+            case 1: randomRobe = 4; break;
+            case 2: randomRobe = 20; break;
+            case 3: randomRobe = 55 ; break;
+            case 4: randomRobe = 114; break;
+            case 5: randomRobe = 186; break;
+            case 6: randomRobe = 202; break;
+            case 7: randomRobe = 221; break;
+            case 8: randomRobe = 235; break;
+            case 9: randomRobe = 247; break;
+        }
+
+        switch(randomColor){
+            case 0: randomColor = 22; randomColor2 = 132; break;
+            case 1: randomColor = 126; randomColor2 = 124; break;
+            case 2: randomColor = 21; randomColor2 = 83; break;
+            case 3: randomColor = 22; randomColor2 = 77; break;
+            case 4: randomColor = 125; randomColor2 = 64; break;
+            case 5: randomColor = 81; randomColor2 = 77; break;
+            case 6: randomColor = 65; randomColor2 = 74; break;
+        }
+
         NWNX_Item_SetItemAppearance(npcArmor, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_ROBE, randomRobe, TRUE);
+        NWNX_Item_SetItemAppearance(npcArmor, ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_CLOTH1, randomColor, TRUE);
+        NWNX_Item_SetItemAppearance(npcArmor, ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_CLOTH2, randomColor, TRUE);
+        NWNX_Item_SetItemAppearance(npcArmor, ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_LEATHER1, randomColor2, TRUE);
+        NWNX_Item_SetItemAppearance(npcArmor, ITEM_APPR_TYPE_ARMOR_COLOR, ITEM_APPR_ARMOR_COLOR_LEATHER2, randomColor2, TRUE);
 
         if(GetRacialType(oNPC) == RACIAL_TYPE_HUMAN){
             if(GetGender(oNPC) == GENDER_MALE){

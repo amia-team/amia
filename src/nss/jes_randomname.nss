@@ -1,11 +1,41 @@
+#include "nwnx_creature"
+#include "nwnx_item"
+
 void main(){
 
     object oNPC = OBJECT_SELF;
     int head    = GetLocalInt(oNPC, "head");
     string sName;
     string sNameAdd;
+    int sit = GetLocalInt(oNPC, "sit");
+
+    if(sit == 1){
+        ExecuteScript("spawn_sit", oNPC);
+    }
 
     if(GetTag(oNPC) == "amia_npc_commoner"){
+        int randomGender = Random(2);
+        int randomRace   = Random(7);
+        int randomRobe   = Random(10);
+        object npcArmor  = GetItemInSlot(INVENTORY_SLOT_CHEST, oNPC);
+
+        switch(randomGender){
+            case 0: SetGender(oNPC, GENDER_MALE); break;
+            case 1: SetGender(oNPC, GENDER_FEMALE); break;
+        }
+
+        switch(randomRace){
+            case 0: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_DWARF); break;
+            case 1: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_GNOME); break;
+            case 2: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_HALFLING); break;
+            case 3: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_ELF); break;
+            case 4: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_HALFELF); break;
+            case 5: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_HALFORC); break;
+            case 6: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_HUMAN); break;
+        }
+
+        NWNX_Item_SetItemAppearance(npcArmor, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_ROBE, randomRobe, TRUE);
+
         if(GetRacialType(oNPC) == RACIAL_TYPE_HUMAN){
             if(GetGender(oNPC) == GENDER_MALE){
                 sName = RandomName(NAME_FIRST_HUMAN_MALE);

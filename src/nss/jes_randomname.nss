@@ -4,7 +4,7 @@
 void main(){
 
     object oNPC = OBJECT_SELF;
-    int head    = GetLocalInt(oNPC, "head");
+    int head    = GetLocalInt(oNPC, "no_headchange");
     string sName;
     string sNameAdd;
     int sit = GetLocalInt(oNPC, "sit");
@@ -25,13 +25,13 @@ void main(){
         }
 
         switch(randomRace){
-            case 0: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_DWARF); break;
-            case 1: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_GNOME); break;
-            case 2: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_HALFLING); break;
-            case 3: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_ELF); break;
-            case 4: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_HALFELF); break;
-            case 5: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_HALFORC); break;
-            case 6: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_HUMAN); break;
+            case 0: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_DWARF); SetCreatureAppearanceType(oNPC, 0); break;
+            case 1: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_GNOME); SetCreatureAppearanceType(oNPC, 1); break;
+            case 2: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_HALFLING); SetCreatureAppearanceType(oNPC, 2); break;
+            case 3: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_ELF); SetCreatureAppearanceType(oNPC, 3); break;
+            case 4: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_HALFELF); SetCreatureAppearanceType(oNPC, 4); break;
+            case 5: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_HALFORC); SetCreatureAppearanceType(oNPC, 5); break;
+            case 6: NWNX_Creature_SetRacialType(oNPC, RACIAL_TYPE_HUMAN); SetCreatureAppearanceType(oNPC, 6); break;
         }
 
         NWNX_Item_SetItemAppearance(npcArmor, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_ROBE, randomRobe, TRUE);
@@ -137,7 +137,7 @@ void main(){
         SetName( oNPC, sNameAdd );
     }
 
-    if(head != 0){
+    if(head != 1){
         if(GetRacialType(oNPC) == 6 || GetRacialType(oNPC) == 4){
              if(GetGender(oNPC) == 0){
                 int headNumber = d100();

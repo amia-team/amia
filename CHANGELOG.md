@@ -15,7 +15,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - New reward item for Purple Worm quest: Freezing Sphere Summoner
 - New area, Plane of Shadow: Obsidian Isle, Emberwood, East - Wysteria Galere Sanctum
 - Shadowplane Brazier to Obsidian Isle: Calderis
-- Monthly Rental house for testing in Amia Forest: Oakmist Vale, Treetop Village
+- Monthly rental houses and persistent player shops in:
+ - Oakmist Vale, Treetop Village
+ - Moonpier
+ - The Dale
+ - Southport: East
+ - Southport: Central
+ - Southport: West
+ - Traveller's Rest
 - NUI option to the default crafting menu
 - Settlement guard NPCs and equipment to the palettes
 - Roadwarden and equipment to the palettes
@@ -37,6 +44,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Travel_coaches: remove unecessary destination dialogue
 - DTS challenges now allow for Take 20 skill rolls if you are not in combat
 - Increased the Lich Raid quest gold/xp reward by 10,000 each
+- jes_randomname script now has dynamic commoner generation
 - We now have a use for appearance.2da's RACIALTYPE row, and all appearances have had their entry updated to be accurate
 - Plot updates to:
  - Amia Forest: The Green Lake
@@ -92,6 +100,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Racial Gates in Winya
 - Changed some other area names and resrefs (minor)
 - Removed some areas that were not used
+- Some doors on the palette
 
 [4.25.0 2025-10-18]
 

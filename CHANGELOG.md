@@ -8,6 +8,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+#### Calimport Expansion:
+
+- Dock Ward Ext+Int areas:
+	- Calishite Weaponry and -ASF Armour
+	- Drinks
+- Wizard Ward Ext+Int areas
+- Refuge of the Full Moon areas
+- Calimport Sewers Epic Dungeon:
+	- 4x Crocodile Mobs
+	- "Arcane Maw" Epic Boss
+	- DTS areas, 2x Bosses and 1x Hidden Boss
+
+### Added
 - Barrier PLC to the palette
 - Dale food/drinks (Fendel's new shop) to the palette
 - New merchant file (Hinn Inn)

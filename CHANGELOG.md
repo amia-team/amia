@@ -40,6 +40,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - 1000 Faces (replaces current item functionality)
  - Temporary Name Changer (replaces current item functionality - you will only need one item from now on)
  - Job System Resource Manager (and DM version)
+ - Height Changer (replaces current item functionality)
 
 ### Changed
 - Travel_coaches: remove unecessary destination dialogue

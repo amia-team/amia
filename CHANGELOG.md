@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Southport: Central
  - Southport: West
  - Traveller's Rest
+ - Kingdom of Kohlingen: Fort Cystana
 - NUI option to the default crafting menu
 - Settlement guard NPCs and equipment to the palettes
 - Roadwarden and equipment to the palettes
@@ -31,6 +32,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - A lot of NUI images to the new amia_nui.hak
 - The Dale: Temple of the Cornucopia (New Area)
 - Ruathym: Fortress Wiltun, Portal Chamber (New Area)
+- Kohlingen: Fort Cystana and Gregory's Landing settlement guards in all areas
 - New NUI windows:
  - Crafting: Armor with per-part coloring, includes copy feature
  - Crafting: Main Hand, Off-Hand, Boots, Helmet, and Cloak, includes copy feature
@@ -69,6 +71,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Ruathym: Fortress Wiltun, Recall Chamber > Shadowflame Bridge
  - Moonpier: Moonbeam Chapel
  - Malarfang Forest: Moonvale Outpost
+ - Kingdom of Kohlingen: Fort Cystana
 - jes_randomname supports random commoner first names (amia_npc_commoner tag)
 - All Winya areas have new settlement-system guards (and now have consistent resrefs)
 - All Oakmist Vale areas have new settlement-system guards (and with the Amia Forest areas now have consistent resrefs)
@@ -103,6 +106,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Changed some other area names and resrefs (minor)
 - Removed some areas that were not used
 - Some doors on the palette
+- Whitestag Shore lodge doors (they had the wrong key tag for the locks)
 
 [4.25.0 2025-10-18]
 

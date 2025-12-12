@@ -39,6 +39,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - DM Tool for editing items
  - 1000 Faces (replaces current item functionality)
  - Temporary Name Changer (replaces current item functionality - you will only need one item from now on)
+ - Job System Resource Manager (and DM version)
 
 ### Changed
 - Travel_coaches: remove unecessary destination dialogue

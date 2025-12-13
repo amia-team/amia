@@ -37,6 +37,12 @@ No more carrying all your wealth on your person. Stash your hard-earned coin whe
 - Set your own prices
 - Release your stall when you're done trading (WIP)
 
+## NPC Shops
+
+- Buy groceries and other useful job system items that restock on a real time basis.
+
+Coming Soon: Player owned stores run by an NPC
+
 ## Long Term Rental Houses
 
 **Find your home**
@@ -65,14 +71,14 @@ It's a bit rough, but it'll only get better from here!
 - A lot of NUI images to the new amia_nui.hak
 - The Dale: Temple of the Cornucopia (New Area)
 - Ruathym: Fortress Wiltun, Portal Chamber (New Area)
-- New NUI windows:
- - Crafting: Armor with per-part coloring, includes copy feature
- - Crafting: Main Hand, Boots, Helmet, and Cloak, includes copy feature
- - Crafting: Head, PC Scale, Voiceset, Portrait, Tattoos, Colors (Hair, Tattoo1, Tattoo2)
- - Player Tool for editing items
- - DM Tool for editing items
- - 1000 Faces (replaces current item functionality)
- - Temporary Name Changer (replaces current item functionality - you will only need one item from now on)
+- New NUI windows: - Crafting: Armor with per-part coloring, includes copy feature
+- Crafting: Main Hand, Boots, Helmet, and Cloak, includes copy feature
+- Crafting: Head, PC Scale, Voiceset, Portrait, Tattoos, Colors (Hair, Tattoo1, Tattoo2)
+- Player Tool for editing items
+- DM Tool for editing items
+- 1000 Faces (replaces current item functionality)
+- Temporary Name Changer (replaces current item functionality - you will only need one item from now on)
+- 1st level spells are now infinite, similarly to cantrips, when a caster's caster level is greater than 20
 
 ### Changed
 - Travel_coaches: remove unecessary destination dialogue
@@ -133,6 +139,7 @@ It's a bit rough, but it'll only get better from here!
 - Racial Gates in Winya
 - Changed some other area names and resrefs (minor)
 - Removed some areas that were not used
+- Defensive stance turning off when your temp hp dries up
 
 [4.25.0 2025-10-18]
 

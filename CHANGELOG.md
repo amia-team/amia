@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
+### Changed
+
+### Fixed
+
+[5.0.0 2025-12-12]
+
+### Added
+
 ## Banking & Coinhouses
 
 **Your gold is finally safe!**

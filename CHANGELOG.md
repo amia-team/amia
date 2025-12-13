@@ -147,7 +147,7 @@ It's a bit rough, but it'll only get better from here!
 - Racial Gates in Winya
 - Changed some other area names and resrefs (minor)
 - Removed some areas that were not used
-- Defensive stance turning off when your temp hp dries up
+- Defensive stance no longer turns off when your temp hp dries up
 
 [4.25.0 2025-10-18]
 

@@ -8,6 +8,47 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+## Banking & Coinhouses
+
+**Your gold is finally safe!**
+
+- **Open accounts** at different coinhouses throughout Amia
+- **Deposit and withdraw** gold whenever you need
+- Each coinhouse operates independently.
+
+**Keep your treasures safe between adventures.**
+
+- Store items at coinhouses for safekeeping
+- **Upgrade your storage capacity** as your collection grows
+- Retrieve your gear whenever you need it
+- Items persist across sessions. What you store stays stored and most importantly, **secured**.
+
+Finally, a better place to keep that rare loot you're saving for a rainy day.
+
+No more carrying all your wealth on your person. Stash your hard-earned coin where bandits can't get it!
+
+## Player Stalls & Marketplaces
+
+**Become a merchant!**
+
+- **Claim a stall** in the marketplace
+- **List your wares** for other players to browse and buy
+- Set your own prices
+- Release your stall when you're done trading (WIP)
+
+## Long Term Rental Houses
+
+**Find your home**
+
+- Claim a house, renting it from month to month
+- Furnish it with products from players and NPC carpenters
+- Invite your friends to live with you
+- Co-lease your freeloading buddies
+
+It's a bit rough, but it'll only get better from here!
+
+
 - 3 player portraits
 - 1 tail model (1691 "Tail: Spinogon")
 - Alignment changer NPC for test server

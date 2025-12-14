@@ -18,13 +18,14 @@ void main()
   int nSkillTotal = nSkillCraftWeapon + nSkillCraftArmor;
   int nGoldReduction = (nSkillTotal/10)*5000;
   int nGold = GetGold(oPC);
+  int takenGold = GOLD_COST - nGoldReduction;
 
    if(nGoldReduction > 25000)     // This caps the bonus reduction you can get to 25k
    {
      nGoldReduction = 25000;
    }
 
-   if(nGold < (GOLD_COST-nGoldReduction))
+   if(nGold < takenGold)
    {
     SendMessageToPC(oPC,"You do not have enough gold.");
     return;
@@ -40,8 +41,7 @@ void main()
    DelayCommand(1.0,ApplyEffectToObject(DURATION_TYPE_INSTANT,eVFX2,oPC));
    DelayCommand(2.0,ApplyEffectToObject(DURATION_TYPE_INSTANT,eVFX1,oPC));
 
+   TakeGoldFromCreature(takenGold, oPC, TRUE);
    CreateItemOnObject(sResRef,oPC);
    DestroyObject(oTarget);
-
-
 }

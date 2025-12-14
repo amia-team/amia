@@ -10,8 +10,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Craft Wondrous Items will no longer add properties to items directly - Use the new mythal system
 
 ### Fixed
+- Stackable weapons won't be eaten by the crafting system anymore
+- Crafting system revert option won't fire off if the item was not changed
+- Mounted NPCs won't be headless anymore
+- Commoner script will no longer damage NPCs
+- Fort Cystana commoners have gender-neutral bios now
+- Winya commoners are all elven again
+- Dale monks no longer think they're in the Crouching Lemur Monastery
+- Craft Woundrous Items will now take the correct amount of gold away from the player using it
+
 
 [5.0.0 2025-12-12]
 

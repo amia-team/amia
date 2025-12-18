@@ -22,6 +22,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Dale monks no longer think they're in the Crouching Lemur Monastery
 - Craft Woundrous Items will now take the correct amount of gold away from the player using it
 - Little Burrow door in the Dale
+- Primordial Gust now correctly applies to placeables such as random dungeon elemental walls
+- Bard Song now longer consumes two charges
+- Loot drop message coloration fixed
 
 
 [5.0.0 2025-12-12]

@@ -38,7 +38,7 @@ void ActivateItem( ) {
      return;
     }
 
-    // Check if target object is valid and has item properties
+    /* Check if target object is valid and has item properties
     if( ( !GetIsObjectValid( oTarget ) ) ||
         ( !GetIsItemPropertyValid( ipPower ) ) ||
         ( !IPGetIsMeleeWeapon( oTarget ) ) ) {
@@ -114,7 +114,7 @@ void ActivateItem( ) {
 
     // Start the conversation.
     SetLocalString( oPC, "ds_action", "ca_craftmagarms");
-    AssignCommand( oPC, ActionStartConversation( oPC, "c_craftmagarms", TRUE, FALSE ) );
+    AssignCommand( oPC, ActionStartConversation( oPC, "c_craftmagarms", TRUE, FALSE ) );*/
 }
 
 void main( )

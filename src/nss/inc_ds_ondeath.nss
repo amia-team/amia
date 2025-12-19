@@ -524,7 +524,7 @@ void GenerateLoot( object oCritter, int nXPResult, int nIsChest=0 ){
 
     if ( nLoot ){
 
-        FloatingTextStringOnCreature( "<c�  >Your defeated foe drops some loot!</c>", oKiller );
+        FloatingTextStringOnCreature( "<c¥  >Your defeated foe drops some loot!</c>", oKiller );
     }
 }
 

@@ -8,6 +8,76 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+- Craft Wondrous Items will no longer add properties to items directly - Use the new mythal system
+
+### Fixed
+- Stackable weapons won't be eaten by the crafting system anymore
+- Crafting system revert option won't fire off if the item was not changed
+- Mounted NPCs won't be headless anymore
+- Commoner script will no longer damage NPCs
+- Fort Cystana commoners have gender-neutral bios now
+- Winya commoners are all elven again
+- Dale monks no longer think they're in the Crouching Lemur Monastery
+- Craft Woundrous Items will now take the correct amount of gold away from the player using it
+- Little Burrow door in the Dale
+- Primordial Gust now correctly applies to placeables such as random dungeon elemental walls
+- Bard Song now longer consumes two charges
+- Loot drop message coloration fixed
+- Rainbow PLC adjusted to a new PLC version that isn't broken
+
+
+[5.0.0 2025-12-12]
+
+### Added
+
+## Banking & Coinhouses
+
+**Your gold is finally safe!**
+
+- **Open accounts** at different coinhouses throughout Amia
+- **Deposit and withdraw** gold whenever you need
+- Each coinhouse operates independently.
+
+**Keep your treasures safe between adventures.**
+
+- Store items at coinhouses for safekeeping
+- **Upgrade your storage capacity** as your collection grows
+- Retrieve your gear whenever you need it
+- Items persist across sessions. What you store stays stored and most importantly, **secured**.
+
+Finally, a better place to keep that rare loot you're saving for a rainy day.
+
+No more carrying all your wealth on your person. Stash your hard-earned coin where bandits can't get it!
+
+## Player Stalls & Marketplaces
+
+**Become a merchant!**
+
+- **Claim a stall** in the marketplace
+- **List your wares** for other players to browse and buy
+- Set your own prices
+- Release your stall when you're done trading (WIP)
+
+## NPC Shops
+
+- Buy groceries and other useful job system items that restock on a real time basis.
+
+Coming Soon: Player owned stores run by an NPC
+
+## Long Term Rental Houses
+
+**Find your home**
+
+- Claim a house, renting it from month to month
+- Furnish it with products from players and NPC carpenters
+- Invite your friends to live with you
+- Co-lease your freeloading buddies
+
+It's a bit rough, but it'll only get better from here!
+
+
 - 3 player portraits
 - 1 tail model (1691 "Tail: Spinogon")
 - Alignment changer NPC for test server
@@ -15,14 +85,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - New reward item for Purple Worm quest: Freezing Sphere Summoner
 - New area, Plane of Shadow: Obsidian Isle, Emberwood, East - Wysteria Galere Sanctum
 - Shadowplane Brazier to Obsidian Isle: Calderis
-- Monthly rental houses and persistent player shops in:
- - Oakmist Vale, Treetop Village
- - Moonpier
- - The Dale
- - Southport: East
- - Southport: Central
- - Southport: West
- - Traveller's Rest
+- Monthly Rental house for testing in Amia Forest: Oakmist Vale, Treetop Village
 - NUI option to the default crafting menu
 - Settlement guard NPCs and equipment to the palettes
 - Roadwarden and equipment to the palettes
@@ -31,20 +94,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - A lot of NUI images to the new amia_nui.hak
 - The Dale: Temple of the Cornucopia (New Area)
 - Ruathym: Fortress Wiltun, Portal Chamber (New Area)
-- New NUI windows:
- - Crafting: Armor with per-part coloring, includes copy feature
- - Crafting: Main Hand, Boots, Helmet, and Cloak, includes copy feature
- - Crafting: Head, PC Scale, Voiceset, Portrait, Tattoos, Colors (Hair, Tattoo1, Tattoo2)
- - Player Tool for editing items
- - DM Tool for editing items
- - 1000 Faces (replaces current item functionality)
- - Temporary Name Changer (replaces current item functionality - you will only need one item from now on)
+- New NUI windows: - Crafting: Armor with per-part coloring, includes copy feature
+- Crafting: Main Hand, Boots, Helmet, and Cloak, includes copy feature
+- Crafting: Head, PC Scale, Voiceset, Portrait, Tattoos, Colors (Hair, Tattoo1, Tattoo2)
+- Player Tool for editing items
+- DM Tool for editing items
+- 1000 Faces (replaces current item functionality)
+- Temporary Name Changer (replaces current item functionality - you will only need one item from now on)
+- 1st level spells are now infinite, similarly to cantrips, when a caster's caster level is greater than 20
 
 ### Changed
 - Travel_coaches: remove unecessary destination dialogue
 - DTS challenges now allow for Take 20 skill rolls if you are not in combat
 - Increased the Lich Raid quest gold/xp reward by 10,000 each
-- jes_randomname script now has dynamic commoner generation
 - We now have a use for appearance.2da's RACIALTYPE row, and all appearances have had their entry updated to be accurate
 - Plot updates to:
  - Amia Forest: The Green Lake
@@ -100,7 +162,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Racial Gates in Winya
 - Changed some other area names and resrefs (minor)
 - Removed some areas that were not used
-- Some doors on the palette
+- Defensive stance no longer turns off when your temp hp dries up
 
 [4.25.0 2025-10-18]
 

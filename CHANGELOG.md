@@ -29,6 +29,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Bard Song now longer consumes two charges
 - Loot drop message coloration fixed
 - Rainbow PLC adjusted to a new PLC version that isn't broken
+- 2d12 Massive Crit (Ranged): Flawless mythal will now apply this correctly
 
 
 [5.0.0 2025-12-12]

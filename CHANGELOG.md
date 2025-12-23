@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Player Tool Nui: Character Build Inspector (shows levelup information)
+- DM Tool Nui: Character Rebuild Tool (shows levelup information and has Rebuild support)
 
 ### Changed
 - Craft Wondrous Items will no longer add properties to items directly - Use the new mythal system

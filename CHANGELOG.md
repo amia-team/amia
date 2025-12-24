@@ -30,6 +30,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Loot drop message coloration fixed
 - Rainbow PLC adjusted to a new PLC version that isn't broken
 - 2d12 Massive Crit (Ranged): Flawless mythal will now apply this correctly
+- Banks should open properly now without jumping over the counters
+- A couple PLC oopses in the Elven Outpost
 
 
 [5.0.0 2025-12-12]

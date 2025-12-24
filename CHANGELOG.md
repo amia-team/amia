@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Craft Wondrous Items will no longer add properties to items directly - Use the new mythal system
 - Add more player stalls to the Wave and Serpent
+- Ruleset allows up to 4 classes now, instead of 3
 
 ### Fixed
 - Stackable weapons won't be eaten by the crafting system anymore

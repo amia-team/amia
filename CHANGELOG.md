@@ -12,7 +12,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
+
+[5.1.1 2025-12-26]
+
+### Changed
+- Infinite level 1 spells are unlocked at caster level 20, not 21
+- Arcane Archers will increase the caster level of their base arcane class by +1 every two levels
+- Pale Master and Dragon Disciple will raise their base arcane class Caster Level by +1 for each level
+- Blackguard and Divine Champion will raise their base divine class Caster Level by +1 for each level
+
+### Fixed
 - New creature appearances have the right racial types now
+- ruleset.2da was actually updated for real this time to allow 4 classes
 
 [5.1.0 2025-12-25]
 

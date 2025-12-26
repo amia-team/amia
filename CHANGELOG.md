@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+[5.1.0 2025-12-25]
+
+### Added
 - Player Tool Nui: Character Build Inspector (shows levelup information)
 - DM Tool Nui: Character Rebuild Tool (shows levelup information and has Rebuild support)
 - A bunch of HD overrides for the base game default weapons

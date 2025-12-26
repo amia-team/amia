@@ -10,11 +10,33 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Player Tool Nui: Character Build Inspector (shows levelup information)
 - DM Tool Nui: Character Rebuild Tool (shows levelup information and has Rebuild support)
+- A bunch of HD overrides for the base game default weapons
+- 4 creature appearances
+- 4 helmets
+- Some books and umbrellas
+- Nui images
+- 7 character portraits
+- Appraise, Bluff, Craft Armor, Craft Weapon, Intimidate, Lore, and Persuade as class skills for all classes
+- Tumble, Ride, and Parry as class skills for all +1 and +3/4 classes
+- Disable Trap as a class skill for rangers
+- Taunt as a class skill for Defender
+- Rogue skills as class skills for Shadowdancer
+- A bunch of player stalls to the Wave and Serpent
+- Nui windows
+ - Player Tool: Character Build Inspector that shows full levelup information. It also allows you to redo 1 or 2 levels, or do a full delevel once every six months
+ - DM/RH Tool: Character Build Tool that allows the RH to do a variety of rebuild-related tasks, including automating the full rebuild process, including a backup system in case of crashes or disconnects
+ - ds_spwn waypoints to all the monthly rental homes so players can f_stuck in them
 
 ### Changed
 - Craft Wondrous Items will no longer add properties to items directly - Use the new mythal system
 - Add more player stalls to the Wave and Serpent
 - Ruleset allows up to 4 classes now, instead of 3
+- Cavalry is now called Cavalier
+- A bunch of scholar job ivory spots
+- Custom Summons no longer have a cap and now have a NUI window for management
+- Custom Summons' weapons can now be changed on the fly by the RH easily
+- Peerage summon will now be able to be used alongside other summons
+- Removed the character customization NPCs from the character maintenance room because they're unnecessary now
 
 ### Fixed
 - Stackable weapons won't be eaten by the crafting system anymore
@@ -32,7 +54,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Rainbow PLC adjusted to a new PLC version that isn't broken
 - 2d12 Massive Crit (Ranged): Flawless mythal will now apply this correctly
 - Banks should open properly now without jumping over the counters
+- Housing PLC shopkeepers will open their window for the right person every time now
 - A couple PLC oopses in the Elven Outpost
+- A broken NPC in the Cystana bank
+- Incorrect variable on a bunch of player houses that blocked adding residents
+- Jeweler job recipe Mythical Sample was incorrect
+- A lot of doors that weren't auto-closing but should
 
 
 [5.0.0 2025-12-12]

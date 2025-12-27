@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Perform has become a Class Skill for Arcane Archer, Assassin, Dragon Disciple, Duelist, Escape Artist, Paladin, Knight Commander, Shadowdancer, Sorcerer, and Warlock.
+- Use Magic Device has become a Class Skill for Assassin and Escape Artist
 
 ### Fixed
 

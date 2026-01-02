@@ -1201,41 +1201,15 @@ void f_Tail( object oPC, object oObject, string sOption, string sValue ){
 }
 
 void f_dreamcoins(object oPC, object oObject, string sValue){
-    if(!GetIsPC(oObject)) return;
-
-    string cdKey = GetPCPublicCDKey(oObject);
-    int dreamcoinAmount = StringToInt(sValue);
-    int priorDreamcoins = GetDreamCoins(cdKey);
-
-    SetDreamCoins(cdKey, dreamcoinAmount);
-
-    SendMessageToAllDMs("Set " + GetPCPlayerName(oObject) + "'s dreamcoins from " + IntToString(priorDreamcoins) + " to " + IntToString(dreamcoinAmount) + ".");
+    // DEPRECATED: Use ./dc command instead. This function intentionally does nothing.
 }
 
 void f_givedc(object oPC, object oObject, string sValue){
-    if(!GetIsPC(oObject)) return;
-
-    string cdKey = GetPCPublicCDKey(oObject);
-    int priorDreamcoins = GetDreamCoins(cdKey);
-    int dreamcoinAmount = priorDreamcoins + StringToInt(sValue);
-    int dreamcoinAdded  = StringToInt(sValue);
-
-    SetDreamCoins(cdKey, dreamcoinAmount);
-
-    SendMessageToAllDMs(GetPCPlayerName(oObject) + " received " + IntToString(dreamcoinAdded) + " DCs.");
+    // DEPRECATED: Use ./dc add <amount> instead. This function intentionally does nothing.
 }
 
 void f_takedc(object oPC, object oObject, string sValue){
-    if(!GetIsPC(oObject)) return;
-
-    string cdKey = GetPCPublicCDKey(oObject);
-    int priorDreamcoins = GetDreamCoins(cdKey);
-    int dreamcoinAmount = priorDreamcoins - StringToInt(sValue);
-    int dreamcoinTaken  = StringToInt(sValue);
-
-    SetDreamCoins(cdKey, dreamcoinAmount);
-
-    SendMessageToAllDMs(GetPCPlayerName(oObject) + " lost " + IntToString(dreamcoinTaken) + " DCs.");
+    // DEPRECATED: Use ./dc remove <amount> instead. This function intentionally does nothing.
 }
 
 void f_ban(string sValue)

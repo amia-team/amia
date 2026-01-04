@@ -11,6 +11,7 @@ void main(){
 
     int nSightLevel = GetLocalInt(oNPC, "SightLevel");
     int nSpawnVFX = GetLocalInt(oNPC, "SpawnVFX");
+    int nWalkScript = GetLocalInt(oNPC, "Walkscript"); // NEW: Check for Walkscript variable
 
     // Assign sight buff based on variable; 1 = See Invisibility; 2 = Ultravision; 3 = Amia True Seeing; 4 = Bioware Trueseeing
     effect eSight;
@@ -36,7 +37,14 @@ void main(){
     SetLocalLocation(oNPC, "Location", lGuardLoc);
     SetLocalFloat(oNPC, "Facing", fGuardFacing);
 
+    // Execute walk script if Walkscript variable is 1
+    if (nWalkScript == 1)
+    {
+        ExecuteScript("j_ai_walkwaypoin", oNPC);
+    }
+
     ExecuteScript("ds_ai2_spawn");
     return;
 
 }
+

@@ -46,6 +46,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Some spells were not firing off the infinite level 1 refresh; they will now
 - Dwarves were being ignored in the Citizen Maker scripts allow or ban feature
 - DM Forge power calculation
+- A duplication bug with merchant storage chests - no idea how long that's been a thing!
 
 [5.1.1 2025-12-26]
 

@@ -8,12 +8,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Nui for players to preview VFX. The PLC and NPCs can be found in the Maintenance: Character Modifier room
+- Nui to help DMs use, add, or remove VFX from objects or target them on the ground. Also has player features on a selected object
+- A missing dragon breath from item properties 2da
 
 ### Changed
-- Perform has become a Class Skill for Arcane Archer, Assassin, Dragon Disciple, Duelist, Escape Artist, Paladin, Knight Commander, Shadowdancer, Sorcerer, and Warlock.
+- Perform has become a Class Skill for Arcane Archer, Assassin, Blackguard, Dragon Disciple, Duelist, Escape Artist, Paladin, Knight Commander, Shadowdancer, Sorcerer, and Warlock
 - Use Magic Device has become a Class Skill for Assassin and Escape Artist
+- You can't put the lost baby animals in storage boxes anymore
+- Made all DM and Player Nui windows resizable
+- Gave the DM forge more spells and properties
+- Added some properties to the Mythal Forge that were supposed to be 0-point properties
 
 ### Fixed
+- Caster Level Calculation for Prestige Classes and Base arcane/divine Classes
+- Bonus spell slots based on your new CL calculation
+- Finished the DM forge (backend - not styled yet), all DC Item spells and other missing properties are now able to be added and show the correct power count in the top box
+- Some spells were not firing off the infinite level 1 refresh; they will now
+- Dwarves were being ignored in the Citizen Maker scripts allow or ban feature
+- DM Forge power calculation
 
 [5.1.1 2025-12-26]
 

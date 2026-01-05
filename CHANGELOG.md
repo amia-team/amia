@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - DreamcoinTool for DMs to manage Dreamcoin transactions
 - A missing dragon breath from item properties 2da
 - Brew Potion and Craft Wand as available general feats for Blackguard
+- 3 portraits
 
 ### Changed
 - Perform has become a Class Skill for Arcane Archer, Assassin, Blackguard, Dragon Disciple, Duelist, Escape Artist, Paladin, Knight Commander, Shadowdancer, Sorcerer, and Warlock

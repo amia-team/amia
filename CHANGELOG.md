@@ -8,9 +8,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Calimport Wizard Ward areas: Exterior, Loom Halls, Aquas and Azures, Pasha's Tower, Sin of the Earth, and Hall of Transmutation (Kamina)
 - Nui for players to preview VFX. The PLC and NPCs can be found in the Maintenance: Character Modifier room
 - Nui to help DMs use, add, or remove VFX from objects or target them on the ground. Also has player features on a selected object
+- DC award timer to Player's DC window showing when their next automated DC is
+- Player Dreamcoin management: Self view, Donate view
+- DreamcoinTool for DMs to manage Dreamcoin transactions
 - A missing dragon breath from item properties 2da
+- Brew Potion and Craft Wand as available general feats for Blackguard
 
 ### Changed
 - Perform has become a Class Skill for Arcane Archer, Assassin, Blackguard, Dragon Disciple, Duelist, Escape Artist, Paladin, Knight Commander, Shadowdancer, Sorcerer, and Warlock
@@ -19,8 +24,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Made all DM and Player Nui windows resizable
 - Gave the DM forge more spells and properties
 - Added some properties to the Mythal Forge that were supposed to be 0-point properties
+- Winterwight: Bump up its unbuffed AB by 3 points, make it faster so it can chase things
+- General epic summon improvements
+- Updated Frozenfar, Khem, Barak and Triumvir NPCs for Calimport
+- Updated creature blueprints: Arcadian Avenger, Pharoah, Corruptor, sirrush, construct
+- Updated Heist Script for Pasha Quest
+- Deprecated legacy DC API
+- CharacterVaultBackupService now uses rsync for improved Unicode support (AmiaReforged)
 
 ### Fixed
+- Shapechange spell forms now merge equipped weapons (MergeW enabled), allowing shapeshifted characters to benefit from their weapon properties
+- Shapechange Iron Golem base STR increased from 30 to 36
+- Shapechange Death Slaad gained an additional spell ability (Chaos Spittle)
+- Epic Shapechange stat improvements:
+  - Epic Rust Dragon: STR 42→44, CON 32→34
+  - Epic Iron Golem: CON 28→32
 - Caster Level Calculation for Prestige Classes and Base arcane/divine Classes
 - Bonus spell slots based on your new CL calculation
 - Finished the DM forge (backend - not styled yet), all DC Item spells and other missing properties are now able to be added and show the correct power count in the top box

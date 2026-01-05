@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updated Heist Script for Pasha Quest
 - Deprecated legacy DC API
 - CharacterVaultBackupService now uses rsync for improved Unicode support (AmiaReforged)
+- Added our parchment background to a lot of NUI windows
 
 ### Fixed
 - Shapechange spell forms now merge equipped weapons (MergeW enabled), allowing shapeshifted characters to benefit from their weapon properties

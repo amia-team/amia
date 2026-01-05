@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+[5.2.0 2026-01-04]
+
+### Added
 - Calimport Wizard Ward areas: Exterior, Loom Halls, Aquas and Azures, Pasha's Tower, Sin of the Earth, and Hall of Transmutation (Kamina)
 - Nui for players to preview VFX. The PLC and NPCs can be found in the Maintenance: Character Modifier room
 - Nui to help DMs use, add, or remove VFX from objects or target them on the ground. Also has player features on a selected object
@@ -44,7 +52,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Caster Level Calculation for Prestige Classes and Base arcane/divine Classes
 - Bonus spell slots based on your new CL calculation
 - Finished the DM forge (backend - not styled yet), all DC Item spells and other missing properties are now able to be added and show the correct power count in the top box
-- Some spells were not firing off the infinite level 1 refresh; they will now
+- Some spells were not firing off the infinite level 1 refresh; they will now (Theoretically, I couldn't check ALL of them manually.)
 - Dwarves were being ignored in the Citizen Maker scripts allow or ban feature
 - DM Forge power calculation
 - A duplication bug with merchant storage chests - no idea how long that's been a thing!

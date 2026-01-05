@@ -8,7 +8,7 @@
 void main()
 {
     object oPC = GetItemActivator();
-    object oChest = GetItemActivated();
+    /*object oChest = GetItemActivated();
     object oTarget = GetItemActivatedTarget();
     object oPLC;
     location lTarget = GetItemActivatedTargetLocation();
@@ -22,9 +22,9 @@ void main()
     {
       if((GetSubString(GetResRef(oTarget),0,3) == "js_"))
       {
-	  
-	  int nStackSize = GetItemStackSize(oTarget);
-	  
+
+      int nStackSize = GetItemStackSize(oTarget);
+
         if(sStoredItem == "")
         {
           SetName(oChest,"<c~Îë>"+"Storage Chest: " + GetName(oTarget) + "</c>");
@@ -62,12 +62,12 @@ void main()
           }
 
         }
-        /*
+
         else if(GetResRef(oTarget) == "js_jobjournal")  // Transfer from mini chest to job journal
         {
 
         }
-        */
+
       }
       else
       {
@@ -97,5 +97,7 @@ void main()
          SendMessageToPC(oPC,"Miniature chest is already out!");
        }
 
-    }
+    }*/
+
+    SendMessageToPC(oPC,"This no longer works. Use the Job Resource Manager in Player Tools!");
 }

@@ -9,6 +9,7 @@
 
 //  20071119  disco       Moved cleanup scripts to amia_include
 //  2013/11/13 Glim       Added functionality for special ability usage onspawn.
+// 2026/01/06 Kamina      Added spawntext functionality
 
 //-------------------------------------------------------------------------------
 // includes
@@ -19,24 +20,32 @@
 //-------------------------------------------------------------------------------
 // main
 //-------------------------------------------------------------------------------
-
 void main(){
 
-    object oCritter         = OBJECT_SELF;
+    object oCritter = OBJECT_SELF;
+
+    // --- NEW: Say spawn text once ---
+    string sSpawnText = GetLocalString(oCritter, "spawntext");
+    if (sSpawnText == "")
+    {
+        sSpawnText = "Hello!";
+    }
+    SpeakString(sSpawnText, TALKVOLUME_TALK);
+    // --- End spawn text ---
+
     float scale             = GetLocalFloat(oCritter, "scale");
     float zAdjust           = GetLocalFloat(oCritter, "z_adjust");
-    int spawnEffect         = GetLocalInt( oCritter, "spawn_effect" );
-    int effect1             = GetLocalInt( oCritter, "effect1" );
-    int effect2             = GetLocalInt( oCritter, "effect2" );
-    int effect3             = GetLocalInt( oCritter, "effect3" );
-    int effectDurType1      = GetLocalInt( oCritter, "effect_type1" );
-    int effectDurType2      = GetLocalInt( oCritter, "effect_type2" );
-    int effectDurType3      = GetLocalInt( oCritter, "effect_type3" );
-    int collision           = GetLocalInt( oCritter, "no_collision" );
-    float effectDur1        = GetLocalFloat( oCritter, "effect_dur1" );
-    float effectDur2        = GetLocalFloat( oCritter, "effect_dur2" );
-    float effectDur3        = GetLocalFloat( oCritter, "effect_dur3" );
-
+    int spawnEffect         = GetLocalInt(oCritter, "spawn_effect");
+    int effect1             = GetLocalInt(oCritter, "effect1");
+    int effect2             = GetLocalInt(oCritter, "effect2");
+    int effect3             = GetLocalInt(oCritter, "effect3");
+    int effectDurType1      = GetLocalInt(oCritter, "effect_type1");
+    int effectDurType2      = GetLocalInt(oCritter, "effect_type2");
+    int effectDurType3      = GetLocalInt(oCritter, "effect_type3");
+    int collision           = GetLocalInt(oCritter, "no_collision");
+    float effectDur1        = GetLocalFloat(oCritter, "effect_dur1");
+    float effectDur2        = GetLocalFloat(oCritter, "effect_dur2");
+    float effectDur3        = GetLocalFloat(oCritter, "effect_dur3");
 
     //Check if creature has an on-spawn effect.
     if (spawnEffect == TRUE)
@@ -56,24 +65,26 @@ void main(){
         SetObjectVisualTransform(oCritter, 10, scale);
     }
 
-    if(zAdjust > 0.05f || zAdjust < -0.05){
+    if(zAdjust > 0.05f || zAdjust < -0.05)
+    {
         SetObjectVisualTransform(oCritter, 33, zAdjust);
     }
 
-    if(collision == 1){
+    if(collision == 1)
+    {
         effect eGhost = EffectCutsceneGhost();
         ApplyEffectToObject(DURATION_TYPE_PERMANENT, eGhost, oCritter);
     }
 
-    DelayCommand( SPAWNBUFFDELAY, OnSpawnRoutines( oCritter ) );
+    DelayCommand(SPAWNBUFFDELAY, OnSpawnRoutines(oCritter));
 
-    CreateMySpellLists( oCritter );
+    CreateMySpellLists(oCritter);
 
-    SetLocalString( oCritter, "ai", "ds_ai2" );
+    SetLocalString(oCritter, "ai", "ds_ai2");
 
     //silent communication
-    SetListening( OBJECT_SELF, TRUE );
-    SetListenPattern( OBJECT_SELF, M_ATTACKED, 1001 );
+    SetListening(OBJECT_SELF, TRUE);
+    SetListenPattern(OBJECT_SELF, M_ATTACKED, 1001);
 
     //set TS on self if it's on the hide.
     //you can't detect hide properties like effects

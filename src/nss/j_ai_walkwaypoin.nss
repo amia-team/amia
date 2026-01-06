@@ -57,16 +57,18 @@
 #include "j_inc_debug"
 #include "NW_I0_GENERIC"
 
-const string WAYPOINT_RUN       = "WAYPOINT_RUN";
-const string WAYPOINT_PAUSE     = "WAYPOINT_PAUSE";
+const string WAYPOINT_RUN   = "WAYPOINT_RUN";
+const string WAYPOINT_PAUSE = "WAYPOINT_PAUSE";
 
 const int AI_FLAG_OTHER_RETURN_TO_SPAWN_LOCATION = 0x00020000;
-const string AI_OTHER_MASTER    = "AI_OTHER_MASTER";
+const string AI_OTHER_MASTER = "AI_OTHER_MASTER";
 
-// Patrol control locals
-const string LOCAL_PATROL_ACTIVE    = "PATROL_ACTIVE";
-const string LOCAL_RANDOMNAME_DONE  = "RANDOMNAME_DONE";
-const float  PATROL_RETRY_DELAY     = 3.0;
+// Internal locals
+const string LOCAL_RANDOMNAME_DONE = "RANDOMNAME_DONE";
+
+// Timing
+const float PATROL_IDLE_RECHECK = 1.0;
+const float PATROL_COMBAT_RETRY = 3.0;
 
 // Forward declaration
 int AI_GetSpawnInCondition(int nCondition, string sName, object oTarget = OBJECT_SELF);
@@ -76,21 +78,21 @@ int collision = GetLocalInt(OBJECT_SELF, "collision");
 
 void main()
 {
-    // Prevent duplicate patrol loops
-    if (GetLocalInt(OBJECT_SELF, LOCAL_PATROL_ACTIVE) == 1)
-    {
-        return;
-    }
+    object oSelf = OBJECT_SELF;
 
     // Pause patrol during combat
-    if (GetIsInCombat(OBJECT_SELF))
+    if (GetIsInCombat(oSelf))
     {
-        DelayCommand(PATROL_RETRY_DELAY, ExecuteScript("j_ai_walkwaypoin", OBJECT_SELF));
+        DelayCommand(PATROL_COMBAT_RETRY, ExecuteScript("j_ai_walkwaypoin", oSelf));
         return;
     }
 
-    // Mark patrol as active
-    SetLocalInt(OBJECT_SELF, LOCAL_PATROL_ACTIVE, 1);
+    // If still executing actions, do not restart patrol
+    if (GetCurrentAction(oSelf) != ACTION_INVALID)
+    {
+        DelayCommand(PATROL_IDLE_RECHECK, ExecuteScript("j_ai_walkwaypoin", oSelf));
+        return;
+    }
 
     // Disable collision unless explicitly enabled
     if (collision != 1)
@@ -98,50 +100,47 @@ void main()
         ApplyEffectToObject(
             DURATION_TYPE_PERMANENT,
             EffectCutsceneGhost(),
-            OBJECT_SELF
+            oSelf
         );
     }
 
     // Return-to-spawn logic
     if (AI_GetSpawnInCondition(AI_FLAG_OTHER_RETURN_TO_SPAWN_LOCATION, AI_OTHER_MASTER))
     {
-        location lReturnPoint = GetLocalLocation(OBJECT_SELF, "AI_RETURN_TO_POINT");
+        location lReturnPoint = GetLocalLocation(oSelf, "AI_RETURN_TO_POINT");
         object oReturnArea = GetAreaFromLocation(lReturnPoint);
 
         if (GetIsObjectValid(oReturnArea))
         {
-            if ((GetArea(OBJECT_SELF) == oReturnArea &&
-                 GetDistanceBetweenLocations(GetLocation(OBJECT_SELF), lReturnPoint) > 3.0) ||
-                GetArea(OBJECT_SELF) != oReturnArea)
+            if ((GetArea(oSelf) == oReturnArea &&
+                 GetDistanceBetweenLocations(GetLocation(oSelf), lReturnPoint) > 3.0) ||
+                GetArea(oSelf) != oReturnArea)
             {
                 DebugActionSpeakByInt(77, GetAreaFromLocation(lReturnPoint));
                 ActionForceMoveToLocation(lReturnPoint);
 
-                // Allow clean restart after returning
-                SetLocalInt(OBJECT_SELF, LOCAL_PATROL_ACTIVE, 0);
-                DelayCommand(2.0, ExecuteScript("j_ai_walkwaypoin", OBJECT_SELF));
+                DelayCommand(2.0, ExecuteScript("j_ai_walkwaypoin", oSelf));
                 return;
             }
         }
     }
 
     // One-time random name assignment
-    if (GetLocalInt(OBJECT_SELF, "random_name") == 1 &&
-        GetLocalInt(OBJECT_SELF, LOCAL_RANDOMNAME_DONE) == 0)
+    if (GetLocalInt(oSelf, "random_name") == 1 &&
+        GetLocalInt(oSelf, LOCAL_RANDOMNAME_DONE) == 0)
     {
-        SetLocalInt(OBJECT_SELF, LOCAL_RANDOMNAME_DONE, 1);
-        AssignCommand(OBJECT_SELF, ExecuteScript("jes_randomname", OBJECT_SELF));
+        SetLocalInt(oSelf, LOCAL_RANDOMNAME_DONE, 1);
+        AssignCommand(oSelf, ExecuteScript("jes_randomname", oSelf));
     }
 
     // Start waypoint patrol (always from first waypoint)
     WalkWayPoints(
-        GetLocalInt(OBJECT_SELF, WAYPOINT_RUN),
-        GetLocalFloat(OBJECT_SELF, WAYPOINT_PAUSE)
+        GetLocalInt(oSelf, WAYPOINT_RUN),
+        GetLocalFloat(oSelf, WAYPOINT_PAUSE)
     );
 
-    // Clear patrol flag and loop
-    SetLocalInt(OBJECT_SELF, LOCAL_PATROL_ACTIVE, 0);
-    DelayCommand(1.0, ExecuteScript("j_ai_walkwaypoin", OBJECT_SELF));
+    // Poll again after patrol completes or is interrupted
+    DelayCommand(PATROL_IDLE_RECHECK, ExecuteScript("j_ai_walkwaypoin", oSelf));
 }
 
 int AI_GetSpawnInCondition(int nCondition, string sName, object oTarget)

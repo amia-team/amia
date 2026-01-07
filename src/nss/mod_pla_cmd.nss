@@ -47,7 +47,6 @@ void f_Eyes( object oPC, object oObject, string sOption, string sValue );
 void f_Ring( object oPC, object oObject, string sOption, string sValue );
 void f_Voice( object oPC, string sOption, string sValue );
 void f_PlayerBio( object oPC, string sOption, string sValue );
-void f_file( object oPC );
 void f_Love( object oPC, object oObject, string sOption, string sValue );
 void f_Hate( object oPC, object oObject, string sOption, string sValue );
 void f_Note( object oPC, string sOption, string sValue );
@@ -308,10 +307,6 @@ void main( ){
 
                 DelayCommand( 0.1, f_Plain( oPC ) );
             }
-            else if ( sCommand == "file" ){
-
-                DelayCommand( 0.1, f_file( oPC ) );
-            }
             else if (sCommand == "playertools" ) {
                 DelayCommand( 0.1, f_playertools( oPC, oObject, sOption, sValue));
             }
@@ -464,7 +459,6 @@ void f_Help( object oPC ){
         SendMessageToPC( oPC, " f_plain - Toggles on and off plainchat (no colors)." );
         SendMessageToPC( oPC, " f_Bio [R,B,N,A][Text] - Use this to edit your bio." );
         SendMessageToPC( oPC, " f_Voice [C,F,S,D,B,V,H [Text] - Use this to make companions, familiars, summons, dominated, bottled-companions or vassals say things." );
-        SendMessageToPC( oPC, " f_File is temporarily disabled." );
         SendMessageToPC( oPC, " f_Note [New,Add,Remove,Load,List][Text] - Deals with persistent map pins and note." );
         SendMessageToPC( oPC, " f_debuff - Removes all positive buffs from your character." );
         SendMessageToPC( oPC, " f_examine [hide,rclaw,lcraw,bite,hand]- Examine your creature hide." );
@@ -712,24 +706,6 @@ void f_Gender(object oPC, string sOption, string sValue){
         oObj = GetNearestCreature( CREATURE_TYPE_PLAYER_CHAR, PLAYER_CHAR_NOT_PC, oPC );
     }
         SetGender ( oObj, gender );
-}
-
-void f_file( object oPC ){
-
-    if(GetIsInCombat(oPC)){
-        SendMessageToPC(oPC,"You are in combat!");
-        return;
-    }
-    else if(StringToInt(RunLua("if file==nil then return true; else return file.DISABLED; end"))){
-
-        SendMessageToPC(oPC,"This command is disabled!");
-        return;
-    }
-
-    SetLocalInt( oPC, "ds_tree",0);
-    SetCustomToken(10101,GetPCPlayerName(oPC));
-    SetLocalString(oPC,"ds_action","td_act_ffile");
-    AssignCommand(oPC,ActionStartConversation(oPC,"td_ffile",TRUE,FALSE));
 }
 
 void f_Eyes( object oPC, object oObject, string sOption, string sValue ){

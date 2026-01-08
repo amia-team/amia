@@ -17,15 +17,27 @@
 // main
 //-------------------------------------------------------------------------------
 
-int StartingConditional( )
+int StartingConditional()
 {
-    object oPC      = GetPCSpeaker();
-    string sResRef  = GetLocalString( OBJECT_SELF, "ds_item" );
-    object oItem    = GetItemPossessedBy( oPC, sResRef );
+    object oPC = GetPCSpeaker();
 
-    if( GetIsObjectValid( oItem ) )
+    // Check item condition
+    string sResRef = GetLocalString(OBJECT_SELF, "ds_item");
+    if (sResRef != "")
+    {
+        object oItem = GetItemPossessedBy(oPC, sResRef);
+        if (GetIsObjectValid(oItem))
+        {
+            return TRUE;
+        }
+    }
+
+    // Check tag condition
+    string sTag = GetLocalString(oPC, "ds_tag");
+    if (sTag != "")
     {
         return TRUE;
     }
+
     return FALSE;
 }

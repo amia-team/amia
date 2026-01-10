@@ -8,10 +8,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Bank account sharing
+- Player Stall sharing
+- Filters for item types and name searching in player shop view
+- DM tool for managing DC housing rentals
 
 ### Changed
 
 ### Fixed
+- Greater Dispelling casted by NPCs will no longer dispel CL 30 characters, Player dispelling remains as-is
 
 [5.2.0 2026-01-04]
 

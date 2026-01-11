@@ -12,8 +12,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Player Stall sharing
 - Filters for item types and name searching in player shop view
 - DM tool for managing DC housing rentals
+- Aura of Rotting: Monster ability that inflicts disease on living creatures. Sickened applies automatically (-2 AB, saves, damage, skills). Nauseated vs fort (-2 AC, Constitution, and 50% movement speed penalty). Effects are removed upon exiting the aura.
 
 ### Changed
+- Apparently Healing Circle and Circle of Doom have been 4d8 + CL, with each spell focus giving another 1d8, this just wasn't documented.
+- Healing Circle can now be cast at medium range (range was personal)
+- Circle of Doom AOE is now large to match Healing Circle.
+- Risen Lord -> Rot Harbinger, a juggernaut themed form that deals less damage, has Aura of Rotting, and whose resistance/immunity spread is more balanced.
+- Vampire is given a sword for that sophisticated vamp feel, a slight damage increase, and Vampiric Touch is replaced with Mind Fog. 
 
 ### Fixed
 - Greater Dispelling casted by NPCs will no longer dispel CL 30 characters, Player dispelling remains as-is

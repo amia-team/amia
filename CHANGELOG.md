@@ -13,16 +13,35 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Filters for item types and name searching in player shop view
 - DM tool for managing DC housing rentals
 - Aura of Rotting: Monster ability that inflicts disease on living creatures. Sickened applies automatically (-2 AB, saves, damage, skills). Nauseated vs fort (-2 AC, Constitution, and 50% movement speed penalty). Effects are removed upon exiting the aura.
+- Nui Language tool for DMs/Players (Allotment: 2 + INT mod + base Lore ranks / 10. Bard 5 grants +1. ESF Lore grants +1)
+- Character Archiver for Players
+- Dynamic Birb parts for Male Elf (3 Heads, 1 forearm/thigh/shin/feet)
+- Spell selection NUI for Sorcerers and Bards with increased PRC CL (AA/DD/PM)
+- 3 portraits
+- Made a GFF parser for us
 
 ### Changed
 - Apparently Healing Circle and Circle of Doom have been 4d8 + CL, with each spell focus giving another 1d8, this just wasn't documented.
 - Healing Circle can now be cast at medium range (range was personal)
 - Circle of Doom AOE is now large to match Healing Circle.
 - Risen Lord -> Rot Harbinger, a juggernaut themed form that deals less damage, has Aura of Rotting, and whose resistance/immunity spread is more balanced.
-- Vampire is given a sword for that sophisticated vamp feel, a slight damage increase, and Vampiric Touch is replaced with Mind Fog. 
+- Vampire is given a sword for that sophisticated vamp feel, a slight damage increase, and Vampiric Touch is replaced with Mind Fog.
+- Removed old archiver dialogue
+- Changed some item category names so they're easier to pick out of the item wizard when making fresh
+- Removed some X-Close functionality in some windows to prevent accidental reversion of changes (like to armor, appearance, etc.)
+- Description editors now have a clear-all button if you want to start over
+- Removed the settlement guards area because Jes is making a better way to do that
 
 ### Fixed
 - Greater Dispelling casted by NPCs will no longer dispel CL 30 characters, Player dispelling remains as-is
+- Fixed some PRC CL progression
+- Fixed bonus spell slots not applying for Bard/Sorcerer increased CL
+- Colors of text in some NUI that was unreadable
+- A null error in Two Handed Bonus
+- Bug with rebuilding more than one level running a script a billion times
+- Variable modifier in DM Item Editor (can now add, remove, or edit any INT/STR/FLT variable, with filtering)
+- Mythal Ledger + formatting
+- Over-Budget warning looks better and will no longer pop up behind the mythal forge window
 
 [5.2.0 2026-01-04]
 

@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Spell selection NUI for Sorcerers and Bards with increased PRC CL (AA/DD/PM)
 - 3 portraits
 - Made a GFF parser for us
+- Base item type changer for DM Item Editor
+- 12 new Custom Summon Bases (Humanoid + Animated Weapons)
 
 ### Changed
 - Apparently Healing Circle and Circle of Doom have been 4d8 + CL, with each spell focus giving another 1d8, this just wasn't documented.

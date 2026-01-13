@@ -21,6 +21,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Made a GFF parser for us
 - Base item type changer for DM Item Editor
 - 12 new Custom Summon Bases (Humanoid + Animated Weapons)
+- 2 2H magic staves to the shop Hil'rash uses
+- A bunch of holdable items to the holdable items shop
+- A ton of template items for backend use
 
 ### Changed
 - Apparently Healing Circle and Circle of Doom have been 4d8 + CL, with each spell focus giving another 1d8, this just wasn't documented.

@@ -24,18 +24,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 2 2H magic staves to the shop Hil'rash uses
 - A bunch of holdable items to the holdable items shop
 - A ton of template items for backend use
+- Range of Sneak Attack visual indicator. Command "./sneakrange" produces an aura that is only visible to the player to indicate the range of sneak attacks.
 
 ### Changed
 - Apparently Healing Circle and Circle of Doom have been 4d8 + CL, with each spell focus giving another 1d8, this just wasn't documented.
 - Healing Circle can now be cast at medium range (range was personal)
 - Circle of Doom AOE is now large to match Healing Circle.
-- Risen Lord -> Rot Harbinger, a juggernaut themed form that deals less damage, has Aura of Rotting, and whose resistance/immunity spread is more balanced.
-- Vampire is given a sword for that sophisticated vamp feel, a slight damage increase, and Vampiric Touch is replaced with Mind Fog.
 - Removed old archiver dialogue
 - Changed some item category names so they're easier to pick out of the item wizard when making fresh
 - Removed some X-Close functionality in some windows to prevent accidental reversion of changes (like to armor, appearance, etc.)
 - Description editors now have a clear-all button if you want to start over
 - Removed the settlement guards area because Jes is making a better way to do that
+
+### Undead Shape
+- Risen Lord -> Rot Harbinger: a juggernaut themed form that deals less damage, has Aura of Rotting, Improved Whirlwind replaced with Circle of Doom, and resistance/immunity spread is more balanced.
+- Vampire is given a snazzy longsword for that sophisticated vamp feel, damage increased, and Vampiric Touch is replaced with Mind Fog. +6 WIS on hide removed, so that the world is in balance once more.
+- Rotting Aura: Inflicts disease on living creatures. Sickened is saveless (-2 AB, saves, damage, skills). Nauseated vs fort (-2 AC, Constitution, and 50% movement speed penalty). Effects are removed on exiting the aura.
 
 ### Fixed
 - Greater Dispelling casted by NPCs will no longer dispel CL 30 characters, Player dispelling remains as-is
@@ -47,6 +51,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Variable modifier in DM Item Editor (can now add, remove, or edit any INT/STR/FLT variable, with filtering)
 - Mythal Ledger + formatting
 - Over-Budget warning looks better and will no longer pop up behind the mythal forge window
+- Crafted wands and scribed scrolls are now correctly usable by the maker's magic discipline, ie divine/arcane
 
 [5.2.0 2026-01-04]
 

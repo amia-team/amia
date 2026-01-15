@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - A ton of template items for backend use
 - Range of Sneak Attack visual indicator. Command "./sneakrange" produces an aura that is only visible to the player to indicate the range of sneak attacks.
 - Winya Ravana: The Falls, Portal Chamber and updates to Winya Ravana: The Falls. (Revak)
+- Several images to nui hak for mythal forge
 
 ### Changed
 - Apparently Healing Circle and Circle of Doom have been 4d8 + CL, with each spell focus giving another 1d8, this just wasn't documented.
@@ -36,6 +37,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removed some X-Close functionality in some windows to prevent accidental reversion of changes (like to armor, appearance, etc.)
 - Description editors now have a clear-all button if you want to start over
 - Removed the settlement guards area because Jes is making a better way to do that
+- A complete overhaul to the mythal forge NUI appearance:
+ - Mythal Ledger looks pretty
+ - Over-Budget pop-up looks pretty
+ - All Properties now display in the first column and can be filtered (text, category, or both)
+ - Item Properties (added or removed) will now all appear in one column, instead of being split
+ - There is now a toggle for Caster Weapons, so you can swap between them if your point usage allows
+ - A little gem image indicator will show you if your item is a Caster Weapon
+ - Smooshed the three-column layout into two columns (with a fancy image on the right that you can resize over if you don't want to see it)
+ - There is now a help button in the top left corner of the window that gives some information you may want to know
+ - All images used are custom-made specifically for the forge!
 
 ### Undead Shape
 - Risen Lord -> Rot Harbinger: a juggernaut themed form that deals less damage, has Aura of Rotting, Improved Whirlwind replaced with Circle of Doom, and resistance/immunity spread is more balanced.
@@ -50,8 +61,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - A null error in Two Handed Bonus
 - Bug with rebuilding more than one level running a script a billion times
 - Variable modifier in DM Item Editor (can now add, remove, or edit any INT/STR/FLT variable, with filtering)
-- Mythal Ledger + formatting
-- Over-Budget warning looks better and will no longer pop up behind the mythal forge window
+- Mythal Forge bug fixes:
+ - Additional Roleplay Skills will now be able to be "purchased" through the Beneficial Skills category
+ - Bonus Spell Slots can now be added to anything (up to 3 per spell level)
+ - Mythal Ledger works again (and reads your mythal tubes)
+ - Over-Budget warning will no longer pop up behind the mythal forge window
+ - Removed class exclusivity (lolwut) - you can make things for your friends again
+ - Crafting weapons will now use Craft Weapon instead of Spellcraft (woopsie)
+ - Light properties are now 0 points like they're supposed to be!
+ - Difficulty now calculates correctly
 - Crafted wands and scribed scrolls are now correctly usable by the maker's magic discipline, ie divine/arcane
 
 [5.2.0 2026-01-04]

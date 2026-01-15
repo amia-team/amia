@@ -47,6 +47,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Smooshed the three-column layout into two columns (with a fancy image on the right that you can resize over if you don't want to see it)
  - There is now a help button in the top left corner of the window that gives some information you may want to know
  - All images used are custom-made specifically for the forge!
+- Changed the style of the DM Forge, too (it was so much easier)
 
 ### Undead Shape
 - Risen Lord -> Rot Harbinger: a juggernaut themed form that deals less damage, has Aura of Rotting, Improved Whirlwind replaced with Circle of Doom, and resistance/immunity spread is more balanced.

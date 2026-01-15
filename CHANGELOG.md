@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - A bunch of holdable items to the holdable items shop
 - A ton of template items for backend use
 - Range of Sneak Attack visual indicator. Command "./sneakrange" produces an aura that is only visible to the player to indicate the range of sneak attacks.
+- Winya Ravana: The Falls, Portal Chamber and updates to Winya Ravana: The Falls. (Revak)
 
 ### Changed
 - Apparently Healing Circle and Circle of Doom have been 4d8 + CL, with each spell focus giving another 1d8, this just wasn't documented.

@@ -70,6 +70,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Crafting weapons will now use Craft Weapon instead of Spellcraft (woopsie)
  - Light properties are now 0 points like they're supposed to be!
  - Difficulty now calculates correctly
+ - You can add spell castings to weapons now
+ - DMs can add spell castings to any type of item now
 - Crafted wands and scribed scrolls are now correctly usable by the maker's magic discipline, ie divine/arcane
 
 [5.2.0 2026-01-04]

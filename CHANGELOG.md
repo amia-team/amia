@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Character Archiver for Players
 - Dynamic Birb parts for Male Elf (3 Heads, 1 forearm/thigh/shin/feet)
 - Spell selection NUI for Sorcerers and Bards with increased PRC CL (AA/DD/PM)
+- Bonus spell slots service for Dragon Disciples and Blackguards (for their main base class)
 - 3 portraits
 - Made a GFF parser for us
 - Base item type changer for DM Item Editor
@@ -27,6 +28,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Range of Sneak Attack visual indicator. Command "./sneakrange" produces an aura that is only visible to the player to indicate the range of sneak attacks.
 - Winya Ravana: The Falls, Portal Chamber and updates to Winya Ravana: The Falls. (Revak)
 - Several images to nui hak for mythal forge
+- Feat search feature for DM Item Editor (has a name filter)
+- Fancy NWN2 couch and invisible sit PLCs can be purchased at the woodworkers for housing PLCs
 
 ### Changed
 - Apparently Healing Circle and Circle of Doom have been 4d8 + CL, with each spell focus giving another 1d8, this just wasn't documented.
@@ -48,6 +51,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - There is now a help button in the top left corner of the window that gives some information you may want to know
  - All images used are custom-made specifically for the forge!
 - Changed the style of the DM Forge, too (it was so much easier)
+- Bonus spell slots cost less on the backend for the purposes of calculating Item Level Restrictions
+- Curse Song is now given to Bards for free at level 1 (ask for a feat swap if you took it)
+- Mounted Archery and Mounted Combat are now given to Cavaliers for free at level 1 (ask for a feat swap if you took them)
+- Rapid Reload is now a free feat for everyone, like Weapon Finesse (ask for a feat swap if you took it)
 
 ### Undead Shape
 - Risen Lord -> Rot Harbinger: a juggernaut themed form that deals less damage, has Aura of Rotting, Improved Whirlwind replaced with Circle of Doom, and resistance/immunity spread is more balanced.
@@ -74,6 +81,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - You can add spell castings to weapons now
  - DMs can add spell castings to any type of item now
 - Crafted wands and scribed scrolls are now correctly usable by the maker's magic discipline, ie divine/arcane
+- Player Shops:
+ - You now get feedback on how much gold you've paid for something
 
 [5.2.0 2026-01-04]
 

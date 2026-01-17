@@ -13,5 +13,4 @@ void main( )
 
     SetLocalInt( oDM, "DME_Offset", 0 );
     SetLocalObject( oDM, "DME_Manager", GetObjectByTag("dme_effectsmanager") );
-    ActionStartConversation( oDM, "dmrest", TRUE, FALSE);
 }

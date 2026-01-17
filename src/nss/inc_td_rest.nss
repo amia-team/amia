@@ -156,9 +156,6 @@ void OnRestStarted( object oPC ){
     if ( GetIsDM( oPC ) ) {
 
         AssignCommand( oPC, ClearAllActions() );
-
-        AssignCommand( oPC, ActionStartConversation(oPC, "dmrest", TRUE, FALSE) );
-
         return;
     }
 

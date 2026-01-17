@@ -49,6 +49,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - A little gem image indicator will show you if your item is a Caster Weapon
  - Smooshed the three-column layout into two columns (with a fancy image on the right that you can resize over if you don't want to see it)
  - There is now a help button in the top left corner of the window that gives some information you may want to know
+ - 1H caster weapons now allow 8 points; 2H caster weapons now allow 16 points
  - All images used are custom-made specifically for the forge!
 - Changed the style of the DM Forge, too (it was so much easier)
 - Bonus spell slots cost less on the backend for the purposes of calculating Item Level Restrictions

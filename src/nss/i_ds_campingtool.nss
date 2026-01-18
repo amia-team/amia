@@ -254,7 +254,7 @@ void SpawnItem(object oPC, string sResRef, string sTagPrefix, location lTarget, 
 
             if ( nFlagIt ){
 
-                SetLocalInt( oPLC, PLC_VAR_NAME, 1 );
+                SetLocalInt( oPLC, "ds_cg", 1 );
             }
 
             //If it's a sittable object, rotate 180 degress for easier placement

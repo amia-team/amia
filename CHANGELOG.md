@@ -56,6 +56,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Curse Song is now given to Bards for free at level 1 (ask for a feat swap if you took it)
 - Mounted Archery and Mounted Combat are now given to Cavaliers for free at level 1 (ask for a feat swap if you took them)
 - Rapid Reload is now a free feat for everyone, like Weapon Finesse (ask for a feat swap if you took it)
+- Polymorph merge now has centralised handling that bypasses having to script per polymorph effect
 
 ### Undead Shape
 - Risen Lord -> Rot Harbinger: a juggernaut themed form that deals less damage, has Aura of Rotting, Improved Whirlwind replaced with Circle of Doom, and resistance/immunity spread is more balanced.
@@ -84,6 +85,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Crafted wands and scribed scrolls are now correctly usable by the maker's magic discipline, ie divine/arcane
 - Player Shops:
  - You now get feedback on how much gold you've paid for something
+- Shapechange now gets the item merges as advertised in the previous update
+- Hopefully fixed some polymorph-related stability issues
 
 [5.2.0 2026-01-04]
 

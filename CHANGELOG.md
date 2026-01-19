@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Several images to nui hak for mythal forge
 - Feat search feature for DM Item Editor (has a name filter)
 - Fancy NWN2 couch and invisible sit PLCs can be purchased at the woodworkers for housing PLCs
+- Winya Ravana: Moonlit Springs and updates to Winya Ravana in preparation for Crafting Hall.
 
 ### Changed
 - Apparently Healing Circle and Circle of Doom have been 4d8 + CL, with each spell focus giving another 1d8, this just wasn't documented.

@@ -58,6 +58,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Mounted Archery and Mounted Combat are now given to Cavaliers for free at level 1 (ask for a feat swap if you took them)
 - Rapid Reload is now a free feat for everyone, like Weapon Finesse (ask for a feat swap if you took it)
 - Polymorph merge now has centralised handling that bypasses having to script per polymorph effect
+- Updated Secret Shop's spawnpoints, added ds_area scripts along with ds_spwn and is_area waypoints.
 
 ### Undead Shape
 - Risen Lord -> Rot Harbinger: a juggernaut themed form that deals less damage, has Aura of Rotting, Improved Whirlwind replaced with Circle of Doom, and resistance/immunity spread is more balanced.

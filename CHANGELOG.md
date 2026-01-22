@@ -26,12 +26,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - A bunch of holdable items to the holdable items shop
 - A ton of template items for backend use
 - Range of Sneak Attack visual indicator. Command "./sneakrange" produces an aura that is only visible to the player to indicate the range of sneak attacks.
-- Winya Ravana: The Falls, Portal Chamber and updates to Winya Ravana: The Falls. (Revak)
 - Several images to nui hak for mythal forge
 - Feat search feature for DM Item Editor (has a name filter)
 - Fancy NWN2 couch and invisible sit PLCs can be purchased at the woodworkers for housing PLCs
-- Winya Ravana: Moonlit Springs
-- Winya Ravana: Crafting Hall
+- Winya Ravana: The Falls, Portal Chamber - Includes Recall Pylon.
+- Winya Ravana: Moonlit Springs - Includes three merchants.
+- Winya Ravana: Crafting Hall - Includes three merchants, multiple job system trainers and player stalls.
 
 ### Changed
 - Apparently Healing Circle and Circle of Doom have been 4d8 + CL, with each spell focus giving another 1d8, this just wasn't documented.

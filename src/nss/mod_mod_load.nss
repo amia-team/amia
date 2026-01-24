@@ -54,7 +54,8 @@ void SetStartTime();
 //-------------------------------------------------------------------------------
 
 void main( ){
-    DelayCommand(300.0,ExecuteScript("dc_timer",GetModule()));
+    // DISABLED - C# DcPlaytimeService handles dreamcoin auto-pay now
+    // DelayCommand(300.0,ExecuteScript("dc_timer",GetModule()));
     NWNX_Weapon_SetDevastatingCriticalEventScript("nwnx_ev_dev");
 
     NWNX_Events_SubscribeEvent("NWNX_ON_STEALTH_ENTER_AFTER", "nwnx_hide_ent_af");

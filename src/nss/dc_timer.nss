@@ -1,11 +1,17 @@
  /*
-    Maverick00053 - DC_Timer Script
+    DEPRECATED - DC_Timer Script
 
+    This script is DISABLED. The C# DcPlaytimeService in AmiaReforged
+    now handles dreamcoin auto-pay. This NWScript version is kept for
+    reference only.
+
+    Original: Maverick00053 - DC_Timer Script
     A consistent 5 minute timer to add time to players accounts till
     they hit 2 hours, and grant them a DC as a result.
 
     13/jul/2023     Jes         Added auto DM payment, same script with no weekly cap.
     11/sep/2023     Frozen      Changed dc to uncapped
+    24/jan/2026     Disabled    C# version is now active, this script is deprecated
 */
 
 
@@ -13,6 +19,9 @@
 
 void main()
 {
+  // HARD DISABLED - C# DcPlaytimeService handles this now
+  return;
+
   object oModule = GetModule();
   object oPlayer = GetFirstPC();
   string PcCdKey = GetPCPublicCDKey(oPlayer);

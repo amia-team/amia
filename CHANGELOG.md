@@ -90,6 +90,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - You now get feedback on how much gold you've paid for something
 - Shapechange now gets the item merges as advertised in the previous update
 - Hopefully fixed some polymorph-related stability issues
+- Temporary properties, such as Magic Vestment or Flame Weapon, no longer are merged as permanent properties upon polymorphing
+- Added Monkey Grip as an available general feat for Shifter and now it correctly shows up in the Shifter radial menu
 
 [5.2.0 2026-01-04]
 

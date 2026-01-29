@@ -41,7 +41,6 @@ void main( ){
     int    oItemType                = GetBaseItemType(oItem);
     int    oOffItemType             = GetBaseItemType(oOffHand);
     int    nClassCross              = GetLevelByClass(51, oPC);
-    int    nClassDuel               = GetLevelByClass(52, oPC);
     string szItemScript             = "";
     effect eAB;
     effect eDamage;
@@ -58,129 +57,6 @@ void main( ){
     {
        FloatingTextStringOnCreature("*The cursed item binds to your flesh as you put it on*",oPC);
     }
-
-
-    // PRC Duelist - if there is something in both of their hands, the duelist buff is active, then go ahead and remove the buff
-    if((nClassDuel >= 1) && (GetIsObjectValid(oOffHand)) && (GetIsObjectValid(oPrimaryHand)))
-    {
-
-       // Checks for and removes the class bonus
-         while(GetIsEffectValid(eLoop))
-         {
-          eLoopSpellID = GetEffectSpellId(eLoop);
-
-            if ((GetEffectTag(eLoop) == "duelistbuff"))
-            {
-                 RemoveEffect(oPC, eLoop);
-                 DeleteLocalInt(oPC,"duelistbuff");
-            }
-                eLoop=GetNextEffect(oPC);
-         }
-    }
-
-
-  // Duelist PRC Check Bonuses
-  if((GetCreatureSize(oPC) == CREATURE_SIZE_SMALL) && !GetIsPolymorphed(oPC))       // Small PCs
-  {
-
-
-   if((!GetIsObjectValid(oOffHand)) && (nClassDuel >= 1) && ((GetBaseItemType(oItem)== BASE_ITEM_LIGHTMACE) || (GetBaseItemType(oItem)== BASE_ITEM_SICKLE) || (GetBaseItemType(oItem)== BASE_ITEM_HANDAXE) || (GetBaseItemType(oItem)== BASE_ITEM_LIGHTHAMMER) || (GetBaseItemType(oItem)== BASE_ITEM_KAMA) || (GetBaseItemType(oItem)== BASE_ITEM_WHIP) || (GetBaseItemType(oItem)== BASE_ITEM_DAGGER) || (GetBaseItemType(oItem)== BASE_ITEM_KUKRI) || (GetBaseItemType(oItem)== BASE_ITEM_SHORTSWORD)))
-   {
-
-
-      // Calculating Bonuses
-      if(nClassDuel >= 5)
-      {
-       eDamage = EffectDamageIncrease(5,DAMAGE_TYPE_PIERCING);
-       eAB = EffectAttackIncrease(1,ATTACK_BONUS_MISC);
-       eAC = EffectACIncrease(7,AC_SHIELD_ENCHANTMENT_BONUS);
-
-      }
-      else if(nClassDuel >= 4)
-      {
-       eDamage = EffectDamageIncrease(4,DAMAGE_TYPE_PIERCING);
-       eAC = EffectACIncrease(5,AC_SHIELD_ENCHANTMENT_BONUS);
-      }
-      else if(nClassDuel >= 3)
-      {
-       eDamage = EffectDamageIncrease(3,DAMAGE_TYPE_PIERCING);
-       eAC = EffectACIncrease(4,AC_SHIELD_ENCHANTMENT_BONUS);
-      }
-      else if(nClassDuel >= 2)
-      {
-       eDamage = EffectDamageIncrease(2,DAMAGE_TYPE_PIERCING);
-       eAC = EffectACIncrease(3,AC_SHIELD_ENCHANTMENT_BONUS);
-      }
-      else if(nClassDuel >= 1)
-      {
-       eDamage = EffectDamageIncrease(1,DAMAGE_TYPE_PIERCING);
-       eAC = EffectACIncrease(1,AC_SHIELD_ENCHANTMENT_BONUS);
-      }
-
-      eLink = EffectLinkEffects(eAB,eDamage);
-      eLink = EffectLinkEffects(eAC,eLink);
-      eLink = SupernaturalEffect(eLink);
-      eLink = TagEffect(eLink,"duelistbuff");
-      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink, oPC);
-      SetLocalInt(oPC,"duelistbuff",1);
-   }
-
-
-   }
-  else if((GetCreatureSize(oPC) == CREATURE_SIZE_MEDIUM) && !GetIsPolymorphed(oPC))       // Medium PCs
-  {
-
-
-   if((!GetIsObjectValid(oOffHand)) && (nClassDuel >= 1) && ((GetBaseItemType(oItem)== BASE_ITEM_BASTARDSWORD) || (GetBaseItemType(oItem)== BASE_ITEM_DAGGER) || (GetBaseItemType(oItem)== BASE_ITEM_DWARVENWARAXE)
-   || (GetBaseItemType(oItem)== BASE_ITEM_HANDAXE) || (GetBaseItemType(oItem)== BASE_ITEM_KAMA) || (GetBaseItemType(oItem)== BASE_ITEM_KATANA) || (GetBaseItemType(oItem)== BASE_ITEM_KUKRI)
-   || (GetBaseItemType(oItem)== BASE_ITEM_LIGHTFLAIL) || (GetBaseItemType(oItem)== BASE_ITEM_LIGHTHAMMER)  || (GetBaseItemType(oItem)== BASE_ITEM_LONGSWORD)
-   || (GetBaseItemType(oItem)== BASE_ITEM_LIGHTMACE) || (GetBaseItemType(oItem)== BASE_ITEM_MORNINGSTAR) || (GetBaseItemType(oItem)== BASE_ITEM_RAPIER) || (GetBaseItemType(oItem)== BASE_ITEM_SCIMITAR)
-   || (GetBaseItemType(oItem)== BASE_ITEM_SHORTSWORD) || (GetBaseItemType(oItem)== BASE_ITEM_SICKLE) || (GetBaseItemType(oItem)== BASE_ITEM_TRIDENT) || (GetBaseItemType(oItem)== BASE_ITEM_WARHAMMER)
-   || (GetBaseItemType(oItem)== BASE_ITEM_WHIP) || (GetBaseItemType(oItem)== BASE_ITEM_BATTLEAXE) || (GetBaseItemType(oItem)== BASE_ITEM_CLUB)))
-   {
-
-
-
-      // Calculating Bonuses
-      if(nClassDuel >= 5)
-      {
-       eDamage = EffectDamageIncrease(5,DAMAGE_TYPE_PIERCING);
-       eAB = EffectAttackIncrease(1,ATTACK_BONUS_MISC);
-       eAC = EffectACIncrease(7,AC_SHIELD_ENCHANTMENT_BONUS);
-      }
-      else if(nClassDuel >= 4)
-      {
-       eDamage = EffectDamageIncrease(4,DAMAGE_TYPE_PIERCING);
-       eAC = EffectACIncrease(5,AC_SHIELD_ENCHANTMENT_BONUS);
-      }
-      else if(nClassDuel >= 3)
-      {
-       eDamage = EffectDamageIncrease(3,DAMAGE_TYPE_PIERCING);
-       eAC = EffectACIncrease(4,AC_SHIELD_ENCHANTMENT_BONUS);
-      }
-      else if(nClassDuel >= 2)
-      {
-       eDamage = EffectDamageIncrease(2,DAMAGE_TYPE_PIERCING);
-       eAC = EffectACIncrease(3,AC_SHIELD_ENCHANTMENT_BONUS);
-      }
-      else if(nClassDuel >= 1)
-      {
-       eDamage = EffectDamageIncrease(1,DAMAGE_TYPE_PIERCING);
-       eAC = EffectACIncrease(1,AC_SHIELD_ENCHANTMENT_BONUS);
-      }
-
-      eLink = EffectLinkEffects(eAB,eDamage);
-      eLink = EffectLinkEffects(eAC,eLink);
-      eLink = SupernaturalEffect(eLink);
-      eLink = TagEffect(eLink,"duelistbuff");
-      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink, oPC);
-      SetLocalInt(oPC,"duelistbuff",1);
-
-
-   }
-
-
-  }
 
     // Arbalest Check Bonuses
    if(((GetBaseItemType(oItem)== BASE_ITEM_HEAVYCROSSBOW) || (GetBaseItemType(oItem)== BASE_ITEM_LIGHTCROSSBOW)) && (nClassCross >= 1))

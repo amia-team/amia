@@ -142,14 +142,7 @@ void main( ){
 
         ds_create_item( "itm_book_pcode1", oPC );
     }
-    if (GetHasFeat( FEAT_EPIC_SPELL_MUMMY_DUST, oPC ) ){
 
-        ds_create_item( "jj_thin_book", oPC, 1, "jj_epic_summon" );
-    }
-    if (GetHasFeat( FEAT_EPIC_SPELL_DRAGON_KNIGHT, oPC ) ){
-
-        ds_create_item( "epicdragonknight", oPC, 1, "edk_choice" );
-    }
     if ( GetLevelByClass( CLASS_TYPE_ASSASSIN, oPC ) > 1){
         ds_create_item( "jj_asn_tool", oPC );
     }

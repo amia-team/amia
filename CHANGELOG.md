@@ -13,8 +13,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Filters for item types and name searching in player shop view
 - DM tool for managing DC housing rentals
 - Aura of Rotting: Monster ability that inflicts disease on living creatures. Sickened applies automatically (-2 AB, saves, damage, skills). Nauseated vs fort (-2 AC, Constitution, and 50% movement speed penalty). Effects are removed upon exiting the aura.
-- Nui Language tool for DMs/Players (Allotment: 2 + INT mod + base Lore ranks / 10. Bard 5 grants +1. ESF Lore grants +1)
-- Character Archiver for Players
+- Player Tools:
+ - Domain Changer: Allows clerics to change domains once per month. One domain must still match your deity for prayer to function.
+ - Nui Language tool for DMs/Players (Allotment: 2 + INT mod + base Lore ranks / 10. Bard 5 grants +1. ESF Lore grants +1)
+ - Character Archiver for Players
 - Dynamic Birb parts for Male Elf (3 Heads, 1 forearm/thigh/shin/feet)
 - Spell selection NUI for Sorcerers and Bards with increased PRC CL (AA/DD/PM)
 - Bonus spell slots service for Dragon Disciples and Blackguards (for their main base class)
@@ -26,12 +28,29 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - A bunch of holdable items to the holdable items shop
 - A ton of template items for backend use
 - Range of Sneak Attack visual indicator. Command "./sneakrange" produces an aura that is only visible to the player to indicate the range of sneak attacks.
-- Several images to nui hak for mythal forge
+- Several images to nui hak for mythal forge and dashboard
 - Feat search feature for DM Item Editor (has a name filter)
 - Fancy NWN2 couch and invisible sit PLCs can be purchased at the woodworkers for housing PLCs
 - Winya Ravana: The Falls, Portal Chamber - Includes Recall Pylon.
 - Winya Ravana: Moonlit Springs - Includes three merchants.
 - Winya Ravana: Crafting Hall - Includes three merchants, multiple job system trainers and player stalls.
+- Minimally styled Player Dashboard that can be accessed by pressing "R" to Rest or typing ./dashboard. FEEDBACK WELCOME. Includes:
+ - Rest button
+ - Pray button
+ - Emotes NUI (sit, dance, etc.), works on associates/BCs and includes minor transform capabilities for placement in RP
+ - Hide Equipment button (Helmet, Shield, Cloak)
+ - Utilities button
+  - Save Character button
+  - Summmon Options Nui (Summon Creature, BG Fiend, EMD, EDK)
+  - Self Settings
+   - Collision Bubble toggle button
+   - Hurt Yourself
+   - Phenotype Changer, now also allows swapping between normal, large, and old; Levitation unlocks for Wiz/Sor level 5, Cleric level 5 with Travel Domain, or Drow race
+  - Game Settings
+   - XP Block toggle button
+   - Emote Symbol changer Nui
+   - PvP tool (WIP, but most features ported)
+ - Player Tools Button that just opens the existing player tools
 
 ### Changed
 - Apparently Healing Circle and Circle of Doom have been 4d8 + CL, with each spell focus giving another 1d8, this just wasn't documented.
@@ -52,7 +71,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Smooshed the three-column layout into two columns (with a fancy image on the right that you can resize over if you don't want to see it)
  - There is now a help button in the top left corner of the window that gives some information you may want to know
  - 1H caster weapons now allow 8 points; 2H caster weapons now allow 16 points
- - All images used are custom-made specifically for the forge!
+ - Amulets now allow 6 points (and 10 points through the DC system)
 - Changed the style of the DM Forge, too (it was so much easier)
 - Bonus spell slots cost less on the backend for the purposes of calculating Item Level Restrictions
 - Curse Song is now given to Bards for free at level 1 (ask for a feat swap if you took it)
@@ -60,6 +79,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Rapid Reload is now a free feat for everyone, like Weapon Finesse (ask for a feat swap if you took it)
 - Polymorph merge now has centralised handling that bypasses having to script per polymorph effect
 - Updated Secret Shop's spawnpoints, added ds_area scripts along with ds_spwn and is_area waypoints.
+- Prayer:
+ - Lay persons who share the same alignment axis as their chosen deity (Good, Neutral, or Evil) have a 40% chance for a prayer
+ - Good-aligned people praying to an evil god will be smited (which takes half your health)
+ - Evil-aligned people praying to a good god will be smited (which takes half your health)
+- Druids can select epic spells as bonus epic feats
+- Dragon Disciples can select crafting feats
+- Caster level increases have been refigured to PrC level -5 for PM, DD, BG, DC, and AA
+- Dragon Disciple no longer has their own spellbook now that they will have correct base caster level progression and spell-choosing
+- Cavalry no longer has any weapon restrictions
 
 ### Undead Shape
 - Risen Lord -> Rot Harbinger: a juggernaut themed form that deals less damage, has Aura of Rotting, Improved Whirlwind replaced with Circle of Doom, and resistance/immunity spread is more balanced.
@@ -85,6 +113,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Difficulty now calculates correctly
  - You can add spell castings to weapons now
  - DMs can add spell castings to any type of item now
+ - Keen is 1 point! Stahp!
 - Crafted wands and scribed scrolls are now correctly usable by the maker's magic discipline, ie divine/arcane
 - Player Shops:
  - You now get feedback on how much gold you've paid for something

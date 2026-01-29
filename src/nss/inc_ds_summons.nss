@@ -297,8 +297,8 @@ void sum_DragonKnight( object oPC, int nCasterLevel, location lTarget ){
         SendMessageToPC( oPC, "You need either 20+ Cha, Int or Wis to cast this spell." );
         return;
     }
-        object EDKItem = GetItemPossessedBy(oPC, "edk_choice");
-        int iEDKChoice  = GetLocalInt( EDKItem, "edk_choice");
+        object pcKey = GetItemPossessedBy(oPC, "ds_pckey");
+        int iEDKChoice  = GetLocalInt(pcKey, "edk_choice");
         int nGoodEvil   = GetAlignmentGoodEvil( oPC );
         string szDragon = "dragon_";
 
@@ -306,7 +306,7 @@ void sum_DragonKnight( object oPC, int nCasterLevel, location lTarget ){
     {
         case 0:
             //Nothing selected, user hasn't selected a Dragon yet or something has gone wrong!
-               SendMessageToPC( oPC, "No Dragon has been selected, please select one with the Epic Dragon Knight Statue" );
+               SendMessageToPC( oPC, "No Dragon has been selected, please select one in the player tools" );
                IncrementRemainingFeatUses( oPC, FEAT_EPIC_SPELL_DRAGON_KNIGHT );
                SetModuleOverrideSpellScriptFinished();
                return;

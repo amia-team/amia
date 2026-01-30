@@ -126,6 +126,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Hopefully fixed some polymorph-related stability issues
 - Temporary properties, such as Magic Vestment or Flame Weapon, no longer are merged as permanent properties upon polymorphing
 - Added Monkey Grip as an available general feat for Shifter and now it correctly shows up in the Shifter radial menu
+- A bunch of Shifter forms had ineffectual bonus damage because it matched the base weapon's damage type, these got fixed (namely: Azer, Dwarf Defender, Ogre Stomper, Fire Giant Cleric, Mountain Giant Bruiser)
 - Updated Drider and Drow Shifter forms to use the regular darkness over the older suckified and buggy Darkness
 - Mage Armor no longer registers as a hostile spell, breaking invisibility and such
 

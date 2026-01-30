@@ -94,6 +94,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Vampire is given a snazzy longsword for that sophisticated vamp feel, damage increased, and Vampiric Touch is replaced with Mind Fog. +6 WIS on hide removed, so that the world is in balance once more.
 - Rotting Aura: Inflicts disease on living creatures. Sickened is saveless (-2 AB, saves, damage, skills). Nauseated vs fort (-2 AC, Constitution, and 50% movement speed penalty). Effects are removed on exiting the aura.
 
+### Duelist
+- Prerequirements lowered from Parry 18 to Parry 8 and BAB 8 to BAB 6 to allow earlier starts and benefits from the class.
+- Taunt added as a class skill.
+- Early bonus AC scaling increased to 2 + 1 per Duelist level so the class feels more useful while levelling.
+
 ### Fixed
 - Greater Dispelling casted by NPCs will no longer dispel CL 30 characters, Player dispelling remains as-is
 - Fixed some PRC CL progression

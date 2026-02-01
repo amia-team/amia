@@ -88,6 +88,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Caster level increases have been refigured to PrC level -5 for PM, DD, BG, DC, and AA
 - Dragon Disciple no longer has their own spellbook now that they will have correct base caster level progression and spell-choosing
 - Cavalry no longer has any weapon restrictions
+- Removed Posts and Rope mechanic from Ruathym: Ostland, Catacombs and Ruathym: Ostland, Ancient Crypt and updated the areas accordingly.
 
 ### Undead Shape
 - Risen Lord -> Rot Harbinger: a juggernaut themed form that deals less damage, has Aura of Rotting, Improved Whirlwind replaced with Circle of Doom, and resistance/immunity spread is more balanced.

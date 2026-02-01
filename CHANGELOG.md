@@ -129,6 +129,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - A bunch of Shifter forms had ineffectual bonus damage because it matched the base weapon's damage type, these got fixed (namely: Azer, Dwarf Defender, Ogre Stomper, Fire Giant Cleric, Mountain Giant Bruiser)
 - Updated Drider and Drow Shifter forms to use the regular darkness over the older suckified and buggy Darkness
 - Mage Armor no longer registers as a hostile spell, breaking invisibility and such
+- Hopefully fixed warlock summons flipping out if they're too far from the warlock
+- Fixed warlock invocations having weirdly high concentration checks with Defensive Casting (caused issues for warlock early game)
 
 [5.2.0 2026-01-04]
 

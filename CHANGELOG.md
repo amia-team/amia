@@ -80,9 +80,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Polymorph merge now has centralised handling that bypasses having to script per polymorph effect
 - Updated Secret Shop's spawnpoints, added ds_area scripts along with ds_spwn and is_area waypoints.
 - Prayer:
- - Lay persons who share the same alignment axis as their chosen deity (Good, Neutral, or Evil) have a 40% chance for a prayer
- - Good-aligned people praying to an evil god will be smited (which takes half your health)
- - Evil-aligned people praying to a good god will be smited (which takes half your health)
+ - New smite mechanic - being Smited by a god will set your health to -3, forcing you to stabilize (or regenerate)
+ - Paladins, Rangers, Divine Champions, and Blackguards have a 50% chance that their prayer will apply to the whole party
+ - Non-divine characters can worship whoever they want, regardless of their alignment
+ - Non-divine characters who match the alignment or share the same alignment axis as their chosen deity (Good, Neutral, or Evil) have a 60% chance for a prayer and a 30% chance that their prayer bonus will apply to the whole party
+ - Non-divine characters who do not share the same alignment axis as their chosen deity will have a 40% chance for a prayer (with exceptions, as below)
+ - Good-aligned people praying to an evil god will be Smited and get no prayer bonus
+ - Evil-aligned people praying to a good god will be Smited and get no prayer bonus
+ - Any divine caster who does not have one of the allowed alignments and tries to pray will be both Smited and Fallen
+ - Clerics who do not have any matching Domains to their god and try to pray anyway will be both Smited and Fallen
 - Druids can select epic spells as bonus epic feats
 - Dragon Disciples can select crafting feats
 - Caster level increases have been refigured to PrC level -5 for PM, DD, BG, DC, and AA
@@ -120,6 +126,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - You can add spell castings to weapons now
  - DMs can add spell castings to any type of item now
  - Keen is 1 point! Stahp!
+ - Damage Vulnerability is 0 points
 - Crafted wands and scribed scrolls are now correctly usable by the maker's magic discipline, ie divine/arcane
 - Player Shops:
  - You now get feedback on how much gold you've paid for something

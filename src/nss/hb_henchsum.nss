@@ -19,18 +19,6 @@ void main()
 {    // SpawnScriptDebugger();
     string resRef = GetResRef(OBJECT_SELF);
 
-    if(GetTag(OBJECT_SELF) == "cust_summon"){
-        object pc       = GetMaster(OBJECT_SELF);
-        effect unsummon = EffectVisualEffect(99);
-        location hench  = GetLocation(OBJECT_SELF);
-
-        if (GetIsObjectValid(GetAssociate(4, pc, 1))){
-            SendMessageToPC(pc, "You cannot have this summon alongside another summon.");
-            ApplyEffectAtLocation(DURATION_TYPE_INSTANT,unsummon,hench);
-            DestroyObject(OBJECT_SELF);
-        }
-    }
-
     if(GetLocalInt( GetMaster(OBJECT_SELF), DIED_IS_DEAD) == 1 ){
         effect unsummon = EffectVisualEffect(99);
         location hench  = GetLocation(OBJECT_SELF);

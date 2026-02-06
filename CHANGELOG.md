@@ -97,6 +97,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Dragon Disciple no longer has their own spellbook now that they will have correct base caster level progression and spell-choosing
 - Cavalry no longer has any weapon restrictions
 - Removed Posts and Rope mechanic from Ruathym: Ostland, Catacombs and Ruathym: Ostland, Ancient Crypt and updated the areas accordingly.
+- The Stinkpot Warrens: Underground Spring: Reworked stone bridge to be straight and added new spawns. Side rooms are now optional.
 - Partial overhaul of the prayer system. See here for more details: https://www.amiaworld.com/info/prayers.html
 - Expanded 1000 Faces nui to include a search for skin appearances
 - 1000 Faces will now be given automatically as a feat to druids and shifters at level 13

@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Dynamic Birb parts for Male Elf (3 Heads, 1 forearm/thigh/shin/feet)
 - Spell selection NUI for Sorcerers and Bards with increased PRC CL (AA/DD/PM)
 - Bonus spell slots service for Dragon Disciples and Blackguards (for their main base class)
-- 3 portraits
+- 4 portraits
 - Made a GFF parser for us
 - Base item type changer for DM Item Editor
 - 12 new Custom Summon Bases (Humanoid + Animated Weapons)
@@ -49,6 +49,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
   - Game Settings
    - XP Block toggle button
    - Emote Symbol changer Nui
+   - Party Advertiser Nui
    - PvP tool (WIP, but most features ported)
  - Player Tools Button that just opens the existing player tools
 
@@ -72,6 +73,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - There is now a help button in the top left corner of the window that gives some information you may want to know
  - 1H caster weapons now allow 8 points; 2H caster weapons now allow 16 points
  - Amulets now allow 6 points (and 10 points through the DC system)
+ - The cost of +4 and +5 Natural AC is 2 and 3 points, respectively
 - Changed the style of the DM Forge, too (it was so much easier)
 - Bonus spell slots cost less on the backend for the purposes of calculating Item Level Restrictions
 - Curse Song is now given to Bards for free at level 1 (ask for a feat swap if you took it)
@@ -96,6 +98,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Cavalry no longer has any weapon restrictions
 - Removed Posts and Rope mechanic from Ruathym: Ostland, Catacombs and Ruathym: Ostland, Ancient Crypt and updated the areas accordingly.
 - Partial overhaul of the prayer system. See here for more details: https://www.amiaworld.com/info/prayers.html
+- Expanded 1000 Faces nui to include a search for skin appearances
+- 1000 Faces will now be given automatically as a feat to druids and shifters at level 13
+- Using your 1000 Faces widget will now give you the feat and remove the widget from your inventory
+- Other special-requested races with natural shapechanging/alternate form abilities can now ask for 1000 Faces, too
+- Flight will now be given automatically to Dragon Disciples at level 15
 
 ### Undead Shape
 - Risen Lord -> Rot Harbinger: a juggernaut themed form that deals less damage, has Aura of Rotting, Improved Whirlwind replaced with Circle of Doom, and resistance/immunity spread is more balanced.
@@ -109,7 +116,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Greater Dispelling casted by NPCs will no longer dispel CL 30 characters, Player dispelling remains as-is
-- Fixed some PRC CL progression
+- Fixed some PRC CL progression (AA/DD/DC/PM/Blackguard all add their level -5 to their applicable base class)
 - Fixed bonus spell slots not applying for Bard/Sorcerer increased CL
 - Colors of text in some NUI that was unreadable
 - A null error in Two Handed Bonus
@@ -140,6 +147,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Mage Armor no longer registers as a hostile spell, breaking invisibility and such
 - Hopefully fixed warlock summons flipping out if they're too far from the warlock
 - Fixed warlock invocations having weirdly high concentration checks with Defensive Casting (caused issues for warlock early game)
+- Custom Summons will no longer be eaten when out with other summons
+- Gnome, Original is the right racialtype now
+- Some equippable base item types not working with the mythal forge
+- Show more VFX with the VFX tool/preview thing
+- Try to stop VFX from getting stuck
+- Iron ingots not registering with the job system ledger nui
 
 [5.2.0 2026-01-04]
 

@@ -107,9 +107,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Flight will now be given automatically to Dragon Disciples at level 15
 - Epic monk gloves The Master's Gift loses +3 Vamp Regen and +5 Disc so the powers total 12 as per the DC Item system.
 - Weapon Specialization Unarmed removed as an item property, eg from Master's Belt.
+- Circle Kick can now be toggled on and off from the monk class radial menu. The prereq Dex 15 is lowered to Dex 13.
 
 ### Monk
-- Overhauled, full documentation here: https://docs.google.com/document/d/1BNHBF4Mgb4sD_r4RpO8KvxXlPxZ26JOawp2xG10G5-0/edit?usp=sharing
+- Overhauled!
+ - Full documentation: https://docs.google.com/document/d/1BNHBF4Mgb4sD_r4RpO8KvxXlPxZ26JOawp2xG10G5-0/edit?usp=sharing
+ - Class info forum page: https://www.amiaworld.com/phpbb/viewtopic.php?p=2120#p2120
 - Techniques & Augmentations: Monks have base techniques, such as Binding Strike and Wholeness of Body, that are augmented by the monk's Path of Enlightenment, now gained at level 12 as a base class feature.
 - Focus: A new offhand base item that allows the monk to fight unarmed while retaining their UBAB progression. Find them in the monastery shops! For DC request, it holds up to 10 powers.
 - The prestige class Path of Enlightenment has been removed. Existing monks with Path of Enlightenment levels will be automatically releveled out of it.

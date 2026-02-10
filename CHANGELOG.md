@@ -105,14 +105,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Using your 1000 Faces widget will now give you the feat and remove the widget from your inventory
 - Other special-requested races with natural shapechanging/alternate form abilities can now ask for 1000 Faces, too
 - Flight will now be given automatically to Dragon Disciples at level 15
+- Epic monk gloves The Master's Gift loses +3 Vamp Regen and +5 Disc so the powers total 12 as per the DC Item system.
+- Weapon Specialization Unarmed removed as an item property, eg from Master's Belt.
 
 ### Monk
 - Overhauled, full documentation here: https://docs.google.com/document/d/1BNHBF4Mgb4sD_r4RpO8KvxXlPxZ26JOawp2xG10G5-0/edit?usp=sharing
 - Techniques & Augmentations: Monks have base techniques, such as Binding Strike and Wholeness of Body, that are augmented by the monk's Path of Enlightenment, now gained at level 12 as a base class feature.
 - Focus: A new offhand base item that allows the monk to fight unarmed while retaining their UBAB progression. Find them in the monastery shops! For DC request, it holds up to 10 powers.
 - The prestige class Path of Enlightenment has been removed. Existing monks with Path of Enlightenment levels will be automatically releveled out of it.
-- Existing monks will be automatically validated for the new monk feat progression. Rebuilds are optional for build purposes.
-- Numerous other smaller changes, refer to the full documentation link provided above!
+- Existing monks will be automatically validated for the overhauled monk. Rebuilds are optional for build purposes. Full rebuilds (remaking the character from scratch) will be available for free upon forum request. Self-rebuilds down to level 1 will be available with the push of the button in the player tools.
+- Numerous other smaller changes; refer to the full documentation link provided above!
 
 ### Undead Shape
 - Risen Lord -> Rot Harbinger: a juggernaut themed form that deals less damage, has Aura of Rotting, Improved Whirlwind replaced with Circle of Doom, and resistance/immunity spread is more balanced.

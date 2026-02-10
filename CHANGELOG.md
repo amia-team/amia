@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Player Stall sharing
 - Filters for item types and name searching in player shop view
 - DM tool for managing DC housing rentals
+- Tyrantfog Zombie VFX to visualeffects.2da for player use.
 - Aura of Rotting: Monster ability that inflicts disease on living creatures. Sickened applies automatically (-2 AB, saves, damage, skills). Nauseated vs fort (-2 AC, Constitution, and 50% movement speed penalty). Effects are removed upon exiting the aura.
 - Player Tools:
  - Domain Changer: Allows clerics to change domains once per month. One domain must still match your deity for prayer to function.
@@ -255,7 +256,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Craft Woundrous Items will now take the correct amount of gold away from the player using it
 - Little Burrow door in the Dale
 - Primordial Gust now correctly applies to placeables such as random dungeon elemental walls
-- Bard Song now longer consumes two charges
+- Bard Song no longer consumes two charges
 - Loot drop message coloration fixed
 - Rainbow PLC adjusted to a new PLC version that isn't broken
 - 2d12 Massive Crit (Ranged): Flawless mythal will now apply this correctly

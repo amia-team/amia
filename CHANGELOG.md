@@ -106,6 +106,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Other special-requested races with natural shapechanging/alternate form abilities can now ask for 1000 Faces, too
 - Flight will now be given automatically to Dragon Disciples at level 15
 
+### Monk
+- Overhauled, full documentation here: https://docs.google.com/document/d/1BNHBF4Mgb4sD_r4RpO8KvxXlPxZ26JOawp2xG10G5-0/edit?usp=sharing
+- Techniques & Augmentations: Monks have base techniques, such as Binding Strike and Wholeness of Body, that are augmented by the monk's Path of Enlightenment, now gained at level 12 as a base class feature.
+- Focus: A new offhand base item that allows the monk to fight unarmed while retaining their UBAB progression. Find them in the monastery shops! For DC request, it holds up to 10 powers.
+- The prestige class Path of Enlightenment has been removed. Existing monks with Path of Enlightenment levels will be automatically releveled out of it.
+- Existing monks will be automatically validated for the new monk feat progression. Rebuilds are optional for build purposes.
+- Numerous other smaller changes, refer to the full documentation link provided above!
+
 ### Undead Shape
 - Risen Lord -> Rot Harbinger: a juggernaut themed form that deals less damage, has Aura of Rotting, Improved Whirlwind replaced with Circle of Doom, and resistance/immunity spread is more balanced.
 - Vampire is given a snazzy longsword for that sophisticated vamp feel, damage increased, and Vampiric Touch is replaced with Mind Fog. +6 WIS on hide removed, so that the world is in balance once more.

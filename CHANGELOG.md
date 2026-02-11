@@ -177,6 +177,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Show more VFX with the VFX tool/preview thing
 - Try to stop VFX from getting stuck
 - Iron ingots not registering with the job system ledger nui
+- Race validation for subrace templates - only useable with Dwarf, Elf, Gnome, Halfling, Half-Elf, Half-Orc, and Human
+- Job System Resource Manager item/location validation
 
 [5.2.0 2026-01-04]
 

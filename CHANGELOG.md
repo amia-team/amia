@@ -8,8 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Webpages (Mythal Crafting System and Prayer Guide)
 - Bank account sharing
 - Player Stall sharing
+- Add DM Area for Dusty
 - Filters for item types and name searching in player shop view
 - DM tool for managing DC housing rentals
 - Tyrantfog Zombie VFX to visualeffects.2da for player use.
@@ -53,6 +55,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
    - Party Advertiser Nui
    - PvP tool (WIP, but most features ported)
  - Player Tools Button that just opens the existing player tools
+- New Areas:
+ - Gregory's Landing: Daycare
+ - Gregory's Landing: Clinic
+- Blueprints for prayer summons
 
 ### Changed
 - Apparently Healing Circle and Circle of Doom have been 4d8 + CL, with each spell focus giving another 1d8, this just wasn't documented.
@@ -110,6 +116,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Circle Kick can now be toggled on and off from the monk class radial menu. The prereq Dex 15 is lowered to Dex 13.
 - Sickle is now a monk weapon, size changed from small to tiny, and base damage lowered from 1d6 to 1d4.
 - Club is now a monk weapon, with base damage lowered from 1d6 to 1d4.
+- Area Changes:
+ - Temple of Vrael Olo: Library looks nicer
+ - Minor fixes for a player house
 
 ### Monk Overhaul
 - Full documentation of the current state of monk: https://www.amiaworld.com/phpbb/viewtopic.php?p=2120#p2120

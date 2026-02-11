@@ -116,6 +116,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Circle Kick can now be toggled on and off from the monk class radial menu. The prereq Dex 15 is lowered to Dex 13.
 - Sickle is now a monk weapon, size changed from small to tiny, and base damage lowered from 1d6 to 1d4.
 - Club is now a monk weapon, with base damage lowered from 1d6 to 1d4.
+- Death Spells (Wail of the Banshee, Finger of Death):
+ - Now deal percentage-based negative energy damage regardless of whether the target passes their save
+ - Damage scales with Necromancy Spell Focus: 5% of target's max HP per focus tier (none=0%, SF=5%, GSF=10%, ESF=15%)
+ - Finger of Death uses 8% per tier instead (up to 24% max HP at ESF)
+ - Undead are healed instead of damaged; death immunity negates the effect entirely
+- Deathless Master Touch (Palemaster):
+ - DC: 10 + Palemaster level + INT modifier
+ - Failed save: instant death
+ - Successful save: deals 2% of max HP per Palemaster level as negative energy damage (e.g., PM20 = 40% max HP)
+ - Cannot target: plot creatures, constructs, oozes, undead, or creatures larger than Large size
 - Area Changes:
  - Temple of Vrael Olo: Library looks nicer
  - Minor fixes for a player house

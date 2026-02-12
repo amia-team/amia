@@ -1083,17 +1083,12 @@ int GetIsPolymorphed( object oPC )
     return FALSE;
 }
 
-// Exports a single player if it is not polymorphed.
 //
 void AR_ExportPlayer( object oPC ){
 
     if ( GetIsDM( oPC ) || GetIsDMPossessed( oPC ) ) {
 
         SendMessageToPC( oPC, "- DM Avatars cannot be saved. -" );
-    }
-    else if ( GetIsPolymorphed( oPC ) ) {
-
-        SendMessageToPC( oPC, "- Polymorphed characters cannot be saved. -" );
     }
     else if ( GetIsResting( oPC ) ) {
 

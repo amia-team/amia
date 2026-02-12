@@ -11,12 +11,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Polymorphed characters can now be saved as normal
+- Druid Dragonshape now uses an actual creature weapon over a sickle (the bonus feats were adjusted to match)
 
 ### Fixed
 - Assassin will now also have a Caster Level boost when used to unlock PM or AA
 - Blackguard will now also have a Caster Level boost when used alongside Divine Champion, if Blackguard is the highest of the other classes
 - Prayers should be able to find PC Keys now
 - Fixed a lot of PC Key search oopses
+- Fixed a bug with spell item targeting that caused stuff like magic ammo bags and flame weapon not working properly
 
 [6.0.1 2026-02-12]
 ### Fixed

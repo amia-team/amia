@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- Polymorphed characters can now be saved as normal
 
 ### Fixed
 - Assassin will now also have a Caster Level boost when used to unlock PM or AA
@@ -21,6 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Crash when trying to deserialize a shop item to an NwItem (hopefully)
 - Inconsistent storage of items in the banks
+- Dragonshape turned you into a filthy mutt instead of a majestic lizard
 
 [6.0.0 2026-02-11]
 

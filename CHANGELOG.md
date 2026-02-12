@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+[6.0.0 2026-02-11]
+
+### Added
 - Webpages (Mythal Crafting System and Prayer Guide)
 - Bank account sharing
 - Player Stall sharing
@@ -48,7 +56,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
   - Self Settings
    - Collision Bubble toggle button
    - Hurt Yourself
-   - Phenotype Changer, now also allows swapping between normal, large, and old; Levitation unlocks for Wiz/Sor level 5, Cleric level 5 with Travel Domain, or Drow race
+   - Phenotype Changer, now also allows swapping between normal, large, and old; Levitation unlocks for Wiz/Sor level 5, Cleric level 5 with Travel Domain, Warlock level 6, or Drow race
   - Game Settings
    - XP Block toggle button
    - Emote Symbol changer Nui

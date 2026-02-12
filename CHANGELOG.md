@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 ### Fixed
+- Assassin will now also have a Caster Level boost when used to unlock PM or AA
+- Blackguard will now also have a Caster Level boost when used alongside Divine Champion, if Blackguard is the highest of the other classes
+- Prayers should be able to find PC Keys now
+- Fixed a lot of PC Key search oopses
 
 [6.0.1 2026-02-12]
 ### Fixed

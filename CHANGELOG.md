@@ -13,6 +13,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
+[6.0.1 2026-02-12]
+### Fixed
+- Crash when trying to deserialize a shop item to an NwItem (hopefully)
+- Inconsistent storage of items in the banks
+
 [6.0.0 2026-02-11]
 
 ### Added

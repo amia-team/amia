@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Prayers should be able to find PC Keys now
 - Fixed a lot of PC Key search oopses
 - Fixed a bug with spell item targeting that caused stuff like magic ammo bags and flame weapon not working properly
+- Large Phenotype no longer blocked from changing phenotype
 
 [6.0.1 2026-02-12]
 ### Fixed

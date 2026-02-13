@@ -8,8 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Kingdom of Kohlingen: Gregory's Landing, Knight's Respite Bathhouse
 
 ### Changed
+- **Area Changes:**
+ - Southport: East, Seabreeze Townhome
+ - Southport: Central, Thespian's Rest
 - Polymorphed characters can now be saved as normal
 - Druid Dragonshape now uses an actual creature weapon over a sickle (the bonus feats were adjusted to match)
 

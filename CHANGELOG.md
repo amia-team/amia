@@ -8,7 +8,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+
+### Changed
+
+### Fixed
+
+[6.1.0 2026-02-12]
+### Added
 - Kingdom of Kohlingen: Gregory's Landing, Knight's Respite Bathhouse
+- New Settlement Guard nui tool for making guard summoners for Leadership PCs
 
 ### Changed
 - **Area Changes:**
@@ -23,7 +31,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Prayers should be able to find PC Keys now
 - Fixed a lot of PC Key search oopses
 - Fixed a bug with spell item targeting that caused stuff like magic ammo bags and flame weapon not working properly
-- Large Phenotype no longer blocked from changing phenotype
+- Large Phenotype was blocked from changing phenotype at all
+- Shout commands not working
 
 [6.0.1 2026-02-12]
 ### Fixed

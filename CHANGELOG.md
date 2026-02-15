@@ -33,6 +33,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed a bug with spell item targeting that caused stuff like magic ammo bags and flame weapon not working properly
 - Large Phenotype was blocked from changing phenotype at all
 - Shout commands not working
+- Healing Circle not anything but the caster
+- Static skins being slower or faster than PC skins
 
 [6.0.1 2026-02-12]
 ### Fixed

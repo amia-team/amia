@@ -42,11 +42,6 @@ void main(){
     object enteringPlayer       = GetEnteringObject();
     int nClassBG                = GetLevelByClass(31,enteringPlayer);
 
-    if(GetIsPlayerBanned(GetPCPublicCDKey(enteringPlayer, TRUE)))
-    {
-      BootPC(enteringPlayer, "You have been banned. If you believe this was an error, please contact a DM over Discord.");
-    }
-
     if(GetIsDM(enteringPlayer))
     {
         return; // Do nothing, for now.
@@ -196,11 +191,6 @@ void main(){
 
     // Initial setup for player.
     string cdkey = GetPCPublicCDKey(enteringPlayer);
-    if(!DreamcoinAccountExists(cdkey))
-    {
-        SQL_SetupPlayerAccount(cdkey);
-        SetupDreamcoinAccount(cdkey);
-    }
 
     int playerXp = GetXP(enteringPlayer);
     int nGold = 5000;

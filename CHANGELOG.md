@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Kingdom of Kohlingen: Gregory's Landing, Knight's Respite Bathhouse
 - New Settlement Guard nui tool for making guard summoners for Leadership PCs
+- Custom spells added / fixed / changed: https://www.amiaworld.com/phpbb/viewtopic.php?p=51854#p51854
 
 ### Changed
 - **Area Changes:**

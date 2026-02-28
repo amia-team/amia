@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Epic Caster feat for all casters (granted automatically when (combined) Caster Level reaches 21 or AA/PM/DD reaches 15)
 - Gnoll chest model for plate armor (human male torso model 253)
+- Custom spells added / fixed / changed: https://www.amiaworld.com/phpbb/viewtopic.php?p=51854#p51854
 
 ### Changed
 - Epic Spell Focus feats have been added to Ranger, Arcane Archer, and Blackguard feat lists (selectable after level 15)
@@ -19,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Now has spell icons and a button to read the spell description
  - Is now color-coded for Known Spells, Added Spells, and Removed spells
  - You can now select any spell level and learn/unlearn spells like a normal Bard or Sorcerer level allows
+ - Some ugly warlock icons prettified
 
 ### Fixed
 - Cleric/BG caster level will stack properly now
@@ -26,12 +28,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Sorcerer spell progression in the Spell Learning NUI is correct now
 - There is now a "Set to Zero" button that will remove the model of any active armor part (except torso if the armor's AC is greater than zero) - also works with "All Parts" mode
 - Custom Summon item will now open the NUI window whenever the player selects anything other than the ground
+- Dragonshape now merges weapon as before
+- A bug with Flame Weapon and Darkfire overriding weapon buffs they're meant to stack with, eg Deafening Clang
 
 [6.1.0 2026-02-12]
 ### Added
 - Kingdom of Kohlingen: Gregory's Landing, Knight's Respite Bathhouse
 - New Settlement Guard nui tool for making guard summoners for Leadership PCs
-- Custom spells added / fixed / changed: https://www.amiaworld.com/phpbb/viewtopic.php?p=51854#p51854
 
 ### Changed
 - **Area Changes:**

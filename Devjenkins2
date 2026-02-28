@@ -9,11 +9,19 @@ pipeline {
                 }
             }
             steps {
+                script {
+                    if (!env.DEV_SERVER_MODULES?.trim()) {
+                        error "DEV_SERVER_MODULES environment variable is required but was not set."
+                    }
+                    if (!env.DEV_SERVER_DIR?.trim()) {
+                        error "DEV_SERVER_DIR environment variable is required but was not set."
+                    }
+                }
                 echo 'Building..'
                  script {
                     sh "docker run --rm -t -u \$(id -u):\$(id -g) -e NWN_HOME=\$(pwd) -v \$(pwd):\$(pwd) -v \$(pwd):/nasher cltalmadge/nasher:amia pack dev --clean --verbose --yes"
                     archiveArtifacts artifacts: 'AmiaDev.mod', followSymlinks: false
-                    sh 'sudo mv AmiaDev.mod /home/amia/dev_server/server2/modules;'
+                    sh "cp AmiaDev.mod ${env.DEV_SERVER_MODULES}/"
                 }
             }
         }
@@ -24,8 +32,9 @@ pipeline {
                 }
             }
             steps {
-                sh 'chmod +x deploy-dev2.sh'
-                sh './deploy-dev2.sh'
+                withEnv(["AMIA_SERVER_DIR=${env.DEV_SERVER_DIR}".toString()]) {
+                    sh 'bash deploy-dev2.sh'
+                }
             }
         }
     }

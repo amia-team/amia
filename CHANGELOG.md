@@ -8,10 +8,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- Epic Caster feat for all casters (granted automatically when (combined) Caster Level reaches 21 or AA/PM/DD reaches 15)
+- Gnoll chest model for plate armor (human male torso model 253)
 
 ### Changed
+- Epic Spell Focus feats have been added to Ranger, Arcane Archer, and Blackguard feat lists (selectable after level 15)
+- Epic Spell feats have been added to Arcane Archer and Dragon Disciple (requires Epic Caster feat).
+- Epic Spell Focus feats and Epic Spell feats can be selected when the character has the Epic Caster Feat
+- Spell Learning NUI window:
+ - Now has spell icons and a button to read the spell description
+ - Is now color-coded for Known Spells, Added Spells, and Removed spells
+ - You can now select any spell level and learn/unlearn spells like a normal Bard or Sorcerer level allows
 
 ### Fixed
+- Cleric/BG caster level will stack properly now
+- Bug with Dragon Disciple spell learning when you're a subrace that's not allowed (like genasi)
+- Sorcerer spell progression in the Spell Learning NUI is correct now
+- There is now a "Set to Zero" button that will remove the model of any active armor part (except torso if the armor's AC is greater than zero) - also works with "All Parts" mode
+- Custom Summon item will now open the NUI window whenever the player selects anything other than the ground
 
 [6.1.0 2026-02-12]
 ### Added

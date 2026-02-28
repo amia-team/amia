@@ -3,7 +3,6 @@ pipeline {
 
     parameters {
         choice(name: 'ENVIRONMENT', choices: ['Test', 'Live'], description: 'Target deployment environment')
-        string(name: 'webhookURL', description: 'Discord webhook URL for build notifications')
     }
 
     stages {
@@ -56,9 +55,6 @@ pipeline {
         }
     }
     post {
-        always {
-             discordSend description: "Builder for Amia module finished.", footer: "Build results for Amia module", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: params.webhookURL
-        }
         success {
             echo 'Build success'
             archiveArtifacts artifacts: 'Amia.mod', followSymlinks: false

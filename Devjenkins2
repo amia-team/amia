@@ -38,9 +38,4 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-             discordSend description: "Builder for Amia Dev module finished.", footer: "Build results for Amia Dev module", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: params.webhookURL
-        }
-    }
 }

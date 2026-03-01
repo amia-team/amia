@@ -483,7 +483,7 @@ void GenerateLoot( object oCritter, int nXPResult, int nIsChest=0 ){
     string szMythalRef  = "mythal";
 
     // 0.9% chance.
-    if( Random( 111 ) == 3 ){
+    if( Random( 20 ) == 3 ){
 
         // Figure the CR.
         if(         szTag == "CD_TREASURE_UBER"     )   szMythalRef += "5";
@@ -498,7 +498,7 @@ void GenerateLoot( object oCritter, int nXPResult, int nIsChest=0 ){
         nLoot = 1;
     }
 
-    int nMoreStuff = Random( 1001 );
+    int nMoreStuff = Random( 33 );
 
     if ( nMoreStuff == 5 ){
 
@@ -514,7 +514,7 @@ void GenerateLoot( object oCritter, int nXPResult, int nIsChest=0 ){
 
         nLoot = 1;
     }
-    else if ( ( nMoreStuff == 7 || nMoreStuff == 8 ) ){
+    else if ( ( nMoreStuff == 7 ) ){
 
         // Deity ring.
         InfuseRing( oLootBag, oCritter );

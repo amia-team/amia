@@ -22,6 +22,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Is now color-coded for Known Spells, Added Spells, and Removed spells
  - You can now select any spell level and learn/unlearn spells like a normal Bard or Sorcerer level allows
  - Some ugly warlock icons prettified
+ - Nythals will now have a 5% loot drop chance (up from 0.9%) - (note: temporary due to plot shenanigans)
+ - Deity Rings, mythals, and blank scrolls will now have a 3% drop chance (up from 0.19% for deity rings and 0.09% for scrolls/wands)
+**Area Changes:**
+ - Underdark: Bloodspear Ruins - Removed the PLCs/NPCs/Doors/etc. that were randomly left behind
+ - Amia Frontier: Brokentooth Cave - Moved Bloodspear quest NPCs to the main entrance area
 
 ### Fixed
 - Cleric/BG caster level will stack properly now
@@ -31,6 +36,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Custom Summon item will now open the NUI window whenever the player selects anything other than the ground
 - Dragonshape now merges weapon as before
 - A bug with Flame Weapon and Darkfire overriding weapon buffs they're meant to stack with, eg Deafening Clang
+- Loot drop text
 
 [6.1.0 2026-02-12]
 ### Added

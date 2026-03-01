@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Epic Caster feat for all casters (granted automatically when (combined) Caster Level reaches 21 or AA/PM/DD reaches 15)
 - Gnoll chest model for plate armor (human male torso model 253)
 - Custom spells added / fixed / changed: https://www.amiaworld.com/phpbb/viewtopic.php?p=51854#p51854
+- Script for PLCs to apply up to 10 VFXs to them on module load (PLC must have tag: obj_vfx_persist. Reads variables ds_ai_vfx_1 to ds_ai_vfx_10.)
 
 ### Changed
 - Epic Spell Focus feats have been added to Ranger, Arcane Archer, and Blackguard feat lists (selectable after level 15)

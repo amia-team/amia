@@ -8,10 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
+- A few more NUI images
 
 ### Changed
 
 ### Fixed
+- Native NWN UI scaling support for mythal forge and DM forge so they stop looking silly for players who change their UI Scale
 
 [6.2.0 2026-03-01]
 ### Added

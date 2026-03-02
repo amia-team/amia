@@ -58,7 +58,7 @@ void main(){
         nGold       = 600;
         nWaypoint   = nNode;
     }
-    else if ( nNode > 35 && nNode < 43 ){
+    else if ( nNode > 35 && nNode < 44 ){
 
         nGold       = 200;
         nWaypoint   = nNode;

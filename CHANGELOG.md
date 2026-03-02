@@ -12,8 +12,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Gnoll chest model for plate armor (human male torso model 253)
 - Custom spells added / fixed / changed: https://www.amiaworld.com/phpbb/viewtopic.php?p=51854#p51854
 - Script for PLCs to apply up to 10 VFXs to them on module load (PLC must have tag: obj_vfx_persist. Reads variables ds_ai_vfx_1 to ds_ai_vfx_10.)
+- New map: Ruin Hill: Cavern
+- Added transition in Ruin Hill
+- New monsters: Meenlock Screamer, Meenlock Skulk, Meenlock Brawler, Skeletal Giant
+
 
 ### Changed
+- Removed dispel magic from malarite werecat spell list.
 - Epic Spell Focus feats have been added to Ranger, Arcane Archer, and Blackguard feat lists (selectable after level 15)
 - Epic Spell feats have been added to Arcane Archer and Dragon Disciple (requires Epic Caster feat).
 - Epic Spell Focus feats and Epic Spell feats can be selected when the character has the Epic Caster Feat

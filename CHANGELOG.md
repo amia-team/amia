@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Native NWN UI scaling support for mythal forge and DM forge so they stop looking silly for players who change their UI Scale
+- Three successive rounds of trying to fix Ruin Hill: Cavern's boss and fixing floating placeables
 
 [6.2.0 2026-03-01]
 ### Added

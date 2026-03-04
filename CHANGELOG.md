@@ -8,13 +8,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-- A few more NUI images
 
 ### Changed
 
 ### Fixed
+
+[6.2.1 2026-03-03]
+### Added
+- A few more NUI images
+
+### Changed
+- **Area Changes**
+ - Winya Ravana facelift (WIP, version 1)
+ - Ruin Hill: Caverns
+
+### Fixed
 - Native NWN UI scaling support for mythal forge and DM forge so they stop looking silly for players who change their UI Scale
 - Three successive rounds of trying to fix Ruin Hill: Cavern's boss and fixing floating placeables
+- Epic Spell Focus prerequisites
 
 [6.2.0 2026-03-01]
 ### Added

@@ -13,6 +13,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
+[6.2.2      ]
+
+### Changed
+
+- Calimport - Rebalanced several items.
+- Calimport - Fixed Waypoint directions.
+- Calimport - Nerfed various CLs on Crocodiles and Wizard Ward quest boss.
+
+### Fixed
+
+- Calimport - Dialogue fixes.
+
+
+
 [6.2.1 2026-03-03]
 ### Added
 - A few more NUI images

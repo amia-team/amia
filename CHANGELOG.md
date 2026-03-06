@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Calimport - Rebalanced several items.
 - Calimport - Fixed Waypoint directions.
 - Calimport - Nerfed various CLs on Crocodiles and Wizard Ward quest boss.
+- Winya Ravana facelift - Added new merchant "The Singing Branch" - 17 new food items and 7 new drink items. New NPCs added. (Finished)
 
 ### Fixed
 

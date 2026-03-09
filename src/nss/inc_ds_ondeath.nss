@@ -482,7 +482,7 @@ void GenerateLoot( object oCritter, int nXPResult, int nIsChest=0 ){
     // Mythals
     string szMythalRef  = "mythal";
 
-    // 0.9% chance.
+    // 5% chance.
     if( Random( 20 ) == 3 ){
 
         // Figure the CR.
@@ -498,33 +498,39 @@ void GenerateLoot( object oCritter, int nXPResult, int nIsChest=0 ){
         nLoot = 1;
     }
 
-    int nMoreStuff = Random( 33 );
+    int nMoreStuff = Random( 66 );
 
-    if ( nMoreStuff == 5 ){
+    // 3% chance.
+    if ( nMoreStuff == 5 || nMoreStuff == 8 ){
 
         // Bone wands.
         CreateInLootBag( oLootBag, oCritter, "x2_it_cfm_wand" );
+		FloatingTextStringOnCreature( "<cçÿ´>Your defeated foe drops a bone wand!</c>", oKiller );
 
         nLoot = 1;
     }
-    else if ( nMoreStuff == 6 ){
+    // 3% chance.
+    else if ( nMoreStuff == 6 || nMoreStuff == 9 ){
 
         // Parchment.
         CreateInLootBag( oLootBag, oCritter, "x2_it_cfm_bscrl" );
+		FloatingTextStringOnCreature( "<cçÿ´>Your defeated foe drops parchment!</c>", oKiller );
 
         nLoot = 1;
     }
+    // 1.5% chance.
     else if ( ( nMoreStuff == 7 ) ){
 
         // Deity ring.
         InfuseRing( oLootBag, oCritter );
+		FloatingTextStringOnCreature( "<cçÿ´>Your defeated foe drops a special ring!</c>", oKiller );
 
         nLoot = 1;
     }
 
     if ( nLoot ){
 
-        FloatingTextStringOnCreature( "<c¥  >Your defeated foe drops some loot!</c>", oKiller );
+        FloatingTextStringOnCreature( "<cÂ¥ >Your defeated foe drops loot!</c>", oKiller );
     }
 }
 

@@ -23,20 +23,6 @@ void StrikeOutStrings(object oNathyrra)
 
 void main()
 {
-    object pc         = GetMaster(OBJECT_SELF);
-    effect unsummon   = EffectVisualEffect(99);
-    location summSpot = GetLocation(OBJECT_SELF);
-
-    if(GetIsObjectValid(GetHenchman(pc, 1)) || GetIsObjectValid(GetAssociate(4, pc, 1))){
-        if(GetHenchman(pc, 1) != OBJECT_SELF && GetTag(GetHenchman(pc, 1)) != "swarm_summon"){
-            ApplyEffectAtLocation(DURATION_TYPE_INSTANT, unsummon, summSpot);
-            DestroyObject(OBJECT_SELF, 0.1);
-            SendMessageToPC(pc, "You cannot use your Vassal with another summon.");
-            IncrementRemainingFeatUses(pc, 1255);
-        }
-    }
-
-
     string sAreaTag = GetTag(GetArea(OBJECT_SELF));
     string sModuleTag = GetTag(GetModule());
     string sMyTag = GetTag(OBJECT_SELF);

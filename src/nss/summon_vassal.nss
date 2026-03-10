@@ -12,7 +12,7 @@ void main()
      int nFemale = GetLocalInt(oWidget, "vassalFemale");
      int nRace = GetLocalInt(oWidget, "vassalRace");
      int nLevelLord = GetLevelByClass(54,oPC);
-     int nLevel = GetLevelByPosition(1,oPC) + GetLevelByPosition(2,oPC) + GetLevelByPosition(3,oPC);
+     int nLevel = GetHitDice(oPC);
      int nEpic = 0;
      int nSkillP = GetSkillRank(SKILL_PERSUADE,oPC,TRUE);
      string sName = GetLocalString(oWidget, "vassalName");
@@ -133,7 +133,7 @@ void main()
      if(nEffect == 1)
      {
        ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink, oHench);
-	   SetTag (oHench, ("vassal_"+GetPCPublicCDKey( oPC )));
+       SetTag (oHench, ("vassal_"+GetPCPublicCDKey( oPC )));
      }
 
      if(sName != "")

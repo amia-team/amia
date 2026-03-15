@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Calimport - Nerfed various CLs on Crocodiles and Wizard Ward quest boss.
 - Winya Ravana facelift - Added new merchant "The Singing Branch" - 17 new food items and 7 new drink items. New NPCs added. (Finished)
 - Updates to Southport: East, Vetzer's Counting House
+- Visual updates to Barak Runedar: The Underkingdom Entryway through to Lower Levels.
 
 ### Fixed
 

@@ -14,6 +14,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 
 [6.2.2      ]
+### Added
+- **Area Additions**
+ - Barak Runedar: Citadel, Mithral Counting House
+ - Plane of Shadow: Shadowscape, Shadowborne Vault
+ - Silent Bay: Kampo's Trading Post, Valyra's Vault
+ - The Dale: Hearth and Harvest Treasury
+ - Underdark: L'Obsul, Deepdelve Vault
+ - Winya Ravana: Argent Bough Treasury 
 
 ### Changed
 
@@ -21,6 +29,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Calimport - Fixed Waypoint directions.
 - Calimport - Nerfed various CLs on Crocodiles and Wizard Ward quest boss.
 - Winya Ravana facelift - Added new merchant "The Singing Branch" - 17 new food items and 7 new drink items. New NPCs added. (Finished)
+- Updates to Southport: East, Vetzer's Counting House
 
 ### Fixed
 

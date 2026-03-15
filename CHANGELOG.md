@@ -33,12 +33,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updates to Southport: East, Vetzer's Counting House
 - Visual updates to Barak Runedar: The Underkingdom Entryway through to Lower Levels.
 - Winya Ravana: Add transition to housing
+- Eldritch Doom and Eldritch Pulse have new visuals
+- Eldritch Blast (and Shapes) now count as level 5 spells for the purposes of overcoming spell immunity (no longer stopped by eg Ghostly Visage)
+- Eldritch Pulse now originates from the caster, radius increased from medium to large, and pulses once when cast for half damage and another time after 1 round
+- Writhing Darkness, Caustic Mire, and Tenacious Plague charisma modifier bonus uncapped
+- Chilling Tentacles now adds warlock's charisma modifier to the grapple check. 
+  - The grapple check formula is now D20 + Caster Level +  Charisma Modifier vs. Base Attack Bonus + Size Modifier + Strength Modifier
 
 ### Fixed
 
 - Calimport - Dialogue fixes.
-
-
+- Eldritch Doom now correctly hurts the warlock too
+- Eldritch Spear no longer continues hitting targets behind the main target
+- Warlock's Spell Penetration feats are correctly added to the spell resistance check
+- Removed instances where warlock invocations checked for spell resistance twice
 
 [6.2.1 2026-03-03]
 ### Added

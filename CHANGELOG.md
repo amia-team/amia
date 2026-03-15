@@ -47,6 +47,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Eldritch Spear no longer continues hitting targets behind the main target
 - Warlock's Spell Penetration feats are correctly added to the spell resistance check
 - Removed instances where warlock invocations checked for spell resistance twice
+- Scroll and Wand Cases work again
+- Cold Rune (an item with Flame Weapon 2/day) now correctly applies only cold damage
 
 [6.2.1 2026-03-03]
 ### Added

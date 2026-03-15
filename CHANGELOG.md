@@ -21,7 +21,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Silent Bay: Kampo's Trading Post, Valyra's Vault
  - The Dale: Hearth and Harvest Treasury
  - Underdark: L'Obsul, Deepdelve Vault
- - Winya Ravana: Argent Bough Treasury 
+ - Winya Ravana: Argent Bough Treasury
+ - Winya Ravana: Elven Villa 
 
 ### Changed
 
@@ -31,6 +32,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Winya Ravana facelift - Added new merchant "The Singing Branch" - 17 new food items and 7 new drink items. New NPCs added. (Finished)
 - Updates to Southport: East, Vetzer's Counting House
 - Visual updates to Barak Runedar: The Underkingdom Entryway through to Lower Levels.
+- Winya Ravana: Add transition to housing
 
 ### Fixed
 

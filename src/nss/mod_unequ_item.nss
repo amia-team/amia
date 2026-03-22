@@ -54,26 +54,6 @@ void main( ){
    // activates but if you check the left and right hand both weapons will still be present.
    //*****************************
 
-    // Cursed Item Script
-    if((GetResRef(oItem) == "shroudarmor") || (GetResRef(oItem) == "shroudhelm")  || (GetResRef(oItem) == "shroudcloak"))
-    {
-       if(!GetIsImmune(oPC,IMMUNITY_TYPE_DEATH))
-       {
-        if(!MySavingThrow(SAVING_THROW_WILL, oPC, 45, SAVING_THROW_TYPE_DEATH))
-        {
-           FloatingTextStringOnCreature("*Removing the cursed item tears the soul from the you*",oPC);
-           ApplyEffectToObject(DURATION_TYPE_INSTANT,EffectDeath(),oPC);
-        }
-        else
-        {
-           FloatingTextStringOnCreature("*Removing the cursed item does not tears the soul from the you*",oPC);
-        }
-       }
-       else
-       {
-           FloatingTextStringOnCreature("*Removing the cursed item does not tears the soul from the you*",oPC);
-       }
-    }
 
    // Crossbow PRC check - If crossbow is removed while feat is active strip effect
    if(((GetBaseItemType(oItem)== BASE_ITEM_HEAVYCROSSBOW) ||(GetBaseItemType(oItem)== BASE_ITEM_LIGHTCROSSBOW)) && (nClassCross >= 1))

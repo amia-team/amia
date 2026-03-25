@@ -11,6 +11,11 @@ pipeline {
                 }
                 sh "docker run --rm -t -u \$(id -u):\$(id -g) -e NWN_HOME=\$(pwd) -v \$(pwd):\$(pwd) -v \$(pwd):/nasher cltalmadge/nasher:amia pack --clean --verbose --yes"
                 sh "cp Amia.mod ${env.DEV_SERVER_BASE}/dev_server/modules/"
+
+                sh 'chmod +x deploy-dev.sh'
+                withEnv(["AMIA_SERVER_DIR=${env.DEV_SERVER_BASE}".toString()]) {
+                    sh 'bash deploy-dev.sh'
+                }
             }
         }
     }

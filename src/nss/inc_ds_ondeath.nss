@@ -505,7 +505,7 @@ void GenerateLoot( object oCritter, int nXPResult, int nIsChest=0 ){
 
         // Bone wands.
         CreateInLootBag( oLootBag, oCritter, "x2_it_cfm_wand" );
-		FloatingTextStringOnCreature( "<cçÿ´>Your defeated foe drops a bone wand!</c>", oKiller );
+		FloatingTextStringOnCreature( "Your defeated foe drops a bone wand!", oKiller );
 
         nLoot = 1;
     }
@@ -514,7 +514,7 @@ void GenerateLoot( object oCritter, int nXPResult, int nIsChest=0 ){
 
         // Parchment.
         CreateInLootBag( oLootBag, oCritter, "x2_it_cfm_bscrl" );
-		FloatingTextStringOnCreature( "<cçÿ´>Your defeated foe drops parchment!</c>", oKiller );
+		FloatingTextStringOnCreature( "Your defeated foe drops parchment!", oKiller );
 
         nLoot = 1;
     }
@@ -523,14 +523,14 @@ void GenerateLoot( object oCritter, int nXPResult, int nIsChest=0 ){
 
         // Deity ring.
         InfuseRing( oLootBag, oCritter );
-		FloatingTextStringOnCreature( "<cçÿ´>Your defeated foe drops a special ring!</c>", oKiller );
+		FloatingTextStringOnCreature( "Your defeated foe drops a special ring!", oKiller );
 
         nLoot = 1;
     }
 
     if ( nLoot ){
 
-        FloatingTextStringOnCreature( "<cÂ¥ >Your defeated foe drops loot!</c>", oKiller );
+        FloatingTextStringOnCreature( "Your defeated foe drops loot!", oKiller );
     }
 }
 

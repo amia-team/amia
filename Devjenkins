@@ -2,15 +2,23 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
-
+        stage('Deploy Dev') {
             steps {
-                echo 'Building..'
-                 script {
-                    sh "docker run --rm -t -u \$(id -u):\$(id -g) -e NWN_HOME=\$(pwd) -v \$(pwd):\$(pwd) -v \$(pwd):/nasher cltalmadge/nasher:amia pack dev --clean --verbose --yes"
-                    archiveArtifacts artifacts: 'AmiaDev.mod', followSymlinks: false
+                script {
+                    if (!env.DEV_SERVER_BASE?.trim()) {
+                        error "DEV_SERVER_BASE environment variable is required but was not set."
+                    }
                 }
+                sh "docker run --rm -t -u \$(id -u):\$(id -g) -e NWN_HOME=\$(pwd) -v \$(pwd):\$(pwd) -v \$(pwd):/nasher cltalmadge/nasher:amia pack --clean --verbose --yes"
+                sh "cp Amia.mod ${env.DEV_SERVER_BASE}/dev_server/modules/"
             }
+        }
+    }
+    post {
+        success {
+            echo 'Build success'
+            archiveArtifacts artifacts: 'Amia.mod', followSymlinks: false
+            sh "rm -f Amia.mod"
         }
     }
 }

@@ -125,13 +125,116 @@ void GenerateEpicLoot(object oInventory);
 // Generates an Epic Item in the select Chest/container/inventory. It then returns that object back to you.
 object GenerateEpicLootReturn(object oInventory);
 
-// Generates an Standard Item in the select Chest/container/inventory. Will never generate epic loot.
+// Generates a Standard Item in the select Chest/container/inventory. Will never generate epic loot.
 void GenerateStandardLoot(object oInventory, int nLevel);
+
+// Gets the base item type from the generated loot for party-wide announcing
+string GetBaseItemTypeNameFromTemplate(object oItemTemplate);
+
+// Generates "a" or "an" because grammar is important
+string GetArticleForWord(string sWord);
+
+// Sends a message to the whole party about what item type dropped
+void SendLootDropMessageToParty(object oKiller, string sLootName);
 
 
 //-------------------------------------------------------------------------------
 // Helper Functions
 //-------------------------------------------------------------------------------
+
+string GetBaseItemTypeNameFromTemplate(object oItemTemplate)
+{
+    if (!GetIsObjectValid(oItemTemplate))
+    {
+        return "loot";
+    }
+
+    int nBaseItem = GetBaseItemType(oItemTemplate);
+    string sStrRef = Get2DAString("baseitems", "Name", nBaseItem);
+
+    if (sStrRef == "")
+    {
+        return "loot";
+    }
+
+    int nStrRef = StringToInt(sStrRef);
+    if (nStrRef < 0)
+    {
+        return "loot";
+    }
+
+    string sName = GetStringByStrRef(nStrRef);
+    if (sName == "")
+    {
+        return "loot";
+    }
+
+    return sName;
+}
+
+string GetArticleForWord(string sWord)
+{
+    int nLen = GetStringLength(sWord);
+
+    if (nLen < 1)
+    {
+        return "a";
+    }
+
+    string sLast = GetStringLowerCase(GetSubString(sWord, nLen - 1, 1));
+
+    // Custom plural item types end in s, so don't use an article.
+    if (sLast == "s")
+    {
+        return "";
+    }
+
+    string sFirst = GetStringLowerCase(GetSubString(sWord, 0, 1));
+
+    if (sFirst == "a" || sFirst == "e" || sFirst == "i" || sFirst == "o" || sFirst == "u")
+    {
+        return "an";
+    }
+
+    return "a";
+}
+
+void SendLootDropMessageToParty(object oKiller, string sLootName)
+{
+    object oLeader = GetMaster(oKiller);
+    if (GetIsObjectValid(oLeader))
+    {
+        oKiller = oLeader;
+    }
+
+    object oArea = GetArea(oKiller);
+    object oMember = GetFirstFactionMember(oKiller, FALSE);
+
+    string sArticle = GetArticleForWord(sLootName);
+    string sMessage = "";
+
+    if (sArticle == "")
+    {
+        sMessage = "Your defeated foe drops " + sLootName + "!";
+    }
+    else
+    {
+        sMessage = "Your defeated foe drops " + sArticle + " " + sLootName + "!";
+    }
+
+    while (GetIsObjectValid(oMember))
+    {
+        if (GetArea(oMember) == oArea && !GetIsDead(oMember))
+        {
+            if (GetMaster(oMember) == OBJECT_INVALID || GetIsPossessedFamiliar(oMember))
+            {
+                SendMessageToPC(oMember, sMessage);
+            }
+        }
+
+        oMember = GetNextFactionMember(oKiller, FALSE);
+    }
+}
 
 // Clamps a value between some range, inclusive.
 int ClampInt(int nValue, int nLow, int nHigh);
@@ -386,6 +489,7 @@ void GenerateLoot( object oCritter, int nXPResult, int nIsChest=0 ){
     string szTag            = GetTag( oLootBin );
     int nLoot;
     int nIsBoss             = GetLocalInt( OBJECT_SELF, "is_boss" ) ;
+    string sDroppedLootName = "";
 
     // Treasure chest
     if( nIsChest == 1 ){
@@ -468,6 +572,7 @@ void GenerateLoot( object oCritter, int nXPResult, int nIsChest=0 ){
 
             oLootBag = CopyInLootBag( oLootBag, oCritter, oTemplate );
 
+            sDroppedLootName = GetBaseItemTypeNameFromTemplate(oTemplate);
             nLoot = 1;
         }
 
@@ -476,6 +581,7 @@ void GenerateLoot( object oCritter, int nXPResult, int nIsChest=0 ){
         {
             string sRareLoot = GetLocalString( oCritter, "RareLoot" );
             CreateItemOnObject( sRareLoot, oLootBag );
+            FloatingTextStringOnCreature( "Your defeated foe drops a rare item!", oKiller );
         }
     }
 
@@ -494,8 +600,9 @@ void GenerateLoot( object oCritter, int nXPResult, int nIsChest=0 ){
 
         // Spawn crystal in the loot.
         oLootBag = CreateInLootBag( oLootBag, oCritter, szMythalRef );
+        FloatingTextStringOnCreature( "Your defeated foe drops a mythal!", oKiller );
 
-        nLoot = 1;
+        nLoot = 0;
     }
 
     int nMoreStuff = Random( 66 );
@@ -505,32 +612,39 @@ void GenerateLoot( object oCritter, int nXPResult, int nIsChest=0 ){
 
         // Bone wands.
         CreateInLootBag( oLootBag, oCritter, "x2_it_cfm_wand" );
-		FloatingTextStringOnCreature( "Your defeated foe drops a bone wand!", oKiller );
+        FloatingTextStringOnCreature( "Your defeated foe drops a bone wand!", oKiller );
 
-        nLoot = 1;
+        nLoot = 0;
     }
     // 3% chance.
     else if ( nMoreStuff == 6 || nMoreStuff == 9 ){
 
         // Parchment.
         CreateInLootBag( oLootBag, oCritter, "x2_it_cfm_bscrl" );
-		FloatingTextStringOnCreature( "Your defeated foe drops parchment!", oKiller );
+        FloatingTextStringOnCreature( "Your defeated foe drops parchment!", oKiller );
 
-        nLoot = 1;
+        nLoot = 0;
     }
     // 1.5% chance.
     else if ( ( nMoreStuff == 7 ) ){
 
         // Deity ring.
         InfuseRing( oLootBag, oCritter );
-		FloatingTextStringOnCreature( "Your defeated foe drops a special ring!", oKiller );
+        FloatingTextStringOnCreature( "Your defeated foe drops a shiny ring!", oKiller );
 
-        nLoot = 1;
+        nLoot = 0;
     }
 
     if ( nLoot ){
 
-        FloatingTextStringOnCreature( "Your defeated foe drops loot!", oKiller );
+        if (sDroppedLootName != "")
+        {
+            SendLootDropMessageToParty(oKiller, sDroppedLootName);
+        }
+        else
+        {
+            FloatingTextStringOnCreature( "Your defeated foe drops loot!", oKiller );
+        }
     }
 }
 

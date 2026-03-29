@@ -33,12 +33,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updates to Southport: East, Vetzer's Counting House
 - Visual updates to Barak Runedar: The Underkingdom Entryway through to Lower Levels.
 - Winya Ravana: Add transition to housing
-- Eldritch Doom and Eldritch Pulse have new visuals
+- Eldritch Doom, Eldritch Pulse, and some other invocations have updated visuals.
 - Eldritch Blast (and Shapes) now count as level 5 spells for the purposes of overcoming spell immunity (no longer stopped by eg Ghostly Visage)
 - Eldritch Pulse now originates from the caster, radius increased from medium to large, and pulses once when cast for half damage and another time after 1 round
-- Writhing Darkness, Caustic Mire, and Tenacious Plague charisma modifier bonus uncapped
+- Writhing Darkness, Caustic Mire, and Tenacious Plague charisma modifier bonus uncapped.
 - Chilling Tentacles now adds warlock's charisma modifier to the grapple check. 
   - The grapple check formula is now D20 + Caster Level +  Charisma Modifier vs. Base Attack Bonus + Size Modifier + Strength Modifier
+- Word of Changing now calculates the AB bonus based on BAB, improving it to that of an outsider of the same level.
+- Dark Foresight DR absorption toned down from potential over 700 damage to 10 per CL, placing it between Greater Stoneskin and Premonition in strength.
 
 ### Fixed
 
@@ -46,9 +48,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Eldritch Doom now correctly hurts the warlock too
 - Eldritch Spear no longer continues hitting targets behind the main target
 - Warlock's Spell Penetration feats are correctly added to the spell resistance check
+- Various incorrect warlock invocation area of effect radiuses and visual indicators fixed.
+- Warlock multisummoning logic sometimes summoning outside of intended range fixed.
 - Removed instances where warlock invocations checked for spell resistance twice
 - Scroll and Wand Cases work again
-- Cold Rune (an item with Flame Weapon 2/day) now correctly applies only cold damage
+- Cold Rune (an item with Flame Weapon 2/day) now correctly applies only cold damage.
+- New spells Orson's Pyromagic, Rigor Mortis, Wall of Thorns, and Color of Spring can now be extended as advertised.
 
 [6.2.1 2026-03-03]
 ### Added

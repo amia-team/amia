@@ -13,7 +13,7 @@ if [ ! -d "$server_dir" ]; then
     exit 1
 fi
 pushd "$server_dir" || exit 1
-docker compose stop devserver
-docker compose rm -f devserver
+docker compose stop dev-server
+docker compose rm -f dev-server
 docker compose up -d
 popd || exit

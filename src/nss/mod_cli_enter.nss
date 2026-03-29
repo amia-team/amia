@@ -283,7 +283,7 @@ void CheckPrereq(object oPC)
 
    int nRacePC = GetRacialType(oPC); // Dwarf = 0, Elf = 1, Halfelf = 4, Invalid = 28
 
-   if((nBAB >= 8) && (nFeatDodge == 1) && (nFeatToughness == 1) && (nFeatSkillFocusDisc == 1))
+   if((nBAB >= 7) && (nFeatDodge == 1) && (nFeatToughness == 1))
    {
      SetLocalInt(oPC,"Prereq_DwD",1);
    }
@@ -293,7 +293,7 @@ void CheckPrereq(object oPC)
      SetLocalInt(oPC,"Prereq_DwD",1);
    }
 
-   if((nBAB >= 7) && (nFeatPBS == 1) && (nFeatRapidShot == 1) && (nFeatMartialProf == 1) && ((nFeatWFShortbow == 1) || (nFeatWFLongbow == 1)) && ((nBardLevel >= 1) || (nSorcLevel >= 1) || (nWizLevel >= 1) || (nAssLevel >= 1)))
+   if((nBAB >= 6) && (nFeatPBS == 1) && ((nFeatWFShortbow == 1) || (nFeatWFLongbow == 1)) && ((nBardLevel >= 1) || (nSorcLevel >= 1) || (nWizLevel >= 1) || (nAssLevel >= 1)))
    {
      SetLocalInt(oPC,"Prereq_AA",1);
    }

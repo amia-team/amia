@@ -13,8 +13,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-[6.2.2      ]
+[6.2.2 2026-03-29]
 ### Added
+- 3 Character Portraits.
+- DM Copy Machine tool.
+- Assassin spell learning NUI to PM/AA levels.
+- More spells to the DM Forge.
 - **Area Additions**
  - Barak Runedar: Citadel, Mithral Counting House
  - Plane of Shadow: Shadowscape, Shadowborne Vault
@@ -22,10 +26,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - The Dale: Hearth and Harvest Treasury
  - Underdark: L'Obsul, Deepdelve Vault
  - Winya Ravana: Argent Bough Treasury
- - Winya Ravana: Elven Villa 
+ - Winya Ravana: Elven Villa
 
 ### Changed
-
 - Calimport - Rebalanced several items.
 - Calimport - Fixed Waypoint directions.
 - Calimport - Nerfed various CLs on Crocodiles and Wizard Ward quest boss.
@@ -41,6 +44,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
   - The grapple check formula is now D20 + Caster Level +  Charisma Modifier vs. Base Attack Bonus + Size Modifier + Strength Modifier
 - Word of Changing now calculates the AB bonus based on BAB, improving it to that of an outsider of the same level.
 - Dark Foresight DR absorption toned down from potential over 700 damage to 10 per CL, placing it between Greater Stoneskin and Premonition in strength.
+- Deity Rings will stop being crazy.
+- Loot drop messages will now tell you what type of item it is.
+- Dwarven Defender and AA prerequisites now match Vanilla prerequisites no matter which race you are.
+- Rangers and Paladins will now have 1 level 1 spell at level 1.
+- You can now copy appearances between different types of armor - it will just skip the torso.
+- Removed polymorph from Rillifane prayer bonus.
 
 ### Fixed
 
@@ -54,6 +63,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Scroll and Wand Cases work again
 - Cold Rune (an item with Flame Weapon 2/day) now correctly applies only cold damage.
 - New spells Orson's Pyromagic, Rigor Mortis, Wall of Thorns, and Color of Spring can now be extended as advertised.
+- Vassal level calculation won't ignore 4th class anymore.
+- Kobolds won't turn into gnomes in the Malachite Maze anymore.
+- Gregory's Landing daycare will now let you leave.
+- Southport map note.
+- Kohlingen Everguard won't have two last names anymore.
+- EMA will no longer show up as options on DC/BG levels.
+- A lot of creature models that were too fat to move.
+- Custom Summon weapons won't drop when they die anymore if the base item type was changed.
+- Color channel copying will now work on armors that don't use per-part coloring, too.
+- Some prayer bonuses being skipped because it couldn't find the PC Key.
+- BG level 1 spells for 20 BGs will now be unlimited for real this time, hopefully, maybe.
+- Ranger and Paladin PrC scaling will work even if you have less than 4 levels now.
+- BG no longer gives full 1:1 caster level bumps. It's BG -5 like everyone else.
+- Ban/Allow will now work properly with the Citizen Generator.
 
 [6.2.1 2026-03-03]
 ### Added

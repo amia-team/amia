@@ -32,7 +32,7 @@ void main( )
         PROJECTILE_PATH_TYPE_DEFAULT,
         TRUE
     );
-            ActionCastSpellAtObject(
+            /*ActionCastSpellAtObject(
         SPELL_DRAGON_BREATH_SLOW,
         oSelf,
         METAMAGIC_ANY,
@@ -40,5 +40,5 @@ void main( )
         0,
         PROJECTILE_PATH_TYPE_DEFAULT,
         TRUE
-    );
+    );*/
 }

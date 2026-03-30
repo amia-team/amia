@@ -13,12 +13,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-[6.2.2 2026-03-29]
+[6.3.0 2026-03-29]
 ### Added
 - 3 Character Portraits.
 - DM Copy Machine tool.
 - Assassin spell learning NUI to PM/AA levels.
 - More spells to the DM Forge.
+- New Greatsword Models
+- New Bastard Sword Model
+- Tons of backend changes for dynamic spawns, quests, etc.
 - **Area Additions**
  - Barak Runedar: Citadel, Mithral Counting House
  - Plane of Shadow: Shadowscape, Shadowborne Vault
@@ -29,6 +32,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Winya Ravana: Elven Villa
 
 ### Changed
+- All familiars periodically have their charges regenerated. Similar may be done for animal companion. This change is experimental.
+- A few Familiars were changed:
+	- Fire Mephit & Ice Mephit: Gained more spell like abilities
+	- Hell Hound: Gains 1 point of fire damage every 5 levels. Gains 1d10 monster damage at level 10, 1d12 at level 20, and 1d20 at level 30.
+	- Raven: Base AC now improves with level; claws get enhancement bonus, piercing damage, monster damage, and on-hit blindness scaling with level.
 - Calimport - Rebalanced several items.
 - Calimport - Fixed Waypoint directions.
 - Calimport - Nerfed various CLs on Crocodiles and Wizard Ward quest boss.

@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - New Greatsword Models
 - New Bastard Sword Model
 - Tons of backend changes for dynamic spawns, quests, etc.
+- New monsters for new areas
 - **Area Additions**
  - Barak Runedar: Citadel, Mithral Counting House
  - Plane of Shadow: Shadowscape, Shadowborne Vault
@@ -30,6 +31,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Underdark: L'Obsul, Deepdelve Vault
  - Winya Ravana: Argent Bough Treasury
  - Winya Ravana: Elven Villa
+ - The Sands of Famine - New area east of Zanshibon
 
 ### Changed
 - All familiars periodically have their charges regenerated. Similar may be done for animal companion. This change is experimental.
@@ -49,6 +51,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updates to Southport: East, Vetzer's Counting House
 - Visual updates to Barak Runedar: The Underkingdom Entryway through to Lower Levels.
 - Winya Ravana: Add transition to housing
+- Zanshibon overhauled
 - Eldritch Doom, Eldritch Pulse, and some other invocations have updated visuals.
 - Eldritch Blast (and Shapes) now count as level 5 spells for the purposes of overcoming spell immunity (no longer stopped by eg Ghostly Visage)
 - Eldritch Pulse now originates from the caster, radius increased from medium to large, and pulses once when cast for half damage and another time after 1 round
@@ -63,6 +66,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Rangers and Paladins will now have 1 level 1 spell at level 1.
 - You can now copy appearances between different types of armor - it will just skip the torso.
 - Removed polymorph from Rillifane prayer bonus.
+- Existing Cleric armors have had their alignment restrictions removed.
 
 ### Fixed
 

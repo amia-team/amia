@@ -38,6 +38,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	- Hell Hound: Gains 1 point of fire damage every 5 levels. Gains 1d10 monster damage at level 10, 1d12 at level 20, and 1d20 at level 30.
 	- Raven: Base AC now improves with level; claws get enhancement bonus, piercing damage, monster damage, and on-hit blindness scaling with level.
 	- Bat: Base AC now improves with level; bite gains enhancement, sonic damage, and monster damage scaling with level.
+- Spells:
+	- Ice Dagger now scales with caster level.
+	- Horzikaul's Boom now scales with caster level.
+	- Inflict light wounds now scales with caster level. 
 - Calimport - Rebalanced several items.
 - Calimport - Fixed Waypoint directions.
 - Calimport - Nerfed various CLs on Crocodiles and Wizard Ward quest boss.

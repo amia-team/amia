@@ -34,7 +34,6 @@ void main( ){
     int nClassMonkPrc = GetLevelByClass(50,oPC);
     int nClassMonk    = GetLevelByClass(5,oPC);
     int nClassDuelist = GetLevelByClass(52,oPC);
-    int nClassWarlock = GetLevelByClass(57,oPC);
     int nClassBG      = GetLevelByClass(31,oPC);
     int nXP           = GetXP( oPC );
     int nHD           = GetHitDice( oPC );
@@ -260,33 +259,6 @@ void main( ){
          SendMessageToPC(oPC,"Error: Your Body Part Variable wasn't set properly. Please report to Dev/DM team.");
        }
      }
-
-    // Warlock Class
-    if ((nClassWarlock == 1)){
-        if(!(GetHasFeat(1314, oPC) || GetHasFeat(1315, oPC) || GetHasFeat(1316, oPC) || GetHasFeat(1317, oPC) || GetHasFeat(1318, oPC) || GetHasFeat(1319, oPC)))
-        {
-          ds_create_item( "wlk_pactchoose", oPC, 1);
-        }
-    }
-
-    if ((nClassWarlock == 4)){
-        if(!(GetHasFeat(1314, oPC) || GetHasFeat(1315, oPC) || GetHasFeat(1316, oPC) || GetHasFeat(1317, oPC) || GetHasFeat(1318, oPC) || GetHasFeat(1319, oPC)))
-        {
-          SendMessageToPC(oPC,"You have not chosen a Pact Feat yet! You will be unable to take another Warlock level until you do so. Use your 'Warlock: Pact Chooser' item to do this.");
-          SendMessageToAllDMs( GetName( oPC ) + " tried to take multiple Warlock levels without choosing a Pact first!" );
-
-          nPrevLevelXP    = ( ( ( nHD * ( nHD - 1 ) ) / 2 ) * 1000 ) - 1;
-
-          SetXP( oPC, nPrevLevelXP );
-
-          GetECL( oPC );
-
-          DelayCommand( 5.0, SetXP( oPC, nXP ) );
-
-          return;
-        }
-    }
-
 
     //area effects
     ApplyAreaAndRaceEffects( oPC, 1 );

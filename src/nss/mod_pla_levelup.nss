@@ -31,9 +31,6 @@ void main( ){
     int nClassCav     = GetLevelByClass(45,oPC);
     int nClassLord    = GetLevelByClass(54,oPC);
     int nClassAbyssal = GetLevelByClass(55,oPC);
-    int nClassMonkPrc = GetLevelByClass(50,oPC);
-    int nClassMonk    = GetLevelByClass(5,oPC);
-    int nClassDuelist = GetLevelByClass(52,oPC);
     int nClassBG      = GetLevelByClass(31,oPC);
     int nXP           = GetXP( oPC );
     int nHD           = GetHitDice( oPC );
@@ -75,26 +72,6 @@ void main( ){
 
     //Check DwD and AA prereq
     CheckPrereq( oPC );
-
-
-    // Prevent people from taking monk after Duelist
-    if ( (nClassDuelist >= 1) && (nClassMonk >= 1))
-    {
-
-        SendMessageToPC( oPC, "You can't level up monk since you have the duelist class!" );
-        SendMessageToAllDMs( GetName( oPC ) + " tried to level up with monk while having the duelist class!" );
-
-        nPrevLevelXP    = ( ( ( nHD * ( nHD - 1 ) ) / 2 ) * 1000 ) - 1;
-
-        SetXP( oPC, nPrevLevelXP );
-
-        GetECL( oPC );
-
-        DelayCommand( 5.0, SetXP( oPC, nXP ) );
-
-        return;
-    }
-
 
     if ( GetIsPolymorphed( oPC ) ){
 
@@ -165,10 +142,6 @@ void main( ){
 
     }
 
-     if (GetHasFeat( 1227, oPC ) && (nClassMonkPrc == 1)){
-
-        ds_create_item( "mo_elewidget", oPC);
-    }
      // Peerage Class
     if ((nClassLord == 1)){
         if(!GetIsObjectValid(GetItemPossessedBy(oPC,"l_vassal")))

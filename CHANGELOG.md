@@ -11,6 +11,35 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
+### Bloodsworn
+- New class icon and feat icons.
+- The Boons are now permanent and applied automatically. The game provides feedback about the boon effects.
+- Boon of Stability reworked into Boon of Skill:
+  - Can choose any skill the Bloodsworn knows.
+  - Can be taken multiple times, eg Boon of Discipline and Boon of Concentration.
+  - Bonus increased from +2 per Bloodsworn level to +3 to match the other boons in power.
+- Boon of Magical Defense gains +2 saves vs. spells on top of the SR to match other boons in power.
+- Tumble added as a class skill.
+
+### Warlock
+- New class icon and spell icons touched up.
+- New pact selection menu providing more information about the pacts and their associated abilities.
+- Eldritch Blast damage scaling tweaked to benefit more from charisma and to read less like a math puzzle.
+  - New formula: (D2 x Warlock Level + Cha Mod x 1.5 + Epic Eldritch Blast x 3) x 120% Eldritch Master
+  - Charisma damage modifier increased from percentage based to flat Cha Mod x 1.5, Warlock 30 increasing it to Cha Mod x 2.
+  - Epic Eldritch Blast decreased from 5 -> 3
+  - Eldritch Master multiplier decreased from 25% -> 20%
+- Word of Changing:
+  - No longer applies spell failure; instead incurs a 5 caster level penalty to warlock invocations while active.
+  - Temporary HP bonus removed.
+- Charisma bonus damage cap removed from the warlock persistent AOE spells Writhing Darkness, Caustic Mire, and Tenacious Plague.
+- As of last update, Eldritch Chain was accidentally dealing full damage on the bounces. Fixed back to half damage for the bounces.
+- Dark Foresight damage reduction scales with charisma, 10 + Cha mod. The damage absorption scaled back to 10 * CL.
+- Devour Magic has been updated to use the new dispel mechanics, more info under that heading.
+- Frog Drop now spawns lesser slaadi on death with more fidelity. The Frog Drop KD effect is done in a medium AOE. New visuals.
+- Primordial Gust has a new visual, slightly increased range, and the damage is dealt as one effect as opposed to three separate damage sources.
+- Dancing Plague has a new visual, spreads with more fidelity now, and has a large AOE. The summon can be placed anywhere.
+
 ### Fixed
 
 [6.3.0 2026-03-29]

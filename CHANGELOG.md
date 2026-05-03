@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Warlock
 - New class icon and spell icons touched up.
+- Spell and feat descriptions in-game should now be up to date.
 - New pact selection menu providing more information about the pacts and their associated abilities.
 - Eldritch Blast damage scaling tweaked to benefit more from charisma and to read less like a math puzzle.
   - New formula: (D2 x Warlock Level + Cha Mod x 1.5 + Epic Eldritch Blast x 3) x 120% Eldritch Master
@@ -30,6 +31,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
   - Epic Eldritch Blast decreased from 5 -> 3
   - Eldritch Master multiplier decreased from 25% -> 20%
 - Word of Changing:
+  - Now actually changes the warlock's appearance.
   - No longer applies spell failure; instead incurs a 5 caster level penalty to warlock invocations while active.
   - Temporary HP bonus removed.
 - Charisma bonus damage cap removed from the warlock persistent AOE spells Writhing Darkness, Caustic Mire, and Tenacious Plague.
@@ -39,6 +41,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Frog Drop now spawns lesser slaadi on death with more fidelity. The Frog Drop KD effect is done in a medium AOE. New visuals.
 - Primordial Gust has a new visual, slightly increased range, and the damage is dealt as one effect as opposed to three separate damage sources.
 - Dancing Plague has a new visual, spreads with more fidelity now, and has a large AOE. The summon can be placed anywhere.
+- Binding of Maggots can no longer be placed down en masse.
+
 
 ### Fixed
 

@@ -23,26 +23,35 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Warlock
 - New class icon and spell icons touched up.
-- Spell and feat descriptions in-game should now be up to date.
+- Spell and feat descriptions in-game and on the forum should now be up to date.
 - New pact selection menu providing more information about the pacts and their associated abilities.
 - Eldritch Blast damage scaling tweaked to benefit more from charisma and to read less like a math puzzle.
   - New formula: (D2 x Warlock Level + Cha Mod x 1.5 + Epic Eldritch Blast x 3) x 120% Eldritch Master
   - Charisma damage modifier increased from percentage based to flat Cha Mod x 1.5, Warlock 30 increasing it to Cha Mod x 2.
   - Epic Eldritch Blast decreased from 5 -> 3
   - Eldritch Master multiplier decreased from 25% -> 20%
+- New Eldritch Shape: Hideous Blow
+  - Charges the warlock's melee weapon with an eldritch blast. The blast discharges automatically on hit. After hitting, goes on a 2-round cooldown and recharges automatically (you don't need to recast it).
+- New pact-based essences (these are given automatically on login to existing warlocks)
+  - Aberrant Pact - Hollowing Essence: On a failed will save, deals 1d6 wisdom damage, stunning if wisdom is lowered to 3. Duration rounds per 5 caster levels.
+  - Celestial Pact - Radiant Essence: Positive damage type. On a failed fortitude save, attackers gain +2 attack bonus against the target. Duration rounds per 5 caster levels.
+  - Elemental Pact - Storm Essence: Electrical damage type. On a failed reflex save, deals an additional 1d4 electrical damage per 5 caster levels.
+  - Fey Pact - Witchwood Essence: Entangle on a failed reflex save. Duration rounds per 10 caster levels.
+  - Fiendish Pact - Gluttonous Essence: -2 universal saves on a failed fortitude save. Additionally, the warlock gains +1 caster level (to a maximum +3). Duration rounds per 5 caster levels.
+  - Slaad Pact - Entropic Essence: On a failed random save, deals 1d6 damage to wisdom, constitution, or dexterity (at random). Duration rounds per 5 caster levels.
 - Word of Changing:
-  - Now actually changes the warlock's appearance.
+  - Now actually changes the warlock's appearance (please let me know if the appearances suck and how to improve them).
   - No longer applies spell failure; instead incurs a 5 caster level penalty to warlock invocations while active.
   - Temporary HP bonus removed.
 - Charisma bonus damage cap removed from the warlock persistent AOE spells Writhing Darkness, Caustic Mire, and Tenacious Plague.
 - As of last update, Eldritch Chain was accidentally dealing full damage on the bounces. Fixed back to half damage for the bounces.
+- Wall of Perilous Flame works again.
 - Dark Foresight damage reduction scales with charisma, 10 + Cha mod. The damage absorption scaled back to 10 * CL.
 - Devour Magic has been updated to use the new dispel mechanics, more info under that heading.
-- Frog Drop now spawns lesser slaadi on death with more fidelity. The Frog Drop KD effect is done in a medium AOE. New visuals.
+- Frog Drop now spawns lesser slaadi on death with better fidelity. The Frog Drop KD effect is done in a medium AOE. New visuals.
 - Primordial Gust has a new visual, slightly increased range, and the damage is dealt as one effect as opposed to three separate damage sources.
-- Dancing Plague has a new visual, spreads with more fidelity now, and has a large AOE. The summon can be placed anywhere.
+- Dancing Plague has a new visual, spreads with better fidelity and has a large AOE. The summon can be placed anywhere.
 - Binding of Maggots can no longer be placed down en masse.
-
 
 ### Fixed
 

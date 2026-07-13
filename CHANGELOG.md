@@ -10,10 +10,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - 5 new weapon visuals: mind, shadow, blue flame, green hue, odd hue.
 - New VFX placeables added that can be created by DMs or by players with the PLC spawner.
+- New beholder lair with new monsters.
+- New quests added; look for some new epic boss quests.
 
 ### Changed
 - Blade Thirst now adds a blue flame as per lore.
 - Dispel mechanics changes and documentation: https://www.amiaworld.com/phpbb/viewtopic.php?p=52765#p52765
+- Various module change requests
 
 ### Bloodsworn
 - New class icon and feat icons.

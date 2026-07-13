@@ -9,11 +9,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - 5 new weapon visuals: mind, shadow, blue flame, green hue, odd hue.
+- New VFX placeables added that can be created by DMs or by players with the PLC spawner.
 
 ### Changed
 - Blade Thirst now adds a blue flame as per lore.
-- Dispel mechanics have been clarified: https://www.amiaworld.com/phpbb/viewtopic.php?p=52765#p52765
-
+- Dispel mechanics changes and documentation: https://www.amiaworld.com/phpbb/viewtopic.php?p=52765#p52765
 
 ### Bloodsworn
 - New class icon and feat icons.
@@ -58,7 +58,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Binding of Maggots can no longer be placed down en masse.
 
 ### Fixed
-- Acid Fog no longer gives a weird message when cast
+- Acid Fog now casts properly and doesn't give a weird message.
 - Floating Leaf monk's wisdom bonus AB no longer gives 1 less AB than intended.
 - Peerage's Vassal can no longer be summoned multiple times.
 
